@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lexic</string>
+
+    <string name="play_online">Play Online</string>
+    <string name="new_game">New Game</string>
+    <string name="restore_game">Restore Game</string>
+	<string name="prefs">Preferences</string>
+
+	<string name="dialog_no_saved">There is no game saved.  If you can read this
+	message, something is likely broken.</string>
+	<string name="dialog_ok">OK</string>
+	<string name="dialog_cancel">Cancel</string>
+
+	<string name="dialog_about_title">About Lexic</string>
+	<string name="dialog_about_content">
+	Touch the screen and move your finger to adjacent squares to spell words.
+	You have three minutes to find as many words as possible.
+
+	\n\nScoring:
+	\nOn 4x4 boards, words must be at least three letters long.  On 5x5 boards,
+	words must be at least four letters long.  
+	Words that have three or four letters are worth one point.  Longer words
+	are worth more points.  Proper nouns are not counted.\n\n
+	</string>
+
+	<string name="dialog_loading">Loading</string>
+
+	<string name="menu_rotate_board">Rotate Board</string>
+	<string name="menu_save_game">Save Game</string>
+	<string name="menu_end_game">Quit</string>
+	<string name="button_ok">OK</string>
+
+	<string name="about">About</string>
+
+	<string name="dialog_dict_select">Select Dictionary</string>
+
+	<string name="show_missed">Show Missed Words</string>
+	<string name="hide_missed">Hide Missed Words</string>
+
+	<string name="show_unique">Show Unique Words</string>
+	<string name="hide_unique">Hide Unique Words</string>
+
+</resources>

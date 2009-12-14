@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="net.healeys.lexic"
+      android:versionCode="40"
+      android:versionName="0.6.1">
+
+	<uses-permission android:name="android.permission.INTERNET" />
+
+    <application android:icon="@drawable/app_lexic" android:label="Lexic">
+        <activity android:name="Lexic">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="PlayLexic">
+			<intent-filter>
+				<action android:name="net.healeys.lexic.action.NEW_GAME" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+				<action android:name="net.healeys.lexic.action.RESTORE_GAME" />
+			</intent-filter>
+        </activity>
+
+        <activity android:name="OnePlayerScore">
+			<intent-filter>
+				<action android:name="net.healeys.lexic.action.SCORE" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+
+        <activity android:name="LexicLogin">
+			<intent-filter>
+				<action android:name="net.healeys.lexic.action.ONLINE_LOGIN" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+
+        <activity android:name="PlayLexicOnline">
+			<intent-filter>
+				<action android:name="net.healeys.lexic.action.ONLINE_GAME" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:scheme="http" />
+			</intent-filter>
+        </activity>
+
+        <activity android:name="LexicConfig">
+			<intent-filter>
+				<action android:name="net.healeys.lexic.action.CONFIGURE" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.PREFERENCES" />
+			</intent-filter>
+        </activity>
+    </application>
+</manifest> 

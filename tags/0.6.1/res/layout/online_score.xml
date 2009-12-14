@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#99ccff"
+	>
+
+	<LinearLayout
+		android:id="@+id/loading"
+		android:layout_weight="1.0"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:gravity="center"
+		>
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#ff000000"
+			android:text="Loading... " />
+
+		<ProgressBar android:id="@+android:id/progress_small"
+			style="?android:attr/progressBarStyleSmall"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+
+	</LinearLayout>
+
+	<WebView android:id="@+id/webview"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		android:visible="false"/>
+
+	<LinearLayout
+		android:id="@+id/scores"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		android:visible="false"
+	>
+		<ScrollView android:id="@+id/score_scroll" 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:orientation="vertical"
+			android:scrollbarAlwaysDrawVerticalTrack="true"
+		/>
+
+		<Button android:id="@+id/show_unique"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/show_unique"
+			/>
+
+		<Button android:id="@+id/close_score"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/button_ok"
+			/>
+
+	</LinearLayout>
+
+</LinearLayout>

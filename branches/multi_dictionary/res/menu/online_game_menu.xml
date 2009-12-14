@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/rotate" 
+		android:title="@string/menu_rotate_board" />
+	<item android:id="@+id/end_game" 
+		android:title="@string/menu_end_game" />
+</menu>

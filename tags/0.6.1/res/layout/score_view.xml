@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:background="#99ccff"
+		android:id="@+id/found_words"
+    	>
+	
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		>
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1.0"
+				android:textSize="32px"
+				android:textColor="#ff000000"
+				android:text="Total Score:" />
+			<TextView android:id="@+id/score_points"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="32px"
+				android:textColor="#ff000000"
+				android:text="" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		>
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1.0"
+				android:textSize="32px"
+				android:textColor="#ff000000"
+				android:text="Total Words:" />
+			<TextView android:id="@+id/score_words"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="32px"
+				android:textColor="#ff000000"
+				android:text="" />
+		</LinearLayout>
+
+		<ScrollView android:id="@+id/found_scroll" 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:orientation="vertical"
+			android:scrollbarAlwaysDrawVerticalTrack="true"
+			/>
+
+		<Button android:id="@+id/close_score"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/button_ok"
+			/>
+	
+	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:background="#99ccff"
+		android:id="@+id/missed_words"
+    	>
+	
+		<LinearLayout 
+			xmlns:android="http://schemas.android.com/apk/res/android"
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_weight="0.5"
+			android:gravity="center"
+		>
+			<net.healeys.lexic.view.BoardView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:id="@+id/missed_board"
+			/>
+		</LinearLayout>
+
+		<ScrollView android:id="@+id/missed_scroll" 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:orientation="vertical"
+			android:scrollbarAlwaysDrawVerticalTrack="true"
+			/>
+
+		<Button android:id="@+id/missed_close_score"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/button_ok"
+			/>
+	
+	</LinearLayout>
+
+</FrameLayout>
