@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<ListPreference
+		android:key="dict"
+		android:title="Dictionary"
+		android:summary="Select a dictionary to use"
+		android:entries="@array/dict_choices_entries"
+		android:entryValues="@array/dict_choices_entryvalues"
+		android:dialogTitle="Select Dictionary"
+	/>
+
+	<ListPreference
+		android:key="boardSize"
+		android:title="Board Size"
+		android:summary="Select a board size"
+		android:entries="@array/board_size_choices_entries"
+		android:entryValues="@array/board_size_choices_entryvalues"
+		android:dialogTitle="Select Board Size"
+	/>
+
+	<ListPreference
+		android:key="maxTimeRemaining"
+		android:title="Time Limit"
+		android:summary="Select a time limit"
+		android:entries="@array/time_limit_choices_entries"
+		android:entryValues="@array/time_limit_choices_entryvalues"
+		android:dialogTitle="Select Time Limit"
+	/>
+
+	<CheckBoxPreference
+		android:key="soundsEnabled"
+		android:title="Sounds Enabled"
+		android:summary="Whether or not sound effects are enabled"
+	/>
+
+
+</PreferenceScreen>

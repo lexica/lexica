@@ -1,0 +1,41 @@
+============================
+Lexic: The Android Word Game
+============================
+
+Lexic is a word game that is available on the Android platform. Players are 
+given 3 minutes to find as many words as possible on a grid of random letters.
+
+Lexic Features:
+ -4x4 and 5x5 game boards
+ -Online multiplayer gaming
+ -A dictionary of 77,000+ words
+ -UK and US dictionaries
+
+
+Requirements
+------------
+At this point, Lexic only runs on the Android mobile device platform and 
+requires and Android SDK to compile.  More information about the Android SDK
+is available at:
+
+http://code.google.com/android/
+
+
+Compiling
+---------
+
+The build.xml file should have everything that is required for compilation.
+It assumes that the android sdk is available in a directory called 
+"android_sdk" that is located in the directory above the android source tree.
+The "android-sdk" property in the ant file can be altered to change this.
+
+Where to get more information
+-----------------------------
+If you want to join the Lexic development team (or just hack on it a bit),
+consult the Google code page:
+
+http://code.google.com/p/lexic/
+
+If you just want to play Lexic, then get the latest version from the
+Android Market and go to http://www.lexic-games.com/ for more information.
+
