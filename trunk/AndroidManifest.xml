@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="net.healeys.lexic"
       android:versionCode="41"
-      android:versionName="0.6.1-svn">
+      android:versionName="0.8.1">
 
 	<uses-permission android:name="android.permission.INTERNET" />
 
