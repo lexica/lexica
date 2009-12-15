@@ -21,6 +21,8 @@ import java.io.OutputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.LinkedHashMap;
 
+import android.util.Log;
+
 /**
  * This is the base implementation of the Trie.
  * It allows a trie to be created and modified in memory and then written to
@@ -44,6 +46,8 @@ public class Trie implements WordFilter {
 	private int tailCount;
 
 	protected TrieNode root;
+	
+	private static String TAG = "Trie";
 
 	public Trie() {
 		nodeCount = 0;
@@ -255,11 +259,12 @@ public class Trie implements WordFilter {
 	}
 
 	private void recursiveSolver(TransitionMap m,WordFilter filter,
-		TrieNode node,int pos,int unUsed, StringBuffer prefix, 
+		TrieNode node,int pos,int unUsed, StringBuilder prefix, 
 		LinkedHashMap<String,Solution> ret) {
 
 		if(node.isWord()) {
-			String w = prefix.toString();
+			//String w = prefix.toString();
+			String w = new String(prefix);
 			int mask = ~unUsed | (1<<pos);
 			if(filter == null) {
 				ret.put(w,new Solution(w,mask));
@@ -306,7 +311,7 @@ public class Trie implements WordFilter {
 		WordFilter filter) {
 		LinkedHashMap<String,Solution> ret = 
 			new LinkedHashMap<String,Solution>();
-		StringBuffer prefix = new StringBuffer(m.getSize()+1);
+		StringBuilder prefix = new StringBuilder(m.getSize()+1);
 
 		int unused = 0;
 		for(int i=0;i<m.getSize();i++) {
@@ -338,6 +343,7 @@ public class Trie implements WordFilter {
 		private int mask;
 
 		private Solution(String word, int mask) {
+			Log.d(TAG,"Solution: "+word+" "+mask);
 			this.word = word;
 			this.mask = mask;
 		}

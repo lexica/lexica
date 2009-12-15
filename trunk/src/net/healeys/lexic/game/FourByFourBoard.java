@@ -20,6 +20,7 @@ package net.healeys.lexic.game;
 import java.util.Vector;
 import java.util.ArrayList;
 import java.lang.Math;
+import android.util.Log;
 
 public class FourByFourBoard extends Board {
 	private static int SIZE = 16;
