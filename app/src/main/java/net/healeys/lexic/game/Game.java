@@ -56,7 +56,8 @@ public class Game implements Synchronizer.Counter {
 	private Board board;
 
 	public enum GameStatus { GAME_STARTING, GAME_RUNNING, GAME_PAUSED,
-		GAME_FINISHED };
+		GAME_FINISHED }
+
 	public static final int WORD_POINTS[] = {
 		0,0,0, // 0,1,2
 		1,1,2, // 3,4,5
@@ -480,7 +481,7 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	public interface RotateHandler {
-		public void onRotate();
+		void onRotate();
 	}
 }
 

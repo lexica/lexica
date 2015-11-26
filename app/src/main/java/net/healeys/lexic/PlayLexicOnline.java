@@ -23,6 +23,7 @@ import net.healeys.lexic.view.LexicView;
 import net.healeys.lexic.view.VisibilityToggle;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
@@ -224,7 +225,7 @@ public class PlayLexicOnline extends Activity implements
 
 	private void clearSavedGame() {
 		SharedPreferences prefs = getSharedPreferences("prefs_game_file",
-			this.MODE_PRIVATE);
+			MODE_PRIVATE);
 
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putBoolean("activeGame",false);
@@ -269,7 +270,7 @@ public class PlayLexicOnline extends Activity implements
 	private ViewGroup initializeScrollView() {
 		ScrollView sv = (ScrollView) findViewById(R.id.score_scroll);
 		sv.removeAllViews();
-		sv.setScrollBarStyle(sv.SCROLLBARS_OUTSIDE_INSET);
+		sv.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_INSET);
 
 		ViewGroup.LayoutParams llLp = new ViewGroup.LayoutParams(
 			ViewGroup.LayoutParams.FILL_PARENT,

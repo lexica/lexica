@@ -27,5 +27,5 @@ public interface WordFilter {
 	 * @param	word	A string of characters believed to be a word
 	 * @return			Whether or not the string is a word
 	 */
-	public boolean isWord(String word);
+	boolean isWord(String word);
 }

@@ -17,11 +17,13 @@
 
 package net.healeys.lexic.view;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Picture;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -29,7 +31,7 @@ import java.util.Random;
 
 class LexicLogo extends View {
 
-	private enum BoxColor { WHITE, YELLOW};
+	private enum BoxColor { WHITE, YELLOW}
 
 	private static final String LETTERS[] = {
 		"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
@@ -40,8 +42,18 @@ class LexicLogo extends View {
 
 	public LexicLogo(Context context,AttributeSet attrs) {
 		super(context,attrs);
-
+		setupSoftwareCanvas();
 		cached = null;
+	}
+
+	/**
+	 * Newer versions of android don't allow Picture's to be drawn to hardware accelerated canvases.
+	 * It seems that as of some time in the past, the default is to use hardware acceleration
+	 * for canvases. This sets the view to use a software canvas.
+	 */
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	private void setupSoftwareCanvas() {
+		setLayerType(LAYER_TYPE_SOFTWARE,null);
 	}
 
 	private void drawTile(Canvas canvas, Paint p, String letter, BoxColor color,

@@ -28,15 +28,15 @@ public class Synchronizer implements Runnable {
 	public static final int TICK_FREQ = 10;
 
 	public interface Counter {
-		public int tick();
+		int tick();
 	}
 
 	public interface Event {
-		public void tick(int i);
+		void tick(int i);
 	}
 
 	public interface Finalizer {
-		public void doFinalEvent();
+		void doFinalEvent();
 	}
 
 	private Counter mainCounter;

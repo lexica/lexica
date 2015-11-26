@@ -93,10 +93,10 @@ public class OnePlayerScore extends TabActivity {
 		while(li.hasNext()) {
 			String w = li.next();
 
-			if(game.isWord(w) && game.WORD_POINTS[w.length()] > 0) {
-				int points = game.WORD_POINTS[w.length()];
+			if(game.isWord(w) && Game.WORD_POINTS[w.length()] > 0) {
+				int points = Game.WORD_POINTS[w.length()];
 				addWord(foundVG,w,points,0xff000000,true);
-				score += game.WORD_POINTS[w.length()];
+				score += Game.WORD_POINTS[w.length()];
 				words++;
 			} else {
 				addWord(foundVG,w,0,0xffff0000,false);
@@ -110,7 +110,7 @@ public class OnePlayerScore extends TabActivity {
 
 		while(li.hasNext()) {
 			String w = li.next();
-			max_score += game.WORD_POINTS[w.length()];
+			max_score += Game.WORD_POINTS[w.length()];
 			addMissedWord(missedVG,game.getSolutions().get(w));
 		}
 
@@ -144,7 +144,7 @@ public class OnePlayerScore extends TabActivity {
 
 	private ViewGroup initializeScrollView(int resId) {
 		ScrollView sv = (ScrollView) findViewById(resId);
-		sv.setScrollBarStyle(sv.SCROLLBARS_OUTSIDE_INSET);
+		sv.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_INSET);
 
 		ViewGroup.LayoutParams llLp = new ViewGroup.LayoutParams(
 			ViewGroup.LayoutParams.FILL_PARENT,

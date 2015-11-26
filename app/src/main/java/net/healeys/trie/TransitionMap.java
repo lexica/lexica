@@ -31,7 +31,7 @@ public interface TransitionMap {
 	 * @param 	position	the id of a position
 	 * @return				a bitmap marking connected positions
 	 */
-	public int transitions(int position);
+	int transitions(int position);
 	
 	/**
 	 * Provides the value (letter) stored at a particular position.
@@ -39,13 +39,13 @@ public interface TransitionMap {
 	 * @param	position	the id of a position
 	 * @return				the value stored at that position
 	 */
-	public int valueAt(int position);
+	int valueAt(int position);
 
 	/**
 	 * Provides the number of positions available on a particular board.
 	 *
 	 * @return				the number of positions
 	 */
-	public int getSize();
+	int getSize();
 
 }

@@ -22,6 +22,7 @@ import net.healeys.lexic.view.LexicView;
 import net.healeys.lexic.view.VisibilityToggle;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
@@ -153,7 +154,7 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 	private void restoreGame() {
 		Resources res = getResources();
 		SharedPreferences prefs = getSharedPreferences("prefs_game_file",
-			this.MODE_PRIVATE);
+			MODE_PRIVATE);
 
 		clearSavedGame();
 
@@ -199,7 +200,7 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 		if(game.getStatus() == Game.GameStatus.GAME_RUNNING) {
 			// Log.d(TAG,"Saving");
 			SharedPreferences prefs = getSharedPreferences(
-				 "prefs_game_file",this.MODE_PRIVATE);
+				 "prefs_game_file", MODE_PRIVATE);
 			game.pause();
 			game.save(prefs.edit());
 		}
@@ -250,7 +251,7 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 
 	private void clearSavedGame() {
 		SharedPreferences prefs = getSharedPreferences("prefs_game_file",
-			this.MODE_PRIVATE);
+			MODE_PRIVATE);
 
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putBoolean("activeGame",false);
