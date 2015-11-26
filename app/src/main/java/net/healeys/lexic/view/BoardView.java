@@ -33,12 +33,10 @@ public class BoardView extends View {
 
 	private Board board;
 	private int highlighted = 0;
-	private final Paint p;
+	private Paint p;
 
 	public BoardView(Context context,AttributeSet attrs) {
 		super(context,attrs);
-
-		Log.d(TAG,"new BoardView:"+this);
 
 		board = null;
 		highlighted = 0;
@@ -47,7 +45,7 @@ public class BoardView extends View {
 		p.setTextAlign(Paint.Align.CENTER);
 		p.setAntiAlias(true);
 		p.setStrokeWidth(2);
-		
+
 	}
 
 	@Override
@@ -60,9 +58,7 @@ public class BoardView extends View {
 
 		if(board == null) return;
 
-		float boxsize = ((float) width) / board.getWidth();
-
-		Log.d(TAG,"onDraw:"+width+","+height);
+		float boxSize = ((float) width) / board.getWidth();
 
 		// Draw touched boxes
 		p.setARGB(255,255,255,0);
@@ -70,30 +66,30 @@ public class BoardView extends View {
 			if(((1<<i)&highlighted) == 0) continue;
 			int x = i % board.getWidth();
 			int y = i / board.getWidth();
-			float left = boxsize * x;
-			float top = boxsize * y;
-			float right = boxsize * (x+1);
-			float bottom = boxsize * (y+1);
+			float left = boxSize * x;
+			float top = boxSize * y;
+			float right = boxSize * (x+1);
+			float bottom = boxSize * (y+1);
 			canvas.drawRect(left,top,right,bottom,p);
 		}
-		
+
 		// Draw grid
 		p.setARGB(255,0,0,0);
-		for(float i=0;i<=width;i+=boxsize) {
+		for(float i=0;i<=width;i+=boxSize) {
 			canvas.drawLine(i,0,i,width,p);
 			canvas.drawLine(0,i,width,i,p);
 		}
 
 		p.setARGB(255,0,0,0);
-		p.setTextSize(boxsize-20);
+		p.setTextSize(boxSize-20);
 		p.setTextAlign(Paint.Align.CENTER);
 
 		p.setTypeface(Typeface.MONOSPACE);
 		for(int x=0;x<board.getWidth();x++) {
 			for(int y=0;y<board.getWidth();y++) {
 				String txt = board.elementAt(x,y);
-				canvas.drawText(txt,x*boxsize+boxsize/2,
-					-10+(y+1)*boxsize,p);
+				canvas.drawText(txt,x*boxSize+boxSize/2,
+					-10+(y+1)*boxSize,p);
 			}
 		}
 
@@ -101,18 +97,8 @@ public class BoardView extends View {
 
 	@Override
 	protected void onMeasure (int wSpec, int hSpec) {
-
-		Log.d(TAG,"onMeasure:h:mode:"+MeasureSpec.getMode(wSpec));
-		Log.d(TAG,"onMeasure:h:size:"+MeasureSpec.getSize(wSpec));
-
-		Log.d(TAG,"onMeasure:w:mode:"+MeasureSpec.getMode(hSpec));
-		Log.d(TAG,"onMeasure:w:size:"+MeasureSpec.getSize(hSpec));
-
-		int side = Math.min(MeasureSpec.getSize(wSpec),
-			MeasureSpec.getSize(hSpec));
-
+		int side = Math.min(MeasureSpec.getSize(wSpec), MeasureSpec.getSize(hSpec));
 		setMeasuredDimension(side,side);
-		
 	}
 
 	public void setBoard(Board b) {
@@ -122,7 +108,4 @@ public class BoardView extends View {
 	public void highlight(int h) {
 		highlighted = h;
 	}
-
 }
-
-

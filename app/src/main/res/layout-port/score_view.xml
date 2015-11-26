@@ -20,13 +20,13 @@
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_weight="1.0"
-				android:textSize="24px"
+				android:textSize="24sp"
 				android:textColor="#ff000000"
 				android:text="Total Score:" />
 			<TextView android:id="@+id/score_points"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textSize="24px"
+				android:textSize="24sp"
 				android:textColor="#ff000000"
 				android:text="" />
 		</LinearLayout>
@@ -40,13 +40,13 @@
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_weight="1.0"
-				android:textSize="24px"
+				android:textSize="24sp"
 				android:textColor="#ff000000"
 				android:text="Total Words:" />
 			<TextView android:id="@+id/score_words"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textSize="24px"
+				android:textSize="24sp"
 				android:textColor="#ff000000"
 				android:text="" />
 		</LinearLayout>
