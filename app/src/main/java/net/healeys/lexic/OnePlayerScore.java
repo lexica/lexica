@@ -56,12 +56,12 @@ public class OnePlayerScore extends TabActivity {
      	super.onCreate(savedInstanceState);
 
 		if(savedInstanceState != null) {
-			game = new Game(this, savedInstanceState);
+			game = new Game(this, new GameSaverTransient(savedInstanceState));
 
 		} else {
 			Intent intent = getIntent();
 			Bundle bun = intent.getExtras();
-			game = new Game(this,bun);
+			game = new Game(this,new GameSaverTransient(bun));
 		}
 		game.initializeDictionary();
 
@@ -137,7 +137,7 @@ public class OnePlayerScore extends TabActivity {
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
-		game.save(outState);
+		game.save(new GameSaverTransient(outState));
 	}
 
 	private ViewGroup initializeScrollView(int resId) {

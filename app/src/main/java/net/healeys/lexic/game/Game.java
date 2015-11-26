@@ -22,11 +22,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
+import net.healeys.lexic.GameSaver;
 import net.healeys.lexic.R;
 import net.healeys.lexic.Synchronizer;
 import net.healeys.trie.CompressedTrie;
@@ -86,7 +85,8 @@ public class Game implements Synchronizer.Counter {
 	private SoundPool mSoundPool;
 	private int[] soundIds;
 
-	public Game(Context c,SharedPreferences prefs) {
+	public Game(Context c, GameSaver saver) {
+
 		status = GameStatus.GAME_STARTING;
 		wordCount = 0;
 
@@ -94,74 +94,30 @@ public class Game implements Synchronizer.Counter {
 		loadPreferences(c);
 
 		try {
-			switch(prefs.getInt("boardSize",16)) {
+			switch(saver.readBoardSize()) {
 				case 16:
-					setBoard(new FourByFourBoard(safeSplit(prefs.getString("gameBoard", null), ",")));
-				break;
+					setBoard(new FourByFourBoard(saver.readGameBoard()));
+					break;
 				case 25:
-					setBoard(new FiveByFiveBoard(safeSplit(prefs.getString("gameBoard", null), ",")));
-				break;
+					setBoard(new FiveByFiveBoard(saver.readGameBoard()));
+					break;
 			}
 
-			timeRemaining = prefs.getInt("timeRemaining",0);
+			maxTimeRemaining = saver.readMaxTimeRemaining();
+			timeRemaining = saver.readTimeRemaining();
 			maxTime = timeRemaining;
-			maxTimeRemaining = prefs.getInt("maxTimeRemaining",18000);
-	
-			// Correct the time remaining.
-			String[] wordArray = safeSplit(prefs.getString("words", null), ",");
+			start = saver.readStart();
+
+			String[] wordArray = saver.readWords();
 			wordList = new LinkedList<>();
 			wordsUsed = new LinkedHashSet<>();
 			for (String word : wordArray) {
 				wordList.add(word);
 				wordsUsed.add(word);
 			}
-			wordCount = prefs.getInt("wordCount", 0);
+			wordCount = saver.readWordCount();
 
-			status = GameStatus.GAME_STARTING;
-
-		} catch (Exception e) {
-			Log.e(TAG,"Error Restoring Saved Game",e);
-			status = GameStatus.GAME_FINISHED;
-		}
-	}
-
-	public Game (Context c,Bundle bun) {
-		status = GameStatus.GAME_STARTING;
-		wordCount = 0;
-
-		context = c;
-		loadPreferences(c);
-
-		Log.d(TAG, "bun.getString(\"gameBoard\")" + bun.getString("gameBoard"));
-
-		try {
-			switch(bun.getInt("boardSize",16)) {
-				case 16:
-					setBoard(new FourByFourBoard(safeSplit(bun.getString("gameBoard"), ",")));
-				break;
-				case 25:
-					setBoard(new FiveByFiveBoard(safeSplit(bun.getString("gameBoard"), ",")));
-				break;
-			}
-
-			maxTimeRemaining = bun.getInt("maxTimeRemaining",18000);
-			timeRemaining = bun.getInt("timeRemaining",0);
-			maxTime = timeRemaining;
-			start = new Date();
-
-			// Correct the time remaining.
-			String[] wordArray = safeSplit(bun.getString("words"), ",");
-			wordList = new LinkedList<>();
-			wordsUsed = new LinkedHashSet<>();
-			for (String word : wordArray) {
-				wordList.add(word);
-				wordsUsed.add(word);
-			}
-			wordCount = bun.getInt("wordCount",0);
-
-			status = GameStatus.valueOf(bun.getString("status"));
-			Log.d(TAG,"status:"+status);
-
+			status = saver.readStatus();
 		} catch (Exception e) {
 			Log.e(TAG,"Error Restoring Saved Game",e);
 			status = GameStatus.GAME_FINISHED;
@@ -192,10 +148,6 @@ public class Game implements Synchronizer.Counter {
 
 		wordsUsed = new LinkedHashSet<>();
 
-	}
-
-	private static String[] safeSplit(@Nullable String string, String separator) {
-		return string == null ? new String[] {} : string.split(separator);
 	}
 
 	private void initSoundPool(Context c) {
@@ -297,30 +249,16 @@ public class Game implements Synchronizer.Counter {
 		}
 	}
 
-	public void save(SharedPreferences.Editor editor) {
-		editor.putInt("boardSize", board.getSize());
-
-		editor.putString("gameBoard", board.toString());
-		editor.putInt("timeRemaining", timeRemaining);
-		editor.putInt("maxTimeRemaining", getMaxTimeRemaining());
-		editor.putString("words", wordListToString());
-		editor.putInt("wordCount", wordCount);
-
-		editor.putBoolean("activeGame", true);
-	}
-
-	public void save(Bundle bun) {
-		bun.putInt("boardSize",board.getSize());
-
-		bun.putString("gameBoard",board.toString());
-		bun.putInt("timeRemaining",timeRemaining);
-		bun.putInt("maxTimeRemaining",getMaxTimeRemaining());
-		bun.putString("words",wordListToString());
-		bun.putInt("wordCount",wordCount);
-		bun.putLong("startTime",start.getTime());
-		bun.putString("status",status.toString());
-
-		bun.putBoolean("activeGame",true);
+	public void save(GameSaver saver) {
+		saver.save(
+				board,
+				timeRemaining,
+				getMaxTimeRemaining(),
+				wordListToString(),
+				wordCount,
+				start,
+				status
+		);
 	}
 
 	public void start() {

@@ -104,10 +104,7 @@ public class Lexic extends Activity {
 	}
 
 	public boolean savedGame() {
-		SharedPreferences prefs = getSharedPreferences("prefs_game_file",
-			MODE_PRIVATE);
-
-		return prefs.getBoolean("activeGame",false);
+		return new GameSaverPersistent(this).hasSavedGame();
 	}
 
 	@Override

@@ -44,7 +44,14 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 			try {
 				restoreGame(savedInstanceState);
 			} catch (Exception e) {
-				Log.e(TAG,"error restoring state",e);
+				// On API < 11, the above should work fine because onSaveInstanceState should be
+				// called before onPause. However, on API >= 11, onPause is always called _before_
+				// onSaveInstanceState. In these cases, we will have to resort to the preferences
+				// in order to restore our game (http://stackoverflow.com/a/28549669).
+				Log.e(TAG,"error restoring state from savedInstanceState, trying to look for saved game in preferences",e);
+				if (hasSavedGame()) {
+					restoreGame();
+				}
 			}
 			return;
 		}
@@ -114,15 +121,13 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 	}
 
 	private void restoreGame() {
-		SharedPreferences prefs = getSharedPreferences("prefs_game_file",MODE_PRIVATE);
 		clearSavedGame();
-		game = new Game(this,prefs);
+		game = new Game(this, new GameSaverPersistent(this));
 		restoreGame(game);
 	}
 
 	private void restoreGame(Bundle bun) {
-		game = new Game(this,bun);
-
+		game = new Game(this,new GameSaverTransient(bun));
 		restoreGame(game);
 	}
 
@@ -147,12 +152,9 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 
 	private void saveGame() {
 		if(game.getStatus() == Game.GameStatus.GAME_RUNNING) {
-			SharedPreferences prefs = getSharedPreferences("prefs_game_file", MODE_PRIVATE);
 			game.pause();
 
-			SharedPreferences.Editor preferenceEditor = prefs.edit();
-			game.save(preferenceEditor);
-			preferenceEditor.commit();
+			game.save(new GameSaverPersistent(this));
 
 		}
 	}
@@ -160,7 +162,7 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 	private void saveGame(Bundle state) {
 		if(game.getStatus() == Game.GameStatus.GAME_RUNNING) {
 			game.pause();
-			game.save(state);
+			game.save(new GameSaverTransient(state));
 		}
 	}
 
@@ -193,13 +195,12 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 		score();
 	}
 
+	private boolean hasSavedGame() {
+		return new GameSaverPersistent(this).hasSavedGame();
+	}
+
 	private void clearSavedGame() {
-		SharedPreferences prefs = getSharedPreferences("prefs_game_file",MODE_PRIVATE);
-
-		SharedPreferences.Editor editor = prefs.edit();
-		editor.putBoolean("activeGame",false);
-		editor.commit();
-
+		new GameSaverPersistent(this).clearSavedGame();
 	}
 
 	private void score() {
@@ -207,7 +208,7 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 		clearSavedGame();
 
 		Bundle bun = new Bundle();
-		game.save(bun);
+		game.save(new GameSaverTransient(bun));
 
 		Intent scoreIntent = new Intent("net.healeys.lexic.action.SCORE");
 		scoreIntent.putExtras(bun);
