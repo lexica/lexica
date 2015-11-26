@@ -17,6 +17,7 @@
 
 package net.healeys.lexic.view;
 
+import net.healeys.lexic.R;
 import net.healeys.lexic.game.Game;
 import net.healeys.lexic.Synchronizer;
 
@@ -24,7 +25,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.KeyEvent;
@@ -32,10 +32,12 @@ import android.view.KeyEvent;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-public class LexicView extends View implements Synchronizer.Event,
-	Game.RotateHandler {
+public class LexicView extends View implements Synchronizer.Event, Game.RotateHandler {
+
+	@SuppressWarnings("unused")
 	protected static final String TAG = "LexicView";
-	public static final int PADDING = 10;
+
+	public final int paddingSize;
 	public static final int REDRAW_FREQ = 10;
 
 	private final FingerTracker mFingerTracker;
@@ -48,6 +50,10 @@ public class LexicView extends View implements Synchronizer.Event,
 	private int height;
 	private int gridsize;
 	private float boxsize;
+
+	private final int textSizeSmall;
+	private final int textSizeNormal;
+	private final int textSizeLarge;
 
 	private final int boardWidth;
 	private String currentWord;
@@ -66,6 +72,11 @@ public class LexicView extends View implements Synchronizer.Event,
 		timeRemaining = 0;
 		redrawCount = 1;
 
+		paddingSize = getResources().getDimensionPixelSize(R.dimen.padding);
+		textSizeSmall = getResources().getDimensionPixelSize(R.dimen.textSizeSmall);
+		textSizeNormal = getResources().getDimensionPixelSize(R.dimen.textSizeNormal);
+		textSizeLarge = getResources().getDimensionPixelSize(R.dimen.textSizeLarge);
+
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
 		p.setAntiAlias(true);
@@ -77,25 +88,21 @@ public class LexicView extends View implements Synchronizer.Event,
 	}
 
 	private void setDimensions(int w, int h) {
-		// Log.d(TAG,"setDimensions:"+w+","+h);
-
 		width = w;
 		height = h;
 
-		gridsize = Math.min(width,height) - 2*PADDING;
+		gridsize = Math.min(width,height) - 2* paddingSize;
 		boxsize = ((float) gridsize) / boardWidth;
 
-		// Log.d(TAG,"gridsize:"+gridsize);
-
 		if(mFingerTracker != null) {
-			mFingerTracker.boundBoard(PADDING+gridsize,PADDING+gridsize);
+			mFingerTracker.boundBoard(paddingSize +gridsize, paddingSize +gridsize);
 		}
 	}
 
 	private void drawBoard(Canvas canvas) {
 		// Draw white box
-		p.setARGB(255,255,255,255);
-		canvas.drawRect(PADDING,PADDING,gridsize+PADDING,gridsize+PADDING,p);
+		p.setARGB(255, 255, 255, 255);
+		canvas.drawRect(paddingSize, paddingSize, gridsize + paddingSize, gridsize + paddingSize, p);
 
 		// Draw touched boxes
 		p.setARGB(255,255,255,0);
@@ -103,30 +110,30 @@ public class LexicView extends View implements Synchronizer.Event,
 			if(((1<<i)&highlighted) == 0) continue;
 			int x = i % game.getBoard().getWidth();
 			int y = i / game.getBoard().getWidth();
-			float left = PADDING + boxsize * x;
-			float top = PADDING + boxsize * y;
-			float right = PADDING + boxsize * (x+1);
-			float bottom = PADDING + boxsize * (y+1);
-			canvas.drawRect(left,top,right,bottom,p);
+			float left = paddingSize + boxsize * x;
+			float top = paddingSize + boxsize * y;
+			float right = paddingSize + boxsize * (x+1);
+			float bottom = paddingSize + boxsize * (y+1);
+			canvas.drawRect(left, top, right, bottom, p);
 		}
 
 		// Draw grid
 		p.setARGB(255,0,0,0);
-		for(float i=PADDING;i<=PADDING+gridsize;i+=boxsize) {
-			canvas.drawLine(i,PADDING,i,gridsize+PADDING,p);
-			canvas.drawLine(PADDING,i,gridsize+PADDING,i,p);
+		for(float i= paddingSize;i<= paddingSize +gridsize;i+=boxsize) {
+			canvas.drawLine(i, paddingSize,i,gridsize+ paddingSize,p);
+			canvas.drawLine(paddingSize,i,gridsize+ paddingSize,i,p);
 		}
 
-		p.setARGB(255,0,0,0);
-		p.setTextSize(boxsize-20);
+		p.setARGB(255, 0, 0, 0);
+		p.setTextSize(boxsize-textSizeNormal);
 		p.setTextAlign(Paint.Align.CENTER);
 
 		p.setTypeface(Typeface.MONOSPACE);
 		for(int x=0;x<boardWidth;x++) {
 			for(int y=0;y<boardWidth;y++) {
 				String txt = game.getBoard().elementAt(x,y);
-				canvas.drawText(txt,PADDING+x*boxsize+boxsize/2,
-					PADDING-10+(y+1)*boxsize,p);
+				canvas.drawText(txt, paddingSize +x*boxsize+boxsize/2,
+					paddingSize -10+(y+1)*boxsize,p);
 			}
 		}
 
@@ -141,35 +148,38 @@ public class LexicView extends View implements Synchronizer.Event,
 			p.setARGB(255,0,255,0);
 		}
 		for(int i=0;i<5;i++) {
-			canvas.drawLine(0,i,width*timeRemaining/game.getMaxTimeRemaining(),
-				i,p);
+			canvas.drawLine(0,i,width*timeRemaining/game.getMaxTimeRemaining(),i,p);
 		}
 	}
 
-	private void drawWordCount(Canvas canvas, int left, int top) {
+	private int drawWordCount(Canvas canvas, int left, int top) {
 		p.setTypeface(Typeface.SANS_SERIF);
-		p.setARGB(255,0,0,0);
-		
-		p.setTextSize(30);
-		canvas.drawText(""+game.getWordCount()+"/"+game.getMaxWordCount(),
-			left,top,p);
+		p.setARGB(255, 0, 0, 0);
 
-		p.setTextSize(20);
-		canvas.drawText("WORDS",left,top+20,p);
+		int topOfCount = top + paddingSize;
+		p.setTextSize(textSizeLarge);
+		canvas.drawText("" + game.getWordCount() + "/" + game.getMaxWordCount(), left, topOfCount, p);
+
+		int topOfStaticText = topOfCount + textSizeNormal;
+
+		p.setTextSize(textSizeNormal);
+		canvas.drawText("WORDS",left,topOfStaticText,p);
+
+		return topOfStaticText + textSizeNormal;
 	}
 
 	private void drawWordList(Canvas canvas, int left, int top, int bottom) {
 		// draw current word
-		p.setTextSize(20);
+		p.setTextSize(textSizeNormal);
 		p.setARGB(255,0,0,0);
 		if(currentWord != null) {
 			canvas.drawText(currentWord,left,top,p);
 		}
 
 		// draw words
-		int pos = top+20;
+		int pos = top+textSizeNormal;
 		ListIterator<String> li = game.listIterator();
-		p.setTextSize(16);
+		p.setTextSize(textSizeSmall);
 
 		while(li.hasNext() && pos < bottom) {
 			String w = li.next();
@@ -179,11 +189,11 @@ public class LexicView extends View implements Synchronizer.Event,
 				p.setARGB(255,255,0,0);
 			}
 			canvas.drawText(w,left,pos,p);
-			pos += 16;
+			pos += textSizeSmall;
 		}
 	}
 
-	private void drawTextTimer(Canvas canvas, int left, int top) {
+	private int drawTextTimer(Canvas canvas, int left, int top) {
 		if(timeRemaining < 1000) {
 			p.setARGB(255,255,0,0);
 		} else if (timeRemaining < 3000) {
@@ -203,48 +213,50 @@ public class LexicView extends View implements Synchronizer.Event,
 			time += ""+ (secRemaining % 60);
 		}
 
-		p.setTextSize(30);
+		p.setTextSize(textSizeLarge);
 		canvas.drawText(time,left,top,p);
+
+		return top + textSizeLarge;
 	}
 
 	private void drawScoreLandscape(Canvas canvas) {
-		int textareatop = PADDING;
-		int textareaheight = height - 2*PADDING;
-		int textarealeft = 2*PADDING + gridsize;
-		int textareawidth = width - PADDING - textarealeft;
-	
-		drawWordCount(canvas,textarealeft + textareawidth/2,
-			textareatop+30);
-		
-		drawWordList(canvas, textarealeft + textareawidth/2, textareatop+110,
-			textareatop+textareaheight);
+		int textAreaTop = paddingSize;
+		int textAreaHeight = height - 2*paddingSize;
+		int textAreaLeft = 2*paddingSize + gridsize;
+		int textAreaWidth = width - paddingSize - textAreaLeft;
 
-		drawTextTimer(canvas,textarealeft + textareawidth/2,textareatop+80);
+		int paddedLeft = textAreaLeft + textAreaWidth / 2;
+
+		int bottomOfTimer = drawWordCountAndTimer(canvas, paddedLeft, textAreaTop);
+		drawWordList(canvas, paddedLeft, bottomOfTimer + paddingSize,textAreaTop + textAreaHeight);
 	}
 
 	private void drawScorePortrait(Canvas canvas) {
-		int textareatop = 2*PADDING + gridsize;
-		int textareaheight = height - PADDING - textareatop;
-		int textarealeft = PADDING;
-		int textareawidth = width - 2*PADDING;
+		int textAreaTop = 2 * paddingSize + gridsize;
+		int textAreaHeight = height - paddingSize - textAreaTop;
+		int textAreaLeft = paddingSize;
+		int textAreaWidth = width - 2* paddingSize;
 
 		p.setTypeface(Typeface.SANS_SERIF);
 
-		drawWordCount(canvas,textarealeft + textareawidth/4,
-			textareatop+30);
-		
-		drawWordList(canvas, textarealeft + textareawidth*3/4, textareatop+20,
-			textareatop+textareaheight);
+		int paddedLeft = textAreaLeft + textAreaWidth / 4;
 
-		drawTextTimer(canvas,textarealeft + textareawidth/4,textareatop+80);
+		drawWordCountAndTimer(canvas, paddedLeft, textAreaTop);
+		drawWordList(canvas, textAreaLeft + textAreaWidth * 3 / 4, textAreaTop + textSizeNormal,textAreaTop+textAreaHeight);
 
+	}
+
+	private int drawWordCountAndTimer(Canvas canvas, int left, int top) {
+		int paddedTop = top + paddingSize * 3;
+		int bottomOfWordCount = drawWordCount(canvas, left, paddedTop);
+
+		int topOfTimer = bottomOfWordCount + paddingSize;
+		return drawTextTimer(canvas, left, topOfTimer);
 	}
 
 	@Override
 	public void onDraw(Canvas canvas) {
-		// Log.d(TAG,"onDraw starts, canvas="+canvas);
 		setDimensions(getMeasuredWidth(),getMeasuredHeight());
-		// Log.d(TAG, "onDraw:"+width+","+height);
 
 		canvas.drawRGB(0x99,0xcc,0xff);
 
@@ -258,12 +270,10 @@ public class LexicView extends View implements Synchronizer.Event,
 		} else {
 			drawScorePortrait(canvas);
 		}
-		// Log.d(TAG,"onDraw stops");
 	}
 
 	@Override 
 	public boolean onTouchEvent(MotionEvent event) {
-		// Log.d(TAG,"onTouchEvent() starts");
 		if(mFingerTracker == null) return false;
 		int action = event.getAction();
 		switch(action) {
@@ -277,28 +287,22 @@ public class LexicView extends View implements Synchronizer.Event,
 		}
 
 		redraw();
-		// Log.d(TAG,"onTouchEvent() ends");
 		return true;
 	}
 
 	@Override
 	public boolean onKeyDown (int keyCode, KeyEvent event) {
 		if(keyCode >= KeyEvent.KEYCODE_A && keyCode <= KeyEvent.KEYCODE_Z) {
-			Log.d(TAG,"Letter Press:"+keyCode);
 			mKeyboardTracker.processLetter(keyCode-KeyEvent.KEYCODE_A);
 		} else if (keyCode == KeyEvent.KEYCODE_SPACE || 
 			keyCode == KeyEvent.KEYCODE_ENTER) { 
-			Log.d(TAG,"Enter or Space:"+keyCode);
 			mKeyboardTracker.reset();
-		} else {
-			Log.d(TAG,"Ignoring Key:"+keyCode);
 		}
 
 		return false;
 	}
 
 	public void redraw() {
-		// Log.d(TAG,"redraw()");
 		redrawCount = REDRAW_FREQ;
 		invalidate();
 	}
@@ -346,7 +350,6 @@ public class LexicView extends View implements Synchronizer.Event,
 		}
 
 		private void reset() {
-			// Log.d(TAG,"RESET");
 			for(int i=0;i<touched.length;i++) {
 				touched[i] = -1;
 			}
@@ -397,17 +400,13 @@ public class LexicView extends View implements Synchronizer.Event,
 		private void touchBox(int x, int y) {
 			int box = x+boardWidth*y;
 			mKeyboardTracker.reset();
-			
-			// Log.d(TAG,"Box:"+x+","+y+"="+box);
-			
+
 			if(touching < 0) {
 				touching = (byte) box;
 				countTouch();
 			} else if(touching != box && canTouch(box)) {
 				touching = (byte) box;
 			}
-
-			// Log.d(TAG,"Touching:"+touching);
 		}
 
 		private boolean nearCenter(int x, int y, int bx, int by) {
@@ -422,8 +421,8 @@ public class LexicView extends View implements Synchronizer.Event,
 		}
 
 		void boundBoard(int w, int h) {
-			left = PADDING;
-			top = PADDING;
+			left = paddingSize;
+			top = paddingSize;
 			width = w;
 			height = h;
 
@@ -450,8 +449,6 @@ public class LexicView extends View implements Synchronizer.Event,
 				game.addWord(s);
 				currentWord = null;
 			}
-
-			// Log.d(TAG,s);
 
 			reset();
 		}
@@ -499,8 +496,6 @@ public class LexicView extends View implements Synchronizer.Event,
 
 			if(((1<<letter)&acceptableKeys)==0) return;
 
-			Log.d(TAG,"acceptableKeys:"+acceptableKeys);
-
 			LinkedList<State> subStates = new LinkedList<>();
 			acceptableKeys = 0;
 			ListIterator<State> iter = states.listIterator();
@@ -543,8 +538,7 @@ public class LexicView extends View implements Synchronizer.Event,
 				for(int i=0;i<game.getBoard().getSize();i++) {
 					int posbit = 1<<i;
 					if((posbit&possible)==0) continue;
-					possibleStates.add(new State(game.getBoard().valueAt(i),
-						i,selected|posbit));
+					possibleStates.add(new State(game.getBoard().valueAt(i),i,selected|posbit));
 					ret |= 1<<game.getBoard().valueAt(i);
 				}
 

@@ -37,13 +37,10 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 	private Synchronizer synch;
 	private Game game;
 
-	/** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-     	super.onCreate(savedInstanceState);
-		Log.d(TAG,"onCreate");
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 		if(savedInstanceState != null) {
-			Log.d(TAG,"restoring instance state");
 			try {
 				restoreGame(savedInstanceState);
 			} catch (Exception e) {
@@ -55,15 +52,10 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 			String action = getIntent().getAction();
 			switch (action) {
 				case "net.healeys.lexic.action.RESTORE_GAME":
-					Log.d(TAG, "restoring game");
 					restoreGame();
 					break;
 				case "net.healeys.lexic.action.NEW_GAME":
-					Log.d(TAG, "starting new game");
 					newGame();
-					break;
-				default:
-					Log.d(TAG, "Whoa there, friend!");
 					break;
 			}
 		} catch (Exception e) {
@@ -73,17 +65,13 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Log.d(TAG,"onCreateOptionsMenu");
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.game_menu, menu);
-
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Log.d(TAG,"onOptionsItemSelected");
-		
 		switch(item.getItemId()) {
 			case R.id.rotate:
 				game.rotateBoard();	
@@ -106,10 +94,8 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 
 	private void newGame() {
 		game = new Game(this);
-		Log.d(TAG,"created game");
 
 		LexicView lv = new LexicView(this,game);
-		Log.d(TAG,"created view="+lv);
 
 		if(synch != null) {
 			synch.abort();
@@ -125,19 +111,12 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 		setContentView(lv,lp);
 		lv.setKeepScreenOn(true);
 		lv.setFocusableInTouchMode(true);
-
-		// Log.d(TAG,"set view");
-		// Log.d(TAG,"newGame ends");
 	}
 
 	private void restoreGame() {
-		SharedPreferences prefs = getSharedPreferences("prefs_game_file",
-			MODE_PRIVATE);
-
+		SharedPreferences prefs = getSharedPreferences("prefs_game_file",MODE_PRIVATE);
 		clearSavedGame();
-
 		game = new Game(this,prefs);
-
 		restoreGame(game);
 	}
 
@@ -148,11 +127,7 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 	}
 
 	private void restoreGame(Game game) {
-
-		Log.d(TAG,"restored game");
-
 		LexicView lv = new LexicView(this,game);
-		Log.d(TAG,"created view="+lv);
 
 		if(synch != null) {
 			synch.abort();
@@ -168,17 +143,11 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 		setContentView(lv,lp);
 		lv.setKeepScreenOn(true);
 		lv.setFocusableInTouchMode(true);
-
-		// Log.d(TAG,"set view");
-
-		// Log.d(TAG,"restoreGame ends");
 	}
 
 	private void saveGame() {
 		if(game.getStatus() == Game.GameStatus.GAME_RUNNING) {
-			// Log.d(TAG,"Saving");
-			SharedPreferences prefs = getSharedPreferences(
-					"prefs_game_file", MODE_PRIVATE);
+			SharedPreferences prefs = getSharedPreferences("prefs_game_file", MODE_PRIVATE);
 			game.pause();
 
 			SharedPreferences.Editor preferenceEditor = prefs.edit();
@@ -190,7 +159,6 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 
 	private void saveGame(Bundle state) {
 		if(game.getStatus() == Game.GameStatus.GAME_RUNNING) {
-			// Log.d(TAG,"Saving");
 			game.pause();
 			game.save(state);
 		}
@@ -198,33 +166,27 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 
 	public void onPause() {
 		super.onPause();
-		Log.d(TAG,"Pausing");
 		synch.abort();
 		saveGame();
 	}
 
 	public void onResume() {
 		super.onResume();
-		Log.d(TAG,"onResume:"+game+","+synch);
 		if(game == null) newGame();
 
 		switch(game.getStatus()) {
 			case GAME_STARTING:
-				Log.d(TAG,"onResume: GAME_STARTING");
 				game.start();
 				synch.start();
 			break;
 			case GAME_PAUSED:
-				Log.d(TAG,"onResume: GAME_PAUSED");
 				game.unpause();
 				synch.start();
 			break;
 			case GAME_FINISHED:
-				Log.d(TAG,"onResume: GAME_FINISHED");
 				score();
 			break;
 		}
-		Log.d(TAG,"onResume finished");
 	}
 
 	public void doFinalEvent() {
@@ -232,8 +194,7 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 	}
 
 	private void clearSavedGame() {
-		SharedPreferences prefs = getSharedPreferences("prefs_game_file",
-			MODE_PRIVATE);
+		SharedPreferences prefs = getSharedPreferences("prefs_game_file",MODE_PRIVATE);
 
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putBoolean("activeGame",false);
@@ -242,8 +203,6 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 	}
 
 	private void score() {
-		// Log.d(TAG,"Finishing");
-
 		synch.abort();
 		clearSavedGame();
 
@@ -258,20 +217,9 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 		finish();
 	}
 
-	public void onStop() {
-		super.onStop();
-		// Log.d(TAG,"onStop()");
-	}
-
-	public void onDestroy() {
-		super.onDestroy();
-		// Log.d(TAG,"onDestroy()"+isFinishing());
-	}
-
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
-		Log.d(TAG,"onSaveInstanceState");
 		saveGame(outState);
 	}
 
