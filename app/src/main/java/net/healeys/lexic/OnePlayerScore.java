@@ -17,10 +17,6 @@
 
 package net.healeys.lexic;
 
-import net.healeys.lexic.game.Game;
-import net.healeys.lexic.view.BoardView;
-import net.healeys.trie.Trie;
-
 import android.app.TabActivity;
 import android.content.Intent;
 import android.net.Uri;
@@ -36,10 +32,12 @@ import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-import java.util.regex.Pattern;
+import net.healeys.lexic.game.Game;
+import net.healeys.lexic.view.BoardView;
+import net.healeys.trie.Trie;
+
 import java.util.Iterator;
 import java.util.Set;
-import java.util.LinkedHashMap;
 
 public class OnePlayerScore extends TabActivity {
 
@@ -85,7 +83,7 @@ public class OnePlayerScore extends TabActivity {
 		ViewGroup missedVG = initializeScrollView(R.id.missed_scroll);
 
 		int score = 0;
-		int max_score = 0;
+		int max_score;
 		int words = 0;
 		int max_words = possible.size();
 
@@ -115,10 +113,10 @@ public class OnePlayerScore extends TabActivity {
 		}
 
 		TextView t = (TextView) findViewById(R.id.score_points);
-		t.setText(""+score+"/"+max_score);
+		t.setText(score+"/"+max_score);
 
 		t = (TextView) findViewById(R.id.score_words);
-		t.setText(""+words+"/"+max_words);
+		t.setText(words+"/"+max_words);
 
 		Button b = (Button) findViewById(R.id.close_score);
 		b.setOnClickListener(new View.OnClickListener() {
@@ -165,7 +163,7 @@ public class OnePlayerScore extends TabActivity {
 			ViewGroup.LayoutParams.WRAP_CONTENT,
 			(float) 1.0);
 		TextView tv1 = new TextView(this);
-		tv1.setGravity(Gravity.LEFT);
+		tv1.setGravity(Gravity.START);
 		tv1.setLayoutParams(text1Lp);
 		tv1.setTextSize(16);
 		tv1.setTextColor(color);
@@ -175,11 +173,11 @@ public class OnePlayerScore extends TabActivity {
 			ViewGroup.LayoutParams.WRAP_CONTENT,
 			ViewGroup.LayoutParams.WRAP_CONTENT);
 		TextView tv2 = new TextView(this);
-		tv2.setGravity(Gravity.RIGHT);
+		tv2.setGravity(Gravity.END);
 		tv2.setLayoutParams(text2Lp);
 		tv2.setTextSize(16);
 		tv2.setTextColor(color);
-		tv2.setText(""+points+" ");
+		tv2.setText(points+" ");
 
 		LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.HORIZONTAL);
@@ -188,7 +186,7 @@ public class OnePlayerScore extends TabActivity {
 
 		if(link) {
 			TextView tv3 = new TextView(this);
-			tv3.setGravity(Gravity.RIGHT);
+			tv3.setGravity(Gravity.END);
 			tv3.setLayoutParams(text2Lp);
 			tv3.setTextSize(16);
 			tv3.setTextColor(0xff000000);
@@ -219,7 +217,7 @@ public class OnePlayerScore extends TabActivity {
 			ViewGroup.LayoutParams.WRAP_CONTENT,
 			(float) 1.0);
 		TextView tv1 = new TextView(this);
-		tv1.setGravity(Gravity.LEFT);
+		tv1.setGravity(Gravity.START);
 		tv1.setLayoutParams(text1Lp);
 		tv1.setTextSize(16);
 		tv1.setTextColor(0xff000000);
@@ -231,7 +229,7 @@ public class OnePlayerScore extends TabActivity {
 
 		// The Word Highlighting Link
 		TextView tv2 = new TextView(this);
-		tv2.setGravity(Gravity.RIGHT);
+		tv2.setGravity(Gravity.END);
 		tv2.setLayoutParams(text2Lp);
 		tv2.setTextSize(16);
 		tv2.setTextColor(0xff000000);
@@ -243,7 +241,7 @@ public class OnePlayerScore extends TabActivity {
 
 		// The Definition Link
 		TextView tv3 = new TextView(this);
-		tv3.setGravity(Gravity.RIGHT);
+		tv3.setGravity(Gravity.END);
 		tv3.setLayoutParams(text2Lp);
 		tv3.setTextSize(16);
 		tv3.setTextColor(0xff000000);
@@ -254,7 +252,7 @@ public class OnePlayerScore extends TabActivity {
 
 		// Padding between the links
 		TextView padding = new TextView(this);
-		padding.setGravity(Gravity.RIGHT);
+		padding.setGravity(Gravity.END);
 		padding.setLayoutParams(text2Lp);
 		padding.setTextSize(16);
 		padding.setText("        ");
@@ -270,8 +268,8 @@ public class OnePlayerScore extends TabActivity {
 	}
 
 	private class HighlighterListener implements View.OnClickListener {
-		private int mask;
-		private View parentView;
+		private final int mask;
+		private final View parentView;
 
 		private HighlighterListener(int mask, View parentView) {
 			this.mask = mask;
@@ -292,7 +290,7 @@ public class OnePlayerScore extends TabActivity {
 	}
 
 	private class DefinerListener implements View.OnClickListener {
-		String word;
+		final String word;
 
 		private DefinerListener(String word) {
 			this.word = word;

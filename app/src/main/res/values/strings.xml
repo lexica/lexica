@@ -24,16 +24,12 @@
 	are worth more points.  Proper nouns are not counted.\n\n
 	</string>
 
-	<string name="dialog_loading">Loading</string>
-
 	<string name="menu_rotate_board">Rotate Board</string>
 	<string name="menu_save_game">Save Game</string>
 	<string name="menu_end_game">Quit</string>
 	<string name="button_ok">OK</string>
 
 	<string name="about">About</string>
-
-	<string name="dialog_dict_select">Select Dictionary</string>
 
 	<string name="show_missed">Show Missed Words</string>
 	<string name="hide_missed">Hide Missed Words</string>

@@ -42,16 +42,11 @@ public class Trie implements WordFilter {
 	protected final TrieLeaf UK_WORD_LEAF;
 	protected final TrieLeaf DUAL_WORD_LEAF;
 
-	private int nodeCount;
-	private int tailCount;
-
 	protected TrieNode root;
 	
-	private static String TAG = "Trie";
+	private static final String TAG = "Trie";
 
 	public Trie() {
-		nodeCount = 0;
-
 		EMPTY_LEAF = new TrieLeaf();
 		US_WORD_LEAF = new TrieLeaf(US_WORD_BIT);
 		UK_WORD_LEAF = new TrieLeaf(UK_WORD_BIT);
@@ -103,8 +98,6 @@ public class Trie implements WordFilter {
 		TrieNode() {
 			childBits = 0;
 			children = new TrieNode[26];
-
-			nodeCount++;
 		}
 
 		TrieNode(int cBits) {
@@ -138,7 +131,6 @@ public class Trie implements WordFilter {
 				if((childBits & (1 << ci)) == 0) {
 					childBits |= 1 << ci;
 					children[ci] = EMPTY_LEAF;
-					tailCount += 1;
 				}
 				if(ci == 16) { // Q is always followed by U
 					children[ci] = children[ci].addSuffix(word,i+2,wordBits);
@@ -208,7 +200,6 @@ public class Trie implements WordFilter {
 				return processWordBits(childBits|wordBits);
 			} else {
 				TrieNode t = new TrieNode(childBits&(~LEAF_BIT));
-				tailCount -= 1;
 				return t.addSuffix(word,i,wordBits);
 			}
 		}
@@ -303,14 +294,9 @@ public class Trie implements WordFilter {
 
 	}
 
-	public LinkedHashMap<String,Solution> solver(TransitionMap m) {
-		return solver(m,null);
-	}
-
-	public LinkedHashMap<String,Solution> solver(TransitionMap m, 
+	public LinkedHashMap<String,Solution> solver(TransitionMap m,
 		WordFilter filter) {
-		LinkedHashMap<String,Solution> ret = 
-			new LinkedHashMap<String,Solution>();
+		LinkedHashMap<String,Solution> ret = new LinkedHashMap<>();
 		StringBuilder prefix = new StringBuilder(m.getSize()+1);
 
 		int unused = 0;
@@ -339,8 +325,8 @@ public class Trie implements WordFilter {
 	}
 
 	public class Solution {
-		private String word;
-		private int mask;
+		private final String word;
+		private final int mask;
 
 		private Solution(String word, int mask) {
 			Log.d(TAG,"Solution: "+word+" "+mask);

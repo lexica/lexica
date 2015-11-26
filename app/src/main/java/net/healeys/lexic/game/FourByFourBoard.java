@@ -17,14 +17,9 @@
 
 package net.healeys.lexic.game;
 
-import java.util.Vector;
-import java.util.ArrayList;
-import java.lang.Math;
-import android.util.Log;
-
 public class FourByFourBoard extends Board {
-	private static int SIZE = 16;
-	private static int WIDTH = 4; 
+	private static final int SIZE = 16;
+	private static final int WIDTH = 4;
 
 	private static final int transitionBits[] = {
 		0x32,0x75,0xea,0xc4,

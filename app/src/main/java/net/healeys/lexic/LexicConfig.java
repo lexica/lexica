@@ -22,9 +22,6 @@ import android.os.Bundle;
 
 public class LexicConfig extends PreferenceActivity {
 
-	private static final int DIALOG_DICT_PREF = 1;
-
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
        	super.onCreate(savedInstanceState);

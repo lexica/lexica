@@ -22,27 +22,15 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-
-import java.util.Iterator;
-import java.util.ListIterator;
 
 public class Lexic extends Activity {
 
+	@SuppressWarnings("unused")
 	protected static final String TAG = "Lexic";
 
 	private static final int DIALOG_NO_SAVED = 1;
@@ -124,7 +112,6 @@ public class Lexic extends Activity {
 	}
 
 	public boolean savedGame() {
-		Resources res = getResources();
 		SharedPreferences prefs = getSharedPreferences("prefs_game_file",
 			MODE_PRIVATE);
 
@@ -150,51 +137,4 @@ public class Lexic extends Activity {
 		return null;
 	}
 
-	private class DictListener implements DialogInterface.OnClickListener {
-		
-		private SharedPreferences prefs;
-		private int selected;
-		private int original;
-
-		public DictListener(SharedPreferences p) {
-			prefs = p;
-			if(prefs.getString("dict","US").equals("UK")) {
-				selected = 1;
-			} else {
-				selected = 0;
-			}
-			original = selected;
-		}
-
-		public void onClick(DialogInterface dialog,int whichButton) {
-			// Log.d(TAG,"whichButton:"+whichButton);
-			switch(whichButton) {
-				case -1:
-					SharedPreferences.Editor editor = prefs.edit();
-					switch(selected) {
-						case 0:
-							editor.putString("dict","US");
-						break;
-						case 1:
-							editor.putString("dict","UK");
-						break;
-					}
-					editor.commit();
-				break;
-				case -2:
-					selected = original;
-				break;
-				case 0: // US
-					selected = 0;
-				break;
-				case 1: // UK
-					selected = 1;
-				break;
-			}
-		}
-
-		public int getSelected() {
-			return selected;
-		}
-	}
 }

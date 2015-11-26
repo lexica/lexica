@@ -17,49 +17,27 @@
 
 package net.healeys.lexic;
 
-import net.healeys.lexic.game.Game;
-import net.healeys.lexic.view.LexicView;
-import net.healeys.lexic.view.VisibilityToggle;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.text.util.Linkify;
 import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
-import java.util.regex.Pattern;
-import java.util.Iterator;
-import java.util.ListIterator;
-import java.util.Set;
+import net.healeys.lexic.game.Game;
+import net.healeys.lexic.view.LexicView;
 
 public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 
 	protected static final String TAG = "PlayLexic";
 
-	public static final Pattern DEFINE_PAT = Pattern.compile("\\w+");
-	public static final String DEFINE_URL = 
-		"http://www.google.com/search?q=define%3a+";
-
 	private Synchronizer synch;
 	private Game game;
-	private Menu menu;
 
-    /** Called when the activity is first created. */
+	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
      	super.onCreate(savedInstanceState);
@@ -75,14 +53,18 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 		}
 		try {
 			String action = getIntent().getAction();
-			if(action.equals("net.healeys.lexic.action.RESTORE_GAME")) {
-				Log.d(TAG,"restoring game");
-				restoreGame();
-			} else if(action.equals("net.healeys.lexic.action.NEW_GAME")) {
-				Log.d(TAG,"starting new game");
-				newGame();
-			} else {
-				Log.d(TAG,"Whoa there, friend!");
+			switch (action) {
+				case "net.healeys.lexic.action.RESTORE_GAME":
+					Log.d(TAG, "restoring game");
+					restoreGame();
+					break;
+				case "net.healeys.lexic.action.NEW_GAME":
+					Log.d(TAG, "starting new game");
+					newGame();
+					break;
+				default:
+					Log.d(TAG, "Whoa there, friend!");
+					break;
 			}
 		} catch (Exception e) {
 			Log.e(TAG,"top level",e);
@@ -90,13 +72,10 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
     }
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu m) {
+	public boolean onCreateOptionsMenu(Menu menu) {
 		// Log.d(TAG,"onCreateOptionsMenu");
-		
-		menu = m;
-
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.game_menu,menu);
+		inflater.inflate(R.menu.game_menu, menu);
 
 		return true;
 	}
@@ -152,7 +131,6 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 	}
 
 	private void restoreGame() {
-		Resources res = getResources();
 		SharedPreferences prefs = getSharedPreferences("prefs_game_file",
 			MODE_PRIVATE);
 
@@ -200,9 +178,13 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 		if(game.getStatus() == Game.GameStatus.GAME_RUNNING) {
 			// Log.d(TAG,"Saving");
 			SharedPreferences prefs = getSharedPreferences(
-				 "prefs_game_file", MODE_PRIVATE);
+					"prefs_game_file", MODE_PRIVATE);
 			game.pause();
-			game.save(prefs.edit());
+
+			SharedPreferences.Editor preferenceEditor = prefs.edit();
+			game.save(preferenceEditor);
+			preferenceEditor.commit();
+
 		}
 	}
 

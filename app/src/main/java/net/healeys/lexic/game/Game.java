@@ -18,32 +18,28 @@
 
 package net.healeys.lexic.game;
 
-import net.healeys.lexic.game.Board;
-import net.healeys.lexic.game.CharProbGenerator;
-import net.healeys.lexic.game.Board;
-import net.healeys.lexic.R;
-import net.healeys.lexic.Synchronizer;
-import net.healeys.trie.WordFilter;
-import net.healeys.trie.Trie;
-import net.healeys.trie.CompressedTrie;
-
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.SharedPreferences;
-import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.util.Log;
+
+import net.healeys.lexic.R;
+import net.healeys.lexic.Synchronizer;
+import net.healeys.trie.CompressedTrie;
+import net.healeys.trie.Trie;
+import net.healeys.trie.WordFilter;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.ListIterator;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Game implements Synchronizer.Counter {
 
@@ -78,7 +74,7 @@ public class Game implements Synchronizer.Counter {
 	private int wordCount;
 
 	private Date start;
-	private Context context;
+	private final Context context;
 
 	private boolean usDict;
 	private boolean ukDict;
@@ -101,12 +97,10 @@ public class Game implements Synchronizer.Counter {
 		try {
 			switch(prefs.getInt("boardSize",16)) {
 				case 16:
-					setBoard(new FourByFourBoard(
-						prefs.getString("gameBoard",null).split(",")));
+					setBoard(new FourByFourBoard(safeSplit(prefs.getString("gameBoard", null), ",")));
 				break;
 				case 25:
-					setBoard(new FiveByFiveBoard(
-						prefs.getString("gameBoard",null).split(",")));
+					setBoard(new FiveByFiveBoard(safeSplit(prefs.getString("gameBoard", null), ",")));
 				break;
 			}
 
@@ -115,14 +109,14 @@ public class Game implements Synchronizer.Counter {
 			maxTimeRemaining = prefs.getInt("maxTimeRemaining",18000);
 	
 			// Correct the time remaining.
-			String[] wordArray = prefs.getString("words",null).split(",");
-			wordList = new LinkedList();
-			wordsUsed = new LinkedHashSet<String>();
-			for(int i=0;i<wordArray.length;i++) {
-				wordList.add(wordArray[i]);
-				wordsUsed.add(wordArray[i]);
+			String[] wordArray = safeSplit(prefs.getString("words", null), ",");
+			wordList = new LinkedList<>();
+			wordsUsed = new LinkedHashSet<>();
+			for (String word : wordArray) {
+				wordList.add(word);
+				wordsUsed.add(word);
 			}
-			wordCount = prefs.getInt("wordCount",0);
+			wordCount = prefs.getInt("wordCount", 0);
 
 			status = GameStatus.GAME_STARTING;
 
@@ -133,52 +127,36 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	public Game (Context c,Bundle bun) {
-		this(c,bun,false);
-	}
-
-	public Game (Context c, Bundle bun, boolean adjustTime) {
 		status = GameStatus.GAME_STARTING;
 		wordCount = 0;
 
 		context = c;
 		loadPreferences(c);
 
-		Log.d(TAG,"bun.getString(\"gameBoard\")"+bun.getString("gameBoard"));
+		Log.d(TAG, "bun.getString(\"gameBoard\")" + bun.getString("gameBoard"));
 
 		try {
 			switch(bun.getInt("boardSize",16)) {
 				case 16:
-					setBoard(new FourByFourBoard(
-						bun.getString("gameBoard").split(",")));
+					setBoard(new FourByFourBoard(safeSplit(bun.getString("gameBoard"), ",")));
 				break;
 				case 25:
-					setBoard(new FiveByFiveBoard(
-						bun.getString("gameBoard").split(",")));
+					setBoard(new FiveByFiveBoard(safeSplit(bun.getString("gameBoard"), ",")));
 				break;
 			}
 
 			maxTimeRemaining = bun.getInt("maxTimeRemaining",18000);
-			if(adjustTime) {
-				// Log.d(TAG,"adjustTime");
-				Date now = new Date();
-				timeRemaining = Math.max(maxTimeRemaining-
-					(int)(now.getTime()-bun.getLong("startTime",0))/10,
-					0);
-				maxTime = timeRemaining;
-				start = new Date(bun.getLong("startTime",0));
-			} else {
-				timeRemaining = bun.getInt("timeRemaining",0);
-				maxTime = timeRemaining;
-				start = new Date();
-			}
-	
+			timeRemaining = bun.getInt("timeRemaining",0);
+			maxTime = timeRemaining;
+			start = new Date();
+
 			// Correct the time remaining.
-			String[] wordArray = bun.getString("words").split(",");
-			wordList = new LinkedList();
-			wordsUsed = new LinkedHashSet<String>();
-			for(int i=0;i<wordArray.length;i++) {
-				wordList.add(wordArray[i]);
-				wordsUsed.add(wordArray[i]);
+			String[] wordArray = safeSplit(bun.getString("words"), ",");
+			wordList = new LinkedList<>();
+			wordsUsed = new LinkedHashSet<>();
+			for (String word : wordArray) {
+				wordList.add(word);
+				wordsUsed.add(word);
 			}
 			wordCount = bun.getInt("wordCount",0);
 
@@ -194,7 +172,7 @@ public class Game implements Synchronizer.Counter {
 	public Game (Context c) {
 		status = GameStatus.GAME_STARTING;
 		wordCount = 0;
-		wordList = new LinkedList();
+		wordList = new LinkedList<>();
 
 		context = c;
 		loadPreferences(c);
@@ -213,8 +191,12 @@ public class Game implements Synchronizer.Counter {
 		timeRemaining = getMaxTimeRemaining();
 		maxTime = getMaxTimeRemaining();
 
-		wordsUsed = new LinkedHashSet<String>();
+		wordsUsed = new LinkedHashSet<>();
 
+	}
+
+	private static String[] safeSplit(@Nullable String string, String separator) {
+		return string == null ? new String[] {} : string.split(separator);
 	}
 
 	private void initSoundPool(Context c) {
@@ -302,9 +284,6 @@ public class Game implements Synchronizer.Counter {
 				}
 			}
 		}
-		for(int i=0;i<26;i++) {
-			// Log.d(TAG,"neighborMask:"+Integer.toHexString(neighborMasks[i]));
-		}
 		try {
 			dict = new CompressedTrie(context.getResources().
 				openRawResource(R.raw.words),mask,neighborMasks,
@@ -320,22 +299,18 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	public void save(SharedPreferences.Editor editor) {
+		editor.putInt("boardSize", board.getSize());
 
-		editor.putInt("boardSize",board.getSize());
+		editor.putString("gameBoard", board.toString());
+		editor.putInt("timeRemaining", timeRemaining);
+		editor.putInt("maxTimeRemaining", getMaxTimeRemaining());
+		editor.putString("words", wordListToString());
+		editor.putInt("wordCount", wordCount);
 
-		editor.putString("gameBoard",board.toString());
-		editor.putInt("timeRemaining",timeRemaining);
-		editor.putInt("maxTimeRemaining",getMaxTimeRemaining());
-		editor.putString("words",wordListToString());
-		editor.putInt("wordCount",wordCount);
-
-		editor.putBoolean("activeGame",true);
-
-		editor.commit();
+		editor.putBoolean("activeGame", true);
 	}
 
 	public void save(Bundle bun) {
-
 		bun.putInt("boardSize",board.getSize());
 
 		bun.putString("gameBoard",board.toString());
@@ -349,15 +324,11 @@ public class Game implements Synchronizer.Counter {
 		bun.putBoolean("activeGame",true);
 	}
 
-	public boolean start() {
-		if(status != GameStatus.GAME_STARTING) {
-			return true;
+	public void start() {
+		if(status == GameStatus.GAME_STARTING) {
+			start = new Date();
+			status = GameStatus.GAME_RUNNING;
 		}
-
-		start = new Date();
-		status = GameStatus.GAME_RUNNING;
-
-		return true;
 	}
 
 	private String wordListToString() {
@@ -445,17 +416,9 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	public void unpause() {
-		unpause(false);
-	}
-
-	public void unpause(boolean adjustTime) {
-		if(adjustTime) {
-			status = GameStatus.GAME_RUNNING;
-		} else {
-			status = GameStatus.GAME_RUNNING;
-			maxTime = timeRemaining;
-			start = new Date();
-		}
+		status = GameStatus.GAME_RUNNING;
+		maxTime = timeRemaining;
+		start = new Date();
 	}
 
 	public void endNow() {

@@ -29,32 +29,9 @@ import java.io.IOException;
  */
 public class CompressedTrie extends Trie {
 
-	private int nodesRead;
-	private int nodesSaved;
-
-	private static int[] FOLLOW_MASKS = {
-		0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,
-		0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,
-		0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,
-		0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,
-		0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,0x3ffffff,
-		0x3ffffff
-	};
-
-	public CompressedTrie(InputStream input) throws IOException {
-		this(input,0x3ffffff,true,true);
-	}
-
-	public CompressedTrie(InputStream input, int mask, boolean usWords,
-		boolean ukWords) throws IOException {
-		this(input,mask,FOLLOW_MASKS,usWords,ukWords);
-	}
-
 	public CompressedTrie(InputStream input, int mask, int[] neighborMasks,
 		boolean usWords, boolean ukWords) throws IOException {
 		super();
-		nodesRead = 0;
-		nodesSaved = 0;
 		if(usWords) {
 			mask |= US_WORD_BIT;
 		}
@@ -62,13 +39,11 @@ public class CompressedTrie extends Trie {
 			mask |= UK_WORD_BIT;
 		}
 		root = readTrie(new BufferedInputStream(input,8192),mask,
-			neighborMasks,-1,true,true);
+			neighborMasks,-1,true);
 	}
 
-	private Trie.TrieNode readTrie(InputStream input, int mask, 
-		int[] neighborMasks, int value,boolean store, 
-		boolean isRoot) throws IOException {
-		nodesRead++;
+	private Trie.TrieNode readTrie(InputStream input, int mask,
+		int[] neighborMasks, int value, boolean store) throws IOException {
 
 		int firstByte = input.read()<<24;
 
@@ -109,11 +84,10 @@ public class CompressedTrie extends Trie {
 			for(int i=0;i<26;i++) {
 				if((maskedBits&(1<<i))!=0) {
 					TrieNode child = readTrie(input,mask,neighborMasks,i,
-						true,false);
+						true);
 					if(child != null) {
 						if(ret == null) {
 							ret = new CompressedTrieNode(maskedBits);
-							nodesSaved++;
 						}
 						ret.children[childNumber] = child;
 						childNumber++;
@@ -121,7 +95,7 @@ public class CompressedTrie extends Trie {
 						maskedBits ^= (1<<i);
 					}
 				} else if((cBits&(1<<i))!=0) {
-					readTrie(input,mask,null,-1,false,false);
+					readTrie(input,mask,null,-1,false);
 				}
 			}
 			if(ret != null) {
@@ -136,7 +110,7 @@ public class CompressedTrie extends Trie {
 		}
 		for(cBits&=LETTER_MASK;cBits!=0;cBits>>=1) {
 			if((cBits&1)!=0) {
-				readTrie(input,mask,null,-1,false,false);
+				readTrie(input,mask,null,-1,false);
 			}
 		}
 		if((cBits&WORD_MASK)!=0) {

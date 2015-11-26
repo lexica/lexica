@@ -16,14 +16,10 @@
 
 package net.healeys.trie;
 
-import java.io.FileReader;
 import java.io.BufferedReader;
-
-import java.io.FileOutputStream;
 import java.io.DataOutputStream;
-
-import java.io.FileInputStream;
-import java.io.DataInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 
 /**
  * This class is used to read in a list of words and generate a binary

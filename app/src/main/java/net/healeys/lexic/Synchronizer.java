@@ -18,11 +18,11 @@
 package net.healeys.lexic;
 
 import android.os.Handler;
-import android.util.Log;
+
 import java.util.LinkedList;
-import java.util.ListIterator;
 
 public class Synchronizer implements Runnable {
+	@SuppressWarnings("unused")
 	private static String TAG = "Synchronizer";
 
 	public static final int TICK_FREQ = 10;
@@ -41,14 +41,14 @@ public class Synchronizer implements Runnable {
 
 	private Counter mainCounter;
 	private Finalizer mainFinalizer;
-	private LinkedList<Event> events;
+	private final LinkedList<Event> events;
 	private boolean done;
-	private Handler handler;
+	private final Handler handler;
 
 	public Synchronizer() {
 		mainCounter = null;
 		mainFinalizer = null;
-		events = new LinkedList();
+		events = new LinkedList<>();
 		done = false;
 
 		handler = new Handler();
@@ -75,12 +75,9 @@ public class Synchronizer implements Runnable {
 	public void run() {
 		if(done) return;
 		int time = mainCounter.tick();
-		
-		ListIterator<Event> iter = events.listIterator();
 
-		while(iter.hasNext()) {
-			Event e = iter.next();
-			e.tick(time);
+		for (Event event : events) {
+			event.tick(time);
 		}
 
 		if (time <= 0) {

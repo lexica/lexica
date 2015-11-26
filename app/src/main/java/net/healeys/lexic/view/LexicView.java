@@ -18,14 +18,12 @@
 package net.healeys.lexic.view;
 
 import net.healeys.lexic.game.Game;
-import net.healeys.lexic.game.Board;
 import net.healeys.lexic.Synchronizer;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -40,9 +38,9 @@ public class LexicView extends View implements Synchronizer.Event,
 	public static final int PADDING = 10;
 	public static final int REDRAW_FREQ = 10;
 
-	private FingerTracker mFingerTracker;
-	private KeyboardTracker mKeyboardTracker;
-	private Game game;
+	private final FingerTracker mFingerTracker;
+	private final KeyboardTracker mKeyboardTracker;
+	private final Game game;
 	private int timeRemaining;
 	private int redrawCount;
 
@@ -51,10 +49,10 @@ public class LexicView extends View implements Synchronizer.Event,
 	private int gridsize;
 	private float boxsize;
 
-	private int boardWidth;
+	private final int boardWidth;
 	private String currentWord;
 
-	private Paint p;
+	private final Paint p;
 	private int highlighted;
 
 	public LexicView(Context context, Game g) {
@@ -63,7 +61,7 @@ public class LexicView extends View implements Synchronizer.Event,
 		game = g;
 		boardWidth = game.getBoard().getWidth();
 
-		mFingerTracker = new FingerTracker(this,game);
+		mFingerTracker = new FingerTracker(game);
 		mKeyboardTracker = new KeyboardTracker();
 		timeRemaining = 0;
 		redrawCount = 1;
@@ -90,8 +88,7 @@ public class LexicView extends View implements Synchronizer.Event,
 		// Log.d(TAG,"gridsize:"+gridsize);
 
 		if(mFingerTracker != null) {
-			mFingerTracker.boundBoard(PADDING,PADDING,
-				PADDING+gridsize,PADDING+gridsize);
+			mFingerTracker.boundBoard(PADDING+gridsize,PADDING+gridsize);
 		}
 	}
 
@@ -324,11 +321,10 @@ public class LexicView extends View implements Synchronizer.Event,
 	}
 
 	private class FingerTracker {
-		private LexicView view;
-		private Game game;
+		private final Game game;
 		
 		private int numTouched;
-		private byte touched[];
+		private final byte touched[];
 		private int touchedBits;
 
 		private byte touching;
@@ -341,8 +337,7 @@ public class LexicView extends View implements Synchronizer.Event,
 		private int box_width;
 		private int radius_squared;
 
-		FingerTracker(LexicView v, Game g) {
-			view = v;
+		FingerTracker(Game g) {
 			game = g;
 			touched = new byte[game.getBoard().getSize()];
 			touchedBits = 0;
@@ -426,9 +421,9 @@ public class LexicView extends View implements Synchronizer.Event,
 			return d_squared < radius_squared;
 		}
 
-		void boundBoard(int l, int t, int w, int h) {
-			left = l;
-			top = t;
+		void boundBoard(int w, int h) {
+			left = PADDING;
+			top = PADDING;
 			width = w;
 			height = h;
 
@@ -476,7 +471,7 @@ public class LexicView extends View implements Synchronizer.Event,
 		}
 
 		private void fullReset() {
-			defaultStates = new LinkedList<State>();
+			defaultStates = new LinkedList<>();
 			defaultAcceptableKeys = 0;
 			
 			for(int i=0;i<game.getBoard().getSize();i++) {
@@ -499,14 +494,14 @@ public class LexicView extends View implements Synchronizer.Event,
 			tracked = null;
 		}
 
-		private boolean processLetter(int letter) {
+		private void processLetter(int letter) {
 			mFingerTracker.reset();
 
-			if(((1<<letter)&acceptableKeys)==0) return false;
+			if(((1<<letter)&acceptableKeys)==0) return;
 
 			Log.d(TAG,"acceptableKeys:"+acceptableKeys);
 
-			LinkedList<State> subStates = new LinkedList<State>();
+			LinkedList<State> subStates = new LinkedList<>();
 			acceptableKeys = 0;
 			ListIterator<State> iter = states.listIterator();
 
@@ -527,14 +522,12 @@ public class LexicView extends View implements Synchronizer.Event,
 			}
 
 			states = subStates;
-
-			return true;
 		}
 
 		private class State {
-			int key;
-			int pos;
-			int selected;
+			final int key;
+			final int pos;
+			final int selected;
 
 			State(int key, int pos, int selected) {
 				this.key = key;

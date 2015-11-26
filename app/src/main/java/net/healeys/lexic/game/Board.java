@@ -20,10 +20,6 @@ package net.healeys.lexic.game;
 import net.healeys.trie.TransitionMap;
 import net.healeys.trie.Trie;
 
-import java.util.Vector;
-import java.util.ArrayList;
-import java.lang.Math;
-
 public abstract class Board implements TransitionMap {
 	private String[] board;
 
@@ -59,7 +55,6 @@ public abstract class Board implements TransitionMap {
 		String[] newbrd = new String[getSize()];
 
 		int w = getWidth();
-		int maxX = w-1;
 
 		for(int i=0;i<getSize();i++) {
 			newbrd[w*(i%w)+((w-1)-(i/w))] = board[i];

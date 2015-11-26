@@ -17,25 +17,24 @@
 
 package net.healeys.lexic.game;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
-import android.util.Log;
 
 public class CharProbGenerator {
+	@SuppressWarnings("unused")
 	private static final String TAG = "CharProbGenerator";
-	private ArrayList<ProbabilityQueue> charProbs;
+	private final ArrayList<ProbabilityQueue> charProbs;
 
 	public CharProbGenerator(InputStream letter_stream) {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(
 			letter_stream));
 
-		charProbs = new ArrayList<ProbabilityQueue>();
+		charProbs = new ArrayList<>();
 
 		try {
 			for(String line=br.readLine();line != null; line=br.readLine()) {
@@ -100,12 +99,12 @@ public class CharProbGenerator {
 	}
 
 	private class ProbabilityQueue {
-		private String letter;
-		private LinkedList<Integer> probQueue;
+		private final String letter;
+		private final LinkedList<Integer> probQueue;
 
 		public ProbabilityQueue(String l) {
 			letter = l;
-			probQueue = new LinkedList<Integer>();
+			probQueue = new LinkedList<>();
 		}
 
 		public String getLetter() {
@@ -113,17 +112,17 @@ public class CharProbGenerator {
 		}
 
 		public void addProb(String s) {
-			probQueue.add(new Integer(s));
+			probQueue.add(Integer.valueOf(s));
 		}
 
 		public int peekProb() {
 			if(probQueue.isEmpty()) return 0;
-			return probQueue.peek().intValue();
+			return probQueue.peek();
 		}
 
 		public int getProb() {
 			if(probQueue.isEmpty()) return 0;
-			return probQueue.remove().intValue();
+			return probQueue.remove();
 		}
 
 	}

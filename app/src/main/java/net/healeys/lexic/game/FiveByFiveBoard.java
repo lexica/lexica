@@ -18,13 +18,9 @@
 
 package net.healeys.lexic.game;
 
-import java.util.Vector;
-import java.util.ArrayList;
-import java.lang.Math;
-
 public class FiveByFiveBoard extends Board {
-	private static int SIZE = 25;
-	private static int WIDTH = 5; 
+	private static final int SIZE = 25;
+	private static final int WIDTH = 5;
 
 	private static final int transitionBits[] = {
 		0x62,0xe5,0x1ca,0x394,0x308,

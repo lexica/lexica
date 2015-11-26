@@ -16,16 +16,15 @@
  */
 
 package net.healeys.lexic.view;
-import net.healeys.lexic.game.Board;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
+
+import net.healeys.lexic.game.Board;
 
 
 public class BoardView extends View {
@@ -34,7 +33,7 @@ public class BoardView extends View {
 
 	private Board board;
 	private int highlighted = 0;
-	private Paint p;
+	private final Paint p;
 
 	public BoardView(Context context,AttributeSet attrs) {
 		super(context,attrs);
@@ -49,19 +48,6 @@ public class BoardView extends View {
 		p.setAntiAlias(true);
 		p.setStrokeWidth(2);
 		
-	}
-
-	public BoardView(Context context, Board b) {
-		super(context);
-	
-		Log.d(TAG,"new BoardView:"+this);
-
-		board = b;
-		highlighted = 0;
-
-		p = new Paint();
-		p.setTextAlign(Paint.Align.CENTER);
-		p.setAntiAlias(true);
 	}
 
 	@Override
