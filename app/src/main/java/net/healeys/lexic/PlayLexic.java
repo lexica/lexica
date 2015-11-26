@@ -96,7 +96,7 @@ public class PlayLexic extends Activity implements Synchronizer.Finalizer {
 
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
-		return game.getStatus() == Game.GameStatus.GAME_RUNNING;
+		return game.getStatus() != Game.GameStatus.GAME_FINISHED;
 	}
 
 	private void newGame() {
