@@ -38,21 +38,6 @@
 			</intent-filter>
         </activity>
 
-        <activity android:name="LexicLogin">
-			<intent-filter>
-				<action android:name="net.healeys.lexic.action.ONLINE_LOGIN" />
-				<category android:name="android.intent.category.DEFAULT" />
-			</intent-filter>
-        </activity>
-
-        <activity android:name="PlayLexicOnline">
-			<intent-filter>
-				<action android:name="net.healeys.lexic.action.ONLINE_GAME" />
-				<category android:name="android.intent.category.DEFAULT" />
-				<data android:scheme="http" />
-			</intent-filter>
-        </activity>
-
         <activity android:name="LexicConfig">
 			<intent-filter>
 				<action android:name="net.healeys.lexic.action.CONFIGURE" />
