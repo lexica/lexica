@@ -17,12 +17,6 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		>
-		<Button android:id="@+id/play_online"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/play_online"
-			android:layout_weight="1"
-			/>
 		<Button android:id="@+id/new_game"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"

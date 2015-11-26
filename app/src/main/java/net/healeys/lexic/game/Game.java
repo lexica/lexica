@@ -51,8 +51,7 @@ public class Game implements Synchronizer.Counter {
 
 	private Board board;
 
-	public enum GameStatus { GAME_STARTING, GAME_RUNNING, GAME_PAUSED,
-		GAME_FINISHED }
+	public enum GameStatus { GAME_STARTING, GAME_RUNNING, GAME_PAUSED, GAME_FINISHED }
 
 	public static final int WORD_POINTS[] = {
 		0,0,0, // 0,1,2

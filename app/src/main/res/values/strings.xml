@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">Lexic</string>
 
-    <string name="play_online">Play Online</string>
     <string name="new_game">New Game</string>
     <string name="restore_game">Restore Game</string>
 	<string name="prefs">Preferences</string>

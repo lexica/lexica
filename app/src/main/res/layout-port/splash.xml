@@ -11,19 +11,7 @@
 		android:layout_height="0dp"
 		android:layout_weight="1.0"
 	/>
-	
-	<LinearLayout
-		android:orientation="horizontal"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		>
-		<Button android:id="@+id/play_online"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:text="@string/play_online"
-			android:layout_weight="1"
-			/>
-	</LinearLayout>
+
 	<LinearLayout
 		android:orientation="horizontal"
 		android:layout_width="fill_parent"

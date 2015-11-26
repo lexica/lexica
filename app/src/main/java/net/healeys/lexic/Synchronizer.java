@@ -67,7 +67,6 @@ public class Synchronizer implements Runnable {
 	}
 
 	public void start() {
-		// Log.d(TAG,"calling start()");
 		done = false;
 		handler.postDelayed(this,TICK_FREQ);
 	}
@@ -90,8 +89,6 @@ public class Synchronizer implements Runnable {
 	}
 
 	public void abort() {
-		// Log.d(TAG,"abort() has been called");
-		if(done) return; // bail if abort has already been called
 		done = true;
 	}
 

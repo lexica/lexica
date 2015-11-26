@@ -56,14 +56,6 @@ public class Lexic extends Activity {
 				startActivity(new Intent("net.healeys.lexic.action.NEW_GAME"));
 			}
 		});
-		
-		b = (Button) findViewById(R.id.play_online);
-		b.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				startActivity(new 
-					Intent("net.healeys.lexic.action.ONLINE_LOGIN"));
-			}
-		});
 
 		if(savedGame()) {
 			b = (Button) findViewById(R.id.restore_game);
