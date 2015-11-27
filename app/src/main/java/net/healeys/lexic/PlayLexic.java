@@ -21,6 +21,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,7 +31,7 @@ import android.view.ViewGroup;
 import net.healeys.lexic.game.Game;
 import net.healeys.lexic.view.LexicView;
 
-public class PlayLexic extends Activity implements Synchronizer.Finalizer {
+public class PlayLexic extends AppCompatActivity implements Synchronizer.Finalizer {
 
 	protected static final String TAG = "PlayLexic";
 

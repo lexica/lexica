@@ -53,7 +53,9 @@ class LexicLogo extends View {
 	 */
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void setupSoftwareCanvas() {
-		setLayerType(LAYER_TYPE_SOFTWARE,null);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			setLayerType(LAYER_TYPE_SOFTWARE, null);
+		}
 	}
 
 	private void drawTile(Canvas canvas, Paint p, String letter, BoxColor color,

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme.Base" parent="@android:style/Theme.Material.Light.DarkActionBar">
+<!--    <style name="AppTheme.Base" parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <item name="android:colorPrimary">@color/colorPrimary</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="android:windowNoTitle">false</item>
-        <item name="android:windowActionBar">true</item>
-    </style>
+    </style>-->
 </resources>

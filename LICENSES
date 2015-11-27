@@ -5,3 +5,5 @@ package) are all licensed under the GNU General Public License version 3.  The
 parts related to the Dictionary (under net.healeys.trie) are licensed under
 version 2.0 of the Apache License.
 
+Uses icons from http://google.github.io/material-design-icons/ are licensed
+under the Creative Common Attribution 4.0 International License (CC-BY 4.0).

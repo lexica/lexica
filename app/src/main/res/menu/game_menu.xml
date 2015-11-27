@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:app="http://schemas.android.com/apk/res-auto">
 	<item android:id="@+id/rotate" 
-		android:title="@string/menu_rotate_board" />
+		android:title="@string/menu_rotate_board"
+		android:icon="@drawable/ic_rotate_right_white_24dp"
+		app:showAsAction="always"/>
 	<item android:id="@+id/save_game" 
-		android:title="@string/menu_save_game" />
-	<item android:id="@+id/end_game" 
+		android:title="@string/menu_save_game"
+		android:icon="@drawable/ic_save_white_24dp"
+		app:showAsAction="ifRoom"/>
+	<item android:id="@+id/end_game"
 		android:title="@string/menu_end_game" />
 </menu>
