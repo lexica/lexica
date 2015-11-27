@@ -54,6 +54,7 @@ public class LexicView extends View implements Synchronizer.Event, Game.RotateHa
 	private final int textSizeSmall;
 	private final int textSizeNormal;
 	private final int textSizeLarge;
+	private final int timerHeight;
 
 	private final int boardWidth;
 	private String currentWord;
@@ -76,6 +77,7 @@ public class LexicView extends View implements Synchronizer.Event, Game.RotateHa
 		textSizeSmall = getResources().getDimensionPixelSize(R.dimen.textSizeSmall);
 		textSizeNormal = getResources().getDimensionPixelSize(R.dimen.textSizeNormal);
 		textSizeLarge = getResources().getDimensionPixelSize(R.dimen.textSizeLarge);
+		timerHeight = getResources().getDimensionPixelSize(R.dimen.timerHeight);
 
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
@@ -91,18 +93,23 @@ public class LexicView extends View implements Synchronizer.Event, Game.RotateHa
 		width = w;
 		height = h;
 
-		gridsize = Math.min(width,height) - 2* paddingSize;
+		if (width < height) {
+			gridsize = width - 2 * paddingSize;
+		} else {
+			gridsize = height - (2 * paddingSize) - timerHeight;
+		}
 		boxsize = ((float) gridsize) / boardWidth;
 
 		if(mFingerTracker != null) {
-			mFingerTracker.boundBoard(paddingSize +gridsize, paddingSize +gridsize);
+			mFingerTracker.boundBoard(paddingSize + gridsize, paddingSize + timerHeight + gridsize);
 		}
 	}
 
 	private void drawBoard(Canvas canvas) {
 		// Draw white box
 		p.setARGB(255, 255, 255, 255);
-		canvas.drawRect(paddingSize, paddingSize, gridsize + paddingSize, gridsize + paddingSize, p);
+		int topOfGrid = paddingSize + timerHeight;
+		canvas.drawRect(paddingSize, topOfGrid, gridsize + paddingSize, gridsize + topOfGrid, p);
 
 		// Draw touched boxes
 		p.setARGB(255,255,255,0);
@@ -111,17 +118,22 @@ public class LexicView extends View implements Synchronizer.Event, Game.RotateHa
 			int x = i % game.getBoard().getWidth();
 			int y = i / game.getBoard().getWidth();
 			float left = paddingSize + boxsize * x;
-			float top = paddingSize + boxsize * y;
+			float top = topOfGrid + boxsize * y;
 			float right = paddingSize + boxsize * (x+1);
-			float bottom = paddingSize + boxsize * (y+1);
+			float bottom = topOfGrid + boxsize * (y+1);
 			canvas.drawRect(left, top, right, bottom, p);
 		}
 
 		// Draw grid
 		p.setARGB(255,0,0,0);
-		for(float i= paddingSize;i<= paddingSize +gridsize;i+=boxsize) {
-			canvas.drawLine(i, paddingSize,i,gridsize+ paddingSize,p);
-			canvas.drawLine(paddingSize,i,gridsize+ paddingSize,i,p);
+
+		// Vertical lines
+		for(float i = paddingSize; i <= paddingSize + gridsize; i += boxsize) {
+			canvas.drawLine(i, topOfGrid, i, gridsize + topOfGrid, p);
+		}
+		// Horizontal lines
+		for(float i = topOfGrid; i <= topOfGrid + gridsize; i += boxsize) {
+			canvas.drawLine(paddingSize, i, gridsize + paddingSize, i, p);
 		}
 
 		p.setARGB(255, 0, 0, 0);
@@ -132,14 +144,16 @@ public class LexicView extends View implements Synchronizer.Event, Game.RotateHa
 		for(int x=0;x<boardWidth;x++) {
 			for(int y=0;y<boardWidth;y++) {
 				String txt = game.getBoard().elementAt(x,y);
-				canvas.drawText(txt, paddingSize +x*boxsize+boxsize/2,
-					paddingSize -10+(y+1)*boxsize,p);
+				canvas.drawText(txt, paddingSize + x * boxsize + boxsize / 2, (y + 1) * boxsize, p);
 			}
 		}
 
 	}
 
 	private void drawTimer(Canvas canvas) {
+		p.setColor(getResources().getColor(R.color.colorPrimaryDark));
+		canvas.drawRect(0, 0, width, timerHeight + 2, p);
+
 		if(timeRemaining < 1000) {
 			p.setARGB(255,255,0,0);
 		} else if (timeRemaining < 3000) {
@@ -147,9 +161,9 @@ public class LexicView extends View implements Synchronizer.Event, Game.RotateHa
 		} else {
 			p.setARGB(255,0,255,0);
 		}
-		for(int i=0;i<5;i++) {
-			canvas.drawLine(0,i,width*timeRemaining/game.getMaxTimeRemaining(),i,p);
-		}
+
+		int pixelWidth = width * timeRemaining / game.getMaxTimeRemaining();
+		canvas.drawRect(0, 1, pixelWidth, timerHeight + 1, p);
 	}
 
 	private int drawWordCount(Canvas canvas, int left, int top) {
@@ -220,7 +234,7 @@ public class LexicView extends View implements Synchronizer.Event, Game.RotateHa
 	}
 
 	private void drawScoreLandscape(Canvas canvas) {
-		int textAreaTop = paddingSize;
+		int textAreaTop = paddingSize + timerHeight;
 		int textAreaHeight = height - 2*paddingSize;
 		int textAreaLeft = 2*paddingSize + gridsize;
 		int textAreaWidth = width - paddingSize - textAreaLeft;
@@ -232,7 +246,7 @@ public class LexicView extends View implements Synchronizer.Event, Game.RotateHa
 	}
 
 	private void drawScorePortrait(Canvas canvas) {
-		int textAreaTop = 2 * paddingSize + gridsize;
+		int textAreaTop = 2 * paddingSize + gridsize + timerHeight;
 		int textAreaHeight = height - paddingSize - textAreaTop;
 		int textAreaLeft = paddingSize;
 		int textAreaWidth = width - 2* paddingSize;
