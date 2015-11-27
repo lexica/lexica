@@ -7,12 +7,6 @@ android {
         applicationId "net.healeys.lexic"
     }
 
-    // Support for this was removed in Android 6.0, see:
-    //
-    //    http://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-apache-http-client
-    //
-    useLibrary 'org.apache.http.legacy'
-
     buildTypes {
         release {
             minifyEnabled false
@@ -23,9 +17,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:23.1.1'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:support-annotations:23.1.1'
-    compile 'com.android.support:design:23.1.1'
 
 }
