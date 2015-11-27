@@ -25,7 +25,7 @@
 
 	<string name="menu_rotate_board">Rotate Board</string>
 	<string name="menu_save_game">Save Game</string>
-	<string name="menu_end_game">Quit</string>
+	<string name="menu_end_game">End Game</string>
 	<string name="button_ok">OK</string>
 
 	<string name="about">About</string>

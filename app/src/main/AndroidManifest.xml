@@ -31,7 +31,7 @@
 			</intent-filter>
         </activity>
 
-        <activity android:name="OnePlayerScore">
+        <activity android:name=".ScoreActivity">
 			<intent-filter>
 				<action android:name="net.healeys.lexic.action.SCORE" />
 				<category android:name="android.intent.category.DEFAULT" />

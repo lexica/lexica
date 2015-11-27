@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_height="fill_parent"
+	android:padding="@dimen/padding"
+			 android:background="#99ccff">
 
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    	android:layout_width="fill_parent"
-    	android:layout_height="fill_parent"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
 		android:orientation="vertical"
-		android:background="#99ccff"
-		android:id="@+id/found_words"
-    	>
+		android:id="@+id/found_words">
 	
 		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-		>
+			android:orientation="horizontal">
 			<TextView
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
@@ -34,8 +33,7 @@
 		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-		>
+			android:orientation="horizontal">
 			<TextView
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
@@ -88,6 +86,7 @@
 				android:layout_height="wrap_content"
 				android:layout_gravity="center"
 				android:id="@+id/missed_board"
+				android:layout_marginBottom="@dimen/padding"
 			/>
 		</LinearLayout>
 

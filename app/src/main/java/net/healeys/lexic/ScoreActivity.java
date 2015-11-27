@@ -39,18 +39,16 @@ import net.healeys.trie.Trie;
 import java.util.Iterator;
 import java.util.Set;
 
-public class OnePlayerScore extends TabActivity {
+public class ScoreActivity extends TabActivity {
 
-	private static final String TAG = "OnePlayerScore";
+	private static final String TAG = "ScoreActivity";
 
-	public static final String DEFINE_URL = 
-		"http://www.google.com/search?q=define%3a+";
+	public static final String DEFINE_URL = "http://www.google.com/search?q=define%3a+";
 
 	private Game game;
 	private BoardView bv;
 	private View highlighted;
 
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
      	super.onCreate(savedInstanceState);
@@ -67,12 +65,9 @@ public class OnePlayerScore extends TabActivity {
 
 		// Set up the tabs
 		TabHost host = getTabHost();
-		LayoutInflater.from(this).inflate(R.layout.score_view,
-			host.getTabContentView(), true);
-		host.addTab(host.newTabSpec("found").setIndicator("Found Words").
-			setContent(R.id.found_words));
-		host.addTab(host.newTabSpec("missed").setIndicator("Missed Words").
-			setContent(R.id.missed_words));
+		LayoutInflater.from(this).inflate(R.layout.score_view, host.getTabContentView(), true);
+		host.addTab(host.newTabSpec("found").setIndicator("Found Words").setContent(R.id.found_words));
+		host.addTab(host.newTabSpec("missed").setIndicator("Missed Words").setContent(R.id.missed_words));
 
 		bv = (BoardView) findViewById(R.id.missed_board);
 		bv.setBoard(game.getBoard());

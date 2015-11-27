@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_height="fill_parent"
+	android:padding="@dimen/padding"
+	android:background="#99ccff">
 
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    	android:layout_width="fill_parent"
-    	android:layout_height="fill_parent"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
 		android:orientation="vertical"
-		android:background="#99ccff"
-		android:id="@+id/found_words"
-    	>
-	
+		android:id="@+id/found_words">
+
 		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-		>
+			android:orientation="horizontal">
 			<TextView
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
@@ -51,7 +50,7 @@
 				android:text="" />
 		</LinearLayout>
 
-		<ScrollView android:id="@+id/found_scroll" 
+		<ScrollView android:id="@+id/found_scroll"
 			android:layout_width="fill_parent"
 			android:layout_height="0dp"
 			android:layout_weight="1.0"
@@ -64,7 +63,7 @@
 			android:layout_height="wrap_content"
 			android:text="@string/button_ok"
 			/>
-	
+
 	</LinearLayout>
 
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -74,8 +73,8 @@
 		android:background="#99ccff"
 		android:id="@+id/missed_words"
     	>
-	
-		<LinearLayout 
+
+		<LinearLayout
 			xmlns:android="http://schemas.android.com/apk/res/android"
     		android:layout_width="fill_parent"
     		android:layout_height="0dp"
@@ -87,9 +86,11 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:id="@+id/missed_board"
+				android:layout_marginEnd="@dimen/padding"
+				android:layout_marginRight="@dimen/padding"
 			/>
 
-			<ScrollView android:id="@+id/missed_scroll" 
+			<ScrollView android:id="@+id/missed_scroll"
 				android:layout_width="0dp"
 				android:layout_height="fill_parent"
 				android:layout_weight="1.0"
@@ -104,7 +105,7 @@
 			android:layout_height="wrap_content"
 			android:text="@string/button_ok"
 			/>
-	
+
 	</LinearLayout>
 
 </FrameLayout>
