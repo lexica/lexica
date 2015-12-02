@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic;
+package com.serwylo.lexica;
 
 import android.os.Handler;
 

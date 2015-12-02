@@ -15,16 +15,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic.view;
+package com.serwylo.lexica.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
-import net.healeys.lexic.game.Board;
+import com.serwylo.lexica.game.Board;
 
 
 public class BoardView extends View {

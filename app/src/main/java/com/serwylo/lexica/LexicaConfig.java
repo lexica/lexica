@@ -15,35 +15,17 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+package com.serwylo.lexica;
 
-package net.healeys.lexic.game;
+import android.preference.PreferenceActivity;
+import android.os.Bundle;
 
-public class FiveByFiveBoard extends Board {
-	private static final int SIZE = 25;
-	private static final int WIDTH = 5;
+public class LexicaConfig extends PreferenceActivity {
 
-	private static final int transitionBits[] = {
-		0x62,0xe5,0x1ca,0x394,0x308,
-		0xc43,0x1ca7,0x394e,0x729c,0x6118,
-		0x18860,0x394e0,0x729c0,0xe5380,0xc2300,
-		0x310c00,0x729c00,0xe53800,0x1ca7000,0x1846000,
-		0x218000,0x538000,0xa70000,0x14e0000,0x8c0000
-	};
-
-	public FiveByFiveBoard(String[] b) {
-		super(b);
-	}
-
-	public int getSize() {
-		return SIZE;
-	}
-
-	public int getWidth() {
-		return WIDTH;
-	}
-
-	public int transitions(int position) {
-		return transitionBits[position];
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+       	super.onCreate(savedInstanceState);
+		addPreferencesFromResource(R.xml.preferences);
+    }
 
 }

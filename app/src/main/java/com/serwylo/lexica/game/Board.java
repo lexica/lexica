@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic.game;
+package com.serwylo.lexica.game;
 
 import net.healeys.trie.TransitionMap;
 import net.healeys.trie.Trie;

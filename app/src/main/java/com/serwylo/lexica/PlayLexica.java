@@ -15,11 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic;
+package com.serwylo.lexica;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -28,12 +26,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
-import net.healeys.lexic.game.Game;
-import net.healeys.lexic.view.LexicView;
+import com.serwylo.lexica.game.Game;
+import com.serwylo.lexica.view.LexicaView;
 
-public class PlayLexic extends AppCompatActivity implements Synchronizer.Finalizer {
+public class PlayLexica extends AppCompatActivity implements Synchronizer.Finalizer {
 
-	protected static final String TAG = "PlayLexic";
+	protected static final String TAG = "PlayLexica";
 
 	private Synchronizer synch;
 	private Game game;
@@ -59,10 +57,10 @@ public class PlayLexic extends AppCompatActivity implements Synchronizer.Finaliz
 		try {
 			String action = getIntent().getAction();
 			switch (action) {
-				case "net.healeys.lexic.action.RESTORE_GAME":
+				case "com.serwylo.lexica.action.RESTORE_GAME":
 					restoreGame();
 					break;
-				case "net.healeys.lexic.action.NEW_GAME":
+				case "com.serwylo.lexica.action.NEW_GAME":
 					newGame();
 					break;
 			}
@@ -103,7 +101,7 @@ public class PlayLexic extends AppCompatActivity implements Synchronizer.Finaliz
 	private void newGame() {
 		game = new Game(this);
 
-		LexicView lv = new LexicView(this,game);
+		LexicaView lv = new LexicaView(this,game);
 
 		if(synch != null) {
 			synch.abort();
@@ -133,7 +131,7 @@ public class PlayLexic extends AppCompatActivity implements Synchronizer.Finaliz
 	}
 
 	private void restoreGame(Game game) {
-		LexicView lv = new LexicView(this,game);
+		LexicaView lv = new LexicaView(this,game);
 
 		if(synch != null) {
 			synch.abort();
@@ -211,7 +209,7 @@ public class PlayLexic extends AppCompatActivity implements Synchronizer.Finaliz
 		Bundle bun = new Bundle();
 		game.save(new GameSaverTransient(bun));
 
-		Intent scoreIntent = new Intent("net.healeys.lexic.action.SCORE");
+		Intent scoreIntent = new Intent("com.serwylo.lexica.action.SCORE");
 		scoreIntent.putExtras(bun);
 
 		startActivity(scoreIntent);

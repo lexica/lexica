@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="net.healeys.lexic"
+          package="com.serwylo.lexica"
           android:versionCode="41"
           android:versionName="0.8.1">
 
@@ -9,35 +9,35 @@
         android:targetSdkVersion="23"
         />
 
-    <application android:icon="@drawable/app_lexic" android:label="Lexic" android:theme="@style/AppTheme">
-        <activity android:name="Lexic">
+    <application android:icon="@drawable/app_lexic" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:name=".Lexica">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="PlayLexic">
+        <activity android:name=".PlayLexica">
 			<intent-filter>
-				<action android:name="net.healeys.lexic.action.NEW_GAME" />
+				<action android:name="com.serwylo.lexica.action.NEW_GAME" />
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
 			<intent-filter>
 				<category android:name="android.intent.category.DEFAULT" />
-				<action android:name="net.healeys.lexic.action.RESTORE_GAME" />
+				<action android:name="com.serwylo.lexica.action.RESTORE_GAME" />
 			</intent-filter>
         </activity>
 
         <activity android:name=".ScoreActivity">
 			<intent-filter>
-				<action android:name="net.healeys.lexic.action.SCORE" />
+				<action android:name="com.serwylo.lexica.action.SCORE" />
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
         </activity>
 
-        <activity android:name="LexicConfig">
+        <activity android:name=".LexicaConfig">
 			<intent-filter>
-				<action android:name="net.healeys.lexic.action.CONFIGURE" />
+				<action android:name="com.serwylo.lexica.action.CONFIGURE" />
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.PREFERENCES" />
 			</intent-filter>

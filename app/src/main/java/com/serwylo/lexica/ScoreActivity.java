@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic;
+package com.serwylo.lexica;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -32,8 +32,8 @@ import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-import net.healeys.lexic.game.Game;
-import net.healeys.lexic.view.BoardView;
+import com.serwylo.lexica.game.Game;
+import com.serwylo.lexica.view.BoardView;
 import net.healeys.trie.Trie;
 
 import java.util.Iterator;

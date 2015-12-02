@@ -15,17 +15,33 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic;
+package com.serwylo.lexica.game;
 
-import android.preference.PreferenceActivity;
-import android.os.Bundle;
+public class FourByFourBoard extends Board {
+	private static final int SIZE = 16;
+	private static final int WIDTH = 4;
 
-public class LexicConfig extends PreferenceActivity {
+	private static final int transitionBits[] = {
+		0x32,0x75,0xea,0xc4,
+		0x323,0x757,0xeae,0xc4c,
+		0x3230,0x7570,0xeae0,0xc4c0,
+		0x2300,0x5700,0xae00,0x4c00
+	};
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-       	super.onCreate(savedInstanceState);
-		addPreferencesFromResource(R.xml.preferences);
-    }
+	public FourByFourBoard(String[] b) {
+		super(b);
+	}
+
+	public int getSize() {
+		return SIZE;
+	}
+
+	public int getWidth() {
+		return WIDTH;
+	}
+
+	public int transitions(int position) {
+		return transitionBits[position];
+	}
 
 }

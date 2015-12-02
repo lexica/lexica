@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic.view;
+package com.serwylo.lexica.view;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -27,9 +27,11 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.serwylo.lexica.R;
+
 import java.util.Random;
 
-class LexicLogo extends View {
+class LexicaLogo extends View {
 
 	private enum BoxColor { WHITE, YELLOW}
 
@@ -40,7 +42,7 @@ class LexicLogo extends View {
 
 	private Picture cached;
 
-	public LexicLogo(Context context,AttributeSet attrs) {
+	public LexicaLogo(Context context, AttributeSet attrs) {
 		super(context,attrs);
 		setupSoftwareCanvas();
 		cached = null;
@@ -103,10 +105,11 @@ class LexicLogo extends View {
 		p.setTypeface(Typeface.MONOSPACE);
 		p.setTextAlign(Paint.Align.CENTER);
 
+		int paddingSize = getResources().getDimensionPixelSize(R.dimen.padding);
 		int height = getHeight();
 		int width = getWidth();
 
-		int size = Math.min(height,width) / 7;
+		int size = Math.min(height,width) / 8;
 		p.setTextSize(size*8/10);
 
 		Random rng = new Random();
@@ -119,12 +122,16 @@ class LexicLogo extends View {
 			drawTile(canvas,p,l,BoxColor.WHITE,x,y,size);
 		}
 
-		size = Math.min(height,width) / 6;
+		int outerPadding = paddingSize * 2;
+		int totalInnerPadding = paddingSize * 5;
+
+		size = (Math.min(height,width) - outerPadding - totalInnerPadding ) / 6;
 		p.setTextSize(size*8/10);
 
+		int totalWidthOfTiles = 6 * size;
 		int y = (height - size) / 2;
-		int dx = (width - 10 - 5 * size) / 4 + size;
-		int x = 5;
+		int dx = (width - totalWidthOfTiles - outerPadding) / 5 + size;
+		int x = paddingSize;
 		drawTile(canvas,p,"L",BoxColor.YELLOW,x,y,size);
 		x += dx;
 		drawTile(canvas,p,"E",BoxColor.YELLOW,x,y,size);
@@ -134,6 +141,8 @@ class LexicLogo extends View {
 		drawTile(canvas,p,"I",BoxColor.YELLOW,x,y,size);
 		x += dx;
 		drawTile(canvas,p,"C",BoxColor.YELLOW,x,y,size);
+		x += dx;
+		drawTile(canvas,p,"A",BoxColor.YELLOW,x,y,size);
 
 	}
 

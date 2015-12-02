@@ -1,11 +1,11 @@
-package net.healeys.lexic;
+package com.serwylo.lexica;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 
-import net.healeys.lexic.game.Board;
-import net.healeys.lexic.game.Game;
+import com.serwylo.lexica.game.Board;
+import com.serwylo.lexica.game.Game;
 
 import java.util.Date;
 

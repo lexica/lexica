@@ -15,20 +15,22 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic.game;
 
-public class FourByFourBoard extends Board {
-	private static final int SIZE = 16;
-	private static final int WIDTH = 4;
+package com.serwylo.lexica.game;
+
+public class FiveByFiveBoard extends Board {
+	private static final int SIZE = 25;
+	private static final int WIDTH = 5;
 
 	private static final int transitionBits[] = {
-		0x32,0x75,0xea,0xc4,
-		0x323,0x757,0xeae,0xc4c,
-		0x3230,0x7570,0xeae0,0xc4c0,
-		0x2300,0x5700,0xae00,0x4c00
+		0x62,0xe5,0x1ca,0x394,0x308,
+		0xc43,0x1ca7,0x394e,0x729c,0x6118,
+		0x18860,0x394e0,0x729c0,0xe5380,0xc2300,
+		0x310c00,0x729c00,0xe53800,0x1ca7000,0x1846000,
+		0x218000,0x538000,0xa70000,0x14e0000,0x8c0000
 	};
 
-	public FourByFourBoard(String[] b) {
+	public FiveByFiveBoard(String[] b) {
 		super(b);
 	}
 

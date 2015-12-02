@@ -15,11 +15,11 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic.view;
+package com.serwylo.lexica.view;
 
-import net.healeys.lexic.R;
-import net.healeys.lexic.game.Game;
-import net.healeys.lexic.Synchronizer;
+import com.serwylo.lexica.R;
+import com.serwylo.lexica.game.Game;
+import com.serwylo.lexica.Synchronizer;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -32,10 +32,10 @@ import android.view.KeyEvent;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-public class LexicView extends View implements Synchronizer.Event, Game.RotateHandler {
+public class LexicaView extends View implements Synchronizer.Event, Game.RotateHandler {
 
 	@SuppressWarnings("unused")
-	protected static final String TAG = "LexicView";
+	protected static final String TAG = "LexicaView";
 
 	public final int paddingSize;
 	public static final int REDRAW_FREQ = 10;
@@ -62,7 +62,7 @@ public class LexicView extends View implements Synchronizer.Event, Game.RotateHa
 	private final Paint p;
 	private int highlighted;
 
-	public LexicView(Context context, Game g) {
+	public LexicaView(Context context, Game g) {
 		super(context);
 
 		game = g;

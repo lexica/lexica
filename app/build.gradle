@@ -4,7 +4,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "net.healeys.lexic"
+        applicationId "com.serwylo.lexica"
     }
 
     buildTypes {

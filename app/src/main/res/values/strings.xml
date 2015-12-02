@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lexic</string>
+    <string name="app_name">Lexica</string>
 
     <string name="new_game">New Game</string>
     <string name="restore_game">Restore Game</string>
@@ -11,7 +11,7 @@
 	<string name="dialog_ok">OK</string>
 	<string name="dialog_cancel">Cancel</string>
 
-	<string name="dialog_about_title">About Lexic</string>
+	<string name="dialog_about_title">About Lexica</string>
 	<string name="dialog_about_content">
 	Touch the screen and move your finger to adjacent squares to spell words.
 	You have three minutes to find as many words as possible.

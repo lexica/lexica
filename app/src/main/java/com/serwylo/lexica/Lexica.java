@@ -15,23 +15,22 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.healeys.lexic;
+package com.serwylo.lexica;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Lexic extends Activity {
+public class Lexica extends Activity {
 
 	@SuppressWarnings("unused")
-	protected static final String TAG = "Lexic";
+	protected static final String TAG = "Lexica";
 
 	private static final int DIALOG_NO_SAVED = 1;
 
@@ -53,7 +52,7 @@ public class Lexic extends Activity {
 		// Log.d(TAG,"b="+b);
 		b.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				startActivity(new Intent("net.healeys.lexic.action.NEW_GAME"));
+				startActivity(new Intent("com.serwylo.lexica.action.NEW_GAME"));
 			}
 		});
 
@@ -64,7 +63,7 @@ public class Lexic extends Activity {
 					if(savedGame()) {
 						// Log.d(TAG,"restoring game");
 						startActivity(new 
-							Intent("net.healeys.lexic.action.RESTORE_GAME"));
+							Intent("com.serwylo.lexica.action.RESTORE_GAME"));
 					} else {
 						// Log.d(TAG,"no saved game :(");
 						showDialog(DIALOG_NO_SAVED);
@@ -78,7 +77,7 @@ public class Lexic extends Activity {
 		b.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Intent i = new Intent(Intent.ACTION_VIEW);
-				Uri u = Uri.parse("http://www.lexic-games.com/help/");
+				Uri u = Uri.parse("https://github.com/lexica/lexica");
 				i.setData(u);
 				startActivity(i);
 			}
@@ -88,7 +87,7 @@ public class Lexic extends Activity {
 		b.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				startActivity(new 
-					Intent("net.healeys.lexic.action.CONFIGURE"));
+					Intent("com.serwylo.lexica.action.CONFIGURE"));
 			}
 		});
 	}

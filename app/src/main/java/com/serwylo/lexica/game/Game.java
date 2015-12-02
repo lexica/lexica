@@ -16,7 +16,7 @@
  */
 
 
-package net.healeys.lexic.game;
+package com.serwylo.lexica.game;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -25,9 +25,9 @@ import android.media.SoundPool;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import net.healeys.lexic.GameSaver;
-import net.healeys.lexic.R;
-import net.healeys.lexic.Synchronizer;
+import com.serwylo.lexica.GameSaver;
+import com.serwylo.lexica.R;
+import com.serwylo.lexica.Synchronizer;
 import net.healeys.trie.CompressedTrie;
 import net.healeys.trie.Trie;
 import net.healeys.trie.WordFilter;
