@@ -9,7 +9,7 @@
         android:targetSdkVersion="23"
         />
 
-    <application android:icon="@drawable/app_lexic" android:label="@string/app_name" android:theme="@style/AppTheme">
+    <application android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
         <activity android:name=".Lexica">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
