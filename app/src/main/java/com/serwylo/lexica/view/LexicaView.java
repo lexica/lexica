@@ -177,7 +177,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		int topOfStaticText = topOfCount + textSizeNormal;
 
 		p.setTextSize(textSizeNormal);
-		canvas.drawText("WORDS",left,topOfStaticText,p);
+		canvas.drawText("WORDS", left, topOfStaticText, p);
 
 		return topOfStaticText + textSizeNormal;
 	}
@@ -228,7 +228,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		p.setTextSize(textSizeLarge);
-		canvas.drawText(time,left,top,p);
+		canvas.drawText(time, left, top, p);
 
 		return top + textSizeLarge;
 	}
@@ -242,7 +242,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		int paddedLeft = textAreaLeft + textAreaWidth / 2;
 
 		int bottomOfTimer = drawWordCountAndTimer(canvas, paddedLeft, textAreaTop);
-		drawWordList(canvas, paddedLeft, bottomOfTimer + paddingSize,textAreaTop + textAreaHeight);
+		drawWordList(canvas, paddedLeft, bottomOfTimer + paddingSize, textAreaTop + textAreaHeight);
 	}
 
 	private void drawScorePortrait(Canvas canvas) {
@@ -270,9 +270,9 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	@Override
 	public void onDraw(Canvas canvas) {
-		setDimensions(getMeasuredWidth(),getMeasuredHeight());
+		setDimensions(getMeasuredWidth(), getMeasuredHeight());
 
-		canvas.drawRGB(0x99,0xcc,0xff);
+		canvas.drawColor(getResources().getColor(R.color.background));
 
 		if(game.getStatus() != Game.GameStatus.GAME_RUNNING) return;
 
