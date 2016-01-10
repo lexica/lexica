@@ -21,8 +21,6 @@ import java.io.OutputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.LinkedHashMap;
 
-import android.util.Log;
-
 /**
  * This is the base implementation of the Trie.
  * It allows a trie to be created and modified in memory and then written to
@@ -329,7 +327,6 @@ public class Trie implements WordFilter {
 		private final int mask;
 
 		private Solution(String word, int mask) {
-			Log.d(TAG,"Solution: "+word+" "+mask);
 			this.word = word;
 			this.mask = mask;
 		}

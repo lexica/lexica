@@ -1,4 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'java'
+
 buildscript {
     repositories {
         jcenter()
@@ -12,4 +14,30 @@ allprojects {
     repositories {
         jcenter()
     }
+}
+
+
+// NOTE: The below tasks are a little bit hacky. The optimal soltuion would be to have a nice
+// gradle plugin whose source lives in the libraries/ directory, and which the app/ project
+// depends on. However, I couldn't figure out how to have a gradle plugin in the same project
+// as another gradle build which depended on that plugin.
+
+task buildTrieBuilder(type: GradleBuild) {
+    buildFile = file('libraries/trie-builder/build.gradle')
+    tasks = ['build']
+}
+
+task buildTrieLib(type: GradleBuild) {
+    buildFile = file('libraries/trie/build.gradle')
+    tasks = ['build']
+}
+
+task buildDictionaries(dependsOn: buildTrieBuilder, type: JavaExec) {
+    main = 'com.serwylo.lexica.trie.TrieBuilderApp'
+    classpath 'libraries/trie/build/libs/trie.jar', 'libraries/trie-builder/build/libs/trie-builder.jar'
+    args = [
+        file('assets/dictionaries/american.txt'),
+        file('assets/dictionaries/british.txt'),
+        file('app/src/main/res/raw/words.bin')
+    ]
 }

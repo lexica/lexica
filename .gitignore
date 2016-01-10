@@ -6,3 +6,6 @@
 .gradle
 build
 local.properties
+
+# Binary file, created as part of the build.
+app/src/main/res/raw/words.bin
