@@ -31,7 +31,7 @@ import com.serwylo.lexica.R;
 
 import java.util.Random;
 
-class LexicaLogo extends View {
+public class LexicaLogo extends View {
 
 	private enum BoxColor { WHITE, YELLOW}
 
