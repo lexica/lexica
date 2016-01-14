@@ -66,8 +66,8 @@ public class ScoreActivity extends TabActivity {
 		// Set up the tabs
 		TabHost host = getTabHost();
 		LayoutInflater.from(this).inflate(R.layout.score_view, host.getTabContentView(), true);
-		host.addTab(host.newTabSpec("found").setIndicator("Found Words").setContent(R.id.found_words));
-		host.addTab(host.newTabSpec("missed").setIndicator("Missed Words").setContent(R.id.missed_words));
+		host.addTab(host.newTabSpec("found").setIndicator(getString(R.string.found_words)).setContent(R.id.found_words));
+		host.addTab(host.newTabSpec("missed").setIndicator(getString(R.string.missed_words)).setContent(R.id.missed_words));
 
 		bv = (BoardView) findViewById(R.id.missed_board);
 		bv.setBoard(game.getBoard());

@@ -177,7 +177,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		int topOfStaticText = topOfCount + textSizeNormal;
 
 		p.setTextSize(textSizeNormal);
-		canvas.drawText("WORDS", left, topOfStaticText, p);
+		canvas.drawText(getContext().getString(R.string.words), left, topOfStaticText, p);
 
 		return topOfStaticText + textSizeNormal;
 	}

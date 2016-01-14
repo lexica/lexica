@@ -5,35 +5,35 @@
 
 	<ListPreference
 		android:key="dict"
-		android:title="Dictionary"
-		android:summary="Select a dictionary to use"
+		android:title="@string/pref_dict"
+		android:summary="@string/pref_dict_summary"
 		android:entries="@array/dict_choices_entries"
 		android:entryValues="@array/dict_choices_entryvalues"
-		android:dialogTitle="Select Dictionary"
+		android:dialogTitle="@string/pref_dict_dialog"
 	/>
 
 	<ListPreference
 		android:key="boardSize"
-		android:title="Board Size"
-		android:summary="Select a board size"
+		android:title="@string/pref_boardSize"
+		android:summary="@string/pref_boardSize_summary"
 		android:entries="@array/board_size_choices_entries"
 		android:entryValues="@array/board_size_choices_entryvalues"
-		android:dialogTitle="Select Board Size"
+		android:dialogTitle="@string/pref_boardSize_dialog"
 	/>
 
 	<ListPreference
 		android:key="maxTimeRemaining"
-		android:title="Time Limit"
-		android:summary="Select a time limit"
+		android:title="@string/pref_timeLimit"
+		android:summary="@string/pref_timeLimit_summary"
 		android:entries="@array/time_limit_choices_entries"
 		android:entryValues="@array/time_limit_choices_entryvalues"
-		android:dialogTitle="Select Time Limit"
+		android:dialogTitle="@string/pref_timeLimit_dialog"
 	/>
 
 	<CheckBoxPreference
 		android:key="soundsEnabled"
-		android:title="Sounds Enabled"
-		android:summary="Whether or not sound effects are enabled"
+		android:title="@string/pref_sounds"
+		android:summary="@string/pref_sounds_summary"
 	/>
 
 
