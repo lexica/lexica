@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lexica</string>
+
+    <string name="new_game">新游戏</string>
+    <string name="restore_game">恢复游戏</string>
+	<string name="prefs">设置</string>
+
+	<string name="pref_dict">字典</string>
+	<string name="pref_dict_summary">选择使用的字典</string>
+	<string name="pref_dict_dialog">选择字典</string>
+	<string name="pref_dict_us">美国</string>
+	<string name="pref_dict_uk">英国</string>
+
+	<string name="pref_boardSize">版面</string>
+	<string name="pref_boardSize_summary">选择版面大小</string>
+	<string name="pref_boardSize_dialog">选择版面大小</string>
+
+	<string name="pref_timeLimit">时限</string>
+	<string name="pref_timeLimit_summary">选择时间限制</string>
+	<string name="pref_timeLimit_dialog">选择时间限制</string>
+	<string name="time_3m">3分钟</string>
+	<string name="time_5m">5分钟</string>
+	<string name="time_10m">10分钟</string>
+	<string name="time_20m">20分钟</string>
+	<string name="time_30m">30分钟</string>
+
+	<string name="pref_sounds">音效</string>
+	<string name="pref_sounds_summary">是否启用音效</string>
+
+	<string name="dialog_no_saved">未保存游戏。看到此消息，表明可能发生了错误。</string>
+	<string name="dialog_ok">确定</string>
+	<string name="dialog_cancel">取消</string>
+
+	<string name="dialog_about_title">关于 Lexica</string>
+	<string name="dialog_about_content">
+	滑动连接相邻方块，组成词语。3分钟内找到越多词语得分越高。
+
+	\n\n计分：
+	\n4x4版面中，词语至少由3个字母组成。5x5的，至少4个字母。
+	最短词语得1分。词越长，得分更多。专有名词不计分。\n\n
+	</string>
+
+	<string name="menu_rotate_board">旋转版面</string>
+	<string name="menu_save_game">保存游戏</string>
+	<string name="menu_end_game">结束游戏</string>
+	<string name="button_ok">确定</string>
+
+	<string name="about">关于</string>
+
+	<string name="show_missed">显示遗漏词语</string>
+	<string name="hide_missed">隐藏遗漏词语</string>
+
+	<string name="show_unique">显示唯一词语</string>
+	<string name="hide_unique">隐藏唯一词语</string>
+
+	<string name="view_word"><u>查看</u></string>
+	<string name="define_word"><u>解释</u> </string>
+
+	<string name="words">词数</string>
+	<string name="found_words">找到词语</string>
+	<string name="missed_words">遗漏词语</string>
+	<string name="total_words">总词数：</string>
+	<string name="total_score">总分数：</string>
+
+</resources>
