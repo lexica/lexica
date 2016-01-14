@@ -6,6 +6,28 @@
     <string name="restore_game">Restore Game</string>
 	<string name="prefs">Preferences</string>
 
+	<string name="pref_dict">Dictionary</string>
+	<string name="pref_dict_summary">Select a dictionary to use</string>
+	<string name="pref_dict_dialog">Select Dictionary</string>
+	<string name="pref_dict_us">United States</string>
+	<string name="pref_dict_uk">United Kingdom</string>
+
+	<string name="pref_boardSize">Board Size</string>
+	<string name="pref_boardSize_summary">Select a board size</string>
+	<string name="pref_boardSize_dialog">Select Board Size</string>
+
+	<string name="pref_timeLimit">Time Limit</string>
+	<string name="pref_timeLimit_summary">Select a time limit</string>
+	<string name="pref_timeLimit_dialog">Select Time Limit</string>
+	<string name="time_3m">3 Minutes</string>
+	<string name="time_5m">5 Minutes</string>
+	<string name="time_10m">10 Minutes</string>
+	<string name="time_20m">20 Minutes</string>
+	<string name="time_30m">30 Minutes</string>
+
+	<string name="pref_sounds">Sounds Enabled</string>
+	<string name="pref_sounds_summary">Whether or not sound effects are enabled</string>
+
 	<string name="dialog_no_saved">There is no game saved.  If you can read this
 	message, something is likely broken.</string>
 	<string name="dialog_ok">OK</string>
@@ -39,4 +61,9 @@
 	<string name="view_word"><u>View</u></string>
 	<string name="define_word"><u>Define</u> </string>
 
+	<string name="words">WORDS</string>
+	<string name="found_words">Found Words</string>
+	<string name="missed_words">Missed Words</string>
+	<string name="total_words">Total Words:</string>
+	<string name="total_score">Total Score:</string>
 </resources>
