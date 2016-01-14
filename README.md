@@ -12,18 +12,13 @@ Features:
 
 ## Differences from original
 
-This fork is based of the original from [http://code.google.com/p/lexic](http://code.google.com/p/lexic).
+This fork is based on the [original Lexic](http://code.google.com/p/lexic).
 
-* Removed multiplayer options
+So far, differences include:
+ * Removed unsupported multiplayer options
  * Better support for screens with higher resolutions
  * Action bar support
-
-That version still includes code to support online multiplayer games, even though
-the server has been out of action for a year or so. In the interests of making
-the user interface less confusing, this functionality has been removed from the code.
-
-Other than these things, this fork is trying to stay true to the original as
-much as possible.
+ * Minor Tweaks to the UI
 
 ## Contributing
 
