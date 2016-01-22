@@ -123,26 +123,46 @@ public class CompressedTrie extends Trie {
 	 * The CompressedTrieNode is like a normal TrieNode, but only allocates
 	 * a large enough Array to store the number of children that it is known
 	 * to have.
+	 *
+	 * Thus, the children cannot be indexed by their position in the alphabet as is
+	 * the case in the non-compressed version. Instead,
 	 */
 	protected class CompressedTrieNode extends Trie.TrieNode {
 		public CompressedTrieNode(int cBits) {
 			childBits = cBits;
 			
-			children = new TrieNode[countBits(cBits&LETTER_MASK)];
+			children = new TrieNode[countChildrenFromChildBits()];
 		}
 
-		protected TrieNode childAt(int index) {
-			TrieNode ret = null;
-			int j=0;
-			for(int i=0;i<=index;i++) {
-				if((childBits&(1<<i)) != 0) {
-					ret = children[j];
+		protected TrieNode childAt(int offset) {
+			TrieNode child = null;
+			int j = 0;
+			for(int i = 0; i <= offset; i ++) {
+				if((childBits & (1 << i)) != 0) {
+					child = children[j];
 					j++;
 				} else {
-					ret = null;
+					child = null;
 				}
 			}
-			return ret;
+			return child;
+		}
+
+		/**
+		 * Counts the number of children of this node, by looking at the binary representation
+		 * of the node.
+		 *
+		 * A node is represented in part by the first 26 bits of a 32 bit integer. Given not all
+		 * of these bits are used, this method will count how many of those bits are equal to 1
+		 * (i.e., have children represented by this node).
+		 */
+		private byte countChildrenFromChildBits() {
+			int childBitsToCheck = childBits & LETTER_MASK;
+			byte c = 0;
+			for(childBitsToCheck &= LETTER_MASK; childBitsToCheck > 0;childBitsToCheck >>= 1)
+				if((childBitsToCheck & 1) != 0) c++;
+
+			return c;
 		}
 	}
 

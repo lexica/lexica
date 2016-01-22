@@ -36,7 +36,7 @@ public abstract class Board implements TransitionMap {
 	}
 
 	public synchronized int valueAt(int i) {
-		return Trie.ctoi(board[i].charAt(0));
+		return Trie.charToOffset(board[i].charAt(0));
 	}
 
 	public synchronized String toString() {

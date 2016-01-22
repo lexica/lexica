@@ -13,7 +13,7 @@ public class Utils {
 		int mask = 0;
 		for (int i = 0; i < availableLetters.length(); i ++) {
 			char character = availableLetters.charAt(i);
-			mask |= 1 << Trie.ctoi(character);
+			mask |= 1 << Trie.charToOffset(character);
 		}
 		return mask;
 	}

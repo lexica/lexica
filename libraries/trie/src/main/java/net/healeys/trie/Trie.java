@@ -33,6 +33,11 @@ public class Trie implements WordFilter {
 	protected static final int US_WORD_BIT = 0x40000000;
 	protected static final int UK_WORD_BIT = 0x20000000;
 	protected static final int WORD_MASK = 0x60000000;
+
+	/**
+	 * Each bit in this mask represents a character from the English language, starting from the
+	 * first bit (i.e. the binary representation is 26 number 1s).
+	 */
 	protected static final int LETTER_MASK = 0x03ffffff;
 
 	protected final TrieLeaf EMPTY_LEAF;
@@ -58,31 +63,37 @@ public class Trie implements WordFilter {
 		if(usWord) wordBits |= US_WORD_BIT;
 		if(ukWord) wordBits |= UK_WORD_BIT;
 
-		root = root.addSuffix(w,0,wordBits);
+		root = root.addSuffix(w, 0, wordBits);
 	}
 
 	public boolean isWord(String w, boolean usWord, boolean ukWord) {
 		int wordMask = 0;
 		if(usWord) wordMask |= US_WORD_BIT;
 		if(ukWord) wordMask |= UK_WORD_BIT;
-		return root.isWord(w,0,wordMask);
+		return root.isWord(w, 0, wordMask);
 	}
 
 	public boolean isWord(String w) {
 		return isWord(w,true,true);
 	}
 
-	private static void writeInt(OutputStream out, int i) throws IOException {
-		out.write(i>>24);
-		out.write(i>>16);
-		out.write(i>>8);
-		out.write(i);
+	/**
+	 * Write all four bytes of an integer to the output stream.
+	 */
+	private static void writeInt(OutputStream out, int toWrite) throws IOException {
+		out.write(toWrite >> 24);
+		out.write(toWrite >> 16);
+		out.write(toWrite >> 8);
+		out.write(toWrite);
 	}
 
-	private static void writeThree(OutputStream out, int i) throws IOException {
-		out.write(i>>16);
-		out.write(i>>8);
-		out.write(i);
+	/**
+	 * Write three bytes of an integer to the output stream.
+	 */
+	private static void writeThreeBytes(OutputStream out, int toWrite) throws IOException {
+		out.write(toWrite >> 16);
+		out.write(toWrite >> 8);
+		out.write(toWrite);
 	}
 
 	/**
@@ -107,76 +118,96 @@ public class Trie implements WordFilter {
 
 			ByteArrayOutputStream os = new ByteArrayOutputStream();
 
-			int j=0;
-			for(int i=childBits&LETTER_MASK;i!=0;i>>=1) {
-				if((i&1)!=0) {
+			int j = 0;
+			for(int i = childBits & LETTER_MASK; i != 0; i >>= 1) {
+				if((i & 1) != 0) {
 					children[j].writeNode(os);
 				}
 				j++;
 			}
 
 			writeInt(out,childBits);
-			writeThree(out,os.size());
+			writeThreeBytes(out, os.size());
 			out.write(os.toByteArray());
 		}
 
-		TrieNode addSuffix(String word, int i, int wordBits) {
-			if(i == word.length()) {
+		/**
+		 * Recursively appends characters to the tip of the tree.
+		 * @param wordBits The bits at position UK_WORDS or US_WORDS indicate whether the word is
+		 *                 a valid US or UK word.
+		 */
+		TrieNode addSuffix(String word, int currentPosition, int wordBits) {
+			if(currentPosition == word.length()) {
 				childBits |= wordBits;
 			} else {
-				int ci = ctoi(word.charAt(i));
+				int charOffset = charToOffset(word.charAt(currentPosition));
 
-				if((childBits & (1 << ci)) == 0) {
-					childBits |= 1 << ci;
-					children[ci] = EMPTY_LEAF;
-				}
-				if(ci == 16) { // Q is always followed by U
-					children[ci] = children[ci].addSuffix(word,i+2,wordBits);
+				TrieNode currentChild = ensureChildExists(charOffset);
+
+				TrieNode newChild;
+				if(charOffset == 16) { // Q is always followed by U
+					newChild = currentChild.addSuffix(word, currentPosition + 2, wordBits);
 				} else {
-					children[ci] = children[ci].addSuffix(word,i+1,wordBits);
+					newChild = currentChild.addSuffix(word,currentPosition + 1, wordBits);
 				}
+
+				children[charOffset] = newChild;
 			}
 
 			return this;
 		}
 
+		private TrieNode ensureChildExists(int charOffset) {
+			if(hasChild(charOffset)) {
+				childBits |= 1 << charOffset;
+				children[charOffset] = EMPTY_LEAF;
+			}
+			return children[charOffset];
+		}
+
 		boolean isWord() {
-			return usWord()||ukWord();
+			return usWord() || ukWord();
 		}
 
 		boolean usWord() {
-			return (childBits&US_WORD_BIT) != 0;
+			return (childBits & US_WORD_BIT) != 0;
 		}
 
 		boolean ukWord() {
-			return (childBits&UK_WORD_BIT) != 0;
+			return (childBits & UK_WORD_BIT) != 0;
 		}
 
 		boolean isTail() {
-			return (childBits&LEAF_BIT) != 0;
+			return (childBits & LEAF_BIT) != 0;
 		}
 
 		private boolean checkAgainstMask(int wordMask) {
 			return (wordMask & childBits) != 0;
 		}
 
-		protected TrieNode childAt(int i) {
-			return children[i];
+		protected TrieNode childAt(int offset) {
+			return children[offset];
 		}
 
-		boolean isWord(String w, int i, int wordMask) {
-			if(i == w.length()) {
+		boolean isWord(String word, int currentPosition, int wordMask) {
+			if(currentPosition == word.length()) {
 				return checkAgainstMask(wordMask);
 			}
-			int ci = ctoi(w.charAt(i));
-			if((childBits & (1 << ci)) == 0) {
+
+			int charOffset = charToOffset(word.charAt(currentPosition));
+			if(hasChild(charOffset)) {
 				return false;
 			}
-			if(ci == 16) {
-				return childAt(ci).isWord(w,i+2,wordMask);
+
+			if(charOffset == 16) { // Q is always followed by U
+				return childAt(charOffset).isWord(word, currentPosition + 2, wordMask);
 			} else {
-				return childAt(ci).isWord(w,i+1,wordMask);
+				return childAt(charOffset).isWord(word, currentPosition + 1, wordMask);
 			}
+		}
+
+		private boolean hasChild(int charOffset) {
+			return (childBits & (1 << charOffset)) == 0;
 		}
 
 	}
@@ -193,12 +224,12 @@ public class Trie implements WordFilter {
 			super();
 		}
 
-		TrieNode addSuffix(String word, int i, int wordBits) {
-			if(i == word.length()) {
-				return processWordBits(childBits|wordBits);
+		TrieNode addSuffix(String word, int currentPosition, int wordBits) {
+			if(currentPosition == word.length()) {
+				return processWordBits(childBits | wordBits);
 			} else {
-				TrieNode t = new TrieNode(childBits&(~LEAF_BIT));
-				return t.addSuffix(word,i,wordBits);
+				TrieNode t = new TrieNode(childBits & (~LEAF_BIT));
+				return t.addSuffix(word, currentPosition, wordBits);
 			}
 		}
 
@@ -218,16 +249,8 @@ public class Trie implements WordFilter {
 		}
 
 		void writeNode(OutputStream out) throws IOException {
-			out.write(childBits>>24);
+			out.write(childBits >> 24);
 		}
-	}
-
-	public static byte countBits(int b) {
-		byte c = 0;
-		for(b&=LETTER_MASK;b>0;b>>=1)
-			if((b&1)!=0) c++;
-
-		return c;
 	}
 
 	public void write(OutputStream out) throws IOException {
@@ -237,14 +260,22 @@ public class Trie implements WordFilter {
 		out.close();
 	}
 
-	public static int ctoi(char c) {
-		if(c >= 'a' && c <= 'z') return c - 'a';
-		if(c >= 'A' && c <= 'Z') return c - 'A';
+	/**
+	 * Calculates the zero-based offset from the beginning of the alphabet for a particular
+	 * English character (case insensitive).
+	 */
+	public static int charToOffset(char character) {
+		if(character >= 'a' && character <= 'z') return character - 'a';
+		if(character >= 'A' && character <= 'Z') return character - 'A';
 		return -1;
 	}
 
-	public static char itoc(int i) {
-		return (char) (i + 'A');
+	/**
+	 * Returns the ASCII value of a character, based on its zero-based offset from the beginning
+	 * of the alphabet. Returns the upper case representation of the letter.
+	 */
+	public static char offsetToChar(int offset) {
+		return (char) (offset + 'A');
 	}
 
 	private void recursiveSolver(TransitionMap m,WordFilter filter,
@@ -279,7 +310,7 @@ public class Trie implements WordFilter {
 			if((node.childBits&(1<<value)) == 0)
 				continue;
 					
-			prefix.append(itoc(value));
+			prefix.append(offsetToChar(value));
 			if(value == 16)
 				prefix.append('U');
 
@@ -308,7 +339,7 @@ public class Trie implements WordFilter {
 			if((root.childBits&(1<<value)) == 0)
 				continue;
 					
-			prefix.append(itoc(value));
+			prefix.append(offsetToChar(value));
 			if(value == 16)
 				prefix.append('U');
 
