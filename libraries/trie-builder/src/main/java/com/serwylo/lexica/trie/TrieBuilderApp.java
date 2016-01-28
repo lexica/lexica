@@ -3,6 +3,8 @@ package com.serwylo.lexica.trie;
 import java.io.File;
 import java.io.IOException;
 
+import com.serwylo.lexica.trie.util.TrieBuilder;
+
 public class TrieBuilderApp {
 
 	public static void main(String[] args) throws IOException {
