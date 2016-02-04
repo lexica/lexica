@@ -21,32 +21,38 @@ public abstract class TrieTest {
 	};
 
 	protected static void assertTrieMatches(Trie trie, String[] usWords, String[] ukWords, String[] bothDialects) {
-		for (String usWord : usWords) {
-			String log = usWord + " [US]";
-			Assert.assertTrue(log + " should be a US word", trie.isWord(usWord));
-			Assert.assertTrue(log + " should be a US is word", trie.isWord(usWord, true, false));
+		if (usWords != null) {
+			for (String usWord : usWords) {
+				String log = usWord + " [US]";
+				Assert.assertTrue(log + " should be a US word", trie.isWord(usWord));
+				Assert.assertTrue(log + " should be a US is word", trie.isWord(usWord, true, false));
 
-			// The word should not be considered a UK word.
-			Assert.assertFalse(log + "should not be a UK word", trie.isWord(usWord, false, true));
-			Assert.assertFalse(log + "should not be a UK word", trie.isWord(usWord, false, false));
+				// The word should not be considered a UK word.
+				Assert.assertFalse(log + "should not be a UK word", trie.isWord(usWord, false, true));
+				Assert.assertFalse(log + "should not be a UK word", trie.isWord(usWord, false, false));
+			}
 		}
 
-		for (String ukWord : ukWords) {
-			String log = ukWord + " [UK]";
-			Assert.assertTrue(log + " should be a UK word", trie.isWord(ukWord));
-			Assert.assertTrue(log + " should be a UK word", trie.isWord(ukWord, false, true));
+		if (ukWords != null) {
+			for (String ukWord : ukWords) {
+				String log = ukWord + " [UK]";
+				Assert.assertTrue(log + " should be a UK word", trie.isWord(ukWord));
+				Assert.assertTrue(log + " should be a UK word", trie.isWord(ukWord, false, true));
 
-			// The word should not be considered a US word.
-			Assert.assertFalse(log + "should not be a US word", trie.isWord(ukWord, true, false));
-			Assert.assertFalse(log + "should not be a US word", trie.isWord(ukWord, false, false));
+				// The word should not be considered a US word.
+				Assert.assertFalse(log + "should not be a US word", trie.isWord(ukWord, true, false));
+				Assert.assertFalse(log + "should not be a US word", trie.isWord(ukWord, false, false));
+			}
 		}
 
-		for (String word : bothDialects) {
-			String log = word + " [BOTH]";
-			Assert.assertTrue(log + " should be a word", trie.isWord(word));
-			Assert.assertTrue(log + " should be a word", trie.isWord(word, true, true));
-			Assert.assertTrue(log + " should be considered a US word", trie.isWord(word, false, true));
-			Assert.assertTrue(log + " should be considered a UK word", trie.isWord(word, true, false));
+		if (bothDialects != null) {
+			for (String word : bothDialects) {
+				String log = word + " [BOTH]";
+				Assert.assertTrue(log + " should be a word", trie.isWord(word));
+				Assert.assertTrue(log + " should be a word", trie.isWord(word, true, true));
+				Assert.assertTrue(log + " should be considered a US word", trie.isWord(word, false, true));
+				Assert.assertTrue(log + " should be considered a UK word", trie.isWord(word, true, false));
+			}
 		}
 
 		for (String notAWord : NOT_WORDS) {
