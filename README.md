@@ -14,16 +14,6 @@ Features:
 
 [![Available on F-Droid](https://f-droid.org/wiki/page/File:F-Droid-button_smaller.png)](https://f-droid.org/repository/browse/?fdfilter=lexic&fdid=net.healeys.lexic)
 
-## Differences from original
-
-This fork is based on the [original Lexic](http://code.google.com/p/lexic).
-
-So far, differences include:
- * Removed unsupported multiplayer options
- * Better support for screens with higher resolutions
- * Action bar support
- * Minor Tweaks to the UI
-
 ## Contributing
 
 ### Reporting Issues
@@ -44,3 +34,13 @@ This app uses a typical gradle folder structure.
 From the project directory, run `gradle assembleDebug` to build the package.
 
 Alternatively, you can import the project into Android Studio and build from there.
+
+## Differences from original
+
+This fork is based on the [original Lexic](http://code.google.com/p/lexic).
+
+So far, differences include:
+ * Removed unsupported multiplayer options
+ * Better support for screens with higher resolutions
+ * Action bar support
+ * Minor Tweaks to the UI
