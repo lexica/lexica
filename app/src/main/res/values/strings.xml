@@ -66,4 +66,5 @@
 	<string name="missed_words">Missed Words</string>
 	<string name="total_words">Total Words:</string>
 	<string name="total_score">Total Score:</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
 </resources>

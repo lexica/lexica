@@ -39,6 +39,8 @@ import net.healeys.trie.Trie;
 import java.util.Iterator;
 import java.util.Set;
 
+import com.serwylo.lexica.R;
+
 public class ScoreActivity extends TabActivity {
 
 	private static final String TAG = "ScoreActivity";
@@ -107,11 +109,13 @@ public class ScoreActivity extends TabActivity {
 			addMissedWord(missedVG,game.getSolutions().get(w));
 		}
 
+		int totalScorePercentage = (int)(((double)score/max_score)*100);
 		TextView t = (TextView) findViewById(R.id.score_points);
-		t.setText(score+"/"+max_score);
+		t.setText(getString(R.string.value_max_percentage, score, max_score, totalScorePercentage));
 
+		int totalWordsPercentage = (int)(((double)words/max_words)*100);
 		t = (TextView) findViewById(R.id.score_words);
-		t.setText(words+"/"+max_words);
+		t.setText(getString(R.string.value_max_percentage, words, max_words, totalWordsPercentage));
 
 		Button b = (Button) findViewById(R.id.close_score);
 		b.setOnClickListener(new View.OnClickListener() {
