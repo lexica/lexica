@@ -18,7 +18,7 @@ Features:
 
 ### Reporting Issues
 
-Please report any issues or suggest features on the [issue tracker](https://github.com/pserwylo/lexic/issues).
+Please report any issues or suggest features on the [issue tracker](https://github.com/lexica/lexica/issues).
 
 ### Translating
 
@@ -26,7 +26,7 @@ We use [Weblate](https://hosted.weblate.org/engage/lexica/) to manage translatio
 
 ### Submitting changes
 
-Pull requests will be warmly received at [https://github.com/pserwylo/lexic](https://github.com/pserwylo/lexic).
+Pull requests will be warmly received at [https://github.com/lexica/lexica](https://github.com/lexica/lexica).
 
 ## Compiling
 
