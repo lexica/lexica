@@ -8,6 +8,10 @@ android {
         applicationId "com.serwylo.lexica"
     }
 
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
