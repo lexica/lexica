@@ -32,7 +32,7 @@ public class BoardView extends View {
 
 	private Board board;
 	private int highlighted = 0;
-	private Paint p;
+	private final Paint p;
 
 	public BoardView(Context context,AttributeSet attrs) {
 		super(context,attrs);

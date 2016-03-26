@@ -9,7 +9,7 @@
         android:targetSdkVersion="23"
         />
 
-    <application android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+    <application android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme" android:allowBackup="true">
         <activity android:name=".Lexica">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +35,7 @@
 			</intent-filter>
         </activity>
 
-        <activity android:name=".LexicaConfig">
+        <activity android:name=".LexicaConfig" android:exported="false">
 			<intent-filter>
 				<action android:name="com.serwylo.lexica.action.CONFIGURE" />
 				<category android:name="android.intent.category.DEFAULT" />

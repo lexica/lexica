@@ -1,5 +1,7 @@
 # Lexic: The Android Word Game
 
+[![Build Status](https://travis-ci.org/lexica/lexica.svg?branch=master)](https://travis-ci.org/lexica/lexica)
+
 <a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
 <img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
 </a>
@@ -18,7 +20,7 @@ Features:
 
 ### Reporting Issues
 
-Please report any issues or suggest features on the [issue tracker](https://github.com/pserwylo/lexic/issues).
+Please report any issues or suggest features on the [issue tracker](https://github.com/lexica/lexica/issues).
 
 ### Translating
 
@@ -26,14 +28,17 @@ We use [Weblate](https://hosted.weblate.org/engage/lexica/) to manage translatio
 
 ### Submitting changes
 
-Pull requests will be warmly received at [https://github.com/pserwylo/lexic](https://github.com/pserwylo/lexic).
+Pull requests will be warmly received at [https://github.com/lexica/lexica](https://github.com/lexica/lexica).
 
 ## Compiling
 
-This app uses a typical gradle folder structure.
-From the project directory, run `gradle assembleDebug` to build the package.
+This app uses a typical `gradle` folder structure.
+
+ * To build (a debug version): `gradle assembleDebug`
+ * To run tests: `gradle test`
 
 Alternatively, you can import the project into Android Studio and build from there.
+The tests can also be run from Android Studio, except some will fail when run from the IDE due to [this bug](https://code.google.com/p/android/issues/detail?id=64887).
 
 ## Differences from original
 

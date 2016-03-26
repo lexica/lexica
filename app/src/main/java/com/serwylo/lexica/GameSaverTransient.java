@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class GameSaverTransient extends GameSaver {
 
-	private Bundle bundle;
+	private final Bundle bundle;
 
 	public GameSaverTransient(Bundle bundle) {
 		this.bundle = bundle;
