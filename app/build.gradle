@@ -9,7 +9,16 @@ android {
     }
 
     lintOptions {
+        // The ranslations are crowd-sourced, and so wile likely never be 100% complete for all locales.
         disable 'MissingTranslation'
+
+        // Due to getting the following error with Travis CI:
+        //   /home/travis/build/lexica/lexica/app: Error: The SDK platform-tools version ((21)) is too old  to check APIs compiled with API 23; please update [NewApi]
+        // Until the newer version of platform-tools is installed on their CI server, lets not consider it a failure.
+        abortOnError false
+
+        // Ouptuts report during build, so that it can be seen in the CI log.
+        textReport true
     }
 
     buildTypes {
