@@ -4,7 +4,6 @@ import net.healeys.trie.Trie;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
@@ -41,7 +40,7 @@ public class TrieBuilder {
 		} finally {
 			if(of != null) {
 				of.close();
-			};
+			}
 		}
 	}
 

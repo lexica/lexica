@@ -1,8 +1,5 @@
 package com.serwylo.lexica.trie.tests;
 
-import net.healeys.trie.CompressedTrie;
-import net.healeys.trie.Trie;
-
 import org.junit.Assert;
 import org.junit.Test;
 

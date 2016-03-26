@@ -5,7 +5,7 @@
 	android:padding="@dimen/padding"
 	android:background="@color/background">
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:orientation="vertical"
@@ -66,7 +66,7 @@
 
 	</LinearLayout>
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<LinearLayout
     	android:layout_width="fill_parent"
     	android:layout_height="fill_parent"
 		android:orientation="vertical"
@@ -75,7 +75,6 @@
     	>
 
 		<LinearLayout
-			xmlns:android="http://schemas.android.com/apk/res/android"
     		android:layout_width="fill_parent"
     		android:layout_height="0dp"
 			android:orientation="horizontal"
