@@ -225,13 +225,13 @@ public class Game implements Synchronizer.Counter {
 		CompressedTrie dict;
 
 		for(int i=0;i<board.getSize();i++) {
-			int ival = Trie.ctoi(board.elementAt(i).charAt(0));
+			int ival = Trie.charToOffset(board.elementAt(i).charAt(0));
 			mask |= 1<<ival;
 
 			for(int j=0;j<board.getSize();j++) {
 				if((board.transitions(i)&(1<<j))!= 0) {
-					neighborMasks[ival] |= 1<<Trie.ctoi(board.elementAt(j).
-						charAt(0));
+					neighborMasks[ival] |= 1<<Trie.charToOffset(board.elementAt(j).
+							charAt(0));
 				}
 			}
 		}
