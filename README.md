@@ -1,5 +1,7 @@
 # Lexic: The Android Word Game
 
+[![Build Status](https://travis-ci.org/lexica/lexica.svg?branch=master)](https://travis-ci.org/lexica/lexica)
+
 <a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
 <img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
 </a>
