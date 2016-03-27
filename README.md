@@ -1,20 +1,20 @@
-# Lexic: The Android Word Game
+# Lexica: The Android Word Game
 
-[![Build Status](https://travis-ci.org/lexica/lexica.svg?branch=master)](https://travis-ci.org/lexica/lexica)
-
-<a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
+[![Build Status](https://travis-ci.org/lexica/lexica.svg?branch=master)](https://travis-ci.org/lexica/lexica) <a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
 <img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
 </a>
 
-Lexic is a word game that is available on the Android platform. Players are 
+<a href="https://f-droid.org/repository/browse/?fdid=com.serwylo.lexica">
+<img src="https://f-droid.org/wiki/images/5/55/F-Droid-button_get-it-on_bigger.png" alt="Available on F-Droid" width="180px" />
+</a>
+
+Lexica is a word game that is available on the Android platform. Players are 
 given 3 to 30 minutes to find as many words as possible on a grid of random letters.
 
 Features:
  * 4x4 and 5x5 game boards
  * A dictionary of 77,000+ words
  * UK and US dictionaries
-
-[![Available on F-Droid](https://f-droid.org/wiki/page/File:F-Droid-button_smaller.png)](https://f-droid.org/repository/browse/?fdfilter=lexic&fdid=net.healeys.lexic)
 
 ## Contributing
 
