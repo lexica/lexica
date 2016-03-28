@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Lexica</string>
+
+    <string name="new_game">新しいゲーム</string>
+    <string name="restore_game">ゲームを復元</string>
+	<string name="prefs">設定</string>
+
+	<string name="pref_dict">辞書</string>
+	<string name="pref_dict_summary">使用する辞書を選択します</string>
+	<string name="pref_dict_dialog">辞書を選択</string>
+	<string name="pref_dict_us">アメリカ合衆国</string>
+	<string name="pref_dict_uk">イギリス</string>
+
+	<string name="pref_boardSize">ボード サイズ</string>
+	<string name="pref_boardSize_summary">ボードのサイズを選択します</string>
+	<string name="pref_boardSize_dialog">ボードのサイズを選択</string>
+
+	<string name="pref_timeLimit">制限時間</string>
+	<string name="pref_timeLimit_summary">制限時間を選択します</string>
+	<string name="pref_timeLimit_dialog">制限時間を選択</string>
+	<string name="time_3m">3 分</string>
+	<string name="time_5m">5 分</string>
+	<string name="time_10m">10 分</string>
+	<string name="time_20m">20 分</string>
+	<string name="time_30m">30 分</string>
+
+	<string name="pref_sounds">サウンドが有効です</string>
+	<string name="pref_sounds_summary">効果音を有効にするかどうか</string>
+
+	<string name="dialog_no_saved">ゲームは保存されていません。このメッセージが表示されるのは、何かが壊れている可能性あります。</string>
+	<string name="dialog_ok">OK</string>
+	<string name="dialog_cancel">キャンセル</string>
+
+	<string name="dialog_about_title">Lexica について</string>
+	<string name="dialog_about_content">" 画面にタッチして、単語のつづりに隣接するマスに指を移動します。3 分間に可能な限り多くの単語を探してください。\n\n得点:
+\n4 x 4 のボードでは、単語は少なくとも 3 文字の必要があります。5 × 5 のボードでは、単語は少なくとも 4 文字の必要があります。3 または 4 文字の単語は、1 ポイントの価値があります。長い単語は、より多くのポイントの価値があります。固有名詞はカウントされません。\n\n "</string>
+
+	<string name="menu_rotate_board">ボードを回転</string>
+	<string name="menu_save_game">ゲームを保存</string>
+	<string name="menu_end_game">ゲーム終了</string>
+	<string name="button_ok">OK</string>
+
+	<string name="about">アプリについて</string>
+
+	<string name="show_missed">ミスした単語を表示</string>
+	<string name="hide_missed">ミスした単語を非表示</string>
+
+	<string name="show_unique">一意の単語を表示</string>
+	<string name="hide_unique">一意の単語を非表示</string>
+
+	<string name="view_word"><u>表示</u></string>
+	<string name="define_word"><u>定義</u> </string>
+
+	<string name="words">単語</string>
+	<string name="found_words">見つけた単語</string>
+	<string name="missed_words">ミスした単語</string>
+	<string name="total_words">単語の合計:</string>
+	<string name="total_score">合計スコア:</string>
+<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+</resources>
