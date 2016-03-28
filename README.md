@@ -1,11 +1,13 @@
 # Lexica: The Android Word Game
 
 [![Build Status](https://travis-ci.org/lexica/lexica.svg?branch=master)](https://travis-ci.org/lexica/lexica) <a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
-<img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
+  <img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
 </a>
 
 <a href="https://f-droid.org/repository/browse/?fdid=com.serwylo.lexica">
-<img src="https://f-droid.org/wiki/images/5/55/F-Droid-button_get-it-on_bigger.png" alt="Available on F-Droid" width="180px" />
+  <img src="https://f-droid.org/wiki/images/5/55/F-Droid-button_get-it-on_bigger.png" alt="Available on F-Droid" width="160px" />
+</a> <a href="https://play.google.com/store/apps/details?id=com.serwylo.lexica">
+  <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Available on Google Play" width="160px" />
 </a>
 
 Lexica is a word game that is available on the Android platform. Players are 
