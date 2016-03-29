@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="app_name">Lexica</string>
 
@@ -63,4 +63,5 @@
 	<string name="total_words">总词数：</string>
 	<string name="total_score">总分数：</string>
 
+<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
 </resources>
