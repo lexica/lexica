@@ -4,11 +4,7 @@
   <img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
 </a>
 
-<a href="https://f-droid.org/repository/browse/?fdid=com.serwylo.lexica">
-  <img src="https://f-droid.org/wiki/images/5/55/F-Droid-button_get-it-on_bigger.png" alt="Available on F-Droid" width="160px" />
-</a> <a href="https://play.google.com/store/apps/details?id=com.serwylo.lexica">
-  <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Available on Google Play" width="160px" />
-</a>
+[<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80px">](https://f-droid.org/app/com.serwylo.lexica) [<img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height='80px'/>](https://play.google.com/store/apps/details?id=com.serwylo.lexica)
 
 Lexica is a word game that is available on the Android platform. Players are 
 given 3 to 30 minutes to find as many words as possible on a grid of random letters.
