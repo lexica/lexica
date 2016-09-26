@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Lèxica</string>
+
+    <string name="new_game">Nova Partida</string>
+    <string name="restore_game">Recupera la partida</string>
+	<string name="prefs">Arranjaments</string>
+
+	<string name="pref_dict">Diccionari</string>
+	<string name="pref_dict_summary">Selecciona el diccionari en ús</string>
+	<string name="pref_dict_dialog">Selecciona el diccionari</string>
+	<string name="pref_dict_us">Estats Units</string>
+	<string name="pref_dict_uk">Regne Unit</string>
+
+	<string name="pref_boardSize">Tamany del Taulell</string>
+	<string name="pref_boardSize_summary">Selecciona el tamany del taulell</string>
+	<string name="pref_boardSize_dialog">Selecciona el tamany del taulell</string>
+
+	<string name="pref_timeLimit">Límit de temps</string>
+	<string name="pref_timeLimit_summary">Selecciona el límit de temps</string>
+	<string name="pref_timeLimit_dialog">Selecciona el límit de temps</string>
+	<string name="time_3m">3 Minuts</string>
+	<string name="time_5m">5 Minuts</string>
+	<string name="time_10m">10 Minuts</string>
+	<string name="time_20m">20 Minuts</string>
+	<string name="time_30m">30 Minuts</string>
+
+	<string name="pref_sounds">Habilita el so</string>
+	<string name="pref_sounds_summary">Si vols que s\'escoltin els efectes de so</string>
+
+	<string name="dialog_no_saved">No hi ha cap partida desada. Si pots llegir aquest missatge, alguna cosa s\'ha espatllat.</string>
+	<string name="dialog_ok">Acceptar</string>
+	<string name="dialog_cancel">Cancel·lar</string>
+
+	<string name="dialog_about_title">Sobre Lèxica</string>
+	<string name="dialog_about_content">"
+ Toqueu la pantalla i mogueu el dit a les caselles adjacents per lletrejar paraules. Teniu tres minuts per trobar-ne-hi.
+
+Puntuació:
+Als taulells de 4x4, les paraules han de ser mínim de tres lletres. Als de 5x5, com a mínim de quatre. Les paraules de tres o quatres lletres valen un punt. Com més lletres tinguin, més puntuen. Els noms propis no conten.
+
+
+ "</string>
+
+	<string name="menu_rotate_board">Roteu el taulell</string>
+	<string name="menu_save_game">Desa la partida</string>
+	<string name="menu_end_game">Termina la partida</string>
+	<string name="button_ok">Acceptar</string>
+
+	<string name="about">Sobre Lèxica</string>
+
+	<string name="show_missed">Mostra les paraules incorrectes</string>
+	<string name="hide_missed">Oculta les paraules incorrectes</string>
+
+	<string name="show_unique">Mostra paraules úniques</string>
+	<string name="hide_unique">Oculta les paraules úniques</string>
+
+	<string name="view_word"><u>Veure</u></string>
+	<string name="define_word"><u>Definiu</u> </string>
+
+	<string name="words">PARAULES</string>
+	<string name="found_words">Paraules Trobades</string>
+	<string name="missed_words">Paraules Incorrectes</string>
+	<string name="total_words">Paraules en Total:</string>
+	<string name="total_score">Puntuació Total:</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+</resources>
