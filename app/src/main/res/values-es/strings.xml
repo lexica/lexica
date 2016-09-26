@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Léxica</string>
+
+    <string name="new_game">Nueva Partida</string>
+    <string name="restore_game">Recupera la partida</string>
+	<string name="prefs">Preferencias</string>
+
+	<string name="pref_dict">Diccionario</string>
+	<string name="pref_dict_summary">Selecciona el diccionario en uso</string>
+	<string name="pref_dict_dialog">Selecciona el diccionario</string>
+	<string name="pref_dict_us">Estados Unidos</string>
+	<string name="pref_dict_uk">Reino Unido</string>
+
+	<string name="pref_boardSize">Tamaño del tablero</string>
+	<string name="pref_boardSize_summary">Selecciona el tamaño del tablero</string>
+	<string name="pref_boardSize_dialog">Selecciona el tamaño del tablero</string>
+
+	<string name="pref_timeLimit">Límite de tiempo</string>
+	<string name="pref_timeLimit_summary">Selecciona el límite de tiempo</string>
+	<string name="pref_timeLimit_dialog">Selecciona el límite de tiempo</string>
+	<string name="time_3m">3 Minutos</string>
+	<string name="time_5m">5 Minutos</string>
+	<string name="time_10m">10 Minutos</string>
+	<string name="time_20m">20 Minutos</string>
+	<string name="time_30m">30 Minutos</string>
+
+	<string name="pref_sounds">Sonido Habilitado</string>
+	<string name="pref_sounds_summary">Si los efectos de sonidos están habilitados o no</string>
+
+	<string name="dialog_no_saved">No hay partidas guardadas. Si lees este mensaje, probablemente algo está estropeado.</string>
+	<string name="dialog_ok">Aceptar</string>
+	<string name="dialog_cancel">Cancelar</string>
+
+	<string name="dialog_about_title">Sobre Léxica</string>
+	<string name="dialog_about_content">"
+ Toca la pantalla y nueve tu dedo hacia las casillas adyacentes para deletrear la palabra. Tiene tres minutos para encontrar todas las palabras que puedas.
+
+Puntuacion:
+En los tableros de 4x4, las palabras tiene que ser como mínimo de tres letras. En los de 5x5, de cuatro letras. Las palabras que tienen tres o cuatro letras valen un punto. Cuanto más larga sea la palabra, más puntos vale. Los nombres propios no cuentan.
+
+
+ "</string>
+
+	<string name="menu_rotate_board">Rotar Tablero</string>
+	<string name="menu_save_game">Guardar Partida</string>
+	<string name="menu_end_game">Finalizar Partida</string>
+	<string name="button_ok">Aceptar</string>
+
+	<string name="about">"Sobre la  aplicación"</string>
+
+	<string name="show_missed">Muestra las palabras restantes</string>
+	<string name="hide_missed">Oculta las palabras restantes</string>
+
+	<string name="show_unique">Muestra las palabras únicas</string>
+	<string name="hide_unique">Oculta las palabras únicas</string>
+
+	<string name="view_word"><u>Ver</u></string>
+	<string name="define_word"><u>Define</u>... </string>
+
+	<string name="words">PALABRAS</string>
+	<string name="found_words">Palabras encontradas</string>
+	<string name="missed_words">Palabras restantes</string>
+	<string name="total_words">Palabras en total:</string>
+	<string name="total_score">Puntuación total:</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+</resources>
