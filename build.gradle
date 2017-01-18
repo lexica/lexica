@@ -17,7 +17,7 @@ allprojects {
 }
 
 
-// NOTE: The below tasks are a little bit hacky. The optimal soltuion would be to have a nice
+// NOTE: The below tasks are a little bit hacky. The optimal solution would be to have a nice
 // gradle plugin whose source lives in the libraries/ directory, and which the app/ project
 // depends on. However, I couldn't figure out how to have a gradle plugin in the same project
 // as another gradle build which depended on that plugin.
