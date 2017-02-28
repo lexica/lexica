@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Lexica</string>
+
+    <string name="new_game">Nieuw spel</string>
+    <string name="restore_game">Spel herstellen</string>
+	<string name="prefs">Voorkeuren</string>
+
+	<string name="pref_dict">Woordenboek</string>
+	<string name="pref_dict_summary">Selecteer het te gebruiken woordenboek</string>
+	<string name="pref_dict_dialog">Selecteer woordenboek</string>
+	<string name="pref_dict_us">Verenigde Staten</string>
+	<string name="pref_dict_uk">Verenigd Koninkrijk</string>
+
+	<string name="pref_boardSize">Bordgrootte</string>
+	<string name="pref_boardSize_summary">Selecteer een bordgrootte</string>
+	<string name="pref_boardSize_dialog">Selecteer bordgrootte</string>
+
+	<string name="pref_timeLimit">Tijdslimiet</string>
+	<string name="pref_timeLimit_summary">Selecteer een tijdslimiet</string>
+	<string name="pref_timeLimit_dialog">Selecteer tijdslimiet</string>
+	<string name="time_3m">3 minuten</string>
+	<string name="time_5m">5 minuten</string>
+	<string name="time_10m">10 minuten</string>
+	<string name="time_20m">20 minuten</string>
+	<string name="time_30m">30 minuten</string>
+
+	<string name="pref_sounds">Geluiden ingeschakeld</string>
+	<string name="pref_sounds_summary">Geluidseffecten in-/uitschakelen</string>
+
+	<string name="dialog_no_saved">Er is geen opgeslagen spel. Als u dit bericht kunt lezen, dan is er waarschijnlijk iets kapot.</string>
+	<string name="dialog_ok">Oké</string>
+	<string name="dialog_cancel">Annuleren</string>
+
+	<string name="dialog_about_title">Over Lexica</string>
+	<string name="dialog_about_content">"
+ Raak het scherm aan en verplaats uw vinger naar aangrenzende vakjes om woorden te leggen. U heeft 3 minuten de tijd om zoveel mogelijk woorden te vinden.
+
+Score:
+Op borden ter grootte van 4x4 moeten worden minimaal drie letters lang zijn. On borden ter grootte van 5x5 moeten worden minimaal vier letters lang zijn. Drie- of vier-letterwoorden zijn 1 punt waard, langere woorden zijn meer punten waard. Zelfstandige naamwoorden tellen niet mee.
+
+
+ "</string>
+
+	<string name="menu_rotate_board">Bord draaien</string>
+	<string name="menu_save_game">Spel opslaan</string>
+	<string name="menu_end_game">Spel beëindigen</string>
+	<string name="button_ok">Oké</string>
+
+	<string name="about">Over</string>
+
+	<string name="show_missed">Gemiste woorden weergeven</string>
+	<string name="hide_missed">Gemiste woorden verbergen</string>
+
+	<string name="show_unique">Unieke woorden weergeven</string>
+	<string name="hide_unique">Unieke woorden verbergen</string>
+
+	<string name="view_word"><u>Weergeven</u></string>
+	<string name="define_word"><u>Definiëren</u> </string>
+
+	<string name="words">WOORDEN</string>
+	<string name="found_words">Gevonden woorden</string>
+	<string name="missed_words">Gemiste woorden</string>
+	<string name="total_words">Totaal aantal woorden:</string>
+	<string name="total_score">Totaalscore:</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+</resources>
