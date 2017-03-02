@@ -1,3 +1,7 @@
+# v0.9.6
+
+Added Dutch translations (Thanks to [Heimen Stoffels](https://hosted.weblate.org/user/vistaus/))
+
 # v0.9.5
 
 Updated logo to be more modern and follow specs from Material Design guidelines closely.
