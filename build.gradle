@@ -38,6 +38,7 @@ task buildDictionaries(dependsOn: buildTrieBuilder, type: JavaExec) {
     args = [
         file('assets/dictionaries/american.txt'),
         file('assets/dictionaries/british.txt'),
-        file('app/src/main/res/raw/words.bin')
+        file('app/src/main/res/raw/words.bin'),
+        file('app/src/test/resources/words.bin')
     ]
 }

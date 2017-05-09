@@ -16,16 +16,16 @@ public class TrieBuilder {
 
 	private final InputStream usDictFile;
 	private final InputStream ukDictFile;
-	private final File outputFile;
+	private final File[] outputFiles;
 
-	public TrieBuilder(File usDictFile, File ukDictFile, File outputFile) throws IOException {
-		this(new FileInputStream(usDictFile), new FileInputStream(ukDictFile), outputFile);
+	public TrieBuilder(File usDictFile, File ukDictFile, File[] outputFiles) throws IOException {
+		this(new FileInputStream(usDictFile), new FileInputStream(ukDictFile), outputFiles);
 	}
 
-	private TrieBuilder(InputStream usDictFileStream, InputStream ukDictFileStream, File outputFile) {
+	private TrieBuilder(InputStream usDictFileStream, InputStream ukDictFileStream, File[] outputFiles) {
 		this.usDictFile = usDictFileStream;
 		this.ukDictFile= ukDictFileStream;
-		this.outputFile = outputFile;
+		this.outputFiles = outputFiles;
 	}
 
 	public void run() throws IOException {
@@ -34,13 +34,15 @@ public class TrieBuilder {
 		readFileIntoTrie(usDictFile, outTrie, true, false);
 		readFileIntoTrie(ukDictFile, outTrie, false, true);
 
-		FileOutputStream of = null;
-		try {
-			of = new FileOutputStream(outputFile, false);
-			outTrie.write(new DataOutputStream(of));
-		} finally {
-			if(of != null) {
-				of.close();
+		for (File outputFile : outputFiles) {
+			FileOutputStream of = null;
+			try {
+				of = new FileOutputStream(outputFile, false);
+				outTrie.write(new DataOutputStream(of));
+			} finally {
+				if (of != null) {
+					of.close();
+				}
 			}
 		}
 	}
