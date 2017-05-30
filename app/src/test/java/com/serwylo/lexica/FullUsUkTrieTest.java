@@ -70,11 +70,11 @@ public class FullUsUkTrieTest extends TrieTest {
 
 	@Test
 	public void testSolverPerformance() throws IOException {
-		InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream("words.bin");
-		Trie trie = new StringTrie.Deserializer().deserialize(stream, BOARD, true, true);
+			InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream("words.bin");
+			Trie trie =new StringTrie.Deserializer().deserialize(stream, BOARD, true, true);assertEquals(41, trie.solver(BOARD, new WordFilter.MinLength(3)).size());
 		long startTime = System.currentTimeMillis();
 		trie.solver(BOARD, new WordFilter.MinLength(3));
-		long totalTime = (System.currentTimeMillis() - startTime);
+		long totalTime = (System.currentTimeMillis() - startTime) ;
 		fail("Took " + totalTime + "ms");
 	}
 

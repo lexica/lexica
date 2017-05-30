@@ -11,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Locale;
 
 public class TrieBuilder {
 
@@ -51,7 +52,7 @@ public class TrieBuilder {
 		BufferedReader br = new BufferedReader(new InputStreamReader(dictFile));
 		String line;
 		while((line = br.readLine()) != null) {
-			trie.addWord(line, usWord, ukWord);
+			trie.addWord(line.toLowerCase(Locale.ENGLISH), usWord, ukWord);
 		}
 	}
 
