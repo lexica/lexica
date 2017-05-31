@@ -27,9 +27,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.KeyEvent;
 
-import java.util.LinkedList;
 import java.util.ListIterator;
 
 public class LexicaView extends View implements Synchronizer.Event, Game.RotateHandler {
@@ -41,7 +39,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	public static final int REDRAW_FREQ = 10;
 
 	private final FingerTracker mFingerTracker;
-	private final KeyboardTracker mKeyboardTracker;
+	// private final KeyboardTracker mKeyboardTracker;
 	private final Game game;
 	private int timeRemaining;
 	private int redrawCount;
@@ -69,7 +67,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		boardWidth = game.getBoard().getWidth();
 
 		mFingerTracker = new FingerTracker(game);
-		mKeyboardTracker = new KeyboardTracker();
+		// mKeyboardTracker = new KeyboardTracker();
 		timeRemaining = 0;
 		redrawCount = 1;
 
@@ -144,7 +142,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		for(int x=0;x<boardWidth;x++) {
 			for(int y=0;y<boardWidth;y++) {
 				String txt = game.getBoard().elementAt(x,y);
-				canvas.drawText(txt, paddingSize + x * boxsize + boxsize / 2, (y + 1) * boxsize, p);
+				canvas.drawText(txt.toUpperCase(), paddingSize + x * boxsize + boxsize / 2, (y + 1) * boxsize, p);
 			}
 		}
 
@@ -187,7 +185,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		p.setTextSize(textSizeNormal);
 		p.setARGB(255,0,0,0);
 		if(currentWord != null) {
-			canvas.drawText(currentWord,left,top,p);
+			canvas.drawText(currentWord.toUpperCase(),left,top,p);
 		}
 
 		// draw words
@@ -202,7 +200,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			} else {
 				p.setARGB(255,255,0,0);
 			}
-			canvas.drawText(w,left,pos,p);
+			canvas.drawText(w.toUpperCase(),left,pos,p);
 			pos += textSizeSmall;
 		}
 	}
@@ -304,7 +302,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		return true;
 	}
 
-	@Override
+	/*@Override
 	public boolean onKeyDown (int keyCode, KeyEvent event) {
 		if(keyCode >= KeyEvent.KEYCODE_A && keyCode <= KeyEvent.KEYCODE_Z) {
 			mKeyboardTracker.processLetter(keyCode-KeyEvent.KEYCODE_A);
@@ -314,7 +312,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		return false;
-	}
+	}*/
 
 	public void redraw() {
 		redrawCount = REDRAW_FREQ;
@@ -335,7 +333,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	public void onRotate() {
 		mFingerTracker.reset();
-		mKeyboardTracker.fullReset();
+		// mKeyboardTracker.fullReset();
 	}
 
 	private class FingerTracker {
@@ -398,27 +396,32 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 			touchBox(bx,by);
 			
-			if(canTouch(bx+boardWidth*by) && nearCenter(x,y,bx,by)) {
+			if(canTouch(bx, by) && nearCenter(x,y,bx,by)) {
 				countTouch();
 			}
 		}
 
-		private boolean canTouch(int box) {
-			int boxBits = 1<<box;
+		private boolean canTouch(int x, int y) {
 			currentWord = getWord();
-			if((boxBits & touchedBits) > 0) return false;
 
-			return (boxBits & game.getBoard().transitions(touched[numTouched-1]))>0;
+			int boxBits = 1 << (x + boardWidth * y);
+			if((boxBits & touchedBits) > 0) {
+				return false;
+			}
+
+			int previousX = touched[numTouched - 1] % boardWidth;
+			int previousY = touched[numTouched - 1] / boardWidth;
+			return game.getBoard().canTransition(previousX, previousY, x, y);
 		}
 
 		private void touchBox(int x, int y) {
 			int box = x+boardWidth*y;
-			mKeyboardTracker.reset();
+			// mKeyboardTracker.reset();
 
 			if(touching < 0) {
 				touching = (byte) box;
 				countTouch();
-			} else if(touching != box && canTouch(box)) {
+			} else if(touching != box && canTouch(x, y)) {
 				touching = (byte) box;
 			}
 		}
@@ -449,8 +452,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		String getWord() {
 			String ret = "";
 
-			for(int i=0;i<numTouched;i++) {
-				ret += game.getBoard().elementAt(touched[i]).toUpperCase();
+			for(int i = 0; i < numTouched; i++ ) {
+				ret += game.getBoard().elementAt(touched[i]);
 			}
 	
 			return ret;
@@ -468,6 +471,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 	}
 
+	/*
+	Temporarily disable keyboard support while working on multi-lingual dictionary support.
+	This is because the bitshifting here depends on ASCI key codes coming out of the key event,
+	but we need to support Unicode characters pressed by non en-US keyboards.
 	private class KeyboardTracker {
 		private int defaultAcceptableKeys;
 		private LinkedList<State> defaultStates;
@@ -560,6 +567,6 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			}
 		}
 
-	}
+	}*/
 
 }

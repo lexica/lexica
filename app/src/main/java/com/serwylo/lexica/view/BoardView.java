@@ -31,20 +31,28 @@ public class BoardView extends View {
 	private final String TAG = "BoardView";
 
 	private Board board;
-	private int highlighted = 0;
+
+	/** @see #highlight(int) */
+	private int highlightedCells = 0;
+
 	private final Paint p;
 
 	public BoardView(Context context,AttributeSet attrs) {
 		super(context,attrs);
 
 		board = null;
-		highlighted = 0;
+		highlightedCells = 0;
 
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
 		p.setAntiAlias(true);
 		p.setStrokeWidth(2);
 
+	}
+
+	private boolean isCellHighlighted(int x, int y) {
+		int cellNumber = y * board.getWidth() + x;
+		return ((1 << cellNumber) & highlightedCells) == 0;
 	}
 
 	@Override
@@ -55,40 +63,45 @@ public class BoardView extends View {
 		p.setARGB(255,255,255,255);
 		canvas.drawRect(0,0,width,height,p);
 
-		if(board == null) return;
+		if(board == null) {
+			return;
+		}
 
 		float boxSize = ((float) width) / board.getWidth();
 
 		// Draw touched boxes
 		p.setARGB(255,255,255,0);
-		for(int i=0;i<board.getSize();i++) {
-			if(((1<<i)&highlighted) == 0) continue;
-			int x = i % board.getWidth();
-			int y = i / board.getWidth();
-			float left = boxSize * x;
-			float top = boxSize * y;
-			float right = boxSize * (x+1);
-			float bottom = boxSize * (y+1);
-			canvas.drawRect(left,top,right,bottom,p);
+		for (int x = 0; x < board.getWidth(); x ++) {
+			for (int y = 0; y < board.getWidth(); y ++) {
+				if (isCellHighlighted(x, y)) {
+					continue;
+				}
+
+				float left = boxSize * x;
+				float top = boxSize * y;
+				float right = boxSize * (x + 1);
+				float bottom = boxSize * (y + 1);
+
+				canvas.drawRect(left, top, right, bottom, p);
+			}
 		}
 
 		// Draw grid
 		p.setARGB(255,0,0,0);
-		for(float i=0;i<=width;i+=boxSize) {
-			canvas.drawLine(i,0,i,width,p);
-			canvas.drawLine(0,i,width,i,p);
+		for(float i = 0; i <= width; i += boxSize) {
+			canvas.drawLine(i, 0, i, width, p);
+			canvas.drawLine(0, i, width, i, p);
 		}
 
-		p.setARGB(255,0,0,0);
-		p.setTextSize(boxSize-20);
+		p.setARGB(255, 0, 0, 0);
+		p.setTextSize(boxSize - 20);
 		p.setTextAlign(Paint.Align.CENTER);
 
 		p.setTypeface(Typeface.MONOSPACE);
-		for(int x=0;x<board.getWidth();x++) {
-			for(int y=0;y<board.getWidth();y++) {
-				String txt = board.elementAt(x,y);
-				canvas.drawText(txt,x*boxSize+boxSize/2,
-					-10+(y+1)*boxSize,p);
+		for(int x = 0; x < board.getWidth(); x ++) {
+			for(int y = 0; y < board.getWidth(); y ++) {
+				String txt = board.elementAt(x, y);
+				canvas.drawText(txt.toUpperCase(), x * boxSize + boxSize / 2, -10 + (y + 1) * boxSize, p);
 			}
 		}
 
@@ -104,7 +117,12 @@ public class BoardView extends View {
 		board = b;
 	}
 
-	public void highlight(int h) {
-		highlighted = h;
+	/**
+	 * Bitmask of highlighted cells on the board.
+	 * The first bit to the right (i.e. represented by the integer "1") is the flag to say whether
+	 * the first cell (i.e. x = 0, y = 0) is highlighted or not.
+	 */
+	public void highlight(int highlightedCells) {
+		this.highlightedCells = highlightedCells;
 	}
 }

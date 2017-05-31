@@ -28,4 +28,17 @@ public interface WordFilter {
 	 * @return			Whether or not the string is a word
 	 */
 	boolean isWord(String word);
+
+	class MinLength implements WordFilter {
+		private final int minLength;
+
+		public MinLength(int minLength) {
+			this.minLength = minLength;
+		}
+
+		@Override
+		public boolean isWord(String word) {
+			return word != null && word.length() >= minLength;
+		}
+	}
 }

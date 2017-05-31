@@ -34,12 +34,11 @@ import android.widget.TextView;
 
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.BoardView;
-import net.healeys.trie.Trie;
+
+import net.healeys.trie.Solution;
 
 import java.util.Iterator;
 import java.util.Set;
-
-import com.serwylo.lexica.R;
 
 public class ScoreActivity extends TabActivity {
 
@@ -166,7 +165,7 @@ public class ScoreActivity extends TabActivity {
 		tv1.setLayoutParams(text1Lp);
 		tv1.setTextSize(16);
 		tv1.setTextColor(color);
-		tv1.setText(w);
+		tv1.setText(w.toUpperCase());
 
 		LinearLayout.LayoutParams text2Lp = new LinearLayout.LayoutParams(
 			ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -205,7 +204,7 @@ public class ScoreActivity extends TabActivity {
 
 	}
 
-	private void addMissedWord(ViewGroup vg, Trie.Solution solution) {
+	private void addMissedWord(ViewGroup vg, Solution solution) {
 		String w = solution.getWord();
 
 		LinearLayout ll = new LinearLayout(this);
@@ -220,7 +219,7 @@ public class ScoreActivity extends TabActivity {
 		tv1.setLayoutParams(text1Lp);
 		tv1.setTextSize(16);
 		tv1.setTextColor(0xff000000);
-		tv1.setText(w);
+		tv1.setText(w.toUpperCase());
 		
 		ViewGroup.LayoutParams text2Lp = new LinearLayout.LayoutParams(
 			ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -234,8 +233,7 @@ public class ScoreActivity extends TabActivity {
 		tv2.setTextColor(0xff000000);
 		tv2.setText(R.string.view_word);
 
-		tv2.setOnClickListener(new HighlighterListener(solution.getMask(),
-			ll));
+		tv2.setOnClickListener(new HighlighterListener(solution.getMask(),ll));
 		tv2.setFocusable(true);
 
 		// The Definition Link

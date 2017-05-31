@@ -1,4 +1,4 @@
-package com.serwylo.lexica.trie.tests;
+package com.serwylo.lexica;
 
 import net.healeys.trie.Trie;
 

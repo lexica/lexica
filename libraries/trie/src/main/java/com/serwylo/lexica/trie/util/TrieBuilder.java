@@ -1,5 +1,6 @@
 package com.serwylo.lexica.trie.util;
 
+import net.healeys.trie.StringTrie;
 import net.healeys.trie.Trie;
 
 import java.io.File;
@@ -21,14 +22,14 @@ public class TrieBuilder {
 		this(new FileInputStream(usDictFile), new FileInputStream(ukDictFile), outputFile);
 	}
 
-	public TrieBuilder(InputStream usDictFileStream, InputStream ukDictFileStream, File outputFile) {
+	private TrieBuilder(InputStream usDictFileStream, InputStream ukDictFileStream, File outputFile) {
 		this.usDictFile = usDictFileStream;
 		this.ukDictFile= ukDictFileStream;
 		this.outputFile = outputFile;
 	}
 
 	public void run() throws IOException {
-		Trie outTrie = new Trie();
+		Trie outTrie = new StringTrie();
 
 		readFileIntoTrie(usDictFile, outTrie, true, false);
 		readFileIntoTrie(ukDictFile, outTrie, false, true);

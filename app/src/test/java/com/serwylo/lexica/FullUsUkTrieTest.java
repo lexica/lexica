@@ -1,4 +1,4 @@
-package com.serwylo.lexica.trie.tests;
+package com.serwylo.lexica;
 
 import net.healeys.trie.StringTrie;
 import net.healeys.trie.Trie;
@@ -16,22 +16,28 @@ import java.util.List;
 public class FullUsUkTrieTest extends TrieTest {
 
 	@Test
-	public void testUsDictionary() {
+	public void testStringTrieUsDictionary() {
+		testUsDictionary(new StringTrie());
+	}
+
+	private void testUsDictionary(Trie trie) {
 		String[] words = readDictionary("us.txt");
 		Assert.assertEquals(77517, words.length);
 
-		Trie trie = new StringTrie();
 		addWords(trie, words, true, false);
 
 		assertTrieMatches("After adding entire US dictionary to a new Trie", trie, words, null, null);
 	}
 
 	@Test
-	public void testUkDictionary() {
+	public void testStringTrieUkDictionary() {
+		testUkDictionary(new StringTrie());
+	}
+
+	private void testUkDictionary(Trie trie) {
 		String[] words = readDictionary("uk.txt");
 		Assert.assertEquals(77097, words.length);
 
-		Trie trie = new StringTrie();
 		addWords(trie, words, true, false);
 
 		assertTrieMatches("After adding entire UK dictionary to a new Trie", trie, words, null, null);
