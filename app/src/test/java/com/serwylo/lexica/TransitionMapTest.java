@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TransitionMapTest {
@@ -32,21 +32,21 @@ public class TransitionMapTest {
 
     static {
         // Note: Don't include "a", "an", or "be" because they is too short.
-        SOLUTIONS.put("bed",   new Solution.Default("bed",   new int[] { xy(0, 0), xy(1, 0), xy(0, 1) }));
-        SOLUTIONS.put("bad",   new Solution.Default("bad",   new int[] { xy(0, 0), xy(1, 1), xy(0, 1) }));
-        SOLUTIONS.put("ban",   new Solution.Default("ban",   new int[] { xy(0, 0), xy(1, 1), xy(2, 1) }));
-        SOLUTIONS.put("ran",   new Solution.Default("ran",   new int[] { xy(1, 2), xy(1, 1), xy(2, 1) }));
-        SOLUTIONS.put("bean",  new Solution.Default("bean",  new int[] { xy(0, 0), xy(1, 0), xy(1, 1), xy(2, 1) }));
-        SOLUTIONS.put("bane",  new Solution.Default("bane",  new int[] { xy(0, 0), xy(1, 1), xy(2, 1), xy(1, 0) }));
-        SOLUTIONS.put("barn",  new Solution.Default("barn",  new int[] { xy(0, 0), xy(1, 1), xy(1, 2), xy(1, 3) }));
-        SOLUTIONS.put("darn",  new Solution.Default("darn",  new int[] { xy(0, 1), xy(1, 1), xy(1, 2), xy(1, 3) }));
-        SOLUTIONS.put("beard", new Solution.Default("beard", new int[] { xy(0, 0), xy(1, 0), xy(1, 1), xy(1, 2), xy(0, 1) }));
-        SOLUTIONS.put("ear",   new Solution.Default("ear",   new int[] { xy(1, 0), xy(1, 1), xy(1, 2) }));
-        SOLUTIONS.put("earn",  new Solution.Default("earn",  new int[] { xy(1, 0), xy(1, 1), xy(1, 2), xy(1, 3) }));
-        SOLUTIONS.put("bard",  new Solution.Default("bard",  new int[] { xy(0, 0), xy(1, 1), xy(1, 2), xy(0, 1) }));
+        SOLUTIONS.put("bed",   new Solution.Default("bed",   new Integer[] { xy(0, 0), xy(1, 0), xy(0, 1) }));
+        SOLUTIONS.put("bad",   new Solution.Default("bad",   new Integer[] { xy(0, 0), xy(1, 1), xy(0, 1) }));
+        SOLUTIONS.put("ban",   new Solution.Default("ban",   new Integer[] { xy(0, 0), xy(1, 1), xy(2, 1) }));
+        SOLUTIONS.put("ran",   new Solution.Default("ran",   new Integer[] { xy(1, 2), xy(1, 1), xy(2, 1) }));
+        SOLUTIONS.put("bean",  new Solution.Default("bean",  new Integer[] { xy(0, 0), xy(1, 0), xy(1, 1), xy(2, 1) }));
+        SOLUTIONS.put("bane",  new Solution.Default("bane",  new Integer[] { xy(0, 0), xy(1, 1), xy(2, 1), xy(1, 0) }));
+        SOLUTIONS.put("barn",  new Solution.Default("barn",  new Integer[] { xy(0, 0), xy(1, 1), xy(1, 2), xy(1, 3) }));
+        SOLUTIONS.put("darn",  new Solution.Default("darn",  new Integer[] { xy(0, 1), xy(1, 1), xy(1, 2), xy(1, 3) }));
+        SOLUTIONS.put("beard", new Solution.Default("beard", new Integer[] { xy(0, 0), xy(1, 0), xy(1, 1), xy(1, 2), xy(0, 1) }));
+        SOLUTIONS.put("ear",   new Solution.Default("ear",   new Integer[] { xy(1, 0), xy(1, 1), xy(1, 2) }));
+        SOLUTIONS.put("earn",  new Solution.Default("earn",  new Integer[] { xy(1, 0), xy(1, 1), xy(1, 2), xy(1, 3) }));
+        SOLUTIONS.put("bard",  new Solution.Default("bard",  new Integer[] { xy(0, 0), xy(1, 1), xy(1, 2), xy(0, 1) }));
     }
 
-    private static int xy(int x, int y) {
+    static int xy(int x, int y) {
         return x + BOARD.getWidth() * y;
     }
 
@@ -83,7 +83,7 @@ public class TransitionMapTest {
     }
 
     private static void assertSolutionEquals(Solution expectedSolution, Solution actualSolution) {
-        assertEquals(expectedSolution.getMask(), actualSolution.getMask());
+        assertArrayEquals(expectedSolution.getPositions(), actualSolution.getPositions());
     }
 
     private static byte[] serializedUsTrie(Trie trie) {

@@ -18,9 +18,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 public class FullUsUkTrieTest extends TrieTest {
@@ -32,6 +34,52 @@ public class FullUsUkTrieTest extends TrieTest {
 			"n", "p", "u", "i",
 	});
 
+	private static final LinkedHashMap<String, Solution> SOLUTIONS = new LinkedHashMap<>();
+
+	static {
+		addSolution("quod", xy(1, 0), xy(2, 1), xy(2, 2));
+		addSolution("ono", xy(2, 1), xy(1, 1), xy(2, 0));
+		addSolution("son", xy(3, 0), xy(2, 1), xy(1, 1));
+		addSolution("soon", xy(3, 0), xy(2, 1), xy(2, 0), xy(1, 1));
+		addSolution("sod", xy(3, 0), xy(2, 1), xy(2, 2));
+		addSolution("soda", xy(3, 0), xy(2, 1), xy(2, 2), xy(3, 1));
+		addSolution("sad", xy(3, 0), xy(3, 1), xy(2, 2));
+		addSolution("sadi", xy(3, 0), xy(3, 1), xy(2, 2), xy(3, 3));
+		addSolution("sag", xy(3, 0), xy(3, 1), xy(3, 2));
+		addSolution("sago", xy(3, 0), xy(3, 1), xy(3, 2), xy(2, 1));
+		addSolution("nod", xy(1, 1), xy(2, 1), xy(2, 2));
+		addSolution("nodi", xy(1, 1), xy(2, 1), xy(2, 2), xy(3, 3));
+		addSolution("nog", xy(1, 1), xy(2, 1), xy(3, 2));
+		addSolution("ado", xy(3, 1), xy(2, 2), xy(2, 1));
+		addSolution("ago", xy(3, 1), xy(3, 2), xy(2, 1));
+		addSolution("agon", xy(3, 1), xy(3, 2), xy(2, 1), xy(1, 1));
+		addSolution("dos", xy(2, 2), xy(2, 1), xy(3, 0));
+		addSolution("don", xy(2, 2), xy(2, 1), xy(1, 1));
+		addSolution("dog", xy(2, 2), xy(2, 1), xy(3, 2));
+		addSolution("dag", xy(2, 2), xy(3, 1), xy(3, 2));
+		addSolution("dago", xy(2, 2), xy(3, 1), xy(3, 2), xy(2, 1));
+		addSolution("dagos", xy(2, 2), xy(3, 1), xy(3, 2), xy(2, 1), xy(3, 0));
+		addSolution("dug", xy(2, 2), xy(2, 3), xy(3, 2));
+		addSolution("dig", xy(2, 2), xy(3, 3), xy(3, 2));
+		addSolution("goo", xy(3, 2), xy(2, 1), xy(2, 0));
+		addSolution("goon", xy(3, 2), xy(2, 1), xy(2, 0), xy(1, 1));
+		addSolution("gos", xy(3, 2), xy(2, 1), xy(3, 0));
+		addSolution("goa", xy(3, 2), xy(2, 1), xy(3, 1));
+		addSolution("goad", xy(3, 2), xy(2, 1), xy(3, 1), xy(2, 2));
+		addSolution("gov", xy(3, 2), xy(2, 1), xy(1, 2));
+		addSolution("god", xy(3, 2), xy(2, 1), xy(2, 2));
+		addSolution("gas", xy(3, 2), xy(3, 1), xy(3, 0));
+		addSolution("gad", xy(3, 2), xy(3, 1), xy(2, 2));
+		addSolution("guv", xy(3, 2), xy(2, 3), xy(1, 2));
+		addSolution("guidon", xy(3, 2), xy(2, 3), xy(3, 3), xy(2, 2), xy(2, 1), xy(1, 1));
+		addSolution("gid", xy(3, 2), xy(3, 3), xy(2, 2));
+		addSolution("pud", xy(1, 3), xy(2, 3), xy(2, 2));
+		addSolution("pug", xy(1, 3), xy(2, 3), xy(3, 2));
+		addSolution("udo", xy(2, 3), xy(2, 2), xy(2, 1));
+		addSolution("updo", xy(2, 3), xy(1, 3), xy(2, 2), xy(2, 1));
+
+	}
+
 	private static final String[] WORDS = new String[] {
 			"quod", "ono", "son", "soon", "sod", "soda", "sad", "sadi", "sag", "sago", "nod", "nodi",
 			"nog", "ado", "ago", "agon", "dos", "don", "dog", "dag", "dago", "dagos", "dug", "dig",
@@ -39,23 +87,26 @@ public class FullUsUkTrieTest extends TrieTest {
 			"pud", "pug", "udo", "updo",
 	};
 
-	@Test
-	public void testPerformanceLoadingTries() throws IOException {
-		long startTime = System.currentTimeMillis();
-		InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream("words.bin");
-		Trie trie =new StringTrie.Deserializer().deserialize(stream, BOARD, true, true);assertEquals(41, trie.solver(BOARD, new WordFilter.MinLength(3)).size());
-		long totalTime = (System.currentTimeMillis() - startTime);
+	private static int xy(int x, int y) {
+		return TransitionMapTest.xy(x, y);
+	}
 
+	private static void addSolution(String word, Integer ...positions) {
+		SOLUTIONS.put(word, new StringTrie.StringSolution(word, positions));
+	}
+
+	@Test
+	public void testLoadingCompressedTries() throws IOException {
+		InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream("words.bin");
+		Trie trie = new StringTrie.Deserializer().deserialize(stream, BOARD, true, true);
+		assertEquals(40, trie.solver(BOARD, new WordFilter.MinLength(3)).size());
 		assertTrieCorrect(trie);
-		// fail("Took " + totalTime + "ms");
 	}
 
 	private static void assertTrieCorrect(Trie trie) {
 		LinkedHashMap<String, Solution> solutions = trie.solver(BOARD, new WordFilter.MinLength(3));
 		List<String> expectedWords = new ArrayList<>();
-		for (String w : WORDS) {
-			expectedWords.add(w);
-		}
+		Collections.addAll(expectedWords, WORDS);
 
 		List<String> actualWords = new ArrayList<>();
 		for (String w : solutions.keySet()) {
@@ -66,6 +117,25 @@ public class FullUsUkTrieTest extends TrieTest {
 		Collections.sort(actualWords);
 
 		assertEquals(expectedWords, actualWords);
+
+		for (Map.Entry<String, Solution> actualEntry : solutions.entrySet()) {
+			Solution actualSolution = actualEntry.getValue();
+			assertEquals(actualEntry.getKey(), actualSolution.getWord());
+
+			boolean found = false;
+			for (Map.Entry<String, Solution> expectedEntry : SOLUTIONS.entrySet()) {
+				if (expectedEntry.getKey().equals(actualEntry.getKey())) {
+					found = true;
+
+					Integer[] expectedPositions = expectedEntry.getValue().getPositions();
+					Integer[] actualPositions = actualEntry.getValue().getPositions();
+
+					assertArrayEquals("Comparing solutions for: " + expectedEntry.getKey(), expectedPositions, actualPositions);
+				}
+			}
+
+			assertTrue(found);
+		}
 	}
 
 	@Test

@@ -233,7 +233,7 @@ public class ScoreActivity extends TabActivity {
 		tv2.setTextColor(0xff000000);
 		tv2.setText(R.string.view_word);
 
-		tv2.setOnClickListener(new HighlighterListener(solution.getMask(),ll));
+		tv2.setOnClickListener(new HighlighterListener(solution.getPositions(),ll));
 		tv2.setFocusable(true);
 
 		// The Definition Link
@@ -265,17 +265,16 @@ public class ScoreActivity extends TabActivity {
 	}
 
 	private class HighlighterListener implements View.OnClickListener {
-		private final int mask;
+		private final Integer[] positions;
 		private final View parentView;
 
-		private HighlighterListener(int mask, View parentView) {
-			this.mask = mask;
+		private HighlighterListener(Integer[] positions, View parentView) {
+			this.positions = positions;
 			this.parentView = parentView;
 		}
 
 		public void onClick(View v) {
-			Log.d(TAG,"highlighter listener:"+mask);
-			bv.highlight(mask);
+			bv.highlight(positions);
 			bv.invalidate();
 
 			if(highlighted != null) {

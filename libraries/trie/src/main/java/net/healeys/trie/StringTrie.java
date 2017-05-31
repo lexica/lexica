@@ -7,12 +7,12 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
-import java.util.Queue;
 import java.util.Set;
 
 public class StringTrie implements Trie {
@@ -110,9 +110,9 @@ public class StringTrie implements Trie {
 	public static class StringSolution implements net.healeys.trie.Solution {
 
 		private final String word;
-		private final Queue<Integer> positions;
+		private final Integer[] positions;
 
-		public StringSolution(String word, Queue<Integer> positions) {
+		public StringSolution(String word, Integer[] positions) {
 			this.word = word;
 			this.positions = positions;
 		}
@@ -122,12 +122,7 @@ public class StringTrie implements Trie {
 			return word;
 		}
 
-		@Override
-		public int getMask() {
-			return 0;
-		}
-
-		public Queue<Integer> getPositions() {
+		public Integer[] getPositions() {
 			return positions;
 		}
 	}
@@ -139,14 +134,15 @@ public class StringTrie implements Trie {
 			int pos,
 			Set<Integer> usedPositions,
 			StringBuilder prefix,
-			LinkedHashMap<String, Solution> solutions) {
+			LinkedHashMap<String, Solution> solutions,
+			List<Integer> solution) {
 
 		if (node.usWord() || node.ukWord()) {
 			String w = new String(prefix);
 			if(wordFilter == null || wordFilter.isWord(w)) {
-				// TODO: the positions used by this solution need to be kept properly.
-				// These are used to highlight the solutions at the end of the game.
-				solutions.put(w, new StringSolution(w, new LinkedList<Integer>()));
+				Integer[] solutionArray = new Integer[solution.size()];
+				solution.toArray(solutionArray);
+				solutions.put(w, new StringSolution(w, solutionArray));
 			}
 		}
 
@@ -178,7 +174,9 @@ public class StringTrie implements Trie {
 
 				prefix.append(valueAt);
 
-				recursiveSolver(transitions, wordFilter, nextNode, toPosition, usedPositions, prefix, solutions);
+				solution.add(toPosition);
+				recursiveSolver(transitions, wordFilter, nextNode, toPosition, usedPositions, prefix, solutions, solution);
+				solution.remove(solution.size() - 1);
 
 				prefix.delete(prefix.length() - valueAt.length(), prefix.length());
 			}
@@ -194,6 +192,7 @@ public class StringTrie implements Trie {
 		LinkedHashMap<String, Solution> solutions = new LinkedHashMap<>();
 		StringBuilder prefix = new StringBuilder(transitions.getSize() + 1);
 
+		List<Integer> positions = new ArrayList<>(transitions.getSize());
 		for(int i=0; i < transitions.getSize(); i ++) {
 			String value = transitions.valueAt(i);
 			StringTrie.Node nextNode = rootNode.maybeChildAt(value);
@@ -202,9 +201,11 @@ public class StringTrie implements Trie {
 			}
 
 			prefix.append(value);
+			positions.add(i);
 
-			recursiveSolver(transitions, filter, nextNode, i, new HashSet<Integer>(), prefix, solutions);
+			recursiveSolver(transitions, filter, nextNode, i, new HashSet<Integer>(), prefix, solutions, positions);
 
+			positions.remove(positions.size() - 1);
 			prefix.delete(prefix.length() - value.length(), prefix.length());
 		}
 

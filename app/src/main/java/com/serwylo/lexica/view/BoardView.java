@@ -28,20 +28,18 @@ import com.serwylo.lexica.game.Board;
 
 public class BoardView extends View {
 
-	private final String TAG = "BoardView";
-
 	private Board board;
 
-	/** @see #highlight(int) */
-	private int highlightedCells = 0;
+	/** @see #highlight(Integer[]) */
+	private Integer[] highlightedCells = new Integer[0];
 
 	private final Paint p;
 
-	public BoardView(Context context,AttributeSet attrs) {
+	public BoardView(Context context, AttributeSet attrs) {
 		super(context,attrs);
 
 		board = null;
-		highlightedCells = 0;
+		highlightedCells = new Integer[0];
 
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
@@ -52,7 +50,13 @@ public class BoardView extends View {
 
 	private boolean isCellHighlighted(int x, int y) {
 		int cellNumber = y * board.getWidth() + x;
-		return ((1 << cellNumber) & highlightedCells) == 0;
+		for (int highlightedCell : highlightedCells) {
+			if (highlightedCell == cellNumber) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	@Override
@@ -122,7 +126,7 @@ public class BoardView extends View {
 	 * The first bit to the right (i.e. represented by the integer "1") is the flag to say whether
 	 * the first cell (i.e. x = 0, y = 0) is highlighted or not.
 	 */
-	public void highlight(int highlightedCells) {
+	public void highlight(Integer[] highlightedCells) {
 		this.highlightedCells = highlightedCells;
 	}
 }
