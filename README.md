@@ -35,8 +35,7 @@ This app uses a typical `gradle` folder structure.
  * To build (a debug version): `gradle assembleDebug`
  * To run tests: `gradle test`
 
-Alternatively, you can import the project into Android Studio and build from there.
-The tests can also be run from Android Studio, except some will fail when run from the IDE due to [this bug](https://code.google.com/p/android/issues/detail?id=64887).
+Alternatively, you can import the project into Android Studio and build/run tests from there.
 
 ## Differences from original
 
