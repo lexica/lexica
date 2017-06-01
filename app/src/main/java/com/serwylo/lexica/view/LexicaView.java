@@ -28,7 +28,9 @@ import android.graphics.Typeface;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.util.HashSet;
 import java.util.ListIterator;
+import java.util.Set;
 
 public class LexicaView extends View implements Synchronizer.Event, Game.RotateHandler {
 
@@ -58,7 +60,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private String currentWord;
 
 	private final Paint p;
-	private int highlighted;
+	private Set<Integer> highlighted = new HashSet<>();
 
 	public LexicaView(Context context, Game g) {
 		super(context);
@@ -110,9 +112,12 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		canvas.drawRect(paddingSize, topOfGrid, gridsize + paddingSize, gridsize + topOfGrid, p);
 
 		// Draw touched boxes
-		p.setARGB(255,255,255,0);
-		for(int i=0;i<game.getBoard().getSize();i++) {
-			if(((1<<i)&highlighted) == 0) continue;
+		p.setARGB(255, 255, 255, 0);
+		for(int i = 0; i < game.getBoard().getSize(); i++) {
+			if (highlighted.contains(i)) {
+                continue;
+            }
+
 			int x = i % game.getBoard().getWidth();
 			int y = i / game.getBoard().getWidth();
 			float left = paddingSize + boxsize * x;
@@ -340,10 +345,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		private final Game game;
 		
 		private int numTouched;
-		private final byte touched[];
-		private int touchedBits;
+		private final int[] touched;
+		private Set<Integer> touchedCells;
 
-		private byte touching;
+		private int touching;
 
 		private int left;
 		private int top;
@@ -355,8 +360,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		FingerTracker(Game g) {
 			game = g;
-			touched = new byte[game.getBoard().getSize()];
-			touchedBits = 0;
+			touched = new int[game.getBoard().getSize()];
+			touchedCells = new HashSet<>();
 
 			reset();
 		}
@@ -367,36 +372,36 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			}
 
 			if(numTouched > 0) {
-				highlighted = 0;
+				highlighted.clear();
 			}
-			touchedBits = 0;
+
+			touchedCells.clear();
 			numTouched = 0;
 			touching = -1;
 		}
 		
 		private void countTouch() {
-			int touchBit = 1 << touching;
-			if((touchedBits & touchBit) > 0) return;
+            if (touchedCells.contains(touching)) {
+                return;
+            }
 
 			touched[numTouched] = touching;
-			touchedBits |= 1 << touching;
-			highlighted = touchedBits;
+			touchedCells.add(touching);
+			highlighted = touchedCells;
 			numTouched++;
 			redraw();
 		}
 
 		void touchScreen(int x, int y) {
-			if(x < left || x >= (left+width)) return;
-			if(y < top || y >= (top+height)) return;
+			if(x < left || x >= (left + width)) return;
+			if(y < top || y >= (top + height)) return;
 
-			// Log.d(TAG,"Touching:"+x+","+y);
+			int bx = (x - left) * boardWidth / width;
+			int by = (y - top) * boardWidth / height;
 
-			int bx = (x-left)*boardWidth/width;
-			int by = (y-top)*boardWidth/height;
-
-			touchBox(bx,by);
+			touchBox(bx, by);
 			
-			if(canTouch(bx, by) && nearCenter(x,y,bx,by)) {
+			if(canTouch(bx, by) && nearCenter(x, y, bx, by)) {
 				countTouch();
 			}
 		}
@@ -404,8 +409,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		private boolean canTouch(int x, int y) {
 			currentWord = getWord();
 
-			int boxBits = 1 << (x + boardWidth * y);
-			if((boxBits & touchedBits) > 0) {
+			int box = x + boardWidth * y;
+			if(touchedCells.contains(box)) {
 				return false;
 			}
 
@@ -419,10 +424,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			// mKeyboardTracker.reset();
 
 			if(touching < 0) {
-				touching = (byte) box;
+				touching = box;
 				countTouch();
 			} else if(touching != box && canTouch(x, y)) {
-				touching = (byte) box;
+				touching = box;
 			}
 		}
 

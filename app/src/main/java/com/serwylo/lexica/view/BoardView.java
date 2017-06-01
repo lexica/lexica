@@ -77,7 +77,7 @@ public class BoardView extends View {
 		p.setARGB(255,255,255,0);
 		for (int x = 0; x < board.getWidth(); x ++) {
 			for (int y = 0; y < board.getWidth(); y ++) {
-				if (isCellHighlighted(x, y)) {
+				if (!isCellHighlighted(x, y)) {
 					continue;
 				}
 
