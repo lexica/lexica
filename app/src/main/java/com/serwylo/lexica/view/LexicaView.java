@@ -25,10 +25,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Set;
 
@@ -41,7 +43,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	public static final int REDRAW_FREQ = 10;
 
 	private final FingerTracker mFingerTracker;
-	// private final KeyboardTracker mKeyboardTracker;
+	private final KeyboardTracker mKeyboardTracker;
 	private final Game game;
 	private int timeRemaining;
 	private int redrawCount;
@@ -69,7 +71,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		boardWidth = game.getBoard().getWidth();
 
 		mFingerTracker = new FingerTracker(game);
-		// mKeyboardTracker = new KeyboardTracker();
+		mKeyboardTracker = new KeyboardTracker();
 		timeRemaining = 0;
 		redrawCount = 1;
 
@@ -114,7 +116,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		// Draw touched boxes
 		p.setARGB(255, 255, 255, 0);
 		for(int i = 0; i < game.getBoard().getSize(); i++) {
-			if (highlighted.contains(i)) {
+			if (!highlighted.contains(i)) {
                 continue;
             }
 
@@ -307,17 +309,18 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		return true;
 	}
 
-	/*@Override
+	@Override
 	public boolean onKeyDown (int keyCode, KeyEvent event) {
 		if(keyCode >= KeyEvent.KEYCODE_A && keyCode <= KeyEvent.KEYCODE_Z) {
-			mKeyboardTracker.processLetter(keyCode-KeyEvent.KEYCODE_A);
+			String letter = Character.toString((char) event.getUnicodeChar()).toLowerCase();
+			mKeyboardTracker.processLetter(letter.equals("q") ? "qu" : letter);
 		} else if (keyCode == KeyEvent.KEYCODE_SPACE || 
 			keyCode == KeyEvent.KEYCODE_ENTER) { 
 			mKeyboardTracker.reset();
 		}
 
 		return false;
-	}*/
+	}
 
 	public void redraw() {
 		redrawCount = REDRAW_FREQ;
@@ -338,7 +341,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	public void onRotate() {
 		mFingerTracker.reset();
-		// mKeyboardTracker.fullReset();
+		mKeyboardTracker.fullReset();
 	}
 
 	private class FingerTracker {
@@ -421,7 +424,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		private void touchBox(int x, int y) {
 			int box = x+boardWidth*y;
-			// mKeyboardTracker.reset();
+			mKeyboardTracker.reset();
 
 			if(touching < 0) {
 				touching = box;
@@ -476,15 +479,11 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 	}
 
-	/*
-	Temporarily disable keyboard support while working on multi-lingual dictionary support.
-	This is because the bitshifting here depends on ASCI key codes coming out of the key event,
-	but we need to support Unicode characters pressed by non en-US keyboards.
 	private class KeyboardTracker {
-		private int defaultAcceptableKeys;
+		private Set<String> defaultAcceptableLetters = new HashSet<>();
 		private LinkedList<State> defaultStates;
 
-		private int acceptableKeys;
+		private Set<String> acceptableLetters;
 		private LinkedList<State> states;
 
 		private String tracked;
@@ -495,11 +494,11 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		private void fullReset() {
 			defaultStates = new LinkedList<>();
-			defaultAcceptableKeys = 0;
+			defaultAcceptableLetters.clear();
 			
-			for(int i=0;i<game.getBoard().getSize();i++) {
-				defaultStates.add(new State(game.getBoard().valueAt(i),i,(1<<i)));
-				defaultAcceptableKeys |= 1<<game.getBoard().valueAt(i);
+			for(int i = 0; i < game.getBoard().getSize(); i++) {
+				defaultStates.add(new State(game.getBoard().valueAt(i), i));
+				defaultAcceptableLetters.add(game.getBoard().valueAt(i));
 			}
 
 			reset();
@@ -508,70 +507,102 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		private void reset() {
 			if(tracked != null) {
 				game.addWord(tracked);
-				highlighted=0;
+				highlighted.clear();
 				currentWord = null;
 			}
 
-			acceptableKeys = defaultAcceptableKeys;
+			acceptableLetters = new HashSet<>(defaultAcceptableLetters);
 			states = defaultStates;
 			tracked = null;
 		}
 
-		private void processLetter(int letter) {
+		private void processLetter(String letter) {
 			mFingerTracker.reset();
 
-			if(((1<<letter)&acceptableKeys)==0) return;
+			if(!acceptableLetters.contains(letter)) {
+				return;
+			}
 
 			LinkedList<State> subStates = new LinkedList<>();
-			acceptableKeys = 0;
+			acceptableLetters.clear();
 			ListIterator<State> iter = states.listIterator();
 
 			boolean appendedString = false;
 
 			while(iter.hasNext()) {
 				State nState = iter.next();
-				if(nState.key != letter) continue;
+				if(!nState.letter.equals(letter)) {
+					continue;
+				}
+
 				if(!appendedString) {
-					if(tracked == null) tracked = "";
+					if(tracked == null) {
+						tracked = "";
+					}
+
 					tracked += game.getBoard().elementAt(nState.pos);
 					currentWord = tracked.toUpperCase();
 
 					appendedString = true;
 				}
 				highlighted = nState.selected;
-				acceptableKeys |= nState.getNextStates(subStates);
+				acceptableLetters.addAll(nState.getNextStates(subStates));
 			}
 
 			states = subStates;
 		}
 
+		/**
+		 * A "state" represents the set of letters that has been pressed so far, up until the last letter.
+		 */
 		private class State {
-			final int key;
+			final String letter;
 			final int pos;
-			final int selected;
+			final Set<Integer> selected;
 
-			State(int key, int pos, int selected) {
-				this.key = key;
+			State(String letter, int pos) {
+				this.letter = letter;
+				this.pos = pos;
+				selected = new HashSet<>();
+				selected.add(pos);
+			}
+
+			State(String letter, int pos, Set<Integer> selected) {
+				this.letter = letter;
 				this.pos = pos;
 				this.selected = selected;
 			}
 
-			int getNextStates(LinkedList<State> possibleStates) {
-				int trans = game.getBoard().transitions(pos);
-				int possible = trans & ~selected;
-				int ret = 0;
+			Set<String> getNextStates(LinkedList<State> possibleStates) {
+				Set<String> canTransitionToNext = new HashSet<>();
 
-				for(int i=0;i<game.getBoard().getSize();i++) {
-					int posbit = 1<<i;
-					if((posbit&possible)==0) continue;
-					possibleStates.add(new State(game.getBoard().valueAt(i),i,selected|posbit));
-					ret |= 1<<game.getBoard().valueAt(i);
+				for(int i = 0; i < game.getBoard().getSize(); i ++) {
+					if (selected.contains(i)) {
+						continue;
+					}
+
+					int fromX = pos % game.getBoard().getWidth();
+					int fromY = pos / game.getBoard().getWidth();
+
+					int toX = i % game.getBoard().getWidth();
+					int toY = i / game.getBoard().getWidth();
+
+					if (!game.getBoard().canTransition(fromX, fromY, toX, toY)) {
+						continue;
+					}
+
+					Set<Integer> newStatePositions = new HashSet<>(selected);
+					newStatePositions.add(i);
+
+					String letter = game.getBoard().valueAt(i);
+					possibleStates.add(new State(letter, i, newStatePositions));
+					canTransitionToNext.add(letter);
 				}
 
-				return ret;
+				return canTransitionToNext;
 			}
 		}
 
-	}*/
+	}
 
 }
