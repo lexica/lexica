@@ -12,10 +12,4 @@ public interface Deserializer<T extends Trie> {
      */
     T deserialize(InputStream stream, TransitionMap transitionMap, boolean usDict, boolean ukDict) throws IOException;
 
-    /**
-     * Same as {@link #deserialize(InputStream, TransitionMap transitionMap, boolean usDict, boolean ukDict)} except it deserializes the entire trie.
-     * @see #deserialize(InputStream, TransitionMap transitionMap, boolean usDict, boolean ukDict)
-     */
-    T deserialize(InputStream stream) throws IOException;
-
 }

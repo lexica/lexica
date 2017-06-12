@@ -69,4 +69,9 @@ public abstract class Board implements TransitionMap {
 
 		return (xDistance == 1 && yDistance == 1 || xDistance == 0 && yDistance == 1 || xDistance == 1 && yDistance == 0);
 	}
+
+	@Override
+	public boolean canRevisit() {
+		return false;
+	}
 }

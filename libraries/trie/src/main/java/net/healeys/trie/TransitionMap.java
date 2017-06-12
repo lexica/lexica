@@ -42,4 +42,9 @@ public interface TransitionMap {
 
 	int getWidth();
 
+	/**
+	 * Whether or not the user is allowed to backrack to squares they've already visited.
+	 */
+	boolean canRevisit();
+
 }

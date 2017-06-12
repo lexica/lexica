@@ -66,7 +66,7 @@ public class CustomUsUkTrieTest extends TrieTest {
 
 			byte[] serialized = serialize(trie);
 
-			Trie deserializedAll = deserializer.deserialize(new ByteArrayInputStream(serialized));
+			Trie deserializedAll = deserializer.deserialize(new ByteArrayInputStream(serialized), new CanTransitionMap(), true, true);
 			assertTrieMatches("After deserializing all words", deserializedAll, US_WORDS, UK_WORDS, BOTH_DIALECTS);
 
 			String[] aeinqt = new String[]{"a", "e", "i", "n", "qu", "t"};
@@ -77,6 +77,12 @@ public class CustomUsUkTrieTest extends TrieTest {
 			Trie deserializedAeinqt = deserializer.deserialize(new ByteArrayInputStream(serialized), new CanTransitionMap(aeinqt), true, true);
 			assertTrieMatches("After desrializing only a subset of words from the letters AEINQT", deserializedAeinqt, aeinqtUsWords, aeinqtUkWords, aeinqtBothWords);
 
+			Trie deserializedAeinqtUs = deserializer.deserialize(new ByteArrayInputStream(serialized), new CanTransitionMap(aeinqt), true, false);
+			assertTrieMatches("After desrializing only a subset of US words from the letters AEINQT", deserializedAeinqtUs, aeinqtUsWords, null, aeinqtBothWords);
+
+			Trie deserializedAeinqtUk = deserializer.deserialize(new ByteArrayInputStream(serialized), new CanTransitionMap(aeinqt), false, true);
+			assertTrieMatches("After desrializing only a subset of UK words from the letters AEINQT", deserializedAeinqtUk, null, aeinqtUkWords, aeinqtBothWords);
+
 			String[] abcehilmnor = new String[]{"a", "b", "c", "e", "h", "i", "l", "m", "n", "o", "r"};
 			String[] abcehilmnorUsWords = new String[]{"america"};
 			String[] abcehilmnorUkWords = new String[]{"monarch"};
@@ -84,6 +90,12 @@ public class CustomUsUkTrieTest extends TrieTest {
 
 			Trie deserializedAbcehilmnor = deserializer.deserialize(new ByteArrayInputStream(serialized), new CanTransitionMap(abcehilmnor), true, true);
 			assertTrieMatches("After desrializing only a subset of words from the letters ABCEHILMNOR", deserializedAbcehilmnor, abcehilmnorUsWords, abcehilmnorUkWords, abcehilmnorBothWords);
+
+			Trie deserializedAbcehilmnorUs = deserializer.deserialize(new ByteArrayInputStream(serialized), new CanTransitionMap(abcehilmnor), true, false);
+			assertTrieMatches("After desrializing only a subset of US words from the letters ABCEHILMNOR", deserializedAbcehilmnorUs, abcehilmnorUsWords, null, abcehilmnorBothWords);
+
+			Trie deserializedAbcehilmnorUk = deserializer.deserialize(new ByteArrayInputStream(serialized), new CanTransitionMap(abcehilmnor), false, true);
+			assertTrieMatches("After desrializing only a subset of UK words from the letters ABCEHILMNOR", deserializedAbcehilmnorUk, null, abcehilmnorUkWords, abcehilmnorBothWords);
 		} catch (IOException e) {
 			fail("Error while deserializing trie: " + e.getMessage());
 		}

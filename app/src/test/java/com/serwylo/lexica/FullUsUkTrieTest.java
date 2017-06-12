@@ -8,6 +8,7 @@ import net.healeys.trie.StringTrie;
 import net.healeys.trie.Trie;
 import net.healeys.trie.WordFilter;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -98,8 +99,7 @@ public class FullUsUkTrieTest extends TrieTest {
 	@Test
 	public void testLoadingCompressedTries() throws IOException {
 		InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream("words.bin");
-		Trie trie = new StringTrie.Deserializer().deserialize(stream, BOARD, true, true);
-		assertEquals(40, trie.solver(BOARD, new WordFilter.MinLength(3)).size());
+		Trie trie = new StringTrie.Deserializer().deserialize(stream, BOARD, true, false);
 		assertTrieCorrect(trie);
 	}
 
@@ -138,10 +138,13 @@ public class FullUsUkTrieTest extends TrieTest {
 		}
 	}
 
+	// Used to test performance optimizations. Remove @Ignore to use it.
 	@Test
+	@Ignore
 	public void testSolverPerformance() throws IOException {
-			InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream("words.bin");
-			Trie trie =new StringTrie.Deserializer().deserialize(stream, BOARD, true, true);assertEquals(41, trie.solver(BOARD, new WordFilter.MinLength(3)).size());
+		InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream("words.bin");
+		Trie trie = new StringTrie.Deserializer().deserialize(stream, BOARD, false, true);
+		assertEquals(40, trie.solver(BOARD, new WordFilter.MinLength(3)).size());
 		long startTime = System.currentTimeMillis();
 		trie.solver(BOARD, new WordFilter.MinLength(3));
 		long totalTime = (System.currentTimeMillis() - startTime) ;

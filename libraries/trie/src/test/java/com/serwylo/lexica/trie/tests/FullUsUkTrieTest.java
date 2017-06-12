@@ -32,9 +32,9 @@ public class FullUsUkTrieTest extends TrieTest {
 		Assert.assertEquals(77097, words.length);
 
 		Trie trie = new StringTrie();
-		addWords(trie, words, true, false);
+		addWords(trie, words, false, true);
 
-		assertTrieMatches("After adding entire UK dictionary to a new Trie", trie, words, null, null);
+		assertTrieMatches("After adding entire UK dictionary to a new Trie", trie, null, words, null);
 	}
 
 	public static String[] readDictionary(String fileName) {

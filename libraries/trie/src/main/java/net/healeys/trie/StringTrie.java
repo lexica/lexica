@@ -23,10 +23,6 @@ public class StringTrie implements Trie {
 		rootNode = new Node();
 	}
 
-	private StringTrie(InputStream in) throws IOException {
-		this(in, null);
-	}
-
 	/**
 	 * Decides whether you can transition from one cell to another, purely based on whether both the
 	 * source and destination cell are present on the board.
@@ -79,12 +75,12 @@ public class StringTrie implements Trie {
 		}
 	}
 
-	private StringTrie(InputStream in, TransitionMap transitionMap) throws IOException {
+	private StringTrie(InputStream in, TransitionMap transitionMap, boolean usDict, boolean ukDict) throws IOException {
 		Set<String> availableStrings = new HashSet<>(transitionMap.getSize());
 		for (int i = 0; i < transitionMap.getSize(); i ++) {
 			availableStrings.add(transitionMap.valueAt(i));
 		}
-		rootNode = new Node(new DataInputStream(new BufferedInputStream(in)), new CheapTransitionMap(transitionMap), availableStrings, false, null, 0);
+		rootNode = new Node(new DataInputStream(new BufferedInputStream(in)), usDict, ukDict, new CheapTransitionMap(transitionMap), availableStrings, false, null, 0);
 	}
 
 	@Override
@@ -150,7 +146,9 @@ public class StringTrie implements Trie {
 			return;
 		}
 
-		usedPositions.add(pos);
+		if (!transitions.canRevisit()) {
+			usedPositions.add(pos);
+		}
 
 		int fromX = pos % transitions.getWidth();
 		int fromY = pos / transitions.getWidth();
@@ -225,7 +223,7 @@ public class StringTrie implements Trie {
 
 		}
 
-		private Node(DataInputStream input, CheapTransitionMap transitionMap, Set<String> availableStrings, boolean shouldSkip, String lastChar, int depth) throws IOException {
+		private Node(DataInputStream input, boolean usDict, boolean ukDict, CheapTransitionMap transitionMap, Set<String> availableStrings, boolean shouldSkip, String lastChar, int depth) throws IOException {
 
 			int nodeSizeInBytes = input.readInt();
 
@@ -257,9 +255,13 @@ public class StringTrie implements Trie {
 					// Need to read the node regardless of whether we end up keeping it. This is to
 					// ensure that we traverse the InputStream in the right order.
 					boolean shouldSkipChild = childStrings[i] == null;
-					Node childNode = new Node(input, transitionMap, availableStrings, shouldSkipChild, childStrings[i], depth + 1);
+					Node childNode = new Node(input, usDict, ukDict, transitionMap, availableStrings, shouldSkipChild, childStrings[i], depth + 1);
 					if (!shouldSkipChild) {
-						children.put(childStrings[i], childNode);
+						if (childNode.isUsWord && !childNode.isUkWord && !usDict || childNode.isUkWord && !childNode.isUsWord && !ukDict) {
+							// Skip it.
+						} else {
+							children.put(childStrings[i], childNode);
+						}
 					}
 				}
 			}
@@ -375,12 +377,7 @@ public class StringTrie implements Trie {
 	public static class Deserializer implements net.healeys.trie.Deserializer<StringTrie> {
 		@Override
 		public StringTrie deserialize(InputStream stream, TransitionMap transitionMap, boolean usDict, boolean ukDict) throws IOException {
-			return new StringTrie(stream, transitionMap);
-		}
-
-		@Override
-		public StringTrie deserialize(InputStream stream) throws IOException {
-			return new StringTrie(stream);
+			return new StringTrie(stream, transitionMap, usDict, ukDict);
 		}
 	}
 

@@ -17,32 +17,34 @@ import java.util.Map;
 import java.util.Set;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TransitionMapTest {
 
     private static final Board BOARD = new FourByFourBoard(new String[] {
-            "B", "E", "Z", "Z",
-            "D", "A", "N", "Z",
-            "Z", "R", "K", "Z",
-            "Z", "N", "Z", "Z",
+            "b", "e", "x", "x",
+            "d", "a", "n", "x",
+            "x", "r", "k", "x",
+            "x", "x", "x", "x",
     });
 
+    // Only a subset of all possible solutions.
     private static final LinkedHashMap<String, Solution> SOLUTIONS = new LinkedHashMap<>();
 
     static {
-        // Note: Don't include "a", "an", or "be" because they is too short.
+        // Note: Don't include "a", "an", or "be" because they are too short.
         SOLUTIONS.put("bed",   new Solution.Default("bed",   new Integer[] { xy(0, 0), xy(1, 0), xy(0, 1) }));
         SOLUTIONS.put("bad",   new Solution.Default("bad",   new Integer[] { xy(0, 0), xy(1, 1), xy(0, 1) }));
         SOLUTIONS.put("ban",   new Solution.Default("ban",   new Integer[] { xy(0, 0), xy(1, 1), xy(2, 1) }));
         SOLUTIONS.put("ran",   new Solution.Default("ran",   new Integer[] { xy(1, 2), xy(1, 1), xy(2, 1) }));
         SOLUTIONS.put("bean",  new Solution.Default("bean",  new Integer[] { xy(0, 0), xy(1, 0), xy(1, 1), xy(2, 1) }));
         SOLUTIONS.put("bane",  new Solution.Default("bane",  new Integer[] { xy(0, 0), xy(1, 1), xy(2, 1), xy(1, 0) }));
-        SOLUTIONS.put("barn",  new Solution.Default("barn",  new Integer[] { xy(0, 0), xy(1, 1), xy(1, 2), xy(1, 3) }));
-        SOLUTIONS.put("darn",  new Solution.Default("darn",  new Integer[] { xy(0, 1), xy(1, 1), xy(1, 2), xy(1, 3) }));
+        SOLUTIONS.put("barn",  new Solution.Default("barn",  new Integer[] { xy(0, 0), xy(1, 1), xy(1, 2), xy(2, 1) }));
+        SOLUTIONS.put("darn",  new Solution.Default("darn",  new Integer[] { xy(0, 1), xy(1, 1), xy(1, 2), xy(2, 1) }));
         SOLUTIONS.put("beard", new Solution.Default("beard", new Integer[] { xy(0, 0), xy(1, 0), xy(1, 1), xy(1, 2), xy(0, 1) }));
         SOLUTIONS.put("ear",   new Solution.Default("ear",   new Integer[] { xy(1, 0), xy(1, 1), xy(1, 2) }));
-        SOLUTIONS.put("earn",  new Solution.Default("earn",  new Integer[] { xy(1, 0), xy(1, 1), xy(1, 2), xy(1, 3) }));
+        SOLUTIONS.put("earn",  new Solution.Default("earn",  new Integer[] { xy(1, 0), xy(1, 1), xy(1, 2), xy(2, 1) }));
         SOLUTIONS.put("bard",  new Solution.Default("bard",  new Integer[] { xy(0, 0), xy(1, 1), xy(1, 2), xy(0, 1) }));
     }
 
@@ -53,7 +55,7 @@ public class TransitionMapTest {
     @Test
     public void stringTransitionTest() throws IOException {
         byte[] serialized = serializedUsTrie(new StringTrie());
-        Trie trie = new StringTrie.Deserializer().deserialize(new ByteArrayInputStream(serialized), BOARD, true, true);
+        Trie trie = new StringTrie.Deserializer().deserialize(new ByteArrayInputStream(serialized), BOARD, true, false);
         LinkedHashMap<String, Solution> actualSolutions = trie.solver(BOARD, new WordFilter.MinLength(3));
         assertSolutions(SOLUTIONS, actualSolutions);
     }
@@ -61,7 +63,6 @@ public class TransitionMapTest {
     private static void assertSolutions(LinkedHashMap<String, Solution> expectedSolutions, LinkedHashMap<String, Solution> actualSolutions) {
         Set<String> expectedWords = expectedSolutions.keySet();
         Set<String> actualWords = actualSolutions.keySet();
-        assertTrue(expectedWords.containsAll(actualWords));
         assertTrue(actualWords.containsAll(expectedWords));
 
         for (Map.Entry<String, Solution> expected : expectedSolutions.entrySet()) {
@@ -83,7 +84,8 @@ public class TransitionMapTest {
     }
 
     private static void assertSolutionEquals(Solution expectedSolution, Solution actualSolution) {
-        assertArrayEquals(expectedSolution.getPositions(), actualSolution.getPositions());
+        assertEquals(expectedSolution.getWord(), actualSolution.getWord());
+        assertArrayEquals("Word: " + expectedSolution.getWord(), expectedSolution.getPositions(), actualSolution.getPositions());
     }
 
     private static byte[] serializedUsTrie(Trie trie) {
