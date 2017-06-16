@@ -29,6 +29,9 @@ import android.util.SparseIntArray;
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
+import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.lang.UkEnglish;
+import com.serwylo.lexica.lang.UsEnglish;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.StringTrie;
@@ -95,8 +98,7 @@ public class Game implements Synchronizer.Counter {
 	private Date start;
 	private final Context context;
 
-	private boolean usDict;
-	private boolean ukDict;
+	private Language language;
 	private int boardSize; // using an int so I can use much larger boards later
 	private int minWordLength;
 
@@ -224,13 +226,9 @@ public class Game implements Synchronizer.Counter {
 			PreferenceManager.getDefaultSharedPreferences(c);
 
 		if(prefs.getString("dict","US").equals("UK")) {
-			// Log.d(TAG,"UK DICT");
-			usDict = false;
-			ukDict = true;
+			language = new UkEnglish();
 		} else {
-			// Log.d(TAG,"US DICT");
-			ukDict = false;
-			usDict = true;
+			language = new UsEnglish();
 		}
 
 		switch (prefs.getString("boardSize","16")) {
@@ -259,16 +257,17 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	public void initializeDictionary() {
-		initializeDictionary(usDict,ukDict);
+		initializeDictionary(language);
 	}
 
-	private void initializeDictionary(boolean usDict, boolean ukDict) {
+	private void initializeDictionary(Language language) {
 		try {
+			String trieFileName = language.getTrieFileName();
+			int id = context.getResources().getIdentifier("raw/" + trieFileName.substring(0, trieFileName.lastIndexOf('.')), null, context.getPackageName());
 			Trie dict = new StringTrie.Deserializer().deserialize(
-					context.getResources().openRawResource(R.raw.words),
+					context.getResources().openRawResource(id),
 					board,
-					usDict,
-					ukDict);
+					language);
 
 			solutions = dict.solver(board,new WordFilter() {
 				public boolean isWord(String w) {

@@ -1,5 +1,9 @@
 package com.serwylo.lexica.trie.tests;
 
+import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.lang.UkEnglish;
+import com.serwylo.lexica.lang.UsEnglish;
+
 import net.healeys.trie.StringTrie;
 import net.healeys.trie.Trie;
 
@@ -17,30 +21,32 @@ public class FullUsUkTrieTest extends TrieTest {
 
 	@Test
 	public void testUsDictionary() {
-		String[] words = readDictionary("us.txt");
+		Language language = new UsEnglish();
+		String[] words = readDictionary(language);
 		Assert.assertEquals(77517, words.length);
 
-		Trie trie = new StringTrie();
-		addWords(trie, words, true, false);
+		Trie trie = new StringTrie(language);
+		addWords(trie, words);
 
-		assertTrieMatches("After adding entire US dictionary to a new Trie", trie, words, null, null);
+		assertTrieMatches("After adding entire US dictionary to a new Trie", trie, words);
 	}
 
 	@Test
 	public void testUkDictionary() {
-		String[] words = readDictionary("uk.txt");
+		Language language = new UkEnglish();
+		String[] words = readDictionary(language);
 		Assert.assertEquals(77097, words.length);
 
-		Trie trie = new StringTrie();
-		addWords(trie, words, false, true);
+		Trie trie = new StringTrie(language);
+		addWords(trie, words);
 
-		assertTrieMatches("After adding entire UK dictionary to a new Trie", trie, null, words, null);
+		assertTrieMatches("After adding entire UK dictionary to a new Trie", trie, words);
 	}
 
-	public static String[] readDictionary(String fileName) {
+	public static String[] readDictionary(Language language) {
 		try {
 			List<String> words = new ArrayList<>(80000);
-			InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream(fileName);
+			InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream(language.getDictionaryFileName());
 			BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 			String line = reader.readLine();
 			while (line != null) {

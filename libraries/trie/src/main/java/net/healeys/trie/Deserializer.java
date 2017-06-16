@@ -1,5 +1,7 @@
 package net.healeys.trie;
 
+import com.serwylo.lexica.lang.Language;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -10,6 +12,6 @@ public interface Deserializer<T extends Trie> {
      * this deserializes a subset of the full trie. The subset contains only the letters in
      * {@param lettersToKeep}.
      */
-    T deserialize(InputStream stream, TransitionMap transitionMap, boolean usDict, boolean ukDict) throws IOException;
+    T deserialize(InputStream stream, TransitionMap transitionMap, Language language) throws IOException;
 
 }

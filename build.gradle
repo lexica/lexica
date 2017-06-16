@@ -32,13 +32,28 @@ task buildTrieLib(type: GradleBuild) {
     tasks = ['build']
 }
 
-task buildDictionaries(dependsOn: buildTrieBuilder, type: JavaExec) {
+task buildUsDictionaries(dependsOn: buildTrieBuilder, type: JavaExec) {
     main = 'com.serwylo.lexica.trie.TrieBuilderApp'
     classpath 'libraries/trie/build/libs/trie.jar', 'libraries/trie-builder/build/libs/trie-builder.jar'
     args = [
-        file('assets/dictionaries/american.txt'),
-        file('assets/dictionaries/british.txt'),
-        file('app/src/main/res/raw/words.bin'),
-        file('app/src/test/resources/words.bin')
+        'en_US',
+        file('assets/dictionaries/'),
+        file('app/src/main/res/raw/'),
+        file('app/src/test/resources/')
     ]
 }
+
+task buildUkDictionaries(dependsOn: buildTrieBuilder, type: JavaExec) {
+    main = 'com.serwylo.lexica.trie.TrieBuilderApp'
+    classpath 'libraries/trie/build/libs/trie.jar', 'libraries/trie-builder/build/libs/trie-builder.jar'
+    args = [
+            'en_UK',
+            file('assets/dictionaries/'),
+            file('app/src/main/res/raw/'),
+            file('app/src/test/resources/')
+    ]
+}
+
+task buildDictionaries
+buildDictionaries.dependsOn = [buildUsDictionaries, buildUkDictionaries]
+
