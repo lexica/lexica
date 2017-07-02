@@ -28,7 +28,9 @@ import android.util.Log;
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
-import net.healeys.trie.CompressedTrie;
+
+import net.healeys.trie.Solution;
+import net.healeys.trie.StringTrie;
 import net.healeys.trie.Trie;
 import net.healeys.trie.WordFilter;
 
@@ -79,7 +81,7 @@ public class Game implements Synchronizer.Counter {
 	private int boardSize; // using an int so I can use much larger boards later
 	private int minWordLength;
 
-	private LinkedHashMap<String,Trie.Solution> solutions;
+	private LinkedHashMap<String,Solution> solutions;
 
 	private AudioManager mgr;
 	private SoundPool mSoundPool;
@@ -134,12 +136,10 @@ public class Game implements Synchronizer.Counter {
 
 		switch(boardSize) {
 			case 16:
-				setBoard(new CharProbGenerator(c.getResources().
-					openRawResource(R.raw.letters)).generateFourByFourBoard());
+				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateFourByFourBoard());
 			break;
 			case 25:
-				setBoard(new CharProbGenerator(c.getResources().
-					openRawResource(R.raw.letters)).generateFiveByFiveBoard());
+				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateFiveByFiveBoard());
 			break;
 		}
 
@@ -219,26 +219,13 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	private void initializeDictionary(boolean usDict, boolean ukDict) {
-		// Log.d(TAG,"initializeDictionary");
-		int mask = 0;
-		int neighborMasks[] = new int[26];
-		CompressedTrie dict;
-
-		for(int i=0;i<board.getSize();i++) {
-			int ival = Trie.charToOffset(board.elementAt(i).charAt(0));
-			mask |= 1<<ival;
-
-			for(int j=0;j<board.getSize();j++) {
-				if((board.transitions(i)&(1<<j))!= 0) {
-					neighborMasks[ival] |= 1<<Trie.charToOffset(board.elementAt(j).
-							charAt(0));
-				}
-			}
-		}
 		try {
-			dict = new CompressedTrie(context.getResources().
-				openRawResource(R.raw.words),mask,neighborMasks,
-				usDict,ukDict);
+			Trie dict = new StringTrie.Deserializer().deserialize(
+					context.getResources().openRawResource(R.raw.words),
+					board,
+					usDict,
+					ukDict);
+
 			solutions = dict.solver(board,new WordFilter() {
 				public boolean isWord(String w) {
 					return w.length() >= minWordLength;
@@ -287,7 +274,7 @@ public class Game implements Synchronizer.Counter {
 		if(status != GameStatus.GAME_RUNNING) {
 			return;
 		}
-		String cap = word.toUpperCase();
+		String cap = word.toLowerCase();
 		wordList.addFirst(cap);
 
 		if(isWord(cap)) {
@@ -363,7 +350,7 @@ public class Game implements Synchronizer.Counter {
 		timeRemaining = 0;
 	}
 
-	public LinkedHashMap<String,Trie.Solution> getSolutions() {
+	public LinkedHashMap<String,Solution> getSolutions() {
 		return solutions;
 	}
 

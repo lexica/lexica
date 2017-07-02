@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.Random;
 
 public class CharProbGenerator {
@@ -38,7 +39,7 @@ public class CharProbGenerator {
 
 		try {
 			for(String line=br.readLine();line != null; line=br.readLine()) {
-				String chunks[] = line.split(" ");
+				String chunks[] = line.toLowerCase(Locale.ENGLISH).split(" ");
 				ProbabilityQueue pq = new ProbabilityQueue(chunks[0]);
 				for(int i=1;i<chunks.length;i++) {
 					pq.addProb(chunks[i]);

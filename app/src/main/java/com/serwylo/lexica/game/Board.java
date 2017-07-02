@@ -17,8 +17,9 @@
 
 package com.serwylo.lexica.game;
 
+import android.text.TextUtils;
+
 import net.healeys.trie.TransitionMap;
-import net.healeys.trie.Trie;
 
 public abstract class Board implements TransitionMap {
 	private String[] board;
@@ -35,20 +36,12 @@ public abstract class Board implements TransitionMap {
 		return board[x+getWidth()*y];
 	}
 
-	public synchronized int valueAt(int i) {
-		return Trie.charToOffset(board[i].charAt(0));
+	public synchronized String valueAt(int i) {
+		return board[i];
 	}
 
 	public synchronized String toString() {
-		StringBuilder sb = new StringBuilder();
-		int size = getSize();
-		for(int i=0;i<size-1;i++) {
-			sb.append(board[i]);
-			sb.append(",");
-		}
-		sb.append(board[size-1]);
-
-		return sb.toString();
+		return TextUtils.join(",", board);
 	}
 
 	public synchronized void rotate() {
@@ -63,9 +56,22 @@ public abstract class Board implements TransitionMap {
 		board = newbrd;
 	}
 
-	public abstract int getSize();
 	public abstract int getWidth();
 
-	public abstract int transitions(int position);
+	@Override
+	public boolean canTransition(int fromX, int fromY, int toX, int toY) {
+		if (fromX >= getWidth() || fromY >= getWidth() || toX >= getWidth() || toY >= getWidth()) {
+			return false;
+		}
 
+		int xDistance = Math.abs(fromX - toX);
+		int yDistance = Math.abs(fromY - toY);
+
+		return (xDistance == 1 && yDistance == 1 || xDistance == 0 && yDistance == 1 || xDistance == 1 && yDistance == 0);
+	}
+
+	@Override
+	public boolean canRevisit() {
+		return false;
+	}
 }

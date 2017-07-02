@@ -15,7 +15,12 @@ public class TrieBuilderApp {
 
 		final File usDictFile = new File(args[0]);
 		final File ukDictFile = new File(args[1]);
-		final File outputFile = new File(args[2]);
+
+		int outputFileCount = args.length - 2;
+		final File[] outputFiles = new File[outputFileCount];
+		for (int i = 0; i < outputFileCount; i ++) {
+			outputFiles[i] = new File(args[i + 2]);
+		}
 
 		if (!usDictFile.exists()) {
 			printFileNotFound(usDictFile);
@@ -27,7 +32,7 @@ public class TrieBuilderApp {
 			return;
 		}
 
-		final TrieBuilder builder = new TrieBuilder(usDictFile, ukDictFile, outputFile);
+		final TrieBuilder builder = new TrieBuilder(usDictFile, ukDictFile, outputFiles);
 		builder.run();
 	}
 
@@ -35,7 +40,7 @@ public class TrieBuilderApp {
 		System.out.println("Usage:");
 		System.out.println("    java -jar trie-builder.jar path/to/usDict.txt path/to/ukDict.txt path/to/words.bin");
 		System.out.println("        usDict.txt|ukDict.txt  Input text files, one word per line.");
-		System.out.println("        words.bin              Output file containing a trie of all the words.");
+		System.out.println("        words.bin ...          Output file(s) containing a trie of all the words.");
 	}
 
 	private static void printFileNotFound(File file) {

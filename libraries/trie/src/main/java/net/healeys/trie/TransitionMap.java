@@ -23,15 +23,7 @@ package net.healeys.trie;
  */
 public interface TransitionMap {
 
-	/**
-	 * Provides information about the connectivity between positions.
-	 * The result is a 32-bit int that acts as a bitmap representation of the
-	 * other positions that this position is connected to.
-	 *
-	 * @param 	position	the id of a position
-	 * @return				a bitmap marking connected positions
-	 */
-	int transitions(int position);
+	boolean canTransition(int fromX, int fromY, int toX, int toY);
 	
 	/**
 	 * Provides the value (letter) stored at a particular position.
@@ -39,7 +31,7 @@ public interface TransitionMap {
 	 * @param	position	the id of a position
 	 * @return				the value stored at that position
 	 */
-	int valueAt(int position);
+	String valueAt(int position);
 
 	/**
 	 * Provides the number of positions available on a particular board.
@@ -47,5 +39,12 @@ public interface TransitionMap {
 	 * @return				the number of positions
 	 */
 	int getSize();
+
+	int getWidth();
+
+	/**
+	 * Whether or not the user is allowed to backrack to squares they've already visited.
+	 */
+	boolean canRevisit();
 
 }

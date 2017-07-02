@@ -49,7 +49,7 @@ public class TrieDictBuilder {
 			System.exit(1);
 		}
 
-		Trie outTrie = new Trie();
+		Trie outTrie = new StringTrie();
 
 		readFileIntoTrie(Args[0],outTrie,true,false);
 		readFileIntoTrie(Args[1],outTrie,false,true);
