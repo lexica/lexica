@@ -1,5 +1,6 @@
 package com.serwylo.lexica.trie.tests;
 
+import com.serwylo.lexica.lang.DeGerman;
 import com.serwylo.lexica.lang.UkEnglish;
 import com.serwylo.lexica.trie.util.LetterFrequency;
 
@@ -13,6 +14,13 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class LetterFrequencyTest {
+
+    @Test
+    public void countUnicodeLetters() {
+        LetterFrequency letters = new LetterFrequency(new DeGerman());
+
+        letters.addWord("uber");
+    }
 
     @Test
     public void countLetters() {

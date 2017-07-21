@@ -13,7 +13,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
+import java.nio.charset.Charset;
 
 public class TrieBuilder {
 
@@ -21,7 +21,7 @@ public class TrieBuilder {
 		Trie outTrie = new StringTrie(language);
 		LetterFrequency letters = new LetterFrequency(language);
 
-		readCorpus(dictFile, outTrie, letters);
+		readCorpus(language, dictFile, outTrie, letters);
 
 		for (File outputFile : outputTrieFiles) {
 			FileOutputStream of = null;
@@ -38,16 +38,7 @@ public class TrieBuilder {
 		FileWriter writer = null;
 		try {
 			writer = new FileWriter(outputLettersFile);
-
-			int max = letters.getMaxSingleLetterCount();
-			for (String letter : letters.getLetters()) {
-				writer.write(letter);
-				for (int count : letters.getCountsForLetter(letter)) {
-					writer.write(" ");
-					writer.write(Integer.toString((int) Math.ceil((double)(count) / max * 100)));
-				}
-				writer.write("\n");
-			}
+			writer.write(letters.toSingleLetterCountString());
 		} finally {
 			if (writer != null) {
 				writer.close();
@@ -55,11 +46,11 @@ public class TrieBuilder {
 		}
 	}
 
-	private static void readCorpus(File dictFile, Trie trie, LetterFrequency letters) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(dictFile)));
+	private static void readCorpus(Language language, File dictFile, Trie trie, LetterFrequency letters) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(dictFile), Charset.forName("UTF-8")));
 		String line;
 		while((line = br.readLine()) != null) {
-			String word = line.toLowerCase(Locale.ENGLISH);
+			String word = line.toLowerCase(language.getLocale());
 			trie.addWord(word);
 			letters.addWord(word);
 		}

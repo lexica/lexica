@@ -9,6 +9,15 @@ public abstract class Language {
     public abstract String getName();
 
     /**
+     * Beta languages are thouse which have not been properly play tested.
+     * When adding a new language, override and return true to show feedback to the user that the
+     * dictionary is still in beta.
+     */
+    public boolean isBeta() {
+        return false;
+    }
+
+    /**
      * Converts a lowercase representation into something for display. For example, in the case
      * of an English "qu", it should probably be displayed with a capitol "Q" but lower case "u":
      * "Qu";
@@ -51,6 +60,15 @@ public abstract class Language {
     }
 
     public static Language from(String name) throws NotFound {
+        Language language = fromOrNull(name);
+        if (language == null) {
+            throw new NotFound(name);
+        }
+
+        return language;
+    }
+
+    public static Language fromOrNull(String name) {
         switch (name) {
             case "en_US":
                 return new UsEnglish();
@@ -58,8 +76,26 @@ public abstract class Language {
             case "en_UK":
                 return new UkEnglish();
 
+            case "de_DE":
+                return new DeGerman();
+
+            case "nl":
+                return new Dutch();
+
+            case "fa":
+                return new Persian();
+
+            case "it":
+                return new Italian();
+
+            case "ca":
+                return new Catalan();
+
+            case "es":
+                return new Spanish();
+
             default:
-                throw new NotFound(name);
+                return null;
         }
     }
 

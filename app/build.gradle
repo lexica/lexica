@@ -36,6 +36,5 @@ dependencies {
     compile 'com.android.support:support-annotations:23.1.1'
 
     testCompile "junit:junit:4.11"
+    testCompile "org.apache.commons:commons-math:2.2"
 }
-
-preBuild.dependsOn project(':').buildDictionaries

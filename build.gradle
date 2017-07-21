@@ -6,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:2.3.3'
     }
 }
 
@@ -32,28 +32,23 @@ task buildTrieLib(type: GradleBuild) {
     tasks = ['build']
 }
 
-task buildUsDictionaries(dependsOn: buildTrieBuilder, type: JavaExec) {
-    main = 'com.serwylo.lexica.trie.TrieBuilderApp'
-    classpath 'libraries/trie/build/libs/trie.jar', 'libraries/trie-builder/build/libs/trie-builder.jar'
-    args = [
-        'en_US',
-        file('assets/dictionaries/'),
-        file('app/src/main/res/raw/'),
-        file('app/src/test/resources/')
-    ]
-}
-
-task buildUkDictionaries(dependsOn: buildTrieBuilder, type: JavaExec) {
-    main = 'com.serwylo.lexica.trie.TrieBuilderApp'
-    classpath 'libraries/trie/build/libs/trie.jar', 'libraries/trie-builder/build/libs/trie-builder.jar'
-    args = [
-            'en_UK',
-            file('assets/dictionaries/'),
-            file('app/src/main/res/raw/'),
-            file('app/src/test/resources/')
-    ]
-}
-
 task buildDictionaries
-buildDictionaries.dependsOn = [buildUsDictionaries, buildUkDictionaries]
+
+def languages = ["en_US", "en_UK", "de_DE", "ca", "es", "fa", "it", "nl"]
+languages.each { lang ->
+
+    def langTask = task "buildDictionary_${lang}"(dependsOn: buildTrieBuilder, type: JavaExec) {
+        main = 'com.serwylo.lexica.trie.TrieBuilderApp'
+        classpath 'libraries/trie/build/libs/trie.jar', 'libraries/trie-builder/build/libs/trie-builder.jar'
+        args = [
+                lang,
+                file('assets/dictionaries/'),
+                file('app/src/main/res/raw/'),
+                file('app/src/test/resources/')
+        ]
+    }
+
+    buildDictionaries.dependsOn << langTask
+}
+
 

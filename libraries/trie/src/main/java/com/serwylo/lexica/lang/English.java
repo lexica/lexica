@@ -15,7 +15,7 @@ public abstract class English extends Language {
             return "Qu";
         }
 
-        return value;
+        return value.toUpperCase(getLocale());
     }
 
     @Override

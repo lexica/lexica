@@ -29,6 +29,7 @@ import android.util.SparseIntArray;
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
+import com.serwylo.lexica.lang.DeGerman;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.UkEnglish;
 import com.serwylo.lexica.lang.UsEnglish;
@@ -241,11 +242,20 @@ public class Game implements Synchronizer.Counter {
 		SharedPreferences prefs =
 			PreferenceManager.getDefaultSharedPreferences(c);
 
-		if(prefs.getString("dict","US").equals("UK")) {
-			language = new UkEnglish();
-		} else {
-			language = new UsEnglish();
+		String languageCode = prefs.getString("dict", "US");
+		language = Language.fromOrNull(languageCode);
+		if (language == null) {
+			// Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_UK")
+			switch (languageCode) {
+				case "UK":
+					language = new UkEnglish();
+					break;
+				default:
+					language = new UsEnglish();
+					break;
+			}
 		}
+		Log.d(TAG, "Language (from preferences): " + language.getName());
 
 		switch (prefs.getString("boardSize","16")) {
 			case "16":
@@ -291,9 +301,11 @@ public class Game implements Synchronizer.Counter {
 				}
 			});
 
-			for (String w: solutions.keySet()) {
-				maxWordCountsByLength.put(w.length(), maxWordCountsByLength.get(w.length()) + 1);
+			for (String word: solutions.keySet()) {
+				maxWordCountsByLength.put(word.length(), maxWordCountsByLength.get(word.length()) + 1);
+                Log.d(TAG, "Word: " + word);
 			}
+            Log.d(TAG, "Language: " + language.getName());
 		} catch(IOException e) {
 			// Log.e(TAG,"initializeDictionary",e);
 		}

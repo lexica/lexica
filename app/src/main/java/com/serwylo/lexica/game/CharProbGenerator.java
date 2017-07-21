@@ -32,8 +32,7 @@ public class CharProbGenerator {
 
 	public CharProbGenerator(InputStream letter_stream) {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(
-			letter_stream));
+		BufferedReader br = new BufferedReader(new InputStreamReader(letter_stream));
 
 		charProbs = new ArrayList<>();
 
@@ -79,7 +78,7 @@ public class CharProbGenerator {
 		for(int i=0;i<size;i++) {
 			ProbabilityQueue pq = null;
 			int remaining = rng.nextInt(total);
-			// Log.d(TAG,"remaining:"+remaining+"/"+total);
+			// System.out.println("pos: " + i + ", remaining:"+remaining+"/"+total);
 			for(int j=0;j<charProbs.size();j++) {
 				pq = charProbs.get(j);
 				remaining -= pq.peekProb();
