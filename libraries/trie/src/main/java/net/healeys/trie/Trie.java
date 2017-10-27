@@ -2,7 +2,7 @@ package net.healeys.trie;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.LinkedHashMap;
+import java.util.Map;
 
 public interface Trie extends WordFilter {
 	void addWord(String w, boolean usWord, boolean ukWord);
@@ -13,6 +13,6 @@ public interface Trie extends WordFilter {
 
 	void write(OutputStream out) throws IOException;
 
-	LinkedHashMap<String,Solution> solver(TransitionMap m, WordFilter filter);
+	Map<String,Solution> solver(TransitionMap m, WordFilter filter);
 
 }

@@ -22,6 +22,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Picture;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -60,9 +61,11 @@ public class LexicaLogo extends View {
 		}
 	}
 
+	private final Rect textBounds = new Rect();
+
 	private void drawTile(Canvas canvas, Paint p, String letter, BoxColor color,
-		int x, int y, int size) {
-		
+		int x, int y, int size, float offset) {
+
 		switch(color) {
 			case WHITE:
 				p.setARGB(255,255,255,255);
@@ -81,8 +84,8 @@ public class LexicaLogo extends View {
 		canvas.drawLine(x,y,x,y+size,p);
 		canvas.drawLine(x+size,y,x+size,y+size,p);
 		canvas.drawLine(x,y+size,x+size,y+size,p);
-		
-		canvas.drawText(letter,x+size/2,y+(size*8/10),p);
+
+		canvas.drawText(letter,x+size/2,y+(size/2)-offset,p);
 
 	}
 
@@ -112,6 +115,10 @@ public class LexicaLogo extends View {
 		int size = Math.min(height,width) / 8;
 		p.setTextSize(size*8/10);
 
+		// Find vertical center offset
+		p.getTextBounds("A", 0, 1, textBounds);
+		float offset = textBounds.exactCenterY();
+
 		Random rng = new Random();
 
 		for(int i=0;i<20;i++) {
@@ -119,7 +126,7 @@ public class LexicaLogo extends View {
 			int x = rng.nextInt(width-size-10)+5;
 			int y = rng.nextInt(height-size-10)+5;
 
-			drawTile(canvas,p,l,BoxColor.WHITE,x,y,size);
+			drawTile(canvas,p,l,BoxColor.WHITE,x,y,size,offset);
 		}
 
 		int outerPadding = paddingSize * 2;
@@ -128,21 +135,25 @@ public class LexicaLogo extends View {
 		size = (Math.min(height,width) - outerPadding - totalInnerPadding ) / 6;
 		p.setTextSize(size*8/10);
 
+		// Find vertical center offset
+		p.getTextBounds("A", 0, 1, textBounds);
+		offset = textBounds.exactCenterY();
+
 		int totalWidthOfTiles = 6 * size;
 		int y = (height - size) / 2;
 		int dx = (width - totalWidthOfTiles - outerPadding) / 5 + size;
 		int x = paddingSize;
-		drawTile(canvas,p,"L",BoxColor.YELLOW,x,y,size);
+		drawTile(canvas,p,"L",BoxColor.YELLOW,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"E",BoxColor.YELLOW,x,y,size);
+		drawTile(canvas,p,"E",BoxColor.YELLOW,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"X",BoxColor.YELLOW,x,y,size);
+		drawTile(canvas,p,"X",BoxColor.YELLOW,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"I",BoxColor.YELLOW,x,y,size);
+		drawTile(canvas,p,"I",BoxColor.YELLOW,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"C",BoxColor.YELLOW,x,y,size);
+		drawTile(canvas,p,"C",BoxColor.YELLOW,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"A",BoxColor.YELLOW,x,y,size);
+		drawTile(canvas,p,"A",BoxColor.YELLOW,x,y,size,offset);
 
 	}
 

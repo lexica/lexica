@@ -37,10 +37,10 @@ import net.healeys.trie.WordFilter;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.Map;
 
 public class Game implements Synchronizer.Counter {
 
@@ -81,7 +81,7 @@ public class Game implements Synchronizer.Counter {
 	private int boardSize; // using an int so I can use much larger boards later
 	private int minWordLength;
 
-	private LinkedHashMap<String,Solution> solutions;
+	private Map<String,Solution> solutions;
 
 	private AudioManager mgr;
 	private SoundPool mSoundPool;
@@ -145,7 +145,6 @@ public class Game implements Synchronizer.Counter {
 
 		timeRemaining = getMaxTimeRemaining();
 		maxTime = getMaxTimeRemaining();
-
 		wordsUsed = new LinkedHashSet<>();
 
 	}
@@ -158,7 +157,7 @@ public class Game implements Synchronizer.Counter {
 		soundIds[1] = mSoundPool.load(c,R.raw.sound2,1);
 		soundIds[2] = mSoundPool.load(c,R.raw.sound3,1);
 
-		mgr = (AudioManager) c.getSystemService(Context.AUDIO_SERVICE); 
+		mgr = (AudioManager) c.getSystemService(Context.AUDIO_SERVICE);
 	}
 
 	private void playSound(int soundId) {
@@ -185,7 +184,7 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	private void loadPreferences(Context c) {
-		SharedPreferences prefs = 
+		SharedPreferences prefs =
 			PreferenceManager.getDefaultSharedPreferences(c);
 
 		if(prefs.getString("dict","US").equals("UK")) {
@@ -258,7 +257,7 @@ public class Game implements Synchronizer.Counter {
 	private String wordListToString() {
 		StringBuilder sb = new StringBuilder();
 		ListIterator<String> li = wordList.listIterator();
-		
+
 		while(li.hasNext()) {
 			String w = li.next();
 			sb.append(w);
@@ -292,7 +291,11 @@ public class Game implements Synchronizer.Counter {
 		}
 		wordsUsed.add(cap);
 	}
-	
+
+	public int getWordScore(String word) {
+		return WORD_POINTS[word.length()];
+	}
+
 	public int getWordCount() {
 		return wordCount;
 	}
@@ -335,7 +338,7 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	public void pause() {
-		if(status == GameStatus.GAME_RUNNING) 
+		if(status == GameStatus.GAME_RUNNING)
 			status = GameStatus.GAME_PAUSED;
 	}
 
@@ -350,7 +353,7 @@ public class Game implements Synchronizer.Counter {
 		timeRemaining = 0;
 	}
 
-	public LinkedHashMap<String,Solution> getSolutions() {
+	public Map<String,Solution> getSolutions() {
 		return solutions;
 	}
 

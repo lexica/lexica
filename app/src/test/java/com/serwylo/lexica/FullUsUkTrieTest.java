@@ -104,7 +104,7 @@ public class FullUsUkTrieTest extends TrieTest {
 	}
 
 	private static void assertTrieCorrect(Trie trie) {
-		LinkedHashMap<String, Solution> solutions = trie.solver(BOARD, new WordFilter.MinLength(3));
+		Map<String, Solution> solutions = trie.solver(BOARD, new WordFilter.MinLength(3));
 		List<String> expectedWords = new ArrayList<>();
 		Collections.addAll(expectedWords, WORDS);
 

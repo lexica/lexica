@@ -24,6 +24,7 @@ import com.serwylo.lexica.Synchronizer;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -102,10 +103,12 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 		boxsize = ((float) gridsize) / boardWidth;
 
-		if(mFingerTracker != null) {
+		if (mFingerTracker != null) {
 			mFingerTracker.boundBoard(paddingSize + gridsize, paddingSize + timerHeight + gridsize);
 		}
 	}
+
+	private final Rect textBounds = new Rect();
 
 	private void drawBoard(Canvas canvas) {
 		// Draw white box
@@ -115,56 +118,65 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		// Draw touched boxes
 		p.setARGB(255, 255, 255, 0);
-		for(int i = 0; i < game.getBoard().getSize(); i++) {
+		for (int i = 0; i < game.getBoard().getSize(); i++) {
 			if (!highlighted.contains(i)) {
-                continue;
-            }
+				continue;
+			}
 
 			int x = i % game.getBoard().getWidth();
 			int y = i / game.getBoard().getWidth();
 			float left = paddingSize + boxsize * x;
 			float top = topOfGrid + boxsize * y;
-			float right = paddingSize + boxsize * (x+1);
-			float bottom = topOfGrid + boxsize * (y+1);
+			float right = paddingSize + boxsize * (x + 1);
+			float bottom = topOfGrid + boxsize * (y + 1);
 			canvas.drawRect(left, top, right, bottom, p);
 		}
 
 		// Draw grid
-		p.setARGB(255,0,0,0);
+		p.setARGB(255, 0, 0, 0);
 
 		// Vertical lines
-		for(float i = paddingSize; i <= paddingSize + gridsize; i += boxsize) {
+		for (float i = paddingSize; i <= paddingSize + gridsize; i += boxsize) {
 			canvas.drawLine(i, topOfGrid, i, gridsize + topOfGrid, p);
 		}
 		// Horizontal lines
-		for(float i = topOfGrid; i <= topOfGrid + gridsize; i += boxsize) {
+		for (float i = topOfGrid; i <= topOfGrid + gridsize; i += boxsize) {
 			canvas.drawLine(paddingSize, i, gridsize + paddingSize, i, p);
 		}
 
 		p.setARGB(255, 0, 0, 0);
-		p.setTextSize(boxsize-textSizeNormal);
-		p.setTextAlign(Paint.Align.CENTER);
-
 		p.setTypeface(Typeface.MONOSPACE);
-		for(int x=0;x<boardWidth;x++) {
-			for(int y=0;y<boardWidth;y++) {
-				String txt = game.getBoard().elementAt(x,y);
-				canvas.drawText(txt.toUpperCase(), paddingSize + x * boxsize + boxsize / 2, (y + 1) * boxsize, p);
+		float textSize = boxsize * 0.8f;
+		p.setTextSize(textSize);
+
+		// Find vertical center offset
+		p.getTextBounds("A", 0, 1, textBounds);
+		float offset = textBounds.exactCenterY();
+
+
+		for (int x = 0; x < boardWidth; x++) {
+			for (int y = 0; y < boardWidth; y++) {
+				String txt = game.getBoard().elementAt(x, y).toUpperCase();
+				p.setTextSize(textSize);
+				p.setTextAlign(Paint.Align.CENTER);
+				canvas.drawText(txt,
+						paddingSize + x * boxsize + boxsize / 2,
+						topOfGrid + y * boxsize + boxsize / 2 - offset,
+						p);
 			}
 		}
-
 	}
 
 	private void drawTimer(Canvas canvas) {
 		p.setColor(getResources().getColor(R.color.colorPrimaryDark));
 		canvas.drawRect(0, 0, width, timerHeight + 2, p);
 
-		if(timeRemaining < 1000) {
-			p.setARGB(255,255,0,0);
+		if (timeRemaining < 1000) {
+			p.setARGB(255, 255, 0, 0);
 		} else if (timeRemaining < 3000) {
-			p.setARGB(255,255,255,0);
+			p.setARGB(255, 255, 255, 0);
 		} else {
-			p.setARGB(255,0,255,0);
+			p.setARGB(255, 0, 255, 0);
 		}
 
 		int pixelWidth = width * timeRemaining / game.getMaxTimeRemaining();
@@ -190,47 +202,42 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private void drawWordList(Canvas canvas, int left, int top, int bottom) {
 		// draw current word
 		p.setTextSize(textSizeNormal);
-		p.setARGB(255,0,0,0);
-		if(currentWord != null) {
-			canvas.drawText(currentWord.toUpperCase(),left,top,p);
+		p.setARGB(255, 0, 0, 0);
+		if (currentWord != null) {
+			canvas.drawText(currentWord.toUpperCase(), left, top, p);
 		}
 
 		// draw words
-		int pos = top+textSizeNormal;
+		int pos = top + textSizeNormal;
 		ListIterator<String> li = game.listIterator();
 		p.setTextSize(textSizeSmall);
 
-		while(li.hasNext() && pos < bottom) {
+		while (li.hasNext() && pos < bottom) {
 			String w = li.next();
-			if(game.isWord(w)) {
-				p.setARGB(255,0,0,0);
+			if (game.isWord(w)) {
+				p.setARGB(255, 0, 0, 0);
 			} else {
-				p.setARGB(255,255,0,0);
+				p.setARGB(255, 255, 0, 0);
 			}
-			canvas.drawText(w.toUpperCase(),left,pos,p);
+			canvas.drawText(w.toUpperCase(), left, pos, p);
 			pos += textSizeSmall;
 		}
 	}
 
 	private int drawTextTimer(Canvas canvas, int left, int top) {
-		if(timeRemaining < 1000) {
-			p.setARGB(255,255,0,0);
+		if (timeRemaining < 1000) {
+			p.setARGB(255, 255, 0, 0);
 		} else if (timeRemaining < 3000) {
-			p.setARGB(255,255,255,0);
+			p.setARGB(255, 255, 255, 0);
 		} else {
-			p.setARGB(255,0,0,0);
+			p.setARGB(255, 0, 0, 0);
 		}
 
 		int secRemaining = timeRemaining / 100;
 		int mins = secRemaining / 60;
 		int secs = secRemaining % 60;
 
-		String time = "" + mins + ":";
-		if(secs < 10) {
-			time += "0"+ (secRemaining % 60);
-		} else {
-			time += ""+ (secRemaining % 60);
-		}
+		String time = mins + ":" + (secs < 10 ? "0" : "") + secs;
 
 		p.setTextSize(textSizeLarge);
 		canvas.drawText(time, left, top, p);
@@ -240,8 +247,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	private void drawScoreLandscape(Canvas canvas) {
 		int textAreaTop = paddingSize + timerHeight;
-		int textAreaHeight = height - 2*paddingSize;
-		int textAreaLeft = 2*paddingSize + gridsize;
+		int textAreaHeight = height - 2 * paddingSize;
+		int textAreaLeft = 2 * paddingSize + gridsize;
 		int textAreaWidth = width - paddingSize - textAreaLeft;
 
 		int paddedLeft = textAreaLeft + textAreaWidth / 2;
@@ -254,23 +261,23 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		int textAreaTop = 2 * paddingSize + gridsize + timerHeight;
 		int textAreaHeight = height - paddingSize - textAreaTop;
 		int textAreaLeft = paddingSize;
-		int textAreaWidth = width - 2* paddingSize;
+		int textAreaWidth = width - 2 * paddingSize;
 
 		p.setTypeface(Typeface.SANS_SERIF);
 
 		int paddedLeft = textAreaLeft + textAreaWidth / 4;
 
 		drawWordCountAndTimer(canvas, paddedLeft, textAreaTop);
-		drawWordList(canvas, textAreaLeft + textAreaWidth * 3 / 4, textAreaTop + textSizeNormal,textAreaTop+textAreaHeight);
+		drawWordList(canvas, textAreaLeft + textAreaWidth * 3 / 4, textAreaTop + textSizeNormal, textAreaTop + textAreaHeight);
 
 	}
 
 	private int drawWordCountAndTimer(Canvas canvas, int left, int top) {
 		int paddedTop = top + paddingSize * 3;
-		int bottomOfWordCount = drawWordCount(canvas, left, paddedTop);
+		int bottomOfTimer = drawTextTimer(canvas, left, paddedTop);
 
-		int topOfTimer = bottomOfWordCount + paddingSize;
-		return drawTextTimer(canvas, left, topOfTimer);
+		int topOfWordCount = bottomOfTimer;
+		return drawWordCount(canvas, left, topOfWordCount);
 	}
 
 	@Override
@@ -279,30 +286,30 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		canvas.drawColor(getResources().getColor(R.color.background));
 
-		if(game.getStatus() != Game.GameStatus.GAME_RUNNING) return;
+		if (game.getStatus() != Game.GameStatus.GAME_RUNNING) return;
 
 		drawBoard(canvas);
 		drawTimer(canvas);
 
-		if(width > height) {
+		if (width > height) {
 			drawScoreLandscape(canvas);
 		} else {
 			drawScorePortrait(canvas);
 		}
 	}
 
-	@Override 
+	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		if(mFingerTracker == null) return false;
+		if (mFingerTracker == null) return false;
 		int action = event.getAction();
-		switch(action) {
+		switch (action) {
 			case MotionEvent.ACTION_DOWN:
 			case MotionEvent.ACTION_MOVE:
-				mFingerTracker.touchScreen((int)event.getX(),(int)event.getY());
-			break;
+				mFingerTracker.touchScreen((int) event.getX(), (int) event.getY());
+				break;
 			case MotionEvent.ACTION_UP:
 				mFingerTracker.release();
-			break;
+				break;
 		}
 
 		redraw();
@@ -310,12 +317,12 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	}
 
 	@Override
-	public boolean onKeyDown (int keyCode, KeyEvent event) {
-		if(keyCode >= KeyEvent.KEYCODE_A && keyCode <= KeyEvent.KEYCODE_Z) {
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode >= KeyEvent.KEYCODE_A && keyCode <= KeyEvent.KEYCODE_Z) {
 			String letter = Character.toString((char) event.getUnicodeChar()).toLowerCase();
 			mKeyboardTracker.processLetter(letter.equals("q") ? "qu" : letter);
-		} else if (keyCode == KeyEvent.KEYCODE_SPACE || 
-			keyCode == KeyEvent.KEYCODE_ENTER) { 
+		} else if (keyCode == KeyEvent.KEYCODE_SPACE ||
+				keyCode == KeyEvent.KEYCODE_ENTER) {
 			mKeyboardTracker.reset();
 		}
 
@@ -329,12 +336,12 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	public void tick(int time) {
 		boolean doRedraw = false;
-	
+
 		timeRemaining = time;
-		if(--redrawCount <= 0) {
+		if (--redrawCount <= 0) {
 			doRedraw = true;
 		}
-		if(doRedraw) {
+		if (doRedraw) {
 			redraw();
 		}
 	}
@@ -346,7 +353,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	private class FingerTracker {
 		private final Game game;
-		
+
 		private int numTouched;
 		private final int[] touched;
 		private Set<Integer> touchedCells;
@@ -370,11 +377,11 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		private void reset() {
-			for(int i=0;i<touched.length;i++) {
+			for (int i = 0; i < touched.length; i++) {
 				touched[i] = -1;
 			}
 
-			if(numTouched > 0) {
+			if (numTouched > 0) {
 				highlighted.clear();
 			}
 
@@ -382,11 +389,11 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			numTouched = 0;
 			touching = -1;
 		}
-		
+
 		private void countTouch() {
-            if (touchedCells.contains(touching)) {
-                return;
-            }
+			if (touchedCells.contains(touching)) {
+				return;
+			}
 
 			touched[numTouched] = touching;
 			touchedCells.add(touching);
@@ -396,15 +403,15 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		void touchScreen(int x, int y) {
-			if(x < left || x >= (left + width)) return;
-			if(y < top || y >= (top + height)) return;
+			if (x < left || x >= (left + width)) return;
+			if (y < top || y >= (top + height)) return;
 
 			int bx = (x - left) * boardWidth / width;
 			int by = (y - top) * boardWidth / height;
 
 			touchBox(bx, by);
-			
-			if(canTouch(bx, by) && nearCenter(x, y, bx, by)) {
+
+			if (canTouch(bx, by) && nearCenter(x, y, bx, by)) {
 				countTouch();
 			}
 		}
@@ -413,7 +420,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			currentWord = getWord();
 
 			int box = x + boardWidth * y;
-			if(touchedCells.contains(box)) {
+			if (touchedCells.contains(box)) {
 				return false;
 			}
 
@@ -423,24 +430,24 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		private void touchBox(int x, int y) {
-			int box = x+boardWidth*y;
+			int box = x + boardWidth * y;
 			mKeyboardTracker.reset();
 
-			if(touching < 0) {
+			if (touching < 0) {
 				touching = box;
 				countTouch();
-			} else if(touching != box && canTouch(x, y)) {
+			} else if (touching != box && canTouch(x, y)) {
 				touching = box;
 			}
 		}
 
 		private boolean nearCenter(int x, int y, int bx, int by) {
-			int cx,cy;
+			int cx, cy;
 
 			cx = left + bx * box_width + box_width / 2;
 			cy = top + by * box_width + box_width / 2;
 
-			int d_squared = (cx-x)*(cx-x)+(cy-y)*(cy-y);
+			int d_squared = (cx - x) * (cx - x) + (cy - y) * (cy - y);
 
 			return d_squared < radius_squared;
 		}
@@ -460,15 +467,15 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		String getWord() {
 			String ret = "";
 
-			for(int i = 0; i < numTouched; i++ ) {
+			for (int i = 0; i < numTouched; i++) {
 				ret += game.getBoard().elementAt(touched[i]);
 			}
-	
+
 			return ret;
 		}
 
 		void release() {
-			if(numTouched > 0) {
+			if (numTouched > 0) {
 				String s = getWord();
 
 				game.addWord(s);
@@ -495,8 +502,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		private void fullReset() {
 			defaultStates = new LinkedList<>();
 			defaultAcceptableLetters.clear();
-			
-			for(int i = 0; i < game.getBoard().getSize(); i++) {
+
+			for (int i = 0; i < game.getBoard().getSize(); i++) {
 				defaultStates.add(new State(game.getBoard().valueAt(i), i));
 				defaultAcceptableLetters.add(game.getBoard().valueAt(i));
 			}
@@ -505,7 +512,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		private void reset() {
-			if(tracked != null) {
+			if (tracked != null) {
 				game.addWord(tracked);
 				highlighted.clear();
 				currentWord = null;
@@ -519,7 +526,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		private void processLetter(String letter) {
 			mFingerTracker.reset();
 
-			if(!acceptableLetters.contains(letter)) {
+			if (!acceptableLetters.contains(letter)) {
 				return;
 			}
 
@@ -529,14 +536,14 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 			boolean appendedString = false;
 
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				State nState = iter.next();
-				if(!nState.letter.equals(letter)) {
+				if (!nState.letter.equals(letter)) {
 					continue;
 				}
 
-				if(!appendedString) {
-					if(tracked == null) {
+				if (!appendedString) {
+					if (tracked == null) {
 						tracked = "";
 					}
 
@@ -576,7 +583,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			Set<String> getNextStates(LinkedList<State> possibleStates) {
 				Set<String> canTransitionToNext = new HashSet<>();
 
-				for(int i = 0; i < game.getBoard().getSize(); i ++) {
+				for (int i = 0; i < game.getBoard().getSize(); i++) {
 					if (selected.contains(i)) {
 						continue;
 					}
