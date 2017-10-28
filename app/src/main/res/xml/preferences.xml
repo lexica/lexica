@@ -39,6 +39,12 @@
 		android:dialogTitle="@string/pref_scoreType_dialog"
 	/>
 
+	<PreferenceScreen
+		android:key="resetScores"
+		android:title="@string/pref_resetScores"
+		android:summary="@string/pref_resetScores_summary"
+	/>
+
 	<CheckBoxPreference
 		android:key="soundsEnabled"
 		android:title="@string/pref_sounds"
