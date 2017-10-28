@@ -44,6 +44,7 @@ import java.util.Map;
 
 public class Game implements Synchronizer.Counter {
 
+	public static final String HIGH_SCORE_PREFIX = "highScore";
 	public static final String SCORE_TYPE = "scoreType";
 	public static final String SCORE_WORDS = "W";
 	public static final String SCORE_LETTERS = "L";
@@ -329,6 +330,21 @@ public class Game implements Synchronizer.Counter {
 
 	public static int letterPoints(String letter) {
 		return LETTER_POINTS[letter.charAt(0) - 'A'];
+	}
+
+	public void setHighScore(Context c, int score) {
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+		String key = HIGH_SCORE_PREFIX
+				+ prefs.getString("dict","US")
+				+ prefs.getString("boardSize","16")
+				+ prefs.getString("maxTimeRemaining","180")
+				+ prefs.getString(SCORE_TYPE, SCORE_WORDS);
+		int highScore = prefs.getInt(key, 0);
+		if (score > highScore) {
+			SharedPreferences.Editor edit = prefs.edit();
+			edit.putInt(key, score);
+			edit.commit();
+		}
 	}
 
 	public int getWordCount() {
