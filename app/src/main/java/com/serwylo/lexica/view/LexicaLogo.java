@@ -61,8 +61,6 @@ public class LexicaLogo extends View {
 		}
 	}
 
-	private final Rect textBounds = new Rect();
-
 	private void drawTile(Canvas canvas, Paint p, String letter, BoxColor color,
 		int x, int y, int size, float offset) {
 
@@ -116,6 +114,7 @@ public class LexicaLogo extends View {
 		p.setTextSize(size*8/10);
 
 		// Find vertical center offset
+		Rect textBounds = new Rect();
 		p.getTextBounds("A", 0, 1, textBounds);
 		float offset = textBounds.exactCenterY();
 
