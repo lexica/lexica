@@ -10,10 +10,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class StringTrie implements Trie {
 
@@ -130,7 +130,7 @@ public class StringTrie implements Trie {
 			int pos,
 			Set<Integer> usedPositions,
 			StringBuilder prefix,
-			LinkedHashMap<String, Solution> solutions,
+			Map<String, Solution> solutions,
 			List<Integer> solution) {
 
 		if (node.usWord() || node.ukWord()) {
@@ -184,10 +184,10 @@ public class StringTrie implements Trie {
 	}
 
 	@Override
-	public LinkedHashMap<String, Solution> solver(TransitionMap transitions, WordFilter filter) {
+	public Map<String, Solution> solver(TransitionMap transitions, WordFilter filter) {
 
 		long startTime = System.currentTimeMillis();
-		LinkedHashMap<String, Solution> solutions = new LinkedHashMap<>();
+		Map<String, Solution> solutions = new TreeMap<>();
 		StringBuilder prefix = new StringBuilder(transitions.getSize() + 1);
 
 		List<Integer> positions = new ArrayList<>(transitions.getSize());

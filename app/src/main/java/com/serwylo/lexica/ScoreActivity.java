@@ -87,8 +87,8 @@ public class ScoreActivity extends TabActivity {
 		while(li.hasNext()) {
 			String w = li.next();
 
-			if(game.isWord(w) && Game.WORD_POINTS[w.length()] > 0) {
-				int points = Game.WORD_POINTS[w.length()];
+			if(game.isWord(w) && game.getWordScore(w) > 0) {
+				int points = game.getWordScore(w);
 				addWord(foundVG,w,points,0xff000000,true);
 				score += Game.WORD_POINTS[w.length()];
 				words++;
@@ -104,7 +104,7 @@ public class ScoreActivity extends TabActivity {
 
 		while(li.hasNext()) {
 			String w = li.next();
-			max_score += Game.WORD_POINTS[w.length()];
+			max_score += game.getWordScore(w);
 			addMissedWord(missedVG,game.getSolutions().get(w));
 		}
 
@@ -175,7 +175,7 @@ public class ScoreActivity extends TabActivity {
 		tv2.setLayoutParams(text2Lp);
 		tv2.setTextSize(16);
 		tv2.setTextColor(color);
-		tv2.setText(points+" ");
+		tv2.setText(points+"        ");
 
 		LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.HORIZONTAL);
@@ -193,10 +193,10 @@ public class ScoreActivity extends TabActivity {
 			tv3.setOnClickListener(new DefinerListener(w));
 			tv3.setFocusable(true);
 
+			ll.addView(tv2);
 			ll.addView(tv3);
 		}
 
-		ll.addView(tv2);
 
 		vg.addView(ll, new LinearLayout.LayoutParams(
 			ViewGroup.LayoutParams.FILL_PARENT,
@@ -205,7 +205,8 @@ public class ScoreActivity extends TabActivity {
 	}
 
 	private void addMissedWord(ViewGroup vg, Solution solution) {
-		String w = solution.getWord();
+		String w = solution.getWord().toUpperCase();
+		int points = game.getWordScore(w);
 
 		LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.HORIZONTAL);
@@ -219,8 +220,8 @@ public class ScoreActivity extends TabActivity {
 		tv1.setLayoutParams(text1Lp);
 		tv1.setTextSize(16);
 		tv1.setTextColor(0xff000000);
-		tv1.setText(w.toUpperCase());
-		
+		tv1.setText(w);
+
 		ViewGroup.LayoutParams text2Lp = new LinearLayout.LayoutParams(
 			ViewGroup.LayoutParams.WRAP_CONTENT,
 			ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -247,6 +248,14 @@ public class ScoreActivity extends TabActivity {
 		tv3.setOnClickListener(new DefinerListener(w));
 		tv3.setFocusable(true);
 
+		//Score
+		TextView tv4 = new TextView(this);
+		tv4.setGravity(Gravity.END);
+		tv4.setLayoutParams(text2Lp);
+		tv4.setTextSize(16);
+		tv4.setTextColor(0xff000000);
+		tv4.setText(points+"        ");
+
 		// Padding between the links
 		TextView padding = new TextView(this);
 		padding.setGravity(Gravity.END);
@@ -255,10 +264,11 @@ public class ScoreActivity extends TabActivity {
 		padding.setText("        ");
 
 		ll.addView(tv1);
+		ll.addView(tv4);
 		ll.addView(tv2);
 		ll.addView(padding);
 		ll.addView(tv3);
-			
+
 		vg.addView(ll, new LinearLayout.LayoutParams(
 			ViewGroup.LayoutParams.FILL_PARENT,
 			ViewGroup.LayoutParams.WRAP_CONTENT));

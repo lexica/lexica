@@ -56,11 +56,11 @@ public class TransitionMapTest {
     public void stringTransitionTest() throws IOException {
         byte[] serialized = serializedUsTrie(new StringTrie());
         Trie trie = new StringTrie.Deserializer().deserialize(new ByteArrayInputStream(serialized), BOARD, true, false);
-        LinkedHashMap<String, Solution> actualSolutions = trie.solver(BOARD, new WordFilter.MinLength(3));
+        Map<String, Solution> actualSolutions = trie.solver(BOARD, new WordFilter.MinLength(3));
         assertSolutions(SOLUTIONS, actualSolutions);
     }
 
-    private static void assertSolutions(LinkedHashMap<String, Solution> expectedSolutions, LinkedHashMap<String, Solution> actualSolutions) {
+    private static void assertSolutions(Map<String, Solution> expectedSolutions, Map<String, Solution> actualSolutions) {
         Set<String> expectedWords = expectedSolutions.keySet();
         Set<String> actualWords = actualSolutions.keySet();
         assertTrue(actualWords.containsAll(expectedWords));

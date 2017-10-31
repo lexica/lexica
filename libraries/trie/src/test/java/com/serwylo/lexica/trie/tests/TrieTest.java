@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -30,7 +30,7 @@ public abstract class TrieTest {
 	};
 
 	private static void onlyContains(Trie trie, Set<String> expectedWords) {
-		LinkedHashMap<String, Solution> solutions = trie.solver(new CanTransitionMap(), new WordFilter() {
+		Map<String, Solution> solutions = trie.solver(new CanTransitionMap(), new WordFilter() {
 			@Override
 			public boolean isWord(String word) {
 				return true;

@@ -19,10 +19,12 @@ package com.serwylo.lexica.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Board;
 
 
@@ -34,6 +36,7 @@ public class BoardView extends View {
 	private Integer[] highlightedCells = new Integer[0];
 
 	private final Paint p;
+	public final int paddingSize;
 
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context,attrs);
@@ -46,6 +49,7 @@ public class BoardView extends View {
 		p.setAntiAlias(true);
 		p.setStrokeWidth(2);
 
+		paddingSize = getResources().getDimensionPixelSize(R.dimen.padding);
 	}
 
 	private boolean isCellHighlighted(int x, int y) {
@@ -59,53 +63,72 @@ public class BoardView extends View {
 		return false;
 	}
 
+	private final Rect textBounds = new Rect();
+
 	@Override
 	public void onDraw(Canvas canvas) {
-		int width = getWidth();
-		int height = getHeight();
+		int width = getWidth() - paddingSize - 2;
+		int height = getHeight() - paddingSize - 2;
 
-		p.setARGB(255,255,255,255);
-		canvas.drawRect(0,0,width,height,p);
 
-		if(board == null) {
+		// Draw white box
+		p.setARGB(255, 255, 255, 255);
+		canvas.drawRect(paddingSize / 2, paddingSize, paddingSize / 2 + width, paddingSize + height, p);
+
+		if (board == null) {
 			return;
 		}
 
-		float boxSize = ((float) width) / board.getWidth();
+		float boxsize = ((float) height) / board.getWidth();
 
 		// Draw touched boxes
-		p.setARGB(255,255,255,0);
-		for (int x = 0; x < board.getWidth(); x ++) {
-			for (int y = 0; y < board.getWidth(); y ++) {
+		p.setARGB(255, 255, 255, 0);
+		for (int x = 0; x < board.getWidth(); x++) {
+			for (int y = 0; y < board.getWidth(); y++) {
 				if (!isCellHighlighted(x, y)) {
 					continue;
 				}
 
-				float left = boxSize * x;
-				float top = boxSize * y;
-				float right = boxSize * (x + 1);
-				float bottom = boxSize * (y + 1);
+				float left = (paddingSize / 2) + (boxsize * x);
+				float top = paddingSize + (boxsize * y);
+				float right = (paddingSize / 2) + (boxsize * (x + 1));
+				float bottom = paddingSize + (boxsize * (y + 1));
 
 				canvas.drawRect(left, top, right, bottom, p);
 			}
 		}
 
 		// Draw grid
-		p.setARGB(255,0,0,0);
-		for(float i = 0; i <= width; i += boxSize) {
-			canvas.drawLine(i, 0, i, width, p);
-			canvas.drawLine(0, i, width, i, p);
+		p.setARGB(255, 0, 0, 0);
+
+		// Vertical lines
+		for (float i = paddingSize / 2; i <= paddingSize / 2 + width; i += boxsize) {
+			canvas.drawLine(i, paddingSize, i, paddingSize + height, p);
+		}
+		// Horizontal lines
+		for (float i = paddingSize; i <= paddingSize + height; i += boxsize) {
+			canvas.drawLine(paddingSize / 2, i, paddingSize / 2 + width, i, p);
 		}
 
 		p.setARGB(255, 0, 0, 0);
-		p.setTextSize(boxSize - 20);
-		p.setTextAlign(Paint.Align.CENTER);
-
 		p.setTypeface(Typeface.MONOSPACE);
-		for(int x = 0; x < board.getWidth(); x ++) {
-			for(int y = 0; y < board.getWidth(); y ++) {
-				String txt = board.elementAt(x, y);
-				canvas.drawText(txt.toUpperCase(), x * boxSize + boxSize / 2, -10 + (y + 1) * boxSize, p);
+		float textSize = boxsize * 0.8f;
+		p.setTextSize(textSize);
+
+		// Find vertical center offset
+		p.getTextBounds("A", 0, 1, textBounds);
+		float offset = textBounds.exactCenterY();
+
+		// Draw letters
+		for (int x = 0; x < board.getWidth(); x++) {
+			for (int y = 0; y < board.getWidth(); y++) {
+				String txt = board.elementAt(x, y).toUpperCase();
+				p.setTextSize(textSize);
+				p.setTextAlign(Paint.Align.CENTER);
+				canvas.drawText(txt,
+						(paddingSize / 2) + (x * boxsize) + (boxsize / 2),
+						paddingSize + (y * boxsize) + (boxsize / 2) - offset,
+						p);
 			}
 		}
 
@@ -129,4 +152,5 @@ public class BoardView extends View {
 	public void highlight(Integer[] highlightedCells) {
 		this.highlightedCells = highlightedCells;
 	}
+
 }
