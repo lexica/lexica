@@ -16,6 +16,7 @@ public abstract class GameSaver {
 	protected static final int DEFAULT_WORD_COUNT = 0;
 
 	protected static final String ACTIVE_GAME = "activeGame";
+	protected static final String SCORE_TYPE = "scoreType";
 	protected static final String WORD_COUNT = "wordCount";
 	protected static final String WORDS = "words";
 	protected static final String MAX_TIME_REMAINING = "maxTimeRemaining";
@@ -26,6 +27,7 @@ public abstract class GameSaver {
 	protected static final String START = "startTime";
 
 	public abstract boolean hasSavedGame();
+	public abstract String readScoreType();
 	public abstract int readWordCount();
 	public abstract String[] readWords();
 	public abstract int readMaxTimeRemaining();
@@ -39,5 +41,5 @@ public abstract class GameSaver {
 		return TextUtils.isEmpty(string) ? new String[] {} : string.split(",");
 	}
 
-	public abstract void save(Board board, int timeRemaining, int maxTimeRemaining, String wordListToString, int wordCount, Date start, Game.GameStatus status);
+	public abstract void save(Board board, int timeRemaining, int maxTimeRemaining, String wordListToString, String scoreType, int wordCount, Date start, Game.GameStatus status);
 }

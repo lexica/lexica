@@ -26,6 +26,7 @@ import android.view.View;
 
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Board;
+import com.serwylo.lexica.game.Game;
 
 
 public class BoardView extends View {
@@ -37,6 +38,7 @@ public class BoardView extends View {
 
 	private final Paint p;
 	public final int paddingSize;
+	private String scoreType;
 
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context,attrs);
@@ -50,6 +52,10 @@ public class BoardView extends View {
 		p.setStrokeWidth(2);
 
 		paddingSize = getResources().getDimensionPixelSize(R.dimen.padding);
+	}
+
+	public void setScoreType(String scoreType) {
+		this.scoreType = scoreType;
 	}
 
 	private boolean isCellHighlighted(int x, int y) {
@@ -129,6 +135,15 @@ public class BoardView extends View {
 						(paddingSize / 2) + (x * boxsize) + (boxsize / 2),
 						paddingSize + (y * boxsize) + (boxsize / 2) - offset,
 						p);
+				if (Game.SCORE_LETTERS.equals(scoreType)) {
+					String score = String.valueOf(Game.letterPoints(txt));
+					p.setTextSize(textSize / 4);
+					p.setTextAlign(Paint.Align.RIGHT);
+					canvas.drawText(score,
+							paddingSize / 2 + (x + 1) * boxsize - 4,
+							paddingSize + (y + 1) * boxsize - 6,
+							p);
+				}
 			}
 		}
 

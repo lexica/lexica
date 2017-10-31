@@ -18,6 +18,15 @@
 		<item>25</item>
 	</string-array>
 
+	<string-array name="score_type_choices_entries">
+		<item>@string/word_length</item>
+		<item>@string/letter_points</item>
+	</string-array>
+	<string-array name="score_type_choices_entryvalues">
+		<item>W</item>
+		<item>L</item>
+	</string-array>
+
 	<string-array name="time_limit_choices_entries">
 		<item>@string/time_3m</item>
 		<item>@string/time_5m</item>
