@@ -72,6 +72,7 @@ public class ScoreActivity extends TabActivity {
 
 		bv = (BoardView) findViewById(R.id.missed_board);
 		bv.setBoard(game.getBoard());
+		bv.setScoreType(game.getScoreType());
 
 		Set<String> possible = game.getSolutions().keySet();
 
@@ -90,7 +91,7 @@ public class ScoreActivity extends TabActivity {
 			if(game.isWord(w) && game.getWordScore(w) > 0) {
 				int points = game.getWordScore(w);
 				addWord(foundVG,w,points,0xff000000,true);
-				score += Game.WORD_POINTS[w.length()];
+				score += points;
 				words++;
 			} else {
 				addWord(foundVG,w,0,0xffff0000,false);
@@ -98,7 +99,9 @@ public class ScoreActivity extends TabActivity {
 
 			possible.remove(w);
 		}
-	
+
+		game.setHighScore(this, score);
+
 		max_score = score;
 		li = possible.iterator();
 

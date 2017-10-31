@@ -44,6 +44,11 @@ import java.util.Map;
 
 public class Game implements Synchronizer.Counter {
 
+	public static final String HIGH_SCORE_PREFIX = "highScore";
+	public static final String SCORE_TYPE = "scoreType";
+	public static final String SCORE_WORDS = "W";
+	public static final String SCORE_LETTERS = "L";
+
 	private static final String TAG = "Game";
 	private int timeRemaining;
 	private int maxTime;
@@ -51,10 +56,20 @@ public class Game implements Synchronizer.Counter {
 	private int maxTimeRemaining;
 
 	private Board board;
+	private int score;
+	private String scoreType;
 
 	public enum GameStatus { GAME_STARTING, GAME_RUNNING, GAME_PAUSED, GAME_FINISHED }
 
-	public static final int WORD_POINTS[] = {
+	//TODO: i18n
+	private static final int[] LETTER_POINTS = {
+		//  A, B, C, D, E, F, G, H, I, J, K, L, M
+			1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3,
+		//  N, O, P, Qu,R, S, T, U, V, W, X, Y, Z
+			1, 1, 3, 5, 1, 1, 1, 1, 4, 4, 8, 4, 10
+	};
+
+	private static final int[] WORD_POINTS = {
 		0,0,0, // 0,1,2
 		1,1,2, // 3,4,5
 		3,5,8, // 6,7,8
@@ -110,10 +125,13 @@ public class Game implements Synchronizer.Counter {
 			maxTime = timeRemaining;
 			start = saver.readStart();
 
+			scoreType = saver.readScoreType();
 			String[] wordArray = saver.readWords();
 			wordList = new LinkedList<>();
 			wordsUsed = new LinkedHashSet<>();
 			for (String word : wordArray) {
+				if (isWord(word) && !wordsUsed.contains(word))
+					score += getWordScore(word);
 				wordList.add(word);
 				wordsUsed.add(word);
 			}
@@ -145,6 +163,7 @@ public class Game implements Synchronizer.Counter {
 
 		timeRemaining = getMaxTimeRemaining();
 		maxTime = getMaxTimeRemaining();
+		score = 0;
 		wordsUsed = new LinkedHashSet<>();
 
 	}
@@ -211,6 +230,7 @@ public class Game implements Synchronizer.Counter {
 		if(prefs.getBoolean("soundsEnabled",false)) {
 			initSoundPool(c);
 		}
+		scoreType = prefs.getString(SCORE_TYPE, SCORE_WORDS);
 	}
 
 	public void initializeDictionary() {
@@ -241,6 +261,7 @@ public class Game implements Synchronizer.Counter {
 				timeRemaining,
 				getMaxTimeRemaining(),
 				wordListToString(),
+				scoreType,
 				wordCount,
 				start,
 				status
@@ -283,6 +304,7 @@ public class Game implements Synchronizer.Counter {
 			} else {
 				// Word has not been found before
 				wordCount++;
+				score += getWordScore(cap);
 				playSound(0);
 			}
 		} else {
@@ -293,11 +315,50 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	public int getWordScore(String word) {
-		return WORD_POINTS[word.length()];
+		if (SCORE_WORDS.equals(scoreType)) {
+			return WORD_POINTS[word.length()];
+		} else {
+			word = word.toUpperCase();
+			int score = 0;
+			for (int i = 0; i < word.length(); i++) {
+				score += LETTER_POINTS[word.charAt(i) - 'A'];
+				if (word.charAt(i) == 'Q') i++;
+			}
+			return score;
+		}
+	}
+
+	public static int letterPoints(String letter) {
+		return LETTER_POINTS[letter.charAt(0) - 'A'];
+	}
+
+	public void setHighScore(Context c, int score) {
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+		String key = HIGH_SCORE_PREFIX
+				+ prefs.getString("dict","US")
+				+ prefs.getString("boardSize","16")
+				+ prefs.getString("maxTimeRemaining","180")
+				+ prefs.getString(SCORE_TYPE, SCORE_WORDS);
+		int highScore = prefs.getInt(key, 0);
+		if (score > highScore) {
+			SharedPreferences.Editor edit = prefs.edit();
+			edit.putInt(key, score);
+			edit.commit();
+		}
 	}
 
 	public int getWordCount() {
 		return wordCount;
+	}
+
+	public int getScore()
+	{
+		return score;
+	}
+
+	public String getScoreType()
+	{
+		return scoreType;
 	}
 
 	public int getMaxWordCount() {

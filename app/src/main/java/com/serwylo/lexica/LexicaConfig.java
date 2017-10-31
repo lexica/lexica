@@ -17,15 +17,40 @@
 
 package com.serwylo.lexica;
 
+import android.content.SharedPreferences;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 
-public class LexicaConfig extends PreferenceActivity {
+import com.serwylo.lexica.game.Game;
+
+public class LexicaConfig extends PreferenceActivity implements Preference.OnPreferenceClickListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
        	super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
+        findPreference("resetScores").setOnPreferenceClickListener(this);
     }
 
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
+        if ("resetScores".equals(preference.getKey())) {
+            SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(this).edit();
+            for (String a : getResources().getStringArray(R.array.dict_choices_entryvalues)) {
+                for (String b : getResources().getStringArray(R.array.board_size_choices_entryvalues)) {
+                    for (String c : getResources().getStringArray(R.array.time_limit_choices_entryvalues)) {
+                        for (String d : getResources().getStringArray(R.array.score_type_choices_entryvalues)) {
+                            String key = Game.HIGH_SCORE_PREFIX + a + b + c + d;
+                            edit.putInt(key, 0);
+                        }
+                    }
+                }
+            }
+            edit.commit();
+            return true;
+        }
+        return false;
+    }
 }

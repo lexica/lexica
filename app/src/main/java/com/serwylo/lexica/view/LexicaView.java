@@ -163,6 +163,15 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 						paddingSize + (x * boxsize) + (boxsize / 2),
 						topOfGrid + (y * boxsize) + (boxsize / 2) - offset,
 						p);
+				if (Game.SCORE_LETTERS.equals(game.getScoreType())) {
+					String score = String.valueOf(Game.letterPoints(txt));
+					p.setTextSize(textSize / 4);
+					p.setTextAlign(Paint.Align.RIGHT);
+					canvas.drawText(score,
+							paddingSize + (x + 1) * boxsize - 4,
+							topOfGrid + (y + 1) * boxsize - 6,
+							p);
+				}
 			}
 		}
 	}
@@ -187,16 +196,17 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		p.setTypeface(Typeface.SANS_SERIF);
 		p.setARGB(255, 0, 0, 0);
 
-		int topOfCount = top + paddingSize;
-		p.setTextSize(textSizeLarge);
-		canvas.drawText("" + game.getWordCount() + "/" + game.getMaxWordCount(), left, topOfCount, p);
-
-		int topOfStaticText = topOfCount + textSizeNormal;
-
+		int bottom = top + paddingSize;
 		p.setTextSize(textSizeNormal);
-		canvas.drawText(getContext().getString(R.string.words), left, topOfStaticText, p);
 
-		return topOfStaticText + textSizeNormal;
+		canvas.drawText(getContext().getString(R.string.score) + ": " + game.getScore(), left, bottom, p);
+		bottom += textSizeNormal;
+
+		canvas.drawText(getContext().getString(R.string.words) + ": " + game.getWordCount() + "/" + game.getMaxWordCount(),
+				left, bottom, p);
+		bottom += textSizeNormal;
+
+		return bottom;
 	}
 
 	private void drawWordList(Canvas canvas, int left, int top, int bottom) {
@@ -215,6 +225,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		while (li.hasNext() && pos < bottom) {
 			String w = li.next();
 			if (game.isWord(w)) {
+				w += "  " + game.getWordScore(w);
 				p.setARGB(255, 0, 0, 0);
 			} else {
 				p.setARGB(255, 255, 0, 0);
@@ -239,6 +250,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		String time = mins + ":" + (secs < 10 ? "0" : "") + secs;
 
+		p.setTextAlign(Paint.Align.CENTER);
 		p.setTextSize(textSizeLarge);
 		canvas.drawText(time, left, top, p);
 

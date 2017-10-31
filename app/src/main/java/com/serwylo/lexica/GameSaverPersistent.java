@@ -35,6 +35,11 @@ public class GameSaverPersistent extends GameSaver {
 	}
 
 	@Override
+	public String readScoreType() {
+		return getPrefs().getString(SCORE_TYPE, Game.SCORE_WORDS);
+	}
+
+	@Override
 	public String[] readWords() {
 		return safeSplit(getPrefs().getString(WORDS, null));
 	}
@@ -70,7 +75,7 @@ public class GameSaverPersistent extends GameSaver {
 	}
 
 	@Override
-	public void save(Board board, int timeRemaining, int maxTimeRemaining, String wordListToString, int wordCount, Date start, Game.GameStatus status) {
+	public void save(Board board, int timeRemaining, int maxTimeRemaining, String wordListToString, String scoreType, int wordCount, Date start, Game.GameStatus status) {
 
 		SharedPreferences.Editor prefs = getPrefs().edit();
 		prefs.putInt(BOARD_SIZE,board.getSize());
@@ -79,6 +84,7 @@ public class GameSaverPersistent extends GameSaver {
 		prefs.putInt(TIME_REMAINING, timeRemaining);
 		prefs.putInt(MAX_TIME_REMAINING,maxTimeRemaining);
 		prefs.putString(WORDS, wordListToString);
+		prefs.putString(SCORE_TYPE, scoreType);
 		prefs.putInt(WORD_COUNT, wordCount);
 
 		prefs.putBoolean(ACTIVE_GAME, true);

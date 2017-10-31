@@ -30,6 +30,21 @@
 		android:dialogTitle="@string/pref_timeLimit_dialog"
 	/>
 
+	<ListPreference
+		android:key="scoreType"
+		android:title="@string/pref_scoreType"
+		android:summary="@string/pref_scoreType_summary"
+		android:entries="@array/score_type_choices_entries"
+		android:entryValues="@array/score_type_choices_entryvalues"
+		android:dialogTitle="@string/pref_scoreType_dialog"
+	/>
+
+	<PreferenceScreen
+		android:key="resetScores"
+		android:title="@string/pref_resetScores"
+		android:summary="@string/pref_resetScores_summary"
+	/>
+
 	<CheckBoxPreference
 		android:key="soundsEnabled"
 		android:title="@string/pref_sounds"
