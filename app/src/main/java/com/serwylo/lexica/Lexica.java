@@ -22,15 +22,10 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
-import com.serwylo.lexica.game.Game;
 
 public class Lexica extends Activity {
 
@@ -67,7 +62,7 @@ public class Lexica extends Activity {
 				public void onClick(View v) {
 					if(savedGame()) {
 						// Log.d(TAG,"restoring game");
-						startActivity(new
+						startActivity(new 
 							Intent("com.serwylo.lexica.action.RESTORE_GAME"));
 					} else {
 						// Log.d(TAG,"no saved game :(");
@@ -91,12 +86,10 @@ public class Lexica extends Activity {
 		b = (Button) findViewById(R.id.preferences);
 		b.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				startActivity(new
+				startActivity(new 
 					Intent("com.serwylo.lexica.action.CONFIGURE"));
 			}
 		});
-		TextView tv = (TextView) findViewById(R.id.high_score);
-		tv.setText(getResources().getString(R.string.high_score) + " " + highScore());
 	}
 
 	public void onPause() {
@@ -113,16 +106,6 @@ public class Lexica extends Activity {
 		return new GameSaverPersistent(this).hasSavedGame();
 	}
 
-	public int highScore() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		String key = Game.HIGH_SCORE_PREFIX
-				+ prefs.getString("dict","US")
-				+ prefs.getString("boardSize","16")
-				+ prefs.getString("maxTimeRemaining","180")
-				+ prefs.getString(Game.SCORE_TYPE, Game.SCORE_WORDS);
-		return prefs.getInt(key, 0);
-	}
-
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		switch(id) {
@@ -130,9 +113,9 @@ public class Lexica extends Activity {
 				return new AlertDialog.Builder(this)
 					.setTitle(getResources().
 						getString(R.string.dialog_no_saved))
-					.setPositiveButton(R.string.dialog_ok,
+					.setPositiveButton(R.string.dialog_ok, 
 						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
+							public void onClick(DialogInterface dialog, 
 								int whichButton) {
 									// do nothing.
 								}

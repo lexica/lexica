@@ -99,9 +99,7 @@ public class ScoreActivity extends TabActivity {
 
 			possible.remove(w);
 		}
-
-		game.setHighScore(this, score);
-
+	
 		max_score = score;
 		li = possible.iterator();
 
