@@ -11,16 +11,7 @@
 		android:layout_height="0dp"
 		android:layout_weight="1.0"
 	/>
-
-	<TextView
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:gravity="center"
-		android:textSize="@dimen/textSizeLarge"
-		android:text="@string/high_score"
-		android:id="@+id/high_score"
-		/>
-
+	
 	<LinearLayout
 		android:orientation="horizontal"
 		android:layout_width="fill_parent"
