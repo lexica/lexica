@@ -95,10 +95,10 @@ public class BoardView extends View {
 					continue;
 				}
 
-				float left = paddingSize / 2 + boxsize * x;
-				float top = paddingSize + boxsize * y;
-				float right = paddingSize / 2 + boxsize * (x + 1);
-				float bottom = paddingSize + boxsize * (y + 1);
+				float left = (paddingSize / 2) + (boxsize * x);
+				float top = paddingSize + (boxsize * y);
+				float right = (paddingSize / 2) + (boxsize * (x + 1));
+				float bottom = paddingSize + (boxsize * (y + 1));
 
 				canvas.drawRect(left, top, right, bottom, p);
 			}
@@ -132,8 +132,8 @@ public class BoardView extends View {
 				p.setTextSize(textSize);
 				p.setTextAlign(Paint.Align.CENTER);
 				canvas.drawText(txt,
-						paddingSize / 2 + x * boxsize + boxsize / 2,
-						paddingSize + y * boxsize + boxsize / 2 - offset,
+						(paddingSize / 2) + (x * boxsize) + (boxsize / 2),
+						paddingSize + (y * boxsize) + (boxsize / 2) - offset,
 						p);
 				if (Game.SCORE_LETTERS.equals(scoreType)) {
 					String score = String.valueOf(Game.letterPoints(txt));
