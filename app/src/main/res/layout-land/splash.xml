@@ -5,13 +5,22 @@
 	android:orientation="vertical"
 	android:background="@color/background"
     >
-	
+
 	<com.serwylo.lexica.view.LexicaLogo
 		android:layout_width="fill_parent"
 		android:layout_height="0dp"
 		android:layout_weight="1.0"
 	/>
-	
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:textSize="@dimen/textSizeLarge"
+		android:text="@string/high_score"
+		android:id="@+id/high_score"
+		/>
+
 	<LinearLayout
 		android:orientation="horizontal"
 		android:layout_width="fill_parent"
@@ -29,25 +38,19 @@
 			android:text="@string/restore_game"
 			android:enabled="false"
 			android:layout_weight="1"
-		/>
-	</LinearLayout>
-	<LinearLayout
-		android:orientation="horizontal"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		>
-			<Button android:id="@+id/preferences"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/prefs"
-				android:layout_weight="1"
-				/>
-			<Button android:id="@+id/about"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/about"
-				android:layout_weight="1"
 			/>
+		<Button android:id="@+id/preferences"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/prefs"
+			android:layout_weight="1"
+			/>
+		<Button android:id="@+id/about"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/about"
+			android:layout_weight="1"
+		/>
 	</LinearLayout>
 
 </LinearLayout>

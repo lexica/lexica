@@ -18,6 +18,7 @@
 package com.serwylo.lexica.view;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -26,6 +27,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.View;
 
 import com.serwylo.lexica.R;
@@ -110,7 +112,12 @@ public class LexicaLogo extends View {
 		int height = getHeight();
 		int width = getWidth();
 
-		int size = Math.min(height,width) / 8;
+		DisplayMetrics displayMetrics = new DisplayMetrics();
+		((Activity)getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+		int deviceHeight = displayMetrics.heightPixels;
+		int deviceWidth = displayMetrics.widthPixels;
+
+		int size = Math.min(deviceHeight,deviceWidth) / 8;
 		p.setTextSize(size*8/10);
 
 		// Find vertical center offset
@@ -131,7 +138,7 @@ public class LexicaLogo extends View {
 		int outerPadding = paddingSize * 2;
 		int totalInnerPadding = paddingSize * 5;
 
-		size = (Math.min(height,width) - outerPadding - totalInnerPadding ) / 6;
+		size = (Math.min(deviceHeight,deviceWidth) - outerPadding - totalInnerPadding ) / 6;
 		p.setTextSize(size*8/10);
 
 		// Find vertical center offset

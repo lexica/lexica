@@ -17,15 +17,60 @@
 
 package com.serwylo.lexica;
 
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
+import android.widget.Toast;
 
-public class LexicaConfig extends PreferenceActivity {
+public class LexicaConfig extends PreferenceActivity implements Preference.OnPreferenceClickListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
        	super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
+        findPreference("resetScores").setOnPreferenceClickListener(this);
     }
 
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
+        if ("resetScores".equals(preference.getKey())) {
+            new AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.pref_resetScores))
+                    .setMessage(getString(R.string.reset_scores_prompt))
+                    .setPositiveButton(android.R.string.ok, promptListener)
+                    .setNegativeButton(android.R.string.cancel, promptListener)
+                    .create().show();
+            return true;
+        }
+        return false;
+    }
+
+    private DialogInterface.OnClickListener promptListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            if (which == DialogInterface.BUTTON_POSITIVE) {
+                clearHighScores();
+            }
+        }
+    };
+
+    private void clearHighScores() {
+        SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        for (String a : getResources().getStringArray(R.array.dict_choices_entryvalues)) {
+            for (String b : getResources().getStringArray(R.array.board_size_choices_entryvalues)) {
+                for (String c : getResources().getStringArray(R.array.time_limit_choices_entryvalues)) {
+                    for (String d : getResources().getStringArray(R.array.score_type_choices_entryvalues)) {
+                        String key = ScoreActivity.HIGH_SCORE_PREFIX + a + b + c + d;
+                        edit.putInt(key, 0);
+                    }
+                }
+            }
+        }
+        edit.commit();
+        Toast.makeText(this, R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
+    }
 }
