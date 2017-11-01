@@ -197,7 +197,9 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		p.setARGB(255, 0, 0, 0);
 
 		float textSize = (bottom - top - paddingSize) / 4f;
-		if (textSize > textSizeNormal) textSize = textSizeNormal;
+		if (textSize > textSizeNormal) {
+			textSize = textSizeNormal;
+		}
 
 		p.setTextSize(textSize);
 		float actualBottom = top + textSize;

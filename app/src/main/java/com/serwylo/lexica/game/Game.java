@@ -129,8 +129,9 @@ public class Game implements Synchronizer.Counter {
 			wordList = new LinkedList<>();
 			wordsUsed = new LinkedHashSet<>();
 			for (String word : wordArray) {
-				if (isWord(word) && !wordsUsed.contains(word))
+				if (isWord(word) && !wordsUsed.contains(word)) {
 					score += getWordScore(word);
+				}
 				wordList.add(word);
 				wordsUsed.add(word);
 			}
@@ -321,7 +322,9 @@ public class Game implements Synchronizer.Counter {
 			int score = 0;
 			for (int i = 0; i < word.length(); i++) {
 				score += LETTER_POINTS[word.charAt(i) - 'A'];
-				if (word.charAt(i) == 'Q') i++;
+				if (word.charAt(i) == 'Q') {
+					i++;
+				}
 			}
 			return score;
 		}
@@ -335,13 +338,11 @@ public class Game implements Synchronizer.Counter {
 		return wordCount;
 	}
 
-	public int getScore()
-	{
+	public int getScore() {
 		return score;
 	}
 
-	public String getScoreType()
-	{
+	public String getScoreType() {
 		return scoreType;
 	}
 
