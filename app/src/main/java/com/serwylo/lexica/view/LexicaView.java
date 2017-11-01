@@ -163,6 +163,15 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 						paddingSize + (x * boxsize) + (boxsize / 2),
 						topOfGrid + (y * boxsize) + (boxsize / 2) - offset,
 						p);
+				if (Game.SCORE_LETTERS.equals(game.getScoreType())) {
+					String score = String.valueOf(Game.letterPoints(txt));
+					p.setTextSize(textSize / 4);
+					p.setTextAlign(Paint.Align.RIGHT);
+					canvas.drawText(score,
+							paddingSize + ((x + 1) * boxsize) - 4,
+							topOfGrid + ((y + 1) * boxsize) - 6,
+							p);
+				}
 			}
 		}
 	}
@@ -183,38 +192,47 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		canvas.drawRect(0, 1, pixelWidth, timerHeight + 1, p);
 	}
 
-	private int drawWordCount(Canvas canvas, int left, int top) {
+	private int drawWordCount(Canvas canvas, int left, int top, int bottom) {
 		p.setTypeface(Typeface.SANS_SERIF);
 		p.setARGB(255, 0, 0, 0);
 
-		int topOfCount = top + paddingSize;
-		p.setTextSize(textSizeLarge);
-		canvas.drawText("" + game.getWordCount() + "/" + game.getMaxWordCount(), left, topOfCount, p);
+		float textSize = (bottom - top - paddingSize) / 4f;
+		if (textSize > textSizeNormal) textSize = textSizeNormal;
 
-		int topOfStaticText = topOfCount + textSizeNormal;
+		p.setTextSize(textSize);
+		float actualBottom = top + textSize;
+		canvas.drawText(getContext().getString(R.string.score), left, actualBottom, p);
 
-		p.setTextSize(textSizeNormal);
-		canvas.drawText(getContext().getString(R.string.words), left, topOfStaticText, p);
+		actualBottom += textSize;
+		canvas.drawText(Integer.toString(game.getScore()), left, actualBottom, p);
 
-		return topOfStaticText + textSizeNormal;
+		actualBottom += paddingSize + textSize;
+		canvas.drawText(game.getWordCount() + "/" + game.getMaxWordCount(), left, actualBottom, p);
+
+		actualBottom += textSize;
+		canvas.drawText(getContext().getString(R.string.words), left, actualBottom, p);
+
+		return (int)actualBottom;
 	}
 
 	private void drawWordList(Canvas canvas, int left, int top, int bottom) {
+		int pos = top + textSizeNormal;
 		// draw current word
 		p.setTextSize(textSizeNormal);
 		p.setARGB(255, 0, 0, 0);
 		if (currentWord != null) {
-			canvas.drawText(currentWord.toUpperCase(), left, top, p);
+			canvas.drawText(currentWord.toUpperCase(), left, pos, p);
 		}
 
 		// draw words
-		int pos = top + textSizeNormal;
 		ListIterator<String> li = game.listIterator();
 		p.setTextSize(textSizeSmall);
 
+		pos += textSizeSmall;
 		while (li.hasNext() && pos < bottom) {
 			String w = li.next();
 			if (game.isWord(w)) {
+				w += "  " + game.getWordScore(w);
 				p.setARGB(255, 0, 0, 0);
 			} else {
 				p.setARGB(255, 255, 0, 0);
@@ -239,27 +257,33 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		String time = mins + ":" + (secs < 10 ? "0" : "") + secs;
 
+		p.setTextAlign(Paint.Align.CENTER);
 		p.setTextSize(textSizeLarge);
-		canvas.drawText(time, left, top, p);
+		int bottom = top + textSizeLarge;
+		canvas.drawText(time, left, bottom, p);
 
-		return top + textSizeLarge;
+		return bottom;
 	}
 
 	private void drawScoreLandscape(Canvas canvas) {
 		int textAreaTop = paddingSize + timerHeight;
 		int textAreaHeight = height - 2 * paddingSize;
+		int textAreaBottom = textAreaTop + textAreaHeight;
 		int textAreaLeft = 2 * paddingSize + gridsize;
 		int textAreaWidth = width - paddingSize - textAreaLeft;
 
+		p.setTypeface(Typeface.SANS_SERIF);
+
 		int paddedLeft = textAreaLeft + (textAreaWidth / 2);
 
-		int bottomOfTimer = drawWordCountAndTimer(canvas, paddedLeft, textAreaTop);
-		drawWordList(canvas, paddedLeft, bottomOfTimer + paddingSize, textAreaTop + textAreaHeight);
+		int bottomOfTimer = drawWordCountAndTimer(canvas, paddedLeft, textAreaTop, (textAreaBottom / 2) - paddingSize);
+		drawWordList(canvas, paddedLeft, bottomOfTimer + paddingSize, textAreaBottom);
 	}
 
 	private void drawScorePortrait(Canvas canvas) {
 		int textAreaTop = 2 * paddingSize + gridsize + timerHeight;
 		int textAreaHeight = height - paddingSize - textAreaTop;
+		int textAreaBottom = textAreaTop + textAreaHeight;
 		int textAreaLeft = paddingSize;
 		int textAreaWidth = width - 2 * paddingSize;
 
@@ -267,17 +291,13 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		int paddedLeft = textAreaLeft + (textAreaWidth / 4);
 
-		drawWordCountAndTimer(canvas, paddedLeft, textAreaTop);
-		drawWordList(canvas, textAreaLeft + textAreaWidth * 3 / 4, textAreaTop + textSizeNormal, textAreaTop + textAreaHeight);
-
+		drawWordCountAndTimer(canvas, paddedLeft, textAreaTop, textAreaBottom);
+		drawWordList(canvas, textAreaLeft + textAreaWidth * 3 / 4, textAreaTop, textAreaBottom);
 	}
 
-	private int drawWordCountAndTimer(Canvas canvas, int left, int top) {
-		int paddedTop = top + paddingSize * 3;
-		int bottomOfTimer = drawTextTimer(canvas, left, paddedTop);
-
-		int topOfWordCount = bottomOfTimer;
-		return drawWordCount(canvas, left, topOfWordCount);
+	private int drawWordCountAndTimer(Canvas canvas, int left, int top, int bottom) {
+		int bottomOfTimer = drawTextTimer(canvas, left, top);
+		return drawWordCount(canvas, left, bottomOfTimer + paddingSize, bottom);
 	}
 
 	@Override

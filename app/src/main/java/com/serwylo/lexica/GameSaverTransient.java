@@ -26,6 +26,11 @@ public class GameSaverTransient extends GameSaver {
 	}
 
 	@Override
+	public String readScoreType() {
+		return bundle.getString(SCORE_TYPE);
+	}
+
+	@Override
 	public String[] readWords() {
 		return safeSplit(bundle.getString(WORDS));
 	}
@@ -63,13 +68,14 @@ public class GameSaverTransient extends GameSaver {
 	}
 
 	@Override
-	public void save(Board board, int timeRemaining, int maxTimeRemaining, String wordListToString, int wordCount, Date start, Game.GameStatus status) {
+	public void save(Board board, int timeRemaining, int maxTimeRemaining, String wordListToString, String scoreType, int wordCount, Date start, Game.GameStatus status) {
 		bundle.putInt(GameSaver.BOARD_SIZE, board.getSize());
 
 		bundle.putString(GameSaver.GAME_BOARD, board.toString());
 		bundle.putInt(GameSaver.TIME_REMAINING, timeRemaining);
 		bundle.putInt(GameSaver.MAX_TIME_REMAINING, maxTimeRemaining);
 		bundle.putString(GameSaver.WORDS, wordListToString);
+		bundle.putString(SCORE_TYPE, scoreType);
 		bundle.putInt(GameSaver.WORD_COUNT, wordCount);
 		bundle.putLong(GameSaver.START, start == null ? 0 : start.getTime());
 		bundle.putString(GameSaver.STATUS, status.toString());
