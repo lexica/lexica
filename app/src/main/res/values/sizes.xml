@@ -2,6 +2,7 @@
 <resources>
     <dimen name="padding">10dp</dimen>
     <dimen name="timerHeight">10dp</dimen>
+    <dimen name="textSizeMinimum">12sp</dimen>
     <dimen name="textSizeSmall">16sp</dimen>
     <dimen name="textSizeNormal">20sp</dimen>
     <dimen name="textSizeLarge">30sp</dimen>
