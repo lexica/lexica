@@ -25,6 +25,12 @@
 	<string name="time_20m">20 Minutes</string>
 	<string name="time_30m">30 Minutes</string>
 
+	<string name="pref_scoreType">Scoring Type</string>
+	<string name="pref_scoreType_summary">Select a scoring type</string>
+	<string name="pref_scoreType_dialog">Select Scoring Type</string>
+	<string name="word_length">Word Length</string>
+	<string name="letter_points">Letter Points</string>
+
 	<string name="pref_sounds">Sounds Enabled</string>
 	<string name="pref_sounds_summary">Whether or not sound effects are enabled</string>
 
@@ -40,7 +46,7 @@
 
 	\n\nScoring:
 	\nOn 4x4 boards, words must be at least three letters long.  On 5x5 boards,
-	words must be at least four letters long.  
+	words must be at least four letters long.
 	Words that have three or four letters are worth one point.  Longer words
 	are worth more points.  Proper nouns are not counted.\n\n
 	</string>
@@ -62,6 +68,7 @@
 	<string name="define_word"><u>Define</u> </string>
 
 	<string name="words">WORDS</string>
+	<string name="score">SCORE</string>
 	<string name="found_words">Found Words</string>
 	<string name="missed_words">Missed Words</string>
 	<string name="total_words">Total Words:</string>
