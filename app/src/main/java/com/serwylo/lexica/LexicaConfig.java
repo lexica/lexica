@@ -17,15 +17,48 @@
 
 package com.serwylo.lexica;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.widget.Toast;
 
-public class LexicaConfig extends PreferenceActivity {
+public class LexicaConfig extends PreferenceActivity implements Preference.OnPreferenceClickListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
        	super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
+        findPreference("resetScores").setOnPreferenceClickListener(this);
     }
 
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
+        if ("resetScores".equals(preference.getKey())) {
+            new AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.pref_resetScores))
+                    .setMessage(getString(R.string.reset_scores_prompt))
+                    .setPositiveButton(android.R.string.ok, promptListener)
+                    .setNegativeButton(android.R.string.cancel, promptListener)
+                    .create().show();
+            return true;
+        }
+        return false;
+    }
+
+    private DialogInterface.OnClickListener promptListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            if (which == DialogInterface.BUTTON_POSITIVE) {
+                clearHighScores();
+            }
+        }
+    };
+
+    private void clearHighScores() {
+        getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().commit();
+        Toast.makeText(this, R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
+    }
 }

@@ -18,9 +18,12 @@
 package com.serwylo.lexica;
 
 import android.app.TabActivity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -45,6 +48,7 @@ public class ScoreActivity extends TabActivity {
 	private static final String TAG = "ScoreActivity";
 
 	public static final String DEFINE_URL = "http://www.google.com/search?q=define%3a+";
+	public static final String SCORE_PREF_FILE = "prefs_score_file";
 
 	private Game game;
 	private BoardView bv;
@@ -99,7 +103,9 @@ public class ScoreActivity extends TabActivity {
 
 			possible.remove(w);
 		}
-	
+
+		setHighScore(score);
+
 		max_score = score;
 		li = possible.iterator();
 
@@ -311,5 +317,28 @@ public class ScoreActivity extends TabActivity {
 		}
 	}
 
+	private static String highScoreKey(Context c) {
+    	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+		return prefs.getString("dict", "US")
+				+ prefs.getString("boardSize", "16")
+				+ prefs.getString(Game.SCORE_TYPE, Game.SCORE_WORDS)
+				+ prefs.getString("maxTimeRemaining", "180");
+	}
+
+	private void setHighScore(int score) {
+		String key = highScoreKey(this);
+		SharedPreferences prefs = getSharedPreferences(SCORE_PREF_FILE, Context.MODE_PRIVATE);
+		int highScore = prefs.getInt(key, 0);
+		if (score > highScore) {
+			SharedPreferences.Editor edit = prefs.edit();
+			edit.putInt(key, score);
+			edit.commit();
+		}
+	}
+
+	public static int getHighScore(Context c) {
+		SharedPreferences prefs = c.getSharedPreferences(SCORE_PREF_FILE, Context.MODE_PRIVATE);
+		return prefs.getInt(highScoreKey(c), 0);
+	}
 }
 

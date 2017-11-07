@@ -26,6 +26,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Lexica extends Activity {
 
@@ -62,7 +63,7 @@ public class Lexica extends Activity {
 				public void onClick(View v) {
 					if(savedGame()) {
 						// Log.d(TAG,"restoring game");
-						startActivity(new 
+						startActivity(new
 							Intent("com.serwylo.lexica.action.RESTORE_GAME"));
 					} else {
 						// Log.d(TAG,"no saved game :(");
@@ -86,10 +87,13 @@ public class Lexica extends Activity {
 		b = (Button) findViewById(R.id.preferences);
 		b.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				startActivity(new 
+				startActivity(new
 					Intent("com.serwylo.lexica.action.CONFIGURE"));
 			}
 		});
+		int highScore = ScoreActivity.getHighScore(this);
+		TextView tv = (TextView) findViewById(R.id.high_score);
+		tv.setText(getResources().getString(R.string.high_score, highScore));
 	}
 
 	public void onPause() {
@@ -113,9 +117,9 @@ public class Lexica extends Activity {
 				return new AlertDialog.Builder(this)
 					.setTitle(getResources().
 						getString(R.string.dialog_no_saved))
-					.setPositiveButton(R.string.dialog_ok, 
+					.setPositiveButton(R.string.dialog_ok,
 						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, 
+							public void onClick(DialogInterface dialog,
 								int whichButton) {
 									// do nothing.
 								}
