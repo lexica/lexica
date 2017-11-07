@@ -26,6 +26,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.util.SparseIntArray;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -195,24 +196,69 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private int drawWordCount(Canvas canvas, int left, int top, int bottom) {
 		p.setTypeface(Typeface.SANS_SERIF);
 		p.setARGB(255, 0, 0, 0);
+		float actualBottom = top;
 
-		float textSize = (bottom - top - paddingSize) / 4f;
-		if (textSize > textSizeNormal) {
-			textSize = textSizeNormal;
+		if (!game.showBreakdown()) {
+			float textSize = (bottom - top - paddingSize) / 4f;
+			if (textSize > textSizeNormal) {
+				textSize = textSizeNormal;
+			}
+			p.setTextSize(textSize);
+
+			actualBottom += textSize;
+			canvas.drawText(getContext().getString(R.string.score), left, actualBottom, p);
+
+			actualBottom += textSize;
+			canvas.drawText(Integer.toString(game.getScore()), left, actualBottom, p);
+
+			actualBottom += paddingSize + textSize;
+			canvas.drawText(game.getWordCount() + "/" + game.getMaxWordCount(), left, actualBottom, p);
+
+			actualBottom += textSize;
+			canvas.drawText(getContext().getString(R.string.words), left, actualBottom, p);
+		} else {
+			SparseIntArray maxWordCounts = game.getMaxWordCountsByLength();
+			int lines = 0;
+			int lenPad = 1;
+			int countPad = 2;
+
+			for (int i = 0; i < maxWordCounts.size(); i++) {
+				int count = maxWordCounts.valueAt(i);
+				if (count > 0) {
+					lines++;
+					if (count > 99) {
+						countPad = 3;
+					}
+					int length = maxWordCounts.keyAt(i);
+					if (length > 9) {
+						lenPad = 2;
+					}
+				}
+			}
+			float textSize = (bottom - top) / lines;
+			if (textSize > textSizeNormal) {
+				textSize = textSizeNormal;
+			}
+			if (textSize < getResources().getDimension(R.dimen.textSizeMinimum)) {
+				textSize = getResources().getDimension(R.dimen.textSizeMinimum);
+			}
+			p.setTextSize(textSize);
+			p.setTypeface(Typeface.MONOSPACE);
+
+			SparseIntArray wordCounts = game.getWordCountsByLength();
+			for (int i = 0; i < maxWordCounts.size(); i++) {
+				int count = maxWordCounts.valueAt(i);
+				if (count > 0) {
+					int length = maxWordCounts.keyAt(i);
+					actualBottom += textSize;
+					String scoreLine = pad(length, lenPad) + ":"
+							+ pad(wordCounts.get(length), countPad) + "/"
+							+ pad(count, countPad);
+					canvas.drawText(scoreLine, left, actualBottom, p);
+				}
+			}
+
 		}
-
-		p.setTextSize(textSize);
-		float actualBottom = top + textSize;
-		canvas.drawText(getContext().getString(R.string.score), left, actualBottom, p);
-
-		actualBottom += textSize;
-		canvas.drawText(Integer.toString(game.getScore()), left, actualBottom, p);
-
-		actualBottom += paddingSize + textSize;
-		canvas.drawText(game.getWordCount() + "/" + game.getMaxWordCount(), left, actualBottom, p);
-
-		actualBottom += textSize;
-		canvas.drawText(getContext().getString(R.string.words), left, actualBottom, p);
 
 		return (int)actualBottom;
 	}
@@ -222,6 +268,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		// draw current word
 		p.setTextSize(textSizeNormal);
 		p.setARGB(255, 0, 0, 0);
+		p.setTypeface(Typeface.SANS_SERIF);
 		if (currentWord != null) {
 			canvas.drawText(currentWord.toUpperCase(), left, pos, p);
 		}
@@ -252,12 +299,17 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		} else {
 			p.setARGB(255, 0, 0, 0);
 		}
+		p.setTypeface(Typeface.SANS_SERIF);
 
 		int secRemaining = timeRemaining / 100;
 		int mins = secRemaining / 60;
 		int secs = secRemaining % 60;
 
 		String time = mins + ":" + (secs < 10 ? "0" : "") + secs;
+
+		if (game.showBreakdown()) {
+			time += "    " + game.getScore();
+		}
 
 		p.setTextAlign(Paint.Align.CENTER);
 		p.setTextSize(textSizeLarge);
@@ -274,8 +326,6 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		int textAreaLeft = 2 * paddingSize + gridsize;
 		int textAreaWidth = width - paddingSize - textAreaLeft;
 
-		p.setTypeface(Typeface.SANS_SERIF);
-
 		int paddedLeft = textAreaLeft + (textAreaWidth / 2);
 
 		int bottomOfTimer = drawWordCountAndTimer(canvas, paddedLeft, textAreaTop, (textAreaBottom / 2) - paddingSize);
@@ -289,8 +339,6 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		int textAreaLeft = paddingSize;
 		int textAreaWidth = width - 2 * paddingSize;
 
-		p.setTypeface(Typeface.SANS_SERIF);
-
 		int paddedLeft = textAreaLeft + (textAreaWidth / 4);
 
 		drawWordCountAndTimer(canvas, paddedLeft, textAreaTop, textAreaBottom);
@@ -300,6 +348,16 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private int drawWordCountAndTimer(Canvas canvas, int left, int top, int bottom) {
 		int bottomOfTimer = drawTextTimer(canvas, left, top);
 		return drawWordCount(canvas, left, bottomOfTimer + paddingSize, bottom);
+	}
+
+	private String pad(int i, int width) {
+		String s = Integer.toString(i);
+		StringBuilder sb = new StringBuilder();
+		while (sb.length() < width - s.length()) {
+			sb.append(" ");
+		}
+		sb.append(s);
+		return sb.toString();
 	}
 
 	@Override

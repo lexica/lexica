@@ -80,4 +80,7 @@
 	<string name="pref_resetScores">Reset High Scores</string>
     <string name="high_scores_reset">High scores have been reset.</string>
 	<string name="reset_scores_prompt">Are you sure you want to reset all high scores for all game modes to zero?</string>
+
+    <string name="pref_breakdown">Show Word Length Breakdown</string>
+	<string name="pref_breakdown_summary">Whether or not the word count shows counts by word length</string>
 </resources>

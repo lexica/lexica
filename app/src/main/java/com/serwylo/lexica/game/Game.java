@@ -24,6 +24,7 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.util.SparseIntArray;
 
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
@@ -44,6 +45,7 @@ import java.util.Map;
 
 public class Game implements Synchronizer.Counter {
 
+	public static final String SHOW_BREAKDOWN = "showBreakdown";
 	public static final String SCORE_TYPE = "scoreType";
 	public static final String SCORE_WORDS = "W";
 	public static final String SCORE_LETTERS = "L";
@@ -57,6 +59,7 @@ public class Game implements Synchronizer.Counter {
 	private Board board;
 	private int score;
 	private String scoreType;
+	private boolean showBreakdown;
 
 	public enum GameStatus { GAME_STARTING, GAME_RUNNING, GAME_PAUSED, GAME_FINISHED }
 
@@ -86,6 +89,8 @@ public class Game implements Synchronizer.Counter {
 	private LinkedList<String> wordList;
 	private LinkedHashSet<String> wordsUsed;
 	private int wordCount;
+	private final SparseIntArray wordCountsByLength = new SparseIntArray();
+	private final SparseIntArray maxWordCountsByLength = new SparseIntArray();
 
 	private Date start;
 	private final Context context;
@@ -131,6 +136,7 @@ public class Game implements Synchronizer.Counter {
 			for (String word : wordArray) {
 				if (isWord(word) && !wordsUsed.contains(word)) {
 					score += getWordScore(word);
+					wordCountsByLength.put(word.length(), wordCountsByLength.get(word.length()) + 1);
 				}
 				wordList.add(word);
 				wordsUsed.add(word);
@@ -231,6 +237,7 @@ public class Game implements Synchronizer.Counter {
 			initSoundPool(c);
 		}
 		scoreType = prefs.getString(SCORE_TYPE, SCORE_WORDS);
+		showBreakdown = prefs.getBoolean(SHOW_BREAKDOWN, false);
 	}
 
 	public void initializeDictionary() {
@@ -246,8 +253,13 @@ public class Game implements Synchronizer.Counter {
 					ukDict);
 
 			solutions = dict.solver(board,new WordFilter() {
+				//Every word goes through the filter, so do double duty and init maxWordCountsByLength
 				public boolean isWord(String w) {
-					return w.length() >= minWordLength;
+					if (w.length() >= minWordLength) {
+						maxWordCountsByLength.put(w.length(), maxWordCountsByLength.get(w.length()) + 1);
+						return true;
+					}
+					return false;
 				}
 			});
 		} catch(IOException e) {
@@ -305,6 +317,7 @@ public class Game implements Synchronizer.Counter {
 				// Word has not been found before
 				wordCount++;
 				score += getWordScore(cap);
+				wordCountsByLength.put(cap.length(), wordCountsByLength.get(cap.length()) + 1);
 				playSound(0);
 			}
 		} else {
@@ -350,12 +363,24 @@ public class Game implements Synchronizer.Counter {
 		return solutions.size();
 	}
 
+	public SparseIntArray getMaxWordCountsByLength() {
+		return maxWordCountsByLength;
+	}
+
+	public SparseIntArray getWordCountsByLength() {
+		return wordCountsByLength;
+	}
+
 	public ListIterator<String> listIterator() {
 		return wordList.listIterator();
 	}
 
 	public Iterator<String> uniqueListIterator() {
 		return wordsUsed.iterator();
+	}
+
+	public boolean showBreakdown() {
+		return showBreakdown;
 	}
 
 	public boolean isWord(String word) {

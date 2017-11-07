@@ -9,6 +9,7 @@
 		android:summary="@string/pref_dict_summary"
 		android:entries="@array/dict_choices_entries"
 		android:entryValues="@array/dict_choices_entryvalues"
+		android:defaultValue="US"
 		android:dialogTitle="@string/pref_dict_dialog"
 	/>
 
@@ -18,6 +19,7 @@
 		android:summary="@string/pref_boardSize_summary"
 		android:entries="@array/board_size_choices_entries"
 		android:entryValues="@array/board_size_choices_entryvalues"
+		android:defaultValue="16"
 		android:dialogTitle="@string/pref_boardSize_dialog"
 	/>
 
@@ -27,6 +29,7 @@
 		android:summary="@string/pref_timeLimit_summary"
 		android:entries="@array/time_limit_choices_entries"
 		android:entryValues="@array/time_limit_choices_entryvalues"
+		android:defaultValue="180"
 		android:dialogTitle="@string/pref_timeLimit_dialog"
 	/>
 
@@ -36,6 +39,7 @@
 		android:summary="@string/pref_scoreType_summary"
 		android:entries="@array/score_type_choices_entries"
 		android:entryValues="@array/score_type_choices_entryvalues"
+		android:defaultValue="W"
 		android:dialogTitle="@string/pref_scoreType_dialog"
 	/>
 
@@ -46,10 +50,16 @@
 	/>
 
 	<CheckBoxPreference
+		android:key="showBreakdown"
+		android:defaultValue="false"
+		android:title="@string/pref_breakdown"
+		android:summary="@string/pref_breakdown_summary"
+	/>
+
+	<CheckBoxPreference
 		android:key="soundsEnabled"
 		android:title="@string/pref_sounds"
 		android:summary="@string/pref_sounds_summary"
 	/>
-
 
 </PreferenceScreen>
