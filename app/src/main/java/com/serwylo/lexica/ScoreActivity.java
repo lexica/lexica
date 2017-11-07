@@ -48,7 +48,7 @@ public class ScoreActivity extends TabActivity {
 	private static final String TAG = "ScoreActivity";
 
 	public static final String DEFINE_URL = "http://www.google.com/search?q=define%3a+";
-	public static final String HIGH_SCORE_PREFIX = "highScore";
+	public static final String SCORE_PREF_FILE = "prefs_score_file";
 
 	private Game game;
 	private BoardView bv;
@@ -317,17 +317,17 @@ public class ScoreActivity extends TabActivity {
 		}
 	}
 
-	private static String highScoreKey(SharedPreferences prefs) {
-		return HIGH_SCORE_PREFIX
-				+ prefs.getString("dict", "US")
+	private static String highScoreKey(Context c) {
+    	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+		return prefs.getString("dict", "US")
 				+ prefs.getString("boardSize", "16")
-				+ prefs.getString("maxTimeRemaining", "180")
-				+ prefs.getString(Game.SCORE_TYPE, Game.SCORE_WORDS);
+				+ prefs.getString(Game.SCORE_TYPE, Game.SCORE_WORDS)
+				+ prefs.getString("maxTimeRemaining", "180");
 	}
 
 	private void setHighScore(int score) {
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		String key = highScoreKey(prefs);
+		String key = highScoreKey(this);
+		SharedPreferences prefs = getSharedPreferences(SCORE_PREF_FILE, Context.MODE_PRIVATE);
 		int highScore = prefs.getInt(key, 0);
 		if (score > highScore) {
 			SharedPreferences.Editor edit = prefs.edit();
@@ -337,8 +337,8 @@ public class ScoreActivity extends TabActivity {
 	}
 
 	public static int getHighScore(Context c) {
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
-		return prefs.getInt(highScoreKey(prefs), 0);
+		SharedPreferences prefs = c.getSharedPreferences(SCORE_PREF_FILE, Context.MODE_PRIVATE);
+		return prefs.getInt(highScoreKey(c), 0);
 	}
 }
 

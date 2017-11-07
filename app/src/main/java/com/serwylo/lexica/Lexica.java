@@ -93,7 +93,7 @@ public class Lexica extends Activity {
 		});
 		int highScore = ScoreActivity.getHighScore(this);
 		TextView tv = (TextView) findViewById(R.id.high_score);
-		tv.setText(String.format(getResources().getString(R.string.high_score), highScore));
+		tv.setText(getResources().getString(R.string.high_score, highScore));
 	}
 
 	public void onPause() {

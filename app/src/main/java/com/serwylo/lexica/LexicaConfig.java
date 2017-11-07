@@ -17,12 +17,11 @@
 
 package com.serwylo.lexica;
 
+import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
 
@@ -59,18 +58,7 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
     };
 
     private void clearHighScores() {
-        SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(this).edit();
-        for (String a : getResources().getStringArray(R.array.dict_choices_entryvalues)) {
-            for (String b : getResources().getStringArray(R.array.board_size_choices_entryvalues)) {
-                for (String c : getResources().getStringArray(R.array.time_limit_choices_entryvalues)) {
-                    for (String d : getResources().getStringArray(R.array.score_type_choices_entryvalues)) {
-                        String key = ScoreActivity.HIGH_SCORE_PREFIX + a + b + c + d;
-                        edit.putInt(key, 0);
-                    }
-                }
-            }
-        }
-        edit.commit();
+        getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().commit();
         Toast.makeText(this, R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
     }
 }
