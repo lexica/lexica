@@ -134,12 +134,14 @@ public class Game implements Synchronizer.Counter {
 			wordList = new LinkedList<>();
 			wordsUsed = new LinkedHashSet<>();
 			for (String word : wordArray) {
-				if (isWord(word) && !wordsUsed.contains(word)) {
-					score += getWordScore(word);
-					wordCountsByLength.put(word.length(), wordCountsByLength.get(word.length()) + 1);
+				if (!word.startsWith("+")) {
+					if (isWord(word)) {
+						score += getWordScore(word);
+						wordCountsByLength.put(word.length(), wordCountsByLength.get(word.length()) + 1);
+					}
+					wordsUsed.add(word);
 				}
 				wordList.add(word);
-				wordsUsed.add(word);
 			}
 			wordCount = saver.readWordCount();
 
@@ -303,25 +305,27 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	public void addWord(String word) {
-		if(status != GameStatus.GAME_RUNNING) {
+		if (status != GameStatus.GAME_RUNNING) {
 			return;
 		}
 		String cap = word.toLowerCase();
-		wordList.addFirst(cap);
 
 		if(isWord(cap)) {
 			if(wordsUsed.contains(cap)) {
 				// Word has been found before
+				wordList.addFirst("+" + word);
 				playSound(1);
 			} else {
-				// Word has not been found before
-				wordCount++;
-				score += getWordScore(cap);
-				wordCountsByLength.put(cap.length(), wordCountsByLength.get(cap.length()) + 1);
+                // Word has not been found before
+                wordCount++;
+                score += getWordScore(cap);
+                wordCountsByLength.put(cap.length(), wordCountsByLength.get(cap.length()) + 1);
+				wordList.addFirst(word);
 				playSound(0);
 			}
 		} else {
-			// Word is not really a word
+            // Word is not really a word
+			wordList.addFirst(word);
 			playSound(2);
 		}
 		wordsUsed.add(cap);

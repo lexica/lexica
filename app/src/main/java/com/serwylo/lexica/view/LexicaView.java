@@ -280,11 +280,16 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		pos += textSizeSmall;
 		while (li.hasNext() && pos < bottom) {
 			String w = li.next();
-			if (game.isWord(w)) {
-				w += "  " + game.getWordScore(w);
+			if (w.startsWith("+")) {
+				w = w.substring(1);
 				p.setARGB(255, 0, 0, 0);
 			} else {
-				p.setARGB(255, 255, 0, 0);
+				if (game.isWord(w)) {
+					w += "  " + game.getWordScore(w);
+					p.setARGB(255, 0, 0, 0);
+				} else {
+					p.setARGB(255, 255, 0, 0);
+				}
 			}
 			canvas.drawText(w.toUpperCase(), left, pos, p);
 			pos += textSizeSmall;
