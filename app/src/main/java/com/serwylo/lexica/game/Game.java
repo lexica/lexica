@@ -122,6 +122,9 @@ public class Game implements Synchronizer.Counter {
 				case 25:
 					setBoard(new FiveByFiveBoard(saver.readGameBoard()));
 					break;
+				case 36:
+					setBoard(new SixBySixBoard(saver.readGameBoard()));
+					break;
 			}
 
 			maxTimeRemaining = saver.readMaxTimeRemaining();
@@ -167,6 +170,9 @@ public class Game implements Synchronizer.Counter {
 			case 25:
 				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateFiveByFiveBoard());
 			break;
+			case 36:
+				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateSixBySixBoard());
+			break;
 		}
 
 		timeRemaining = getMaxTimeRemaining();
@@ -204,7 +210,10 @@ public class Game implements Synchronizer.Counter {
 			break;
 			case 25:
 				minWordLength = 4;
-			break;
+				break;
+			case 36:
+				minWordLength = 5;
+				break;
 		}
 
 		initializeDictionary();
@@ -224,12 +233,19 @@ public class Game implements Synchronizer.Counter {
 			usDict = true;
 		}
 
-		if(prefs.getString("boardSize","16").equals("25")) {
-			boardSize = 25;
-			minWordLength = 4;
-		} else {
-			boardSize = 16;
-			minWordLength = 3;
+		switch (prefs.getString("boardSize","16")) {
+			case "16":
+				boardSize = 16;
+				minWordLength = 3;
+				break;
+			case "25":
+				boardSize = 25;
+				minWordLength = 4;
+				break;
+			case "36":
+				boardSize = 36;
+				minWordLength = 5;
+				break;
 		}
 
 		maxTimeRemaining = 100 * Integer.parseInt(

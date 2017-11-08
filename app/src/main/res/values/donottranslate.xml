@@ -12,10 +12,12 @@
 	<string-array name="board_size_choices_entries">
 		<item>4x4</item>
 		<item>5x5</item>
+		<item>6x6</item>
 	</string-array>
 	<string-array name="board_size_choices_entryvalues">
 		<item>16</item>
 		<item>25</item>
+		<item>36</item>
 	</string-array>
 
 	<string-array name="score_type_choices_entries">
