@@ -17,6 +17,7 @@
 
 package com.serwylo.lexica;
 
+import android.app.SearchManager;
 import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -53,10 +54,14 @@ public class ScoreActivity extends TabActivity {
 	private Game game;
 	private BoardView bv;
 	private View highlighted;
+	private String definitionProvider;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
      	super.onCreate(savedInstanceState);
+
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		definitionProvider = prefs.getString("definitionProvider", "google");
 
 		if(savedInstanceState != null) {
 			game = new Game(this, new GameSaverTransient(savedInstanceState));
@@ -310,10 +315,28 @@ public class ScoreActivity extends TabActivity {
 		}
 
 		public void onClick(View v) {
-			Intent i = new Intent(Intent.ACTION_VIEW);
-			Uri u = Uri.parse(DEFINE_URL+word);
-			i.setData(u);
-			startActivity(i);
+			Intent intent;
+			switch (definitionProvider) {
+				case "aard2":
+					intent = new Intent("aard2.lookup");
+					intent.putExtra(Intent.EXTRA_TEXT, word);
+					break;
+				case "quickdic":
+					intent = new Intent("com.hughes.action.ACTION_SEARCH_DICT");
+					intent.putExtra(SearchManager.QUERY, word);
+					break;
+				default:
+					intent = null;
+			}
+
+			if (intent != null && intent.resolveActivity(getPackageManager()) != null) {
+				startActivity(intent);
+			} else {
+				intent = new Intent(Intent.ACTION_VIEW);
+				Uri u = Uri.parse(DEFINE_URL+word);
+				intent.setData(u);
+				startActivity(intent);
+			}
 		}
 	}
 
