@@ -1,0 +1,8 @@
+A word game where you have 3 minutes to find as many words as possible on a grid of random letters.
+
+This is a fork of the unmaintained <a href="https://play.google.com/store/apps/details?id=net.healeys.lexic">Lexic</a> which:
+
+ * Adds minor improvements to the UI
+ * Has better support for high resolution screens
+ * Removes the unsupported multiplayer options
+ * The UI is translated into Chinese, German, Japanese, Persian, Catalan, and Spanish
