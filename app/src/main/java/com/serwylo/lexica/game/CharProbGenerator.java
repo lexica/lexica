@@ -61,6 +61,10 @@ public class CharProbGenerator {
 		return new FourByFourBoard(generateBoard(16));
 	}
 
+	public SixBySixBoard generateSixBySixBoard() {
+		return new SixBySixBoard(generateBoard(36));
+	}
+
 	public String[] generateBoard(int size) {
 		int total = 0;
 		Random rng = new Random();
