@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lexica</string>
+    <string name="about">Относно</string>
+    <string name="button_ok">OK</string>
+    <string name="dialog_about_title">Относно Lexica</string>
+    <string name="dialog_cancel">Отказ</string>
+    <string name="dialog_no_saved">Няма запазена игра. Ако четеш това\n\tсъобщение, значи нещо се е счупило.</string>
+    <string name="dialog_ok">ОК</string>
+    <string name="found_words">Намерени Думи</string>
+    <string name="hide_missed">Скрий Пропуснатите Думи</string>
+    <string name="hide_unique">Скрий Уникалните Думи</string>
+    <string name="menu_end_game">Край на играта</string>
+    <string name="menu_rotate_board">Завърти Табло</string>
+    <string name="menu_save_game">Запази игра</string>
+    <string name="missed_words">Пропуснати Думи</string>
+    <string name="new_game">Нова Игра</string>
+    <string name="pref_boardSize">Размер на Таблото</string>
+    <string name="pref_boardSize_dialog">Избери Размер на Таблото</string>
+    <string name="pref_boardSize_summary">Избери размер на таблото</string>
+    <string name="pref_dict">Речник</string>
+    <string name="pref_dict_dialog">Избери Речник</string>
+    <string name="pref_dict_uk">Обединеното Кралство</string>
+    <string name="pref_dict_us">Съединените Щати</string>
+    <string name="pref_sounds">Звуците са разрешени</string>
+</resources>
