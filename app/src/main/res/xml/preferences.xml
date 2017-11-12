@@ -62,4 +62,14 @@
 		android:summary="@string/pref_sounds_summary"
 	/>
 
+	<ListPreference
+		android:key="definitionProvider"
+		android:title="@string/pref_definitionProvider"
+		android:summary="@string/pref_definitionProvider_summary"
+		android:entries="@array/definition_provider_choices_entries"
+		android:entryValues="@array/definition_provider_choices_entryvalues"
+		android:defaultValue="google"
+		android:dialogTitle="@string/pref_definitionProvider_dialog"
+		/>
+
 </PreferenceScreen>
