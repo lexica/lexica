@@ -1,0 +1,4 @@
+* Updated logo to be more modern and follow specs from Material Design guidelines closely.
+* Added Catalan translations (Thanks to David García Garzón)
+* Added Spanish translations (Thanks to David García Garzón)
+* Added Persian translations (Thanks to Amir Aghdam)

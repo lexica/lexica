@@ -1,0 +1,2 @@
+* Show percentage of words/percentage of score at the end of games.
+* Added Japanese translations (Thanks to naofum)

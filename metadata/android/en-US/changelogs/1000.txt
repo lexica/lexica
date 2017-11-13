@@ -1,0 +1,14 @@
+New features (all contributed by JulianPaoloThiry):
+ * High scores
+ * Choice of word-length or letter (e.g. Scrabble) scoring
+ * 6 x 6 board (requires words of length 5 or longer)
+ * Integration with Aard2 and QuickDic offline dictionaries for definitions 
+
+Improvements
+ * Miscellanious UI improvements around scoring (JulianPaoloThiry)
+ * Changes to the internals, allowing for different language boards in the future
+
+New translations:
+ * French: john paul
+ * Chinese (Traditional): riotism
+ * Italian: Enrico Monese

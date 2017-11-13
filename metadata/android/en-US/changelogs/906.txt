@@ -1,0 +1,5 @@
+Translation improvements:
+ * Catalan (David García Garzón)
+ * Dutch (Heimen Stoffels)
+ * Persian (Amir Aghdam)
+ * Spanish (David García Garzón)
