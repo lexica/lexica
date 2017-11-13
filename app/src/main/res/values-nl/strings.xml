@@ -27,7 +27,8 @@
 	<string name="pref_sounds">Geluiden ingeschakeld</string>
 	<string name="pref_sounds_summary">Geluidseffecten in-/uitschakelen</string>
 
-	<string name="dialog_no_saved">Er is geen opgeslagen spel. Als u dit bericht kunt lezen, dan is er waarschijnlijk iets kapot.</string>
+	<string name="dialog_no_saved">Er is geen opgeslagen spel. Als u dit bericht kunt lezen,
+\ndan is er waarschijnlijk iets kapot.</string>
 	<string name="dialog_ok">Oké</string>
 	<string name="dialog_cancel">Annuleren</string>
 
@@ -63,4 +64,21 @@ Op borden ter grootte van 4x4 moeten worden minimaal drie letters lang zijn. On 
 	<string name="total_words">Totaal aantal woorden:</string>
 	<string name="total_score">Totaalscore:</string>
 	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+<string name="pref_scoreType">Scorenotering</string>
+	<string name="pref_scoreType_summary">Selecteer een scorenotering</string>
+	<string name="pref_scoreType_dialog">Selecteer scorenotering</string>
+	<string name="word_length">Woordlengte</string>
+	<string name="letter_points">Letterpunten</string>
+
+	<string name="score">SCORE</string>
+	<string name="high_score">Topscore: %1$d</string>
+	<string name="pref_resetScores_summary">Topscores worden bijgehouden voor elke combinatie van bovenstaande instellingen. Raak aan om alle scores terug te zetten op nul.</string>
+	<string name="pref_resetScores">Topscores terugzetten op nul</string>
+    <string name="high_scores_reset">Topscores zijn teruggezet op nul.</string>
+	<string name="reset_scores_prompt">Weet u zeker dat u alle topscores van alle spelmodi wilt terugzetten op nul?</string>
+<string name="pref_breakdown">Woordlengte-uitleg weergeven</string>
+	<string name="pref_breakdown_summary">Of de woordenteller wel of niet woorden moet weergeven op woordlengte</string>
+<string name="pref_definitionProvider">Definitiedienst</string>
+	<string name="pref_definitionProvider_summary">Selecteer de te gebruiken definitiedienst. Als de geselecteerde dienst niet geïnstalleerd is, dan zal Google worden gebruikt.</string>
+	<string name="pref_definitionProvider_dialog">Selecteer definitiedienst</string>
 </resources>

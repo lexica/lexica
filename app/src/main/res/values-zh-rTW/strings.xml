@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Lexica</string>
+
+    <string name="new_game">新遊戲</string>
+    <string name="restore_game">返回遊戲</string>
+	<string name="prefs">設定</string>
+
+	<string name="pref_dict">字典</string>
+	<string name="pref_dict_summary">選擇遊戲的字典</string>
+	<string name="pref_dict_dialog">選澤字典</string>
+	<string name="pref_dict_us">美式英語</string>
+	<string name="pref_dict_uk">英式英語</string>
+
+	<string name="pref_boardSize">選澤圖版大小</string>
+	<string name="pref_boardSize_summary">圖版大小</string>
+	<string name="pref_boardSize_dialog">選澤大小</string>
+
+	<string name="pref_timeLimit">時限</string>
+	<string name="pref_timeLimit_summary">選擇時限</string>
+	<string name="pref_timeLimit_dialog">選擇時限</string>
+	<string name="time_3m">3 分鐘</string>
+	<string name="time_5m">5 分鐘</string>
+	<string name="time_10m">10 分鐘</string>
+	<string name="time_20m">20 分鐘</string>
+	<string name="time_30m">30 分鐘</string>
+
+	<string name="pref_sounds">啟用音效</string>
+	<string name="pref_sounds_summary">選擇遊戲會否發出音效</string>
+
+	<string name="dialog_no_saved">沒有儲存任何遊戲。如果您看到此訊息，遊戲很有可能發生了故障。</string>
+	<string name="dialog_ok">確定</string>
+	<string name="dialog_cancel">取消</string>
+
+	<string name="dialog_about_title">關於 Lexica</string>
+	<string name="menu_rotate_board">旋轉圖版</string>
+	<string name="menu_save_game">儲存遊戲</string>
+	<string name="menu_end_game">結束遊戲</string>
+	<string name="button_ok">確定</string>
+
+	<string name="about">關於</string>
+
+	<string name="view_word"><u>查看</u></string>
+	<string name="define_word"><u>定義</u> </string>
+
+	<string name="found_words">找到的單詞</string>
+	<string name="missed_words">遺漏的單詞</string>
+	<string name="total_words">總詞數：</string>
+	<string name="total_score">總分數：</string>
+	<string name="words">單詞</string>
+	<string name="show_missed">顯示遺漏的單詞</string>
+	<string name="hide_missed">隱藏遺漏的單詞</string>
+
+	<string name="hide_unique">隱藏獨特的單詞</string>
+
+	<string name="show_unique">顯示獨特的單詞</string>
+	<string name="dialog_about_content">您要在 3 分鐘之內嘗試拼出圖版內全部單詞。要拼出單詞，請先觸碰屏幕後移動至附近的方格。
+\n
+\n計分方式：
+\n在 4×4 的圖版上，單詞必須由至少 3 個字母組成；在 5×5 的圖版上，單詞必須由至少 4 個字母組成。由 3 個或 4 個字母組成的單詞記 1 分，找出更長的單詞將獲更高分，專名詞並不獲任何分數。
+\n
+\n</string>
+
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+</resources>
