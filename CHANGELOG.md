@@ -1,3 +1,7 @@
+# v0.10.0 onwards
+
+See `metadata/android/en-US/changelogs/` for individual changelogs for each version.
+
 # v0.9.6
 
 Added Dutch translations (Thanks to [Heimen Stoffels](https://hosted.weblate.org/user/vistaus/))
