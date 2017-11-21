@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="app_name">Lexica</string>
     <string name="about">Über</string>
@@ -23,11 +23,11 @@
     <string name="pref_dict_summary">Bitte wählen Sie ein Wörterbuch aus</string>
     <string name="pref_dict_uk">Großbritannien</string>
     <string name="pref_dict_us">USA</string>
-    <string name="pref_sounds">Klänge angeschaltet</string>
-    <string name="pref_sounds_summary">Sind Klangeffekte angeschaltet</string>
-    <string name="pref_timeLimit">Zeit-Limit</string>
-    <string name="pref_timeLimit_summary">Bitte wählen Sie ein Zeitlimit</string>
-    <string name="pref_timeLimit_dialog">Zeit-Limit auswählen</string>
+    <string name="pref_sounds">Klänge aktiviert</string>
+    <string name="pref_sounds_summary">Ob Soundeffekte aktiviert sind oder nicht</string>
+    <string name="pref_timeLimit">Zeitbegrenzung</string>
+    <string name="pref_timeLimit_summary">Bitte wählen Sie ein Zeitbegrenzung</string>
+    <string name="pref_timeLimit_dialog">Zeitbegrenzung auswählen</string>
     <string name="prefs">Einstellungen</string>
     <string name="restore_game">Spiel wiederherstellen</string>
     <string name="show_missed">Übersehene Wörter anzeigen</string>
@@ -41,8 +41,7 @@
     <string name="total_words">Wörter insgesamt:</string>
     <string name="view_word"><u>Ansicht</u></string>
     <string name="words">WÖRTER</string>
-	<string name="dialog_no_saved">Kein Spiel gespeichert. Wenn Sie diese 
-	Nachricht sehen, ist wahrscheinlich etwas kaputt oder schief gelaufen.</string>
+	<string name="dialog_no_saved">Es wird kein Spiel gespeichert. Wenn Ihnen diese Nachricht angezeigt wird, ist wahrscheinlich etwas nicht in Ordnung.</string>
 	<string name="dialog_about_content">
 	Berühren Sie den Bildschirm und bewegen Sie Ihren Finger über benachbarte
 	Felder, um Wörter zu buchstabieren. Sie haben drei Minuten, um so viele 
@@ -54,4 +53,23 @@
 	Wörter, die drei oder vier Buchstaben lang sind, zählen einen Punkt. Längere 
 	Wörter zählen mehr Punkte. Eigennamen zählen nicht.\n\n
 	</string>
+<string name="pref_scoreType">Bewertungstyp</string>
+	<string name="pref_scoreType_summary">Einen Bewertungstyp auswählen</string>
+	<string name="pref_scoreType_dialog">Bewertungstyp auswählen</string>
+	<string name="word_length">Wortlänge</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+
+	<string name="high_score">Höchstwertung: %1$d</string>
+	<string name="pref_resetScores_summary">Höchstwertungen werden für jede Kombination der oben genannten Einstellungen aufgezeichnet. Antippen, um alle Ergebnisse auf Null zurückzusetzen.</string>
+	<string name="pref_resetScores">Höchstwertung zurücksetzen</string>
+    <string name="high_scores_reset">Höchstwertungen wurden zurückgesetzt</string>
+	<string name="reset_scores_prompt">Möchten Sie wirklich alle Höchstwertungen für alle Spielmodi auf Null zurücksetzen?</string>
+
+    <string name="pref_breakdown">Wortlängen-Aufschlüsselung anzeigen</string>
+	<string name="letter_points">Buchstabenwertung</string>
+
+	<string name="score">Punkte</string>
+	<string name="pref_definitionProvider">Wörterbuch</string>
+	<string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird auf DuckDuckGo zurückgegriffen.</string>
+	<string name="pref_definitionProvider_dialog">Wörterbuchauswahl</string>
 </resources>
