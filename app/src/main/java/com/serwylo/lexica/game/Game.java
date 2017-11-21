@@ -271,15 +271,14 @@ public class Game implements Synchronizer.Counter {
 					ukDict);
 
 			solutions = dict.solver(board,new WordFilter() {
-				//Every word goes through the filter, so do double duty and init maxWordCountsByLength
 				public boolean isWord(String w) {
-					if (w.length() >= minWordLength) {
-						maxWordCountsByLength.put(w.length(), maxWordCountsByLength.get(w.length()) + 1);
-						return true;
-					}
-					return false;
+					return w.length() >= minWordLength;
 				}
 			});
+
+			for (String w: solutions.keySet()) {
+				maxWordCountsByLength.put(w.length(), maxWordCountsByLength.get(w.length()) + 1);
+			}
 		} catch(IOException e) {
 			// Log.e(TAG,"initializeDictionary",e);
 		}
