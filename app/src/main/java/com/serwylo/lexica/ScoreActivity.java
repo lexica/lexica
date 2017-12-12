@@ -48,7 +48,7 @@ public class ScoreActivity extends TabActivity {
 
 	private static final String TAG = "ScoreActivity";
 
-	public static final String DEFINE_URL = "http://www.google.com/search?q=define%3a+";
+	public static final String DEFINE_URL = "https://www.duckduckgo.com/search?q=define%3a+";
 	public static final String SCORE_PREF_FILE = "prefs_score_file";
 
 	private Game game;
@@ -61,7 +61,7 @@ public class ScoreActivity extends TabActivity {
      	super.onCreate(savedInstanceState);
 
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		definitionProvider = prefs.getString("definitionProvider", "google");
+		definitionProvider = prefs.getString("definitionProvider", "duckduckgo");
 
 		if(savedInstanceState != null) {
 			game = new Game(this, new GameSaverTransient(savedInstanceState));
