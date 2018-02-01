@@ -45,12 +45,12 @@
 	</string-array>
 
 	<string-array name="definition_provider_choices_entries">
-		<item>Google</item>
+		<item>DuckDuckGo</item>
 		<item>AARD2</item>
 		<item>QuickDic</item>
 	</string-array>
 	<string-array name="definition_provider_choices_entryvalues">
-		<item>google</item>
+		<item>duckduckgo</item>
 		<item>aard2</item>
 		<item>quickdic</item>
 	</string-array>
