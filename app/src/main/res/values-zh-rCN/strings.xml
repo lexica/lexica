@@ -3,14 +3,14 @@
     <string name="app_name">Lexica</string>
 
     <string name="new_game">新游戏</string>
-    <string name="restore_game">恢复游戏</string>
+    <string name="restore_game">返回游戏</string>
 	<string name="prefs">设置</string>
 
 	<string name="pref_dict">字典</string>
 	<string name="pref_dict_summary">选择使用的字典</string>
 	<string name="pref_dict_dialog">选择字典</string>
-	<string name="pref_dict_us">美国</string>
-	<string name="pref_dict_uk">英国</string>
+	<string name="pref_dict_us">美式英语</string>
+	<string name="pref_dict_uk">英式英语</string>
 
 	<string name="pref_boardSize">版面</string>
 	<string name="pref_boardSize_summary">选择版面大小</string>
@@ -28,18 +28,17 @@
 	<string name="pref_sounds">音效</string>
 	<string name="pref_sounds_summary">是否启用音效</string>
 
-	<string name="dialog_no_saved">未保存游戏。看到此消息，表明可能发生了错误。</string>
+	<string name="dialog_no_saved">未保存游戏。如果您看到此信息，游戏很可能出现了问题。</string>
 	<string name="dialog_ok">确定</string>
 	<string name="dialog_cancel">取消</string>
 
-	<string name="dialog_about_title">关于 Lexica</string>
-	<string name="dialog_about_content">
-	滑动连接相邻方块，组成词语。3分钟内找到越多词语得分越高。
-
-	\n\n计分：
-	\n4x4版面中，词语至少由3个字母组成。5x5的，至少4个字母。
-	最短词语得1分。词越长，得分更多。专有名词不计分。\n\n
-	</string>
+	<string name="dialog_about_title">关于Lexica</string>
+	<string name="dialog_about_content">您要在3分钟内拼出版面上所有单词。要拼出单词，请先触碰荧幕后滑动相邻的方块。 
+\n 
+\n分数算法： 
+\n在4×4的版面上，单词必须由至少3个字母组成；在5×5的版面上，单词必须由至少4个字母组成。由3个或4个字母组成的单词记得1分，找出更长的单词将获更高分。专名词不计任何分数。
+\n
+\n</string>
 
 	<string name="menu_rotate_board">旋转版面</string>
 	<string name="menu_save_game">保存游戏</string>
@@ -48,8 +47,8 @@
 
 	<string name="about">关于</string>
 
-	<string name="show_missed">显示遗漏词语</string>
-	<string name="hide_missed">隐藏遗漏词语</string>
+	<string name="show_missed">显示遗漏单词</string>
+	<string name="hide_missed">隐藏遗漏单词</string>
 
 	<string name="show_unique">显示唯一词语</string>
 	<string name="hide_unique">隐藏唯一词语</string>
@@ -58,10 +57,29 @@
 	<string name="define_word"><u>解释</u> </string>
 
 	<string name="words">词数</string>
-	<string name="found_words">找到词语</string>
-	<string name="missed_words">遗漏词语</string>
+	<string name="found_words">找到的单词</string>
+	<string name="missed_words">遗漏的单词</string>
 	<string name="total_words">总词数：</string>
 	<string name="total_score">总分数：</string>
 
-<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+<string name="value_max_percentage">%1$d/%2$d（%3$d%%）</string>
+<string name="pref_scoreType">分数算法</string>
+	<string name="pref_scoreType_summary">选择一个分数算法</string>
+	<string name="pref_scoreType_dialog">选择分数算法</string>
+	<string name="word_length">单词长度</string>
+	<string name="letter_points">字母分数</string>
+
+	<string name="score">分数</string>
+	<string name="high_score">最高分：%1$d</string>
+	<string name="pref_resetScores_summary">游戏为每个游戏模式设最高分，按此以重设所有分数至零分。</string>
+	<string name="pref_resetScores">重设最高分</string>
+    <string name="high_scores_reset">最高分已被重设。</string>
+	<string name="reset_scores_prompt">您确定要重设所有分数至零分？</string>
+
+    <string name="pref_breakdown">显示单词长度分析</string>
+	<string name="pref_breakdown_summary">选择是否显示版面上各单词的长度</string>
+
+	<string name="pref_definitionProvider">定义提供者</string>
+	<string name="pref_definitionProvider_summary">选择定义提供者。如果您所选择的提供者未被安裝，游戏將使用谷歌的字典服务。</string>
+	<string name="pref_definitionProvider_dialog">选择定义提供者</string>
 </resources>
