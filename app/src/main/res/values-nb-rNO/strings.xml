@@ -79,6 +79,6 @@
 	<string name="pref_breakdown_summary">Hvorvidt eller ei ordtellingen viser ord etter ordlengde</string>
 
 	<string name="pref_definitionProvider">Definisjonstilbyder</string>
-	<string name="pref_definitionProvider_summary">Velg en definisjonstilbyder å bruke. Hvis valg definisjonstilbyder ikke er installert, vil Google bli brukt.</string>
+	<string name="pref_definitionProvider_summary">Velg en definisjonstilbyder å bruke. Hvis valg definisjonstilbyder ikke er installert, vil DuckDuckGo bli brukt.</string>
 	<string name="pref_definitionProvider_dialog">Velg definisjonstilbyder</string>
 </resources>

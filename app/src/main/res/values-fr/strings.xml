@@ -77,6 +77,6 @@
     <string name="pref_breakdown">Montrer le Détail des Longueurs de Mots</string>
 	<string name="pref_breakdown_summary">Pour choisir d\'organiser le décompte des points en fonction de la longueur des mots</string>
 <string name="pref_definitionProvider">Dictionnaire</string>
-	<string name="pref_definitionProvider_summary">Logiciel fournissant la définition des mots. Par défaut, Google sera utilisé.</string>
+	<string name="pref_definitionProvider_summary">Logiciel fournissant la définition des mots. Par défaut, DuckDuckGo sera utilisé.</string>
 	<string name="pref_definitionProvider_dialog">Logiciel à utiliser</string>
 </resources>

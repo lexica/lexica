@@ -78,6 +78,6 @@
 	<string name="pref_breakdown_summary">選擇是否顯示圖版上不同單詞的長度</string>
 
 	<string name="pref_definitionProvider">定義提供者</string>
-	<string name="pref_definitionProvider_summary">選擇定義提供者。如果您所選擇的提供者尚未被安裝，遊戲將使用 Google 的字典服務。</string>
+	<string name="pref_definitionProvider_summary">選擇定義提供者。如果您所選擇的提供者尚未被安裝，遊戲將使用 DuckDuckGo 的字典服務。</string>
 	<string name="pref_definitionProvider_dialog">選擇定義提供者</string>
 </resources>
