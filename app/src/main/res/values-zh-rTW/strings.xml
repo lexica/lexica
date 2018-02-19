@@ -6,7 +6,7 @@
 	<string name="prefs">設定</string>
 
 	<string name="pref_dict">字典</string>
-	<string name="pref_dict_summary">選擇遊戲的字典</string>
+	<string name="pref_dict_summary">選擇遊戲字典</string>
 	<string name="pref_dict_dialog">選澤字典</string>
 	<string name="pref_dict_us">美式英語</string>
 	<string name="pref_dict_uk">英式英語</string>
@@ -27,7 +27,7 @@
 	<string name="pref_sounds">啟用音效</string>
 	<string name="pref_sounds_summary">選擇遊戲會否發出音效</string>
 
-	<string name="dialog_no_saved">沒有儲存任何遊戲。如果您看到此訊息，遊戲很有可能發生了故障。</string>
+	<string name="dialog_no_saved">沒有儲存任何遊戲。如果您看到此訊息，遊戲很可能出現了問題。</string>
 	<string name="dialog_ok">確定</string>
 	<string name="dialog_cancel">取消</string>
 
@@ -61,4 +61,23 @@
 \n</string>
 
 	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+<string name="pref_scoreType">計分方法</string>
+	<string name="pref_scoreType_summary">選擇一個計分方法</string>
+	<string name="pref_scoreType_dialog">選擇一個計分方法</string>
+	<string name="word_length">單詞長度</string>
+	<string name="letter_points">字母分數</string>
+
+	<string name="score">分數</string>
+	<string name="high_score">最高分數：%1$d</string>
+	<string name="pref_resetScores_summary">遊戲會根據以上設定的每一個搭配計算出最高分數。觸碰以重設全部分數至零分。</string>
+	<string name="pref_resetScores">重設最高分數</string>
+    <string name="high_scores_reset">最高分數已被重設。</string>
+	<string name="reset_scores_prompt">您確定要重設所有遊戲模式的最高分數至零分嗎？</string>
+
+    <string name="pref_breakdown">顯示單詞長度分析</string>
+	<string name="pref_breakdown_summary">選擇是否顯示圖版上不同單詞的長度</string>
+
+	<string name="pref_definitionProvider">定義提供者</string>
+	<string name="pref_definitionProvider_summary">選擇定義提供者。如果您所選擇的提供者尚未被安裝，遊戲將使用 Google 的字典服務。</string>
+	<string name="pref_definitionProvider_dialog">選擇定義提供者</string>
 </resources>
