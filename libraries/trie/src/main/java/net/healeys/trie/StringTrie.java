@@ -303,11 +303,13 @@ public class StringTrie extends Trie {
 			return currentPosition + getCharAt(word, currentPosition).length();
 		}
 
-		// TODO: Refactor special handling of "Q" into interface for other Locales to use.
 		private String getCharAt(String word, int position) {
 			String character = Character.toString(word.charAt(position));
-			if (character.equals("q") && word.length() > position && Character.toString(word.charAt(position + 1)).equals("u")) {
-				return "qu";
+			String characterWithSuffix = language.applyMandatorySuffix(character);
+			if (!character.equals(characterWithSuffix)
+					&& word.length() >= position + characterWithSuffix.length()
+					&& word.substring(position, position + characterWithSuffix.length()).equals(characterWithSuffix)) {
+				return characterWithSuffix;
 			}
 			return character;
 		}
