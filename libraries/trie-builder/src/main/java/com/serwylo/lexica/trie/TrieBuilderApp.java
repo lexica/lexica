@@ -9,7 +9,7 @@ import com.serwylo.lexica.trie.util.TrieBuilder;
 public class TrieBuilderApp {
 
 	public static void main(String[] args) throws IOException {
-		if (args.length < 3) {
+		if (args.length < 4) {
 			printUsage();
 			return;
 		}
@@ -34,27 +34,36 @@ public class TrieBuilderApp {
 			return;
 		}
 
-		int outputFileCount = args.length - 2;
-		final File[] outputFiles = new File[outputFileCount];
+		final File lettersDir = new File(args[2]);
+		if (!lettersDir.exists()) {
+			printFileNotFound(lettersDir);
+			return;
+		}
+
+		final File lettersFile = new File(lettersDir, language.getLetterDistributionFileName());
+
+		int outputFileCount = args.length - 3;
+		final File[] outputTrieFiles = new File[outputFileCount];
 		for (int i = 0; i < outputFileCount; i ++) {
-			File file = new File(args[i + 2]);
+			File file = new File(args[i + 3]);
 			if (!file.exists()) {
 				printFileNotFound(file);
 				return;
 			}
 
-			outputFiles[i] = new File(file, language.getTrieFileName());
+			outputTrieFiles[i] = new File(file, language.getTrieFileName());
 		}
 
-		TrieBuilder.run(language, dictFile, outputFiles);
+		TrieBuilder.run(language, dictFile, lettersFile, outputTrieFiles);
 	}
 
 	private static void printUsage() {
 		System.out.println("Usage:");
-		System.out.println("    java -jar trie-builder.jar language path/to/dictionaries/ path/to/output/ ...");
-		System.out.println("        language               en_US|en_UK");
-		System.out.println("        path/to/dictionaries/  Directory where dictionary.en_US.txt et al. live");
-		System.out.println("        path/to/output/ ...    Output directories where the trie of all words will get written.");
+		System.out.println("    java -jar trie-builder.jar language path/to/dictionaries/ path/to/trie/output/ ...");
+		System.out.println("        language                  en_US|en_UK");
+		System.out.println("        path/to/dictionaries/     Directory where dictionary.en_US.txt et al. belong.");
+		System.out.println("        path/to/letters/dir       Directory where letters_en_us.txt et al. belong.");
+		System.out.println("        path/to/trie/output/ ...  Output directories where the trie of all words will get written.");
 	}
 
 	private static void printFileNotFound(File file) {

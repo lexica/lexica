@@ -25,7 +25,7 @@ public abstract class Language {
     public abstract String applyMandatorySuffix(String value);
 
     /**
-     * The name of the trie file, relative to the `assets/` directory.\
+     * The name of the trie file, relative to the `assets/` directory.
      * So for example "words.en_US.bin"
      */
     public final String getDictionaryFileName() {
@@ -33,12 +33,21 @@ public abstract class Language {
     }
 
     /**
-     * The name of the trie file, relative to the `assets/` directory.\
-     * So for example "words.en_US.bin"
+     * The name of the trie file, relative to the `assets/` directory.
+     * So for example "words_en_US.bin"
      */
     public final String getTrieFileName() {
         String suffix = getName().replace('-', '_').toLowerCase(Locale.ENGLISH);
         return "words_" + suffix + ".bin";
+    }
+
+    /**
+     * The name of the letter distribution file, relative to the `assets/` directory.
+     * So for example "letters_en_US.txt"
+     */
+    public final String getLetterDistributionFileName() {
+        String suffix = getName().replace('-', '_').toLowerCase(Locale.ENGLISH);
+        return "letters_" + suffix + ".txt";
     }
 
     public static Language from(String name) throws NotFound {

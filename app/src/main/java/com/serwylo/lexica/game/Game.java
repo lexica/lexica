@@ -165,23 +165,39 @@ public class Game implements Synchronizer.Counter {
 		context = c;
 		loadPreferences(c);
 
+		String lettersFileName = language.getLetterDistributionFileName();
+		int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
+		CharProbGenerator charProbs = new CharProbGenerator(c.getResources().openRawResource(id));
+		Board board;
+
 		switch(boardSize) {
 			case 16:
-				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateFourByFourBoard());
-			break;
+				board = charProbs.generateFourByFourBoard();
+				break;
+
 			case 25:
-				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateFiveByFiveBoard());
-			break;
+				board = charProbs.generateFiveByFiveBoard();
+				break;
+
 			case 36:
-				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateSixBySixBoard());
-			break;
+				board = charProbs.generateSixBySixBoard();
+				break;
+
+			default:
+				throw  new IllegalStateException("Board must be 16, 25, or 36 large");
 		}
+
+		setBoard(board);
 
 		timeRemaining = getMaxTimeRemaining();
 		maxTime = getMaxTimeRemaining();
 		score = 0;
 		wordsUsed = new LinkedHashSet<>();
 
+	}
+
+	public Language getLanguage() {
+		return language;
 	}
 
 	private void initSoundPool(Context c) {
