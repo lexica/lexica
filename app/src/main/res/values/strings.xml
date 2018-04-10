@@ -13,10 +13,10 @@
 	<string name="pref_dict_uk">English (UK)</string>
 	<string name="pref_dict_de_de">German (DE)</string>
 	<string name="pref_dict_nl">Dutch</string>
-	<string name="pref_dict_fa">Persian</string>
-	<string name="pref_dict_it">Italian</string>
-	<string name="pref_dict_ca">Catalan</string>
-	<string name="pref_dict_es">Spanish</string>
+	<!--<string name="pref_dict_fa">Persian</string>-->
+	<!--<string name="pref_dict_it">Italian</string>-->
+	<!--<string name="pref_dict_ca">Catalan</string>-->
+	<!--<string name="pref_dict_es">Spanish</string>-->
 	<string name="pref_dict_beta">Beta</string>
 
 	<string name="pref_boardSize">Board Size</string>
