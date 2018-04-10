@@ -1,6 +1,20 @@
 #!/bin/bash
 
 LANGUAGE=$1
+REGION=$2
+
+if [[ ! $LANGUAGE ]]; then
+	echo "Must specify a language (and optionally a language region)."
+	echo "Usage: ./add-lang.sh <lang> [<region>]"
+	echo "Example: ./add-lang.sh en GB"
+	exit 1
+fi
+
+if [[ $REGION ]]; then
+	LANGUAGE_WITH_REGION=${LANGUAGE}_${REGION}
+else
+	LANGUAGE_WITH_REGION=${LANGUAGE}
+fi
 
 FOUND=`aspell dump dicts | grep ${LANGUAGE} | wc -l`
 
@@ -12,8 +26,10 @@ if [[ $FOUND == "0" ]]; then
 fi
 
 # The grep for lower case doesn't work for Farsi (and likely other languages) so I just excluded it for those languages.
-#aspell -d ${LANGUAGE}  dump master | aspell -l ${LANGUAGE} expand | tr ' ' '\n' > assets/dictionaries/dictionary.${LANGUAGE}.txt
+# aspell -l ${LANGUAGE} dump master | aspell -l ${LANGUAGE} expand | tr ' ' '\n' > assets/dictionaries/dictionary.${LANGUAGE}.txt
 
-aspell -d ${LANGUAGE}  dump master | aspell -l ${LANGUAGE} expand | tr ' ' '\n' | grep -P "^\p{Ll}*$" | awk 'length($0) < 10 && length($0) > 2' > assets/dictionaries/dictionary.${LANGUAGE}.txt
+OUTPUT_PATH=assets/dictionaries/dictionary.${LANGUAGE_WITH_REGION}.txt
 
-echo "Wrote ./assets/dictionaries/dictionary.${LANGUAGE}.txt"
+aspell -l ${LANGUAGE_WITH_REGION} dump master | aspell -l ${LANGUAGE} expand | tr ' ' '\n' | grep -P "^\p{Ll}*$" | awk 'length($0) < 10 && length($0) > 2' > ${OUTPUT_PATH}
+
+echo "Wrote ${OUTPUT_PATH}"
