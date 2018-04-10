@@ -34,13 +34,6 @@ public class TrieBuilderApp {
 			return;
 		}
 
-		final File lettersDir = new File(args[2]);
-		if (!lettersDir.exists()) {
-			printFileNotFound(lettersDir);
-			return;
-		}
-
-		final File lettersFile = new File(lettersDir, language.getLetterDistributionFileName());
 
 		int outputFileCount = args.length - 3;
 		final File[] outputTrieFiles = new File[outputFileCount];
@@ -54,15 +47,14 @@ public class TrieBuilderApp {
 			outputTrieFiles[i] = new File(file, language.getTrieFileName());
 		}
 
-		TrieBuilder.run(language, dictFile, lettersFile, outputTrieFiles);
+		TrieBuilder.run(language, dictFile, outputTrieFiles);
 	}
 
 	private static void printUsage() {
 		System.out.println("Usage:");
 		System.out.println("    java -jar trie-builder.jar language path/to/dictionaries/ path/to/trie/output/ ...");
-		System.out.println("        language                  en_US|en_UK");
+		System.out.println("        language                  en_US|en_GB|de_DE");
 		System.out.println("        path/to/dictionaries/     Directory where dictionary.en_US.txt et al. belong.");
-		System.out.println("        path/to/letters/dir       Directory where letters_en_us.txt et al. belong.");
 		System.out.println("        path/to/trie/output/ ...  Output directories where the trie of all words will get written.");
 	}
 

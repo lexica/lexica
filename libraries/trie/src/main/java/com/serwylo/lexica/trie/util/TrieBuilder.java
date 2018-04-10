@@ -10,18 +10,16 @@ import java.io.FileInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
 public class TrieBuilder {
 
-	public static void run(Language language, File dictFile, File outputLettersFile, File[] outputTrieFiles) throws IOException {
+	public static void run(Language language, File dictFile, File[] outputTrieFiles) throws IOException {
 		Trie outTrie = new StringTrie(language);
-		LetterFrequency letters = new LetterFrequency(language);
 
-		readCorpus(language, dictFile, outTrie, letters);
+		readCorpus(language, dictFile, outTrie);
 
 		for (File outputFile : outputTrieFiles) {
 			FileOutputStream of = null;
@@ -34,25 +32,14 @@ public class TrieBuilder {
 				}
 			}
 		}
-
-		FileWriter writer = null;
-		try {
-			writer = new FileWriter(outputLettersFile);
-			writer.write(letters.toSingleLetterCountString());
-		} finally {
-			if (writer != null) {
-				writer.close();
-			}
-		}
 	}
 
-	private static void readCorpus(Language language, File dictFile, Trie trie, LetterFrequency letters) throws IOException {
+	private static void readCorpus(Language language, File dictFile, Trie trie) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(dictFile), Charset.forName("UTF-8")));
 		String line;
 		while((line = br.readLine()) != null) {
 			String word = line.toLowerCase(language.getLocale());
 			trie.addWord(word);
-			letters.addWord(word);
 		}
 	}
 
