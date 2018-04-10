@@ -73,7 +73,7 @@ public abstract class Language {
             case "en_US":
                 return new UsEnglish();
 
-            case "en_UK":
+            case "en_GB":
                 return new UkEnglish();
 
             case "de_DE":
