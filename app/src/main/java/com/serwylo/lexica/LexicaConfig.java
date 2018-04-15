@@ -19,11 +19,14 @@ package com.serwylo.lexica;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
+
+import com.serwylo.lexica.lang.Language;
 
 public class LexicaConfig extends PreferenceActivity implements Preference.OnPreferenceClickListener {
 
@@ -32,6 +35,22 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
        	super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
         findPreference("resetScores").setOnPreferenceClickListener(this);
+        highlightBetaLanguages();
+    }
+
+    private void highlightBetaLanguages() {
+        ListPreference pref = (ListPreference) findPreference("dict");
+        CharSequence[] entries = pref.getEntries();
+        CharSequence[] values = pref.getEntryValues();
+        for (int i = 0; i < entries.length; i ++) {
+            Language language = Language.fromOrNull(values[i].toString());
+            if (language != null) {
+                if (language.isBeta()) {
+                    entries[i] = getString(R.string.pref_dict_beta, entries[i]);
+                }
+            }
+        }
+        pref.setEntries(entries);
     }
 
     @Override

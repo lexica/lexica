@@ -301,11 +301,19 @@ public class Game implements Synchronizer.Counter {
 				}
 			});
 
+			Log.d(TAG, "Initializing "  + language.getName() + " dictionary");
 			for (String word: solutions.keySet()) {
 				maxWordCountsByLength.put(word.length(), maxWordCountsByLength.get(word.length()) + 1);
-                Log.d(TAG, "Word: " + word);
+
+				// For debugging and diagnosis, it is convenient to have access to all the words
+				// for some boards printed to the log. This is especially true seeing as I can only
+				// speak / read English, and thus am unable to play the boards of additional
+				// languages without this aid. Once they go out of beta, then it seems inappropriate
+				// to print this.
+				if (language.isBeta()) {
+                	Log.d(TAG, "Word: " + word);
+				}
 			}
-            Log.d(TAG, "Language: " + language.getName());
 		} catch(IOException e) {
 			// Log.e(TAG,"initializeDictionary",e);
 		}
