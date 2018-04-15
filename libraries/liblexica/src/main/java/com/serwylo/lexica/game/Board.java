@@ -17,8 +17,6 @@
 
 package com.serwylo.lexica.game;
 
-import android.text.TextUtils;
-
 import net.healeys.trie.TransitionMap;
 
 public abstract class Board implements TransitionMap {
@@ -41,7 +39,17 @@ public abstract class Board implements TransitionMap {
 	}
 
 	public synchronized String toString() {
-		return TextUtils.join(",", board);
+		StringBuilder sb = new StringBuilder();
+		boolean first = true;
+		for (String cell : board) {
+			if (!first) {
+				sb.append(',').append(cell);
+			} else {
+				first = false;
+				sb.append(cell);
+			}
+		}
+		return sb.toString();
 	}
 
 	public synchronized void rotate() {

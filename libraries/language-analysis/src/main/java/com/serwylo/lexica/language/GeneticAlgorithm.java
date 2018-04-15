@@ -1,11 +1,8 @@
-package com.serwylo.lexica;
+package com.serwylo.lexica.language;
 
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.CharProbGenerator;
-import com.serwylo.lexica.lang.DeGerman;
 import com.serwylo.lexica.lang.Language;
-import com.serwylo.lexica.lang.UkEnglish;
-import com.serwylo.lexica.lang.UsEnglish;
 import com.serwylo.lexica.trie.util.LetterFrequency;
 
 import net.healeys.trie.StringTrie;
@@ -13,11 +10,11 @@ import net.healeys.trie.Trie;
 import net.healeys.trie.WordFilter;
 
 import org.apache.commons.math.stat.descriptive.SummaryStatistics;
-import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,7 +31,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class GA {
+public class GeneticAlgorithm {
 
     private static final int NUM_OF_FITTEST_TO_COPY = 1;
 
@@ -49,26 +46,23 @@ public class GA {
     private static final double RATE_OF_MUTATION = 0.05;
     private static final double RATE_OF_NEW_RANDOM_GENOMES = 0.05;
 
-    @Test
-    public void run() throws IOException, InterruptedException {
-        final Language language = new DeGerman();
-
+    public void run(File trieDir, File dictionaryDir, File outputDir, Language language) throws IOException, InterruptedException {
         for (int i = 0; i < SEPARATE_RUNS; i ++) {
-            Genome best = generateProbabilityDistribution(language);
+            Genome best = generateProbabilityDistribution(trieDir, dictionaryDir, language);
 
             System.out.println("[" + language.getName() + ", run " + (i + 1) + "]");
             System.out.println(best.toString());
             System.out.println("Random board:");
             System.out.println(renderBoardToString(best.toCharProbGenerator().generateFourByFourBoard()));
 
-            String fileName = "/home/pete/code/lexica/assets/candidate-boards/" +
+            String fileName =
                     language.getName() + " " +
                     "Min: " + (int) best.getFitness().stats.getMin() + " " +
                     "Mean: " + (int) best.getFitness().stats.getMean() + " " +
                     "Max: " + (int) best.getFitness().stats.getMax() + " " +
                     "Score: " + (int) best.getFitness().getScore();
 
-            File output = new File(fileName);
+            File output = new File(outputDir, fileName);
             FileWriter writer = new FileWriter(output);
             writer.write(best.getFitness().toString() + "\n" + best.toString());
             writer.close();
@@ -88,11 +82,11 @@ public class GA {
         return sb.toString();
     }
 
-    private Genome generateProbabilityDistribution(Language language) throws IOException, InterruptedException {
+    private Genome generateProbabilityDistribution(File trieDir, File dictionaryDir, Language language) throws IOException, InterruptedException {
 
         List<Genome> currentPopulation = new ArrayList<>();
         for (int genomeNum = 0; genomeNum < NUM_OF_GENOMES; genomeNum++) {
-            currentPopulation.add(Genome.createRandom(language));
+            currentPopulation.add(Genome.createRandom(trieDir, dictionaryDir, language));
         }
 
         sortInPlaceByFitness(currentPopulation);
@@ -112,11 +106,11 @@ public class GA {
             while (nextPopulation.size() < currentPopulation.size()) {
                 // 10% of the time throw in a new random genome to refresh the population.
                 if (Math.random() < 0.1) {
-                    nextPopulation.add(Genome.createRandom(language));
+                    nextPopulation.add(Genome.createRandom(trieDir, dictionaryDir, language));
                 } else {
                     Genome mother = selectByFitness(currentPopulation);
                     Genome father = selectByFitness(currentPopulation);
-                    nextPopulation.add(mother.breedWith(father));
+                    nextPopulation.add(mother.breedWith(dictionaryDir, father));
                 }
             }
 
@@ -200,20 +194,22 @@ public class GA {
 
         private final SummaryStatistics stats;
 
-        public static Fitness calc(Genome genome, Language language) throws IOException {
-            return calc(genome, language, BOARDS_TO_GENERATE_FOR_FITNESS_CALC);
+        public static Fitness calc(File trieDir, Genome genome, Language language) throws IOException {
+            return calc(trieDir, genome, language, BOARDS_TO_GENERATE_FOR_FITNESS_CALC);
         }
 
-        public static Fitness calc(Genome genome, Language language, int work) throws IOException {
-            return new Fitness(generateStats(genome, language, work));
+        public static Fitness calc(File trieDir, Genome genome, Language language, int work) throws IOException {
+            return new Fitness(generateStats(trieDir, genome, language, work));
         }
 
         private static Map<Language, byte[]> cachedTries = new HashMap<>();
 
-        private static InputStream trieReader(Language language) throws IOException {
+        private static InputStream trieReader(File trieDir, Language language) throws IOException {
             if (!cachedTries.containsKey(language)) {
                 byte[] buffer = new byte[1024 * 1024 * 2]; // 2MiB
-                InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream(language.getTrieFileName());
+
+                File trieFile = new File(trieDir, language.getTrieFileName());
+                InputStream stream = new FileInputStream(trieFile);
                 int read = stream.read(buffer);
                 byte[] total = new byte[read];
                 System.arraycopy(buffer, 0, total, 0, read);
@@ -223,12 +219,12 @@ public class GA {
             return new ByteArrayInputStream(cachedTries.get(language));
         }
 
-        private static SummaryStatistics generateStats(Genome genome, Language language, int iterations) throws IOException {
+        private static SummaryStatistics generateStats(File trieDir, Genome genome, Language language, int iterations) throws IOException {
             SummaryStatistics stats = new SummaryStatistics();
             for (int i = 0; i < iterations; i ++) {
                 Board board = genome.toCharProbGenerator().generateFourByFourBoard();
                 try {
-                    InputStream stream = trieReader(language);
+                    InputStream stream = trieReader(trieDir, language);
                     Trie dict = new StringTrie.Deserializer().deserialize(stream, board, language);
                     int numWords = dict.solver(board, new WordFilter.MinLength(3)).size();
                     stats.addValue(numWords);
@@ -302,25 +298,26 @@ public class GA {
 
     static class Genome {
 
-        static Genome createRandom(Language language) throws IOException {
-            LetterFrequency letters = allLetters(language);
+        static Genome createRandom(File trieDir, File dictionaryDir, Language language) throws IOException {
+            LetterFrequency letters = allLetters(dictionaryDir, language);
             List<Gene> genes = new ArrayList<>(letters.getLetters().size());
             for (String letter : letters.getLetters()) {
                 genes.add(Gene.createRandom(letter, letters.getCountsForLetter(letter).size()));
             }
 
-            return new Genome(language, genes);
+            return new Genome(trieDir, language, genes);
         }
 
         static Map<Language, LetterFrequency> letterFrequencies = new HashMap<>();
 
-        private static LetterFrequency allLetters(Language language) throws IOException {
+        private static LetterFrequency allLetters(File dictionaryDir, Language language) throws IOException {
             LetterFrequency cachedFrequencies = letterFrequencies.get(language);
             if (cachedFrequencies != null) {
                 return cachedFrequencies;
             }
 
-            InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream(language.getDictionaryFileName());
+            File dictionaryFile = new File(dictionaryDir, language.getDictionaryFileName());
+            InputStream stream = new FileInputStream(dictionaryFile);
             BufferedReader br = new BufferedReader(new InputStreamReader(stream, Charset.forName("UTF-8")));
             LetterFrequency letters = new LetterFrequency(language);
 
@@ -334,11 +331,13 @@ public class GA {
             return letters;
         }
 
+        final File trieDir;
         final Language language;
         final List<Gene> genes;
         private String cachedStringRepresentation = null;
 
-        Genome(Language language, List<Gene> genes) {
+        Genome(File trieDir, Language language, List<Gene> genes) {
+            this.trieDir = trieDir;
             this.language = language;
             this.genes = genes;
         }
@@ -374,25 +373,25 @@ public class GA {
 
         Fitness getFitness() throws IOException {
             if (cachedFitness == null) {
-                cachedFitness = Fitness.calc(this, language);
+                cachedFitness = Fitness.calc(trieDir, this, language);
             }
 
             return cachedFitness;
         }
 
-        public Genome breedWith(Genome mate) throws IOException {
+        public Genome breedWith(File dictionaryDir, Genome mate) throws IOException {
             List<Gene> child = new ArrayList<>(genes.size());
             for (int i = 0; i < genes.size(); i ++) {
                 double random = Math.random();
                 if (random < 0.05) {
-                    child.add(Gene.createRandom(genes.get(i).letter, allLetters(language).getCountsForLetter(genes.get(i).letter).size()));
+                    child.add(Gene.createRandom(genes.get(i).letter, allLetters(dictionaryDir, language).getCountsForLetter(genes.get(i).letter).size()));
                 } else if (random < 0.5) {
                     child.add(genes.get(i));
                 } else {
                     child.add(mate.genes.get(i));
                 }
             }
-            return new Genome(language, child);
+            return new Genome(trieDir, language, child);
         }
     }
 }

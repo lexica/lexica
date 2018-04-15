@@ -22,6 +22,11 @@ allprojects {
 // depends on. However, I couldn't figure out how to have a gradle plugin in the same project
 // as another gradle build which depended on that plugin.
 
+task buildLanguageAnalysis(type: GradleBuild) {
+    buildFile = file('libraries/language-analysis/build.gradle')
+    tasks = ['build']
+}
+
 task buildTrieBuilder(type: GradleBuild) {
     buildFile = file('libraries/trie-builder/build.gradle')
     tasks = ['build']
@@ -58,6 +63,17 @@ languages.each { lang ->
     }
 
     buildDictionaries.dependsOn << langTask
+
+    task "analyseLanguage_${lang}"(dependsOn: [buildLanguageAnalysis, langTask], type: JavaExec) {
+        main = 'com.serwylo.lexica.language.LanguageAnalysisApp'
+        classpath 'libraries/language-analysis/build/libs/language-analysis.jar'
+        args = [
+                lang,
+                file('app/src/main/res/raw/'),
+                file('assets/dictionaries/'),
+                file('/tmp/')
+        ]
+    }
 }
 
 

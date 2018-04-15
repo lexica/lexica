@@ -9,7 +9,7 @@ import com.serwylo.lexica.trie.util.TrieBuilder;
 public class TrieBuilderApp {
 
 	public static void main(String[] args) throws IOException {
-		if (args.length < 4) {
+		if (args.length < 3) {
 			printUsage();
 			return;
 		}
@@ -34,11 +34,10 @@ public class TrieBuilderApp {
 			return;
 		}
 
-
-		int outputFileCount = args.length - 3;
+		int outputFileCount = args.length - 2;
 		final File[] outputTrieFiles = new File[outputFileCount];
 		for (int i = 0; i < outputFileCount; i ++) {
-			File file = new File(args[i + 3]);
+			File file = new File(args[i + 2]);
 			if (!file.exists()) {
 				printFileNotFound(file);
 				return;

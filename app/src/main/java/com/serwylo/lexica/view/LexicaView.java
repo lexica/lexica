@@ -18,8 +18,8 @@
 package com.serwylo.lexica.view;
 
 import com.serwylo.lexica.R;
-import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.Synchronizer;
+import com.serwylo.lexica.game.Game;
 
 import android.content.Context;
 import android.graphics.Canvas;
