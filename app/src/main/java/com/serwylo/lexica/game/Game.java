@@ -168,7 +168,7 @@ public class Game implements Synchronizer.Counter {
 
 		String lettersFileName = language.getLetterDistributionFileName();
 		int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
-		CharProbGenerator charProbs = new CharProbGenerator(c.getResources().openRawResource(id));
+		CharProbGenerator charProbs = new CharProbGenerator(c.getResources().openRawResource(id), getLanguage());
 		Board board;
 
 		switch(boardSize) {
@@ -358,7 +358,7 @@ public class Game implements Synchronizer.Counter {
 		if (status != GameStatus.GAME_RUNNING) {
 			return;
 		}
-		String cap = word.toLowerCase();
+		String cap = word.toLowerCase(language.getLocale());
 
 		if(isWord(cap)) {
 			if(wordsUsed.contains(cap)) {

@@ -223,12 +223,10 @@ public class GeneticAlgorithm {
             SummaryStatistics stats = new SummaryStatistics();
             for (int i = 0; i < iterations; i ++) {
                 Board board = genome.toCharProbGenerator().generateFourByFourBoard();
-                try {
-                    InputStream stream = trieReader(trieDir, language);
-                    Trie dict = new StringTrie.Deserializer().deserialize(stream, board, language);
-                    int numWords = dict.solver(board, new WordFilter.MinLength(3)).size();
-                    stats.addValue(numWords);
-                } catch(IOException ignored) { }
+                InputStream stream = trieReader(trieDir, language);
+                Trie dict = new StringTrie.Deserializer().deserialize(stream, board, language);
+                int numWords = dict.solver(board, new WordFilter.MinLength(3)).size();
+                stats.addValue(numWords);
             }
             return stats;
         }
@@ -366,7 +364,7 @@ public class GeneticAlgorithm {
         }
 
         private CharProbGenerator toCharProbGenerator() {
-            return new CharProbGenerator(new ByteArrayInputStream(toString().getBytes()));
+            return new CharProbGenerator(new ByteArrayInputStream(toString().getBytes()), language);
         }
 
         private Fitness cachedFitness = null;

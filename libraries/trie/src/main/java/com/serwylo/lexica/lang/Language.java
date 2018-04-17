@@ -82,6 +82,9 @@ public abstract class Language {
             case "nl":
                 return new Dutch();
 
+            case "fr_FR":
+                return new French();
+
             case "fa":
                 return new Persian();
 

@@ -1,5 +1,8 @@
 package com.serwylo.lexica.trie.tests;
 
+import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.trie.util.LetterFrequency;
+
 import net.healeys.trie.TransitionMap;
 
 /**
@@ -18,6 +21,11 @@ public class CanTransitionMap implements TransitionMap {
 
     CanTransitionMap(String[] letters) {
         this.letters = letters;
+    }
+
+    CanTransitionMap(LetterFrequency frequency) {
+        this.letters = new String[frequency.getLetters().size()];
+        frequency.getLetters().toArray(this.letters);
     }
 
     CanTransitionMap() {
