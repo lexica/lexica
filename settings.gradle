@@ -1,1 +1,1 @@
-include ':app', ':libraries:trie', ':libraries:trie-builder'
+include ':app', ':libraries:trie', ':libraries:trie-builder', ':libraries:language-analysis', ':libraries:liblexica'

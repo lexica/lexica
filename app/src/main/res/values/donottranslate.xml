@@ -3,10 +3,14 @@
 	<string-array name="dict_choices_entries">
 		<item>@string/pref_dict_us</item>
 		<item>@string/pref_dict_uk</item>
+		<item>@string/pref_dict_de_de</item>
+		<item>@string/pref_dict_nl</item>
 	</string-array>
 	<string-array name="dict_choices_entryvalues">
 		<item>US</item>
 		<item>UK</item>
+		<item>de_DE</item>
+		<item>nl</item>
 	</string-array>
 
 	<string-array name="board_size_choices_entries">

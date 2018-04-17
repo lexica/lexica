@@ -16,7 +16,6 @@ import java.util.Map;
 import java.util.Set;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public abstract class TrieTest {
@@ -58,46 +57,13 @@ public abstract class TrieTest {
 		assertArrayEquals("Words don't match", expected.toArray(), actual.toArray());
 	}
 
-	static void assertTrieMatches(String message, Trie trie, String[] usWords, String[] ukWords, String[] bothDialects) {
+	static void assertTrieMatches(String message, Trie trie, String[] words) {
 		Set<String> allWords = new HashSet<>();
-		if (usWords != null) {
-			for (String usWord : usWords) {
-				String log = message + ": " + usWord + " [US]";
-				usWord = usWord.toLowerCase();
-				allWords.add(usWord);
-				assertTrue(log + " should be a US word", trie.isWord(usWord));
-				assertTrue(log + " should be a US word", trie.isWord(usWord, true, false));
-
-				// The word should not be considered a UK word.
-				Assert.assertFalse(log + "should not be a UK word", trie.isWord(usWord, false, true));
-				Assert.assertFalse(log + "should not be a UK word", trie.isWord(usWord, false, false));
-			}
-		}
-
-		if (ukWords != null) {
-			for (String ukWord : ukWords) {
-				String log = message + ": " + ukWord + " [UK]";
-				ukWord = ukWord.toLowerCase();
-				allWords.add(ukWord);
-				assertTrue(log + " should be a UK word", trie.isWord(ukWord));
-				assertTrue(log + " should be a UK word", trie.isWord(ukWord, false, true));
-
-				// The word should not be considered a US word.
-				Assert.assertFalse(log + "should not be a US word", trie.isWord(ukWord, true, false));
-				Assert.assertFalse(log + "should not be a US word", trie.isWord(ukWord, false, false));
-			}
-		}
-
-		if (bothDialects != null) {
-			for (String word : bothDialects) {
-				String log = word + " [BOTH]";
-				word = word.toLowerCase();
-				allWords.add(word);
-				assertTrue(log + " should be a word", trie.isWord(word));
-				assertTrue(log + " should be a word", trie.isWord(word, true, true));
-				assertTrue(log + " should be considered a US word", trie.isWord(word, false, true));
-				assertTrue(log + " should be considered a UK word", trie.isWord(word, true, false));
-			}
+		for (String word : words) {
+			String log = message + ": ";
+			word = word.toLowerCase();
+			allWords.add(word);
+			assertTrue(log + word + " should be a word", trie.isWord(word));;
 		}
 
 		onlyContains(trie, allWords);
@@ -106,16 +72,12 @@ public abstract class TrieTest {
 			String log = notAWord + " should not be a word";
 			notAWord = notAWord.toLowerCase();
 			Assert.assertFalse(log, trie.isWord(notAWord));
-			Assert.assertFalse(log, trie.isWord(notAWord, true, false));
-			Assert.assertFalse(log, trie.isWord(notAWord, false, true));
-			Assert.assertFalse(log, trie.isWord(notAWord, true, true));
-			Assert.assertFalse(log, trie.isWord(notAWord, false, false));
 		}
 	}
 
-	public static void addWords(Trie trie, String[] words, boolean isUs, boolean isUk) {
+	public static void addWords(Trie trie, String[] words) {
 		for (String word : words) {
-			trie.addWord(word.toLowerCase(), isUs, isUk);
+			trie.addWord(word.toLowerCase());
 		}
 	}
 

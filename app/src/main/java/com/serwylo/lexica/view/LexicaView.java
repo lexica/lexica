@@ -18,8 +18,8 @@
 package com.serwylo.lexica.view;
 
 import com.serwylo.lexica.R;
-import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.Synchronizer;
+import com.serwylo.lexica.game.Game;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -405,7 +405,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode >= KeyEvent.KEYCODE_A && keyCode <= KeyEvent.KEYCODE_Z) {
 			String letter = Character.toString((char) event.getUnicodeChar()).toLowerCase();
-			mKeyboardTracker.processLetter(letter.equals("q") ? "qu" : letter);
+			mKeyboardTracker.processLetter(game.getLanguage().applyMandatorySuffix(letter));
 		} else if (keyCode == KeyEvent.KEYCODE_SPACE ||
 				keyCode == KeyEvent.KEYCODE_ENTER) {
 			mKeyboardTracker.reset();

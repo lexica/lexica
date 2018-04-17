@@ -9,8 +9,15 @@
 	<string name="pref_dict">Dictionary</string>
 	<string name="pref_dict_summary">Select a dictionary to use</string>
 	<string name="pref_dict_dialog">Select Dictionary</string>
-	<string name="pref_dict_us">United States</string>
-	<string name="pref_dict_uk">United Kingdom</string>
+	<string name="pref_dict_us">English (US)</string>
+	<string name="pref_dict_uk">English (UK)</string>
+	<string name="pref_dict_de_de">German (DE)</string>
+	<string name="pref_dict_nl">Dutch</string>
+	<!--<string name="pref_dict_fa">Persian</string>-->
+	<!--<string name="pref_dict_it">Italian</string>-->
+	<!--<string name="pref_dict_ca">Catalan</string>-->
+	<!--<string name="pref_dict_es">Spanish</string>-->
+	<string name="pref_dict_beta">%1$s (Beta)</string>
 
 	<string name="pref_boardSize">Board Size</string>
 	<string name="pref_boardSize_summary">Select a board size</string>

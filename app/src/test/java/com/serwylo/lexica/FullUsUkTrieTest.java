@@ -2,6 +2,9 @@ package com.serwylo.lexica;
 
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.FourByFourBoard;
+import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.lang.UkEnglish;
+import com.serwylo.lexica.lang.UsEnglish;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.StringTrie;
@@ -98,8 +101,9 @@ public class FullUsUkTrieTest extends TrieTest {
 
 	@Test
 	public void testLoadingCompressedTries() throws IOException {
-		InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream("words.bin");
-		Trie trie = new StringTrie.Deserializer().deserialize(stream, BOARD, true, false);
+		Language language = new UsEnglish();
+		InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream(language.getTrieFileName());
+		Trie trie = new StringTrie.Deserializer().deserialize(stream, BOARD, language);
 		assertTrieCorrect(trie);
 	}
 
@@ -142,8 +146,9 @@ public class FullUsUkTrieTest extends TrieTest {
 	@Test
 	@Ignore
 	public void testSolverPerformance() throws IOException {
-		InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream("words.bin");
-		Trie trie = new StringTrie.Deserializer().deserialize(stream, BOARD, false, true);
+		Language language = new UsEnglish();
+		InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream(language.getTrieFileName());
+		Trie trie = new StringTrie.Deserializer().deserialize(stream, BOARD, language);
 		assertEquals(40, trie.solver(BOARD, new WordFilter.MinLength(3)).size());
 		long startTime = System.currentTimeMillis();
 		trie.solver(BOARD, new WordFilter.MinLength(3));
@@ -153,36 +158,38 @@ public class FullUsUkTrieTest extends TrieTest {
 
 	@Test
 	public void testStringTrieUsDictionary() {
-		testUsDictionary(new StringTrie());
+		testUsDictionary(new StringTrie(new UsEnglish()));
 	}
 
 	private void testUsDictionary(Trie trie) {
-		String[] words = readDictionary("us.txt");
+		Language language = new UsEnglish();
+		String[] words = readDictionary(language);
 		assertEquals(77517, words.length);
 
-		addWords(trie, words, true, false);
+		addWords(trie, words, language);
 
-		assertTrieMatches("After adding entire US dictionary to a new Trie", trie, words, null, null);
+		assertTrieMatches("After adding entire US dictionary to a new Trie", trie, words, null);
 	}
 
 	@Test
 	public void testStringTrieUkDictionary() {
-		testUkDictionary(new StringTrie());
+		testUkDictionary(new StringTrie(new UkEnglish()));
 	}
 
 	private void testUkDictionary(Trie trie) {
-		String[] words = readDictionary("uk.txt");
+		Language language = new UkEnglish();
+		String[] words = readDictionary(language);
 		assertEquals(77097, words.length);
 
-		addWords(trie, words, true, false);
+		addWords(trie, words, language);
 
-		assertTrieMatches("After adding entire UK dictionary to a new Trie", trie, words, null, null);
+		assertTrieMatches("After adding entire UK dictionary to a new Trie", trie, words, null);
 	}
 
-	static String[] readDictionary(String fileName) {
+	static String[] readDictionary(Language language) {
 		try {
 			List<String> words = new ArrayList<>(80000);
-			InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream(fileName);
+			InputStream stream = FullUsUkTrieTest.class.getClassLoader().getResourceAsStream(language.getDictionaryFileName());
 			BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 			String line = reader.readLine();
 			while (line != null) {

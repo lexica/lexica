@@ -6,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:2.3.3'
     }
 }
 
@@ -22,6 +22,11 @@ allprojects {
 // depends on. However, I couldn't figure out how to have a gradle plugin in the same project
 // as another gradle build which depended on that plugin.
 
+task buildLanguageAnalysis(type: GradleBuild) {
+    buildFile = file('libraries/language-analysis/build.gradle')
+    tasks = ['build']
+}
+
 task buildTrieBuilder(type: GradleBuild) {
     buildFile = file('libraries/trie-builder/build.gradle')
     tasks = ['build']
@@ -32,13 +37,41 @@ task buildTrieLib(type: GradleBuild) {
     tasks = ['build']
 }
 
-task buildDictionaries(dependsOn: buildTrieBuilder, type: JavaExec) {
-    main = 'com.serwylo.lexica.trie.TrieBuilderApp'
-    classpath 'libraries/trie/build/libs/trie.jar', 'libraries/trie-builder/build/libs/trie-builder.jar'
-    args = [
-        file('assets/dictionaries/american.txt'),
-        file('assets/dictionaries/british.txt'),
-        file('app/src/main/res/raw/words.bin'),
-        file('app/src/test/resources/words.bin')
-    ]
+task buildDictionaries
+
+def languages = [
+  "en_US",
+  "en_GB",
+  "de_DE",
+  // "ca",
+  // "es",
+  // "fa",
+  // "it",
+  "nl",
+]
+languages.each { lang ->
+
+    def langTask = task "buildDictionary_${lang}"(dependsOn: buildTrieBuilder, type: JavaExec) {
+        main = 'com.serwylo.lexica.trie.TrieBuilderApp'
+        classpath 'libraries/trie/build/libs/trie.jar', 'libraries/trie-builder/build/libs/trie-builder.jar'
+        args = [
+                lang,
+                file('assets/dictionaries/'),
+                file('app/src/main/res/raw/'),
+                file('app/src/test/resources/')
+        ]
+    }
+
+    buildDictionaries.dependsOn << langTask
+
+    task "analyseLanguage_${lang}"(dependsOn: [buildLanguageAnalysis, langTask], type: JavaExec) {
+        main = 'com.serwylo.lexica.language.LanguageAnalysisApp'
+        classpath 'libraries/language-analysis/build/libs/language-analysis.jar'
+        args = [
+                lang,
+                file('app/src/main/res/raw/'),
+                file('assets/dictionaries/'),
+                file('/tmp/')
+        ]
+    }
 }

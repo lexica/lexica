@@ -29,6 +29,10 @@ import android.util.SparseIntArray;
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
+import com.serwylo.lexica.lang.DeGerman;
+import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.lang.UkEnglish;
+import com.serwylo.lexica.lang.UsEnglish;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.StringTrie;
@@ -95,8 +99,7 @@ public class Game implements Synchronizer.Counter {
 	private Date start;
 	private final Context context;
 
-	private boolean usDict;
-	private boolean ukDict;
+	private Language language;
 	private int boardSize; // using an int so I can use much larger boards later
 	private int minWordLength;
 
@@ -163,23 +166,39 @@ public class Game implements Synchronizer.Counter {
 		context = c;
 		loadPreferences(c);
 
+		String lettersFileName = language.getLetterDistributionFileName();
+		int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
+		CharProbGenerator charProbs = new CharProbGenerator(c.getResources().openRawResource(id));
+		Board board;
+
 		switch(boardSize) {
 			case 16:
-				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateFourByFourBoard());
-			break;
+				board = charProbs.generateFourByFourBoard();
+				break;
+
 			case 25:
-				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateFiveByFiveBoard());
-			break;
+				board = charProbs.generateFiveByFiveBoard();
+				break;
+
 			case 36:
-				setBoard(new CharProbGenerator(c.getResources().openRawResource(R.raw.letters)).generateSixBySixBoard());
-			break;
+				board = charProbs.generateSixBySixBoard();
+				break;
+
+			default:
+				throw  new IllegalStateException("Board must be 16, 25, or 36 large");
 		}
+
+		setBoard(board);
 
 		timeRemaining = getMaxTimeRemaining();
 		maxTime = getMaxTimeRemaining();
 		score = 0;
 		wordsUsed = new LinkedHashSet<>();
 
+	}
+
+	public Language getLanguage() {
+		return language;
 	}
 
 	private void initSoundPool(Context c) {
@@ -223,15 +242,20 @@ public class Game implements Synchronizer.Counter {
 		SharedPreferences prefs =
 			PreferenceManager.getDefaultSharedPreferences(c);
 
-		if(prefs.getString("dict","US").equals("UK")) {
-			// Log.d(TAG,"UK DICT");
-			usDict = false;
-			ukDict = true;
-		} else {
-			// Log.d(TAG,"US DICT");
-			ukDict = false;
-			usDict = true;
+		String languageCode = prefs.getString("dict", "US");
+		language = Language.fromOrNull(languageCode);
+		if (language == null) {
+			// Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_UK")
+			switch (languageCode) {
+				case "UK":
+					language = new UkEnglish();
+					break;
+				default:
+					language = new UsEnglish();
+					break;
+			}
 		}
+		Log.d(TAG, "Language (from preferences): " + language.getName());
 
 		switch (prefs.getString("boardSize","16")) {
 			case "16":
@@ -259,16 +283,17 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	public void initializeDictionary() {
-		initializeDictionary(usDict,ukDict);
+		initializeDictionary(language);
 	}
 
-	private void initializeDictionary(boolean usDict, boolean ukDict) {
+	private void initializeDictionary(Language language) {
 		try {
+			String trieFileName = language.getTrieFileName();
+			int id = context.getResources().getIdentifier("raw/" + trieFileName.substring(0, trieFileName.lastIndexOf('.')), null, context.getPackageName());
 			Trie dict = new StringTrie.Deserializer().deserialize(
-					context.getResources().openRawResource(R.raw.words),
+					context.getResources().openRawResource(id),
 					board,
-					usDict,
-					ukDict);
+					language);
 
 			solutions = dict.solver(board,new WordFilter() {
 				public boolean isWord(String w) {
@@ -276,8 +301,18 @@ public class Game implements Synchronizer.Counter {
 				}
 			});
 
-			for (String w: solutions.keySet()) {
-				maxWordCountsByLength.put(w.length(), maxWordCountsByLength.get(w.length()) + 1);
+			Log.d(TAG, "Initializing "  + language.getName() + " dictionary");
+			for (String word: solutions.keySet()) {
+				maxWordCountsByLength.put(word.length(), maxWordCountsByLength.get(word.length()) + 1);
+
+				// For debugging and diagnosis, it is convenient to have access to all the words
+				// for some boards printed to the log. This is especially true seeing as I can only
+				// speak / read English, and thus am unable to play the boards of additional
+				// languages without this aid. Once they go out of beta, then it seems inappropriate
+				// to print this.
+				if (language.isBeta()) {
+                	Log.d(TAG, "Word: " + word);
+				}
 			}
 		} catch(IOException e) {
 			// Log.e(TAG,"initializeDictionary",e);
