@@ -206,7 +206,7 @@ public class GeneticAlgorithm {
 
         private static InputStream trieReader(File trieDir, Language language) throws IOException {
             if (!cachedTries.containsKey(language)) {
-                byte[] buffer = new byte[1024 * 1024 * 2]; // 2MiB
+                byte[] buffer = new byte[1024 * 1024 * 5]; // 5MiB - Needs to be able to fit the largest "words_*.bin file in memory.
 
                 File trieFile = new File(trieDir, language.getTrieFileName());
                 InputStream stream = new FileInputStream(trieFile);
@@ -237,21 +237,20 @@ public class GeneticAlgorithm {
 
         double getScore() throws IOException {
 
-            return stats.getMin() * 10 + stats.getMean() * 10 + stats.getMax() / 2;
+            // Realistically, a minimum of zero is not a real problem if we randomly generate a few
+            // boards and keep the best. Under those circumstances, we'd just throw away the boards
+            // with no words. Therefore, it is nowhere near as important as the mean.
+            double min = stats.getMin() * 5;
 
-            /*
-            // Heavily penalise boards which result in a board of 0 words.
-            if (stats.getMin() == 0) {
-                return stats.getMax() / 10;
-            }
+            // Ideally we wan the mean to be strong. That way, we don't need to waste lots of time
+            // generating boards when starting a new game.
+            double mean = stats.getMean() * 10;
 
-            // Slightly penalise those which result in boards of less than 10.
-            if (stats.getMean() < 10) {
-                return stats.getMax() / 2;
-            }
+            // I don't think it is actually desirable to have boards with several hundred words.
+            // The game will be too hard, and there will not be enough time to get all the words.
+            double max = stats.getMax() / 4;
 
-            return stats.getMax();
-            */
+            return min + mean + max;
         }
 
         private String cachedStringRepresentation = null;
@@ -272,7 +271,7 @@ public class GeneticAlgorithm {
     static class Gene {
 
         public static Gene createRandom(String letter, int count) {
-            int currentCount = (int) (Math.random() * 100);
+            int currentCount = (int) (Math.random() * 99) + 1; // 1 - 100 inclusive.
             List<Integer> occurrences = new ArrayList<>();
 
             for (int i = 1; i <= count; i ++) {

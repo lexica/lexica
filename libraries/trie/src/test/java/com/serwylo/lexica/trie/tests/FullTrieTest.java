@@ -56,12 +56,6 @@ public class FullTrieTest extends TrieTest {
 		assertTrieMatches("After adding entire French dictionary to a new Trie", trie, words, new French());
 	}
 
-	@Test
-	public void deserializePartialFrenchTrie() {
-		Language language = new French();
-		Trie trie = new StringTrie.Deserializer().deserialize()
-	}
-
 	public static String[] readDictionary(Language language) {
 		try {
 			List<String> words = new ArrayList<>(80000);
