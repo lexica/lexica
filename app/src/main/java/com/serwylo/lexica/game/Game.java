@@ -29,7 +29,6 @@ import android.util.SparseIntArray;
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
-import com.serwylo.lexica.lang.DeGerman;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.UkEnglish;
 import com.serwylo.lexica.lang.UsEnglish;
@@ -315,7 +314,7 @@ public class Game implements Synchronizer.Counter {
 				}
 			}
 		} catch(IOException e) {
-			// Log.e(TAG,"initializeDictionary",e);
+			Log.e(TAG,"Error initializing dictionary",e);
 		}
 	}
 

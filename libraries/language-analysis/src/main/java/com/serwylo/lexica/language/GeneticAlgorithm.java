@@ -55,18 +55,24 @@ public class GeneticAlgorithm {
             System.out.println("Random board:");
             System.out.println(renderBoardToString(best.toCharProbGenerator().generateFourByFourBoard()));
 
-            String fileName =
-                    language.getName() + " " +
-                    "Min: " + (int) best.getFitness().stats.getMin() + " " +
-                    "Mean: " + (int) best.getFitness().stats.getMean() + " " +
-                    "Max: " + (int) best.getFitness().stats.getMax() + " " +
-                    "Score: " + (int) best.getFitness().getScore();
-
-            File output = new File(outputDir, fileName);
-            FileWriter writer = new FileWriter(output);
-            writer.write(best.getFitness().toString() + "\n" + best.toString());
-            writer.close();
+            writeDistribution(language, outputDir, best);
         }
+    }
+
+    private void writeDistribution(Language language, File outputDir, Genome genome) throws IOException {
+
+        String fileName =
+                language.getName() + " " +
+                        "Min: " + (int) genome.getFitness().stats.getMin() + " " +
+                        "Mean: " + (int) genome.getFitness().stats.getMean() + " " +
+                        "Max: " + (int) genome.getFitness().stats.getMax() + " " +
+                        "SD: " + (int) genome.getFitness().stats.getStandardDeviation() + " " +
+                        "Score: " + (int) genome.getFitness().getScore();
+
+        File output = new File(outputDir, fileName);
+        FileWriter writer = new FileWriter(output);
+        writer.write(genome.getFitness().toString() + "\n" + genome.toString());
+        writer.close();
     }
 
     private static String renderBoardToString(Board board) {
@@ -237,20 +243,8 @@ public class GeneticAlgorithm {
 
         double getScore() throws IOException {
 
-            // Realistically, a minimum of zero is not a real problem if we randomly generate a few
-            // boards and keep the best. Under those circumstances, we'd just throw away the boards
-            // with no words. Therefore, it is nowhere near as important as the mean.
-            double min = stats.getMin() * 5;
+            return Math.max(1, stats.getMean() * stats.getMean() - stats.getStandardDeviation() * stats.getStandardDeviation());
 
-            // Ideally we wan the mean to be strong. That way, we don't need to waste lots of time
-            // generating boards when starting a new game.
-            double mean = stats.getMean() * 10;
-
-            // I don't think it is actually desirable to have boards with several hundred words.
-            // The game will be too hard, and there will not be enough time to get all the words.
-            double max = stats.getMax() / 4;
-
-            return min + mean + max;
         }
 
         private String cachedStringRepresentation = null;
@@ -258,7 +252,7 @@ public class GeneticAlgorithm {
         public String toString() {
             if (cachedStringRepresentation == null) {
                 try {
-                    cachedStringRepresentation = "Min: " + (int) stats.getMin() + ", mean: " + (int) stats.getMean() + ", max: " + (int) stats.getMax() + ", score: " + (int) getScore();
+                    cachedStringRepresentation = "Min: " + (int) stats.getMin() + ", mean: " + (int) stats.getMean() + ", max: " + (int) stats.getMax() + ", stddev: " + (int) stats.getStandardDeviation() + ", score: " + (int) getScore();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

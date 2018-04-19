@@ -44,10 +44,10 @@ def languages = [
   "en_GB",
   "de_DE",
   "fr_FR",
-  // "ca",
-  // "es",
-  // "fa",
-  // "it",
+  "ca",
+  "es",
+  "fa",
+  "it",
   "nl",
 ]
 languages.each { lang ->
