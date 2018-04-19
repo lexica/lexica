@@ -1,7 +1,7 @@
 package com.serwylo.lexica.trie.tests;
 
 import com.serwylo.lexica.lang.DeGerman;
-import com.serwylo.lexica.lang.UkEnglish;
+import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.trie.util.LetterFrequency;
 
 import org.junit.Test;
@@ -24,7 +24,7 @@ public class LetterFrequencyTest {
 
     @Test
     public void countLetters() {
-        LetterFrequency letters = new LetterFrequency(new UkEnglish());
+        LetterFrequency letters = new LetterFrequency(new EnglishGB());
 
         letters.addWord("assessment");
         letters.addWord("sequential");
@@ -50,7 +50,7 @@ public class LetterFrequencyTest {
 
     @Test
     public void countLettersForWord() {
-        LetterFrequency letters = new LetterFrequency(new UkEnglish());
+        LetterFrequency letters = new LetterFrequency(new EnglishGB());
 
         HashMap<String, Integer> quitCount = letters.getLetterCountsForWord("quit");
         assertEquals(quitCount.size(), 3);
@@ -75,7 +75,7 @@ public class LetterFrequencyTest {
 
     @Test
     public void includeLetters() {
-        LetterFrequency letters = new LetterFrequency(new UkEnglish());
+        LetterFrequency letters = new LetterFrequency(new EnglishGB());
         assertTrue(letters.shouldInclude("quit", 0));
         assertTrue(letters.shouldInclude("quit", 2));
         assertTrue(letters.shouldInclude("quit", 3));
@@ -83,7 +83,7 @@ public class LetterFrequencyTest {
 
     @Test
     public void excludeLetters() {
-        LetterFrequency letters = new LetterFrequency(new UkEnglish());
+        LetterFrequency letters = new LetterFrequency(new EnglishGB());
         assertFalse(letters.shouldInclude("qantas", 0));
         assertFalse(letters.shouldInclude("qi", 0));
 

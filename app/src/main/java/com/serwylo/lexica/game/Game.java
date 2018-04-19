@@ -30,8 +30,8 @@ import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
 import com.serwylo.lexica.lang.Language;
-import com.serwylo.lexica.lang.UkEnglish;
-import com.serwylo.lexica.lang.UsEnglish;
+import com.serwylo.lexica.lang.EnglishGB;
+import com.serwylo.lexica.lang.EnglishUS;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.StringTrie;
@@ -244,13 +244,13 @@ public class Game implements Synchronizer.Counter {
 		String languageCode = prefs.getString("dict", "US");
 		language = Language.fromOrNull(languageCode);
 		if (language == null) {
-			// Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_UK")
+			// Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_GB")
 			switch (languageCode) {
 				case "UK":
-					language = new UkEnglish();
+					language = new EnglishGB();
 					break;
 				default:
-					language = new UsEnglish();
+					language = new EnglishUS();
 					break;
 			}
 		}
