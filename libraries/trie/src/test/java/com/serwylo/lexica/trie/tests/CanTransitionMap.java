@@ -5,6 +5,11 @@ import com.serwylo.lexica.trie.util.LetterFrequency;
 
 import net.healeys.trie.TransitionMap;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Mock {@link TransitionMap} for testing, which only cares about the letters on the board, not
  * whether you are allowed to transition from one to another. You can _always_ transition from
@@ -23,9 +28,20 @@ public class CanTransitionMap implements TransitionMap {
         this.letters = letters;
     }
 
-    CanTransitionMap(LetterFrequency frequency) {
-        this.letters = new String[frequency.getLetters().size()];
-        frequency.getLetters().toArray(this.letters);
+    CanTransitionMap(LetterFrequency frequency, Language language) {
+        Map<String, String> mandatorySuffixes = new HashMap<>();
+        for (String letter : frequency.getLetters()) {
+            String suffix = language.applyMandatorySuffix(letter);
+            if (!suffix.equals(letter)) {
+                mandatorySuffixes.put(letter, suffix);
+            }
+        }
+
+        List<String> lettersList = new ArrayList<>(frequency.getLetters());
+        lettersList.addAll(mandatorySuffixes.values());
+
+        this.letters = new String[lettersList.size()];
+        lettersList.toArray(this.letters);
     }
 
     CanTransitionMap() {

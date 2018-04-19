@@ -37,7 +37,7 @@ public abstract class TrieTest {
 			frequency.addWord(word);
 		}
 
-		Map<String, Solution> solutions = trie.solver(new CanTransitionMap(frequency), new WordFilter() {
+		Map<String, Solution> solutions = trie.solver(new CanTransitionMap(frequency, language), new WordFilter() {
 			@Override
 			public boolean isWord(String word) {
 				return true;
