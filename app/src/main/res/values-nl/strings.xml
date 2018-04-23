@@ -8,8 +8,8 @@
 	<string name="pref_dict">Woordenboek</string>
 	<string name="pref_dict_summary">Selecteer het te gebruiken woordenboek</string>
 	<string name="pref_dict_dialog">Selecteer woordenboek</string>
-	<string name="pref_dict_us">Verenigde Staten</string>
-	<string name="pref_dict_uk">Verenigd Koninkrijk</string>
+	<string name="pref_dict_us">Engels (VS)</string>
+	<string name="pref_dict_uk">Engels (VK)</string>
 
 	<string name="pref_boardSize">Bordgrootte</string>
 	<string name="pref_boardSize_summary">Selecteer een bordgrootte</string>
@@ -81,4 +81,8 @@ Op borden ter grootte van 4x4 moeten worden minimaal drie letters lang zijn. On 
 <string name="pref_definitionProvider">Definitiedienst</string>
 	<string name="pref_definitionProvider_summary">Selecteer de te gebruiken definitiedienst. Als de geselecteerde dienst niet geïnstalleerd is, dan zal DuckDuckGo worden gebruikt.</string>
 	<string name="pref_definitionProvider_dialog">Selecteer definitiedienst</string>
-</resources>
+<string name="pref_dict_de_de">Duits (DUI)</string>
+	<string name="pref_dict_nl">Nederlands</string>
+	<string name="pref_dict_beta">%1$s (bèta)</string>
+
+	</resources>
