@@ -3,7 +3,7 @@ package com.serwylo.lexica;
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.FourByFourBoard;
 import com.serwylo.lexica.lang.Language;
-import com.serwylo.lexica.lang.UsEnglish;
+import com.serwylo.lexica.lang.EnglishUS;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.StringTrie;
@@ -56,8 +56,8 @@ public class TransitionMapTest {
 
     @Test
     public void stringTransitionTest() throws IOException {
-        byte[] serialized = serializedUsTrie(new StringTrie(new UsEnglish()));
-        Trie trie = new StringTrie.Deserializer().deserialize(new ByteArrayInputStream(serialized), BOARD, new UsEnglish());
+        byte[] serialized = serializedUsTrie(new StringTrie(new EnglishUS()));
+        Trie trie = new StringTrie.Deserializer().deserialize(new ByteArrayInputStream(serialized), BOARD, new EnglishUS());
         Map<String, Solution> actualSolutions = trie.solver(BOARD, new WordFilter.MinLength(3));
         assertSolutions(SOLUTIONS, actualSolutions);
     }
@@ -91,8 +91,8 @@ public class TransitionMapTest {
     }
 
     private static byte[] serializedUsTrie(Trie trie) {
-        Language language = new UsEnglish();
-        TrieTest.addWords(trie, FullUsUkTrieTest.readDictionary(language), language);
+        Language language = new EnglishUS();
+        TrieTest.addWords(trie, FullUsGbTrieTest.readDictionary(language), language);
         return TrieTest.serialize(trie);
     }
 

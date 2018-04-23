@@ -17,6 +17,8 @@
 
 package com.serwylo.lexica.game;
 
+import com.serwylo.lexica.lang.Language;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -30,7 +32,7 @@ public class CharProbGenerator {
 	private static final String TAG = "CharProbGenerator";
 	private final ArrayList<ProbabilityQueue> charProbs;
 
-	public CharProbGenerator(InputStream letter_stream) {
+	public CharProbGenerator(InputStream letter_stream, Language language) {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(letter_stream));
 
@@ -38,7 +40,7 @@ public class CharProbGenerator {
 
 		try {
 			for(String line=br.readLine();line != null; line=br.readLine()) {
-				String chunks[] = line.toLowerCase(Locale.ENGLISH).split(" ");
+				String chunks[] = line.toLowerCase(language.getLocale()).split(" ");
 				ProbabilityQueue pq = new ProbabilityQueue(chunks[0]);
 				for(int i=1;i<chunks.length;i++) {
 					pq.addProb(chunks[i]);

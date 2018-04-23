@@ -71,16 +71,19 @@ public abstract class Language {
     public static Language fromOrNull(String name) {
         switch (name) {
             case "en_US":
-                return new UsEnglish();
+                return new EnglishUS();
 
             case "en_GB":
-                return new UkEnglish();
+                return new EnglishGB();
 
             case "de_DE":
                 return new DeGerman();
 
             case "nl":
                 return new Dutch();
+
+            case "fr_FR":
+                return new French();
 
             case "fa":
                 return new Persian();

@@ -29,10 +29,9 @@ import android.util.SparseIntArray;
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
-import com.serwylo.lexica.lang.DeGerman;
 import com.serwylo.lexica.lang.Language;
-import com.serwylo.lexica.lang.UkEnglish;
-import com.serwylo.lexica.lang.UsEnglish;
+import com.serwylo.lexica.lang.EnglishGB;
+import com.serwylo.lexica.lang.EnglishUS;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.StringTrie;
@@ -168,7 +167,7 @@ public class Game implements Synchronizer.Counter {
 
 		String lettersFileName = language.getLetterDistributionFileName();
 		int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
-		CharProbGenerator charProbs = new CharProbGenerator(c.getResources().openRawResource(id));
+		CharProbGenerator charProbs = new CharProbGenerator(c.getResources().openRawResource(id), getLanguage());
 		Board board;
 
 		switch(boardSize) {
@@ -245,13 +244,13 @@ public class Game implements Synchronizer.Counter {
 		String languageCode = prefs.getString("dict", "US");
 		language = Language.fromOrNull(languageCode);
 		if (language == null) {
-			// Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_UK")
+			// Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_GB")
 			switch (languageCode) {
 				case "UK":
-					language = new UkEnglish();
+					language = new EnglishGB();
 					break;
 				default:
-					language = new UsEnglish();
+					language = new EnglishUS();
 					break;
 			}
 		}
@@ -315,7 +314,7 @@ public class Game implements Synchronizer.Counter {
 				}
 			}
 		} catch(IOException e) {
-			// Log.e(TAG,"initializeDictionary",e);
+			Log.e(TAG,"Error initializing dictionary",e);
 		}
 	}
 
@@ -358,7 +357,7 @@ public class Game implements Synchronizer.Counter {
 		if (status != GameStatus.GAME_RUNNING) {
 			return;
 		}
-		String cap = word.toLowerCase();
+		String cap = word.toLowerCase(language.getLocale());
 
 		if(isWord(cap)) {
 			if(wordsUsed.contains(cap)) {

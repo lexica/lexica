@@ -55,18 +55,24 @@ public class GeneticAlgorithm {
             System.out.println("Random board:");
             System.out.println(renderBoardToString(best.toCharProbGenerator().generateFourByFourBoard()));
 
-            String fileName =
-                    language.getName() + " " +
-                    "Min: " + (int) best.getFitness().stats.getMin() + " " +
-                    "Mean: " + (int) best.getFitness().stats.getMean() + " " +
-                    "Max: " + (int) best.getFitness().stats.getMax() + " " +
-                    "Score: " + (int) best.getFitness().getScore();
-
-            File output = new File(outputDir, fileName);
-            FileWriter writer = new FileWriter(output);
-            writer.write(best.getFitness().toString() + "\n" + best.toString());
-            writer.close();
+            writeDistribution(language, outputDir, best);
         }
+    }
+
+    private void writeDistribution(Language language, File outputDir, Genome genome) throws IOException {
+
+        String fileName =
+                language.getName() + " " +
+                        "Min: " + (int) genome.getFitness().stats.getMin() + " " +
+                        "Mean: " + (int) genome.getFitness().stats.getMean() + " " +
+                        "Max: " + (int) genome.getFitness().stats.getMax() + " " +
+                        "SD: " + (int) genome.getFitness().stats.getStandardDeviation() + " " +
+                        "Score: " + (int) genome.getFitness().getScore();
+
+        File output = new File(outputDir, fileName);
+        FileWriter writer = new FileWriter(output);
+        writer.write(genome.getFitness().toString() + "\n" + genome.toString());
+        writer.close();
     }
 
     private static String renderBoardToString(Board board) {
@@ -206,7 +212,7 @@ public class GeneticAlgorithm {
 
         private static InputStream trieReader(File trieDir, Language language) throws IOException {
             if (!cachedTries.containsKey(language)) {
-                byte[] buffer = new byte[1024 * 1024 * 2]; // 2MiB
+                byte[] buffer = new byte[1024 * 1024 * 5]; // 5MiB - Needs to be able to fit the largest "words_*.bin file in memory.
 
                 File trieFile = new File(trieDir, language.getTrieFileName());
                 InputStream stream = new FileInputStream(trieFile);
@@ -223,12 +229,10 @@ public class GeneticAlgorithm {
             SummaryStatistics stats = new SummaryStatistics();
             for (int i = 0; i < iterations; i ++) {
                 Board board = genome.toCharProbGenerator().generateFourByFourBoard();
-                try {
-                    InputStream stream = trieReader(trieDir, language);
-                    Trie dict = new StringTrie.Deserializer().deserialize(stream, board, language);
-                    int numWords = dict.solver(board, new WordFilter.MinLength(3)).size();
-                    stats.addValue(numWords);
-                } catch(IOException ignored) { }
+                InputStream stream = trieReader(trieDir, language);
+                Trie dict = new StringTrie.Deserializer().deserialize(stream, board, language);
+                int numWords = dict.solver(board, new WordFilter.MinLength(3)).size();
+                stats.addValue(numWords);
             }
             return stats;
         }
@@ -239,21 +243,8 @@ public class GeneticAlgorithm {
 
         double getScore() throws IOException {
 
-            return stats.getMin() * 10 + stats.getMean() * 10 + stats.getMax() / 2;
+            return Math.max(1, stats.getMean() * stats.getMean() - stats.getStandardDeviation() * stats.getStandardDeviation());
 
-            /*
-            // Heavily penalise boards which result in a board of 0 words.
-            if (stats.getMin() == 0) {
-                return stats.getMax() / 10;
-            }
-
-            // Slightly penalise those which result in boards of less than 10.
-            if (stats.getMean() < 10) {
-                return stats.getMax() / 2;
-            }
-
-            return stats.getMax();
-            */
         }
 
         private String cachedStringRepresentation = null;
@@ -261,7 +252,7 @@ public class GeneticAlgorithm {
         public String toString() {
             if (cachedStringRepresentation == null) {
                 try {
-                    cachedStringRepresentation = "Min: " + (int) stats.getMin() + ", mean: " + (int) stats.getMean() + ", max: " + (int) stats.getMax() + ", score: " + (int) getScore();
+                    cachedStringRepresentation = "Min: " + (int) stats.getMin() + ", mean: " + (int) stats.getMean() + ", max: " + (int) stats.getMax() + ", stddev: " + (int) stats.getStandardDeviation() + ", score: " + (int) getScore();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -274,7 +265,7 @@ public class GeneticAlgorithm {
     static class Gene {
 
         public static Gene createRandom(String letter, int count) {
-            int currentCount = (int) (Math.random() * 100);
+            int currentCount = (int) (Math.random() * 99) + 1; // 1 - 100 inclusive.
             List<Integer> occurrences = new ArrayList<>();
 
             for (int i = 1; i <= count; i ++) {
@@ -366,7 +357,7 @@ public class GeneticAlgorithm {
         }
 
         private CharProbGenerator toCharProbGenerator() {
-            return new CharProbGenerator(new ByteArrayInputStream(toString().getBytes()));
+            return new CharProbGenerator(new ByteArrayInputStream(toString().getBytes()), language);
         }
 
         private Fitness cachedFitness = null;

@@ -1,8 +1,8 @@
 package com.serwylo.lexica.lang;
 
-public class UkEnglish extends English {
+public class EnglishUS extends English {
     @Override
     public String getName() {
-        return "en_GB";
+        return "en_US";
     }
 }

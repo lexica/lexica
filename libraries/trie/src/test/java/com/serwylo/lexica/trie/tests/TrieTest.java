@@ -1,5 +1,8 @@
 package com.serwylo.lexica.trie.tests;
 
+import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.trie.util.LetterFrequency;
+
 import net.healeys.trie.Solution;
 import net.healeys.trie.Trie;
 import net.healeys.trie.WordFilter;
@@ -28,8 +31,13 @@ public abstract class TrieTest {
 			"Sneh"
 	};
 
-	private static void onlyContains(Trie trie, Set<String> expectedWords) {
-		Map<String, Solution> solutions = trie.solver(new CanTransitionMap(), new WordFilter() {
+	private static void onlyContains(Language language, Trie trie, Set<String> expectedWords) {
+		LetterFrequency frequency = new LetterFrequency(language);
+		for (String word : expectedWords) {
+			frequency.addWord(word);
+		}
+
+		Map<String, Solution> solutions = trie.solver(new CanTransitionMap(frequency, language), new WordFilter() {
 			@Override
 			public boolean isWord(String word) {
 				return true;
@@ -57,16 +65,16 @@ public abstract class TrieTest {
 		assertArrayEquals("Words don't match", expected.toArray(), actual.toArray());
 	}
 
-	static void assertTrieMatches(String message, Trie trie, String[] words) {
+	static void assertTrieMatches(String message, Trie trie, String[] words, Language language) {
 		Set<String> allWords = new HashSet<>();
 		for (String word : words) {
 			String log = message + ": ";
-			word = word.toLowerCase();
+			word = word.toLowerCase(language.getLocale());
 			allWords.add(word);
 			assertTrue(log + word + " should be a word", trie.isWord(word));;
 		}
 
-		onlyContains(trie, allWords);
+		onlyContains(language, trie, allWords);
 
 		for (String notAWord : NOT_WORDS) {
 			String log = notAWord + " should not be a word";

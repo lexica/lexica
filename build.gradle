@@ -43,10 +43,11 @@ def languages = [
   "en_US",
   "en_GB",
   "de_DE",
-  // "ca",
-  // "es",
-  // "fa",
-  // "it",
+  "fr_FR",
+  "ca",
+  "es",
+  "fa",
+  "it",
   "nl",
 ]
 languages.each { lang ->
@@ -58,7 +59,7 @@ languages.each { lang ->
                 lang,
                 file('assets/dictionaries/'),
                 file('app/src/main/res/raw/'),
-                file('app/src/test/resources/')
+                file('app/src/test/resources/'),
         ]
     }
 
@@ -71,7 +72,7 @@ languages.each { lang ->
                 lang,
                 file('app/src/main/res/raw/'),
                 file('assets/dictionaries/'),
-                file('/tmp/')
+                file('/tmp/'),
         ]
     }
 }
