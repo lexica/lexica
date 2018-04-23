@@ -1,0 +1,13 @@
+Support for international dictionaries!
+
+ * English (UK)
+ * English (US)
+ * German (DE)
+ * French (FR)
+ * Spanish
+ * Italian
+ * Dutch
+ * Catalan
+
+Most of these are still in beta, and will require better quality dictionaries in the future.
+Please provide any feedback or report any issues on the issue tracker at https://github.com/lexica/lexica/issues.
