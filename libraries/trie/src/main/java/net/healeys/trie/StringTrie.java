@@ -274,8 +274,11 @@ public class StringTrie extends Trie {
 			Set<Map.Entry<String, Node>> entries = children.entrySet();
 			for (Map.Entry<String, Node> entry : entries) {
 				String character = entry.getKey();
-				tempOutputData.writeByte(character.length());
-				tempOutputData.writeBytes(character);
+				byte[] characterBytes = character.getBytes("UTF-8");
+				tempOutputData.writeByte(characterBytes.length);
+				for (byte b : characterBytes) {
+					tempOutputData.writeByte(b);
+				}
 			}
 
 			for (Map.Entry<String, Node> entry : entries) {
@@ -351,6 +354,13 @@ public class StringTrie extends Trie {
 
 			Node childNode = maybeChildAt(word, currentPosition);
 			return childNode != null && childNode.isAnyWord(word, nextPosition(word, currentPosition));
+		}
+
+		@Override
+		public String toString() {
+			return this.isWord
+					? "Word with " + this.children.size() + " children"
+					: "Node with " + this.children.size() + " children";
 		}
 	}
 

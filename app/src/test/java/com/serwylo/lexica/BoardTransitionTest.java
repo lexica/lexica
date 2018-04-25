@@ -3,13 +3,44 @@ package com.serwylo.lexica;
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.FiveByFiveBoard;
 import com.serwylo.lexica.game.FourByFourBoard;
+import com.serwylo.lexica.lang.Persian;
+
+import net.healeys.trie.Solution;
+import net.healeys.trie.StringTrie;
+import net.healeys.trie.WordFilter;
 
 import org.junit.Test;
 
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class BoardTransitionTest {
+
+    @Test
+    public void persianBoard() {
+        String[] board = new String[] {
+                "و", "ﻗ", "ن", "ﻫ",
+                "ﻒ", "ز", "ﺮ", "ا",
+                "ﻒ", "غ", "ا", "م",
+                "ﻒ", "ه", "ﺮ", "ی",
+        };
+
+        StringTrie trie = new StringTrie(new Persian());
+        trie.addWord("وزغهایمان");
+
+        TrieTest.assertTrieMatches(
+                "Contains Persian word وزغهایمان",
+                trie,
+                new String[] {"وزغهایمان"},
+                new String[] {"non Persian word"}
+        );
+
+        Map<String, Solution> solutions = trie.solver(new FourByFourBoard(board), new WordFilter.MinLength(3));
+        assertEquals(1, solutions.size());
+    }
 
     @Test
     public void fiveByFive() {
