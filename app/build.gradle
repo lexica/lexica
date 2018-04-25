@@ -37,3 +37,8 @@ dependencies {
 
     testCompile "junit:junit:4.11"
 }
+
+afterEvaluate {
+    assembleDebug.dependsOn rootProject.buildDictionaries
+    assembleRelease.dependsOn rootProject.buildDictionaries
+}
