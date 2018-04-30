@@ -2,6 +2,7 @@ package com.serwylo.lexica.trie.tests;
 
 import com.serwylo.lexica.lang.DeGerman;
 import com.serwylo.lexica.lang.EnglishGB;
+import com.serwylo.lexica.lang.Persian;
 import com.serwylo.lexica.trie.util.LetterFrequency;
 
 import org.junit.Test;
@@ -17,9 +18,16 @@ public class LetterFrequencyTest {
 
     @Test
     public void countUnicodeLetters() {
-        LetterFrequency letters = new LetterFrequency(new DeGerman());
+        LetterFrequency letters = new LetterFrequency(new Persian());
 
-        letters.addWord("uber");
+        letters.addWord("ﻒﻗﺮﻫ");
+
+        assertEquals(4, letters.getLetters().size());
+
+        assertCounts(letters.getCountsForLetter("ﻒ"), 1);
+        assertCounts(letters.getCountsForLetter("ﻗ"), 1);
+        assertCounts(letters.getCountsForLetter("ﻫ"), 1);
+        assertCounts(letters.getCountsForLetter("ﺮ"), 1);
     }
 
     @Test

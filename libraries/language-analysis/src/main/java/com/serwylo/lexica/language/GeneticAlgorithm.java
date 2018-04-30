@@ -285,6 +285,16 @@ public class GeneticAlgorithm {
             this.occurrences = occurrences;
         }
 
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append(letter);
+            for (int count : occurrences) {
+                sb.append(' ').append(count);
+            }
+            return sb.toString();
+        }
+
     }
 
     static class Genome {

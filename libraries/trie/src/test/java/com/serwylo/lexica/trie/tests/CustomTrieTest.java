@@ -2,6 +2,8 @@ package com.serwylo.lexica.trie.tests;
 
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.EnglishUS;
+import com.serwylo.lexica.lang.Persian;
+import com.serwylo.lexica.trie.util.LetterFrequency;
 
 import net.healeys.trie.Deserializer;
 import net.healeys.trie.StringTrie;
@@ -14,7 +16,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.fail;
 
-public class CustomUsGbTrieTest extends TrieTest {
+public class CustomTrieTest extends TrieTest {
 
 	private static final String[] GB_WORDS = new String[] {
 			"queen",
@@ -36,6 +38,7 @@ public class CustomUsGbTrieTest extends TrieTest {
 			"alibi",
 			"LongerWordThanA"
 	};
+
 	@Test
 	public void testAdding() {
 		StringTrie usTrie = new StringTrie(new EnglishUS());
@@ -48,6 +51,40 @@ public class CustomUsGbTrieTest extends TrieTest {
 		addWords(gbTrie, BOTH_DIALECTS);
 
 		assertEverythingAboutTrie(usTrie, gbTrie, new StringTrie.Deserializer());
+	}
+
+	@Test
+	public void testPersian() throws IOException {
+		String[] words = new String[] {
+				"آیی",
+				"اغوایم",
+				"وزشها",
+				"وزیدنیمان",
+		};
+
+		LetterFrequency letters = new LetterFrequency(new Persian());
+		StringTrie trie = new StringTrie(new Persian());
+
+		for(String word : words) {
+			trie.addWord(word);
+			letters.addWord(word);
+		}
+
+		assertTrieMatches("Before desrializing", trie, words, new Persian());
+
+		byte[] serialized = serialize(trie);
+
+		Trie deserializedAll = new StringTrie.Deserializer().deserialize(new ByteArrayInputStream(serialized), new CanTransitionMap(letters, new Persian()), new Persian());
+		assertTrieMatches("After deserializing all words", deserializedAll, words, new Persian());
+
+		String[] subsetOfLetters = new String[]{"آ", "م", "ا", "و", "غ", "ی"};
+		String[] subsetWords = new String[]{
+			"آیی",
+			"اغوایم",
+		};
+
+		Trie deserializedSubsetWords = new StringTrie.Deserializer().deserialize(new ByteArrayInputStream(serialized), new CanTransitionMap(subsetOfLetters), new Persian());
+		assertTrieMatches("After desrializing only a subset of words from the letters آ م ا و غ ی", deserializedSubsetWords, subsetWords, new Persian());
 	}
 
 	private static String[] join(String[] one, String[] two) {

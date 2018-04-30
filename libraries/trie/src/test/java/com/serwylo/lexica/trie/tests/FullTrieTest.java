@@ -4,6 +4,7 @@ import com.serwylo.lexica.lang.French;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.EnglishUS;
+import com.serwylo.lexica.lang.Persian;
 
 import net.healeys.trie.StringTrie;
 import net.healeys.trie.Trie;
@@ -54,6 +55,23 @@ public class FullTrieTest extends TrieTest {
 		addWords(trie, words);
 
 		assertTrieMatches("After adding entire French dictionary to a new Trie", trie, words, new French());
+	}
+
+	@Test
+	public void testPersianDictionary() {
+		Language language = new Persian();
+		String[] words = readDictionary(language);
+		Assert.assertEquals(166715, words.length);
+
+		Trie trie = new StringTrie(language);
+		addWords(trie, words);
+
+		char[] chars = "وزغهایمان".toCharArray();
+		for (int i = 0; i < chars.length; i ++) {
+			System.out.println(chars[i] + " " + "وزغهایمان".substring(i, i + 1));
+		}
+
+		assertTrieMatches("After adding entire Persian dictionary to a new Trie", trie, words, new Persian());
 	}
 
 	public static String[] readDictionary(Language language) {
