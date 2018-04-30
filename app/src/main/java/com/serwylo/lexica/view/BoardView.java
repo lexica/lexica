@@ -16,6 +16,7 @@
  */
 
 package com.serwylo.lexica.view;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -32,6 +33,7 @@ import com.serwylo.lexica.game.Game;
 public class BoardView extends View {
 
 	private Board board;
+	private Game game;
 
 	/** @see #highlight(Integer[]) */
 	private Integer[] highlightedCells = new Integer[0];
@@ -44,6 +46,7 @@ public class BoardView extends View {
 		super(context,attrs);
 
 		board = null;
+		game = null;
 		highlightedCells = new Integer[0];
 
 		p = new Paint();
@@ -128,7 +131,7 @@ public class BoardView extends View {
 		// Draw letters
 		for (int x = 0; x < board.getWidth(); x++) {
 			for (int y = 0; y < board.getWidth(); y++) {
-				String txt = board.elementAt(x, y).toUpperCase();
+				String txt = game.getLanguage().toDisplay(board.elementAt(x, y));
 				p.setTextSize(textSize);
 				p.setTextAlign(Paint.Align.CENTER);
 				canvas.drawText(txt,
@@ -155,8 +158,9 @@ public class BoardView extends View {
 		setMeasuredDimension(side,side);
 	}
 
-	public void setBoard(Board b) {
-		board = b;
+	public void setGame(Game game) {
+		board = game.getBoard();
+		this.game = game;
 	}
 
 	/**

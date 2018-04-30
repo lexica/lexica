@@ -157,7 +157,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		for (int x = 0; x < boardWidth; x++) {
 			for (int y = 0; y < boardWidth; y++) {
-				String txt = game.getBoard().elementAt(x, y).toUpperCase();
+				String txt = game.getLanguage().toDisplay(game.getBoard().elementAt(x, y));
 				p.setTextSize(textSize);
 				p.setTextAlign(Paint.Align.CENTER);
 				canvas.drawText(txt,
@@ -550,13 +550,13 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		String getWord() {
-			String ret = "";
+			StringBuilder word = new StringBuilder();
 
 			for (int i = 0; i < numTouched; i++) {
-				ret += game.getBoard().elementAt(touched[i]);
+				word.append(game.getBoard().elementAt(touched[i]));
 			}
 
-			return ret;
+			return word.toString();
 		}
 
 		void release() {

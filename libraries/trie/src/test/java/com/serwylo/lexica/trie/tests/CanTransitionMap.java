@@ -29,16 +29,16 @@ public class CanTransitionMap implements TransitionMap {
     }
 
     CanTransitionMap(LetterFrequency frequency, Language language) {
+        List<String> lettersList = new ArrayList<>(frequency.getLetters());
+
         Map<String, String> mandatorySuffixes = new HashMap<>();
         for (String letter : frequency.getLetters()) {
-            String suffix = language.applyMandatorySuffix(letter);
-            if (!suffix.equals(letter)) {
-                mandatorySuffixes.put(letter, suffix);
+            String letterWithSuffix = language.applyMandatorySuffix(letter);
+            if (!letterWithSuffix.equals(letter)) {
+                lettersList.remove(letter);
+                lettersList.add(letterWithSuffix);
             }
         }
-
-        List<String> lettersList = new ArrayList<>(frequency.getLetters());
-        lettersList.addAll(mandatorySuffixes.values());
 
         this.letters = new String[lettersList.size()];
         lettersList.toArray(this.letters);

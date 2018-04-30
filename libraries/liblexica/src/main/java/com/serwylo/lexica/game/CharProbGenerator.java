@@ -24,7 +24,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Locale;
 import java.util.Random;
 
 public class CharProbGenerator {
@@ -32,8 +31,11 @@ public class CharProbGenerator {
 	private static final String TAG = "CharProbGenerator";
 	private final ArrayList<ProbabilityQueue> charProbs;
 
+	private Language language;
+
 	public CharProbGenerator(InputStream letter_stream, Language language) {
 
+		this.language = language;
 		BufferedReader br = new BufferedReader(new InputStreamReader(letter_stream));
 
 		charProbs = new ArrayList<>();
@@ -88,7 +90,7 @@ public class CharProbGenerator {
 					break;
 				}
 			}
-			board[i] = pq.getLetter();
+			board[i] = language.applyMandatorySuffix(pq.getLetter());
 			total -= pq.getProb();
 			total += pq.peekProb();
 		}

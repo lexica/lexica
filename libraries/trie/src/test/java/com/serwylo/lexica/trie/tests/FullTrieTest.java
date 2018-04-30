@@ -66,11 +66,6 @@ public class FullTrieTest extends TrieTest {
 		Trie trie = new StringTrie(language);
 		addWords(trie, words);
 
-		char[] chars = "وزغهایمان".toCharArray();
-		for (int i = 0; i < chars.length; i ++) {
-			System.out.println(chars[i] + " " + "وزغهایمان".substring(i, i + 1));
-		}
-
 		assertTrieMatches("After adding entire Persian dictionary to a new Trie", trie, words, new Persian());
 	}
 
