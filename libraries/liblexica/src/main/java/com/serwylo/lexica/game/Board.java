@@ -26,10 +26,16 @@ public abstract class Board implements TransitionMap {
 		board = b;
 	}
 
+	/**
+	 * May be more than one character (see {@link com.serwylo.lexica.lang.Language#applyMandatorySuffix(String)}).
+	 */
 	public synchronized String elementAt(int i) {
 		return board[i];
 	}
 
+	/**
+	 * May be more than one character (see {@link com.serwylo.lexica.lang.Language#applyMandatorySuffix(String)}).
+	 */
 	public synchronized String elementAt(int x,int y) {
 		return board[x+getWidth()*y];
 	}

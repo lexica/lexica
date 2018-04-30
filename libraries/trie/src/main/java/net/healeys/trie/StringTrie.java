@@ -198,13 +198,14 @@ public class StringTrie extends Trie {
 				continue;
 			}
 
-			prefix.append(value);
+			String valueWithSuffix = language.applyMandatorySuffix(value);
+			prefix.append(valueWithSuffix);
 			positions.add(i);
 
 			recursiveSolver(transitions, filter, nextNode, i, new HashSet<Integer>(), prefix, solutions, positions);
 
 			positions.remove(positions.size() - 1);
-			prefix.delete(prefix.length() - value.length(), prefix.length());
+			prefix.delete(prefix.length() - valueWithSuffix.length(), prefix.length());
 		}
 
 		long totalTime = System.currentTimeMillis() - startTime;

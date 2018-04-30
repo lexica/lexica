@@ -79,7 +79,7 @@ public class ScoreActivity extends TabActivity {
 		host.addTab(host.newTabSpec("missed").setIndicator(getString(R.string.missed_words)).setContent(R.id.missed_words));
 
 		bv = (BoardView) findViewById(R.id.missed_board);
-		bv.setBoard(game.getBoard());
+		bv.setGame(game);
 		bv.setScoreType(game.getScoreType());
 
 		Set<String> possible = game.getSolutions().keySet();

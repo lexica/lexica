@@ -26,7 +26,9 @@ public interface TransitionMap {
 	boolean canTransition(int fromX, int fromY, int toX, int toY);
 	
 	/**
-	 * Provides the value (letter) stored at a particular position.
+	 * Provides the value stored at a particular position.
+	 *
+	 * May be more than one letter (see {@link com.serwylo.lexica.lang.Language#applyMandatorySuffix(String)}).
 	 *
 	 * @param	position	the id of a position
 	 * @return				the value stored at that position
