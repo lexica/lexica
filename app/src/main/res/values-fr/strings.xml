@@ -79,4 +79,11 @@
 <string name="pref_definitionProvider">Dictionnaire</string>
 	<string name="pref_definitionProvider_summary">Logiciel fournissant la définition des mots. Par défaut, DuckDuckGo sera utilisé.</string>
 	<string name="pref_definitionProvider_dialog">Logiciel à utiliser</string>
-</resources>
+<string name="pref_dict_de_de">Allemand</string>
+	<string name="pref_dict_nl">Néerlandais</string>
+	<string name="pref_dict_it">Italien</string>
+	<string name="pref_dict_ca">Catalan</string>
+	<string name="pref_dict_es">Espagnol</string>
+	<string name="pref_dict_beta">%1$s (Bêta)</string>
+
+	</resources>

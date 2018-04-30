@@ -8,8 +8,8 @@
 	<string name="pref_dict">Ordbok</string>
 	<string name="pref_dict_summary">Velg ordbok å bruke</string>
 	<string name="pref_dict_dialog">Velg ordbok</string>
-	<string name="pref_dict_us">Amerikas forente stater</string>
-	<string name="pref_dict_uk">Storbritannia</string>
+	<string name="pref_dict_us">Engelsk (USA)</string>
+	<string name="pref_dict_uk">Engelsk (UK)</string>
 
 	<string name="pref_boardSize">Brettstørrelse</string>
 	<string name="pref_boardSize_summary">Velg en brettstørrelse</string>
@@ -82,11 +82,11 @@
 	<string name="pref_definitionProvider_summary">Velg en definisjonstilbyder å bruke. Hvis valg definisjonstilbyder ikke er installert, vil DuckDuckGo bli brukt.</string>
 	<string name="pref_definitionProvider_dialog">Velg definisjonstilbyder</string>
 <string name="pref_dict_de_de">Tysk</string>
-	<string name="pref_dict_nl">Hollandsk</string>
+	<string name="pref_dict_nl">Nederlandsk</string>
 	<string name="pref_dict_fr_fr">Fransk</string>
 	<string name="pref_dict_it">Italiensk</string>
 	<string name="pref_dict_ca">Katalansk</string>
 	<string name="pref_dict_es">Spansk</string>
-	<string name="pref_dict_beta">%1$s (Beta)</string>
+	<string name="pref_dict_beta">%1$s (beta)</string>
 
 	</resources>
