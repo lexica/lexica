@@ -193,12 +193,13 @@ public class StringTrie extends Trie {
 		List<Integer> positions = new ArrayList<>(transitions.getSize());
 		for(int i=0; i < transitions.getSize(); i ++) {
 			String value = transitions.valueAt(i);
+			String valueWithSuffix = language.applyMandatorySuffix(value);
+
 			StringTrie.Node nextNode = rootNode.maybeChildAt(value);
 			if (nextNode == null) {
 				continue;
 			}
 
-			String valueWithSuffix = language.applyMandatorySuffix(value);
 			prefix.append(valueWithSuffix);
 			positions.add(i);
 
