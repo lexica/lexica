@@ -81,8 +81,13 @@ Op borden ter grootte van 4x4 moeten worden minimaal drie letters lang zijn. On 
 <string name="pref_definitionProvider">Definitiedienst</string>
 	<string name="pref_definitionProvider_summary">Selecteer de te gebruiken definitiedienst. Als de geselecteerde dienst niet geïnstalleerd is, dan zal DuckDuckGo worden gebruikt.</string>
 	<string name="pref_definitionProvider_dialog">Selecteer definitiedienst</string>
-<string name="pref_dict_de_de">Duits (DUI)</string>
+<string name="pref_dict_de_de">Duits</string>
 	<string name="pref_dict_nl">Nederlands</string>
 	<string name="pref_dict_beta">%1$s (bèta)</string>
 
+	<string name="pref_dict_fr_fr">Frans</string>
+	<string name="pref_dict_it">Italiaans</string>
+	<string name="pref_dict_ca">Catalaans</string>
+	<string name="pref_dict_es">Spaans</string>
+	<string name="pref_dict_fa">Perzisch</string>
 	</resources>
