@@ -1,12 +1,15 @@
 package com.serwylo.lexica.lang;
 
 import java.util.Locale;
+import java.util.Map;
 
 public abstract class Language {
 
     public abstract Locale getLocale();
 
     public abstract String getName();
+
+    protected abstract Map<String, Integer> getLetterPoints();
 
     /**
      * Beta languages are thouse which have not been properly play tested.
@@ -32,6 +35,21 @@ public abstract class Language {
      * it doesn't make sense to ever have a "q" by itself.
      */
     public abstract String applyMandatorySuffix(String value);
+
+    /**
+     * Each "letter" tile has a score. This score distribution is unique amoung different languages,
+     * so even though both German and English both have the letter "e", their score may differ
+     * for each language.
+     *
+     * TODO: Does the argument contain a mandatory suffix?
+     */
+    public final int getPointsForLetter(String letter) {
+        Integer points = getLetterPoints().get(letter);
+        if (points == null) {
+            throw new IllegalArgumentException("Language " + getName() + " doesn't have a point value for the " + letter + " tile");
+        }
+        return getLetterPoints().get(letter);
+    }
 
     /**
      * The name of the trie file, relative to the `assets/` directory.
