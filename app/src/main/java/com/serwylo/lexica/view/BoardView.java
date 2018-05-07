@@ -139,7 +139,7 @@ public class BoardView extends View {
 						paddingSize + (y * boxsize) + (boxsize / 2) - offset,
 						p);
 				if (Game.SCORE_LETTERS.equals(scoreType)) {
-					String score = String.valueOf(Game.letterPoints(txt));
+					String score = String.valueOf(game.getLanguage().getPointsForLetter(txt));
 					p.setTextSize(textSize / 4);
 					p.setTextAlign(Paint.Align.RIGHT);
 					canvas.drawText(score,

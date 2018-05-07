@@ -44,11 +44,13 @@ public abstract class Language {
      * TODO: Does the argument contain a mandatory suffix?
      */
     public final int getPointsForLetter(String letter) {
-        Integer points = getLetterPoints().get(letter);
+        String lowerCaseLetter = letter.toLowerCase();
+        Integer points = getLetterPoints().get(lowerCaseLetter);
         if (points == null) {
-            throw new IllegalArgumentException("Language " + getName() + " doesn't have a point value for the " + letter + " tile");
+            throw new IllegalArgumentException("Language " + getName() + " doesn't have a point value for the " + lowerCaseLetter + " tile");
         }
-        return getLetterPoints().get(letter);
+
+        return points;
     }
 
     /**

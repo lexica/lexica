@@ -165,7 +165,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 						topOfGrid + (y * boxsize) + (boxsize / 2) - offset,
 						p);
 				if (Game.SCORE_LETTERS.equals(game.getScoreType())) {
-					String score = String.valueOf(Game.letterPoints(txt));
+					String score = String.valueOf(game.getLanguage().getPointsForLetter(txt));
 					p.setTextSize(textSize / 4);
 					p.setTextAlign(Paint.Align.RIGHT);
 					canvas.drawText(score,
