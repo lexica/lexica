@@ -4,48 +4,60 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+/**
+ * TODO: Mandatory _prefix_ for "y", resulting in "ny".
+ * TODO: Mandatory _suffix_ for "q", resulting in "qu".
+ * Both of "qu" + "ny" are from https://en.wikipedia.org/wiki/Catalan_orthography#Alphabet.
+ */
 public class Catalan extends Language {
 
     private static Map<String, Integer> letterPoints = new HashMap<>();
 
     static {
+        letterPoints.put("e", 1);
+        letterPoints.put("è", 1);
+        letterPoints.put("é", 1);
         letterPoints.put("à", 1);
         letterPoints.put("a", 1);
-        letterPoints.put("b", 1);
-        letterPoints.put("c", 1);
-        letterPoints.put("d", 1);
-        letterPoints.put("e", 1);
-        letterPoints.put("f", 1);
-        letterPoints.put("g", 1);
-        letterPoints.put("ç", 1);
-        letterPoints.put("è", 1);
-        letterPoints.put("h", 1);
         letterPoints.put("i", 1);
-        letterPoints.put("é", 1);
-        letterPoints.put("j", 1);
-        letterPoints.put("k", 1);
-        letterPoints.put("l", 1);
-        letterPoints.put("m", 1);
         letterPoints.put("í", 1);
-        letterPoints.put("n", 1);
-        letterPoints.put("o", 1);
         letterPoints.put("ï", 1);
-        letterPoints.put("p", 1);
-        letterPoints.put("q", 1);
         letterPoints.put("r", 1);
-        letterPoints.put("ò", 1);
         letterPoints.put("s", 1);
+        letterPoints.put("n", 1);
+        letterPoints.put("l", 1);
+        letterPoints.put("o", 1);
+        letterPoints.put("ò", 1);
         letterPoints.put("ó", 1);
-        letterPoints.put("t", 1);
-        letterPoints.put("u", 1);
-        letterPoints.put("v", 1);
         letterPoints.put("ö", 1);
-        letterPoints.put("w", 1);
-        letterPoints.put("x", 1);
-        letterPoints.put("y", 1);
-        letterPoints.put("z", 1);
         letterPoints.put("ú", 1);
         letterPoints.put("ü", 1);
+        letterPoints.put("u", 1);
+        letterPoints.put("t", 1);
+
+        letterPoints.put("c", 2);
+        letterPoints.put("d", 2);
+        letterPoints.put("m", 2);
+
+        letterPoints.put("b", 3);
+        letterPoints.put("g", 3);
+        letterPoints.put("p", 3);
+
+        letterPoints.put("f", 4);
+        letterPoints.put("v", 41);
+
+        letterPoints.put("h", 8);
+        letterPoints.put("j", 8);
+        letterPoints.put("q", 8);
+        letterPoints.put("z", 8);
+
+        letterPoints.put("ç", 10);
+        letterPoints.put("x", 10);
+
+        // TODO: These are not included in Scrabble.
+        letterPoints.put("k", 5);
+        letterPoints.put("w", 5);
+        letterPoints.put("y", 5);
     }
 
     @Override
@@ -65,11 +77,19 @@ public class Catalan extends Language {
 
     @Override
     public String toDisplay(String value) {
+        if (value.equals("qu")) {
+            return "Qu";
+        }
+
         return value.toUpperCase(getLocale());
     }
 
     @Override
     public String applyMandatorySuffix(String value) {
+        if (value.equals("q")) {
+            return "qu";
+        }
+
         return value;
     }
 
