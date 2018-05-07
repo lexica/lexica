@@ -74,11 +74,19 @@ public class Dutch extends Language {
 
     @Override
     public String toDisplay(String value) {
+        if (value.equals("qu")) {
+            return "Qu";
+        }
+
         return value.toUpperCase(getLocale());
     }
 
     @Override
     public String applyMandatorySuffix(String value) {
+        if (value.equals("q")) {
+            return "qu";
+        }
+
         return value;
     }
 
