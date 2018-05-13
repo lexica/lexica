@@ -6,7 +6,6 @@ import java.util.Map;
 
 /**
  * TODO: Mandatory _prefix_ for "y", resulting in "ny".
- * TODO: Mandatory _suffix_ for "q", resulting in "qu".
  * Both of "qu" + "ny" are from https://en.wikipedia.org/wiki/Catalan_orthography#Alphabet.
  */
 public class Catalan extends Language {
