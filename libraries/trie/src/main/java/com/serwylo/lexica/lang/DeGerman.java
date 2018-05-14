@@ -47,7 +47,7 @@ public class DeGerman extends Language {
         letterPoints.put("y", 10);
         letterPoints.put("q", 10);
 
-        // Not listed in https://en.wikipedia.org/wiki/Scrabble_letter_distributions#German
+        // ß is not listed in https://en.wikipedia.org/wiki/Scrabble_letter_distributions#German
         letterPoints.put("ß", 1);
     }
 

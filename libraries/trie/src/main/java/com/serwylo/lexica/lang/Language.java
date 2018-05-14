@@ -12,7 +12,7 @@ public abstract class Language {
     protected abstract Map<String, Integer> getLetterPoints();
 
     /**
-     * Beta languages are thouse which have not been properly play tested.
+     * Beta languages are those which have not been properly play tested.
      * When adding a new language, override and return true to show feedback to the user that the
      * dictionary is still in beta.
      */

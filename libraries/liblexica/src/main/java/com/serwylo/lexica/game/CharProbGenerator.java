@@ -43,9 +43,9 @@ public class CharProbGenerator {
 		try {
 			for(String line=br.readLine();line != null; line=br.readLine()) {
 				String chunks[] = line.toLowerCase(language.getLocale()).split(" ");
-				ProbabilityQueue pq = new ProbabilityQueue(chunks[0]);
+				ProbabilityQueue pq = new ProbabilityQueue(language.applyMandatorySuffix(chunks[0]));
 				for(int i=1;i<chunks.length;i++) {
-					pq.addProb(chunks[i]);
+					pq.addProb(language.applyMandatorySuffix(chunks[i]));
 				}
 				charProbs.add(pq);
 			}
@@ -90,7 +90,7 @@ public class CharProbGenerator {
 					break;
 				}
 			}
-			board[i] = language.applyMandatorySuffix(pq.getLetter());
+			board[i] = pq.getLetter();
 			total -= pq.getProb();
 			total += pq.peekProb();
 		}
@@ -115,6 +115,9 @@ public class CharProbGenerator {
 			probQueue = new LinkedList<>();
 		}
 
+		/**
+		 * Already has any mandatory suffix applied (hopefully!).
+		 */
 		public String getLetter() {
 			return letter;
 		}

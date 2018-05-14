@@ -384,10 +384,11 @@ public class Game implements Synchronizer.Counter {
 		if (SCORE_WORDS.equals(scoreType)) {
 			return WORD_POINTS[word.length()];
 		} else {
-			word = word.toUpperCase();
 			int score = 0;
 			for (int i = 0; i < word.length(); i++) {
-				String letter = language.applyMandatorySuffix(String.valueOf(word.charAt(i)));
+				// Manually iterating over characters of a word here, so we are responsible for ensuring that any
+				// mandatory suffix is applied for each letter.
+				String letter = language.applyMandatorySuffix(String.valueOf(word.charAt(i)).toLowerCase());
 				score += language.getPointsForLetter(letter);
 
 				// Advance the counter so that we can skip over any suffixes.
