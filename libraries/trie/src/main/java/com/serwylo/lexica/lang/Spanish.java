@@ -41,7 +41,9 @@ public class Spanish extends Language {
         letterPoints.put("v", 4);
         letterPoints.put("y", 4);
 
-        letterPoints.put("q", 5);
+        // "q" is normally 10, but we always have a "u" next to the "q", so it isn't as difficult
+        // to incorporate into words when present.
+        letterPoints.put("qu", 5);
 
         letterPoints.put("j", 8);
         letterPoints.put("ñ", 8);
@@ -49,9 +51,9 @@ public class Spanish extends Language {
 
         letterPoints.put("z", 1);
 
-        // Left out of Scrabble scoring, so look at the probabilities used in this game
-        // (i.e. letters_es.txt) and find other letters which have similar frequencies. Base
-        // the scores on that.
+        // TODO: These are not included in Scrabble.
+        // Indeed, they are only used for loanwords.
+        // Should probably look at the CrossWords app and see how they deal with these tiles.
         letterPoints.put("k", 2);
         letterPoints.put("w", 2);
     }

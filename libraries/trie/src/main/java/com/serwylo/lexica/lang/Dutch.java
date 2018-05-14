@@ -54,7 +54,9 @@ public class Dutch extends Language {
         letterPoints.put("x", 8);
         letterPoints.put("y", 8);
 
-        letterPoints.put("q", 10);
+        // "q" is normally 10, but we always have a "u" next to the "q", so it isn't as difficult
+        // to incorporate into words when present.
+        letterPoints.put("qu", 5);
     }
 
     @Override

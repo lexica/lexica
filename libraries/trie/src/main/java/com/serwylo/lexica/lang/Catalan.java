@@ -7,6 +7,7 @@ import java.util.Map;
 /**
  * TODO: Mandatory _prefix_ for "y", resulting in "ny".
  * Both of "qu" + "ny" are from https://en.wikipedia.org/wiki/Catalan_orthography#Alphabet.
+ * However, at this time Lexica only supports suffixes, not prefixes.
  */
 public class Catalan extends Language {
 
@@ -47,13 +48,18 @@ public class Catalan extends Language {
 
         letterPoints.put("h", 8);
         letterPoints.put("j", 8);
-        letterPoints.put("q", 8);
         letterPoints.put("z", 8);
+
+        // "q" is normally 8, but we always have a "u" next to the "q", so it isn't as difficult
+        // to incorporate into words when present.
+        letterPoints.put("qu", 4);
 
         letterPoints.put("ç", 10);
         letterPoints.put("x", 10);
 
         // TODO: These are not included in Scrabble.
+        // Indeed, they are only used for loanwords.
+        // Should probably look at the CrossWords app and see how they deal with these tiles.
         letterPoints.put("k", 5);
         letterPoints.put("w", 5);
         letterPoints.put("y", 5);

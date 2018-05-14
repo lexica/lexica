@@ -41,7 +41,7 @@ public abstract class Language {
      * so even though both German and English both have the letter "e", their score may differ
      * for each language.
      *
-     * TODO: Does the argument contain a mandatory suffix?
+     * @param letter Does NOT contain mandatory suffix.
      */
     public final int getPointsForLetter(String letter) {
         String lowerCaseLetter = letter.toLowerCase();

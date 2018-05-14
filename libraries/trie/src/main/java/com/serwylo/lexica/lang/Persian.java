@@ -9,7 +9,7 @@ public class Persian extends Language {
     private static Map<String, Integer> letterPoints = new HashMap<>();
 
     // This is absolutely the wrong thing to do, because it is taken from the Arabic Scrabble scores.
-    // The Wikipedia page on international Scrabble scores (https://en.wikipedia.org/wiki/Scrabble_letter_distributions).
+    // The Wikipedia page on international Scrabble scores is (https://en.wikipedia.org/wiki/Scrabble_letter_distributions).
     // The solution should probably be to implement some form of algorithm to calculate scores
     // based on frequency in the dictionary.
     static {
