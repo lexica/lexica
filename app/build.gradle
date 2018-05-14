@@ -40,5 +40,7 @@ dependencies {
 
 afterEvaluate {
     assembleDebug.dependsOn rootProject.buildDictionaries
-    assembleRelease.dependsOn rootProject.buildDictionaries
+    if (tasks.findByPath('assembleRelease')) {
+        assembleRelease.dependsOn rootProject.buildDictionaries
+    }
 }
