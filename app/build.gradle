@@ -6,6 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.serwylo.lexica"
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
 
     lintOptions {
@@ -36,9 +37,14 @@ dependencies {
     compile 'com.android.support:support-annotations:23.1.1'
 
     testCompile "junit:junit:4.11"
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
 }
 
 afterEvaluate {
     assembleDebug.dependsOn rootProject.buildDictionaries
-    assembleRelease.dependsOn rootProject.buildDictionaries
+    if (tasks.findByPath('assembleRelease')) {
+        assembleRelease.dependsOn rootProject.buildDictionaries
+    }
 }

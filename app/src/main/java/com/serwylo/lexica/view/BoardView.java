@@ -131,15 +131,16 @@ public class BoardView extends View {
 		// Draw letters
 		for (int x = 0; x < board.getWidth(); x++) {
 			for (int y = 0; y < board.getWidth(); y++) {
-				String txt = game.getLanguage().toDisplay(board.elementAt(x, y));
+				String letter = board.elementAt(x, y);
+				String letterForDisplay = game.getLanguage().toDisplay(letter);
 				p.setTextSize(textSize);
 				p.setTextAlign(Paint.Align.CENTER);
-				canvas.drawText(txt,
+				canvas.drawText(letterForDisplay,
 						(paddingSize / 2) + (x * boxsize) + (boxsize / 2),
 						paddingSize + (y * boxsize) + (boxsize / 2) - offset,
 						p);
 				if (Game.SCORE_LETTERS.equals(scoreType)) {
-					String score = String.valueOf(Game.letterPoints(txt));
+					String score = String.valueOf(game.getLanguage().getPointsForLetter(letter));
 					p.setTextSize(textSize / 4);
 					p.setTextAlign(Paint.Align.RIGHT);
 					canvas.drawText(score,

@@ -1,6 +1,7 @@
 package com.serwylo.lexica.lang;
 
 import java.util.Locale;
+import java.util.Map;
 
 public abstract class Language {
 
@@ -8,8 +9,10 @@ public abstract class Language {
 
     public abstract String getName();
 
+    protected abstract Map<String, Integer> getLetterPoints();
+
     /**
-     * Beta languages are thouse which have not been properly play tested.
+     * Beta languages are those which have not been properly play tested.
      * When adding a new language, override and return true to show feedback to the user that the
      * dictionary is still in beta.
      */
@@ -32,6 +35,23 @@ public abstract class Language {
      * it doesn't make sense to ever have a "q" by itself.
      */
     public abstract String applyMandatorySuffix(String value);
+
+    /**
+     * Each "letter" tile has a score. This score distribution is unique amoung different languages,
+     * so even though both German and English both have the letter "e", their score may differ
+     * for each language.
+     *
+     * @param letter Does NOT contain mandatory suffix.
+     */
+    public final int getPointsForLetter(String letter) {
+        String lowerCaseLetter = letter.toLowerCase();
+        Integer points = getLetterPoints().get(lowerCaseLetter);
+        if (points == null) {
+            throw new IllegalArgumentException("Language " + getName() + " doesn't have a point value for the " + lowerCaseLetter + " tile");
+        }
+
+        return points;
+    }
 
     /**
      * The name of the trie file, relative to the `assets/` directory.

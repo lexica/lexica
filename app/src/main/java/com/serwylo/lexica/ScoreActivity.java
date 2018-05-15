@@ -216,8 +216,10 @@ public class ScoreActivity extends TabActivity {
 	}
 
 	private void addMissedWord(ViewGroup vg, Solution solution) {
-		String w = solution.getWord().toUpperCase();
-		int points = game.getWordScore(w);
+		String word = solution.getWord();
+		int points = game.getWordScore(word);
+
+		String wordForDisplay = word.toUpperCase();
 
 		LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.HORIZONTAL);
@@ -231,7 +233,7 @@ public class ScoreActivity extends TabActivity {
 		tv1.setLayoutParams(text1Lp);
 		tv1.setTextSize(16);
 		tv1.setTextColor(0xff000000);
-		tv1.setText(w);
+		tv1.setText(wordForDisplay);
 
 		ViewGroup.LayoutParams text2Lp = new LinearLayout.LayoutParams(
 			ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -256,7 +258,7 @@ public class ScoreActivity extends TabActivity {
 		tv3.setTextColor(0xff000000);
 		tv3.setText(R.string.define_word);
 
-		tv3.setOnClickListener(new DefinerListener(w));
+		tv3.setOnClickListener(new DefinerListener(word));
 		tv3.setFocusable(true);
 
 		//Score

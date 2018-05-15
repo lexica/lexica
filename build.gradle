@@ -61,6 +61,7 @@ languages.each { lang ->
                 file('app/src/main/res/raw/'),
                 file('app/src/test/resources/'),
         ]
+        outputs.dir("assets/dictionaries/dictionary_${lang}.txt")
     }
 
     buildDictionaries.dependsOn << langTask
