@@ -25,7 +25,12 @@ public class Synchronizer implements Runnable {
 	@SuppressWarnings("unused")
 	private static String TAG = "Synchronizer";
 
-	public static final int TICK_FREQ = 10;
+	/**
+	 * Anything less than 15 ticks will result in the Android Espresso framework thinking that
+	 * the game is in a continuous loop, rather than idling. There are "correct" ways to fix this
+	 * using IdlingResources, but changing it so it is at least 15 high is the simplest.
+	 */
+	public static final int TICK_FREQ = 15;
 
 	public interface Counter {
 		int tick();
