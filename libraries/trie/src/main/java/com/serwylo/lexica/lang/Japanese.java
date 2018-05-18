@@ -14,23 +14,33 @@ public class Japanese extends Language {
         letterPoints.put("い", 1);
         letterPoints.put("ぃ", 1);
         letterPoints.put("う", 1);
+        letterPoints.put("ゔ", 1);
         letterPoints.put("ぅ", 1);
         letterPoints.put("か", 1);
         letterPoints.put("し", 1);
+        letterPoints.put("じ", 1);
         letterPoints.put("た", 1);
+        letterPoints.put("だ", 1);
         letterPoints.put("て", 1);
+        letterPoints.put("で", 1);
         letterPoints.put("と", 1);
+        letterPoints.put("ど", 1);
         letterPoints.put("の", 1);
         letterPoints.put("ん", 1);
 
         letterPoints.put("き", 2);
         letterPoints.put("く", 2);
+        letterPoints.put("ぐ", 2);
         letterPoints.put("こ", 2);
+        letterPoints.put("ご", 2);
         letterPoints.put("つ", 2);
+        letterPoints.put("づ", 2);
         letterPoints.put("っ", 2);
         letterPoints.put("な", 2);
         letterPoints.put("に", 2);
         letterPoints.put("は", 2);
+        letterPoints.put("ば", 2);
+        letterPoints.put("ぱ", 2);
         letterPoints.put("よ", 2);
         letterPoints.put("ょ", 2);
         letterPoints.put("れ", 2);
@@ -38,8 +48,11 @@ public class Japanese extends Language {
         letterPoints.put("あ", 3);
         letterPoints.put("ぁ", 3);
         letterPoints.put("け", 3);
+        letterPoints.put("げ", 3);
         letterPoints.put("す", 3);
+        letterPoints.put("ず", 3);
         letterPoints.put("せ", 3);
+        letterPoints.put("ぜ", 3);
         letterPoints.put("も", 3);
         letterPoints.put("り", 3);
         letterPoints.put("る", 3);
@@ -48,18 +61,27 @@ public class Japanese extends Language {
         letterPoints.put("ら", 3);
 
         letterPoints.put("さ", 4);
+        letterPoints.put("ざ", 4);
         letterPoints.put("そ", 4);
+        letterPoints.put("ぞ", 4);
         letterPoints.put("ち", 4);
+        letterPoints.put("ぢ", 4);
         letterPoints.put("ま", 4);
 
         letterPoints.put("お", 5);
         letterPoints.put("ぉ", 5);
         letterPoints.put("ひ", 5);
+        letterPoints.put("び", 5);
+        letterPoints.put("ぴ", 5);
         letterPoints.put("ふ", 5);
+        letterPoints.put("ぶ", 5);
+        letterPoints.put("ぷ", 5);
         letterPoints.put("ゆ", 5);
         letterPoints.put("ゅ", 5);
 
         letterPoints.put("ほ", 6);
+        letterPoints.put("ぼ", 6);
+        letterPoints.put("ぽ", 6);
         letterPoints.put("め", 6);
         letterPoints.put("や", 6);
         letterPoints.put("ゃ", 6);
@@ -67,6 +89,8 @@ public class Japanese extends Language {
         letterPoints.put("え", 8);
         letterPoints.put("ぇ", 8);
         letterPoints.put("へ", 8);
+        letterPoints.put("べ", 8);
+        letterPoints.put("ぺ", 8);
         letterPoints.put("み", 8);
 
         letterPoints.put("ね", 10);
@@ -75,39 +99,16 @@ public class Japanese extends Language {
 
         letterPoints.put("ぬ", 12);
 
-        // All the tiles below were not directly listed in the wikipedia article. But rather, they
-        // are variations of the above with diacritics added (and perhaps other variations?).
+        // After moving the "small letters" and the kanji with diacritics, this is
+        // the remaining pieces that I don't have the knowledge (or wikipedia skills)
+        // to figure out.
         letterPoints.put("ゐ", 1);
         letterPoints.put("ゑ", 1);
         letterPoints.put("を", 1);
-        letterPoints.put("ゔ", 1);
         letterPoints.put("〜", 1);
         letterPoints.put("が", 1);
         letterPoints.put("ぎ", 1);
-        letterPoints.put("ぐ", 1);
-        letterPoints.put("げ", 1);
-        letterPoints.put("ご", 1);
-        letterPoints.put("ざ", 1);
-        letterPoints.put("じ", 1);
-        letterPoints.put("ず", 1);
-        letterPoints.put("ぜ", 1);
-        letterPoints.put("ぞ", 1);
-        letterPoints.put("だ", 1);
-        letterPoints.put("ぢ", 1);
-        letterPoints.put("づ", 1);
-        letterPoints.put("で", 1);
-        letterPoints.put("ど", 1);
-        letterPoints.put("ば", 1);
-        letterPoints.put("ぱ", 1);
-        letterPoints.put("び", 1);
-        letterPoints.put("ぴ", 1);
-        letterPoints.put("ぶ", 1);
-        letterPoints.put("ぷ", 1);
-        letterPoints.put("べ", 1);
-        letterPoints.put("ぺ", 1);
-        letterPoints.put("ぼ", 1);
         letterPoints.put("ー", 1);
-        letterPoints.put("ぽ", 1);
     }
 
     @Override
