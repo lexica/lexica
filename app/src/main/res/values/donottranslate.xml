@@ -10,6 +10,7 @@
 		<item>@string/pref_dict_it</item>
 		<item>@string/pref_dict_ca</item>
 		<item>@string/pref_dict_nl</item>
+		<item>@string/pref_dict_jp</item>
 	</string-array>
 	<string-array name="dict_choices_entryvalues">
 		<item>US</item>
@@ -25,6 +26,7 @@
 		<item>it</item>
 		<item>ca</item>
 		<item>nl</item>
+		<item>jp</item>
 	</string-array>
 
 	<string-array name="board_size_choices_entries">

@@ -117,6 +117,9 @@ public abstract class Language {
             case "es":
                 return new Spanish();
 
+            case "jp":
+                return new Japanese();
+
             default:
                 return null;
         }
