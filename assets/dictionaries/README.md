@@ -2,6 +2,22 @@
 
 ## Adding new languages
 
+### Brief introduction
+
+This is not meant to be comprehensive, but it should at least touch on the main aspects of adding a language.
+
+1) Add a dictionary file (`./tools/add-lang.sh de DE`). Will require teh relevant GNU ASpell library to be installed.
+2) Make the Gradle build aware of the language (Add `"de_DE",` to the `languages` array in `build.gradle`)
+4) Generate a trie representation of that dictionary file (`./gradlew buildDictionary_de`)
+5) Generate a random letter distribution (`./gradlew analyseLanguage_de`). This will generate several potential dists and put them in `/tmp`
+6) Pick the best distribution (typically the one with the highest "score", but I also care a lot about the min + median number of words)
+7) Remove the first line of text from the file (this is here so even if the file is renamed, it includes the score details)
+8) Rename it to `letters_LANG.txt` (e.g. `letters_de_DE.txt`)
+9) Copy this renamed file to `app/src/test/` and `app/src/main/res/raw/`
+10) Edit `donottranslate.xml`, adding to `dict_choices_entryvalues` and `dict_choices_entries` (the latter will also require an entry in `strings.xml`
+11) Add a new test to `GenerateLanguageBoards` (looking at existing tests for inspiration))
+12) Run the new test (`./gradlew connectedCheck`)
+
 ### Obtaining a dictionary
 
 This project uses the GNU Aspell project to obtain dictionaries.
@@ -15,6 +31,10 @@ in practice it is so unlikely as to cause problems when generating new random bo
 The reason is that it is hard to measure how successful a board generator is if the vast majority of
 words in a language are very long (e.g. in German).
 
+Other dictionaries have also been included, such as the Japanese dictionary. This comes to us from
+the [JMdict project](http://www.edrdg.org/jmdict/j_jmdict.html) and used under the
+[CC-BY-SA-3.0 license](http://www.edrdg.org/edrdg/licence.html). This was made possible from the
+work of [@wichmann](https://github.com/wichmann) [here](https://github.com/lexica/lexica/issues/36#issuecomment-388008561).
 
 ### Anatomy of a random board generator in Lexica
 
@@ -53,7 +73,7 @@ without a way to generate them.
 This version of Lexica includes a genetic algorithm which will attempt to produce these probability
 distributions with the best properties, namely:
 
- * Random boards generated from them tend to have lots of words
+> Random boards generated from them tend to have lots of words
 
 The genetic algorithm will start by seeding some random genomes, where a gene is represented by a single line
 (e.g. `e 24 12 3 1 1`).
