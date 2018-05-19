@@ -1,2 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Lexica</string>
+
+    <string name="new_game">Nytt spill</string>
+    <string name="restore_game">Gjenopprett spill</string>
+	<string name="prefs">Innstillinger</string>
+
+	<string name="pref_dict">Ordbok</string>
+	<string name="pref_dict_summary">Velg ordbok å bruke</string>
+	<string name="pref_dict_dialog">Velg ordbok</string>
+	<string name="pref_dict_us">Engelsk (USA)</string>
+	<string name="pref_dict_uk">Engelsk (UK)</string>
+
+	<string name="pref_boardSize">Brettstørrelse</string>
+	<string name="pref_boardSize_summary">Velg en brettstørrelse</string>
+	<string name="pref_boardSize_dialog">Velg brettstørrelse</string>
+
+	<string name="pref_timeLimit">Tidsgrense</string>
+	<string name="pref_timeLimit_summary">Velg en tidsgrense</string>
+	<string name="pref_timeLimit_dialog">Velg tidsgrense</string>
+	<string name="time_3m">Tre minutter</string>
+	<string name="time_5m">Fem minutter</string>
+	<string name="time_10m">Ti minutter</string>
+	<string name="time_20m">20 minutter</string>
+	<string name="time_30m">Én halvtime</string>
+
+	<string name="pref_scoreType">Poengivningstype</string>
+	<string name="pref_scoreType_summary">Velg poenggivningstype</string>
+	<string name="pref_scoreType_dialog">Velg peonggivningstype</string>
+	<string name="word_length">Ordlengde</string>
+	<string name="letter_points">Bokstavpoeng</string>
+
+	<string name="pref_sounds">Lyder påskrudd</string>
+	<string name="pref_sounds_summary">Hvorvidt eller ei lydeffekter er påskrudd</string>
+
+	<string name="dialog_no_saved">Det er ingen lagrede spill. Hvis du kan lese denne meldingen, har antagelig noe gått i stykker.</string>
+	<string name="dialog_ok">OK</string>
+	<string name="dialog_cancel">Avbryt</string>
+
+	<string name="dialog_about_title">Om Lexica</string>
+	<string name="dialog_about_content">Trykk på skjermen og flytt fingeren til hosliggende firkanter for å stave ord. Du har tre minutter på å finne så mange ord som mulig.
+\n
+\nPoenggivning:
+\nPå 4x4-brett må ord være minst tre bokstaver lange. På 5x5-brett, må de være minst fire bokstaver lange. Ord som har tre eller fire bokstaver er verdt ett poeng. Lengre ord er verd flere peng. Egennavn telles ikke.
+\n
+\n</string>
+
+	<string name="menu_rotate_board">Roter brettet</string>
+	<string name="menu_save_game">Lagre spill</string>
+	<string name="menu_end_game">Fullfør spillet</string>
+	<string name="button_ok">OK</string>
+
+	<string name="about">Om</string>
+
+	<string name="show_missed">Vis oversette ord</string>
+	<string name="hide_missed">Skjul oversette ord</string>
+
+	<string name="show_unique">Vis unike ord</string>
+	<string name="hide_unique">Skjul unike ord</string>
+
+	<string name="view_word"><u>Vis</u></string>
+	<string name="define_word"><u>Definer</u> </string>
+
+	<string name="words">ORD</string>
+	<string name="score">POENGSUM</string>
+	<string name="found_words">Funnede ord</string>
+	<string name="missed_words">Oversette ord</string>
+	<string name="total_words">Totalt antall ord:</string>
+	<string name="total_score">Total poengsum:</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+
+	<string name="high_score">Høyeste poengsum: %1$d</string>
+	<string name="pref_resetScores_summary">Høyeste poengsum spores for hver kombinasjon av ovennevnte innstillinger. Trykk for å tilbakestille alle poengsummer til null.</string>
+	<string name="pref_resetScores">Tilbakestill bestenoteringsliste</string>
+    <string name="high_scores_reset">Bestenoteringslisten har blitt tilbakestilt.</string>
+	<string name="reset_scores_prompt">Er du sikker på at du ønsker å tilbakestille alle bestenoteringslister til null?</string>
+
+    <string name="pref_breakdown">Vis inndeling av ordlengde</string>
+	<string name="pref_breakdown_summary">Hvorvidt eller ei ordtellingen viser ord etter ordlengde</string>
+
+	<string name="pref_definitionProvider">Definisjonstilbyder</string>
+	<string name="pref_definitionProvider_summary">Velg en definisjonstilbyder å bruke. Hvis valg definisjonstilbyder ikke er installert, vil DuckDuckGo bli brukt.</string>
+	<string name="pref_definitionProvider_dialog">Velg definisjonstilbyder</string>
+<string name="pref_dict_de_de">Tysk</string>
+	<string name="pref_dict_nl">Nederlandsk</string>
+	<string name="pref_dict_fr_fr">Fransk</string>
+	<string name="pref_dict_it">Italiensk</string>
+	<string name="pref_dict_ca">Katalansk</string>
+	<string name="pref_dict_es">Spansk</string>
+	<string name="pref_dict_beta">%1$s (beta)</string>
+
+	<string name="pref_dict_fa">Farsi</string>
+	</resources>

@@ -1,20 +1,24 @@
 package net.healeys.trie;
 
+import com.serwylo.lexica.lang.Language;
+
 import java.io.IOException;
 import java.io.OutputStream;
 
-public interface TrieNode {
+public abstract class TrieNode {
 
-	void writeNode(OutputStream out) throws IOException;
+	protected Language language;
 
-	TrieNode addSuffix(String word, int currentPosition, boolean usWord, boolean ukWord);
+	public TrieNode(Language language) {
+		this.language = language;
+	}
 
-	boolean usWord();
+	public abstract void writeNode(OutputStream out) throws IOException;
 
-	boolean ukWord();
+	public abstract TrieNode addSuffix(String word, int currentPosition);
 
-	boolean isTail();
+	public abstract boolean word();
 
-	boolean isWord(String word, int currentPosition, boolean usWord, boolean ukWord);
+	public abstract boolean isTail();
 
 }

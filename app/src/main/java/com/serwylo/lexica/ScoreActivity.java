@@ -25,7 +25,6 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,7 +47,7 @@ public class ScoreActivity extends TabActivity {
 
 	private static final String TAG = "ScoreActivity";
 
-	public static final String DEFINE_URL = "http://www.google.com/search?q=define%3a+";
+	public static final String DEFINE_URL = "https://duckduckgo.com/?ia=definition&q=define+";
 	public static final String SCORE_PREF_FILE = "prefs_score_file";
 
 	private Game game;
@@ -61,7 +60,7 @@ public class ScoreActivity extends TabActivity {
      	super.onCreate(savedInstanceState);
 
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		definitionProvider = prefs.getString("definitionProvider", "google");
+		definitionProvider = prefs.getString("definitionProvider", "duckduckgo");
 
 		if(savedInstanceState != null) {
 			game = new Game(this, new GameSaverTransient(savedInstanceState));
@@ -80,7 +79,7 @@ public class ScoreActivity extends TabActivity {
 		host.addTab(host.newTabSpec("missed").setIndicator(getString(R.string.missed_words)).setContent(R.id.missed_words));
 
 		bv = (BoardView) findViewById(R.id.missed_board);
-		bv.setBoard(game.getBoard());
+		bv.setGame(game);
 		bv.setScoreType(game.getScoreType());
 
 		Set<String> possible = game.getSolutions().keySet();
@@ -217,8 +216,10 @@ public class ScoreActivity extends TabActivity {
 	}
 
 	private void addMissedWord(ViewGroup vg, Solution solution) {
-		String w = solution.getWord().toUpperCase();
-		int points = game.getWordScore(w);
+		String word = solution.getWord();
+		int points = game.getWordScore(word);
+
+		String wordForDisplay = word.toUpperCase();
 
 		LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.HORIZONTAL);
@@ -232,7 +233,7 @@ public class ScoreActivity extends TabActivity {
 		tv1.setLayoutParams(text1Lp);
 		tv1.setTextSize(16);
 		tv1.setTextColor(0xff000000);
-		tv1.setText(w);
+		tv1.setText(wordForDisplay);
 
 		ViewGroup.LayoutParams text2Lp = new LinearLayout.LayoutParams(
 			ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -257,7 +258,7 @@ public class ScoreActivity extends TabActivity {
 		tv3.setTextColor(0xff000000);
 		tv3.setText(R.string.define_word);
 
-		tv3.setOnClickListener(new DefinerListener(w));
+		tv3.setOnClickListener(new DefinerListener(word));
 		tv3.setFocusable(true);
 
 		//Score

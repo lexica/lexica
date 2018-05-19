@@ -68,7 +68,7 @@
 		android:summary="@string/pref_definitionProvider_summary"
 		android:entries="@array/definition_provider_choices_entries"
 		android:entryValues="@array/definition_provider_choices_entryvalues"
-		android:defaultValue="google"
+		android:defaultValue="duckduckgo"
 		android:dialogTitle="@string/pref_definitionProvider_dialog"
 		/>
 

@@ -8,8 +8,8 @@
 	<string name="pref_dict">辞書</string>
 	<string name="pref_dict_summary">使用する辞書を選択します</string>
 	<string name="pref_dict_dialog">辞書を選択</string>
-	<string name="pref_dict_us">アメリカ合衆国</string>
-	<string name="pref_dict_uk">イギリス</string>
+	<string name="pref_dict_us">英語 (US)</string>
+	<string name="pref_dict_uk">英語 (UK)</string>
 
 	<string name="pref_boardSize">ボード サイズ</string>
 	<string name="pref_boardSize_summary">ボードのサイズを選択します</string>
@@ -77,6 +77,10 @@
     <string name="pref_breakdown">単語の長さの内訳を表示</string>
 	<string name="pref_breakdown_summary">単語の長さごとにカウントを表示するかどうか</string>
 <string name="pref_definitionProvider">定義プロバイダー</string>
-	<string name="pref_definitionProvider_summary">使用する定義プロバイダーを選択します。選択したプロバイダーがインストールされていない場合は、Google が使用されます。</string>
+	<string name="pref_definitionProvider_summary">使用する定義プロバイダーを選択します。選択したプロバイダーがインストールされていない場合は、DuckDuckGo が使用されます。</string>
 	<string name="pref_definitionProvider_dialog">定義プロバイダーを選択</string>
-</resources>
+<string name="pref_dict_de_de">ドイツ語 (DE)</string>
+	<string name="pref_dict_nl">オランダ語</string>
+	<string name="pref_dict_beta">%1$s (ベータ)</string>
+
+	</resources>

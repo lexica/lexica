@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="new_game">เริ่มเกม</string>
+    <string name="prefs">ตั้งค่า</string>
+
+	<string name="pref_dict">พจนาณุกรม</string>
+	<string name="pref_dict_summary">เลือกพจนาณุกรมที่จะใช้</string>
+	<string name="pref_dict_us">สหรัฐอเมริกา</string>
+	<string name="pref_dict_uk">สหราชอาณาจักร</string>
+
+	<string name="pref_boardSize">ขนาดกระดาน</string>
+	</resources>

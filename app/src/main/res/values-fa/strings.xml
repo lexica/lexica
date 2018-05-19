@@ -6,7 +6,7 @@
 	<string name="prefs">تنظیمات</string>
 
 	<string name="pref_dict">واژه‌نامه</string>
-	<string name="pref_dict_summary">یک واژه‌نامه را استفاده انتخاب نمایید</string>
+	<string name="pref_dict_summary">واژه‌نامه‌ای را برای استفاده انتخاب نمایید</string>
 	<string name="pref_dict_dialog">انتخاب واژه‌نامه</string>
 	<string name="pref_dict_us">انگلیسی آمریکایی</string>
 	<string name="pref_dict_uk">انگلیسی بریتانیایی</string>
@@ -27,24 +27,18 @@
 	<string name="pref_sounds">با صدا</string>
 	<string name="pref_sounds_summary">صدای بازی فعال است یا خیر</string>
 
-	<string name="dialog_no_saved">بازی ذخیره شده‌ای وجد ندارد. اگر این پیام را می‌خوانید، احتمالا مشکلی بوجود آمده.</string>
+	<string name="dialog_no_saved">بازی ذخیره شده‌ای وجود ندارد. اگر توانستید این پیام را بخوانید، احتمالاً یک جای کار می‌لنگد.</string>
 	<string name="dialog_ok">باشه</string>
 	<string name="dialog_cancel">بی‌خیال</string>
 
 	<string name="dialog_about_title">دربارهٔ لکسیکا</string>
-	<string name="dialog_about_content">"
- با لمس صفحهٔ نمایش و حرکت انگشتتان به مربع‌های مجاور واژه‌ها را مشخص کنید.
-سه دقیقه زمان دارید تا بیشترین واژهٔ ممکن را بیابید.
-
-
-امتیازدهی:
-
-در صفحهٔ ۴ در ۴، واژه‌ها باید دست‌کم سه حرفی باشند. در صفحهٔ ۵ در ۵ واژه‌ها باید دست‌کم چهار حرفی باشند.
-واژه‌های سه یا چهار حرفی یک امتیاز دارند. واژه‌های طولانی‌تر امتیاز بیشتری دارند.
-اسامی خاص جزو واژگان نمی‌باشند.
-
-
- "</string>
+	<string name="dialog_about_content">صفحه را لمس کنید و انگشت‌تان را به مربع‌های مجاور ببرید تا واژه‌ها را هجی کنید. سه دقیقه زمان دارید تا بیشترین واژهٔ ممکن را بیابید.
+\n
+\nامتیازگیری:
+\n
+\nدر صفحهٔ ۴ در ۴، واژه‌ها باید دست‌کم سه حرفی باشند. در صفحهٔ ۵ در ۵ واژه‌ها باید دست‌کم چهار حرفی باشند. واژه‌های سه یا چهار حرفی یک امتیاز دارند. واژه‌های طولانی‌تر امتیاز بیشتری دارند. اسامی خاص جزو واژگان نمی‌باشند.
+\n
+\n</string>
 
 	<string name="menu_rotate_board">چرخاندن صفحه</string>
 	<string name="menu_save_game">ذخیرهٔ بازی</string>
@@ -66,6 +60,25 @@
 	<string name="found_words">واژه‌های پیدا شده</string>
 	<string name="missed_words">واژه‌های پیدا نشده</string>
 	<string name="total_words">تمامی واژه‌ها:</string>
-	<string name="total_score">امتیازکل:</string>
+	<string name="total_score">امتیاز کل:</string>
 	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+<string name="pref_scoreType">نوع امتیازگیری</string>
+	<string name="pref_scoreType_summary">یک نوع امتیازگیری انتخاب کنید</string>
+	<string name="pref_scoreType_dialog">انتخاب نوع امتیازگیری</string>
+	<string name="word_length">طول واژه</string>
+	<string name="letter_points">امتیاز هر حرف</string>
+
+	<string name="score">امتیاز</string>
+	<string name="high_score">امتیاز بالا: %1$d</string>
+	<string name="pref_resetScores_summary">امتیازات برتر برای هر ترکیبی از تنظیمات بالا دنبال می‌شوند. برای بازنشانی همهٔ امتیازات به صفر، ضربه بزنید.</string>
+	<string name="pref_resetScores">بازنشانی امتیازهای برتر</string>
+    <string name="high_scores_reset">امتیازهای برتر بازنشانی شده است.</string>
+	<string name="reset_scores_prompt">آیا مطمئن هستید که می‌خواهید همهٔ امتیازهای برتر را برای همهٔ حالت‌های بازی صفر کنید؟</string>
+
+    <string name="pref_breakdown">نمایش تفکیک طول واژه</string>
+	<string name="pref_breakdown_summary">که آیا شمارندهٔ واژه شماره‌ها را بر اساس طول واژه نمایش دهد یا خیر</string>
+
+	<string name="pref_definitionProvider">ارائه‌دهندهٔ تعریف</string>
+	<string name="pref_definitionProvider_summary">یک ارائه‌دهندهٔ تعریف برای استفاده انتخاب کنید. اگر ارائه‌دهندهٔ انتخابی نصب نبود، گوگل استفاده خواهد شد.</string>
+	<string name="pref_definitionProvider_dialog">انتخاب ارائه‌دهندهٔ تعریف</string>
 </resources>

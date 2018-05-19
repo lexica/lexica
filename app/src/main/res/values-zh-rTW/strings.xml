@@ -6,38 +6,38 @@
 	<string name="prefs">設定</string>
 
 	<string name="pref_dict">字典</string>
-	<string name="pref_dict_summary">選擇遊戲的字典</string>
-	<string name="pref_dict_dialog">選澤字典</string>
-	<string name="pref_dict_us">美式英語</string>
-	<string name="pref_dict_uk">英式英語</string>
+	<string name="pref_dict_summary">選擇遊戲字典</string>
+	<string name="pref_dict_dialog">選擇字典</string>
+	<string name="pref_dict_us">美式英文</string>
+	<string name="pref_dict_uk">英式英文</string>
 
-	<string name="pref_boardSize">選澤圖版大小</string>
-	<string name="pref_boardSize_summary">圖版大小</string>
-	<string name="pref_boardSize_dialog">選澤大小</string>
+	<string name="pref_boardSize">圖版大小</string>
+	<string name="pref_boardSize_summary">選擇圖版大小</string>
+	<string name="pref_boardSize_dialog">選擇圖版大小</string>
 
 	<string name="pref_timeLimit">時限</string>
-	<string name="pref_timeLimit_summary">選擇時限</string>
-	<string name="pref_timeLimit_dialog">選擇時限</string>
-	<string name="time_3m">3 分鐘</string>
-	<string name="time_5m">5 分鐘</string>
-	<string name="time_10m">10 分鐘</string>
-	<string name="time_20m">20 分鐘</string>
-	<string name="time_30m">30 分鐘</string>
+	<string name="pref_timeLimit_summary">選擇時間限制</string>
+	<string name="pref_timeLimit_dialog">選擇時間限制</string>
+	<string name="time_3m">3分鐘</string>
+	<string name="time_5m">5分鐘</string>
+	<string name="time_10m">10分鐘</string>
+	<string name="time_20m">20分鐘</string>
+	<string name="time_30m">30分鐘</string>
 
-	<string name="pref_sounds">啟用音效</string>
+	<string name="pref_sounds">音效</string>
 	<string name="pref_sounds_summary">選擇遊戲會否發出音效</string>
 
-	<string name="dialog_no_saved">沒有儲存任何遊戲。如果您看到此訊息，遊戲很有可能發生了故障。</string>
+	<string name="dialog_no_saved">沒有儲存遊戲。如果您看到此訊息，遊戲很可能出現了問題。</string>
 	<string name="dialog_ok">確定</string>
 	<string name="dialog_cancel">取消</string>
 
-	<string name="dialog_about_title">關於 Lexica</string>
+	<string name="dialog_about_title">關於Lexica</string>
 	<string name="menu_rotate_board">旋轉圖版</string>
 	<string name="menu_save_game">儲存遊戲</string>
 	<string name="menu_end_game">結束遊戲</string>
 	<string name="button_ok">確定</string>
 
-	<string name="about">關於</string>
+	<string name="about">關於遊戲</string>
 
 	<string name="view_word"><u>查看</u></string>
 	<string name="define_word"><u>定義</u> </string>
@@ -47,18 +47,46 @@
 	<string name="total_words">總詞數：</string>
 	<string name="total_score">總分數：</string>
 	<string name="words">單詞</string>
-	<string name="show_missed">顯示遺漏的單詞</string>
-	<string name="hide_missed">隱藏遺漏的單詞</string>
+	<string name="show_missed">顯示您遺漏的單詞</string>
+	<string name="hide_missed">隱藏您遺漏的單詞</string>
 
 	<string name="hide_unique">隱藏獨特的單詞</string>
 
 	<string name="show_unique">顯示獨特的單詞</string>
-	<string name="dialog_about_content">您要在 3 分鐘之內嘗試拼出圖版內全部單詞。要拼出單詞，請先觸碰屏幕後移動至附近的方格。
-\n
-\n計分方式：
-\n在 4×4 的圖版上，單詞必須由至少 3 個字母組成；在 5×5 的圖版上，單詞必須由至少 4 個字母組成。由 3 個或 4 個字母組成的單詞記 1 分，找出更長的單詞將獲更高分，專名詞並不獲任何分數。
-\n
+	<string name="dialog_about_content">您要在3分鐘之內拼出圖版上所有單詞。要拼出單詞，請先觸碰螢幕後移動至相鄰的方格。 
+\n 
+\n計分方式： 
+\n在4×4的圖版上，單詞必須由至少3個字母組成；在5×5的圖版上，單詞必須由至少4個字母組成。由3個或4個字母組成的單詞記 1 分，找出更長的單詞將獲更高分。專名詞不計任何分數。 
+\n 
 \n</string>
 
-	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-</resources>
+	<string name="value_max_percentage">%1$d/%2$d（%3$d%%）</string>
+<string name="pref_scoreType">計分方式</string>
+	<string name="pref_scoreType_summary">選擇一套計分方式</string>
+	<string name="pref_scoreType_dialog">選擇計分方式</string>
+	<string name="word_length">單詞長度</string>
+	<string name="letter_points">字母分數</string>
+
+	<string name="score">分數</string>
+	<string name="high_score">高分紀錄：%1$d</string>
+	<string name="pref_resetScores_summary">遊戲為每個遊戲模式紀錄最高分，按此以重設所有分數紀錄至零分。</string>
+	<string name="pref_resetScores">重設高分紀錄</string>
+    <string name="high_scores_reset">您已重設高分紀錄。</string>
+	<string name="reset_scores_prompt">您確定要重設所有分數至零分？</string>
+
+    <string name="pref_breakdown">顯示單詞長度分析</string>
+	<string name="pref_breakdown_summary">選擇是否顯示圖版上各單詞的長度</string>
+
+	<string name="pref_definitionProvider">定義來源</string>
+	<string name="pref_definitionProvider_summary">選擇定義來源。如果您沒有安裝所選的定義來源，遊戲將使用DuckDuckGo的字典服務。</string>
+	<string name="pref_definitionProvider_dialog">選擇定義來源</string>
+<string name="pref_dict_de_de">德文</string>
+	<string name="pref_dict_nl">荷蘭文</string>
+	<string name="pref_dict_fa">波斯文</string>
+	<string name="pref_dict_fr_fr">法文</string>
+	<string name="pref_dict_it">義大利文</string>
+	<string name="pref_dict_ca">加泰隆尼亞文</string>
+	<string name="pref_dict_es">西班牙文</string>
+	<string name="pref_dict_beta">%1$s（測試中）</string>
+
+	</resources>

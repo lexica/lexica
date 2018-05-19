@@ -1,18 +1,25 @@
 package net.healeys.trie;
 
+import com.serwylo.lexica.lang.Language;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
 
-public interface Trie extends WordFilter {
-	void addWord(String w, boolean usWord, boolean ukWord);
+public abstract class Trie implements WordFilter {
 
-	boolean isWord(String w, boolean usWord, boolean ukWord);
+	protected Language language;
 
-	boolean isWord(String w);
+	public Trie(Language language) {
+		this.language = language;
+	}
 
-	void write(OutputStream out) throws IOException;
+	public abstract void addWord(String w);
 
-	Map<String,Solution> solver(TransitionMap m, WordFilter filter);
+	public abstract boolean isWord(String w);
+
+	public abstract void write(OutputStream out) throws IOException;
+
+	public abstract Map<String,Solution> solver(TransitionMap m, WordFilter filter);
 
 }

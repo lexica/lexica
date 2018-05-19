@@ -1,6 +1,14 @@
 package com.serwylo.lexica.trie.tests;
 
+import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.trie.util.LetterFrequency;
+
 import net.healeys.trie.TransitionMap;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Mock {@link TransitionMap} for testing, which only cares about the letters on the board, not
@@ -18,6 +26,22 @@ public class CanTransitionMap implements TransitionMap {
 
     CanTransitionMap(String[] letters) {
         this.letters = letters;
+    }
+
+    CanTransitionMap(LetterFrequency frequency, Language language) {
+        List<String> lettersList = new ArrayList<>(frequency.getLetters());
+
+        Map<String, String> mandatorySuffixes = new HashMap<>();
+        for (String letter : frequency.getLetters()) {
+            String letterWithSuffix = language.applyMandatorySuffix(letter);
+            if (!letterWithSuffix.equals(letter)) {
+                lettersList.remove(letter);
+                lettersList.add(letterWithSuffix);
+            }
+        }
+
+        this.letters = new String[lettersList.size()];
+        lettersList.toArray(this.letters);
     }
 
     CanTransitionMap() {

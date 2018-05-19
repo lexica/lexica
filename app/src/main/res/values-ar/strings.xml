@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">ليكسيكا</string>
+
+    <string name="new_game">لعبة جديدة</string>
+    <string name="restore_game">استعادة لعبة</string>
+	<string name="prefs">التفضيلات</string>
+
+	<string name="pref_dict">القاموس</string>
+	<string name="pref_dict_summary">إختر أي قاموس تود استخدامه</string>
+	<string name="pref_dict_us">الإنجليزية (الولايات المتحدة)</string>
+	<string name="pref_dict_uk">الإنجليزية (بريطانيا)</string>
+	<string name="pref_dict_de_de">الألمانية</string>
+	<string name="pref_dict_nl">الهولندية</string>
+	<string name="pref_dict_fa">الفارسية</string>
+	<string name="pref_dict_fr_fr">الفرنسية</string>
+	<string name="pref_dict_it">الإيطالية</string>
+	<string name="pref_dict_ca">الكتالونية</string>
+	<string name="pref_dict_es">الإسبانية</string>
+	<string name="pref_boardSize">حجم اللوح</string>
+	<string name="pref_boardSize_summary">قم بتحديد حجم اللوح</string>
+	<string name="pref_timeLimit">المهلة الزمنية</string>
+	<string name="pref_timeLimit_summary">تحديد مهلة زمنية</string>
+	<string name="time_3m">3 دقائق</string>
+	<string name="time_5m">5 دقائق</string>
+	<string name="time_10m">10 دقائق</string>
+	<string name="time_20m">20 دقيقة</string>
+	<string name="time_30m">30 دقيقة</string>
+
+	<string name="word_length">طول الكلمة</string>
+	<string name="dialog_ok">حَسَنًا</string>
+	<string name="dialog_cancel">إلغاء</string>
+
+	<string name="dialog_about_title">عن تطبيق ليكسيكا</string>
+	<string name="menu_rotate_board">تدوير اللوح</string>
+	<string name="menu_save_game">حفظ اللعبة</string>
+	<string name="menu_end_game">إنهاء اللعبة</string>
+	<string name="button_ok">موافق</string>
+
+	<string name="about">عنْ</string>
+
+	<string name="words">الكلمات</string>
+	<string name="score">النقاط</string>
+	<string name="total_words">مجموع الكلمات :</string>
+	<string name="total_score">مجموع النقاط :</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+
+	</resources>
