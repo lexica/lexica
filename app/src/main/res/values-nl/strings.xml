@@ -90,4 +90,6 @@ Op borden ter grootte van 4x4 moeten worden minimaal drie letters lang zijn. On 
 	<string name="pref_dict_ca">Catalaans</string>
 	<string name="pref_dict_es">Spaans</string>
 	<string name="pref_dict_fa">Perzisch</string>
+	<string name="pref_dict_jp">Japans</string>
+	<string name="pref_dict_ru">Russisch</string>
 	</resources>
