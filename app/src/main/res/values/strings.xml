@@ -18,6 +18,7 @@
 	<string name="pref_dict_it">Italian</string>
 	<string name="pref_dict_ca">Catalan</string>
 	<string name="pref_dict_es">Spanish</string>
+	<string name="pref_dict_jp">Japanese</string>
 	<string name="pref_dict_beta">%1$s (Beta)</string>
 
 	<string name="pref_boardSize">Board Size</string>

@@ -26,6 +26,7 @@ import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.EnglishUS;
 import com.serwylo.lexica.lang.French;
 import com.serwylo.lexica.lang.Italian;
+import com.serwylo.lexica.lang.Japanese;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.Persian;
 import com.serwylo.lexica.lang.Spanish;
@@ -74,6 +75,11 @@ public class GenerateLanguageBoards {
     @Test
     public void generateCatalanBoards() {
         generateLanguageBoards(new Catalan());
+    }
+
+    @Test
+    public void generateJapaneseBoards() {
+        generateLanguageBoards(new Japanese());
     }
 
     @Test
