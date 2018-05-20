@@ -29,6 +29,7 @@ import com.serwylo.lexica.lang.Italian;
 import com.serwylo.lexica.lang.Japanese;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.Persian;
+import com.serwylo.lexica.lang.Russian;
 import com.serwylo.lexica.lang.Spanish;
 
 import org.hamcrest.Description;
@@ -80,6 +81,11 @@ public class GenerateLanguageBoards {
     @Test
     public void generateJapaneseBoards() {
         generateLanguageBoards(new Japanese());
+    }
+
+    @Test
+    public void generateRussianBoards() {
+        generateLanguageBoards(new Russian());
     }
 
     @Test

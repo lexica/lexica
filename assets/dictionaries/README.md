@@ -6,17 +6,19 @@
 
 This is not meant to be comprehensive, but it should at least touch on the main aspects of adding a language.
 
-1) Add a dictionary file (`./tools/add-lang.sh de DE`). Will require teh relevant GNU ASpell library to be installed.
-2) Make the Gradle build aware of the language (Add `"de_DE",` to the `languages` array in `build.gradle`)
-4) Generate a trie representation of that dictionary file (`./gradlew buildDictionary_de`)
-5) Generate a random letter distribution (`./gradlew analyseLanguage_de`). This will generate several potential dists and put them in `/tmp`
-6) Pick the best distribution (typically the one with the highest "score", but I also care a lot about the min + median number of words)
-7) Remove the first line of text from the file (this is here so even if the file is renamed, it includes the score details)
-8) Rename it to `letters_LANG.txt` (e.g. `letters_de_DE.txt`)
-9) Copy this renamed file to `app/src/test/` and `app/src/main/res/raw/`
-10) Edit `donottranslate.xml`, adding to `dict_choices_entryvalues` and `dict_choices_entries` (the latter will also require an entry in `strings.xml`
-11) Add a new test to `GenerateLanguageBoards` (looking at existing tests for inspiration))
-12) Run the new test (`./gradlew connectedCheck`)
+* Add a dictionary file (`./add-lang.sh de DE`). Will require teh relevant GNU ASpell library to be installed.
+* Make the Gradle build aware of the language (Add `"de_DE",` to the `languages` array in `build.gradle`)
+* Generate a trie representation of that dictionary file (`./gradlew buildDictionary_de`)
+* Create a subclass of `Language` in the `libraries/trie` library.
+* Add your new subclass to the `switch` statement of the `fromOrNull()` method in the `Language` base class.
+* Generate a random letter distribution (`./gradlew analyseLanguage_de`). This will generate several potential dists and put them in `/tmp`
+* Pick the best distribution (typically the one with the highest "score", but I also care a lot about the min + median number of words)
+* Remove the first line of text from the file (this is here so even if the file is renamed, it includes the score details)
+* Rename it to `letters_LANG.txt` (e.g. `letters_de_DE.txt`)
+* Copy this renamed file to `app/src/test/` and `app/src/main/res/raw/`
+* Edit `donottranslate.xml`, adding to `dict_choices_entryvalues` and `dict_choices_entries` (the latter will also require an entry in `strings.xml`
+* Add a new test to `GenerateLanguageBoards` (looking at existing tests for inspiration))
+* Run the new test (`./gradlew connectedCheck`)
 
 ### Obtaining a dictionary
 
