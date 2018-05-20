@@ -90,4 +90,6 @@
 	<string name="pref_dict_beta">%1$s (beta)</string>
 
 	<string name="pref_dict_fa">Farsi</string>
+	<string name="pref_dict_jp">Japansk</string>
+	<string name="pref_dict_ru">Russisk</string>
 	</resources>
