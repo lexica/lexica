@@ -1,0 +1,20 @@
+New in 0.11.3:
+
+ * Added Japanese dictionary (thanks wichmann)
+ * Russian translation (thanks HenriDellal)
+
+Support for international dictionaries!
+
+ * English (UK)
+ * English (US)
+ * German (DE)
+ * French (FR)
+ * Spanish
+ * Italian
+ * Dutch
+ * Persian
+ * Catalan
+ * Japanese
+
+Most of these are still in beta, and will require better quality dictionaries in the future.
+Please provide any feedback or report any issues on the issue tracker at https://github.com/lexica/lexica/issues.
