@@ -40,8 +40,8 @@ public class GeneticAlgorithm {
      * fresh run with new random genomes this many times.
      */
     private static final int SEPARATE_RUNS = 5;
-    private static final int ITERATIONS = 2000;
-    private static final int NUM_OF_GENOMES = 30;
+    private static final int ITERATIONS = 1000;
+    private static final int NUM_OF_GENOMES = 20;
     private static final int BOARDS_TO_GENERATE_FOR_FITNESS_CALC = 100;
     private static final double RATE_OF_MUTATION = 0.05;
     private static final double RATE_OF_NEW_RANDOM_GENOMES = 0.05;
@@ -212,7 +212,7 @@ public class GeneticAlgorithm {
 
         private static InputStream trieReader(File trieDir, Language language) throws IOException {
             if (!cachedTries.containsKey(language)) {
-                byte[] buffer = new byte[1024 * 1024 * 5]; // 5MiB - Needs to be able to fit the largest "words_*.bin file in memory.
+                byte[] buffer = new byte[1024 * 1024 * 10]; // 10MiB - Needs to be able to fit the largest "words_*.bin file in memory.
 
                 File trieFile = new File(trieDir, language.getTrieFileName());
                 InputStream stream = new FileInputStream(trieFile);

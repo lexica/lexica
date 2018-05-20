@@ -120,6 +120,9 @@ public abstract class Language {
             case "jp":
                 return new Japanese();
 
+            case "ru":
+                return new Russian();
+
             default:
                 return null;
         }
