@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.serwylo.lexica"
-          android:versionCode="1103"
-          android:versionName="0.11.3">
+          android:versionCode="1104"
+          android:versionName="0.11.4">
 
     <uses-sdk
         android:minSdkVersion="8"
