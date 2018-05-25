@@ -89,4 +89,6 @@
 	<string name="pref_dict_es">西班牙文</string>
 	<string name="pref_dict_beta">%1$s（測試中）</string>
 
+	<string name="pref_dict_jp">日文</string>
+	<string name="pref_dict_ru">俄羅斯文</string>
 	</resources>
