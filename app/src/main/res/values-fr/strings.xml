@@ -86,4 +86,8 @@
 	<string name="pref_dict_es">Espagnol</string>
 	<string name="pref_dict_beta">%1$s (Bêta)</string>
 
+	<string name="pref_dict_fa">Perse</string>
+	<string name="pref_dict_fr_fr">Français</string>
+	<string name="pref_dict_jp">Japonais</string>
+	<string name="pref_dict_ru">Russe</string>
 	</resources>
