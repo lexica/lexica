@@ -28,7 +28,7 @@ fi
 OUTPUT_PATH=assets/dictionaries/dictionary.${LANGUAGE_WITH_REGION}.txt
 
 # The grep for lower case doesn't work for Farsi (and likely other languages) so I just excluded it for those languages.
-aspell -l ${LANGUAGE_WITH_REGION} dump master | aspell -l ${LANGUAGE} expand | tr ' ' '\n' | awk 'length($0) < 10 && length($0) > 2' | sort > ${OUTPUT_PATH}
+aspell -l ${LANGUAGE_WITH_REGION} dump master | aspell -l ${LANGUAGE} expand | tr ' ' '\n' | awk 'length($0) < 10 && length($0) > 2' | sort -u > ${OUTPUT_PATH}
 
 # aspell -l ${LANGUAGE_WITH_REGION} dump master | aspell -l ${LANGUAGE} expand | tr ' ' '\n' | grep -P "^\p{Ll}*$" | awk 'length($0) < 10 && length($0) > 2' | sort > ${OUTPUT_PATH}
 
