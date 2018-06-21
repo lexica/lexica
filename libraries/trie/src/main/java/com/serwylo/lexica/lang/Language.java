@@ -90,35 +90,38 @@ public abstract class Language {
 
     public static Language fromOrNull(String name) {
         switch (name) {
-            case "en_US":
-                return new EnglishUS();
-
-            case "en_GB":
-                return new EnglishGB();
+            case "ca":
+                return new Catalan();
 
             case "de_DE":
                 return new DeGerman();
 
-            case "nl":
-                return new Dutch();
+            case "en_GB":
+                return new EnglishGB();
 
-            case "fr_FR":
-                return new French();
-
-            case "fa":
-                return new Persian();
-
-            case "it":
-                return new Italian();
-
-            case "ca":
-                return new Catalan();
+            case "en_US":
+                return new EnglishUS();
 
             case "es":
                 return new Spanish();
 
+            case "fa":
+                return new Persian();
+
+            case "fr_FR":
+                return new French();
+
+            case "hu":
+                return new Hungarian();
+
+            case "it":
+                return new Italian();
+
             case "jp":
                 return new Japanese();
+
+            case "nl":
+                return new Dutch();
 
             case "ru":
                 return new Russian();

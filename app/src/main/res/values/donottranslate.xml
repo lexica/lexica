@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="dict_choices_entries">
-		<item>@string/pref_dict_us</item>
-		<item>@string/pref_dict_uk</item>
-		<item>@string/pref_dict_es</item>
-		<item>@string/pref_dict_de_de</item>
-		<item>@string/pref_dict_fr_fr</item>
-		<item>@string/pref_dict_fa</item>
-		<item>@string/pref_dict_it</item>
 		<item>@string/pref_dict_ca</item>
-		<item>@string/pref_dict_nl</item>
+		<item>@string/pref_dict_de_de</item>
+		<item>@string/pref_dict_es</item>
+		<item>@string/pref_dict_fa</item>
+		<item>@string/pref_dict_fr_fr</item>
+		<item>@string/pref_dict_hu</item>
+		<item>@string/pref_dict_it</item>
 		<item>@string/pref_dict_jp</item>
+		<item>@string/pref_dict_nl</item>
 		<item>@string/pref_dict_ru</item>
+		<item>@string/pref_dict_uk</item>
+		<item>@string/pref_dict_us</item>
 	</string-array>
 	<string-array name="dict_choices_entryvalues">
 		<item>US</item>
@@ -20,14 +21,15 @@
 		<!-- Other than US & UK (named like that for legacy reasons because it was too much effort
 		     to migrate old preferences when internationalising this game), try to use a more
 		     standardised language format. -->
-		<item>es</item>
-		<item>de_DE</item>
-		<item>fr_FR</item>
-		<item>fa</item>
-		<item>it</item>
 		<item>ca</item>
-		<item>nl</item>
+		<item>de_DE</item>
+		<item>es</item>
+		<item>fa</item>
+		<item>fr_FR</item>
+		<item>hu</item>
+		<item>it</item>
 		<item>jp</item>
+		<item>nl</item>
 		<item>ru</item>
 	</string-array>
 
