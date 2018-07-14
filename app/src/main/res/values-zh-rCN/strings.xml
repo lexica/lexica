@@ -91,4 +91,6 @@
 	<string name="pref_dict_es">西班牙语</string>
 	<string name="pref_dict_beta">%1$s（测试中）</string>
 
+	<string name="pref_dict_jp">日语</string>
+	<string name="pref_dict_ru">俄语</string>
 	</resources>
