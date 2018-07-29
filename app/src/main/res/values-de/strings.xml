@@ -72,4 +72,15 @@
 	<string name="pref_definitionProvider">Wörterbuch</string>
 	<string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird auf DuckDuckGo zurückgegriffen.</string>
 	<string name="pref_definitionProvider_dialog">Wörterbuchauswahl</string>
-</resources>
+<string name="pref_dict_de_de">Deutsch</string>
+	<string name="pref_dict_nl">Niederländisch</string>
+	<string name="pref_dict_fa">Persisch</string>
+	<string name="pref_dict_fr_fr">Französisch</string>
+	<string name="pref_dict_it">Italienisch</string>
+	<string name="pref_dict_ca">Katalanisch</string>
+	<string name="pref_dict_es">Spanisch</string>
+	<string name="pref_dict_jp">Japanisch</string>
+	<string name="pref_dict_ru">Russisch</string>
+	<string name="pref_dict_beta">%1$s (Beta)</string>
+
+	</resources>
