@@ -108,7 +108,7 @@ public class LexicaLogo extends View {
 		p.setTypeface(Typeface.MONOSPACE);
 		p.setTextAlign(Paint.Align.CENTER);
 
-		int paddingSize = getResources().getDimensionPixelSize(R.dimen.padding);
+		int paddingSize = getResources().getDimensionPixelSize(R.dimen.homeScreenLetterPadding);
 		int height = getHeight();
 		int width = getWidth();
 

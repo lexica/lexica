@@ -59,6 +59,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private final int textSizeNormal;
 	private final int textSizeLarge;
 	private final int timerHeight;
+	private final int timerBorderWidth;
 
 	private final int boardWidth;
 	private String currentWord;
@@ -82,6 +83,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		textSizeNormal = getResources().getDimensionPixelSize(R.dimen.textSizeNormal);
 		textSizeLarge = getResources().getDimensionPixelSize(R.dimen.textSizeLarge);
 		timerHeight = getResources().getDimensionPixelSize(R.dimen.timerHeight);
+		timerBorderWidth = getResources().getDimensionPixelSize(R.dimen.timerBorderWidth);
 
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
@@ -112,7 +114,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private final Rect textBounds = new Rect();
 
 	private void drawBoard(Canvas canvas) {
-		int topOfGrid = paddingSize + timerHeight;
+		int topOfGrid = paddingSize;
 
 		// Draw boxes
 		for (int i = 0; i < game.getBoard().getSize(); i++) {
@@ -205,8 +207,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	}
 
 	private void drawTimer(Canvas canvas) {
+		// Background for timer. Depending on the theme, may be the same colour as the rest
+		// of the background.
 		p.setColor(getResources().getColor(R.color.colorPrimaryDark));
-		canvas.drawRect(0, 0, width, timerHeight + 2, p);
+		canvas.drawRect(0, height - timerHeight - timerBorderWidth - timerBorderWidth, width, height, p);
 
 		if (timeRemaining < 1000) {
 			p.setARGB(255, 255, 0, 0);
@@ -217,7 +221,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		int pixelWidth = width * timeRemaining / game.getMaxTimeRemaining();
-		canvas.drawRect(0, 1, pixelWidth, timerHeight + 1, p);
+		canvas.drawRect(0, height - timerHeight - timerBorderWidth, pixelWidth, height, p);
 	}
 
 	private int drawWordCount(Canvas canvas, int left, int top, int bottom) {
