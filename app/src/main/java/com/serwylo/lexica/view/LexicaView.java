@@ -60,6 +60,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private final int textSizeLarge;
 	private final int timerHeight;
 	private final int timerBorderWidth;
+	private final int tileBackgroundColour;
+	private final int tileForegroundColour;
+	private final int tileBorderColour;
+	private final int tileBorderWidth;
 
 	private final int boardWidth;
 	private String currentWord;
@@ -84,6 +88,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		textSizeLarge = getResources().getDimensionPixelSize(R.dimen.textSizeLarge);
 		timerHeight = getResources().getDimensionPixelSize(R.dimen.timerHeight);
 		timerBorderWidth = getResources().getDimensionPixelSize(R.dimen.timerBorderWidth);
+		tileBackgroundColour = getResources().getColor(R.color.tileBackgroundColour);
+		tileForegroundColour = getResources().getColor(R.color.tileForegroundColour);
+		tileBorderColour = getResources().getColor(R.color.tileBorderColour);
+		tileBorderWidth = getResources().getDimensionPixelSize(R.dimen.tileBorderWidth);
 
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
@@ -129,9 +137,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			} else {
 				if (game.hintModeColor()) {
 					int[] rgb = game.getWeightColor(weight);
+					// TODO: Rejig these colours into a theme for the new UI.
 					p.setARGB(255, rgb[0], rgb[1], rgb[2]);
 				} else {
-					p.setARGB(255, 255, 255, 255);
+					p.setColor(tileBackgroundColour);
 				}
 			}
 
@@ -142,20 +151,21 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			canvas.drawRect(left, top, right, bottom, p);
 		}
 
-		// Draw grid
-		p.setARGB(255, 0, 0, 0);
+		// Draw grid, but exclude the first and last line (both horizontally and vertically.
+		p.setColor(tileBorderColour);
+		p.setStrokeWidth(tileBorderWidth);
 
 		// Vertical lines
-		for (float i = paddingSize; i <= paddingSize + gridsize; i += boxsize) {
+		for (float i = paddingSize + boxsize; i <= paddingSize + gridsize - boxsize; i += boxsize) {
 			canvas.drawLine(i, topOfGrid, i, gridsize + topOfGrid, p);
 		}
 		// Horizontal lines
-		for (float i = topOfGrid; i <= topOfGrid + gridsize; i += boxsize) {
+		for (float i = topOfGrid + boxsize; i <= topOfGrid + gridsize - boxsize; i += boxsize) {
 			canvas.drawLine(paddingSize, i, gridsize + paddingSize, i, p);
 		}
 
-		p.setARGB(255, 0, 0, 0);
-		p.setTypeface(Typeface.MONOSPACE);
+		p.setColor(tileForegroundColour);
+		p.setTypeface(Fonts.get().getSansSerifCondensed());
 		float textSize = boxsize * 0.8f;
 		p.setTextSize(textSize);
 
