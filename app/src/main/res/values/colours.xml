@@ -6,4 +6,8 @@
     <color name="tileForegroundColour">#3d3c3b</color>
     <color name="tileBackgroundColour">#f9f8d7</color>
     <color name="tileBorderColour">#b1ad9c</color>
+    <color name="currentWordColour">#ffffff</color>
+    <color name="previouslySelectedWordColour">#88ffffff</color>
+    <color name="selectedWordColour">#ffffff</color>
+    <color name="notAWordColour">#ffffff</color>
 </resources>
