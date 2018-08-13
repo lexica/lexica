@@ -74,8 +74,9 @@
     <string name="hide_unique">Hide Unique Words</string>
     <string name="view_word"><u>View</u></string>
     <string name="define_word"><u>Define</u> </string>
-    <string name="words">WORDS</string>
-    <string name="score">SCORE</string>
+    <string name="words">Words</string>
+    <string name="score">Score</string>
+	<string name="time">Time</string>
     <string name="found_words">Found Words</string>
     <string name="missed_words">Missed Words</string>
     <string name="total_words">Total Words:</string>

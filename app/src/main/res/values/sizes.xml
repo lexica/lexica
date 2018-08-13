@@ -9,4 +9,8 @@
     <dimen name="textSizeSmall">16sp</dimen>
     <dimen name="textSizeNormal">20sp</dimen>
     <dimen name="textSizeLarge">30sp</dimen>
+
+    <dimen name="scoreHeadingTextSize">22sp</dimen>
+    <dimen name="scoreTextSize">22sp</dimen>
+    <dimen name="scorePadding">12dp</dimen>
 </resources>

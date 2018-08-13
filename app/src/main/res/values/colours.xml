@@ -10,4 +10,5 @@
     <color name="previouslySelectedWordColour">#88ffffff</color>
     <color name="selectedWordColour">#ffffff</color>
     <color name="notAWordColour">#ffffff</color>
+    <color name="scoreBackgroundColour">#f0cb69</color>
 </resources>

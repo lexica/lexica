@@ -69,6 +69,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private final int previouslySelectedWordColour;
 	private final int selectedWordColour;
 	private final int notAWordColour;
+	private final int scoreHeadingTextSize;
+	private final int scoreTextSize;
+	private final int scorePadding;
+	private final int scoreBackgroundColour;
 
 	private final int boardWidth;
 	private String currentWord;
@@ -102,6 +106,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		previouslySelectedWordColour = getResources().getColor(R.color.previouslySelectedWordColour);
 		selectedWordColour = getResources().getColor(R.color.selectedWordColour);
 		notAWordColour = getResources().getColor(R.color.notAWordColour);
+		scoreHeadingTextSize = getResources().getDimensionPixelSize(R.dimen.scoreHeadingTextSize);
+		scoreTextSize = getResources().getDimensionPixelSize(R.dimen.scoreTextSize);
+		scorePadding = getResources().getDimensionPixelSize(R.dimen.scorePadding);
+		scoreBackgroundColour = getResources().getColor(R.color.scoreBackgroundColour);
 
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
@@ -268,6 +276,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			actualBottom += textSize;
 			canvas.drawText(getContext().getString(R.string.words), left, actualBottom, p);
 		} else {
+			// TODO: When refactoring UI, perhaps this can popup when you touch the "Words" panel.
 			SparseIntArray maxWordCounts = game.getMaxWordCountsByLength();
 			int lines = 0;
 			int lenPad = 1;
@@ -389,6 +398,51 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	}
 
 	private void drawScorePortrait(Canvas canvas) {
+		p.setTextSize(scoreHeadingTextSize);
+		p.getTextBounds("A", 0, 1, textBounds);
+		float wordHeight = textBounds.height();
+
+		float scoreHeight = scorePadding + wordHeight + scorePadding / 2 + wordHeight + scorePadding;
+		float totalTimerHeight = timerBorderWidth * 2 + timerHeight;
+		p.setColor(scoreBackgroundColour);
+		canvas.drawRect(0,height - totalTimerHeight - scoreHeight, width,height - totalTimerHeight, p);
+
+		float scoreStartY = height - totalTimerHeight - scoreHeight;
+		float panelWidth = width / 3;
+
+		int secRemaining = timeRemaining / 100;
+		int mins = secRemaining / 60;
+		int secs = secRemaining % 60;
+		String displayTime = mins + ":" + (secs < 10 ? "0" : "") + secs;
+		drawScorePanel(canvas, 0, panelWidth, scoreStartY, getContext().getString(R.string.time), displayTime);
+
+		String displayWordCount = game.getWordCount() + "/" + game.getMaxWordCount();
+		drawScorePanel(canvas, 1, panelWidth, scoreStartY, getContext().getString(R.string.words), displayWordCount);
+
+		String displayScore = Integer.toString(game.getScore());
+		drawScorePanel(canvas, 2, panelWidth, scoreStartY, getContext().getString(R.string.score), displayScore);
+	}
+
+	private void drawScorePanel(Canvas canvas, float panelNum, float panelWidth, float y, String heading, String value) {
+		float x = panelNum * panelWidth;
+
+		p.setTextSize(scoreHeadingTextSize);
+		p.setTypeface(Fonts.get().getSansSerifBold());
+		p.getTextBounds(heading, 0, heading.length(), textBounds);
+		float headingHeight = textBounds.height();
+
+		p.setColor(selectedWordColour);
+
+		p.setTextSize(scoreHeadingTextSize);
+		p.setTypeface(Fonts.get().getSansSerifCondensed());
+		canvas.drawText(heading, x + panelWidth / 2, y + scorePadding + headingHeight, p);
+
+		p.setTextSize(scoreTextSize);
+		p.setTypeface(Fonts.get().getSansSerifBold());
+		canvas.drawText(value, x + panelWidth / 2, y + scorePadding + headingHeight + scorePadding / 2 + headingHeight, p);
+	}
+
+	private void drawScorePortraitOld(Canvas canvas) {
 		int textAreaTop = 2 * paddingSize + gridsize + timerHeight;
 		int textAreaHeight = height - paddingSize - textAreaTop;
 		int textAreaBottom = textAreaTop + textAreaHeight;

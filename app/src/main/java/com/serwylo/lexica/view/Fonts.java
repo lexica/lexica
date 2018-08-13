@@ -19,13 +19,19 @@ public class Fonts {
     }
 
     private final Typeface sansSerifCondensed;
+    private final Typeface sansSerifBold;
 
     private Fonts() {
         this.sansSerifCondensed = Typeface.create("sans-serif-light", Typeface.NORMAL);
+        this.sansSerifBold = Typeface.create("sans-serif-bold", Typeface.BOLD);
     }
 
     public Typeface getSansSerifCondensed() {
         return sansSerifCondensed;
+    }
+
+    public Typeface getSansSerifBold() {
+        return sansSerifBold;
     }
 
 }
