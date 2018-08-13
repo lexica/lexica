@@ -73,6 +73,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private final int scoreTextSize;
 	private final int scorePadding;
 	private final int scoreBackgroundColour;
+	private final int timerBackgroundColour;
+	private final int timerStartForegroundColour;
+	private final int timerMidForegroundColour;
+	private final int timerEndForegroundColour;
 
 	private final int boardWidth;
 	private String currentWord;
@@ -110,6 +114,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		scoreTextSize = getResources().getDimensionPixelSize(R.dimen.scoreTextSize);
 		scorePadding = getResources().getDimensionPixelSize(R.dimen.scorePadding);
 		scoreBackgroundColour = getResources().getColor(R.color.scoreBackgroundColour);
+		timerBackgroundColour = getResources().getColor(R.color.timerBackgroundColour);
+		timerStartForegroundColour = getResources().getColor(R.color.timerStartForegroundColour);
+		timerMidForegroundColour = getResources().getColor(R.color.timerMidForegroundColour);
+		timerEndForegroundColour = getResources().getColor(R.color.timerEndForegroundColour);
 
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
@@ -237,15 +245,15 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private void drawTimer(Canvas canvas) {
 		// Background for timer. Depending on the theme, may be the same colour as the rest
 		// of the background.
-		p.setColor(getResources().getColor(R.color.colorPrimaryDark));
+		p.setColor(timerBackgroundColour);
 		canvas.drawRect(0, height - timerHeight - timerBorderWidth - timerBorderWidth, width, height, p);
 
 		if (timeRemaining < 1000) {
-			p.setARGB(255, 255, 0, 0);
+			p.setColor(timerEndForegroundColour);
 		} else if (timeRemaining < 3000) {
-			p.setARGB(255, 255, 255, 0);
+			p.setColor(timerMidForegroundColour);
 		} else {
-			p.setARGB(255, 0, 255, 0);
+			p.setColor(timerStartForegroundColour);
 		}
 
 		int pixelWidth = width * timeRemaining / game.getMaxTimeRemaining();
@@ -485,13 +493,14 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		clearScreen(canvas);
 		drawBoard(canvas);
-		drawTimer(canvas);
 
 		if (width > height) {
 			drawScoreLandscape(canvas);
 		} else {
 			drawScorePortrait(canvas);
 		}
+
+		drawTimer(canvas);
 	}
 
 	@Override

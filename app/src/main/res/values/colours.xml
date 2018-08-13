@@ -11,4 +11,8 @@
     <color name="selectedWordColour">#ffffff</color>
     <color name="notAWordColour">#ffffff</color>
     <color name="scoreBackgroundColour">#f0cb69</color>
+    <color name="timerBackgroundColour">#f0cb69</color>
+    <color name="timerStartForegroundColour">#edb641</color>
+    <color name="timerMidForegroundColour">#edb641</color>
+    <color name="timerEndForegroundColour">#edb641</color>
 </resources>
