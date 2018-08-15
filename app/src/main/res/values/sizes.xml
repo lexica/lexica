@@ -2,15 +2,5 @@
 <resources>
     <dimen name="homeScreenLetterPadding">10dp</dimen>
     <dimen name="padding">0dp</dimen>
-    <dimen name="timerHeight">15dp</dimen>
-    <dimen name="timerBorderWidth">0dp</dimen>
-    <dimen name="tileBorderWidth">1dp</dimen>
     <dimen name="textSizeMinimum">12sp</dimen>
-    <dimen name="textSizeSmall">16sp</dimen>
-    <dimen name="textSizeNormal">20sp</dimen>
-    <dimen name="textSizeLarge">30sp</dimen>
-
-    <dimen name="scoreHeadingTextSize">22sp</dimen>
-    <dimen name="scoreTextSize">22sp</dimen>
-    <dimen name="scorePadding">12dp</dimen>
 </resources>

@@ -22,10 +22,12 @@ import com.serwylo.lexica.Synchronizer;
 import com.serwylo.lexica.game.Game;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.util.AttributeSet;
 import android.util.SparseIntArray;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -44,9 +46,9 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	public final int paddingSize;
 	public static final int REDRAW_FREQ = 10;
 
-	private final FingerTracker mFingerTracker;
-	private final KeyboardTracker mKeyboardTracker;
-	private final Game game;
+	private FingerTracker mFingerTracker;
+	private KeyboardTracker mKeyboardTracker;
+	private Game game;
 	private int timeRemaining;
 	private int redrawCount;
 
@@ -78,14 +80,14 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private final int timerMidForegroundColour;
 	private final int timerEndForegroundColour;
 
-	private final int boardWidth;
+	private int boardWidth;
 	private String currentWord;
 
-	private final Paint p;
+	private Paint p;
 	private Set<Integer> highlighted = new HashSet<>();
 
 	public LexicaView(Context context, Game g) {
-		super(context);
+		this(context);
 
 		game = g;
 		boardWidth = game.getBoard().getWidth();
@@ -95,30 +97,6 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		timeRemaining = 0;
 		redrawCount = 1;
 
-		paddingSize = getResources().getDimensionPixelSize(R.dimen.padding);
-		textSizeSmall = getResources().getDimensionPixelSize(R.dimen.textSizeSmall);
-		textSizeNormal = getResources().getDimensionPixelSize(R.dimen.textSizeNormal);
-		textSizeLarge = getResources().getDimensionPixelSize(R.dimen.textSizeLarge);
-		timerHeight = getResources().getDimensionPixelSize(R.dimen.timerHeight);
-		timerBorderWidth = getResources().getDimensionPixelSize(R.dimen.timerBorderWidth);
-		tileBackgroundColour = getResources().getColor(R.color.tileBackgroundColour);
-		tileForegroundColour = getResources().getColor(R.color.tileForegroundColour);
-		tileBorderColour = getResources().getColor(R.color.tileBorderColour);
-		tileBorderWidth = getResources().getDimensionPixelSize(R.dimen.tileBorderWidth);
-		backgroundColor = getResources().getColor(R.color.colorPrimary);
-		currentWordColour = getResources().getColor(R.color.currentWordColour);
-		previouslySelectedWordColour = getResources().getColor(R.color.previouslySelectedWordColour);
-		selectedWordColour = getResources().getColor(R.color.selectedWordColour);
-		notAWordColour = getResources().getColor(R.color.notAWordColour);
-		scoreHeadingTextSize = getResources().getDimensionPixelSize(R.dimen.scoreHeadingTextSize);
-		scoreTextSize = getResources().getDimensionPixelSize(R.dimen.scoreTextSize);
-		scorePadding = getResources().getDimensionPixelSize(R.dimen.scorePadding);
-		scoreBackgroundColour = getResources().getColor(R.color.scoreBackgroundColour);
-		timerBackgroundColour = getResources().getColor(R.color.timerBackgroundColour);
-		timerStartForegroundColour = getResources().getColor(R.color.timerStartForegroundColour);
-		timerMidForegroundColour = getResources().getColor(R.color.timerMidForegroundColour);
-		timerEndForegroundColour = getResources().getColor(R.color.timerEndForegroundColour);
-
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
 		p.setAntiAlias(true);
@@ -127,6 +105,48 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		setFocusable(true);
 
 		g.setRotateHandler(this);
+	}
+
+	private String customAttr;
+
+	public LexicaView(Context context) {
+		this(context, (AttributeSet) null);
+	}
+
+	public LexicaView(Context context, AttributeSet attrs) {
+		this( context, attrs, R.attr.lexicaViewStyle );
+	}
+
+	public LexicaView(Context context, AttributeSet attrs, int defStyle) {
+		super( context, attrs, defStyle );
+
+		final TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.LexicaView, defStyle, R.style.Widget_LexicaView);
+
+		paddingSize = array.getDimensionPixelSize(R.styleable.LexicaView_padding, 0 /* dp */);
+		textSizeSmall = array.getDimensionPixelSize(R.styleable.LexicaView_textSizeSmall, 16 /* sp */);
+		textSizeNormal = array.getDimensionPixelSize(R.styleable.LexicaView_textSizeNormal, 20 /* sp */);
+		textSizeLarge = array.getDimensionPixelSize(R.styleable.LexicaView_textSizeLarge, 30 /* sp */);
+		timerHeight = array.getDimensionPixelSize(R.styleable.LexicaView_timerHeight, 15 /* dp */);
+		timerBorderWidth = array.getDimensionPixelSize(R.styleable.LexicaView_timerBorderWidth, 0 /* dp */);
+		tileBackgroundColour = array.getColor(R.styleable.LexicaView_tileBackgroundColour, 0xf9f8d7);
+		tileForegroundColour = array.getColor(R.styleable.LexicaView_tileForegroundColour, 0x3d3c3b);
+		tileBorderColour = array.getColor(R.styleable.LexicaView_tileBorderColour, 0x3d3c3b);
+		tileBorderWidth = array.getDimensionPixelSize(R.styleable.LexicaView_tileBorderWidth, 1 /* dp */);
+		backgroundColor = array.getColor(R.styleable.LexicaView_colorPrimary, 0xedb641);
+		currentWordColour = array.getColor(R.styleable.LexicaView_currentWordColour, 0xffffff);
+		previouslySelectedWordColour = array.getColor(R.styleable.LexicaView_previouslySelectedWordColour, 0x88ffffff);
+		selectedWordColour = array.getColor(R.styleable.LexicaView_selectedWordColour, 0xffffff);
+		notAWordColour = array.getColor(R.styleable.LexicaView_notAWordColour, 0xffffff);
+		scoreHeadingTextSize = array.getDimensionPixelSize(R.styleable.LexicaView_scoreHeadingTextSize, 22 /* sp */);
+		scoreTextSize = array.getDimensionPixelSize(R.styleable.LexicaView_scoreTextSize, 22 /* sp */);
+		scorePadding = array.getDimensionPixelSize(R.styleable.LexicaView_scorePadding, 12 /* dp */);
+		scoreBackgroundColour = array.getColor(R.styleable.LexicaView_scoreBackgroundColour, 0xf0cb69);
+		timerBackgroundColour = array.getColor(R.styleable.LexicaView_timerBackgroundColour, 0xf0cb69);
+		timerStartForegroundColour = array.getColor(R.styleable.LexicaView_timerStartForegroundColour, 0xedb641);
+		timerMidForegroundColour = array.getColor(R.styleable.LexicaView_timerMidForegroundColour, 0xedb641);
+		timerEndForegroundColour = array.getColor(R.styleable.LexicaView_timerEndForegroundColour, 0xedb641);
+
+		array.recycle();
 	}
 
 	private void setDimensions(int w, int h) {

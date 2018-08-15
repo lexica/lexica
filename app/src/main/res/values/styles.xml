@@ -5,5 +5,37 @@
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="lexicaViewStyle">@style/Widget_LexicaView</item>
+    </style>
+
+    <style name="Widget_LexicaView">
+        <item name="colorPrimary">#edb641</item>
+        <item name="colorPrimaryDark">#0f447c</item>
+        <item name="tileForegroundColour">#3d3c3b</item>
+        <item name="tileBackgroundColour">#f9f8d7</item>
+        <item name="tileBorderColour">#b1ad9c</item>
+        <item name="currentWordColour">#ffffff</item>
+        <item name="previouslySelectedWordColour">#88ffffff</item>
+        <item name="selectedWordColour">#ffffff</item>
+        <item name="notAWordColour">#ffffff</item>
+        <item name="scoreBackgroundColour">#f0cb69</item>
+        <item name="timerBackgroundColour">#f0cb69</item>
+        <item name="timerStartForegroundColour">#edb641</item>
+        <item name="timerMidForegroundColour">#edb641</item>
+        <item name="timerEndForegroundColour">#edb641</item>
+
+        <item name="homeScreenLetterPadding">10dp</item>
+        <item name="padding">0dp</item>
+        <item name="timerHeight">15dp</item>
+        <item name="timerBorderWidth">0dp</item>
+        <item name="tileBorderWidth">1dp</item>
+        <item name="textSizeMinimum">12sp</item>
+        <item name="textSizeSmall">16sp</item>
+        <item name="textSizeNormal">20sp</item>
+        <item name="textSizeLarge">30sp</item>
+
+        <item name="scoreHeadingTextSize">22sp</item>
+        <item name="scoreTextSize">22sp</item>
+        <item name="scorePadding">12dp</item>
     </style>
 </resources>

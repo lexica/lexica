@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LexicaView">
+        <attr name="text" format="string" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+
+        <attr format="color" name="colorPrimary" />
+        <attr format="color" name="colorPrimaryDark" />
+        <attr format="color" name="tileForegroundColour" />
+        <attr format="color" name="tileBackgroundColour" />
+        <attr format="color" name="tileBorderColour" />
+        <attr format="color" name="currentWordColour" />
+        <attr format="color" name="previouslySelectedWordColour" />
+        <attr format="color" name="selectedWordColour" />
+        <attr format="color" name="notAWordColour" />
+        <attr format="color" name="scoreBackgroundColour" />
+        <attr format="color" name="timerBackgroundColour" />
+        <attr format="color" name="timerStartForegroundColour" />
+        <attr format="color" name="timerMidForegroundColour" />
+        <attr format="color" name="timerEndForegroundColour" />
+
+        <attr format="dimension" name="homeScreenLetterPadding" />
+        <attr format="dimension" name="padding" />
+        <attr format="dimension" name="timerHeight" />
+        <attr format="dimension" name="timerBorderWidth" />
+        <attr format="dimension" name="tileBorderWidth" />
+        <attr format="dimension" name="scorePadding" />
+
+        <attr format="dimension" name="textSizeMinimum" />
+        <attr format="dimension" name="textSizeSmall" />
+        <attr format="dimension" name="textSizeNormal" />
+        <attr format="dimension" name="textSizeLarge" />
+        <attr format="dimension" name="scoreHeadingTextSize" />
+        <attr format="dimension" name="scoreTextSize" />
+    </declare-styleable>
+
+    <declare-styleable name="LexicaViewTheme">
+        <attr name="lexicaViewStyle" format="reference"/>
+    </declare-styleable>
+</resources>
