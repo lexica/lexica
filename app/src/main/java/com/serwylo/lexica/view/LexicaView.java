@@ -113,12 +113,14 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	private void drawBoard(Canvas canvas) {
 		// Draw white box
-		p.setARGB(255, 255, 255, 255);
+		//p.setARGB(255, 255, 255, 255);
+		p.setARGB(255, 0, 0, 0); // Black background
 		int topOfGrid = paddingSize + timerHeight;
 		canvas.drawRect(paddingSize, topOfGrid, gridsize + paddingSize, gridsize + topOfGrid, p);
 
 		// Draw touched boxes
-		p.setARGB(255, 255, 255, 0);
+		//p.setARGB(255, 255, 255, 0);
+		p.setARGB(255, 64, 64, 64); //Gray-ish touched boxes
 		for (int i = 0; i < game.getBoard().getSize(); i++) {
 			if (!highlighted.contains(i)) {
 				continue;
@@ -134,7 +136,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		// Draw grid
-		p.setARGB(255, 0, 0, 0);
+		//p.setARGB(255, 0, 0, 0);
+		p.setARGB(255, 200, 200, 200); //Lighter gray-ish grid
 
 		// Vertical lines
 		for (float i = paddingSize; i <= paddingSize + gridsize; i += boxsize) {
@@ -145,7 +148,9 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			canvas.drawLine(paddingSize, i, gridsize + paddingSize, i, p);
 		}
 
-		p.setARGB(255, 0, 0, 0);
+		// Draw Text
+		//p.setARGB(255, 0, 0, 0);
+		p.setARGB(255, 220, 220, 220); // Off-white-ish text
 		p.setTypeface(Typeface.MONOSPACE);
 		float textSize = boxsize * 0.8f;
 		p.setTextSize(textSize);
@@ -196,7 +201,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	private int drawWordCount(Canvas canvas, int left, int top, int bottom) {
 		p.setTypeface(Typeface.SANS_SERIF);
-		p.setARGB(255, 0, 0, 0);
+		// p.setARGB(255, 0, 0, 0);
+		p.setARGB(255, 255, 255, 0);
 		float actualBottom = top;
 
 		if (!game.showBreakdown()) {
@@ -268,7 +274,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		int pos = top + textSizeNormal;
 		// draw current word
 		p.setTextSize(textSizeNormal);
-		p.setARGB(255, 0, 0, 0);
+		p.setARGB(255, 255, 255, 0);
 		p.setTypeface(Typeface.SANS_SERIF);
 		if (currentWord != null) {
 			canvas.drawText(currentWord.toUpperCase(), left, pos, p);
@@ -283,11 +289,11 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			String w = li.next();
 			if (w.startsWith("+")) {
 				w = w.substring(1);
-				p.setARGB(255, 0, 0, 0);
+				p.setARGB(255, 255, 255, 0);
 			} else {
 				if (game.isWord(w)) {
 					w += "  " + game.getWordScore(w);
-					p.setARGB(255, 0, 0, 0);
+					p.setARGB(255, 255, 255, 255);
 				} else {
 					p.setARGB(255, 255, 0, 0);
 				}
@@ -303,7 +309,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		} else if (timeRemaining < 3000) {
 			p.setARGB(255, 255, 255, 0);
 		} else {
-			p.setARGB(255, 0, 0, 0);
+			p.setARGB(255, 255, 255, 255);
 		}
 		p.setTypeface(Typeface.SANS_SERIF);
 
