@@ -24,9 +24,12 @@ import com.serwylo.lexica.game.Game;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Shader;
 import android.graphics.Typeface;
+import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.SparseIntArray;
 import android.view.KeyEvent;
@@ -351,7 +354,113 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		return (int)actualBottom;
 	}
 
-	private void drawWordList(Canvas canvas, int left, int top, int bottom) {
+	/**
+	 * Each time we draw a word, we need to:
+	 *  - Measure it and decide how much space it takes.
+	 *  - Potentially fade it out if it is too far to the right.
+	 *  - Potentially add a strike over the top of it if it is not a word.
+	 *  - Colourise it correctly to indicate that it has already been used in the past.
+	 *  - Maybe more?
+	 *
+	 *  After drawing, we can return the right hand size, to indicate how much space we took up
+	 *  when rendering. This can be used to decide where to start the following word.
+	 */
+	private float drawWord(@NonNull Canvas canvas, String word, float x, float y, boolean isWord, boolean hasBeenUsedBefore) {
+		word = word.toUpperCase(game.getLanguage().getLocale());
+
+		p.setTextSize(textSizeNormal);
+		p.setTypeface(Fonts.get().getSansSerifBold());
+		p.getTextBounds(word, 0, word.length(), textBounds);
+		float height = textBounds.height();
+		float width = textBounds.width();
+
+		p.setColor(hasBeenUsedBefore ? previouslySelectedWordColour : selectedWordColour);
+
+		p.setTextSize(scoreHeadingTextSize);
+		p.setTypeface(Fonts.get().getSansSerifCondensed());
+		p.setTextAlign(Paint.Align.LEFT); // TODO: RTL support.
+		canvas.drawText(word, x, y + height, p);
+
+		if (!isWord) {
+			// Strikethrough
+			p.setStrokeWidth(3);
+			canvas.drawLine(x, y + height / 2, x + width, y + height / 2, p);
+		}
+
+		if (x + width > getWidth() - scorePadding) {
+			// Fade out the word as it approaches the end of the screen.
+
+			Shader shaderA = new LinearGradient(0, 0, scorePadding * 2, 0, 0xffffffff, 0x00ffffff, Shader.TileMode.CLAMP);
+			// p.setShader(shaderA);
+			p.setColor(0xffffffff);
+			canvas.drawRect(getWidth() - scorePadding * 2, y, getWidth(), y + height, p);
+			p.setShader(null);
+		}
+
+		return x + width;
+	}
+
+	private void drawWordList(Canvas canvas, float top, float bottom) {
+		float pos = top + textSizeNormal;
+		p.setTextSize(textSizeNormal);
+		p.setTypeface(Fonts.get().getSansSerifCondensed());
+
+		// If halfway through selecting the current word, then show that.
+		// Otherwise, show the last word that was selected.
+		String bigWordToShow = currentWord;
+		if (bigWordToShow != null) {
+			p.setColor(currentWordColour);
+		} else {
+			ListIterator<String> pastWords = game.listIterator();
+			if (pastWords.hasNext()) {
+				String lastWord = pastWords.next();
+				if (lastWord.startsWith("+")) {
+					bigWordToShow = lastWord.substring(1);
+					p.setColor(previouslySelectedWordColour);
+				} else if (game.isWord(lastWord)) {
+					bigWordToShow = lastWord;
+					p.setColor(selectedWordColour);
+				} else {
+					bigWordToShow = lastWord;
+					p.setColor(notAWordColour);
+				}
+			}
+		}
+
+		if (bigWordToShow != null) {
+			canvas.drawText(bigWordToShow.toUpperCase(game.getLanguage().getLocale()), width / 2, pos, p);
+		}
+
+		// draw words
+		p.setTextSize(textSizeSmall);
+
+		pos += textSizeSmall;
+
+		float x = scorePadding;
+		ListIterator<String> pastWords = game.listIterator();
+		while (pastWords.hasNext() && pos < bottom) {
+			String w = pastWords.next();
+			float newX;
+			if (w.startsWith("+")) {
+				w = w.substring(1);
+				newX = drawWord(canvas, w, x, pos, true, true);
+			} else {
+				if (game.isWord(w)) {
+					newX = drawWord(canvas, w, x, pos, true, false);
+				} else {
+					newX = drawWord(canvas, w, x, pos, false, false);
+				}
+			}
+			x = newX + scorePadding;
+
+			// Don't bother rendering words which push off the screen.
+			if (x > getWidth() - scorePadding) {
+				break;
+			}
+		}
+	}
+
+	private void drawWordListOld(Canvas canvas, int left, int top, int bottom) {
 		int pos = top + textSizeNormal;
 		// draw current word
 		p.setTextSize(textSizeNormal);
@@ -422,7 +531,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		int paddedLeft = textAreaLeft + (textAreaWidth / 2);
 
 		int bottomOfTimer = drawWordCountAndTimer(canvas, paddedLeft, textAreaTop, (textAreaBottom / 2) - paddingSize);
-		drawWordList(canvas, paddedLeft, bottomOfTimer + paddingSize, textAreaBottom);
+		drawWordListOld(canvas, paddedLeft, bottomOfTimer + paddingSize, textAreaBottom);
 	}
 
 	private void drawScorePortrait(Canvas canvas) {
@@ -437,6 +546,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		float scoreStartY = height - totalTimerHeight - scoreHeight;
 		float panelWidth = width / 3;
+
+		drawWordList(canvas, boardWidth * boxsize, scoreStartY);
 
 		int secRemaining = timeRemaining / 100;
 		int mins = secRemaining / 60;
@@ -480,7 +591,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		int paddedLeft = textAreaLeft + (textAreaWidth / 4);
 
 		drawWordCountAndTimer(canvas, paddedLeft, textAreaTop, textAreaBottom);
-		drawWordList(canvas, textAreaLeft + textAreaWidth * 3 / 4, textAreaTop, textAreaBottom);
+		drawWordListOld(canvas, textAreaLeft + textAreaWidth * 3 / 4, textAreaTop, textAreaBottom);
 	}
 
 	private int drawWordCountAndTimer(Canvas canvas, int left, int top, int bottom) {
