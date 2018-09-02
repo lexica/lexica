@@ -15,9 +15,6 @@
 		<item>@string/pref_dict_us</item>
 	</string-array>
 	<string-array name="dict_choices_entryvalues">
-		<item>US</item>
-		<item>UK</item>
-
 		<!-- Other than US & UK (named like that for legacy reasons because it was too much effort
 		     to migrate old preferences when internationalising this game), try to use a more
 		     standardised language format. -->
@@ -31,6 +28,8 @@
 		<item>jp</item>
 		<item>nl</item>
 		<item>ru</item>
+		<item>UK</item>
+		<item>US</item>
 	</string-array>
 
 	<string-array name="board_size_choices_entries">
