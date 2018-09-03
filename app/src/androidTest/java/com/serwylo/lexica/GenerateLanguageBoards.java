@@ -6,6 +6,7 @@ import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -55,7 +56,10 @@ import static org.junit.Assert.assertTrue;
 @RunWith(AndroidJUnit4.class)
 public class GenerateLanguageBoards {
 
+    private static final String TAG = "GenerateLanguageBoards";
+
     private static final int NUM_BOARDS_TO_GENERATE = 3;
+
     @Rule
     public ActivityTestRule<Lexica> mActivityTestRule = new ActivityTestRule<>(Lexica.class);
 
@@ -90,7 +94,7 @@ public class GenerateLanguageBoards {
     }
 
     @Test
-    public void generateFrenchBoards() {
+    public void generateHungarianBoards() {
         generateLanguageBoards(new Hungarian());
     }
 
@@ -120,6 +124,7 @@ public class GenerateLanguageBoards {
     }
 
     private void generateLanguageBoards(Language language) {
+        Log.d(TAG, "Running test for " + language.getName() + " board");
         fromHomeNavigateToPreferences();
         fromPreferencesSelectLanguage(language);
         fromPreferencesSelectBoardSize();
