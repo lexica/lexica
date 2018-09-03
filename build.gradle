@@ -40,16 +40,17 @@ task buildTrieLib(type: GradleBuild) {
 task buildDictionaries
 
 def languages = [
+  "ca",
+  "de_DE",
   "en_US",
   "en_GB",
-  "de_DE",
-  "fr_FR",
-  "ca",
   "es",
   "fa",
+  "fr_FR",
+  "hu",
   "it",
-  "nl",
   "jp",
+  "nl",
   "ru",
 ]
 languages.each { lang ->

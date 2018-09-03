@@ -6,6 +6,7 @@ import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -25,6 +26,7 @@ import com.serwylo.lexica.lang.Dutch;
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.EnglishUS;
 import com.serwylo.lexica.lang.French;
+import com.serwylo.lexica.lang.Hungarian;
 import com.serwylo.lexica.lang.Italian;
 import com.serwylo.lexica.lang.Japanese;
 import com.serwylo.lexica.lang.Language;
@@ -54,18 +56,16 @@ import static org.junit.Assert.assertTrue;
 @RunWith(AndroidJUnit4.class)
 public class GenerateLanguageBoards {
 
+    private static final String TAG = "GenerateLanguageBoards";
+
     private static final int NUM_BOARDS_TO_GENERATE = 3;
+
     @Rule
     public ActivityTestRule<Lexica> mActivityTestRule = new ActivityTestRule<>(Lexica.class);
 
     @Test
-    public void generateEnglishUsBoards() {
-        generateLanguageBoards(new EnglishUS());
-    }
-
-    @Test
-    public void generateEnglishGbBoards() {
-        generateLanguageBoards(new EnglishGB());
+    public void generateCatalanBoards() {
+        generateLanguageBoards(new Catalan());
     }
 
     @Test
@@ -74,13 +74,43 @@ public class GenerateLanguageBoards {
     }
 
     @Test
-    public void generateCatalanBoards() {
-        generateLanguageBoards(new Catalan());
+    public void generateDutchBoards() {
+        generateLanguageBoards(new Dutch());
+    }
+
+    @Test
+    public void generateEnglishGbBoards() {
+        generateLanguageBoards(new EnglishGB());
+    }
+
+    @Test
+    public void generateEnglishUsBoards() {
+        generateLanguageBoards(new EnglishUS());
+    }
+
+    @Test
+    public void generateFrenchBoards() {
+        generateLanguageBoards(new French());
+    }
+
+    @Test
+    public void generateHungarianBoards() {
+        generateLanguageBoards(new Hungarian());
+    }
+
+    @Test
+    public void generateItalianBoards() {
+        generateLanguageBoards(new Italian());
     }
 
     @Test
     public void generateJapaneseBoards() {
         generateLanguageBoards(new Japanese());
+    }
+
+    @Test
+    public void generatePersianBoards() {
+        generateLanguageBoards(new Persian());
     }
 
     @Test
@@ -93,27 +123,8 @@ public class GenerateLanguageBoards {
         generateLanguageBoards(new Spanish());
     }
 
-    @Test
-    public void generateDutchBoards() {
-        generateLanguageBoards(new Dutch());
-    }
-
-    @Test
-    public void generateFrenchBoards() {
-        generateLanguageBoards(new French());
-    }
-
-    @Test
-    public void generateItalianBoards() {
-        generateLanguageBoards(new Italian());
-    }
-
-    @Test
-    public void generatePersianBoards() {
-        generateLanguageBoards(new Persian());
-    }
-
     private void generateLanguageBoards(Language language) {
+        Log.d(TAG, "Running test for " + language.getName() + " board");
         fromHomeNavigateToPreferences();
         fromPreferencesSelectLanguage(language);
         fromPreferencesSelectBoardSize();
