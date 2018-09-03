@@ -1,37 +1,37 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="app_name">Lexica</string>
 
-    <string name="new_game">Nouveau Jeu</string>
-    <string name="restore_game">Reprendre la Partie</string>
+    <string name="new_game">Nouveau jeu</string>
+    <string name="restore_game">Reprendre la partie</string>
 	<string name="prefs">Options</string>
 
-	<string name="pref_dict">Langue de la Grille</string>
-	<string name="pref_dict_summary">Choix de la Langue utilisée dans la grille</string>
+	<string name="pref_dict">Langue de la grille</string>
+	<string name="pref_dict_summary">Choix de la langue utilisée dans la grille</string>
 	<string name="pref_dict_dialog">Choisir la langue</string>
 	<string name="pref_dict_us">Anglais (Américain)</string>
 	<string name="pref_dict_uk">Anglais (Royaume-Uni)</string>
 
-	<string name="pref_boardSize">Taille de la Grille</string>
-	<string name="pref_boardSize_summary">Choisir une Taille de Grille</string>
-	<string name="pref_boardSize_dialog">"Choix  de Taille"</string>
+	<string name="pref_boardSize">Taille de la grille</string>
+	<string name="pref_boardSize_summary">Choisir une taille pour la grille</string>
+	<string name="pref_boardSize_dialog">Choix de taille</string>
 
-	<string name="pref_timeLimit">Durée de la Partie</string>
-	<string name="pref_timeLimit_summary">Choisir la Durée</string>
-	<string name="pref_timeLimit_dialog">Choix de Durée</string>
-	<string name="time_3m">3 Minutes</string>
-	<string name="time_5m">5 Minutes</string>
-	<string name="time_10m">10 Minutes</string>
-	<string name="time_20m">20 Minutes</string>
-	<string name="time_30m">30 Minutes</string>
+	<string name="pref_timeLimit">Durée d\'une partie</string>
+	<string name="pref_timeLimit_summary">Choisir la durée</string>
+	<string name="pref_timeLimit_dialog">Choix de la durée</string>
+	<string name="time_3m">3 minutes</string>
+	<string name="time_5m">5 minutes</string>
+	<string name="time_10m">10 minutes</string>
+	<string name="time_20m">20 minutes</string>
+	<string name="time_30m">30 minutes</string>
 
-	<string name="pref_sounds">Effets Sonores</string>
-	<string name="pref_sounds_summary">Pour Activer ou Désactiver les Bruitages</string>
+	<string name="pref_sounds">Effets sonores</string>
+	<string name="pref_sounds_summary">Activer ou désactiver les bruitages</string>
 
 	<string name="dialog_no_saved">Il n\'y a pas de sauvegarde. Si vous pouvez lire ce message, il y a probablement un bug.</string>
 	<string name="dialog_ok">OK</string>
 	<string name="dialog_cancel">Annuler</string>
 
-	<string name="dialog_about_title">À Propos de Lexica</string>
+	<string name="dialog_about_title">À propos de Lexica</string>
 	<string name="dialog_about_content">Toucher l\'écran et déplacer son doigt horizontalement, verticalement et en diagonale pour épeler des mots. Vous avez de 3 à 30 minutes pour trouver un maximum de mots.
 \n
 \nNombre de points :
@@ -61,11 +61,11 @@
 	<string name="total_words">Nombre de Mots :</string>
 	<string name="total_score">Nombre de Points :</string>
 	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-<string name="pref_scoreType">Mode de Comptabilisation des Points</string>
-	<string name="pref_scoreType_summary">Sélectionner un Mode de Comptabilisation</string>
-	<string name="pref_scoreType_dialog">Mode de Comptabilisation des Points</string>
-	<string name="word_length">Longueur des Mots</string>
-	<string name="letter_points">Valeur des Lettres</string>
+<string name="pref_scoreType">Mode de décompte des points</string>
+	<string name="pref_scoreType_summary">Choisir le mode de décompte des points</string>
+	<string name="pref_scoreType_dialog">Mode de décompte des points</string>
+	<string name="word_length">Longueur des mots</string>
+	<string name="letter_points">Valeur des lettres</string>
 
 	<string name="score">Nombre de Points</string>
 	<string name="high_score">Meilleur Score : %1$d</string>
@@ -84,6 +84,10 @@
 	<string name="pref_dict_it">Italien</string>
 	<string name="pref_dict_ca">Catalan</string>
 	<string name="pref_dict_es">Espagnol</string>
-	<string name="pref_dict_beta">%1$s (Bêta)</string>
+	<string name="pref_dict_beta">%1$s (Beta)</string>
 
+	<string name="pref_dict_fa">Perse</string>
+	<string name="pref_dict_fr_fr">Français</string>
+	<string name="pref_dict_jp">Japonais</string>
+	<string name="pref_dict_ru">Russe</string>
 	</resources>
