@@ -79,8 +79,16 @@
 <string name="pref_definitionProvider">定義プロバイダー</string>
 	<string name="pref_definitionProvider_summary">使用する定義プロバイダーを選択します。選択したプロバイダーがインストールされていない場合は、DuckDuckGo が使用されます。</string>
 	<string name="pref_definitionProvider_dialog">定義プロバイダーを選択</string>
-<string name="pref_dict_de_de">ドイツ語 (DE)</string>
+<string name="pref_dict_de_de">ドイツ語</string>
 	<string name="pref_dict_nl">オランダ語</string>
 	<string name="pref_dict_beta">%1$s (ベータ)</string>
 
+	<string name="pref_dict_ca">カタルーニャ語</string>
+	<string name="pref_dict_es">スペイン語</string>
+	<string name="pref_dict_fa">ペルシア語</string>
+	<string name="pref_dict_fr_fr">フランス語</string>
+	<string name="pref_dict_hu">ハンガリー語</string>
+	<string name="pref_dict_it">イタリア語</string>
+	<string name="pref_dict_jp">日本語</string>
+	<string name="pref_dict_ru">ロシア語</string>
 	</resources>
