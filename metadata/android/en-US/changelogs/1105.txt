@@ -1,0 +1,24 @@
+New in 0.11.5:
+
+ * Added Hungarian dictionary (thanks urbalazs)
+ * Turkish translation (thanks Gran Kardo)
+ * Magyar translation (thanks urbalazs)
+ * Updated translations
+
+Support for international dictionaries!
+
+ * Catalan
+ * Dutch
+ * English (UK)
+ * English (US)
+ * French (FR)
+ * German (DE)
+ * Hungarian
+ * Italian
+ * Japanese
+ * Persian
+ * Spanish
+ * Russian
+
+Most of these are still in beta, and will require better quality dictionaries in the future.
+Please provide any feedback or report any issues on the issue tracker at https://github.com/lexica/lexica/issues.

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Lexica - Kelime Oyunu</string>
+
+    <string name="new_game">Yeni Oyun</string>
+    <string name="restore_game">Oyunu Geri Yükle</string>
+	<string name="prefs">Ayarlar</string>
+
+	<string name="pref_dict">Sözlük</string>
+	<string name="pref_dict_summary">Kullanmak için sözlük seçin</string>
+	<string name="pref_dict_dialog">Sözlük seç</string>
+	<string name="pref_dict_us">İngilizce (US)</string>
+	<string name="pref_dict_uk">İngilizce (UK)</string>
+	<string name="pref_dict_de_de">Almanca</string>
+	<string name="pref_dict_nl">Flemenkçe</string>
+	<string name="pref_dict_fa">Persçe</string>
+	<string name="pref_dict_fr_fr">Fransızca</string>
+	<string name="pref_dict_it">İtalyanca</string>
+	<string name="pref_dict_ca">Katalanca</string>
+	<string name="pref_dict_es">İspanyolca</string>
+	<string name="pref_dict_jp">Japonca</string>
+	<string name="pref_dict_ru">Rusça</string>
+	<string name="pref_dict_beta">%1$s (Beta sürüm)</string>
+
+	<string name="pref_boardSize">Tahta Boyutu</string>
+	<string name="pref_boardSize_summary">Tahta boyutunu seçin</string>
+	<string name="pref_boardSize_dialog">Tahta Boyutu Seç</string>
+
+	<string name="pref_timeLimit">Zaman Limiti</string>
+	<string name="pref_timeLimit_summary">Zaman limitini seçin</string>
+	<string name="pref_timeLimit_dialog">Zaman Limitini Seç</string>
+	<string name="time_3m">3 Dakika</string>
+	<string name="time_5m">5 Dakika</string>
+	<string name="time_10m">10 Dakika</string>
+	<string name="time_20m">20 Dakika</string>
+	<string name="time_30m">30 Dakika</string>
+
+	<string name="pref_scoreType">Skor Tipi</string>
+	<string name="pref_scoreType_summary">Skor tipi seç</string>
+	<string name="pref_scoreType_dialog">Skor Tipi Seç</string>
+	<string name="word_length">Kelime Uzunluğu</string>
+	<string name="letter_points">Harf Puanları</string>
+
+	<string name="pref_sounds">Ses Aktif Edildi</string>
+	<string name="pref_sounds_summary">Ses efektleri aktif edildi</string>
+
+	<string name="dialog_no_saved">Kayıtlı oyun yok. Eğer bu mesajı okuyorsanız, bir şeyler ters gitti demektir.</string>
+	<string name="dialog_ok">TAMAM</string>
+	<string name="dialog_cancel">İptal</string>
+
+	<string name="dialog_about_title">Lexica Hakkında</string>
+	<string name="dialog_about_content">Ekrana dokunun ve kelimeleri hecelemek için parmağınızı bitişik karelere taşıyın. Mümkün olduğunca çok kelime bulmak için üç dakikanız var.
+\n
+\nSkorlama:
+\n
+\n4x4 kartlarda, kelimeler en az üç harf uzunluğunda olmalıdır. 5x5 tahtalarda, kelimeler en az dört harf uzunluğunda olmalıdır. Üç veya dört harfi olan kelimeler bir puandır. Daha uzun kelimeler daha çok puan kazanıyor. Özel isimler sayılmaz.
+\n</string>
+
+	<string name="menu_rotate_board">Tahtayı Çevir</string>
+	<string name="menu_save_game">Oyunu Kaydet</string>
+	<string name="menu_end_game">Oyunu Bitir</string>
+	<string name="button_ok">TAMAM</string>
+
+	<string name="about">Hakkında</string>
+
+	<string name="show_missed">Yazılmamış Kelimeleri Göster</string>
+	<string name="hide_missed">Yazılmamış Kelimeleri Gizle</string>
+
+	<string name="show_unique">Eşsiz Kelimeleri Göster</string>
+	<string name="hide_unique">Eşsiz Kelimeleri Gizle</string>
+
+	<string name="view_word"><u>Göster</u></string>
+	<string name="define_word"><u>Tanımla</u></string>
+
+	<string name="words">KELİMELER</string>
+	<string name="score">SKOR</string>
+	<string name="found_words">Bulunan Kelimeler</string>
+	<string name="missed_words">Bulunamayan Kelimeler</string>
+	<string name="total_words">Toplam Kelimeler:</string>
+	<string name="total_score">Toplam Skor:</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+
+	<string name="high_score">En Yüksek Skor: %1$d</string>
+	<string name="pref_resetScores_summary">Yukarıdaki ayarların her bir kombinasyonu için yüksek puanlar izlenir. Tüm puanları sıfırlamak için dokunun.</string>
+	<string name="pref_resetScores">En Yüksek Puanları Sıfırla</string>
+    <string name="high_scores_reset">En yüksek puanlar sıfırlandı.</string>
+	<string name="reset_scores_prompt">Tüm oyun modları için en yüksek puanları sıfırlamak istediğinizden emin misiniz?</string>
+
+    <string name="pref_breakdown">Kelime Uzunluğu Dağılımını Göster</string>
+	<string name="pref_breakdown_summary">Sözcük sayımının kelime uzunluğu ile gösterilip gösterilmediği</string>
+
+	<string name="pref_definitionProvider">Tanım Sağlayıcısı</string>
+	<string name="pref_definitionProvider_summary">Kullanılacak bir tanım sağlayıcı seçin. Seçilen sağlayıcı yüklenmemişse, DuckDuckGo kullanılacaktır.</string>
+	<string name="pref_definitionProvider_dialog">Tanım Sağlayıcıyı Seç</string>
+</resources>
