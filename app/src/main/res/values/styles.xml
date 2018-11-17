@@ -14,7 +14,8 @@
         <item name="tileForegroundColour">#3d3c3b</item>
         <item name="tileBackgroundColour">#f9f8d7</item>
         <item name="tileBorderColour">#b1ad9c</item>
-        <item name="currentWordColour">#ffffff</item>
+        <item name="currentWordColour">#3d3c3b</item>
+        <item name="currentWordSize">34sp</item>
         <item name="previouslySelectedWordColour">#88ffffff</item>
         <item name="selectedWordColour">#ffffff</item>
         <item name="notAWordColour">#ffffff</item>
@@ -28,13 +29,13 @@
         <item name="padding">0dp</item>
         <item name="timerHeight">15dp</item>
         <item name="timerBorderWidth">0dp</item>
-        <item name="tileBorderWidth">1dp</item>
+        <item name="tileBorderWidth">0.75dp</item>
         <item name="textSizeMinimum">12sp</item>
         <item name="textSizeSmall">16sp</item>
         <item name="textSizeNormal">20sp</item>
         <item name="textSizeLarge">30sp</item>
 
-        <item name="scoreHeadingTextSize">22sp</item>
+        <item name="scoreHeadingTextSize">18sp</item>
         <item name="scoreTextSize">22sp</item>
         <item name="scorePadding">12dp</item>
     </style>

@@ -11,6 +11,7 @@
         <attr format="color" name="tileBackgroundColour" />
         <attr format="color" name="tileBorderColour" />
         <attr format="color" name="currentWordColour" />
+        <attr format="dimension" name="currentWordSize" />
         <attr format="color" name="previouslySelectedWordColour" />
         <attr format="color" name="selectedWordColour" />
         <attr format="color" name="notAWordColour" />
