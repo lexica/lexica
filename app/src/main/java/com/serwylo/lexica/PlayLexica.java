@@ -67,6 +67,8 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
 		} catch (Exception e) {
 			Log.e(TAG,"top level",e);
 		}
+
+		getSupportActionBar().setElevation(0);
     }
 
 	@Override
