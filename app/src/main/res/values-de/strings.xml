@@ -21,8 +21,8 @@
     <string name="pref_dict">Wörterbuch</string>
     <string name="pref_dict_dialog">Wörterbuch auswählen</string>
     <string name="pref_dict_summary">Bitte wählen Sie ein Wörterbuch aus</string>
-    <string name="pref_dict_uk">Großbritannien</string>
-    <string name="pref_dict_us">USA</string>
+    <string name="pref_dict_uk">Englisch (UK)</string>
+    <string name="pref_dict_us">Englisch (US)</string>
     <string name="pref_sounds">Klänge aktiviert</string>
     <string name="pref_sounds_summary">Ob Soundeffekte aktiviert sind oder nicht</string>
     <string name="pref_timeLimit">Zeitbegrenzung</string>
@@ -83,4 +83,5 @@
 	<string name="pref_dict_ru">Russisch</string>
 	<string name="pref_dict_beta">%1$s (Beta)</string>
 
+	<string name="pref_dict_hu">Ungarisch</string>
 	</resources>
