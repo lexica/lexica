@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lexica</string>
     <string name="about">Über</string>
@@ -84,4 +84,5 @@
 	<string name="pref_dict_beta">%1$s (Beta)</string>
 
 	<string name="pref_dict_hu">Ungarisch</string>
-	</resources>
+    <string name="pref_breakdown_summary">Wählen ob bei Zahl der zu findenden Wörter zusätzlich die Wortlänge angezeigt wird</string>
+</resources>
