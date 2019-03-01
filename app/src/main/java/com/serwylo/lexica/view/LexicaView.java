@@ -289,11 +289,13 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 					w += "  " + game.getWordScore(w);
 					p.setARGB(255, 0, 0, 0);
 				} else {
-					p.setARGB(255, 255, 0, 0);
+					p.setStrikeThruText(true);
+					p.setARGB(255, 76, 101, 127);
 				}
 			}
 			canvas.drawText(w.toUpperCase(), left, pos, p);
 			pos += textSizeSmall;
+			p.setStrikeThruText(false);
 		}
 	}
 
