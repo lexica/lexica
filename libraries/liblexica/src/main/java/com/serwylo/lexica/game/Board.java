@@ -21,9 +21,14 @@ import net.healeys.trie.TransitionMap;
 
 public abstract class Board implements TransitionMap {
 	private String[] board;
+	private Integer[] positions;
 
 	public Board(String[] b) {
 		board = b;
+		positions = new Integer[getSize()];
+		for (int i = 0; i < getSize(); i++) {
+			positions[i] = i;
+		}
 	}
 
 	/**
@@ -60,17 +65,25 @@ public abstract class Board implements TransitionMap {
 
 	public synchronized void rotate() {
 		String[] newbrd = new String[getSize()];
+		Integer[] newpos = new Integer[getSize()];
 
 		int w = getWidth();
 
 		for(int i=0;i<getSize();i++) {
-			newbrd[w*(i%w)+((w-1)-(i/w))] = board[i];
+			int adjusted = w*(i%w)+((w-1)-(i/w));
+			newbrd[adjusted] = board[i];
+			newpos[adjusted] = positions[i];
 		}
 
 		board = newbrd;
+		positions = newpos;
 	}
 
 	public abstract int getWidth();
+
+	public int getRotatedPosition(int x) {
+		return positions[x];
+	}
 
 	@Override
 	public boolean canTransition(int fromX, int fromY, int toX, int toY) {
