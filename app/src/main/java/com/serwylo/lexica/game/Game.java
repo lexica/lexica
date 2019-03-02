@@ -66,14 +66,6 @@ public class Game implements Synchronizer.Counter {
 
 	public enum GameStatus { GAME_STARTING, GAME_RUNNING, GAME_PAUSED, GAME_FINISHED }
 
-	//TODO: i18n
-	private static final int[] LETTER_POINTS = {
-		//  A, B, C, D, E, F, G, H, I, J, K, L, M
-			1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3,
-		//  N, O, P, Qu,R, S, T, U, V, W, X, Y, Z
-			1, 1, 3, 5, 1, 1, 1, 1, 4, 4, 8, 4, 10
-	};
-
 	private static final int[] WORD_POINTS = {
 		0,0,0, // 0,1,2
 		1,1,2, // 3,4,5
