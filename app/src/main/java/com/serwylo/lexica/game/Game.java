@@ -43,6 +43,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 
@@ -94,7 +95,7 @@ public class Game implements Synchronizer.Counter {
 	private int boardSize; // using an int so I can use much larger boards later
 	private int minWordLength;
 
-	private Map<String,Solution> solutions;
+	private Map<String, List<Solution>> solutions;
 
 	private AudioManager mgr;
 	private SoundPool mSoundPool;
@@ -467,7 +468,7 @@ public class Game implements Synchronizer.Counter {
 		timeRemaining = 0;
 	}
 
-	public Map<String,Solution> getSolutions() {
+	public Map<String, List<Solution>> getSolutions() {
 		return solutions;
 	}
 

@@ -117,7 +117,7 @@ public class ScoreActivity extends TabActivity {
 		while(li.hasNext()) {
 			String w = li.next();
 			max_score += game.getWordScore(w);
-			addMissedWord(missedVG,game.getSolutions().get(w));
+			addMissedWord(missedVG,game.getSolutions().get(w).get(0));
 		}
 
 		int totalScorePercentage = (int)(((double)score/max_score)*100);

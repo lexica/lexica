@@ -12,6 +12,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -130,7 +131,7 @@ public class StringTrie extends Trie {
 			int pos,
 			Set<Integer> usedPositions,
 			StringBuilder prefix,
-			Map<String, Solution> solutions,
+			Map<String, List<Solution>> solutions,
 			List<Integer> solution) {
 
 		if (node.word()) {
@@ -138,7 +139,12 @@ public class StringTrie extends Trie {
 			if(wordFilter == null || wordFilter.isWord(w)) {
 				Integer[] solutionArray = new Integer[solution.size()];
 				solution.toArray(solutionArray);
-				solutions.put(w, new StringSolution(w, solutionArray));
+				List<Solution> sols = solutions.get(w);
+				if (sols == null) {
+					sols = new LinkedList<>();
+					solutions.put(w, sols);
+				}
+				sols.add(new StringSolution(w, solutionArray));
 			}
 		}
 
@@ -184,10 +190,9 @@ public class StringTrie extends Trie {
 	}
 
 	@Override
-	public Map<String, Solution> solver(TransitionMap transitions, WordFilter filter) {
+	public Map<String, List<Solution>> solver(TransitionMap transitions, WordFilter filter) {
 
-		long startTime = System.currentTimeMillis();
-		Map<String, Solution> solutions = new TreeMap<>();
+		Map<String, List<Solution>> solutions = new TreeMap<>();
 		StringBuilder prefix = new StringBuilder(transitions.getSize() + 1);
 
 		List<Integer> positions = new ArrayList<>(transitions.getSize());
@@ -207,8 +212,6 @@ public class StringTrie extends Trie {
 			positions.remove(positions.size() - 1);
 			prefix.delete(prefix.length() - value.length(), prefix.length());
 		}
-
-		long totalTime = System.currentTimeMillis() - startTime;
 
 		return solutions;
 	}
