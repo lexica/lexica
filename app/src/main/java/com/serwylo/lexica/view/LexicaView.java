@@ -236,7 +236,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 					}
 				}
 			}
-			float textSize = (bottom - top) / lines;
+			float textSize = (bottom - top) / ((lines == 0) ? 1f : lines);
 			if (textSize > textSizeNormal) {
 				textSize = textSizeNormal;
 			}
