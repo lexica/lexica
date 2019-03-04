@@ -40,6 +40,7 @@ import net.healeys.trie.WordFilter;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -50,6 +51,7 @@ import java.util.Map;
 public class Game implements Synchronizer.Counter {
 
 	public static final String SHOW_BREAKDOWN = "showBreakdown";
+	public static final String TILE_WEIGHT = "tileWeight";
 	public static final String SCORE_TYPE = "scoreType";
 	public static final String SCORE_WORDS = "W";
 	public static final String SCORE_LETTERS = "L";
@@ -64,8 +66,77 @@ public class Game implements Synchronizer.Counter {
 	private int score;
 	private String scoreType;
 	private boolean showBreakdown;
+	private String tileWeight;
 
 	public enum GameStatus { GAME_STARTING, GAME_RUNNING, GAME_PAUSED, GAME_FINISHED }
+
+	private static int[] weights;
+
+	private static final int[][] WEIGHT_COLORS = {
+			{255, 252, 197},
+			{255, 251, 194},
+			{255, 249, 190},
+			{255, 248, 187},
+			{255, 246, 183},
+			{255, 244, 179},
+			{255, 243, 176},
+			{255, 242, 172},
+			{255, 240, 169},
+			{255, 239, 165},
+			{255, 237, 161},
+			{254, 236, 158},
+			{254, 234, 154},
+			{254, 233, 151},
+			{254, 231, 147},
+			{254, 229, 144},
+			{254, 228, 141},
+			{254, 226, 137},
+			{254, 225, 134},
+			{254, 223, 130},
+			{254, 221, 126},
+			{254, 219, 124},
+			{254, 218, 120},
+			{254, 216, 117},
+			{254, 213, 113},
+			{254, 209, 109},
+			{254, 206, 107},
+			{254, 203, 103},
+			{254, 200, 100},
+			{254, 197, 96},
+			{254, 193, 92},
+			{254, 191, 90},
+			{254, 187, 86},
+			{254, 184, 83},
+			{254, 181, 79},
+			{253, 177, 75},
+			{253, 175, 74},
+			{253, 171, 73},
+			{253, 169, 72},
+			{253, 165, 70},
+			{253, 162, 69},
+			{253, 160, 68},
+			{253, 156, 66},
+			{253, 154, 65},
+			{253, 150, 64},
+			{253, 147, 62},
+			{253, 145, 61},
+			{253, 141, 60},
+			{252, 138, 59},
+			{252, 132, 57},
+			{252, 126, 55},
+			{252, 122, 54},
+			{252, 116, 52},
+			{252, 112, 51},
+			{252, 106, 50},
+			{252, 100, 48},
+			{252, 96, 47},
+			{252, 90, 45},
+			{252, 86, 44},
+			{252, 80, 42},
+			{250, 75, 41},
+			{249, 72, 40},
+			{246, 67, 39},
+	};
 
 	private static final int[] WORD_POINTS = {
 		0,0,0, // 0,1,2
@@ -144,6 +215,7 @@ public class Game implements Synchronizer.Counter {
 			wordCount = saver.readWordCount();
 
 			status = saver.readStatus();
+			initializeWeights();
 		} catch (Exception e) {
 			Log.e(TAG,"Error Restoring Saved Game",e);
 			status = GameStatus.GAME_FINISHED;
@@ -186,7 +258,7 @@ public class Game implements Synchronizer.Counter {
 		maxTime = getMaxTimeRemaining();
 		score = 0;
 		wordsUsed = new LinkedHashSet<>();
-
+		initializeWeights();
 	}
 
 	public Language getLanguage() {
@@ -272,6 +344,7 @@ public class Game implements Synchronizer.Counter {
 		}
 		scoreType = prefs.getString(SCORE_TYPE, SCORE_WORDS);
 		showBreakdown = prefs.getBoolean(SHOW_BREAKDOWN, false);
+		tileWeight = prefs.getString(TILE_WEIGHT, "tile_none");
 	}
 
 	public void initializeDictionary() {
@@ -308,6 +381,54 @@ public class Game implements Synchronizer.Counter {
 			}
 		} catch(IOException e) {
 			Log.e(TAG,"Error initializing dictionary",e);
+		}
+	}
+
+	/**
+	 * Initialize tile weights.
+	 *
+	 * For each tile, count how many words that tile can be used for.
+	 */
+	private void initializeWeights() {
+		weights = new int[boardSize];
+
+		for (Map.Entry<String, List<Solution>> entry : solutions.entrySet()) {
+			// If we're restoring a game and the word was already used, don't include
+			// it in the weights
+			if (wordList.contains(entry.getKey()) || wordList.contains("+"+entry.getKey())) {
+				continue;
+			}
+
+			// Handle multiple paths for the same word by keeping track of positions
+			// already incremented.
+			HashSet<Integer> seen = new HashSet<>();
+			for (Solution sol : entry.getValue()) {
+				for (int pos : sol.getPositions()) {
+					if (!seen.contains(pos)) {
+						seen.add(pos);
+						weights[pos]++;
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Removes the tile weights for the given word
+	 *
+	 * @param word Word to remove tile weights for.
+	 */
+	private void removeWeight(String word) {
+		// Handle multiple paths for the same word by keeping track of positions
+		// already decremented.
+		HashSet<Integer> seen = new HashSet<>();
+		for (Solution sol : solutions.get(word)) {
+			for (Integer pos : sol.getPositions()) {
+				if (!seen.contains(pos)) {
+					seen.add(pos);
+					weights[pos]--;
+				}
+			}
 		}
 	}
 
@@ -364,6 +485,7 @@ public class Game implements Synchronizer.Counter {
                 wordCountsByLength.put(cap.length(), wordCountsByLength.get(cap.length()) + 1);
 				wordList.addFirst(word);
 				playSound(0);
+				removeWeight(cap);
 			}
 		} else {
             // Word is not really a word
@@ -405,6 +527,26 @@ public class Game implements Synchronizer.Counter {
 
 	public int getMaxWordCount() {
 		return solutions.size();
+	}
+
+	public int getWeight(int pos) {
+		return weights[pos];
+	}
+
+	public int[] getWeightColor(int idx) {
+		if (idx < 1) {
+			return new int[] {255, 255, 255};
+		} else {
+			return WEIGHT_COLORS[Math.min(idx, WEIGHT_COLORS.length) - 1];
+		}
+	}
+
+	public boolean tileWeightCount() {
+		return tileWeight.equals("tile_count") || tileWeight.equals("tile_both");
+	}
+
+	public boolean tileWeightColor() {
+		return tileWeight.equals("tile_color") || tileWeight.equals("tile_both");
 	}
 
 	public SparseIntArray getMaxWordCountsByLength() {

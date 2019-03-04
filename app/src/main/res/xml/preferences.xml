@@ -56,6 +56,16 @@
 		android:summary="@string/pref_breakdown_summary"
 	/>
 
+	<ListPreference
+		android:key="tileWeight"
+		android:title="@string/pref_tileWeight"
+		android:summary="@string/pref_tileWeight_summary"
+		android:entries="@array/tile_weight_choices_entries"
+		android:entryValues="@array/tile_weight_choices_entryvalues"
+		android:defaultValue="tile_none"
+		android:dialogTitle="@string/pref_tileWeight_dialog"
+		/>
+
 	<CheckBoxPreference
 		android:key="soundsEnabled"
 		android:title="@string/pref_sounds"
