@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -42,9 +43,9 @@ public class FullUsGbTrieTest extends TrieTest {
 
 	static {
 		addSolution("quod", xy(1, 0), xy(2, 1), xy(2, 2));
-		addSolution("ono", xy(2, 1), xy(1, 1), xy(2, 0));
-		addSolution("son", xy(3, 0), xy(2, 1), xy(1, 1));
-		addSolution("soon", xy(3, 0), xy(2, 1), xy(2, 0), xy(1, 1));
+		addSolution("ono", xy(2, 0), xy(1, 1), xy(2, 1));
+		addSolution("son", xy(3, 0), xy(2, 0), xy(1, 1));
+		addSolution("soon", xy(3, 0), xy(2, 0), xy(2, 1), xy(1, 1));
 		addSolution("sod", xy(3, 0), xy(2, 1), xy(2, 2));
 		addSolution("soda", xy(3, 0), xy(2, 1), xy(2, 2), xy(3, 1));
 		addSolution("sad", xy(3, 0), xy(3, 1), xy(2, 2));
@@ -108,7 +109,7 @@ public class FullUsGbTrieTest extends TrieTest {
 	}
 
 	private static void assertTrieCorrect(Trie trie) {
-		Map<String, Solution> solutions = trie.solver(BOARD, new WordFilter.MinLength(3));
+		Map<String, List<Solution>> solutions = trie.solver(BOARD, new WordFilter.MinLength(3));
 		List<String> expectedWords = new ArrayList<>();
 		Collections.addAll(expectedWords, WORDS);
 
@@ -122,17 +123,18 @@ public class FullUsGbTrieTest extends TrieTest {
 
 		assertEquals(expectedWords, actualWords);
 
-		for (Map.Entry<String, Solution> actualEntry : solutions.entrySet()) {
-			Solution actualSolution = actualEntry.getValue();
-			assertEquals(actualEntry.getKey(), actualSolution.getWord());
+		for (Map.Entry<String, List<Solution>> actualEntry : solutions.entrySet()) {
 
+			Solution actualSolution = actualEntry.getValue().get(0);
+			assertEquals(actualEntry.getKey(), actualSolution.getWord());
 			boolean found = false;
+
 			for (Map.Entry<String, Solution> expectedEntry : SOLUTIONS.entrySet()) {
 				if (expectedEntry.getKey().equals(actualEntry.getKey())) {
 					found = true;
 
 					Integer[] expectedPositions = expectedEntry.getValue().getPositions();
-					Integer[] actualPositions = actualEntry.getValue().getPositions();
+					Integer[] actualPositions = actualSolution.getPositions();
 
 					assertArrayEquals("Comparing solutions for: " + expectedEntry.getKey(), expectedPositions, actualPositions);
 				}
