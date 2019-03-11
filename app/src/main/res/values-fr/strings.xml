@@ -1,93 +1,83 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">Lexica</string>
-
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lexica</string>
     <string name="new_game">Nouveau jeu</string>
     <string name="restore_game">Reprendre la partie</string>
-	<string name="prefs">Options</string>
-
-	<string name="pref_dict">Langue de la grille</string>
-	<string name="pref_dict_summary">Choix de la langue utilisée dans la grille</string>
-	<string name="pref_dict_dialog">Choisir la langue</string>
-	<string name="pref_dict_us">Anglais (Américain)</string>
-	<string name="pref_dict_uk">Anglais (Royaume-Uni)</string>
-
-	<string name="pref_boardSize">Taille de la grille</string>
-	<string name="pref_boardSize_summary">Choisir une taille pour la grille</string>
-	<string name="pref_boardSize_dialog">Choix de taille</string>
-
-	<string name="pref_timeLimit">Durée d\'une partie</string>
-	<string name="pref_timeLimit_summary">Choisir la durée</string>
-	<string name="pref_timeLimit_dialog">Choix de la durée</string>
-	<string name="time_3m">3 minutes</string>
-	<string name="time_5m">5 minutes</string>
-	<string name="time_10m">10 minutes</string>
-	<string name="time_20m">20 minutes</string>
-	<string name="time_30m">30 minutes</string>
-
-	<string name="pref_sounds">Effets sonores</string>
-	<string name="pref_sounds_summary">Activer ou désactiver les bruitages</string>
-
-	<string name="dialog_no_saved">Il n\'y a pas de sauvegarde. Si vous pouvez lire ce message, il y a probablement un bug.</string>
-	<string name="dialog_ok">OK</string>
-	<string name="dialog_cancel">Annuler</string>
-
-	<string name="dialog_about_title">À propos de Lexica</string>
-	<string name="dialog_about_content">Toucher l\'écran et déplacer son doigt horizontalement, verticalement et en diagonale pour épeler des mots. Vous avez de 3 à 30 minutes pour trouver un maximum de mots.
+    <string name="prefs">Options</string>
+    <string name="pref_dict">Langue de la grille</string>
+    <string name="pref_dict_summary">Choix de la langue utilisée dans la grille</string>
+    <string name="pref_dict_dialog">Choisir la langue</string>
+    <string name="pref_dict_us">Anglais (Américain)</string>
+    <string name="pref_dict_uk">Anglais (Royaume-Uni)</string>
+    <string name="pref_boardSize">Taille de la grille</string>
+    <string name="pref_boardSize_summary">Choisir une taille pour la grille</string>
+    <string name="pref_boardSize_dialog">Choix de taille</string>
+    <string name="pref_timeLimit">Durée d\'une partie</string>
+    <string name="pref_timeLimit_summary">Choisir la durée</string>
+    <string name="pref_timeLimit_dialog">Choix de la durée</string>
+    <string name="time_3m">3 minutes</string>
+    <string name="time_5m">5 minutes</string>
+    <string name="time_10m">10 minutes</string>
+    <string name="time_20m">20 minutes</string>
+    <string name="time_30m">30 minutes</string>
+    <string name="pref_sounds">Effets sonores</string>
+    <string name="pref_sounds_summary">Activer ou désactiver les bruitages</string>
+    <string name="dialog_no_saved">Il n\'y a pas de sauvegarde. Si vous pouvez lire ce message, il y a probablement un bug.</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Annuler</string>
+    <string name="dialog_about_title">À propos de Lexica</string>
+    <string name="dialog_about_content">Toucher l\'écran et déplacer son doigt horizontalement, verticalement et en diagonale pour épeler des mots. Vous avez de 3 à 30 minutes pour trouver un maximum de mots.
 \n
 \nNombre de points :
 \nPour les grilles 4x4, les mots doivent être comporter 3 caractères au moins. Pour les grilles 5x5, les mots doivent être comporter 4 caractères au moins. Les mots de 3-4 lettres rapportent 1 point. Les mots plus longs rapportent plus de points. Les noms propres ne sont pas comptabilisés.
 \n
 \n</string>
-
-	<string name="menu_rotate_board">Tourner la Grille</string>
-	<string name="menu_save_game">Enregistrer la Partie</string>
-	<string name="menu_end_game">Terminer la Partie</string>
-	<string name="button_ok">OK</string>
-
-	<string name="about">À Propos</string>
-
-	<string name="show_missed">Montrer les Mots Manqués</string>
-	<string name="hide_missed">Cacher les Mots Manqués</string>
-
-	<string name="show_unique">Montrer les Mots Uniques</string>
-	<string name="hide_unique">Cacher les Mots Uniques</string>
-
-	<string name="view_word"><u>Voir</u></string>
-	<string name="define_word"><u>Définir</u> </string>
-
-	<string name="words">MOTS</string>
-	<string name="found_words">Mots Trouvés</string>
-	<string name="missed_words">Mots Manqués</string>
-	<string name="total_words">Nombre de Mots :</string>
-	<string name="total_score">Nombre de Points :</string>
-	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-<string name="pref_scoreType">Mode de décompte des points</string>
-	<string name="pref_scoreType_summary">Choisir le mode de décompte des points</string>
-	<string name="pref_scoreType_dialog">Mode de décompte des points</string>
-	<string name="word_length">Longueur des mots</string>
-	<string name="letter_points">Valeur des lettres</string>
-
-	<string name="score">Nombre de Points</string>
-	<string name="high_score">Meilleur Score : %1$d</string>
-	<string name="pref_resetScores_summary">Le logiciel garde en mémoire les meilleurs scores. Appuyez ici pour remettre à zéro la mémoire.</string>
-	<string name="pref_resetScores">Remettre à Zéro les meilleurs scores</string>
+    <string name="menu_rotate_board">Tourner la Grille</string>
+    <string name="menu_save_game">Enregistrer la Partie</string>
+    <string name="menu_end_game">Terminer la Partie</string>
+    <string name="button_ok">OK</string>
+    <string name="about">À Propos</string>
+    <string name="show_missed">Montrer les Mots Manqués</string>
+    <string name="hide_missed">Cacher les Mots Manqués</string>
+    <string name="show_unique">Montrer les Mots Uniques</string>
+    <string name="hide_unique">Cacher les Mots Uniques</string>
+    <string name="view_word">
+        <u>Voir</u>
+    </string>
+    <string name="define_word">
+        <u>Définir</u>
+    </string>
+    <string name="words">MOTS</string>
+    <string name="found_words">Mots Trouvés</string>
+    <string name="missed_words">Mots Manqués</string>
+    <string name="total_words">Nombre de Mots :</string>
+    <string name="total_score">Nombre de Points :</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="pref_scoreType">Mode de décompte des points</string>
+    <string name="pref_scoreType_summary">Choisir le mode de décompte des points</string>
+    <string name="pref_scoreType_dialog">Mode de décompte des points</string>
+    <string name="word_length">Longueur des mots</string>
+    <string name="letter_points">Valeur des lettres</string>
+    <string name="score">Nombre de Points</string>
+    <string name="high_score">Meilleur Score : %1$d</string>
+    <string name="pref_resetScores_summary">Le logiciel garde en mémoire les meilleurs scores. Appuyez ici pour remettre à zéro la mémoire.</string>
+    <string name="pref_resetScores">Remettre à Zéro les meilleurs scores</string>
     <string name="high_scores_reset">Les scores ont été remis à zéro.</string>
-	<string name="reset_scores_prompt">Êtes-vous sûr(e) de vouloir effacer les meilleurs scores ?</string>
-
+    <string name="reset_scores_prompt">Êtes-vous sûr(e) de vouloir effacer les meilleurs scores ?</string>
     <string name="pref_breakdown">Montrer le Détail des Longueurs de Mots</string>
-	<string name="pref_breakdown_summary">Pour choisir d\'organiser le décompte des points en fonction de la longueur des mots</string>
-<string name="pref_definitionProvider">Dictionnaire</string>
-	<string name="pref_definitionProvider_summary">Logiciel fournissant la définition des mots. Par défaut, DuckDuckGo sera utilisé.</string>
-	<string name="pref_definitionProvider_dialog">Logiciel à utiliser</string>
-<string name="pref_dict_de_de">Allemand</string>
-	<string name="pref_dict_nl">Néerlandais</string>
-	<string name="pref_dict_it">Italien</string>
-	<string name="pref_dict_ca">Catalan</string>
-	<string name="pref_dict_es">Espagnol</string>
-	<string name="pref_dict_beta">%1$s (Beta)</string>
-
-	<string name="pref_dict_fa">Perse</string>
-	<string name="pref_dict_fr_fr">Français</string>
-	<string name="pref_dict_jp">Japonais</string>
-	<string name="pref_dict_ru">Russe</string>
-	</resources>
+    <string name="pref_breakdown_summary">Pour choisir d\'organiser le décompte des points en fonction de la longueur des mots</string>
+    <string name="pref_definitionProvider">Dictionnaire</string>
+    <string name="pref_definitionProvider_summary">Logiciel fournissant la définition des mots. Par défaut, DuckDuckGo sera utilisé.</string>
+    <string name="pref_definitionProvider_dialog">Logiciel à utiliser</string>
+    <string name="pref_dict_de_de">Allemand</string>
+    <string name="pref_dict_nl">Néerlandais</string>
+    <string name="pref_dict_it">Italien</string>
+    <string name="pref_dict_ca">Catalan</string>
+    <string name="pref_dict_es">Espagnol</string>
+    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="pref_dict_fa">Perse</string>
+    <string name="pref_dict_fr_fr">Français</string>
+    <string name="pref_dict_jp">Japonais</string>
+    <string name="pref_dict_ru">Russe</string>
+    <string name="pref_dict_hu">Hongrois</string>
+</resources>
