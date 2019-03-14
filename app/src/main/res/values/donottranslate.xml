@@ -12,6 +12,7 @@
 		<item>@string/pref_dict_nl</item>
 		<item>@string/pref_dict_ru</item>
 		<item>@string/pref_dict_uk</item>
+		<item>@string/pref_dict_uk_ua</item>
 		<item>@string/pref_dict_us</item>
 	</string-array>
 	<string-array name="dict_choices_entryvalues">
@@ -28,6 +29,7 @@
 		<item>jp</item>
 		<item>nl</item>
 		<item>ru</item>
+		<item>uk</item>
 		<item>UK</item>
 		<item>US</item>
 	</string-array>

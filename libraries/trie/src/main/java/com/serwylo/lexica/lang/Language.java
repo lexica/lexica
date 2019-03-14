@@ -126,6 +126,9 @@ public abstract class Language {
             case "ru":
                 return new Russian();
 
+            case "uk":
+                return new Ukrainian();
+
             default:
                 return null;
         }

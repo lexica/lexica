@@ -33,6 +33,7 @@ import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.Persian;
 import com.serwylo.lexica.lang.Russian;
 import com.serwylo.lexica.lang.Spanish;
+import com.serwylo.lexica.lang.Ukrainian;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -121,6 +122,11 @@ public class GenerateLanguageBoards {
     @Test
     public void generateSpanishBoards() {
         generateLanguageBoards(new Spanish());
+    }
+
+    @Test
+    public void generateUkrainianBoards() {
+        generateLanguageBoards(new Ukrainian());
     }
 
     private void generateLanguageBoards(Language language) {
