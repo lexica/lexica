@@ -1,2 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_dict_summary">Επιλογή λεξικού για χρήση</string>
+    <string name="pref_dict_ca">Καταλανικά</string>
+    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="time_5m">5 λεπτά</string>
+    <string name="high_score">Υψηλή βαθμολογία: %1$d</string>
+    <string name="words">ΛΈΞΕΙΣ</string>
+    <string name="time_30m">30 λεπτά</string>
+    <string name="pref_definitionProvider_summary">Επιλέξτε μια υπηρεσία παροχής ορισμού για χρήση. Εάν η επιλεγμένη υπηρεσία παροχής δεν είναι εγκατεστημένη, θα χρησιμοποιηθεί το DuckDuckGo.</string>
+    <string name="pref_dict_jp">Ιαπωνικά</string>
+    <string name="pref_dict_es">Ισπανικά</string>
+    <string name="define_word">
+        <u>Ορισμός</u>
+    </string>
+    <string name="dialog_ok">ΟΚ</string>
+    <string name="pref_sounds">Ήχος ενεργοποιημένος</string>
+    <string name="show_unique">Εμφάνιση μοναδικών λέξεων</string>
+    <string name="pref_sounds_summary">Εάν είναι ενεργοποιημένα τα ηχητικά εφέ ή όχι</string>
+    <string name="pref_boardSize_summary">Επιλογή μεγέθους πίνακα</string>
+    <string name="menu_end_game">Τερματισμός παιχνιδιού</string>
+    <string name="button_ok">ΟΚ</string>
+    <string name="pref_dict_nl">Ολλανδικά</string>
+    <string name="score">ΒΑΘΜΟΛΟΓΊΑ</string>
+    <string name="pref_boardSize">Μέγεθος πίνακα</string>
+    <string name="pref_dict_fa">Περσικά</string>
+    <string name="pref_boardSize_dialog">Επιλογή μεγέθους πίνακα</string>
+    <string name="pref_dict_dialog">Επιλογή λεξικού</string>
+    <string name="pref_timeLimit_dialog">Επιλογή χρονικού ορίου</string>
+    <string name="pref_breakdown">Εμφάνιση ανάλυσης μήκους λέξεων</string>
+    <string name="missed_words">Χαμένες λέξεις</string>
+    <string name="hide_missed">Απόκρυψη χαμένων λέξεων</string>
+    <string name="pref_dict_hu">Ουγγρικά</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="letter_points">Σημεία γραμμάτων</string>
+    <string name="menu_save_game">Αποθήκευση παιχνιδιού</string>
+    <string name="time_10m">10 λεπτά</string>
+    <string name="pref_dict_us">Αγγλικά (ΗΠΑ)</string>
+    <string name="show_missed">Εμφάνιση χαμένων λέξεων</string>
+    <string name="pref_dict_ru">Ρωσικά</string>
+    <string name="pref_breakdown_summary">Αν ο αριθμός των λέξεων εμφανίζεται ή όχι μετράει με μήκος λέξης</string>
+    <string name="about">Σχετικά</string>
+    <string name="new_game">Νέο παιχνίδι</string>
+    <string name="time_20m">20 λεπτά</string>
+    <string name="pref_scoreType_dialog">Επιλογή τύπου βαθμολόγησης</string>
+    <string name="pref_dict_it">Ιταλικά</string>
+    <string name="restore_game">Επαναφορά παιχνιδιού</string>
+    <string name="pref_dict_uk">Αγγλικά (ΗΒ)</string>
+    <string name="total_score">Συνολική βαθμολογία:</string>
+    <string name="pref_resetScores">Μηδενισμός υψηλών βαθμολογιών</string>
+    <string name="time_3m">3 λεπτά</string>
+    <string name="pref_resetScores_summary">Οι υψηλές βαθμολογίες παρακολουθούνται για κάθε συνδυασμό των παραπάνω ρυθμίσεων. Πατήστε για να μηδενίσετε όλες τις βαθμολογίες.</string>
+    <string name="pref_timeLimit">Χρονικό όριο</string>
+    <string name="word_length">Μήκος λέξης</string>
+    <string name="view_word">
+        <u>Προβολή</u>
+    </string>
+    <string name="total_words">Σύνολο λέξεων:</string>
+    <string name="pref_definitionProvider_dialog">Επιλέξτε υπηρεσία παροχής ορισμού</string>
+    <string name="found_words">Λέξεις Που Βρέθηκαν</string>
+    <string name="dialog_cancel">Ακύρωση</string>
+    <string name="pref_definitionProvider">Παροχέας ορισμών</string>
+    <string name="dialog_about_content">Αγγίξτε την οθόνη και μετακινήστε το δάχτυλό σας σε γειτονικά τετράγωνα για να συλλαβίσετε λέξεις. Έχεις τρία λεπτά για να βρεις όσες περισσότερες λέξεις μπορείς. 
+\n
+\nΒαθμολόγηση: 
+\nΣε πίνακες 4x4, οι λέξεις πρέπει να είναι τουλάχιστον τρία γράμματα μακριά. Σε πίνακες 5X5, οι λέξεις πρέπει να είναι τουλάχιστον τέσσερα γράμματα μακριά. Λέξεις που έχουν τρία ή τέσσερα γράμματα αξίζουν ένα πόντο. Οι μεγαλύτερες λέξεις αξίζουν περισσότερους πόντους. Τα κατάλληλα ουσιαστικά δεν υπολογίζονται.
+\n
+\n</string>
+    <string name="pref_scoreType">Τύπος βαθμολόγησης</string>
+    <string name="menu_rotate_board">Περιστροφή πίνακα</string>
+    <string name="pref_dict_de_de">Γερμανικά</string>
+    <string name="pref_timeLimit_summary">Επιλογή χρονικού ορίου</string>
+    <string name="pref_scoreType_summary">Επιλογή τύπου βαθμολόγησης</string>
+    <string name="dialog_about_title">Σχετικά με τη Lexica</string>
+    <string name="prefs">Προτιμήσεις</string>
+    <string name="app_name">Lexica</string>
+    <string name="high_scores_reset">Οι υψηλοί βαθμοί έχουν μηδενιστεί.</string>
+    <string name="hide_unique">Απόκρυψη μοναδικών λέξεων</string>
+    <string name="reset_scores_prompt">Είστε βέβαιοι ότι θέλετε να επαναφέρετε όλες τις υψηλές βαθμολογίες για όλους τους τρόπους παιχνιδιού στο μηδέν;</string>
+    <string name="pref_dict_fr_fr">Γαλλικά</string>
+    <string name="pref_dict">Λεξικό</string>
+    <string name="dialog_no_saved">Δεν υπάρχει αποθηκευμένο παιχνίδι. Αν μπορείτε να διαβάσετε αυτό το μήνυμα, κάτι είναι πιθανόν σπασμένο.</string>
+</resources>
