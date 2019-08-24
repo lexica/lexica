@@ -1,2 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Lexica</string>
+    <string name="new_game">Nová hra</string>
+    <string name="restore_game">Obnovit hru</string>
+    <string name="prefs">Možnosti</string>
+    <string name="pref_dict">Slovník</string>
+    <string name="pref_dict_summary">Zvolte slovník, který bude hra využívat</string>
+    <string name="pref_dict_dialog">Zvolit slovník</string>
+    <string name="pref_dict_ca">Katalánština</string>
+    <string name="pref_dict_de_de">Němčina</string>
+    <string name="pref_dict_es">Španělština</string>
+    <string name="pref_dict_fa">Perština</string>
+    <string name="pref_dict_fr_fr">Francouzština</string>
+    <string name="pref_dict_hu">Maďarština</string>
+    <string name="pref_dict_it">Italština</string>
+    <string name="pref_dict_jp">Japonština</string>
+    <string name="pref_dict_nl">Nizozemština</string>
+    <string name="pref_dict_ru">Ruština</string>
+    <string name="pref_dict_uk">Angličtina (UK)</string>
+    <string name="pref_dict_us">Angličtina (US)</string>
+    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="pref_boardSize">Velikost herní plochy</string>
+    <string name="pref_boardSize_summary">Zvolte velikost hrací plochy</string>
+    <string name="pref_boardSize_dialog">Zvolte velikost hrací plochy</string>
+    <string name="pref_timeLimit">Časový limit</string>
+    <string name="pref_timeLimit_summary">Zvolte časový limit hry</string>
+    <string name="pref_timeLimit_dialog">Zvolit časový limit</string>
+    <string name="time_3m">3 minuty</string>
+    <string name="time_5m">5 minut</string>
+    <string name="time_10m">10 minut</string>
+    <string name="time_20m">20 minut</string>
+    <string name="time_30m">30 minut</string>
+    <string name="pref_scoreType">Způsob bodování</string>
+    <string name="pref_scoreType_summary">Zvolte způsob bodování</string>
+</resources>
