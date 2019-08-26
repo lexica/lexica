@@ -43,7 +43,7 @@
 	<string name="letter_points">Letter Points</string>
 
 	<string name="pref_sounds">Sounds Enabled</string>
-	<string name="pref_sounds_summary">Whether or not sound effects are enabled</string>
+	<string name="pref_sounds_summary">Whether or not sound effects are enabled?</string>
 
 	<string name="dialog_no_saved">There is no game saved.  If you can read this
 	message, something is likely broken.</string>
