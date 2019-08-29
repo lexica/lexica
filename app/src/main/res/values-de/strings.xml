@@ -1,9 +1,11 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lexica</string>
     <string name="about">Über</string>
     <string name="button_ok">OK</string>
-    <string name="define_word"><u>Definition</u></string>
+    <string name="define_word">
+        <u>Definition</u>
+    </string>
     <string name="dialog_about_title">Über Lexica</string>
     <string name="dialog_cancel">Abbrechen</string>
     <string name="dialog_ok">OK</string>
@@ -21,12 +23,12 @@
     <string name="pref_dict">Wörterbuch</string>
     <string name="pref_dict_dialog">Wörterbuch auswählen</string>
     <string name="pref_dict_summary">Bitte wählen Sie ein Wörterbuch aus</string>
-    <string name="pref_dict_uk">Großbritannien</string>
-    <string name="pref_dict_us">USA</string>
+    <string name="pref_dict_uk">Englisch (UK)</string>
+    <string name="pref_dict_us">Englisch (US)</string>
     <string name="pref_sounds">Klänge aktiviert</string>
     <string name="pref_sounds_summary">Ob Soundeffekte aktiviert sind oder nicht</string>
     <string name="pref_timeLimit">Zeitbegrenzung</string>
-    <string name="pref_timeLimit_summary">Bitte wählen Sie ein Zeitbegrenzung</string>
+    <string name="pref_timeLimit_summary">Bitte wählen Sie eine Zeitbegrenzung</string>
     <string name="pref_timeLimit_dialog">Zeitbegrenzung auswählen</string>
     <string name="prefs">Einstellungen</string>
     <string name="restore_game">Spiel wiederherstellen</string>
@@ -39,48 +41,43 @@
     <string name="time_5m">5 Minuten</string>
     <string name="total_score">Punkte insgesamt:</string>
     <string name="total_words">Wörter insgesamt:</string>
-    <string name="view_word"><u>Ansicht</u></string>
+    <string name="view_word">
+        <u>Ansicht</u>
+    </string>
     <string name="words">WÖRTER</string>
-	<string name="dialog_no_saved">Es wird kein Spiel gespeichert. Wenn Ihnen diese Nachricht angezeigt wird, ist wahrscheinlich etwas nicht in Ordnung.</string>
-	<string name="dialog_about_content">
-	Berühren Sie den Bildschirm und bewegen Sie Ihren Finger über benachbarte
-	Felder, um Wörter zu buchstabieren. Sie haben drei Minuten, um so viele 
-	Wörter wie möglich zu finden.
-
-	\n\nPunktevergabe:
-	\nAuf 4x4 großen Spielfeldern müssen Wörter mindestens drei Buchstaben lang
-	sein, auf 5x5 großen Spielfeldern mindestens vier Buchstaben lang.
-	Wörter, die drei oder vier Buchstaben lang sind, zählen einen Punkt. Längere 
-	Wörter zählen mehr Punkte. Eigennamen zählen nicht.\n\n
-	</string>
-<string name="pref_scoreType">Bewertungstyp</string>
-	<string name="pref_scoreType_summary">Einen Bewertungstyp auswählen</string>
-	<string name="pref_scoreType_dialog">Bewertungstyp auswählen</string>
-	<string name="word_length">Wortlänge</string>
-	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-
-	<string name="high_score">Höchstwertung: %1$d</string>
-	<string name="pref_resetScores_summary">Höchstwertungen werden für jede Kombination der oben genannten Einstellungen aufgezeichnet. Antippen, um alle Ergebnisse auf Null zurückzusetzen.</string>
-	<string name="pref_resetScores">Höchstwertung zurücksetzen</string>
+    <string name="dialog_no_saved">Es wird kein Spiel gespeichert. Wenn Ihnen diese Nachricht angezeigt wird, ist wahrscheinlich etwas nicht in Ordnung.</string>
+    <string name="dialog_about_content">Berühren Sie den Bildschirm und bewegen Sie Ihren Finger über benachbarte Felder, um Wörter zu buchstabieren. Sie haben drei Minuten, um so viele Wörter wie möglich zu finden.
+\n
+\nPunktevergabe:
+\nAuf 4×4 großen Spielfeldern müssen Wörter mindestens drei Buchstaben lang sein, auf 5×5 großen Spielfeldern mindestens vier Buchstaben lang. Wörter, die drei oder vier Buchstaben lang sind, zählen einen Punkt. Längere Wörter zählen mehr Punkte. Eigennamen zählen nicht.
+\n
+\n</string>
+    <string name="pref_scoreType">Bewertungstyp</string>
+    <string name="pref_scoreType_summary">Einen Bewertungstyp auswählen</string>
+    <string name="pref_scoreType_dialog">Bewertungstyp auswählen</string>
+    <string name="word_length">Wortlänge</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="high_score">Höchstwertung: %1$d</string>
+    <string name="pref_resetScores_summary">Höchstwertungen werden für jede Kombination der oben genannten Einstellungen aufgezeichnet. Antippen, um alle Ergebnisse auf Null zurückzusetzen.</string>
+    <string name="pref_resetScores">Höchstwertung zurücksetzen</string>
     <string name="high_scores_reset">Höchstwertungen wurden zurückgesetzt</string>
-	<string name="reset_scores_prompt">Möchten Sie wirklich alle Höchstwertungen für alle Spielmodi auf Null zurücksetzen?</string>
-
+    <string name="reset_scores_prompt">Möchten Sie wirklich alle Höchstwertungen für alle Spielmodi auf Null zurücksetzen?</string>
     <string name="pref_breakdown">Wortlängen-Aufschlüsselung anzeigen</string>
-	<string name="letter_points">Buchstabenwertung</string>
-
-	<string name="score">Punkte</string>
-	<string name="pref_definitionProvider">Wörterbuch</string>
-	<string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird auf DuckDuckGo zurückgegriffen.</string>
-	<string name="pref_definitionProvider_dialog">Wörterbuchauswahl</string>
-<string name="pref_dict_de_de">Deutsch</string>
-	<string name="pref_dict_nl">Niederländisch</string>
-	<string name="pref_dict_fa">Persisch</string>
-	<string name="pref_dict_fr_fr">Französisch</string>
-	<string name="pref_dict_it">Italienisch</string>
-	<string name="pref_dict_ca">Katalanisch</string>
-	<string name="pref_dict_es">Spanisch</string>
-	<string name="pref_dict_jp">Japanisch</string>
-	<string name="pref_dict_ru">Russisch</string>
-	<string name="pref_dict_beta">%1$s (Beta)</string>
-
-	</resources>
+    <string name="letter_points">Buchstabenwertung</string>
+    <string name="score">PUNKTE</string>
+    <string name="pref_definitionProvider">Wörterbuch</string>
+    <string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird auf DuckDuckGo zurückgegriffen.</string>
+    <string name="pref_definitionProvider_dialog">Wörterbuchauswahl</string>
+    <string name="pref_dict_de_de">Deutsch</string>
+    <string name="pref_dict_nl">Niederländisch</string>
+    <string name="pref_dict_fa">Persisch</string>
+    <string name="pref_dict_fr_fr">Französisch</string>
+    <string name="pref_dict_it">Italienisch</string>
+    <string name="pref_dict_ca">Katalanisch</string>
+    <string name="pref_dict_es">Spanisch</string>
+    <string name="pref_dict_jp">Japanisch</string>
+    <string name="pref_dict_ru">Russisch</string>
+    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="pref_dict_hu">Ungarisch</string>
+    <string name="pref_breakdown_summary">Wählen, ob bei Zahl der zu findenden Wörter zusätzlich die Wortlänge angezeigt wird</string>
+</resources>

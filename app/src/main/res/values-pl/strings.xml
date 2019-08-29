@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Lexica</string>
+
+    <string name="new_game">Nowa gra</string>
+    <string name="restore_game">Przywrócić grę</string>
+	<string name="prefs">Preferencje</string>
+
+	<string name="pref_dict">Słownik</string>
+	<string name="pref_dict_summary">Wybierz słownik do użycia</string>
+	<string name="pref_dict_dialog">Wybierz słownik</string>
+	<string name="pref_dict_ca">Kataloński</string>
+	<string name="pref_dict_de_de">Niemiecki</string>
+	<string name="pref_dict_es">Hiszpański</string>
+	<string name="pref_dict_fa">Perski</string>
+	<string name="pref_dict_fr_fr">Francuski</string>
+	<string name="pref_dict_hu">ęgierski</string>
+	<string name="pref_dict_it">Włoski</string>
+	<string name="pref_dict_jp">Japoński</string>
+	<string name="pref_dict_nl">Holenderski</string>
+	<string name="pref_dict_ru">Rosyjski</string>
+	<string name="pref_dict_uk">Angielski (UK)</string>
+	<string name="pref_dict_us">Angielski (USA)</string>
+	<string name="pref_dict_beta">%1$s (Beta)</string>
+
+	<string name="pref_boardSize">Rozmiar planszy</string>
+	<string name="pref_boardSize_summary">Wybierz rozmiar planszy</string>
+	<string name="pref_boardSize_dialog">Wybierz Rozmiar Planszy</string>
+
+	<string name="pref_timeLimit">Limit czasu</string>
+	<string name="pref_timeLimit_summary">Wybierz limit czasu</string>
+	<string name="pref_timeLimit_dialog">Wybierz limit czasu</string>
+	<string name="time_3m">3 minuty</string>
+	<string name="time_5m">5 minut</string>
+	<string name="time_10m">10 minut</string>
+	<string name="time_20m">20 minut</string>
+	<string name="time_30m">30 minut</string>
+
+	<string name="pref_scoreType">Typ punktacji</string>
+	<string name="pref_scoreType_summary">Wybierz rodzaj punktacji</string>
+	<string name="pref_scoreType_dialog">Wybierz typ punktowania</string>
+	<string name="word_length">Długość słowa</string>
+	<string name="letter_points">Punty Liter</string>
+
+	<string name="pref_sounds">Włącz Dźwięki</string>
+	<string name="pref_sounds_summary">Czy efekty dźwiękowe są włączone</string>
+
+	<string name="dialog_no_saved">Nie ma zapisanej gry. Jeśli możesz przeczytać tę wiadomość, coś jest prawdopodobnie uszkodzone.</string>
+	<string name="dialog_ok">OK</string>
+	<string name="dialog_cancel">Anuluj</string>
+
+	<string name="dialog_about_title">O Lexica</string>
+	<string name="dialog_about_content">Dotknij ekranu i przesuń palec do sąsiednich kwadratów, aby przeliterować słowa. Masz trzy minuty na znalezienie jak największej liczby słów. 
+\n
+\nPunktacja: 
+\nNa planszy 4x4 słowa muszą mieć co najmniej trzy litery. Na planszy 5x5 słowa muszą mieć co najmniej cztery litery. Słowa, które mają trzy lub cztery litery, są warte jeden punkt. Dłuższe słowa są warte więcej punktów. Właściwe rzeczowniki nie są liczone.
+\n
+\n</string>
+
+	<string name="menu_rotate_board">Obróć planszę</string>
+	<string name="menu_save_game">Zapisz grę</string>
+	<string name="menu_end_game">Koniec gry</string>
+	<string name="button_ok">OK</string>
+
+	<string name="about">O aplikacji</string>
+
+	<string name="show_missed">Pokaż brakujące słowa</string>
+	<string name="hide_missed">Ukryj brakujące słowa</string>
+
+	<string name="show_unique">Pokaż unikatowe słowa</string>
+	<string name="hide_unique">Ukryj unikatowe słowa</string>
+
+	<string name="view_word"><u>Widok</u></string>
+	<string name="define_word"><u>Definiuj</u> </string>
+
+	<string name="words">SŁOWA</string>
+	<string name="score">PUNKTACJA</string>
+	<string name="found_words">Znalezione słowa</string>
+	<string name="missed_words">Brakujące słowa</string>
+	<string name="total_words">Wszystkich słów:</string>
+	<string name="total_score">Łączny wynik:</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+
+	<string name="high_score">Najlepszy wynik: %1$d</string>
+	<string name="pref_resetScores_summary">Najlepsze wyniki są śledzone dla każdej kombinacji powyższych ustawień. Stuknij, aby zresetować wszystkie wyniki do zera.</string>
+	<string name="pref_resetScores">Zresetuj najlepsze wyniki</string>
+    <string name="high_scores_reset">Najlepsze wyniki zostały zresetowane.</string>
+	<string name="reset_scores_prompt">Czy na pewno chcesz zresetować wszystkie najlepsze wyniki dla wszystkich trybów gry do zera\?</string>
+
+    <string name="pref_breakdown">Pokaż podział długości słowa</string>
+	<string name="pref_breakdown_summary">Niezależnie od tego, czy słowo się liczy, liczy się według długości słowa</string>
+
+	<string name="pref_definitionProvider">Dostawca definicji</string>
+	<string name="pref_definitionProvider_summary">Wybierz dostawcę definicji, którego chcesz użyć. Jeśli wybrany dostawca nie jest zainstalowany, zostanie użyty DuckDuckGo.</string>
+	<string name="pref_definitionProvider_dialog">Wybierz dostawcę definicji</string>
+</resources>

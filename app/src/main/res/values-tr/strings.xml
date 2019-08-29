@@ -1,9 +1,9 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources><string name="app_name">Lexica - Kelime Oyunu</string>
 
     <string name="new_game">Yeni Oyun</string>
     <string name="restore_game">Oyunu Geri Yükle</string>
-	<string name="prefs">Ayarlar</string>
+	<string name="prefs">Tercihler</string>
 
 	<string name="pref_dict">Sözlük</string>
 	<string name="pref_dict_summary">Kullanmak için sözlük seçin</string>
@@ -12,7 +12,7 @@
 	<string name="pref_dict_uk">İngilizce (UK)</string>
 	<string name="pref_dict_de_de">Almanca</string>
 	<string name="pref_dict_nl">Flemenkçe</string>
-	<string name="pref_dict_fa">Persçe</string>
+	<string name="pref_dict_fa">Farsça</string>
 	<string name="pref_dict_fr_fr">Fransızca</string>
 	<string name="pref_dict_it">İtalyanca</string>
 	<string name="pref_dict_ca">Katalanca</string>
@@ -91,4 +91,5 @@
 	<string name="pref_definitionProvider">Tanım Sağlayıcısı</string>
 	<string name="pref_definitionProvider_summary">Kullanılacak bir tanım sağlayıcı seçin. Seçilen sağlayıcı yüklenmemişse, DuckDuckGo kullanılacaktır.</string>
 	<string name="pref_definitionProvider_dialog">Tanım Sağlayıcıyı Seç</string>
+    <string name="pref_dict_hu">Macarca</string>
 </resources>
