@@ -15,6 +15,7 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -58,26 +59,28 @@ public class TransitionMapTest {
     public void stringTransitionTest() throws IOException {
         byte[] serialized = serializedUsTrie(new StringTrie(new EnglishUS()));
         Trie trie = new StringTrie.Deserializer().deserialize(new ByteArrayInputStream(serialized), BOARD, new EnglishUS());
-        Map<String, Solution> actualSolutions = trie.solver(BOARD, new WordFilter.MinLength(3));
-        assertSolutions(SOLUTIONS, actualSolutions);
+        Map<String, List<Solution>> actualSolutions = trie.solver(BOARD, new WordFilter.MinLength(3));
+        assertSolutions(actualSolutions);
     }
 
-    private static void assertSolutions(Map<String, Solution> expectedSolutions, Map<String, Solution> actualSolutions) {
-        Set<String> expectedWords = expectedSolutions.keySet();
+    private static void assertSolutions(Map<String, List<Solution>> actualSolutions) {
+        Set<String> expectedWords = SOLUTIONS.keySet();
         Set<String> actualWords = actualSolutions.keySet();
         assertTrue(actualWords.containsAll(expectedWords));
 
-        for (Map.Entry<String, Solution> expected : expectedSolutions.entrySet()) {
+        for (Map.Entry<String, Solution> expected : SOLUTIONS.entrySet()) {
             Solution expectedSolution = expected.getValue();
             String expectedWord = expected.getKey();
             boolean found = false;
-            for (Map.Entry<String, Solution> actual : actualSolutions.entrySet()) {
-                Solution actualSolution = actual.getValue();
+            for (Map.Entry<String, List<Solution>> actual : actualSolutions.entrySet()) {
+                List<Solution> actualSols = actual.getValue();
                 String actualWord = actual.getKey();
 
-                if (expectedWord.equals(actualWord)) {
-                    found = true;
-                    assertSolutionEquals(expectedSolution, actualSolution);
+                for (Solution sol : actualSols) {
+                    if (expectedWord.equals(actualWord)) {
+                        found = true;
+                        assertSolutionEquals(expectedSolution, sol);
+                    }
                 }
             }
 

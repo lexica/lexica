@@ -112,20 +112,27 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private final Rect textBounds = new Rect();
 
 	private void drawBoard(Canvas canvas) {
-		// Draw white box
-		p.setARGB(255, 255, 255, 255);
 		int topOfGrid = paddingSize + timerHeight;
-		canvas.drawRect(paddingSize, topOfGrid, gridsize + paddingSize, gridsize + topOfGrid, p);
 
-		// Draw touched boxes
-		p.setARGB(255, 255, 255, 0);
+		// Draw boxes
 		for (int i = 0; i < game.getBoard().getSize(); i++) {
-			if (!highlighted.contains(i)) {
-				continue;
-			}
+			int pos = game.getBoard().getRotatedPosition(i);
+			int weight = game.getWeight(pos);
 
 			int x = i % game.getBoard().getWidth();
 			int y = i / game.getBoard().getWidth();
+
+			if (highlighted.contains(i)) {
+				p.setARGB(255, 255, 255, 0);
+			} else {
+				if (game.tileWeightColor()) {
+					int[] rgb = game.getWeightColor(weight);
+					p.setARGB(255, rgb[0], rgb[1], rgb[2]);
+				} else {
+					p.setARGB(255, 255, 255, 255);
+				}
+			}
+
 			float left = paddingSize + (boxsize * x);
 			float top = topOfGrid + (boxsize * y);
 			float right = paddingSize + (boxsize * (x + 1));
@@ -157,6 +164,25 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		for (int x = 0; x < boardWidth; x++) {
 			for (int y = 0; y < boardWidth; y++) {
+				int pos = game.getBoard().getRotatedPosition(y * boardWidth + x);
+				int weight = game.getWeight(pos);
+
+				if (game.tileWeightColor() || game.tileWeightCount()) {
+					int color = (weight == 0) ? 150 : 0;
+					p.setARGB(255, color, color, color);
+				} else {
+					p.setARGB(255, 0, 0, 0);
+				}
+
+				if (game.tileWeightCount()) {
+					p.setTextSize(textSize / 4);
+					p.setTextAlign(Paint.Align.LEFT);
+					canvas.drawText(""+weight,
+							paddingSize + (x * boxsize) + 8,
+							topOfGrid + ((y + 1) * boxsize) - 6,
+							p);
+				}
+
 				String letter = game.getBoard().elementAt(x, y);
 				String letterForDisplay = game.getLanguage().toDisplay(letter);
 				p.setTextSize(textSize);
@@ -170,7 +196,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 					p.setTextSize(textSize / 4);
 					p.setTextAlign(Paint.Align.RIGHT);
 					canvas.drawText(score,
-							paddingSize + ((x + 1) * boxsize) - 4,
+							paddingSize + ((x + 1) * boxsize) - 8,
 							topOfGrid + ((y + 1) * boxsize) - 6,
 							p);
 				}
@@ -236,7 +262,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 					}
 				}
 			}
-			float textSize = (bottom - top) / lines;
+			float textSize = (bottom - top) / ((lines == 0) ? 1f : lines);
 			if (textSize > textSizeNormal) {
 				textSize = textSizeNormal;
 			}
@@ -289,11 +315,13 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 					w += "  " + game.getWordScore(w);
 					p.setARGB(255, 0, 0, 0);
 				} else {
-					p.setARGB(255, 255, 0, 0);
+					p.setStrikeThruText(true);
+					p.setARGB(255, 76, 101, 127);
 				}
 			}
 			canvas.drawText(w.toUpperCase(), left, pos, p);
 			pos += textSizeSmall;
+			p.setStrikeThruText(false);
 		}
 	}
 

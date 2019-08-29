@@ -11,6 +11,7 @@ import net.healeys.trie.WordFilter;
 
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
@@ -38,7 +39,7 @@ public class BoardTransitionTest {
                 new String[] {"non Persian word"}
         );
 
-        Map<String, Solution> solutions = trie.solver(new FourByFourBoard(board), new WordFilter.MinLength(3));
+        Map<String, List<Solution>> solutions = trie.solver(new FourByFourBoard(board), new WordFilter.MinLength(3));
         assertEquals(1, solutions.size());
     }
 

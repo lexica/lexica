@@ -22,6 +22,7 @@ import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -98,11 +99,11 @@ public class ScoreActivity extends TabActivity {
 
 			if(game.isWord(w) && game.getWordScore(w) > 0) {
 				int points = game.getWordScore(w);
-				addWord(foundVG,w,points,0xff000000,true);
+				addWord(foundVG,w,points,true);
 				score += points;
 				words++;
 			} else {
-				addWord(foundVG,w,0,0xffff0000,false);
+				addWord(foundVG,w,0,false);
 			}
 
 			possible.remove(w);
@@ -116,7 +117,7 @@ public class ScoreActivity extends TabActivity {
 		while(li.hasNext()) {
 			String w = li.next();
 			max_score += game.getWordScore(w);
-			addMissedWord(missedVG,game.getSolutions().get(w));
+			addMissedWord(missedVG,game.getSolutions().get(w).get(0));
 		}
 
 		int totalScorePercentage = (int)(((double)score/max_score)*100);
@@ -165,8 +166,8 @@ public class ScoreActivity extends TabActivity {
 		return ll;
 	}
 
-	private void addWord(ViewGroup vg, String w, int points, int color,
-		boolean link) {
+	private void addWord(ViewGroup vg, String w, int points, boolean valid) {
+		int color = (valid) ? 0xff000000 : 0xff4c657f;
 		LinearLayout.LayoutParams text1Lp = new LinearLayout.LayoutParams(
 			ViewGroup.LayoutParams.WRAP_CONTENT,
 			ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -176,6 +177,9 @@ public class ScoreActivity extends TabActivity {
 		tv1.setLayoutParams(text1Lp);
 		tv1.setTextSize(16);
 		tv1.setTextColor(color);
+		if (!valid) {
+			tv1.setPaintFlags(tv1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+		}
 		tv1.setText(w.toUpperCase());
 
 		LinearLayout.LayoutParams text2Lp = new LinearLayout.LayoutParams(
@@ -193,7 +197,7 @@ public class ScoreActivity extends TabActivity {
 
 		ll.addView(tv1);
 
-		if(link) {
+		if(valid) {
 			TextView tv3 = new TextView(this);
 			tv3.setGravity(Gravity.END);
 			tv3.setLayoutParams(text2Lp);

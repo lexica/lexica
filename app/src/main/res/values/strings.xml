@@ -42,6 +42,14 @@
 	<string name="word_length">Word Length</string>
 	<string name="letter_points">Letter Points</string>
 
+	<string name="pref_tileWeight">Tile Weight</string>
+	<string name="pref_tileWeight_summary">Select a tile weight type</string>
+	<string name="pref_tileWeight_dialog">Select Tile Weight Type</string>
+	<string name="tile_none">Show none</string>
+	<string name="tile_count">Show count</string>
+	<string name="tile_color">Show color</string>
+	<string name="tile_both">Show both</string>
+
 	<string name="pref_sounds">Sounds Enabled</string>
 	<string name="pref_sounds_summary">Whether or not sound effects are enabled</string>
 
