@@ -51,7 +51,7 @@ import java.util.Map;
 public class Game implements Synchronizer.Counter {
 
 	public static final String SHOW_BREAKDOWN = "showBreakdown";
-	public static final String TILE_WEIGHT = "tileWeight";
+	public static final String HINT_MODE = "hintMode";
 	public static final String SCORE_TYPE = "scoreType";
 	public static final String SCORE_WORDS = "W";
 	public static final String SCORE_LETTERS = "L";
@@ -66,7 +66,7 @@ public class Game implements Synchronizer.Counter {
 	private int score;
 	private String scoreType;
 	private boolean showBreakdown;
-	private String tileWeight;
+	private String hintMode;
 
 	public enum GameStatus { GAME_STARTING, GAME_RUNNING, GAME_PAUSED, GAME_FINISHED }
 
@@ -344,7 +344,7 @@ public class Game implements Synchronizer.Counter {
 		}
 		scoreType = prefs.getString(SCORE_TYPE, SCORE_WORDS);
 		showBreakdown = prefs.getBoolean(SHOW_BREAKDOWN, false);
-		tileWeight = prefs.getString(TILE_WEIGHT, "tile_none");
+		hintMode = prefs.getString(HINT_MODE, "hint_none");
 	}
 
 	public void initializeDictionary() {
@@ -541,12 +541,12 @@ public class Game implements Synchronizer.Counter {
 		}
 	}
 
-	public boolean tileWeightCount() {
-		return tileWeight.equals("tile_count") || tileWeight.equals("tile_both");
+	public boolean hintModeCount() {
+		return hintMode.equals("tile_count") || hintMode.equals("hint_both");
 	}
 
-	public boolean tileWeightColor() {
-		return tileWeight.equals("tile_color") || tileWeight.equals("tile_both");
+	public boolean hintModeColor() {
+		return hintMode.equals("hint_colour") || hintMode.equals("hint_both");
 	}
 
 	public SparseIntArray getMaxWordCountsByLength() {

@@ -125,7 +125,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			if (highlighted.contains(i)) {
 				p.setARGB(255, 255, 255, 0);
 			} else {
-				if (game.tileWeightColor()) {
+				if (game.hintModeColor()) {
 					int[] rgb = game.getWeightColor(weight);
 					p.setARGB(255, rgb[0], rgb[1], rgb[2]);
 				} else {
@@ -167,14 +167,14 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 				int pos = game.getBoard().getRotatedPosition(y * boardWidth + x);
 				int weight = game.getWeight(pos);
 
-				if (game.tileWeightColor() || game.tileWeightCount()) {
+				if (game.hintModeColor() || game.hintModeCount()) {
 					int color = (weight == 0) ? 150 : 0;
 					p.setARGB(255, color, color, color);
 				} else {
 					p.setARGB(255, 0, 0, 0);
 				}
 
-				if (game.tileWeightCount()) {
+				if (game.hintModeCount()) {
 					p.setTextSize(textSize / 4);
 					p.setTextAlign(Paint.Align.LEFT);
 					canvas.drawText(""+weight,

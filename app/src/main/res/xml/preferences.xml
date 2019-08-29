@@ -57,15 +57,13 @@
 	/>
 
 	<ListPreference
-		android:key="tileWeight"
-		android:title="@string/pref_tileWeight"
-		android:summary="@string/pref_tileWeight_summary"
-		android:entries="@array/tile_weight_choices_entries"
-		android:entryValues="@array/tile_weight_choices_entryvalues"
-		android:defaultValue="tile_none"
-		android:dialogTitle="@string/pref_tileWeight_dialog"
-		/>
-
+		android:defaultValue="hint_none"
+		android:dialogTitle="@string/pref_hintMode_dialog"
+		android:entries="@array/hint_mode_choices_entries"
+		android:entryValues="@array/hint_mode_choices_entryvalues"
+		android:key="hintMode"
+		android:summary="@string/pref_hintMode_summary"
+		android:title="@string/pref_hintMode" />
 	<CheckBoxPreference
 		android:key="soundsEnabled"
 		android:title="@string/pref_sounds"
