@@ -1,95 +1,90 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">Lexica</string>
-
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lexica</string>
     <string name="new_game">Új játék</string>
     <string name="restore_game">Játék visszaállítása</string>
-	<string name="prefs">Beállítások</string>
-
-	<string name="pref_dict">Szótár</string>
-	<string name="pref_dict_summary">Válasszon egy használandó szótárat</string>
-	<string name="pref_dict_dialog">Szótár kiválasztása</string>
-	<string name="pref_dict_us">Angol (US)</string>
-	<string name="pref_dict_uk">Angol (UK)</string>
-	<string name="pref_dict_de_de">Német</string>
-	<string name="pref_dict_nl">Holland</string>
-	<string name="pref_dict_fa">Perzsa</string>
-	<string name="pref_dict_fr_fr">Francia</string>
-	<string name="pref_dict_it">Olasz</string>
-	<string name="pref_dict_ca">Katalán</string>
-	<string name="pref_dict_es">Spanyol</string>
-	<string name="pref_dict_jp">Japán</string>
-	<string name="pref_dict_ru">Orosz</string>
-	<string name="pref_dict_beta">%1$s (béta)</string>
-
-	<string name="pref_boardSize">Táblaméret</string>
-	<string name="pref_boardSize_summary">Táblaméret kiválasztása</string>
-	<string name="pref_boardSize_dialog">Táblaméret kiválasztása</string>
-
-	<string name="pref_timeLimit">Időkorlát</string>
-	<string name="pref_timeLimit_summary">Időkorlát kiválasztása</string>
-	<string name="pref_timeLimit_dialog">Időkorlát kiválasztása</string>
-	<string name="time_3m">3 perc</string>
-	<string name="time_5m">5 perc</string>
-	<string name="time_10m">10 perc</string>
-	<string name="time_20m">20 perc</string>
-	<string name="time_30m">30 perc</string>
-
-	<string name="pref_scoreType">Pontozás típusa</string>
-	<string name="pref_scoreType_summary">Pontozás típusának kiválasztása</string>
-	<string name="pref_scoreType_dialog">Pontozás típusának kiválasztása</string>
-	<string name="word_length">Szóhossz</string>
-	<string name="letter_points">Betűpontok</string>
-
-	<string name="pref_sounds">Hangok engedélyezve</string>
-	<string name="pref_sounds_summary">A hangok legyenek-e engedélyezve vagy sem</string>
-
-	<string name="dialog_no_saved">Nincs mentett játék. Ha el tudja olvasni ezt az üzenetet, akkor valószínűleg valami elromlott.</string>
-	<string name="dialog_ok">OK</string>
-	<string name="dialog_cancel">Mégse</string>
-
-	<string name="dialog_about_title">A Lexica névjegye</string>
-	<string name="dialog_about_content">Érintse meg a kijelzőt, és mozgassa az ujját a szomszédos négyzetekre a szavak betűzéséhez. Három perce van arra, hogy a lehető legtöbb szót megtalálja. 
+    <string name="prefs">Beállítások</string>
+    <string name="pref_dict">Szótár</string>
+    <string name="pref_dict_summary">Válasszon egy használandó szótárat</string>
+    <string name="pref_dict_dialog">Szótár kiválasztása</string>
+    <string name="pref_dict_us">Angol (US)</string>
+    <string name="pref_dict_uk">Angol (UK)</string>
+    <string name="pref_dict_de_de">Német</string>
+    <string name="pref_dict_nl">Holland</string>
+    <string name="pref_dict_fa">Perzsa</string>
+    <string name="pref_dict_fr_fr">Francia</string>
+    <string name="pref_dict_it">Olasz</string>
+    <string name="pref_dict_ca">Katalán</string>
+    <string name="pref_dict_es">Spanyol</string>
+    <string name="pref_dict_jp">Japán</string>
+    <string name="pref_dict_ru">Orosz</string>
+    <string name="pref_dict_beta">%1$s (béta)</string>
+    <string name="pref_boardSize">Táblaméret</string>
+    <string name="pref_boardSize_summary">Táblaméret kiválasztása</string>
+    <string name="pref_boardSize_dialog">Táblaméret kiválasztása</string>
+    <string name="pref_timeLimit">Időkorlát</string>
+    <string name="pref_timeLimit_summary">Időkorlát kiválasztása</string>
+    <string name="pref_timeLimit_dialog">Időkorlát kiválasztása</string>
+    <string name="time_3m">3 perc</string>
+    <string name="time_5m">5 perc</string>
+    <string name="time_10m">10 perc</string>
+    <string name="time_20m">20 perc</string>
+    <string name="time_30m">30 perc</string>
+    <string name="pref_scoreType">Pontozás típusa</string>
+    <string name="pref_scoreType_summary">Pontozás típusának kiválasztása</string>
+    <string name="pref_scoreType_dialog">Pontozás típusának kiválasztása</string>
+    <string name="word_length">Szóhossz</string>
+    <string name="letter_points">Betűpontok</string>
+    <string name="pref_sounds">Hangok engedélyezve</string>
+    <string name="pref_sounds_summary">A hangok legyenek-e engedélyezve vagy sem</string>
+    <string name="dialog_no_saved">Nincs mentett játék. Ha el tudja olvasni ezt az üzenetet, akkor valószínűleg valami elromlott.</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Mégse</string>
+    <string name="dialog_about_title">A Lexica névjegye</string>
+    <string name="dialog_about_content">Érintse meg a kijelzőt, és mozgassa az ujját a szomszédos négyzetekre a szavak betűzéséhez. Három perce van arra, hogy a lehető legtöbb szót megtalálja. 
 \n
 \nPontozás: 
 \nA 4×4-es táblákon a szavaknak legalább három betű hosszúságúnak kell lenniük. Az 5×5-ös táblákon a szavaknak legalább négy betű hosszúságúnak kell lenniük. A három vagy négy betűből álló szavak egy pontot érnek. A hosszabb szavak több pontot érnek. A tulajdonnevek nem számítanak bele.
 \n
 \n</string>
-
-	<string name="menu_rotate_board">Tábla forgatása</string>
-	<string name="menu_save_game">Játék mentése</string>
-	<string name="menu_end_game">Játék befejezése</string>
-	<string name="button_ok">OK</string>
-
-	<string name="about">Névjegy</string>
-
-	<string name="show_missed">Hiányzó szavak megjelenítése</string>
-	<string name="hide_missed">Hiányzó szavak elrejtése</string>
-
-	<string name="show_unique">Egyedi szavak megjelenítése</string>
-	<string name="hide_unique">Egyedi szavak elrejtése</string>
-
-	<string name="view_word"><u>Nézet</u></string>
-	<string name="define_word"><u>Meghatározás</u> </string>
-
-	<string name="words">SZAVAK</string>
-	<string name="score">PONTSZÁM</string>
-	<string name="found_words">Megtalált szavak</string>
-	<string name="missed_words">Hiányzó szavak</string>
-	<string name="total_words">Összes szó:</string>
-	<string name="total_score">Összes pontszám:</string>
-	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-
-	<string name="high_score">Legjobb pontszám: %1$d</string>
-	<string name="pref_resetScores_summary">A legjobb pontszámok a fenti beállítások minden egyes kombinációjánál követésre kerülnek. Koppintson az összes pontszám nullára történő visszaállításához.</string>
-	<string name="pref_resetScores">Legjobb pontszámok visszaállítása</string>
+    <string name="menu_rotate_board">Tábla forgatása</string>
+    <string name="menu_save_game">Játék mentése</string>
+    <string name="menu_end_game">Játék befejezése</string>
+    <string name="button_ok">OK</string>
+    <string name="about">Névjegy</string>
+    <string name="show_missed">Hiányzó szavak megjelenítése</string>
+    <string name="hide_missed">Hiányzó szavak elrejtése</string>
+    <string name="show_unique">Egyedi szavak megjelenítése</string>
+    <string name="hide_unique">Egyedi szavak elrejtése</string>
+    <string name="view_word">
+        <u>Nézet</u>
+    </string>
+    <string name="define_word">
+        <u>Meghatározás</u>
+    </string>
+    <string name="words">SZAVAK</string>
+    <string name="score">PONTSZÁM</string>
+    <string name="found_words">Megtalált szavak</string>
+    <string name="missed_words">Hiányzó szavak</string>
+    <string name="total_words">Összes szó:</string>
+    <string name="total_score">Összes pontszám:</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="high_score">Legjobb pontszám: %1$d</string>
+    <string name="pref_resetScores_summary">A legjobb pontszámok a fenti beállítások minden egyes kombinációjánál követésre kerülnek. Koppintson az összes pontszám nullára történő visszaállításához.</string>
+    <string name="pref_resetScores">Legjobb pontszámok visszaállítása</string>
     <string name="high_scores_reset">A legjobb pontszámok vissza lettek állítva.</string>
-	<string name="reset_scores_prompt">Biztosan vissza szeretné állítani az összes legjobb pontszámot nullára az összes játéknál?</string>
-
+    <string name="reset_scores_prompt">Biztosan vissza szeretné állítani az összes legjobb pontszámot nullára az összes játéknál?</string>
     <string name="pref_breakdown">Szóhosszbontás megjelenítése</string>
-	<string name="pref_breakdown_summary">A szavak száma szóhosszakként legyen-e megjelenítve vagy sem</string>
-
-	<string name="pref_definitionProvider">Meghatározás-szolgáltató</string>
-	<string name="pref_definitionProvider_summary">Egy használandó meghatározás-szolgáltató kiválasztása. Ha a kiválasztott szolgáltató nincs telepítve, akkor a DuckDuckGo lesz használva.</string>
-	<string name="pref_definitionProvider_dialog">Meghatározás-szolgáltató kiválasztása</string>
-<string name="pref_dict_hu">Magyar</string>
-	</resources>
+    <string name="pref_breakdown_summary">A szavak száma szóhosszakként legyen-e megjelenítve vagy sem</string>
+    <string name="pref_definitionProvider">Meghatározás-szolgáltató</string>
+    <string name="pref_definitionProvider_summary">Egy használandó meghatározás-szolgáltató kiválasztása. Ha a kiválasztott szolgáltató nincs telepítve, akkor a DuckDuckGo lesz használva.</string>
+    <string name="pref_definitionProvider_dialog">Meghatározás-szolgáltató kiválasztása</string>
+    <string name="pref_dict_hu">Magyar</string>
+    <string name="pref_hintMode">Tipp mód</string>
+    <string name="pref_hintMode_summary">Megjeleníti a szavak számát, amelyekben az egyes betűket használni lehet</string>
+    <string name="pref_hintMode_dialog">Tipp mód</string>
+    <string name="hint_none">Letiltva</string>
+    <string name="tile_count">Szavak száma</string>
+    <string name="hint_colour">Csempe színe</string>
+    <string name="hint_both">Mindkettő</string>
+</resources>
