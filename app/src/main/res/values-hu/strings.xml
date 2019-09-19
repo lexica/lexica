@@ -87,4 +87,5 @@
     <string name="tile_count">Szavak száma</string>
     <string name="hint_colour">Csempe színe</string>
     <string name="hint_both">Mindkettő</string>
+    <string name="pref_dict_uk_ua">Ukrán</string>
 </resources>

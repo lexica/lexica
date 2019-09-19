@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lexica</string>
+    <string name="new_game">Uusi peli</string>
+    <string name="restore_game">Palauta peli</string>
+    <string name="prefs">Asetukset</string>
+    <string name="pref_dict">Sanakirja</string>
+    <string name="pref_dict_summary">Valitse käytettävä sanasto</string>
+    <string name="pref_dict_dialog">Valitse sanakirja</string>
+    <string name="pref_dict_ca">katalaani</string>
+    <string name="pref_dict_de_de">saksa</string>
+    <string name="pref_dict_es">espanja</string>
+    <string name="pref_dict_fa">persia</string>
+    <string name="pref_dict_fr_fr">ranska</string>
+    <string name="pref_dict_hu">unkari</string>
+</resources>

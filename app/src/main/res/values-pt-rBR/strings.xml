@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_dict_summary">Selecione o dicionário a usar</string>
+    <string name="pref_dict_ca">Catalão</string>
+    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="time_5m">5 minutos</string>
+    <string name="high_score">Recorde: %1$d</string>
+    <string name="words">PALAVRAS</string>
+    <string name="time_30m">30 minutos</string>
+    <string name="pref_definitionProvider_summary">Selecione o provedor de definições a usar. Se o provedor selecionado não estiver instalado, será utilizado o DuckDuckGo.</string>
+    <string name="pref_dict_jp">Japonês</string>
+    <string name="pref_dict_es">Espanhol</string>
+    <string name="define_word">
+        <u>Definição</u>
+    </string>
+    <string name="dialog_ok">OK</string>
+    <string name="pref_sounds">Sons ativados</string>
+    <string name="show_unique">Mostrar palavras únicas</string>
+    <string name="tile_count">Número de palavras</string>
+    <string name="pref_sounds_summary">Se os efeitos sonoros estão ou não ativados</string>
+    <string name="pref_boardSize_summary">Selecione o tamanho do tabuleiro</string>
+    <string name="pref_hintMode_dialog">Modo de dicas</string>
+    <string name="menu_end_game">Fim de jogo</string>
+    <string name="button_ok">OK</string>
+    <string name="pref_dict_nl">Holandês</string>
+    <string name="score">PONTUAÇÃO</string>
+    <string name="pref_boardSize">Tamanho do tabuleiro</string>
+    <string name="pref_dict_fa">Persa</string>
+    <string name="pref_boardSize_dialog">Selecione o tamanho do tabuleiro</string>
+    <string name="pref_dict_dialog">Selecione o dicionário</string>
+    <string name="pref_dict_uk_ua">Ucraniano</string>
+    <string name="pref_timeLimit_dialog">Selecione um tempo limite</string>
+    <string name="pref_breakdown">Mostrar detalhamento do tamanho da palavra</string>
+    <string name="missed_words">Palavras a encontrar</string>
+    <string name="hint_none">Desativado</string>
+    <string name="hide_missed">Ocultar as palavras que faltam</string>
+    <string name="pref_dict_hu">Húngaro</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="letter_points">Pontos de letras</string>
+    <string name="menu_save_game">Salvar jogo</string>
+    <string name="time_10m">10 minutos</string>
+    <string name="pref_dict_us">Inglês (EUA)</string>
+    <string name="show_missed">Mostrar as palavras que faltam</string>
+    <string name="pref_dict_ru">Russo</string>
+    <string name="pref_breakdown_summary">Se a contagem de palavras mostra ou não as contagens por tamanho da palavra</string>
+    <string name="about">Sobre</string>
+    <string name="new_game">Novo jogo</string>
+    <string name="time_20m">20 minutos</string>
+    <string name="pref_scoreType_dialog">Selecione o tipo de pontuação</string>
+    <string name="pref_dict_it">Italiano</string>
+    <string name="pref_hintMode_summary">Mostra o número de palavras em que cada letra pode ser usada</string>
+    <string name="restore_game">Restaurar jogo</string>
+    <string name="pref_hintMode">Modo de dicas</string>
+    <string name="pref_dict_uk">Inglês (Reino Unido)</string>
+    <string name="total_score">Pontuação total:</string>
+    <string name="pref_resetScores">Zerar recordes</string>
+    <string name="time_3m">3 minutos</string>
+    <string name="hint_both">Ambos</string>
+    <string name="pref_resetScores_summary">Os recordes são registrados para cada combinação das configurações acima. Toque para zerar todas as pontuações.</string>
+    <string name="pref_timeLimit">Tempo limite</string>
+    <string name="word_length">Tamanho da palavra</string>
+    <string name="view_word">
+        <u>Mostrar</u>
+    </string>
+    <string name="total_words">Total de palavras:</string>
+    <string name="pref_definitionProvider_dialog">Selecione o provedor de definições</string>
+    <string name="found_words">Palavras encontradas</string>
+    <string name="dialog_cancel">Cancelar</string>
+    <string name="pref_definitionProvider">Provedor de definições</string>
+    <string name="dialog_about_content">Toque na tela e mova o dedo para quadrados adjacentes para formar palavras. Você tem três minutos para encontrar o maior número possível de palavras. 
+\n
+\nPontuação: 
+\nEm tabuleiros 4x4, as palavras devem ter pelo menos três letras. Em tabuleiros 5x5, as palavras devem ter pelo menos quatro letras. Palavras com três ou quatro letras valem um ponto. Palavras mais longas valem mais pontos. Nomes próprios não são considerados.
+\n
+\n</string>
+    <string name="pref_scoreType">Tipo de pontuação</string>
+    <string name="menu_rotate_board">Girar o tabuleiro</string>
+    <string name="pref_dict_de_de">Alemão</string>
+    <string name="pref_timeLimit_summary">Selecione um tempo limite</string>
+    <string name="pref_scoreType_summary">Selecione um tipo de pontuação</string>
+    <string name="dialog_about_title">Sobre o Lexica</string>
+    <string name="prefs">Preferências</string>
+    <string name="app_name">Lexica</string>
+    <string name="high_scores_reset">Os recordes foram zerados.</string>
+    <string name="hide_unique">Ocultar palavras únicas</string>
+    <string name="reset_scores_prompt">Deseja realmente zerar os recordes de todos os modos de jogo\?</string>
+    <string name="pref_dict_fr_fr">Francês</string>
+    <string name="pref_dict">Dicionário</string>
+    <string name="hint_colour">Cor da grade</string>
+    <string name="dialog_no_saved">Não há jogo salvo. Se você conseguir ler esta mensagem, provavelmente algo está errado.</string>
+</resources>
