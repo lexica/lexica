@@ -1,66 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lexica</string>
-
     <string name="new_game">New Game</string>
     <string name="restore_game">Restore Game</string>
-	<string name="prefs">Preferences</string>
-
-	<string name="pref_dict">Dictionary</string>
-	<string name="pref_dict_summary">Select a dictionary to use</string>
-	<string name="pref_dict_dialog">Select Dictionary</string>
-	<string name="pref_dict_ca">Catalan</string>
-	<string name="pref_dict_de_de">German</string>
-	<string name="pref_dict_es">Spanish</string>
-	<string name="pref_dict_fa">Persian</string>
-	<string name="pref_dict_fr_fr">French</string>
-	<string name="pref_dict_hu">Hungarian</string>
-	<string name="pref_dict_it">Italian</string>
-	<string name="pref_dict_jp">Japanese</string>
-	<string name="pref_dict_nl">Dutch</string>
-	<string name="pref_dict_ru">Russian</string>
-	<string name="pref_dict_uk">English (UK)</string>
-	<string name="pref_dict_uk_ua">Ukrainian</string>
-	<string name="pref_dict_us">English (US)</string>
-	<string name="pref_dict_beta">%1$s (Beta)</string>
-
-	<string name="pref_boardSize">Board Size</string>
-	<string name="pref_boardSize_summary">Select a board size</string>
-	<string name="pref_boardSize_dialog">Select Board Size</string>
-
-	<string name="pref_timeLimit">Time Limit</string>
-	<string name="pref_timeLimit_summary">Select a time limit</string>
-	<string name="pref_timeLimit_dialog">Select Time Limit</string>
-	<string name="time_3m">3 Minutes</string>
-	<string name="time_5m">5 Minutes</string>
-	<string name="time_10m">10 Minutes</string>
-	<string name="time_20m">20 Minutes</string>
-	<string name="time_30m">30 Minutes</string>
-
-	<string name="pref_scoreType">Scoring Type</string>
-	<string name="pref_scoreType_summary">Select a scoring type</string>
-	<string name="pref_scoreType_dialog">Select Scoring Type</string>
-	<string name="word_length">Word Length</string>
-	<string name="letter_points">Letter Points</string>
-
-	<string name="pref_hintMode">Hint mode</string>
-	<string name="pref_hintMode_summary">Shows the number of words each letter can be used in</string>
-	<string name="pref_hintMode_dialog">Hint mode</string>
-	<string name="hint_none">Disabled</string>
-	<string name="tile_count">Number of words</string>
-	<string name="hint_colour">Tile colour</string>
-	<string name="hint_both">Both</string>
-
-	<string name="pref_sounds">Sounds Enabled</string>
-	<string name="pref_sounds_summary">Whether or not sound effects are enabled</string>
-
-	<string name="dialog_no_saved">There is no game saved.  If you can read this
+    <string name="prefs">Preferences</string>
+    <string name="pref_dict">Lexicon</string>
+    <string name="pref_dict_summary">Select a language for the game</string>
+    <string name="pref_dict_dialog">Select a lexicon</string>
+    <string name="pref_dict_ca">Catalan</string>
+    <string name="pref_dict_de_de">German</string>
+    <string name="pref_dict_es">Spanish</string>
+    <string name="pref_dict_fa">Persian</string>
+    <string name="pref_dict_fr_fr">French</string>
+    <string name="pref_dict_hu">Hungarian</string>
+    <string name="pref_dict_it">Italian</string>
+    <string name="pref_dict_jp">Japanese</string>
+    <string name="pref_dict_nl">Dutch</string>
+    <string name="pref_dict_ru">Russian</string>
+    <string name="pref_dict_uk">English (UK)</string>
+    <string name="pref_dict_uk_ua">Ukrainian</string>
+    <string name="pref_dict_us">English (US)</string>
+    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="pref_boardSize">Board Size</string>
+    <string name="pref_boardSize_summary">Select a board size</string>
+    <string name="pref_boardSize_dialog">Select Board Size</string>
+    <string name="pref_timeLimit">Time Limit</string>
+    <string name="pref_timeLimit_summary">Select a time limit</string>
+    <string name="pref_timeLimit_dialog">Select Time Limit</string>
+    <string name="time_3m">3 Minutes</string>
+    <string name="time_5m">5 Minutes</string>
+    <string name="time_10m">10 Minutes</string>
+    <string name="time_20m">20 Minutes</string>
+    <string name="time_30m">30 Minutes</string>
+    <string name="pref_scoreType">Scoring Type</string>
+    <string name="pref_scoreType_summary">Select a scoring type</string>
+    <string name="pref_scoreType_dialog">Select Scoring Type</string>
+    <string name="word_length">Word Length</string>
+    <string name="letter_points">Letter Points</string>
+    <string name="pref_hintMode">Hint mode</string>
+    <string name="pref_hintMode_summary">Shows the number of words each letter can be used in</string>
+    <string name="pref_hintMode_dialog">Hint mode</string>
+    <string name="hint_none">Disabled</string>
+    <string name="tile_count">Number of words</string>
+    <string name="hint_colour">Tile colour</string>
+    <string name="hint_both">Both</string>
+    <string name="pref_sounds">Sounds Enabled</string>
+    <string name="pref_sounds_summary">Whether or not sound effects are enabled</string>
+    <string name="dialog_no_saved">There is no game saved.  If you can read this
 	message, something is likely broken.</string>
-	<string name="dialog_ok">OK</string>
-	<string name="dialog_cancel">Cancel</string>
-
-	<string name="dialog_about_title">About Lexica</string>
-	<string name="dialog_about_content">
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_about_title">About Lexica</string>
+    <string name="dialog_about_content">
 	Touch the screen and move your finger to adjacent squares to spell words.
 	You have three minutes to find as many words as possible.
 
@@ -70,41 +61,32 @@
 	Words that have three or four letters are worth one point.  Longer words
 	are worth more points.  Proper nouns are not counted.\n\n
 	</string>
-
-	<string name="menu_rotate_board">Rotate Board</string>
-	<string name="menu_save_game">Save Game</string>
-	<string name="menu_end_game">End Game</string>
-	<string name="button_ok">OK</string>
-
-	<string name="about">About</string>
-
-	<string name="show_missed">Show Missed Words</string>
-	<string name="hide_missed">Hide Missed Words</string>
-
-	<string name="show_unique">Show Unique Words</string>
-	<string name="hide_unique">Hide Unique Words</string>
-
-	<string name="view_word"><u>View</u></string>
-	<string name="define_word"><u>Define</u> </string>
-
-	<string name="words">WORDS</string>
-	<string name="score">SCORE</string>
-	<string name="found_words">Found Words</string>
-	<string name="missed_words">Missed Words</string>
-	<string name="total_words">Total Words:</string>
-	<string name="total_score">Total Score:</string>
-	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-
-	<string name="high_score">High Score: %1$d</string>
-	<string name="pref_resetScores_summary">High scores are tracked for each combination of the above settings. Tap to reset all scores to zero.</string>
-	<string name="pref_resetScores">Reset High Scores</string>
+    <string name="menu_rotate_board">Rotate Board</string>
+    <string name="menu_save_game">Save Game</string>
+    <string name="menu_end_game">End Game</string>
+    <string name="button_ok">OK</string>
+    <string name="about">About</string>
+    <string name="show_missed">Show Missed Words</string>
+    <string name="hide_missed">Hide Missed Words</string>
+    <string name="show_unique">Show Unique Words</string>
+    <string name="hide_unique">Hide Unique Words</string>
+    <string name="view_word"><u>View</u></string>
+    <string name="define_word"><u>Define</u> </string>
+    <string name="words">WORDS</string>
+    <string name="score">SCORE</string>
+    <string name="found_words">Found Words</string>
+    <string name="missed_words">Missed Words</string>
+    <string name="total_words">Total Words:</string>
+    <string name="total_score">Total Score:</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="high_score">High Score: %1$d</string>
+    <string name="pref_resetScores_summary">High scores are tracked for each combination of the above settings. Tap to reset all scores to zero.</string>
+    <string name="pref_resetScores">Reset High Scores</string>
     <string name="high_scores_reset">High scores have been reset.</string>
-	<string name="reset_scores_prompt">Are you sure you want to reset all high scores for all game modes to zero?</string>
-
+    <string name="reset_scores_prompt">Are you sure you want to reset all high scores for all game modes to zero?</string>
     <string name="pref_breakdown">Show Word Length Breakdown</string>
-	<string name="pref_breakdown_summary">Whether or not the word count shows counts by word length</string>
-
-	<string name="pref_definitionProvider">Definition Provider</string>
-	<string name="pref_definitionProvider_summary">Select a definition provider to use. If the selected provider is not installed, DuckDuckGo will be used.</string>
-	<string name="pref_definitionProvider_dialog">Select Definition Provider</string>
+    <string name="pref_breakdown_summary">Whether or not the word count shows counts by word length</string>
+    <string name="pref_definitionProvider">Definition Provider</string>
+    <string name="pref_definitionProvider_summary">Select a definition provider to use. If the selected provider is not installed, DuckDuckGo will be used.</string>
+    <string name="pref_definitionProvider_dialog">Select Definition Provider</string>
 </resources>
