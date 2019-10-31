@@ -4,9 +4,9 @@
     <string name="new_game">Nouvelle partie</string>
     <string name="restore_game">Reprendre la partie</string>
     <string name="prefs">Options</string>
-    <string name="pref_dict">Dictionnaire</string>
-    <string name="pref_dict_summary">Sélectionner le dictionnaire à utiliser</string>
-    <string name="pref_dict_dialog">Sélectionner le dictionnaire</string>
+    <string name="pref_dict">Lexique</string>
+    <string name="pref_dict_summary">Sélectionner le lexique de jeu</string>
+    <string name="pref_dict_dialog">Sélectionner un lexique</string>
     <string name="pref_dict_us">Anglais (Américain)</string>
     <string name="pref_dict_uk">Anglais (Royaume-Uni)</string>
     <string name="pref_boardSize">Taille de la grille</string>
