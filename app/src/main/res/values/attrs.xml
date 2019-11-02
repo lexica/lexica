@@ -22,6 +22,11 @@
         <attr format="color" name="timerEndForegroundColour" />
 
         <attr format="dimension" name="homeScreenLetterPadding" />
+        <attr format="dimension" name="homeScreenButtonPadding" />
+        <attr format="color" name="homeScreenMainButtonBackground" />
+        <attr format="color" name="homeScreenSecondaryButtonBackground" />
+        <attr format="color" name="homeScreenSecondaryButtonTextColour" />
+
         <attr format="dimension" name="padding" />
         <attr format="dimension" name="timerHeight" />
         <attr format="dimension" name="timerBorderWidth" />

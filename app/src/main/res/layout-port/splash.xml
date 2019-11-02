@@ -1,64 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-	android:orientation="vertical"
-	android:background="@color/background"
-    >
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/colorPrimary"
+	android:orientation="vertical">
 
 	<com.serwylo.lexica.view.LexicaLogo
-		android:layout_width="fill_parent"
-		android:layout_height="0dp"
-		android:layout_weight="1.0"
-	/>
+		android:id="@+id/lexicaLogo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent" />
 
 	<TextView
-		android:layout_width="match_parent"
+		android:id="@+id/high_score_label"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:gravity="center"
-		android:textSize="@dimen/textSizeLarge"
-		tools:text="@string/high_score"
+		android:textSize="?attr/scoreHeadingTextSize"
+		android:textColor="?attr/selectedWordColour" TODO: This doesn't load for whatever reason.'
+		app:layout_constraintEnd_toEndOf="@id/lexicaLogo"
+		app:layout_constraintTop_toTopOf="@id/lexicaLogo"
+		tools:text="@string/high_score" />
+
+	<TextView
 		android:id="@+id/high_score"
-		/>
-
-	<LinearLayout
-		android:orientation="horizontal"
-		android:layout_width="fill_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		>
-		<Button android:id="@+id/new_game"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/new_game"
-			android:layout_weight="1"
-			/>
-		<Button android:id="@+id/restore_game"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/restore_game"
-			android:enabled="false"
-			android:layout_weight="1"
-		/>
-	</LinearLayout>
-	<LinearLayout
-		android:orientation="horizontal"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		>
-			<Button android:id="@+id/preferences"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/prefs"
-				android:layout_weight="1"
-				/>
-			<Button android:id="@+id/about"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/about"
-				android:layout_weight="1"
-			/>
-	</LinearLayout>
+		android:textSize="?attr/scoreTextSize"
+		android:textColor="?attr/selectedWordColour"
+		app:layout_constraintEnd_toEndOf="@id/lexicaLogo"
+		app:layout_constraintTop_toBottomOf="@id/high_score_label"
+		tools:text="35" />
 
-</LinearLayout>
+	<Button
+		android:id="@+id/new_game"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:paddingTop="?attr/homeScreenButtonPadding"
+		android:paddingBottom="?attr/homeScreenButtonPadding"
+		android:drawableTop="@android:drawable/ic_dialog_alert"
+		android:text="@string/new_game"
+		android:background="?attr/homeScreenMainButtonBackground"
+		app:layout_constraintBottom_toTopOf="@+id/restore_game"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<Button
+		android:id="@+id/restore_game"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:paddingTop="?attr/homeScreenButtonPadding"
+		android:paddingBottom="?attr/homeScreenButtonPadding"
+		android:enabled="false"
+		android:text="@string/restore_game"
+		android:drawableTop="@android:drawable/ic_menu_rotate"
+		android:background="?attr/homeScreenSecondaryButtonBackground"
+		app:drawableTint="?attr/homeScreenSecondaryButtonTextColour"
+		android:textColor="?attr/homeScreenSecondaryButtonTextColour"
+		app:layout_constraintWidth_percent="0.33"
+		app:layout_constraintBottom_toBottomOf="@id/lexicaLogo"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<Button
+		android:id="@+id/about"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:paddingTop="?attr/homeScreenButtonPadding"
+		android:paddingBottom="?attr/homeScreenButtonPadding"
+		android:text="@string/about"
+		android:drawableTop="@android:drawable/ic_menu_info_details"
+		android:background="?attr/homeScreenSecondaryButtonBackground"
+		app:drawableTint="?attr/homeScreenSecondaryButtonTextColour"
+		android:textColor="?attr/homeScreenSecondaryButtonTextColour"
+		app:layout_constraintWidth_percent="0.33"
+		app:layout_constraintBottom_toBottomOf="@id/lexicaLogo"
+		app:layout_constraintStart_toEndOf="@id/restore_game" />
+
+	<Button
+		android:id="@+id/preferences"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:paddingTop="?attr/homeScreenButtonPadding"
+		android:paddingBottom="?attr/homeScreenButtonPadding"
+		android:text="@string/prefs"
+		android:drawableTop="@android:drawable/ic_menu_preferences"
+		android:background="?attr/homeScreenSecondaryButtonBackground"
+		android:drawableTint="?attr/homeScreenSecondaryButtonTextColour"
+		android:textColor="?attr/homeScreenSecondaryButtonTextColour"
+		app:layout_constraintWidth_percent="0.33"
+		app:layout_constraintBottom_toBottomOf="@id/lexicaLogo"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/about" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -20,6 +20,7 @@ package com.serwylo.lexica.view;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Picture;
@@ -36,7 +37,7 @@ import java.util.Random;
 
 public class LexicaLogo extends View {
 
-	private enum BoxColor { WHITE, YELLOW}
+	private enum BoxColor {BACKGROUND, MAIN}
 
 	private static final String LETTERS[] = {
 		"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
@@ -44,11 +45,22 @@ public class LexicaLogo extends View {
 	};
 
 	private Picture cached;
+	private final ThemeProperties theme;
+
+	public LexicaLogo(Context context) {
+		this(context, (AttributeSet) null);
+	}
 
 	public LexicaLogo(Context context, AttributeSet attrs) {
+		this( context, attrs, R.attr.lexicaViewStyle );
+	}
+
+	public LexicaLogo(Context context, AttributeSet attrs, int defStyle) {
 		super(context,attrs);
 		setupSoftwareCanvas();
 		cached = null;
+
+		theme = new ThemeProperties(context, attrs, defStyle);
 	}
 
 	/**
@@ -67,25 +79,20 @@ public class LexicaLogo extends View {
 		int x, int y, int size, float offset) {
 
 		switch(color) {
-			case WHITE:
+			case BACKGROUND:
 				p.setARGB(255,255,255,255);
 			break;
-			case YELLOW:
-				p.setARGB(255,255,255,0);
+			case MAIN:
+				p.setColor(theme.tileBackgroundColour);
 			break;
 		}
 
-		// draw background
-		canvas.drawRect(x,y,x+size,y+size,p);
-
-		// draw border
-		p.setARGB(255,0,0,0);
-		canvas.drawLine(x,y,x+size,y,p);
-		canvas.drawLine(x,y,x,y+size,p);
-		canvas.drawLine(x+size,y,x+size,y+size,p);
-		canvas.drawLine(x,y+size,x+size,y+size,p);
-
-		canvas.drawText(letter,x+size/2,y+(size/2)-offset,p);
+		canvas.drawRect(x,y,x + size,y + size,p);
+		p.setColor(theme.tileForegroundColour);
+		p.setTypeface(Fonts.get().getSansSerifCondensed());
+		float textSize = size * 0.8f;
+		p.setTextSize(textSize);
+		canvas.drawText(letter,x + size / 2,y + (size / 2) - offset, p);
 
 	}
 
@@ -132,7 +139,7 @@ public class LexicaLogo extends View {
 			int x = rng.nextInt(width-size-10)+5;
 			int y = rng.nextInt(height-size-10)+5;
 
-			drawTile(canvas,p,l,BoxColor.WHITE,x,y,size,offset);
+			drawTile(canvas,p,l,BoxColor.BACKGROUND,x,y,size,offset);
 		}
 
 		int outerPadding = paddingSize * 2;
@@ -149,17 +156,17 @@ public class LexicaLogo extends View {
 		int y = (height - size) / 2;
 		int dx = (width - totalWidthOfTiles - outerPadding) / 5 + size;
 		int x = paddingSize;
-		drawTile(canvas,p,"L",BoxColor.YELLOW,x,y,size,offset);
+		drawTile(canvas,p,"L",BoxColor.MAIN,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"E",BoxColor.YELLOW,x,y,size,offset);
+		drawTile(canvas,p,"E",BoxColor.MAIN,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"X",BoxColor.YELLOW,x,y,size,offset);
+		drawTile(canvas,p,"X",BoxColor.MAIN,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"I",BoxColor.YELLOW,x,y,size,offset);
+		drawTile(canvas,p,"I",BoxColor.MAIN,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"C",BoxColor.YELLOW,x,y,size,offset);
+		drawTile(canvas,p,"C",BoxColor.MAIN,x,y,size,offset);
 		x += dx;
-		drawTile(canvas,p,"A",BoxColor.YELLOW,x,y,size,offset);
+		drawTile(canvas,p,"A",BoxColor.MAIN,x,y,size,offset);
 
 	}
 
