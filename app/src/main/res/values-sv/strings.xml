@@ -5,8 +5,8 @@
     <string name="restore_game">Återupprätta spelet</string>
     <string name="prefs">Inställningar</string>
     <string name="pref_dict">Lexikon</string>
-    <string name="pref_dict_summary">Välj ett lexikon att använda</string>
-    <string name="pref_dict_dialog">Välj Lexikon</string>
+    <string name="pref_dict_summary">Välj ett språk för spelet</string>
+    <string name="pref_dict_dialog">Välj ett lexikon</string>
     <string name="pref_dict_ca">Katalanska</string>
     <string name="pref_dict_de_de">Tyska</string>
     <string name="pref_dict_es">Spanska</string>
