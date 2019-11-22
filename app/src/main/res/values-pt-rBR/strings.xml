@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_dict_summary">Selecione o dicionário a usar</string>
+    <string name="pref_dict_summary">Selecione o idioma do jogo</string>
     <string name="pref_dict_ca">Catalão</string>
     <string name="pref_dict_beta">%1$s (Beta)</string>
     <string name="time_5m">5 minutos</string>
@@ -27,7 +27,7 @@
     <string name="pref_boardSize">Tamanho do tabuleiro</string>
     <string name="pref_dict_fa">Persa</string>
     <string name="pref_boardSize_dialog">Selecione o tamanho do tabuleiro</string>
-    <string name="pref_dict_dialog">Selecione o dicionário</string>
+    <string name="pref_dict_dialog">Selecione o léxico</string>
     <string name="pref_dict_uk_ua">Ucraniano</string>
     <string name="pref_timeLimit_dialog">Selecione um tempo limite</string>
     <string name="pref_breakdown">Mostrar detalhamento do tamanho da palavra</string>
@@ -85,7 +85,7 @@
     <string name="hide_unique">Ocultar palavras únicas</string>
     <string name="reset_scores_prompt">Deseja realmente zerar os recordes de todos os modos de jogo\?</string>
     <string name="pref_dict_fr_fr">Francês</string>
-    <string name="pref_dict">Dicionário</string>
+    <string name="pref_dict">Léxico</string>
     <string name="hint_colour">Cor da grade</string>
     <string name="dialog_no_saved">Não há jogo salvo. Se você conseguir ler esta mensagem, provavelmente algo está errado.</string>
 </resources>
