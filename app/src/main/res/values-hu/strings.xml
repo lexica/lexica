@@ -4,9 +4,9 @@
     <string name="new_game">Új játék</string>
     <string name="restore_game">Játék visszaállítása</string>
     <string name="prefs">Beállítások</string>
-    <string name="pref_dict">Szótár</string>
-    <string name="pref_dict_summary">Válasszon egy használandó szótárat</string>
-    <string name="pref_dict_dialog">Szótár kiválasztása</string>
+    <string name="pref_dict">Lexikon</string>
+    <string name="pref_dict_summary">Válasszon egy nyelvet a játékhoz</string>
+    <string name="pref_dict_dialog">Lexikon kiválasztása</string>
     <string name="pref_dict_us">Angol (US)</string>
     <string name="pref_dict_uk">Angol (UK)</string>
     <string name="pref_dict_de_de">Német</string>
@@ -56,12 +56,8 @@
     <string name="hide_missed">Hiányzó szavak elrejtése</string>
     <string name="show_unique">Egyedi szavak megjelenítése</string>
     <string name="hide_unique">Egyedi szavak elrejtése</string>
-    <string name="view_word">
-        <u>Nézet</u>
-    </string>
-    <string name="define_word">
-        <u>Meghatározás</u>
-    </string>
+    <string name="view_word"><u>Nézet</u></string>
+    <string name="define_word"><u>Meghatározás</u> </string>
     <string name="words">SZAVAK</string>
     <string name="score">PONTSZÁM</string>
     <string name="found_words">Megtalált szavak</string>
