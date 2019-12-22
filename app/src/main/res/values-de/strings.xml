@@ -20,9 +20,9 @@
     <string name="pref_boardSize">Spielfeldgröße</string>
     <string name="pref_boardSize_dialog">Spielfeldgröße auswählen</string>
     <string name="pref_boardSize_summary">Bitte wählen Sie eine Spielfeldgröße</string>
-    <string name="pref_dict">Sprache</string>
-    <string name="pref_dict_dialog">Sprache auswählen</string>
-    <string name="pref_dict_summary">Bitte wählen Sie eine Sprache aus</string>
+    <string name="pref_dict">Lexikon</string>
+    <string name="pref_dict_dialog">Wörterbuch auswählen</string>
+    <string name="pref_dict_summary">Bitte wählen Sie eine Sprache für das Spiel aus</string>
     <string name="pref_dict_uk">Englisch (UK)</string>
     <string name="pref_dict_us">Englisch (US)</string>
     <string name="pref_sounds">Klänge aktiviert</string>
@@ -82,4 +82,10 @@
     <string name="pref_dict_beta">%1$s (Beta)</string>
     <string name="pref_dict_hu">Ungarisch</string>
     <string name="pref_breakdown_summary">Wählen, ob bei Zahl der zu findenden Wörter zusätzlich die Wortlänge angezeigt wird</string>
+    <string name="pref_hintMode_dialog">Hinweis Modus</string>
+    <string name="hint_none">Deaktiviert</string>
+    <string name="tile_count">Zahl der Wörter</string>
+    <string name="hint_colour">Feld Farbe</string>
+    <string name="hint_both">Beide</string>
+    <string name="pref_dict_uk_ua">Ukrainisch</string>
 </resources>
