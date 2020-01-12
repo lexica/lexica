@@ -21,8 +21,8 @@
     <string name="pref_boardSize_dialog">Spielfeldgröße auswählen</string>
     <string name="pref_boardSize_summary">Bitte wählen Sie eine Spielfeldgröße</string>
     <string name="pref_dict">Lexikon</string>
-    <string name="pref_dict_dialog">Wörterbuch auswählen</string>
-    <string name="pref_dict_summary">Bitte wählen Sie eine Sprache für das Spiel aus</string>
+    <string name="pref_dict_dialog">Ein Lexikon auswählen</string>
+    <string name="pref_dict_summary">Wähle eine Sprache für das Spiel aus</string>
     <string name="pref_dict_uk">Englisch (UK)</string>
     <string name="pref_dict_us">Englisch (US)</string>
     <string name="pref_sounds">Klänge aktiviert</string>
@@ -65,7 +65,7 @@
     <string name="pref_breakdown">Wortlängen-Aufschlüsselung anzeigen</string>
     <string name="letter_points">Buchstabenwertung</string>
     <string name="pref_hintMode">Hinweis Modus</string>
-    <string name="pref_hintMode_summary">Zeigt die Anzahl der Wörter an, in denen jeder Buchstabe verwendet werden kann.</string>
+    <string name="pref_hintMode_summary">Zeigt die Anzahl Wörter in der jeder Buchstabe verwendet werden kann</string>
     <string name="score">PUNKTE</string>
     <string name="pref_definitionProvider">Wörterbuch</string>
     <string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird auf DuckDuckGo zurückgegriffen.</string>
