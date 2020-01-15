@@ -1,93 +1,87 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">Lexica</string>
-
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lexica</string>
     <string name="new_game">Nieuw spel</string>
-    <string name="restore_game">Spel herstellen</string>
-	<string name="prefs">Voorkeuren</string>
-
-	<string name="pref_dict">Woordenboek</string>
-	<string name="pref_dict_summary">Selecteer het te gebruiken woordenboek</string>
-	<string name="pref_dict_dialog">Selecteer woordenboek</string>
-	<string name="pref_dict_us">Engels (VS)</string>
-	<string name="pref_dict_uk">Engels (VK)</string>
-
-	<string name="pref_boardSize">Bordgrootte</string>
-	<string name="pref_boardSize_summary">Selecteer een bordgrootte</string>
-	<string name="pref_boardSize_dialog">Selecteer bordgrootte</string>
-
-	<string name="pref_timeLimit">Tijdslimiet</string>
-	<string name="pref_timeLimit_summary">Selecteer een tijdslimiet</string>
-	<string name="pref_timeLimit_dialog">Selecteer tijdslimiet</string>
-	<string name="time_3m">3 minuten</string>
-	<string name="time_5m">5 minuten</string>
-	<string name="time_10m">10 minuten</string>
-	<string name="time_20m">20 minuten</string>
-	<string name="time_30m">30 minuten</string>
-
-	<string name="pref_sounds">Geluiden ingeschakeld</string>
-	<string name="pref_sounds_summary">Geluidseffecten in-/uitschakelen</string>
-
-	<string name="dialog_no_saved">Er is geen opgeslagen spel. Als je dit bericht kunt lezen, dan is er waarschijnlijk iets kapot.</string>
-	<string name="dialog_ok">Oké</string>
-	<string name="dialog_cancel">Annuleren</string>
-
-	<string name="dialog_about_title">Over Lexica</string>
-	<string name="dialog_about_content">Raak het scherm aan en verplaats je vinger naar aangrenzende vakjes om woorden te leggen. Je hebt 3 minuten de tijd om zoveel mogelijk woorden te vinden.
-\n
+    <string name="restore_game">Spel voortzetten</string>
+    <string name="prefs">Voorkeuren</string>
+    <string name="pref_dict">Woordenschat</string>
+    <string name="pref_dict_summary">Kies een taal om in te spelen</string>
+    <string name="pref_dict_dialog">Kies een woordenschat</string>
+    <string name="pref_dict_us">Engels (VS)</string>
+    <string name="pref_dict_uk">Engels (VK)</string>
+    <string name="pref_boardSize">Bordgrootte</string>
+    <string name="pref_boardSize_summary">Kies een bordgrootte</string>
+    <string name="pref_boardSize_dialog">Bordgrootte kiezen</string>
+    <string name="pref_timeLimit">Tijdslimiet</string>
+    <string name="pref_timeLimit_summary">Kies een tijdslimiet</string>
+    <string name="pref_timeLimit_dialog">Tijdslimiet kiezen</string>
+    <string name="time_3m">3 minuten</string>
+    <string name="time_5m">5 minuten</string>
+    <string name="time_10m">10 minuten</string>
+    <string name="time_20m">20 minuten</string>
+    <string name="time_30m">30 minuten</string>
+    <string name="pref_sounds">Geluiden ingeschakeld</string>
+    <string name="pref_sounds_summary">Geluidseffecten in-/uitschakelen</string>
+    <string name="dialog_no_saved">Er is geen opgeslagen spel beschikbaar. Als je dit bericht kunt lezen, dan is er waarschijnlijk iets kapot.</string>
+    <string name="dialog_ok">Oké</string>
+    <string name="dialog_cancel">Annuleren</string>
+    <string name="dialog_about_title">Over Lexica</string>
+    <string name="dialog_about_content">Raak het scherm aan en verplaats je vinger naar aangrenzende vakjes om woorden te leggen. Je hebt 3 minuten de tijd om zoveel mogelijk woorden te maken.
+\n 
 \nScore:
-\nOp borden ter grootte van 4x4 moeten worden minimaal drie letters lang zijn. Op borden ter grootte van 5x5 moeten worden minimaal vier letters lang zijn. Drie- of vierletterwoorden zijn 1 punt waard, langere woorden zijn meer punten waard. Zelfstandige naamwoorden tellen niet mee.
+\nOp borden ter grootte van 4x4 moeten woorden minimaal drie letters lang zijn. Op borden ter grootte van 5x5 moeten woorden minimaal vier letters lang zijn. Drie- of vierletterwoorden zijn 1 punt waard; langere woorden zijn meer punten waard. Zelfstandige naamwoorden tellen niet mee.
 \n
 \n</string>
-
-	<string name="menu_rotate_board">Bord draaien</string>
-	<string name="menu_save_game">Spel opslaan</string>
-	<string name="menu_end_game">Spel beëindigen</string>
-	<string name="button_ok">Oké</string>
-
-	<string name="about">Over</string>
-
-	<string name="show_missed">Gemiste woorden tonen</string>
-	<string name="hide_missed">Gemiste woorden verbergen</string>
-
-	<string name="show_unique">Unieke woorden tonen</string>
-	<string name="hide_unique">Unieke woorden verbergen</string>
-
-	<string name="view_word"><u>Tonen</u></string>
-	<string name="define_word"><u>Definiëren</u> </string>
-
-	<string name="words">WOORDEN</string>
-	<string name="found_words">Gevonden woorden</string>
-	<string name="missed_words">Gemiste woorden</string>
-	<string name="total_words">Totaal aantal woorden:</string>
-	<string name="total_score">Totaalscore:</string>
-	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-<string name="pref_scoreType">Scorenotering</string>
-	<string name="pref_scoreType_summary">Selecteer een scorenotering</string>
-	<string name="pref_scoreType_dialog">Selecteer scorenotering</string>
-	<string name="word_length">Woordlengte</string>
-	<string name="letter_points">Letterpunten</string>
-
-	<string name="score">SCORE</string>
-	<string name="high_score">Topscore: %1$d</string>
-	<string name="pref_resetScores_summary">Topscores worden bijgehouden voor elke combinatie van bovenstaande instellingen. Raak aan om alle scores terug te zetten op nul.</string>
-	<string name="pref_resetScores">Topscores terugzetten op nul</string>
+    <string name="menu_rotate_board">Bord draaien</string>
+    <string name="menu_save_game">Spel opslaan</string>
+    <string name="menu_end_game">Spel beëindigen</string>
+    <string name="button_ok">Oké</string>
+    <string name="about">Over</string>
+    <string name="show_missed">Gemiste woorden tonen</string>
+    <string name="hide_missed">Gemiste woorden verbergen</string>
+    <string name="show_unique">Unieke woorden tonen</string>
+    <string name="hide_unique">Unieke woorden verbergen</string>
+    <string name="view_word"><u>Tonen</u></string>
+    <string name="define_word">"&lt;u&gt;Betekenis tonen&lt;/u&gt; "<u>Definiëren</u> </string>
+    <string name="words">WOORDEN</string>
+    <string name="found_words">Gevonden woorden</string>
+    <string name="missed_words">Gemiste woorden</string>
+    <string name="total_words">Totaal aantal woorden:</string>
+    <string name="total_score">Totaalscore:</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="pref_scoreType">Scorenotatie</string>
+    <string name="pref_scoreType_summary">Kies een scorenotatie</string>
+    <string name="pref_scoreType_dialog">Scorenotatie kiezen</string>
+    <string name="word_length">Woordlengte</string>
+    <string name="letter_points">Letterpunten</string>
+    <string name="score">SCORE</string>
+    <string name="high_score">Topscore: %1$d</string>
+    <string name="pref_resetScores_summary">Topscores worden bijgehouden voor elke combinatie van bovenstaande instellingen. Druk om alle scores terug te zetten op nul.</string>
+    <string name="pref_resetScores">Topscores terugzetten op nul</string>
     <string name="high_scores_reset">Topscores zijn teruggezet op nul.</string>
-	<string name="reset_scores_prompt">Weet je zeker dat je alle topscores van alle spelmodi wilt terugzetten op nul?</string>
-<string name="pref_breakdown">Woordlengte-uitleg tonen</string>
-	<string name="pref_breakdown_summary">Of de woordenteller wel of niet woorden moet tonen op woordlengte</string>
-<string name="pref_definitionProvider">Definitiedienst</string>
-	<string name="pref_definitionProvider_summary">Selecteer de te gebruiken definitiedienst. Als de geselecteerde dienst niet geïnstalleerd is, dan zal DuckDuckGo worden gebruikt.</string>
-	<string name="pref_definitionProvider_dialog">Selecteer definitiedienst</string>
-<string name="pref_dict_de_de">Duits</string>
-	<string name="pref_dict_nl">Nederlands</string>
-	<string name="pref_dict_beta">%1$s (bèta)</string>
-
-	<string name="pref_dict_fr_fr">Frans</string>
-	<string name="pref_dict_it">Italiaans</string>
-	<string name="pref_dict_ca">Catalaans</string>
-	<string name="pref_dict_es">Spaans</string>
-	<string name="pref_dict_fa">Perzisch</string>
-	<string name="pref_dict_jp">Japans</string>
-	<string name="pref_dict_ru">Russisch</string>
-	<string name="pref_dict_hu">Hongaars</string>
-	</resources>
+    <string name="reset_scores_prompt">Weet je zeker dat je alle topscores van alle spelmodi wilt terugzetten op nul?</string>
+    <string name="pref_breakdown">Woordlengte-uitleg tonen</string>
+    <string name="pref_breakdown_summary">Of de woordenteller wel of niet woorden moet tonen op woordlengte</string>
+    <string name="pref_definitionProvider">Betekenisdienst</string>
+    <string name="pref_definitionProvider_summary">Kies de te gebruiken betekenisdienst. Als de geselecteerde dienst niet geïnstalleerd is, dan zal DuckDuckGo worden gebruikt.</string>
+    <string name="pref_definitionProvider_dialog">Betekenisdienst kiezen</string>
+    <string name="pref_dict_de_de">Duits</string>
+    <string name="pref_dict_nl">Nederlands</string>
+    <string name="pref_dict_beta">%1$s (bèta)</string>
+    <string name="pref_dict_fr_fr">Frans</string>
+    <string name="pref_dict_it">Italiaans</string>
+    <string name="pref_dict_ca">Catalaans</string>
+    <string name="pref_dict_es">Spaans</string>
+    <string name="pref_dict_fa">Perzisch</string>
+    <string name="pref_dict_jp">Japans</string>
+    <string name="pref_dict_ru">Russisch</string>
+    <string name="pref_dict_hu">Hongaars</string>
+    <string name="pref_hintMode">Tips tonen</string>
+    <string name="pref_hintMode_summary">Toont het aantal woorden waarin letters kunnen worden gebruikt</string>
+    <string name="pref_hintMode_dialog">Tips tonen</string>
+    <string name="hint_none">Uitgeschakeld</string>
+    <string name="tile_count">Aantal woorden</string>
+    <string name="hint_colour">Tegelkleur</string>
+    <string name="hint_both">Beide</string>
+    <string name="pref_dict_uk_ua">Oekraïens</string>
+</resources>
