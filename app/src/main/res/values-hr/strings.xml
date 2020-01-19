@@ -1,2 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_dict_summary">Odaberi jezik za igru</string>
+    <string name="pref_dict_ca">Katalonski</string>
+    <string name="pref_dict_beta">%1$s (beta)</string>
+    <string name="time_5m">5 minuta</string>
+    <string name="high_score">Najbolji rezultat: %1$d</string>
+    <string name="words">RIJEČI</string>
+    <string name="time_30m">30 minuta</string>
+    <string name="pref_definitionProvider_summary">Odaberi pružatelja definicija koji će se koristiti. Ako odabrani pružatelj nije instaliran, koristit će se DuckDuckGo.</string>
+    <string name="pref_dict_jp">Japanski</string>
+    <string name="pref_dict_es">Španjolski</string>
+    <string name="define_word">"&lt;u&gt;Definiraj&lt;/u&gt; "<u>Define</u> </string>
+    <string name="dialog_ok">U redu</string>
+    <string name="pref_sounds">Zvukovi aktivirani</string>
+    <string name="show_unique">Prikaži jedinstvene riječi</string>
+    <string name="tile_count">Broj riječi</string>
+    <string name="pref_sounds_summary">Jesu li zvučni efekti aktivirani</string>
+    <string name="pref_boardSize_summary">Odaberi veličinu ploče</string>
+    <string name="pref_hintMode_dialog">Modus savjeta</string>
+    <string name="menu_end_game">Završi igru</string>
+    <string name="button_ok">U redu</string>
+    <string name="pref_dict_nl">Nizozemski</string>
+    <string name="score">REZULTAT</string>
+    <string name="pref_boardSize">Veličina ploče</string>
+    <string name="pref_dict_fa">persijski</string>
+    <string name="pref_boardSize_dialog">Odaberi veličinu ploče</string>
+    <string name="pref_dict_dialog">Odaberi leksikon</string>
+    <string name="pref_dict_uk_ua">Ukrajinski</string>
+    <string name="pref_timeLimit_dialog">Odaberi vremensko ograničenje</string>
+    <string name="pref_breakdown">Pokaži razgradnju duljine riječi</string>
+    <string name="missed_words">Propuštene riječi</string>
+    <string name="hint_none">Deaktivirano</string>
+    <string name="hide_missed">Sakrij propuštene riječi</string>
+    <string name="pref_dict_hu">Mađarski</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="letter_points">Bodovi za riječi</string>
+    <string name="menu_save_game">Spremi igru</string>
+    <string name="time_10m">10 minuta</string>
+    <string name="pref_dict_us">Engleski (SAD)</string>
+    <string name="show_missed">Prikaži propuštene riječi</string>
+    <string name="pref_dict_ru">Ruski</string>
+    <string name="pref_breakdown_summary">Je li broj riječi prikazuje brojeve po duljini riječi</string>
+    <string name="about">Informacije</string>
+    <string name="new_game">Nova igra</string>
+    <string name="time_20m">20 minuta</string>
+    <string name="pref_scoreType_dialog">Odaberi vrstu bodovanja</string>
+    <string name="pref_dict_it">Talijanski</string>
+    <string name="pref_hintMode_summary">Prikazuje broj riječi u kojem se svako slovo može koristiti</string>
+    <string name="restore_game">Obnovi igru</string>
+    <string name="pref_hintMode">Modus savjeta</string>
+    <string name="pref_dict_uk">Engleski (UK)</string>
+    <string name="total_score">Ukupni rezultat:</string>
+    <string name="pref_resetScores">Resetiraj najviše rezultate</string>
+    <string name="time_3m">3 minute</string>
+    <string name="hint_both">Oboje</string>
+    <string name="pref_resetScores_summary">Za svaku kombinaciju gore navedenih postavki prate se najbolji rezultati. Dodirni za poništavanje svih rezultata na nulu.</string>
+    <string name="pref_timeLimit">Vremensko ograničenje</string>
+    <string name="word_length">Duljina riječi</string>
+    <string name="view_word">&lt;u&gt;Prikaz&lt;/u&gt;<u>View</u></string>
+    <string name="total_words">Ukupno riječi:</string>
+    <string name="pref_definitionProvider_dialog">Odaberi pružatelja definicija</string>
+    <string name="found_words">Pronađene riječi</string>
+    <string name="dialog_cancel">Odustani</string>
+    <string name="pref_definitionProvider">Pružatelj definicija</string>
+    <string name="dialog_about_content">Dodirni zaslon i pomakni prst na susjedne kvadrate za slovkanje riječi. Imaš tri minute pronaći što je moguće više riječi. 
+\n
+\nBodovanje: 
+\nNa 4x4 pločama, riječi moraju sadržati najmanje tri slova. Na 5x5 pločama, riječi moraju sadržati najmanje četiri slova. Riječi koje imaju tri ili četiri slova vrijede jedan bod. Duže riječi vrijede više bodova. Prave imenice se ne računaju.
+\n
+\n</string>
+    <string name="pref_scoreType">Vrsta bodovanja</string>
+    <string name="menu_rotate_board">Okreni ploču</string>
+    <string name="pref_dict_de_de">Njemački</string>
+    <string name="pref_timeLimit_summary">Odaberi vremensko ograničenje</string>
+    <string name="pref_scoreType_summary">Odaberi vrstu bodovanja</string>
+    <string name="dialog_about_title">O programu Lexica</string>
+    <string name="prefs">Postavke</string>
+    <string name="app_name">Lexica</string>
+    <string name="high_scores_reset">Najviši rezultati su resetirani.</string>
+    <string name="hide_unique">Sakrij jedinstvene riječi</string>
+    <string name="reset_scores_prompt">Sigurno želiš resetirati sve najviše rezultate za sve moduse igre na nulu\?</string>
+    <string name="pref_dict_fr_fr">Francuski</string>
+    <string name="pref_dict">Leksikon</string>
+    <string name="hint_colour">Boja pločica</string>
+    <string name="dialog_no_saved">Nijedna igra nije spremljena. Ako ovu poruku možeš pročitati, vjerojatno je nešto pokvareno.</string>
+</resources>
