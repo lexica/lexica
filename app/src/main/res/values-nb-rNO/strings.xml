@@ -4,9 +4,9 @@
     <string name="new_game">Nytt spill</string>
     <string name="restore_game">Gjenopprett spill</string>
     <string name="prefs">Innstillinger</string>
-    <string name="pref_dict">Ordbok</string>
-    <string name="pref_dict_summary">Velg ordbok å bruke</string>
-    <string name="pref_dict_dialog">Velg ordbok</string>
+    <string name="pref_dict">Leksikon</string>
+    <string name="pref_dict_summary">Velg språk for spillet</string>
+    <string name="pref_dict_dialog">Velg et leksikon</string>
     <string name="pref_dict_us">Engelsk (USA)</string>
     <string name="pref_dict_uk">Engelsk (UK)</string>
     <string name="pref_boardSize">Brettstørrelse</string>
@@ -46,12 +46,8 @@
     <string name="hide_missed">Skjul oversette ord</string>
     <string name="show_unique">Vis unike ord</string>
     <string name="hide_unique">Skjul unike ord</string>
-    <string name="view_word">
-        <u>Vis</u>
-    </string>
-    <string name="define_word">
-        <u>Definer</u>
-    </string>
+    <string name="view_word"><u>Vis</u></string>
+    <string name="define_word"><u>Definer</u> </string>
     <string name="words">ORD</string>
     <string name="score">POENGSUM</string>
     <string name="found_words">Funnede ord</string>
