@@ -27,115 +27,117 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class CharProbGenerator {
-	@SuppressWarnings("unused")
-	private static final String TAG = "CharProbGenerator";
-	private final ArrayList<ProbabilityQueue> charProbs;
+    @SuppressWarnings("unused")
+    private static final String TAG = "CharProbGenerator";
+    private final ArrayList<ProbabilityQueue> charProbs;
 
-	private Language language;
+    public CharProbGenerator(InputStream letterSource, Language language) {
 
-	public CharProbGenerator(InputStream letter_stream, Language language) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(letterSource));
 
-		this.language = language;
-		BufferedReader br = new BufferedReader(new InputStreamReader(letter_stream));
+        charProbs = new ArrayList<>();
 
-		charProbs = new ArrayList<>();
+        try {
+            for (String line = br.readLine(); line != null; line = br.readLine()) {
+                // Allow for some comments and spacing. Ignore any empty lines or those starting with '#'.
+                if (line.length() == 0 || line.charAt(0) == '#') {
+                    continue;
+                }
 
-		try {
-			for(String line=br.readLine();line != null; line=br.readLine()) {
-				String chunks[] = line.toLowerCase(language.getLocale()).split(" ");
-				ProbabilityQueue pq = new ProbabilityQueue(language.applyMandatorySuffix(chunks[0]));
-				for(int i=1;i<chunks.length;i++) {
-					pq.addProb(language.applyMandatorySuffix(chunks[i]));
-				}
-				charProbs.add(pq);
-			}
-		} catch (Exception e) {
-			// Log.e(TAG,"READING INPUT",e);
-			// Checked exceptions considered harmful.
-		}
+                String[] chunks = line.toLowerCase(language.getLocale()).split(" ");
+                ProbabilityQueue pq = new ProbabilityQueue(language.applyMandatorySuffix(chunks[0]));
+                for (int i = 1; i < chunks.length; i++) {
+                    pq.addProb(language.applyMandatorySuffix(chunks[i]));
+                }
+                charProbs.add(pq);
+            }
+        } catch (Exception e) {
+            // Log.e(TAG,"READING INPUT",e);
+            // Checked exceptions considered harmful.
+        }
 
-	}
+    }
 
-	public FiveByFiveBoard generateFiveByFiveBoard() {
-		return new FiveByFiveBoard(generateBoard(25));
-	}
+    public FiveByFiveBoard generateFiveByFiveBoard() {
+        return new FiveByFiveBoard(generateBoard(25));
+    }
 
-	public FourByFourBoard generateFourByFourBoard() {
-		return new FourByFourBoard(generateBoard(16));
-	}
+    public FourByFourBoard generateFourByFourBoard() {
+        return new FourByFourBoard(generateBoard(16));
+    }
 
-	public SixBySixBoard generateSixBySixBoard() {
-		return new SixBySixBoard(generateBoard(36));
-	}
+    public SixBySixBoard generateSixBySixBoard() {
+        return new SixBySixBoard(generateBoard(36));
+    }
 
-	public String[] generateBoard(int size) {
-		int total = 0;
-		Random rng = new Random();
+    private String[] generateBoard(int size) {
+        int total = 0;
+        Random rng = new Random();
 
-		String board[] = new String[size];
+        String[] board = new String[size];
 
-		for(int i=0;i<charProbs.size();i++) {
-			total += charProbs.get(i).peekProb();
-		}
+        for (int i = 0; i < charProbs.size(); i++) {
+            total += charProbs.get(i).peekProb();
+        }
 
-		// get the letters
-		for(int i=0;i<size;i++) {
-			ProbabilityQueue pq = null;
-			int remaining = rng.nextInt(total);
-			// System.out.println("pos: " + i + ", remaining:"+remaining+"/"+total);
-			for(int j=0;j<charProbs.size();j++) {
-				pq = charProbs.get(j);
-				remaining -= pq.peekProb();
-				if(pq.peekProb() > 0 && remaining <= 0) {
-					break;
-				}
-			}
-			board[i] = pq.getLetter();
-			total -= pq.getProb();
-			total += pq.peekProb();
-		}
+        // get the letters
+        for (int i = 0; i < size; i++) {
+            ProbabilityQueue pq = null;
+            int remaining = rng.nextInt(total);
+            for (int j = 0; j < charProbs.size(); j++) {
+                pq = charProbs.get(j);
+                remaining -= pq.peekProb();
+                if (pq.peekProb() > 0 && remaining <= 0) {
+                    break;
+                }
+            }
+            board[i] = pq.getLetter();
+            total -= pq.getProb();
+            total += pq.peekProb();
+        }
 
-		// shuffle the letters
-		for(int to=15;to>0;to--) {
-			int from = rng.nextInt(to);
-			String tmp = board[to];
-			board[to] = board[from];
-			board[from] = tmp;
-		}
+        // shuffle the letters
+        for (int to = 15; to > 0; to--) {
+            int from = rng.nextInt(to);
+            String tmp = board[to];
+            board[to] = board[from];
+            board[from] = tmp;
+        }
 
-		return board;
-	}
+        return board;
+    }
 
-	private class ProbabilityQueue {
-		private final String letter;
-		private final LinkedList<Integer> probQueue;
+    private static class ProbabilityQueue {
 
-		public ProbabilityQueue(String l) {
-			letter = l;
-			probQueue = new LinkedList<>();
-		}
+        private final String letter;
+        private final LinkedList<Integer> probQueue;
 
-		/**
-		 * Already has any mandatory suffix applied (hopefully!).
-		 */
-		public String getLetter() {
-			return letter;
-		}
+        ProbabilityQueue(String l) {
+            letter = l;
+            probQueue = new LinkedList<>();
+        }
 
-		public void addProb(String s) {
-			probQueue.add(Integer.valueOf(s));
-		}
+        /**
+         * Already has any mandatory suffix applied (hopefully!).
+         */
+        public String getLetter() {
+            return letter;
+        }
 
-		public int peekProb() {
-			if(probQueue.isEmpty()) return 0;
-			return probQueue.peek();
-		}
+        void addProb(String s) {
+            probQueue.add(Integer.valueOf(s));
+        }
 
-		public int getProb() {
-			if(probQueue.isEmpty()) return 0;
-			return probQueue.remove();
-		}
+        int peekProb() {
+            if (probQueue.isEmpty()) return 0;
+            return probQueue.peek();
+        }
 
-	}
+        int getProb() {
+            if (probQueue.isEmpty()) return 0;
+            return probQueue.remove();
+        }
+
+    }
 
 }
