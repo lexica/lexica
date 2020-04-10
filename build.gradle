@@ -51,6 +51,7 @@ def languages = [
   "it",
   "jp",
   "nl",
+  "pl",
   "ru",
   "uk",
 ]

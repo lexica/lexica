@@ -10,6 +10,7 @@
 		<item>@string/pref_dict_it</item>
 		<item>@string/pref_dict_jp</item>
 		<item>@string/pref_dict_nl</item>
+		<item>@string/pref_dict_pl</item>
 		<item>@string/pref_dict_ru</item>
 		<item>@string/pref_dict_uk_ua</item>
 		<item>@string/pref_dict_uk</item>
@@ -28,6 +29,7 @@
 		<item>it</item>
 		<item>jp</item>
 		<item>nl</item>
+		<item>pl</item>
 		<item>ru</item>
 		<item>uk</item>
 		<item>UK</item>

@@ -31,6 +31,7 @@ import com.serwylo.lexica.lang.Italian;
 import com.serwylo.lexica.lang.Japanese;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.Persian;
+import com.serwylo.lexica.lang.Polish;
 import com.serwylo.lexica.lang.Russian;
 import com.serwylo.lexica.lang.Spanish;
 import com.serwylo.lexica.lang.Ukrainian;
@@ -107,6 +108,11 @@ public class GenerateLanguageBoards {
     @Test
     public void generateJapaneseBoards() {
         generateLanguageBoards(new Japanese());
+    }
+
+    @Test
+    public void generatePolishBoards() {
+        generateLanguageBoards(new Polish());
     }
 
     @Test
