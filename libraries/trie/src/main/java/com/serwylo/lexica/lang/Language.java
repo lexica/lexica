@@ -137,6 +137,21 @@ public abstract class Language {
         }
     }
 
+    /**
+     * A URL which we can send the player to in order to define a word.
+     *
+     * Must include a single {@link String#format(String, Object...)} "%s" placeholder.
+     *
+     * By default, uses DuckDuckGo, however individual languages may have their own more appropriate
+     * sources to use.
+     *
+     * Note: This is only used if the "Online" dictionary provider is selected from preferences.
+     *       If "AARD2" or "QuickDic" is selected, they will take precedence.
+     */
+    public String getDefinitionUrl() {
+        return "https://duckduckgo.com/?ia=definition&q=define+%s";
+    }
+
     public static class NotFound extends Exception {
 
         public final String name;

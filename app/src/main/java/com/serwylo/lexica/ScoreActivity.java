@@ -46,9 +46,9 @@ import java.util.Set;
 
 public class ScoreActivity extends TabActivity {
 
+	@SuppressWarnings("unused")
 	private static final String TAG = "ScoreActivity";
 
-	public static final String DEFINE_URL = "https://duckduckgo.com/?ia=definition&q=define+";
 	public static final String SCORE_PREF_FILE = "prefs_score_file";
 
 	private Game game;
@@ -337,11 +337,16 @@ public class ScoreActivity extends TabActivity {
 			if (intent != null && intent.resolveActivity(getPackageManager()) != null) {
 				startActivity(intent);
 			} else {
-				intent = new Intent(Intent.ACTION_VIEW);
-				Uri u = Uri.parse(DEFINE_URL+word);
-				intent.setData(u);
-				startActivity(intent);
+				searchWordOnline();
 			}
+		}
+
+		private void searchWordOnline() {
+			String url = game.getLanguage().getDefinitionUrl();
+			Intent intent = new Intent(Intent.ACTION_VIEW);
+			Uri u = Uri.parse(String.format(url, word));
+			intent.setData(u);
+			startActivity(intent);
 		}
 	}
 

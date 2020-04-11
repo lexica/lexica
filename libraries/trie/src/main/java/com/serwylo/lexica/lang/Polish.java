@@ -82,4 +82,13 @@ public class Polish extends Language {
     protected Map<String, Integer> getLetterPoints() {
         return letterPoints;
     }
+
+    /**
+     * The dictionary used for Polish is from https://sjp.pl, which also happens to include a
+     * definition service. Therefore, it seems appropriate to use this over DuckDuckGo.
+     */
+    @Override
+    public String getDefinitionUrl() {
+        return "https://sjp.pl/%s";
+    }
 }

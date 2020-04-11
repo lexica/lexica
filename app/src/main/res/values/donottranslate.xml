@@ -85,7 +85,7 @@
 	</string-array>
 
 	<string-array name="definition_provider_choices_entries">
-		<item>DuckDuckGo</item>
+		<item>@string/pref_definitionProvider_dictionaryProvider_online</item>
 		<item>AARD2</item>
 		<item>QuickDic</item>
 	</string-array>
