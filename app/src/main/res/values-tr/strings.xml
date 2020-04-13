@@ -30,9 +30,9 @@
     <string name="time_10m">10 Dakika</string>
     <string name="time_20m">20 Dakika</string>
     <string name="time_30m">30 Dakika</string>
-    <string name="pref_scoreType">Skor Tipi</string>
-    <string name="pref_scoreType_summary">Skor tipi seç</string>
-    <string name="pref_scoreType_dialog">Skor Tipi Seç</string>
+    <string name="pref_scoreType">Puanlama Türü</string>
+    <string name="pref_scoreType_summary">Bir puanlama türü seç</string>
+    <string name="pref_scoreType_dialog">Puanlama Türünü Seç</string>
     <string name="word_length">Kelime Uzunluğu</string>
     <string name="letter_points">Harf Puanları</string>
     <string name="pref_sounds">Ses Aktif Edildi</string>
