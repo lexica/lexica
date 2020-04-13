@@ -84,4 +84,6 @@
     <string name="hint_colour">Tegelkleur</string>
     <string name="hint_both">Beide</string>
     <string name="pref_dict_uk_ua">Oekraïens</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
+    <string name="pref_dict_pl">Pools</string>
 </resources>
