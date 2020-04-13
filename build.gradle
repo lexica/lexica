@@ -51,6 +51,7 @@ def languages = [
   "it",
   "jp",
   "nl",
+  "pl",
   "ru",
   "uk",
 ]
@@ -65,7 +66,11 @@ languages.each { lang ->
                 file('app/src/main/res/raw/'),
                 file('app/src/test/resources/'),
         ]
-        outputs.dir("assets/dictionaries/dictionary_${lang}.txt")
+
+        outputs.files([
+                "app/src/main/res/raw/words_${lang}.bin",
+                "app/src/test/resources/words_${lang}.bin",
+	])
     }
 
     buildDictionaries.dependsOn << langTask
