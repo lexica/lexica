@@ -143,9 +143,8 @@ public class FullUsGbTrieTest extends TrieTest {
 		}
 	}
 
-	// Used to test performance optimizations. Remove @Ignore to use it.
 	@Test
-	@Ignore
+	@Ignore("Used to test performance optimizations. Remove @Ignore to use it.")
 	public void testSolverPerformance() throws IOException {
 		Language language = new EnglishUS();
 		InputStream stream = FullUsGbTrieTest.class.getClassLoader().getResourceAsStream(language.getTrieFileName());

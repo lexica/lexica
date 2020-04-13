@@ -365,7 +365,7 @@ public class ScoreActivity extends TabActivity {
 		if (score > highScore) {
 			SharedPreferences.Editor edit = prefs.edit();
 			edit.putInt(key, score);
-			edit.commit();
+			edit.apply();
 		}
 	}
 

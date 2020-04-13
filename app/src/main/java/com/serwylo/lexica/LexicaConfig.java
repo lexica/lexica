@@ -83,7 +83,7 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
     };
 
     private void clearHighScores() {
-        getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().commit();
+        getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().apply();
         Toast.makeText(this, R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
     }
 }

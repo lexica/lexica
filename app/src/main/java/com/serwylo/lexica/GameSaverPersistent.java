@@ -88,12 +88,12 @@ public class GameSaverPersistent extends GameSaver {
 		prefs.putInt(WORD_COUNT, wordCount);
 
 		prefs.putBoolean(ACTIVE_GAME, true);
-		prefs.commit();
+		prefs.apply();
 	}
 
 	public void clearSavedGame() {
 		SharedPreferences.Editor prefs = getPrefs().edit();
 		prefs.putBoolean(ACTIVE_GAME, false);
-		prefs.commit();
+		prefs.apply();
 	}
 }

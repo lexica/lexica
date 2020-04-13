@@ -16,12 +16,13 @@
 		app:layout_constraintTop_toTopOf="parent"
 		app:layout_constraintBottom_toBottomOf="parent" />
 
+	<!-- TODO: textColor: This doesn't load for whatever reason. -->
 	<TextView
 		android:id="@+id/high_score_label"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:textSize="?attr/scoreHeadingTextSize"
-		android:textColor="?attr/selectedWordColour" TODO: This doesn't load for whatever reason.'
+		android:textColor="?attr/selectedWordColour"
 		app:layout_constraintEnd_toEndOf="@id/lexicaLogo"
 		app:layout_constraintTop_toTopOf="@id/lexicaLogo"
 		tools:text="@string/high_score" />
