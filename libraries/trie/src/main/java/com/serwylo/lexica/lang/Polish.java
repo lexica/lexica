@@ -53,9 +53,14 @@ public class Polish extends Language {
 
     }
 
+    /**
+     * Given this doesn't use an `aspell` dictionary dump, but rather a custom dictionary designed
+     * for word games, and both @bzaborow and @alekksander have confirmed that it is playable, this
+     * is not marked as "Beta".
+     */
     @Override
     public boolean isBeta() {
-        return true;
+        return false;
     }
 
     @Override
