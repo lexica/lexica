@@ -10,9 +10,7 @@
     <string name="pref_definitionProvider_summary">Selecione o provedor de definições a usar. Se o provedor selecionado não estiver instalado, será utilizado o DuckDuckGo.</string>
     <string name="pref_dict_jp">Japonês</string>
     <string name="pref_dict_es">Espanhol</string>
-    <string name="define_word">
-        <u>Definição</u>
-    </string>
+    <string name="define_word"><u>Definição</u> </string>
     <string name="dialog_ok">OK</string>
     <string name="pref_sounds">Sons ativados</string>
     <string name="show_unique">Mostrar palavras únicas</string>
@@ -59,9 +57,7 @@
     <string name="pref_resetScores_summary">Os recordes são registrados para cada combinação das configurações acima. Toque para zerar todas as pontuações.</string>
     <string name="pref_timeLimit">Tempo limite</string>
     <string name="word_length">Tamanho da palavra</string>
-    <string name="view_word">
-        <u>Mostrar</u>
-    </string>
+    <string name="view_word"><u>Mostrar</u></string>
     <string name="total_words">Total de palavras:</string>
     <string name="pref_definitionProvider_dialog">Selecione o provedor de definições</string>
     <string name="found_words">Palavras encontradas</string>
@@ -88,4 +84,6 @@
     <string name="pref_dict">Léxico</string>
     <string name="hint_colour">Cor da grade</string>
     <string name="dialog_no_saved">Não há jogo salvo. Se você conseguir ler esta mensagem, provavelmente algo está errado.</string>
+    <string name="pref_dict_pl">Polonês</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
 </resources>
