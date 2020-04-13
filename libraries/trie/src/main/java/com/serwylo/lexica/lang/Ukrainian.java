@@ -30,7 +30,7 @@ public class Ukrainian extends Language {
 
         letterPoints.put("у", 3);
 
-        letterPoints.put("3", 4);
+        letterPoints.put("з", 4);
         letterPoints.put("я", 4);
         letterPoints.put("б", 4);
         letterPoints.put("г", 4);
