@@ -1,59 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lèxica</string>
-    <string name="new_game">Nova Partida</string>
+    <string name="new_game">Partida nova</string>
     <string name="restore_game">Recupera la partida</string>
-    <string name="prefs">Arranjaments</string>
-    <string name="pref_dict">Diccionari</string>
-    <string name="pref_dict_summary">Selecciona el diccionari en ús</string>
-    <string name="pref_dict_dialog">Selecciona el diccionari</string>
+    <string name="prefs">Configuració</string>
+    <string name="pref_dict">Lèxic</string>
+    <string name="pref_dict_summary">Seleccioneu la llengua de la partida</string>
+    <string name="pref_dict_dialog">Seleccioneu un lèxic</string>
     <string name="pref_dict_us">Anglès (Estats Units)</string>
     <string name="pref_dict_uk">Anglès (Regne Unit)</string>
     <string name="pref_boardSize">Mida del tauler</string>
     <string name="pref_boardSize_summary">Seleccioneu la mida del tauler</string>
     <string name="pref_boardSize_dialog">Seleccioneu la mida del tauler</string>
     <string name="pref_timeLimit">Límit de temps</string>
-    <string name="pref_timeLimit_summary">Selecciona el límit de temps</string>
-    <string name="pref_timeLimit_dialog">Selecciona el límit de temps</string>
+    <string name="pref_timeLimit_summary">Seleccioneu el límit de temps</string>
+    <string name="pref_timeLimit_dialog">Seleccioneu el límit de temps</string>
     <string name="time_3m">3 minuts</string>
     <string name="time_5m">5 minuts</string>
     <string name="time_10m">10 minuts</string>
     <string name="time_20m">20 minuts</string>
     <string name="time_30m">30 minuts</string>
     <string name="pref_sounds">Habilita el so</string>
-    <string name="pref_sounds_summary">Si vols que s\'escoltin els efectes de so</string>
-    <string name="dialog_no_saved">No hi ha cap partida desada. Si pots llegir aquest missatge, alguna cosa s\'ha espatllat.</string>
+    <string name="pref_sounds_summary">Si voleu els efectes de so</string>
+    <string name="dialog_no_saved">No hi ha cap partida desada. Si podeu llegir aquest missatge, alguna cosa s\'ha espatllat.</string>
     <string name="dialog_ok">D’acord</string>
     <string name="dialog_cancel">Cancel·la</string>
     <string name="dialog_about_title">Quant al Lexica</string>
-    <string name="dialog_about_content">"
- Toqueu la pantalla i mogueu el dit a les caselles adjacents per lletrejar paraules. Teniu tres minuts per trobar-ne-hi.
-
-Puntuació:
-Als taulells de 4x4, les paraules han de ser mínim de tres lletres. Als de 5x5, com a mínim de quatre. Les paraules de tres o quatres lletres valen un punt. Com més lletres tinguin, més puntuen. Els noms propis no conten.
-
-
- "</string>
+    <string name="dialog_about_content">Toqueu la pantalla i mogueu el dit a les caselles adjacents per a lletrejar mots. Teniu tres minuts per trobar-hi tants mots com sigui possible.
+\n
+\nPuntuació:
+\nEn els taulers de 4x4, els mots han de ser com a mínim de tres lletres. En els de 5x5, com a mínim de quatre. Els mots de tres o quatre lletres valen un punt. Com més lletres tinguin, més puntuen. Els noms propis no conten.
+\n
+\n</string>
     <string name="menu_rotate_board">Gira el tauler</string>
     <string name="menu_save_game">Desa la partida</string>
-    <string name="menu_end_game">Termina la partida</string>
+    <string name="menu_end_game">Finalitza la partida</string>
     <string name="button_ok">D’acord</string>
     <string name="about">Quant a</string>
-    <string name="show_missed">Mostra les paraules incorrectes</string>
-    <string name="hide_missed">Oculta les paraules incorrectes</string>
-    <string name="show_unique">Mostra paraules úniques</string>
-    <string name="hide_unique">Oculta les paraules úniques</string>
-    <string name="view_word">
-        <u>Veure</u>
-    </string>
-    <string name="define_word">
-        <u>Definiu</u>
-    </string>
-    <string name="words">PARAULES</string>
-    <string name="found_words">Paraules Trobades</string>
-    <string name="missed_words">Paraules Incorrectes</string>
-    <string name="total_words">Paraules en Total:</string>
-    <string name="total_score">Puntuació Total:</string>
+    <string name="show_missed">Mostra els mots incorrectes</string>
+    <string name="hide_missed">Oculta els mots romanents</string>
+    <string name="show_unique">Mostra els mots únics</string>
+    <string name="hide_unique">Oculta els mots únics</string>
+    <string name="view_word"><u>Mostra</u></string>
+    <string name="define_word"><u>Definició</u> </string>
+    <string name="words">MOTS</string>
+    <string name="found_words">Mots trobats</string>
+    <string name="missed_words">Mots romanents</string>
+    <string name="total_words">Mots en total:</string>
+    <string name="total_score">Puntuació total:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="pref_scoreType">Tipus de puntuació</string>
     <string name="pref_scoreType_summary">Seleccioneu un tipus de puntuació</string>
@@ -75,4 +69,21 @@ Als taulells de 4x4, les paraules han de ser mínim de tres lletres. Als de 5x5,
     <string name="pref_dict_jp">Japonès</string>
     <string name="pref_dict_ru">Rus</string>
     <string name="pref_dict_hu">Hongarès</string>
+    <string name="pref_breakdown_summary">Per a triar si el comptador de mots compta per longitud del mot</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">En línia</string>
+    <string name="pref_breakdown">Mostra el detall dels mots més llargs</string>
+    <string name="high_scores_reset">S\'han reinicialitzat les millors puntuacions.</string>
+    <string name="pref_resetScores">Restableix les millors puntuacions</string>
+    <string name="pref_resetScores_summary">L\'aplicació enregistra les puntuacions més altes per a cadascuna de les configuracions anteriors. Toqueu aquí per a restablir-les totes a zero.</string>
+    <string name="high_score">Millor puntuació: %1$d</string>
+    <string name="hint_both">Ambdós</string>
+    <string name="hint_colour">Color de la fitxa</string>
+    <string name="tile_count">Nombre de mots</string>
+    <string name="hint_none">Desactivat</string>
+    <string name="pref_hintMode_dialog">Mode de pistes</string>
+    <string name="pref_hintMode_summary">Mostra el nombre de mots en què es pot usar cada lletra</string>
+    <string name="pref_hintMode">Mode de pistes</string>
+    <string name="letter_points">Valor de les lletres</string>
+    <string name="pref_dict_uk_ua">Ucraïnès</string>
+    <string name="pref_dict_pl">Polonès</string>
 </resources>
