@@ -84,4 +84,6 @@
     <string name="hint_colour">Flisfarge</string>
     <string name="hint_both">Begge</string>
     <string name="pref_dict_uk_ua">Ukrainsk</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">På nett</string>
+    <string name="pref_dict_pl">Polsk</string>
 </resources>
