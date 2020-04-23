@@ -85,7 +85,7 @@
     <string name="pref_dict_es">Spagnolo</string>
     <string name="pref_dict_de_de">Tedesco</string>
     <string name="pref_dict_ca">Catalano</string>
-    <string name="pref_breakdown">Mostra l\'Interruzione della Lunghezza delle Parole.</string>
+    <string name="pref_breakdown">Mostra l\'interruzione della lunghezza delle parole</string>
     <string name="reset_scores_prompt">Sei sicuro di voler resettare tutti i punteggi migliori per tutte le modalità di gioco\?</string>
     <string name="high_scores_reset">I punteggi migliori sono stati resettati.</string>
     <string name="pref_resetScores">Resetta i punteggi migliori</string>
