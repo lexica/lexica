@@ -27,7 +27,7 @@
     <string name="dialog_ok">Accetta</string>
     <string name="dialog_cancel">Annulla</string>
     <string name="dialog_about_title">Informazioni su Lexica</string>
-    <string name="pref_dict">Lexicon</string>
+    <string name="pref_dict">Lessico</string>
     <string name="dialog_about_content">"
 \n Tocca lo schermo e traccia col dito per scrivere le parole.
 \nPuoi passare da una casella ad un\'altra adiacente in verticale, orizzontale o diagonale.
