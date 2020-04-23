@@ -92,4 +92,7 @@
     <string name="pref_resetScores_summary">I punteggi migliori vengono tracciati per ogni combinazione delle impostazioni di cui sopra. Tocca per ripristinare tutti i punteggi a zero.</string>
     <string name="pref_breakdown_summary">Se il contatore di parole mostri i conteggi per lunghezza di parola</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">In linea</string>
+    <string name="pref_definitionProvider_dialog">Seleziona il fornitore di definizioni</string>
+    <string name="pref_definitionProvider_summary">Seleziona un fornitore di definizioni per usarlo. DuckDuckGo verrà utilizzato se il fornitore selezionato non è installato.</string>
+    <string name="pref_definitionProvider">Fornitore di definizioni</string>
 </resources>
