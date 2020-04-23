@@ -5,8 +5,8 @@
     <string name="restore_game">Riprendi partita salvata</string>
     <string name="prefs">Preferenze</string>
     <string name="pref_dict_summary">Seleziona una lingua per il gioco</string>
-    <string name="pref_dict_dialog">Seleziona un dizionario</string>
-    <string name="pref_dict_us">Stati Uniti</string>
+    <string name="pref_dict_dialog">Seleziona un lessico</string>
+    <string name="pref_dict_us">Inglese (Stati Uniti)</string>
     <string name="pref_dict_uk">Gran Bretagna</string>
     <string name="pref_boardSize">Dimensioni della tavola</string>
     <string name="pref_boardSize_summary">Seleziona le dimensioni della tavola</string>
@@ -58,4 +58,8 @@
     <string name="total_words">Parole totali:</string>
     <string name="total_score">Punteggio totale:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="pref_dict_uk_ua">Ucraino</string>
+    <string name="pref_dict_ru">Russo</string>
+    <string name="pref_dict_pl">Polacco</string>
 </resources>
