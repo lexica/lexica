@@ -4,7 +4,7 @@
     <string name="new_game">Nuova partita</string>
     <string name="restore_game">Riprendi partita salvata</string>
     <string name="prefs">Preferenze</string>
-    <string name="pref_dict_summary">Seleziona un dizionario da usare</string>
+    <string name="pref_dict_summary">Seleziona una lingua per il gioco</string>
     <string name="pref_dict_dialog">Seleziona un dizionario</string>
     <string name="pref_dict_us">Stati Uniti</string>
     <string name="pref_dict_uk">Gran Bretagna</string>
