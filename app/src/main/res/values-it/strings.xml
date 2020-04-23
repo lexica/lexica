@@ -90,4 +90,5 @@
     <string name="high_scores_reset">I punteggi migliori sono stati resettati.</string>
     <string name="pref_resetScores">Resetta i punteggi migliori</string>
     <string name="pref_resetScores_summary">I punteggi migliori vengono tracciati per ogni combinazione delle impostazioni di cui sopra. Tocca per ripristinare tutti i punteggi a zero.</string>
+    <string name="pref_breakdown_summary">Se il contatore di parole mostri i conteggi per lunghezza di parola.</string>
 </resources>
