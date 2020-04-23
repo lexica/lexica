@@ -36,21 +36,17 @@
     <string name="menu_save_game">Enregistrer la partie</string>
     <string name="menu_end_game">Terminer la partie</string>
     <string name="button_ok">OK</string>
-    <string name="about">À Propos</string>
+    <string name="about">À propos</string>
     <string name="show_missed">Montrer les mots manqués</string>
     <string name="hide_missed">Cacher les mots manqués</string>
     <string name="show_unique">Montrer les mots uniques</string>
     <string name="hide_unique">Cacher les mots uniques</string>
-    <string name="view_word">
-        <u>Voir</u>
-    </string>
-    <string name="define_word">
-        <u>Définir</u>
-    </string>
+    <string name="view_word"><u>Voir</u></string>
+    <string name="define_word"><u>Définir</u> </string>
     <string name="words">MOTS</string>
     <string name="found_words">Mots trouvés</string>
     <string name="missed_words">Mots manqués</string>
-    <string name="total_words">Nombre de mots :</string>
+    <string name="total_words">Total des mots :</string>
     <string name="total_score">Nombre de points :</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="pref_scoreType">Mode de décompte des points</string>
@@ -59,7 +55,7 @@
     <string name="word_length">Longueur des mots</string>
     <string name="letter_points">Valeur des lettres</string>
     <string name="score">SCORE</string>
-    <string name="high_score">Meilleur Score : %1$d</string>
+    <string name="high_score">Meilleur score : %1$d</string>
     <string name="pref_resetScores_summary">Le logiciel garde en mémoire les meilleurs scores. Appuyez ici pour remettre à zéro la mémoire.</string>
     <string name="pref_resetScores">Remettre à Zéro les meilleurs scores</string>
     <string name="high_scores_reset">Les scores ont été remis à zéro.</string>
@@ -75,7 +71,7 @@
     <string name="pref_dict_ca">Catalan</string>
     <string name="pref_dict_es">Espagnol</string>
     <string name="pref_dict_beta">%1$s (Bêta)</string>
-    <string name="pref_dict_fa">Perse</string>
+    <string name="pref_dict_fa">Persan</string>
     <string name="pref_dict_fr_fr">Français</string>
     <string name="pref_dict_jp">Japonais</string>
     <string name="pref_dict_ru">Russe</string>
@@ -88,4 +84,6 @@
     <string name="hint_colour">Couleur de tuile</string>
     <string name="hint_both">Les deux</string>
     <string name="pref_dict_uk_ua">Ukrainien</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">En ligne</string>
+    <string name="pref_dict_pl">Polonais</string>
 </resources>
