@@ -7,7 +7,7 @@
     <string name="pref_dict_summary">Seleziona una lingua per il gioco</string>
     <string name="pref_dict_dialog">Seleziona un lessico</string>
     <string name="pref_dict_us">Inglese (Stati Uniti)</string>
-    <string name="pref_dict_uk">Gran Bretagna</string>
+    <string name="pref_dict_uk">Inglese (RU)</string>
     <string name="pref_boardSize">Dimensioni della tavola</string>
     <string name="pref_boardSize_summary">Seleziona le dimensioni della tavola</string>
     <string name="pref_boardSize_dialog">Seleziona le dimensioni della tavola</string>
@@ -62,4 +62,27 @@
     <string name="pref_dict_uk_ua">Ucraino</string>
     <string name="pref_dict_ru">Russo</string>
     <string name="pref_dict_pl">Polacco</string>
+    <string name="high_score">Punteggio più alto: %1$d</string>
+    <string name="score">PUNTEGGIO</string>
+    <string name="hint_both">Tutti e due</string>
+    <string name="hint_colour">Colore del bordo</string>
+    <string name="tile_count">Numero di parole</string>
+    <string name="hint_none">Disabilitato</string>
+    <string name="pref_hintMode_dialog">Modalità suggerimento</string>
+    <string name="pref_hintMode_summary">Mostra il numero di parole in cui ogni lettera può essere utilizzata</string>
+    <string name="pref_hintMode">Modalità suggerimento</string>
+    <string name="letter_points">Punti lettera</string>
+    <string name="word_length">Lunghezza delle parole</string>
+    <string name="pref_scoreType_dialog">Seleziona un tipo di valutazione</string>
+    <string name="pref_scoreType_summary">Seleziona un tipo di punteggio</string>
+    <string name="pref_scoreType">Tipo di punteggio</string>
+    <string name="pref_dict_nl">Olandese</string>
+    <string name="pref_dict_jp">Giapponese</string>
+    <string name="pref_dict_it">Italiano</string>
+    <string name="pref_dict_hu">Ungherese</string>
+    <string name="pref_dict_fr_fr">Francese</string>
+    <string name="pref_dict_fa">Persiano</string>
+    <string name="pref_dict_es">Spagnolo</string>
+    <string name="pref_dict_de_de">Tedesco</string>
+    <string name="pref_dict_ca">Catalano</string>
 </resources>
