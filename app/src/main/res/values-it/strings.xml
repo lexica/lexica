@@ -1,40 +1,34 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">Lexica</string>
-
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lexica</string>
     <string name="new_game">Nuova partita</string>
     <string name="restore_game">Riprendi partita salvata</string>
-	<string name="prefs">Preferenze</string>
-
-	<string name="pref_dict_summary">Seleziona un dizionario da usare</string>
-	<string name="pref_dict_dialog">Seleziona un dizionario</string>
-	<string name="pref_dict_us">Stati Uniti</string>
-	<string name="pref_dict_uk">Gran Bretagna</string>
-
-	<string name="pref_boardSize">Dimensioni della tavola</string>
-	<string name="pref_boardSize_summary">Seleziona le dimensioni della tavola</string>
-	<string name="pref_boardSize_dialog">Seleziona le dimensioni della tavola</string>
-
-	<string name="pref_timeLimit">Limite di tempo</string>
-	<string name="pref_timeLimit_summary">Seleziona un limite di tempo</string>
-	<string name="pref_timeLimit_dialog">Seleziona un limite di tempo</string>
-	<string name="time_3m">3 minuti</string>
-	<string name="time_5m">5 minuti</string>
-	<string name="time_10m">10 minuti</string>
-	<string name="time_20m">20 minuti</string>
-	<string name="time_30m">30 minuti</string>
-
-	<string name="pref_sounds">Suoni abilitati</string>
-	<string name="pref_sounds_summary">Se i suoni sono abilitati oppure no</string>
-
-	<string name="dialog_no_saved">Nessuna partita salvata.
+    <string name="prefs">Preferenze</string>
+    <string name="pref_dict_summary">Seleziona un dizionario da usare</string>
+    <string name="pref_dict_dialog">Seleziona un dizionario</string>
+    <string name="pref_dict_us">Stati Uniti</string>
+    <string name="pref_dict_uk">Gran Bretagna</string>
+    <string name="pref_boardSize">Dimensioni della tavola</string>
+    <string name="pref_boardSize_summary">Seleziona le dimensioni della tavola</string>
+    <string name="pref_boardSize_dialog">Seleziona le dimensioni della tavola</string>
+    <string name="pref_timeLimit">Limite di tempo</string>
+    <string name="pref_timeLimit_summary">Seleziona un limite di tempo</string>
+    <string name="pref_timeLimit_dialog">Seleziona un limite di tempo</string>
+    <string name="time_3m">3 minuti</string>
+    <string name="time_5m">5 minuti</string>
+    <string name="time_10m">10 minuti</string>
+    <string name="time_20m">20 minuti</string>
+    <string name="time_30m">30 minuti</string>
+    <string name="pref_sounds">Suoni abilitati</string>
+    <string name="pref_sounds_summary">Se i suoni sono abilitati oppure no</string>
+    <string name="dialog_no_saved">Nessuna partita salvata.
 \nSe stai leggendo
 \nquesto messaggio qualcosa non ha funzionato.</string>
-	<string name="dialog_ok">Accetta</string>
-	<string name="dialog_cancel">Annulla</string>
-
-	<string name="dialog_about_title">Informazioni su Lexica</string>
-	<string name="pref_dict">Dizionario</string>
-	<string name="dialog_about_content">"
+    <string name="dialog_ok">Accetta</string>
+    <string name="dialog_cancel">Annulla</string>
+    <string name="dialog_about_title">Informazioni su Lexica</string>
+    <string name="pref_dict">Lexicon</string>
+    <string name="dialog_about_content">"
 \n Tocca lo schermo e traccia col dito per scrivere le parole.
 \nPuoi passare da una casella ad un\'altra adiacente in verticale, orizzontale o diagonale.
 \nHai tre minuti per trovare più parole che puoi.
@@ -47,27 +41,21 @@
 \n
 \n
 \n "</string>
-
-	<string name="menu_rotate_board">Ruota la tavola</string>
-	<string name="menu_save_game">Salva la partita</string>
-	<string name="menu_end_game">Termina la partita</string>
-	<string name="button_ok">Accetta</string>
-
-	<string name="about">Informazioni su Lexica</string>
-
-	<string name="show_missed">Mostra le parole non trovate</string>
-	<string name="hide_missed">Nascondi le parole non trovate</string>
-
-	<string name="show_unique">Mostra le parole non ripetute</string>
-	<string name="hide_unique">Nascondi le parole non ripetute</string>
-
-	<string name="view_word"><u>Guarda</u></string>
-	<string name="define_word"><u>Definisci</u> </string>
-
-	<string name="words">PAROLE</string>
-	<string name="found_words">Parole Trovate</string>
-	<string name="missed_words">Parole non trovate</string>
-	<string name="total_words">Parole totali:</string>
-	<string name="total_score">Punteggio totale:</string>
-	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="menu_rotate_board">Ruota la tavola</string>
+    <string name="menu_save_game">Salva la partita</string>
+    <string name="menu_end_game">Termina la partita</string>
+    <string name="button_ok">Accetta</string>
+    <string name="about">Informazioni su Lexica</string>
+    <string name="show_missed">Mostra le parole non trovate</string>
+    <string name="hide_missed">Nascondi le parole non trovate</string>
+    <string name="show_unique">Mostra le parole non ripetute</string>
+    <string name="hide_unique">Nascondi le parole non ripetute</string>
+    <string name="view_word"><u>Guarda</u></string>
+    <string name="define_word"><u>Definisci</u> </string>
+    <string name="words">PAROLE</string>
+    <string name="found_words">Parole Trovate</string>
+    <string name="missed_words">Parole non trovate</string>
+    <string name="total_words">Parole totali:</string>
+    <string name="total_score">Punteggio totale:</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
 </resources>
