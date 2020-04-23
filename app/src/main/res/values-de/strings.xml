@@ -3,9 +3,7 @@
     <string name="app_name">Lexica</string>
     <string name="about">Über</string>
     <string name="button_ok">OK</string>
-    <string name="define_word">
-        <u>Definition</u>
-    </string>
+    <string name="define_word"><u>Definition</u> </string>
     <string name="dialog_about_title">Über Lexica</string>
     <string name="dialog_cancel">Abbrechen</string>
     <string name="dialog_ok">OK</string>
@@ -41,9 +39,7 @@
     <string name="time_5m">5 Minuten</string>
     <string name="total_score">Punkte insgesamt:</string>
     <string name="total_words">Wörter insgesamt:</string>
-    <string name="view_word">
-        <u>Ansicht</u>
-    </string>
+    <string name="view_word"><u>Ansicht</u></string>
     <string name="words">WÖRTER</string>
     <string name="dialog_no_saved">Es wird kein Spiel gespeichert. Wenn Ihnen diese Nachricht angezeigt wird, ist wahrscheinlich etwas nicht in Ordnung.</string>
     <string name="dialog_about_content">Berühren Sie den Bildschirm und bewegen Sie Ihren Finger über benachbarte Felder, um Wörter zu buchstabieren. Sie haben drei Minuten, um so viele Wörter wie möglich zu finden.
@@ -88,4 +84,6 @@
     <string name="hint_colour">Feld Farbe</string>
     <string name="hint_both">Beide</string>
     <string name="pref_dict_uk_ua">Ukrainisch</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
+    <string name="pref_dict_pl">Polnisch</string>
 </resources>
