@@ -84,4 +84,6 @@
     <string name="pref_dict">Leksikon</string>
     <string name="hint_colour">Boja pločica</string>
     <string name="dialog_no_saved">Nijedna igra nije spremljena. Ako ovu poruku možeš pročitati, vjerojatno je nešto pokvareno.</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
+    <string name="pref_dict_pl">Poljski</string>
 </resources>
