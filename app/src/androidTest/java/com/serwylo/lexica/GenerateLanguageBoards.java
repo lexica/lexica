@@ -4,37 +4,13 @@ package com.serwylo.lexica;
 import android.support.test.espresso.DataInteraction;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
-import static android.support.test.InstrumentationRegistry.getTargetContext;
-import static android.support.test.espresso.Espresso.onData;
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.Espresso.pressBack;
-import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
-import static android.support.test.espresso.action.ViewActions.*;
-import static android.support.test.espresso.matcher.ViewMatchers.*;
-
-import com.serwylo.lexica.lang.Catalan;
-import com.serwylo.lexica.lang.DeGerman;
-import com.serwylo.lexica.lang.Dutch;
-import com.serwylo.lexica.lang.EnglishGB;
-import com.serwylo.lexica.lang.EnglishUS;
-import com.serwylo.lexica.lang.French;
-import com.serwylo.lexica.lang.Hungarian;
-import com.serwylo.lexica.lang.Italian;
-import com.serwylo.lexica.lang.Japanese;
 import com.serwylo.lexica.lang.Language;
-import com.serwylo.lexica.lang.Persian;
-import com.serwylo.lexica.lang.Polish;
-import com.serwylo.lexica.lang.Russian;
-import com.serwylo.lexica.lang.Spanish;
-import com.serwylo.lexica.lang.Ukrainian;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -42,7 +18,24 @@ import org.hamcrest.TypeSafeMatcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static android.support.test.InstrumentationRegistry.getTargetContext;
+import static android.support.test.espresso.Espresso.onData;
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
+import static android.support.test.espresso.Espresso.pressBack;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.scrollTo;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
+import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.is;
@@ -55,85 +48,41 @@ import static org.junit.Assert.assertTrue;
  * should probably be promoted to CI.
  */
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+@RunWith(Parameterized.class)
 public class GenerateLanguageBoards {
 
     private static final String TAG = "GenerateLanguageBoards";
 
     private static final int NUM_BOARDS_TO_GENERATE = 3;
 
+
+    /**
+     * Each language should have a static initializer block which contains a Scrabble-like score for
+     * each letter. The compiler cannot enforce that we have
+     */
+    private final Language language;
+
+    public GenerateLanguageBoards(Language language) {
+        super();
+        this.language = language;
+    }
+
+    @Parameterized.Parameters
+    public static List<Language[]> getAllLanguages() {
+        List<Language[]> langs = new ArrayList<>(Language.getAllLanguages().size());
+        for (Language lang : Language.getAllLanguages().values()) {
+            langs.add(new Language[] { lang });
+        }
+        return langs;
+    }
+
+    @Test
+    public void generateBoards() {
+        generateLanguageBoards(this.language);
+    }
+
     @Rule
     public ActivityTestRule<Lexica> mActivityTestRule = new ActivityTestRule<>(Lexica.class);
-
-    @Test
-    public void generateCatalanBoards() {
-        generateLanguageBoards(new Catalan());
-    }
-
-    @Test
-    public void generateGermanBoards() {
-        generateLanguageBoards(new DeGerman());
-    }
-
-    @Test
-    public void generateDutchBoards() {
-        generateLanguageBoards(new Dutch());
-    }
-
-    @Test
-    public void generateEnglishGbBoards() {
-        generateLanguageBoards(new EnglishGB());
-    }
-
-    @Test
-    public void generateEnglishUsBoards() {
-        generateLanguageBoards(new EnglishUS());
-    }
-
-    @Test
-    public void generateFrenchBoards() {
-        generateLanguageBoards(new French());
-    }
-
-    @Test
-    public void generateHungarianBoards() {
-        generateLanguageBoards(new Hungarian());
-    }
-
-    @Test
-    public void generateItalianBoards() {
-        generateLanguageBoards(new Italian());
-    }
-
-    @Test
-    public void generateJapaneseBoards() {
-        generateLanguageBoards(new Japanese());
-    }
-
-    @Test
-    public void generatePolishBoards() {
-        generateLanguageBoards(new Polish());
-    }
-
-    @Test
-    public void generatePersianBoards() {
-        generateLanguageBoards(new Persian());
-    }
-
-    @Test
-    public void generateRussianBoards() {
-        generateLanguageBoards(new Russian());
-    }
-
-    @Test
-    public void generateSpanishBoards() {
-        generateLanguageBoards(new Spanish());
-    }
-
-    @Test
-    public void generateUkrainianBoards() {
-        generateLanguageBoards(new Ukrainian());
-    }
 
     private void generateLanguageBoards(Language language) {
         Log.d(TAG, "Running test for " + language.getName() + " board");

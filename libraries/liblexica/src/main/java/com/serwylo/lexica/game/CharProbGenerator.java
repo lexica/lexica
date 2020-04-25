@@ -23,7 +23,9 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class CharProbGenerator {
@@ -56,6 +58,14 @@ public class CharProbGenerator {
             // Checked exceptions considered harmful.
         }
 
+    }
+
+    public List<String> getAlphabet() {
+        List<String> letters = new ArrayList<>(charProbs.size());
+        for (ProbabilityQueue prob : charProbs) {
+            letters.add(prob.letter);
+        }
+        return Collections.unmodifiableList(letters);
     }
 
     public FiveByFiveBoard generateFiveByFiveBoard() {
