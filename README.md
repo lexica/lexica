@@ -27,6 +27,10 @@ We use [Weblate](https://hosted.weblate.org/engage/lexica/) to manage translatio
 
 Pull requests will be warmly received at [https://github.com/lexica/lexica](https://github.com/lexica/lexica).
 
+#### Add a new language
+
+Please read the [documentation for adding a new language.](./assets/dictionaries/README.md)
+
 ## Compiling
 
 This app uses a typical `gradle` folder structure.

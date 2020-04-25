@@ -40,7 +40,9 @@ public class Italian extends Language {
         letterPoints.put("h", 8);
         letterPoints.put("z", 8);
 
-        letterPoints.put("q", 10);
+        // "q" is normally 10, but we always have a "u" next to the "q", so it isn't as difficult
+        // to incorporate into words when present.
+        letterPoints.put("qu", 5);
 
         // According to https://en.wikipedia.org/wiki/Scrabble_letter_distributions#Italian:
         //   "The letters J, K, W, X, and Y are absent since these letters do not exist in Italian

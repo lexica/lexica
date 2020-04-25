@@ -1,9 +1,40 @@
 package com.serwylo.lexica.lang;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
 public abstract class Language {
+
+    private static Map<String, Language> allLanguages = null;
+
+    public static Map<String, Language> getAllLanguages() {
+        if (allLanguages == null) {
+
+            Map<String, Language> langs = new HashMap<>();
+
+            langs.put("ca", new Catalan());
+            langs.put("de_DE", new DeGerman());
+            langs.put("en_GB", new EnglishGB());
+            langs.put("en_US", new EnglishUS());
+            langs.put("es", new Spanish());
+            langs.put("fa", new Persian());
+            langs.put("fr_FR", new French());
+            langs.put("hu", new Hungarian());
+            langs.put("it", new Italian());
+            langs.put("jp", new Japanese());
+            langs.put("nl", new Dutch());
+            langs.put("pl", new Polish());
+            langs.put("ru", new Russian());
+            langs.put("uk", new Ukrainian());
+
+            allLanguages = Collections.unmodifiableMap(langs);
+
+        }
+
+        return allLanguages;
+    }
 
     public abstract Locale getLocale();
 
@@ -40,11 +71,9 @@ public abstract class Language {
      * Each "letter" tile has a score. This score distribution is unique amoung different languages,
      * so even though both German and English both have the letter "e", their score may differ
      * for each language.
-     *
-     * @param letter Does NOT contain mandatory suffix.
      */
-    public final int getPointsForLetter(String letter) {
-        String lowerCaseLetter = letter.toLowerCase();
+    public final int getPointsForLetter(String letterWithMandatorySuffix) {
+        String lowerCaseLetter = letterWithMandatorySuffix.toLowerCase();
         Integer points = getLetterPoints().get(lowerCaseLetter);
         if (points == null) {
             throw new IllegalArgumentException("Language " + getName() + " doesn't have a point value for the " + lowerCaseLetter + " tile");
@@ -89,52 +118,12 @@ public abstract class Language {
     }
 
     public static Language fromOrNull(String name) {
-        switch (name) {
-            case "ca":
-                return new Catalan();
+        return getAllLanguages().get(name);
+    }
 
-            case "de_DE":
-                return new DeGerman();
-
-            case "en_GB":
-                return new EnglishGB();
-
-            case "en_US":
-                return new EnglishUS();
-
-            case "es":
-                return new Spanish();
-
-            case "fa":
-                return new Persian();
-
-            case "fr_FR":
-                return new French();
-
-            case "hu":
-                return new Hungarian();
-
-            case "it":
-                return new Italian();
-
-            case "jp":
-                return new Japanese();
-
-            case "nl":
-                return new Dutch();
-
-            case "pl":
-                return new Polish();
-
-            case "ru":
-                return new Russian();
-
-            case "uk":
-                return new Ukrainian();
-
-            default:
-                return null;
-        }
+    @Override
+    public String toString() {
+        return getName();
     }
 
     /**
