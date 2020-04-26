@@ -1,0 +1,6 @@
+New in 0.12.1:
+
+ * Added Polish dictionary (thanks bzaborow)
+ * Updated translations (thanks to the numerous wonderful translators in the community)
+
+Please provide any feedback or report any issues on the issue tracker at https://github.com/lexica/lexica/issues.
