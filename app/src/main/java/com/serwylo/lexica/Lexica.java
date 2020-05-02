@@ -25,8 +25,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.Locale;
+
+import mehdi.sakout.fancybuttons.FancyButton;
 
 public class Lexica extends Activity {
 
@@ -49,17 +52,17 @@ public class Lexica extends Activity {
 	private void splashScreen() {
 		setContentView(R.layout.splash);
 
-		Button b = (Button) findViewById(R.id.new_game);
+		FancyButton newGame = findViewById(R.id.new_game);
 		// Log.d(TAG,"b="+b);
-		b.setOnClickListener(new View.OnClickListener() {
+		newGame.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				startActivity(new Intent("com.serwylo.lexica.action.NEW_GAME"));
 			}
 		});
 
 		if(savedGame()) {
-			b = (Button) findViewById(R.id.restore_game);
-			b.setOnClickListener(new View.OnClickListener() {
+			FancyButton restoreGame = findViewById(R.id.restore_game);
+			restoreGame.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					if(savedGame()) {
 						// Log.d(TAG,"restoring game");
@@ -71,11 +74,11 @@ public class Lexica extends Activity {
 					}
 				}
 			});
-			b.setEnabled(true);
+			restoreGame.setEnabled(true);
 		}
 
-		b = (Button) findViewById(R.id.about);
-		b.setOnClickListener(new View.OnClickListener() {
+		FancyButton about = findViewById(R.id.about);
+		about.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Intent i = new Intent(Intent.ACTION_VIEW);
 				Uri u = Uri.parse("https://github.com/lexica/lexica");
@@ -84,16 +87,21 @@ public class Lexica extends Activity {
 			}
 		});
 
-		b = (Button) findViewById(R.id.preferences);
-		b.setOnClickListener(new View.OnClickListener() {
+		FancyButton preferences = findViewById(R.id.preferences);
+		preferences.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				startActivity(new
 					Intent("com.serwylo.lexica.action.CONFIGURE"));
 			}
 		});
-		int highScore = ScoreActivity.getHighScore(this);
-		TextView tv = (TextView) findViewById(R.id.high_score);
-		tv.setText(getResources().getString(R.string.high_score, highScore));
+
+		int highScoreValue = ScoreActivity.getHighScore(this);
+
+		TextView highScoreLabel = findViewById(R.id.high_score_label);
+		highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
+
+		TextView highScore = findViewById(R.id.high_score);
+		highScore.setText(String.format(Locale.getDefault(), "%d", highScoreValue));
 	}
 
 	public void onPause() {

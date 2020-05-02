@@ -8,7 +8,7 @@
     <color name="tileForegroundColour">#3d3c3b</color>
     <color name="tileBackgroundColour">#f9f8d7</color>
     <color name="tileBorderColour">#b1ad9c</color>
-    <color name="currentWordColour">#3d3c3b</color>
+    <color name="currentWordColour">@color/tileForegroundColour</color>
     <color name="previouslySelectedWordColour">#88ffffff</color>
     <color name="selectedWordColour">#ffffff</color>
     <color name="notAWordColour">#ffffff</color>
@@ -19,7 +19,12 @@
     <color name="timerEndForegroundColour">#edb641</color>
 
     <color name="homeScreenMainButtonBackground">@color/colorPrimary</color>
+    <color name="homeScreenMainButtonBackground_focused">@color/timerBackgroundColour</color>
     <color name="homeScreenSecondaryButtonBackground">@color/timerBackgroundColour</color>
+    <color name="homeScreenSecondaryButtonBackground_focused">#FFE39A</color>
+    <color name="homeScreenSecondaryButtonBackground_disabled">#FFE39A</color>
     <color name="homeScreenSecondaryButtonTextColour">@color/selectedWordColour</color>
+    <color name="homeScreenSecondaryButtonTextColour_disabled">@color/selectedWordColour</color>
+    <color name="homeScreenHighScoreLabelColour">@color/tileForegroundColour</color>
 
 </resources>

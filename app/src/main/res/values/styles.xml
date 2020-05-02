@@ -36,9 +36,14 @@
         <item name="textSizeLarge">@dimen/textSizeLarge</item>
 
         <item name="homeScreenButtonPadding">@dimen/homeScreenButtonPadding</item>
+        <item name="homeScreenHighScoreLabelColour">@color/homeScreenHighScoreLabelColour</item>
         <item name="homeScreenMainButtonBackground">@color/homeScreenMainButtonBackground</item>
+        <item name="homeScreenMainButtonBackground_focused">@color/homeScreenMainButtonBackground_focused</item>
         <item name="homeScreenSecondaryButtonBackground">@color/homeScreenSecondaryButtonBackground</item>
+        <item name="homeScreenSecondaryButtonBackground_focused">@color/homeScreenSecondaryButtonBackground_focused</item>
+        <item name="homeScreenSecondaryButtonBackground_disabled">@color/homeScreenSecondaryButtonBackground_disabled</item>
         <item name="homeScreenSecondaryButtonTextColour">@color/homeScreenSecondaryButtonTextColour</item>
+        <item name="homeScreenSecondaryButtonTextColour_disabled">@color/homeScreenSecondaryButtonTextColour_disabled</item>
     </style>
 
     <style name="Widget_LexicaView" parent="AppTheme.Base">

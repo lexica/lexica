@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:fancy="http://schemas.android.com/apk/res-auto"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:background="@color/colorPrimary"
@@ -16,15 +17,17 @@
 		app:layout_constraintTop_toTopOf="parent"
 		app:layout_constraintBottom_toBottomOf="parent" />
 
-	<!-- TODO: textColor: This doesn't load for whatever reason. -->
 	<TextView
 		android:id="@+id/high_score_label"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:textSize="?attr/scoreHeadingTextSize"
-		android:textColor="?attr/selectedWordColour"
+		android:textColor="?attr/homeScreenHighScoreLabelColour"
 		app:layout_constraintEnd_toEndOf="@id/lexicaLogo"
-		app:layout_constraintTop_toTopOf="@id/lexicaLogo"
+		app:layout_constraintTop_toTopOf="parent"
+		android:layout_marginTop="12dp"
+		android:layout_marginEnd="12dp"
+		android:layout_marginRight="12dp"
 		tools:text="@string/high_score" />
 
 	<TextView
@@ -33,65 +36,80 @@
 		android:layout_height="wrap_content"
 		android:textSize="?attr/scoreTextSize"
 		android:textColor="?attr/selectedWordColour"
-		app:layout_constraintEnd_toEndOf="@id/lexicaLogo"
+		app:layout_constraintEnd_toEndOf="@id/high_score_label"
 		app:layout_constraintTop_toBottomOf="@id/high_score_label"
 		tools:text="35" />
 
-	<Button
+	<mehdi.sakout.fancybuttons.FancyButton
 		android:id="@+id/new_game"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:paddingTop="?attr/homeScreenButtonPadding"
 		android:paddingBottom="?attr/homeScreenButtonPadding"
-		android:drawableTop="@android:drawable/ic_dialog_alert"
-		android:text="@string/new_game"
-		android:background="?attr/homeScreenMainButtonBackground"
+		fancy:fb_iconPosition="left"
+		fancy:fb_fontIconResource="&#xf144;"
+		fancy:fb_fontIconSize="28sp"
+		fancy:fb_textSize="28sp"
+		fancy:fb_text="@string/new_game"
+		fancy:fb_defaultColor="?attr/homeScreenMainButtonBackground"
+		fancy:fb_focusColor="?attr/homeScreenMainButtonBackground_focused"
 		app:layout_constraintBottom_toTopOf="@+id/restore_game"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent" />
 
-	<Button
+	<mehdi.sakout.fancybuttons.FancyButton
 		android:id="@+id/restore_game"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:paddingTop="?attr/homeScreenButtonPadding"
 		android:paddingBottom="?attr/homeScreenButtonPadding"
 		android:enabled="false"
-		android:text="@string/restore_game"
-		android:drawableTop="@android:drawable/ic_menu_rotate"
-		android:background="?attr/homeScreenSecondaryButtonBackground"
-		app:drawableTint="?attr/homeScreenSecondaryButtonTextColour"
-		android:textColor="?attr/homeScreenSecondaryButtonTextColour"
+		fancy:fb_fontIconResource="&#xf021;"
+		fancy:fb_fontIconSize="24sp"
+		fancy:fb_textSize="18sp"
+		fancy:fb_defaultColor="?attr/homeScreenSecondaryButtonBackground"
+		fancy:fb_focusColor="?attr/homeScreenSecondaryButtonBackground_focused"
+		fancy:fb_disabledColor="?attr/homeScreenSecondaryButtonBackground_focused"
+		fancy:fb_text="@string/restore_game"
+		fancy:fb_textColor="?attr/homeScreenSecondaryButtonTextColour"
+		fancy:fb_disabledTextColor="?attr/homeScreenSecondaryButtonTextColour_disabled"
+		fancy:fb_iconPosition="top"
 		app:layout_constraintWidth_percent="0.33"
 		app:layout_constraintBottom_toBottomOf="@id/lexicaLogo"
 		app:layout_constraintStart_toStartOf="parent" />
 
-	<Button
+	<mehdi.sakout.fancybuttons.FancyButton
 		android:id="@+id/about"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:paddingTop="?attr/homeScreenButtonPadding"
 		android:paddingBottom="?attr/homeScreenButtonPadding"
-		android:text="@string/about"
-		android:drawableTop="@android:drawable/ic_menu_info_details"
-		android:background="?attr/homeScreenSecondaryButtonBackground"
-		app:drawableTint="?attr/homeScreenSecondaryButtonTextColour"
-		android:textColor="?attr/homeScreenSecondaryButtonTextColour"
+		fancy:fb_text="@string/about"
+		fancy:fb_fontIconResource="&#xf059;"
+		fancy:fb_fontIconSize="24sp"
+		fancy:fb_textSize="18sp"
+		fancy:fb_defaultColor="?attr/homeScreenSecondaryButtonBackground"
+		fancy:fb_focusColor="?attr/homeScreenSecondaryButtonBackground_focused"
+		fancy:fb_textColor="?attr/homeScreenSecondaryButtonTextColour"
+		fancy:fb_iconPosition="top"
 		app:layout_constraintWidth_percent="0.33"
 		app:layout_constraintBottom_toBottomOf="@id/lexicaLogo"
 		app:layout_constraintStart_toEndOf="@id/restore_game" />
 
-	<Button
+	<mehdi.sakout.fancybuttons.FancyButton
 		android:id="@+id/preferences"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:paddingTop="?attr/homeScreenButtonPadding"
 		android:paddingBottom="?attr/homeScreenButtonPadding"
-		android:text="@string/prefs"
-		android:drawableTop="@android:drawable/ic_menu_preferences"
-		android:background="?attr/homeScreenSecondaryButtonBackground"
-		android:drawableTint="?attr/homeScreenSecondaryButtonTextColour"
-		android:textColor="?attr/homeScreenSecondaryButtonTextColour"
+		fancy:fb_text="@string/prefs"
+		fancy:fb_fontIconResource="&#xf013;"
+		fancy:fb_fontIconSize="24sp"
+		fancy:fb_textSize="18sp"
+		fancy:fb_defaultColor="?attr/homeScreenSecondaryButtonBackground"
+		fancy:fb_focusColor="?attr/homeScreenSecondaryButtonBackground_focused"
+		fancy:fb_textColor="?attr/homeScreenSecondaryButtonTextColour"
+		fancy:fb_iconPosition="top"
 		app:layout_constraintWidth_percent="0.33"
 		app:layout_constraintBottom_toBottomOf="@id/lexicaLogo"
 		app:layout_constraintEnd_toEndOf="parent"

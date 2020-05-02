@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="homeScreenLetterPadding">10dp</dimen>
-    <dimen name="homeScreenButtonPadding">10dp</dimen>
+    <dimen name="homeScreenButtonPadding">20dp</dimen>
 
     <dimen name="padding">0dp</dimen>
     <dimen name="textSizeMinimum">12sp</dimen>

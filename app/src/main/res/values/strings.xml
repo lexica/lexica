@@ -82,7 +82,7 @@
     <string name="total_words">Total Words:</string>
     <string name="total_score">Total Score:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="high_score">High Score: %1$d</string>
+    <string name="high_score">High Score</string>
     <string name="pref_resetScores_summary">High scores are tracked for each combination of the above settings. Tap to reset all scores to zero.</string>
     <string name="pref_resetScores">Reset High Scores</string>
     <string name="high_scores_reset">High scores have been reset.</string>

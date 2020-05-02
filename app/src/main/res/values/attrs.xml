@@ -23,9 +23,14 @@
 
         <attr format="dimension" name="homeScreenLetterPadding" />
         <attr format="dimension" name="homeScreenButtonPadding" />
+        <attr format="color" name="homeScreenHighScoreLabelColour" />
         <attr format="color" name="homeScreenMainButtonBackground" />
+        <attr format="color" name="homeScreenMainButtonBackground_focused" />
         <attr format="color" name="homeScreenSecondaryButtonBackground" />
+        <attr format="color" name="homeScreenSecondaryButtonBackground_focused" />
+        <attr format="color" name="homeScreenSecondaryButtonBackground_disabled" />
         <attr format="color" name="homeScreenSecondaryButtonTextColour" />
+        <attr format="color" name="homeScreenSecondaryButtonTextColour_disabled" />
 
         <attr format="dimension" name="padding" />
         <attr format="dimension" name="timerHeight" />
