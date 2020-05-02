@@ -19,12 +19,13 @@ package com.serwylo.lexica;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.LexicaView;

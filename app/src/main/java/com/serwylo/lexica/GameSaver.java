@@ -1,6 +1,6 @@
 package com.serwylo.lexica;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.serwylo.lexica.game.Board;

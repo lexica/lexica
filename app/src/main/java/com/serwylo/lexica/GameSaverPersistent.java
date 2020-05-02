@@ -2,7 +2,7 @@ package com.serwylo.lexica;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.Game;
