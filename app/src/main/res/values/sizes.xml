@@ -18,4 +18,5 @@
     <dimen name="scoreHeadingTextSize">18sp</dimen>
     <dimen name="scoreTextSize">22sp</dimen>
     <dimen name="scorePadding">12dp</dimen>
+    <dimen name="scorePaddingHalf">6dp</dimen>
 </resources>

@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 
 import com.serwylo.lexica.R;
 
-class ThemeProperties {
+public class ThemeProperties {
 
 	public final int paddingSize;
 	public final int textSizeSmall;
@@ -24,6 +24,8 @@ class ThemeProperties {
 	public final int previouslySelectedWordColour;
 	public final int selectedWordColour;
 	public final int notAWordColour;
+	public final int scoreHeadingTextColour;
+	public final int scoreTextColour;
 	public final int scoreHeadingTextSize;
 	public final int scoreTextSize;
 	public final int scorePadding;
@@ -52,6 +54,8 @@ class ThemeProperties {
 		previouslySelectedWordColour = array.getColor(R.styleable.LexicaView_previouslySelectedWordColour, 0x88ffffff);
 		selectedWordColour = array.getColor(R.styleable.LexicaView_selectedWordColour, 0xffffff);
 		notAWordColour = array.getColor(R.styleable.LexicaView_notAWordColour, 0xffffff);
+		scoreHeadingTextColour = array.getColor(R.styleable.LexicaView_scoreHeadingTextColour, 0xffffff);
+		scoreTextColour = array.getColor(R.styleable.LexicaView_scoreTextColour, 0xffffff);
 		scoreHeadingTextSize = array.getDimensionPixelSize(R.styleable.LexicaView_scoreHeadingTextSize, 22 /* sp */);
 		scoreTextSize = array.getDimensionPixelSize(R.styleable.LexicaView_scoreTextSize, 22 /* sp */);
 		scorePadding = array.getDimensionPixelSize(R.styleable.LexicaView_scorePadding, 12 /* dp */);

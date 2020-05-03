@@ -28,7 +28,7 @@
 			</intent-filter>
         </activity>
 
-        <activity android:name=".ScoreActivity">
+        <activity android:name=".activities.score.ScoreActivity" android:theme="@style/AppTheme.NoActionBar">
 			<intent-filter>
 				<action android:name="com.serwylo.lexica.action.SCORE" />
 				<category android:name="android.intent.category.DEFAULT" />

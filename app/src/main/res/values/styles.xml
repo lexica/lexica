@@ -2,6 +2,11 @@
 <resources>
     <style name="AppTheme" parent="AppTheme.Base"/>
 
+    <style name="AppTheme.NoActionBar" parent="AppTheme.Base">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -9,6 +14,7 @@
         <item name="scoreHeadingTextSize">@dimen/scoreHeadingTextSize</item>
         <item name="scoreTextSize">@dimen/scoreTextSize</item>
         <item name="scorePadding">@dimen/scorePadding</item>
+        <item name="scorePaddingHalf">@dimen/scorePaddingHalf</item>
 
         <item name="tileForegroundColour">@color/tileForegroundColour</item>
         <item name="tileBackgroundColour">@color/tileBackgroundColour</item>
@@ -22,6 +28,8 @@
         <item name="timerStartForegroundColour">@color/timerStartForegroundColour</item>
         <item name="timerMidForegroundColour">@color/timerMidForegroundColour</item>
         <item name="timerEndForegroundColour">@color/timerEndForegroundColour</item>
+        <item name="scoreHeadingTextColour">@color/selectedWordColour</item>
+        <item name="scoreTextColour">@color/selectedWordColour</item>
 
         <item name="currentWordSize">@dimen/currentWordSize</item>
 
@@ -46,8 +54,7 @@
         <item name="homeScreenSecondaryButtonTextColour_disabled">@color/homeScreenSecondaryButtonTextColour_disabled</item>
     </style>
 
-    <style name="Widget_LexicaView" parent="AppTheme.Base">
-
-    </style>
+    <style name="Widget_LexicaView" parent="AppTheme.Base" />
+    <style name="Widget_BoardView" parent="AppTheme.Base" />
 
 </resources>

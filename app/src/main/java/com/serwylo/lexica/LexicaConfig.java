@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.lang.Language;
 
 public class LexicaConfig extends PreferenceActivity implements Preference.OnPreferenceClickListener {

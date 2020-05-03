@@ -36,7 +36,7 @@ public class BoardView extends View {
 	private Game game;
 
 	/** @see #highlight(Integer[]) */
-	private Integer[] highlightedCells = new Integer[0];
+	private Integer[] highlightedCells;
 
 	private final Paint p;
 	public final int paddingSize;

@@ -356,7 +356,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		if (!isWord) {
 			// Strike-through
-			p.setStrokeWidth(3);
+			p.setStrokeWidth(6);
 			canvas.drawLine(x, y + height / 2, x + width, y + height / 2, p);
 		}
 
@@ -547,14 +547,14 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		float headingHeight = fontHeights.getHeight(theme.scoreHeadingTextSize);
 
-		p.setColor(theme.selectedWordColour);
-
+		p.setColor(theme.scoreHeadingTextColour);
 		p.setTextSize(theme.scoreHeadingTextSize);
 		p.setTypeface(Fonts.get().getSansSerifCondensed());
 		canvas.drawText(heading, x + panelWidth / 2, y + theme.scorePadding + headingHeight, p);
 
 		float valueHeight = fontHeights.getHeight(theme.scoreTextSize);
 
+		p.setColor(theme.scoreTextColour);
 		p.setTextSize(theme.scoreTextSize);
 		p.setTypeface(Fonts.get().getSansSerifBold());
 		canvas.drawText(value, x + panelWidth / 2, y + theme.scorePadding + headingHeight + theme.scorePadding / 2 + valueHeight, p);

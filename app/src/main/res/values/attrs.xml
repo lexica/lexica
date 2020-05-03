@@ -20,6 +20,8 @@
         <attr format="color" name="timerStartForegroundColour" />
         <attr format="color" name="timerMidForegroundColour" />
         <attr format="color" name="timerEndForegroundColour" />
+        <attr format="color" name="scoreHeadingTextColour" />
+        <attr format="color" name="scoreTextColour" />
 
         <attr format="dimension" name="homeScreenLetterPadding" />
         <attr format="dimension" name="homeScreenButtonPadding" />
@@ -37,6 +39,7 @@
         <attr format="dimension" name="timerBorderWidth" />
         <attr format="dimension" name="tileBorderWidth" />
         <attr format="dimension" name="scorePadding" />
+        <attr format="dimension" name="scorePaddingHalf" />
 
         <attr format="dimension" name="textSizeMinimum" />
         <attr format="dimension" name="textSizeSmall" />

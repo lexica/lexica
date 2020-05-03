@@ -47,6 +47,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     // Used for buttons on the home page and elsewhere, because the default Android ones just aren't
     // quite customizable without having to go into <selectors> and such.

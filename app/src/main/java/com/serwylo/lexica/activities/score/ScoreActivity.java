@@ -15,19 +15,24 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.serwylo.lexica;
+package com.serwylo.lexica.activities.score;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.serwylo.lexica.GameSaverTransient;
+import com.serwylo.lexica.R;
+import com.serwylo.lexica.game.Game;
+import com.serwylo.lexica.view.BoardView;
+import com.serwylo.lexica.view.ThemeProperties;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -36,10 +41,17 @@ public class ScoreActivity extends AppCompatActivity {
 	@SuppressWarnings("unused")
 	private static final String TAG = "ScoreActivity";
 
-	private Adapter adapter;
+	public static final String SCORE_PREF_FILE = "prefs_score_file";
 
-	private static final int VIEW_TYPE_FOUND_WORDS = 1;
-	private static final int VIEW_TYPE_MISSED_WORDS = 2;
+	private Game game;
+	private BoardView bv;
+	private View highlighted;
+	private String definitionProvider;
+
+	public ScoreActivity() {
+		super();
+
+	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -47,12 +59,43 @@ public class ScoreActivity extends AppCompatActivity {
 
 		setContentView(R.layout.score);
 
-		adapter = new Adapter();
+		definitionProvider = initialiseDefinitionProvider();
+		Game game = initialiseGame(savedInstanceState);
+		initialiseView(game);
+		this.game = game;
+	}
+
+	private String initialiseDefinitionProvider() {
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		return prefs.getString("definitionProvider", "duckduckgo");
+	}
+
+	@NonNull
+	private Game initialiseGame(Bundle savedInstanceState) {
+
+		Game game;
+
+		if(savedInstanceState != null) {
+			game = new Game(this, new GameSaverTransient(savedInstanceState));
+
+		} else {
+			Intent intent = getIntent();
+			Bundle bun = intent.getExtras();
+			game = new Game(this,new GameSaverTransient(bun));
+		}
+
+		game.initializeDictionary();
+
+		return game;
+
+	}
+
+	private void initialiseView(@NonNull Game game) {
 
 		final RecyclerView recycler = findViewById(R.id.recycler_view);
 		recycler.setLayoutManager(new NonScrollingHorizontalLayoutManager(this));
 		recycler.setHasFixedSize(true);
-		recycler.setAdapter(new Adapter());
+		recycler.setAdapter(new ScoreTabAdapter(this, game));
 
 		FancyButton found = findViewById(R.id.found_words_button);
 		found.setOnClickListener(new View.OnClickListener() {
@@ -80,111 +123,35 @@ public class ScoreActivity extends AppCompatActivity {
 
 	}
 
-	private class Adapter extends RecyclerView.Adapter<ViewHolder> {
-
-		@NonNull
-		@Override
-		public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-			ViewHolder viewHolder = createEmptyView(ScoreActivity.this);
-			if (viewType == VIEW_TYPE_FOUND_WORDS) {
-				viewHolder.bindFoundWords();
-			} else if (viewType == VIEW_TYPE_MISSED_WORDS) {
-				viewHolder.bindMissedWords();
-			} else {
-				throw new IllegalArgumentException("The viewType should be either VIEW_TYPE_FOUND_WORDS or VIEW_TYPE_MISSED_WORDS, but got " + viewType);
-			}
-			return viewHolder;
-		}
-
-		@Override
-		public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-			// Don't do anything, because the views are created once during onCreateViewHolder and
-			// never updated.
-		}
-
-		@Override
-		public int getItemCount() {
-			return 2;
-		}
-
-		@Override
-		public int getItemViewType(int position) {
-			if (position == 0) {
-				return VIEW_TYPE_FOUND_WORDS;
-			} else if (position == 1) {
-				return VIEW_TYPE_MISSED_WORDS;
-			}
-
-			throw new IllegalArgumentException("Score activity adapter only support two items, but was asked for item at position " + position);
-		}
-
-		private ViewHolder createEmptyView(AppCompatActivity activity) {
-			FrameLayout frame = new FrameLayout(activity);
-			frame.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-					ViewGroup.LayoutParams.MATCH_PARENT));
-			return new ViewHolder(activity, frame);
-		}
-
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		game.save(new GameSaverTransient(outState));
 	}
 
-	private static class ViewHolder extends RecyclerView.ViewHolder {
-
-		private final AppCompatActivity activity;
-		private final FrameLayout parent;
-
-		public ViewHolder(@NonNull AppCompatActivity activity, @NonNull FrameLayout parent) {
-			super(parent);
-			this.activity = activity;
-			this.parent = parent;
-		}
-
-		public void bindFoundWords() {
-			new FoundWordsViewBinder(activity, parent);
-		}
-
-		public void bindMissedWords() {
-			new MissedWordsViewBinder(activity, parent);
+	void setHighScore(int score) {
+		String key = ScoreActivity.highScoreKey(this);
+		SharedPreferences prefs = getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE);
+		int highScore = prefs.getInt(key, 0);
+		if (score > highScore) {
+			SharedPreferences.Editor edit = prefs.edit();
+			edit.putInt(key, score);
+			edit.apply();
 		}
 	}
 
-	private static class FoundWordsViewBinder {
-
-		private final AppCompatActivity activity;
-
-		public FoundWordsViewBinder(@NonNull AppCompatActivity activity, FrameLayout parent) {
-			this.activity = activity;
-			View foundWordsView = activity.getLayoutInflater().inflate(R.layout.score_found_words, parent, true);
-			TextView textView = foundWordsView.findViewById(R.id.text);
-		}
+	static String highScoreKey(Context c) {
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+		return prefs.getString("dict", "US")
+				+ prefs.getString("boardSize", "16")
+				+ prefs.getString(Game.SCORE_TYPE, Game.SCORE_WORDS)
+				+ prefs.getString("maxTimeRemaining", "180");
 	}
 
-	private static class MissedWordsViewBinder {
-
-		private final AppCompatActivity activity;
-
-		public MissedWordsViewBinder(@NonNull AppCompatActivity activity, FrameLayout parent) {
-			this.activity = activity;
-			View missedWordsView = activity.getLayoutInflater().inflate(R.layout.score_missed_words, parent, true);
-			TextView textView = missedWordsView.findViewById(R.id.text);
-		}
+	public static int getHighScore(Context c) {
+		SharedPreferences prefs = c.getSharedPreferences(SCORE_PREF_FILE, Context.MODE_PRIVATE);
+		return prefs.getInt(highScoreKey(c), 0);
 	}
-
-	private static class NonScrollingHorizontalLayoutManager extends LinearLayoutManager {
-		NonScrollingHorizontalLayoutManager(Context context) {
-			super(context, LinearLayoutManager.HORIZONTAL, false);
-		}
-
-		@Override
-		public boolean canScrollHorizontally() {
-			return false;
-		}
-
-		@Override
-		public boolean canScrollVertically() {
-			return false;
-		}
-	}
-
 
 }
 

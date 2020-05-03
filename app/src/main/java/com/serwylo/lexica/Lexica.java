@@ -27,6 +27,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.serwylo.lexica.activities.score.ScoreActivity;
+
 import java.util.Locale;
 
 import mehdi.sakout.fancybuttons.FancyButton;

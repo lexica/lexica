@@ -8,26 +8,19 @@
 	android:background="@color/colorPrimary"
 	android:orientation="vertical">
 
-	<com.serwylo.lexica.view.LexicaLogo
-		android:id="@+id/lexicaLogo"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:layout_constraintBottom_toBottomOf="parent" />
-
 	<TextView
 		android:id="@+id/high_score_label"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:textSize="?attr/scoreHeadingTextSize"
-		android:textColor="?attr/homeScreenHighScoreLabelColour"
+		android:textColor="?attr/scoreHeadingTextColour"
 		app:layout_constraintEnd_toEndOf="@id/lexicaLogo"
 		app:layout_constraintTop_toTopOf="parent"
-		android:layout_marginTop="12dp"
-		android:layout_marginEnd="12dp"
-		android:layout_marginRight="12dp"
+		android:paddingTop="?attr/scorePadding"
+		android:paddingEnd="?attr/scorePadding"
+		android:paddingRight="?attr/scorePadding"
+		android:paddingStart="?attr/scorePadding"
+		android:paddingLeft="?attr/scorePadding"
 		tools:text="@string/high_score" />
 
 	<TextView
@@ -35,10 +28,23 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:textSize="?attr/scoreTextSize"
-		android:textColor="?attr/selectedWordColour"
+		android:textColor="?attr/scoreTextColour"
+		android:paddingEnd="?attr/scorePadding"
+		android:paddingRight="?attr/scorePadding"
+		android:paddingStart="?attr/scorePadding"
+		android:paddingLeft="?attr/scorePadding"
 		app:layout_constraintEnd_toEndOf="@id/high_score_label"
 		app:layout_constraintTop_toBottomOf="@id/high_score_label"
 		tools:text="35" />
+
+	<com.serwylo.lexica.view.LexicaLogo
+		android:id="@+id/lexicaLogo"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/high_score"
+		app:layout_constraintBottom_toTopOf="@id/new_game" />
 
 	<mehdi.sakout.fancybuttons.FancyButton
 		android:id="@+id/new_game"
@@ -74,8 +80,8 @@
 		fancy:fb_textColor="?attr/homeScreenSecondaryButtonTextColour"
 		fancy:fb_disabledTextColor="?attr/homeScreenSecondaryButtonTextColour_disabled"
 		fancy:fb_iconPosition="top"
-		app:layout_constraintWidth_percent="0.33"
-		app:layout_constraintBottom_toBottomOf="@id/lexicaLogo"
+		app:layout_constraintWidth_percent="0.34"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintStart_toStartOf="parent" />
 
 	<mehdi.sakout.fancybuttons.FancyButton
@@ -92,8 +98,8 @@
 		fancy:fb_focusColor="?attr/homeScreenSecondaryButtonBackground_focused"
 		fancy:fb_textColor="?attr/homeScreenSecondaryButtonTextColour"
 		fancy:fb_iconPosition="top"
-		app:layout_constraintWidth_percent="0.33"
-		app:layout_constraintBottom_toBottomOf="@id/lexicaLogo"
+		app:layout_constraintWidth_percent="0.34"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintStart_toEndOf="@id/restore_game" />
 
 	<mehdi.sakout.fancybuttons.FancyButton
@@ -110,8 +116,8 @@
 		fancy:fb_focusColor="?attr/homeScreenSecondaryButtonBackground_focused"
 		fancy:fb_textColor="?attr/homeScreenSecondaryButtonTextColour"
 		fancy:fb_iconPosition="top"
-		app:layout_constraintWidth_percent="0.33"
-		app:layout_constraintBottom_toBottomOf="@id/lexicaLogo"
+		app:layout_constraintWidth_percent="0.34"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toEndOf="@id/about" />
 
