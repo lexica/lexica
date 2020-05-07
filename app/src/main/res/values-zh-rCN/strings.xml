@@ -1,96 +1,89 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lexica</string>
-
     <string name="new_game">新游戏</string>
     <string name="restore_game">返回游戏</string>
-	<string name="prefs">设置</string>
-
-	<string name="pref_dict">字典</string>
-	<string name="pref_dict_summary">选择游戏字典</string>
-	<string name="pref_dict_dialog">选择字典</string>
-	<string name="pref_dict_us">美式英语</string>
-	<string name="pref_dict_uk">英式英语</string>
-
-	<string name="pref_boardSize">版面</string>
-	<string name="pref_boardSize_summary">选择版面大小</string>
-	<string name="pref_boardSize_dialog">选择版面大小</string>
-
-	<string name="pref_timeLimit">时限</string>
-	<string name="pref_timeLimit_summary">选择时间限制</string>
-	<string name="pref_timeLimit_dialog">选择时间限制</string>
-	<string name="time_3m">3分钟</string>
-	<string name="time_5m">5分钟</string>
-	<string name="time_10m">10分钟</string>
-	<string name="time_20m">20分钟</string>
-	<string name="time_30m">30分钟</string>
-
-	<string name="pref_sounds">音效</string>
-	<string name="pref_sounds_summary">选择游戏会否发出音效</string>
-
-	<string name="dialog_no_saved">没有保存游戏。如果您看到此信息，游戏很可能出现了问题。</string>
-	<string name="dialog_ok">确定</string>
-	<string name="dialog_cancel">取消</string>
-
-	<string name="dialog_about_title">关于Lexica</string>
-	<string name="dialog_about_content">您要在3分钟内拼出版面上所有单词。要拼出单词，请先触碰屏幕后滑动至相邻的方块。 
+    <string name="prefs">设置</string>
+    <string name="pref_dict">词典</string>
+    <string name="pref_dict_summary">选择游戏语言</string>
+    <string name="pref_dict_dialog">选择一部词典</string>
+    <string name="pref_dict_us">美式英语</string>
+    <string name="pref_dict_uk">英式英语</string>
+    <string name="pref_boardSize">版面</string>
+    <string name="pref_boardSize_summary">选择版面大小</string>
+    <string name="pref_boardSize_dialog">选择版面大小</string>
+    <string name="pref_timeLimit">时限</string>
+    <string name="pref_timeLimit_summary">选择时间限制</string>
+    <string name="pref_timeLimit_dialog">选择时间限制</string>
+    <string name="time_3m">3分钟</string>
+    <string name="time_5m">5分钟</string>
+    <string name="time_10m">10分钟</string>
+    <string name="time_20m">20分钟</string>
+    <string name="time_30m">30分钟</string>
+    <string name="pref_sounds">音效</string>
+    <string name="pref_sounds_summary">选择游戏会否发出音效</string>
+    <string name="dialog_no_saved">没有保存游戏。如果您看到此信息，游戏很可能出现了问题。</string>
+    <string name="dialog_ok">确定</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="dialog_about_title">关于Lexica</string>
+    <string name="dialog_about_content">您要在3分钟内拼出版面上所有单词。要拼出单词，请先触碰屏幕后滑动至相邻的方块。 
 \n 
 \n计分方式：
 \n在4×4的版面上，单词必须由至少3个字母组成；在5×5的版面上，单词必须由至少4个字母组成。由3个或4个字母组成的单词记1分，找出更长的单词将获更高分。专名词不计任何分数。 
 \n 
 \n</string>
-
-	<string name="menu_rotate_board">旋转版面</string>
-	<string name="menu_save_game">保存游戏</string>
-	<string name="menu_end_game">结束游戏</string>
-	<string name="button_ok">确定</string>
-
-	<string name="about">关于游戏</string>
-
-	<string name="show_missed">显示您遗漏的单词</string>
-	<string name="hide_missed">隐藏您遗漏的单词</string>
-
-	<string name="show_unique">显示唯一词语</string>
-	<string name="hide_unique">隐藏唯一词语</string>
-
-	<string name="view_word"><u>查看</u></string>
-	<string name="define_word"><u>解释</u> </string>
-
-	<string name="words">单词</string>
-	<string name="found_words">找到的单词</string>
-	<string name="missed_words">遗漏的单词</string>
-	<string name="total_words">总词数：</string>
-	<string name="total_score">总分数：</string>
-
-<string name="value_max_percentage">%1$d/%2$d（%3$d%%）</string>
-<string name="pref_scoreType">计分方式</string>
-	<string name="pref_scoreType_summary">选择一套计分方式</string>
-	<string name="pref_scoreType_dialog">选择计分方式</string>
-	<string name="word_length">单词长度</string>
-	<string name="letter_points">字母分数</string>
-
-	<string name="score">分数</string>
-	<string name="high_score">高分纪录：%1$d</string>
-	<string name="pref_resetScores_summary">游戏为每个游戏模式纪录最高分，按此以重设所有分数纪录至零分。</string>
-	<string name="pref_resetScores">重设高分纪录</string>
+    <string name="menu_rotate_board">旋转版面</string>
+    <string name="menu_save_game">保存游戏</string>
+    <string name="menu_end_game">结束游戏</string>
+    <string name="button_ok">确定</string>
+    <string name="about">关于游戏</string>
+    <string name="show_missed">显示您遗漏的单词</string>
+    <string name="hide_missed">隐藏您遗漏的单词</string>
+    <string name="show_unique">显示唯一词语</string>
+    <string name="hide_unique">隐藏唯一词语</string>
+    <string name="view_word"><u>查看</u></string>
+    <string name="define_word"><u>解释</u> </string>
+    <string name="words">单词</string>
+    <string name="found_words">找到的单词</string>
+    <string name="missed_words">遗漏的单词</string>
+    <string name="total_words">总词数：</string>
+    <string name="total_score">总分数：</string>
+    <string name="value_max_percentage">%1$d/%2$d（%3$d%%）</string>
+    <string name="pref_scoreType">计分方式</string>
+    <string name="pref_scoreType_summary">选择一套计分方式</string>
+    <string name="pref_scoreType_dialog">选择计分方式</string>
+    <string name="word_length">单词长度</string>
+    <string name="letter_points">字母分数</string>
+    <string name="score">分数</string>
+    <string name="high_score">高分纪录：%1$d</string>
+    <string name="pref_resetScores_summary">游戏为每个游戏模式纪录最高分，按此以重设所有分数纪录至零分。</string>
+    <string name="pref_resetScores">重设高分纪录</string>
     <string name="high_scores_reset">您已重设高分纪录。</string>
-	<string name="reset_scores_prompt">您确定要重设所有分数至零分？</string>
-
+    <string name="reset_scores_prompt">您确定要重设所有分数至零分？</string>
     <string name="pref_breakdown">显示单词长度分析</string>
-	<string name="pref_breakdown_summary">选择是否显示版面上各单词的长度</string>
-
-	<string name="pref_definitionProvider">定义来源</string>
-	<string name="pref_definitionProvider_summary">选择定义来源。如果您没有安装所选的定义来源，游戏將使用DuckDuckGo的字典服务。</string>
-	<string name="pref_definitionProvider_dialog">选择定义來源</string>
-<string name="pref_dict_de_de">德语</string>
-	<string name="pref_dict_nl">荷兰语</string>
-	<string name="pref_dict_fa">波斯语</string>
-	<string name="pref_dict_fr_fr">法语</string>
-	<string name="pref_dict_it">意大利语</string>
-	<string name="pref_dict_ca">加泰罗尼亚语</string>
-	<string name="pref_dict_es">西班牙语</string>
-	<string name="pref_dict_beta">%1$s（测试中）</string>
-
-	<string name="pref_dict_jp">日语</string>
-	<string name="pref_dict_ru">俄语</string>
-	</resources>
+    <string name="pref_breakdown_summary">选择是否显示版面上各单词的长度</string>
+    <string name="pref_definitionProvider">定义来源</string>
+    <string name="pref_definitionProvider_summary">选择定义来源。如果您没有安装所选的定义来源，游戏將使用DuckDuckGo的字典服务。</string>
+    <string name="pref_definitionProvider_dialog">选择定义來源</string>
+    <string name="pref_dict_de_de">德语</string>
+    <string name="pref_dict_nl">荷兰语</string>
+    <string name="pref_dict_fa">波斯语</string>
+    <string name="pref_dict_fr_fr">法语</string>
+    <string name="pref_dict_it">意大利语</string>
+    <string name="pref_dict_ca">加泰罗尼亚语</string>
+    <string name="pref_dict_es">西班牙语</string>
+    <string name="pref_dict_beta">%1$s（测试中）</string>
+    <string name="pref_dict_jp">日语</string>
+    <string name="pref_dict_ru">俄语</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">在线</string>
+    <string name="hint_both">两者</string>
+    <string name="hint_colour">瓷贴颜色</string>
+    <string name="tile_count">单词数</string>
+    <string name="hint_none">已禁用</string>
+    <string name="pref_hintMode_dialog">提示模式</string>
+    <string name="pref_hintMode_summary">显示每个字母可以用于多少个单词</string>
+    <string name="pref_hintMode">提示模式</string>
+    <string name="pref_dict_uk_ua">乌克兰语</string>
+    <string name="pref_dict_pl">波兰语</string>
+    <string name="pref_dict_hu">匈牙利语</string>
+</resources>
