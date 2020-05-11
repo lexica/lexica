@@ -41,12 +41,8 @@
     <string name="hide_missed">ミスした単語を非表示</string>
     <string name="show_unique">一意の単語を表示</string>
     <string name="hide_unique">一意の単語を非表示</string>
-    <string name="view_word">
-        <u>表示</u>
-    </string>
-    <string name="define_word">
-        <u>定義</u>
-    </string>
+    <string name="view_word"><u>表示</u></string>
+    <string name="define_word"><u>定義</u> </string>
     <string name="words">単語</string>
     <string name="found_words">見つけた単語</string>
     <string name="missed_words">ミスした単語</string>
@@ -88,4 +84,6 @@
     <string name="hint_colour">タイルの色</string>
     <string name="hint_both">両方</string>
     <string name="pref_dict_uk_ua">ウクライナ語</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">オンライン</string>
+    <string name="pref_dict_pl">ポーランド語</string>
 </resources>
