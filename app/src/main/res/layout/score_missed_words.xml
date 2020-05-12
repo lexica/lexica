@@ -28,23 +28,15 @@
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
-	<ScrollView
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/words"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
 		android:layout_marginTop="?attr/scorePadding"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/missed_board_wrapper"
-		app:layout_constraintBottom_toBottomOf="parent">
-
-		<LinearLayout
-			android:id="@+id/words"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical">
-
-		</LinearLayout>
-
-	</ScrollView>
+		app:layout_constraintBottom_toBottomOf="parent"
+		android:scrollbars="vertical" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

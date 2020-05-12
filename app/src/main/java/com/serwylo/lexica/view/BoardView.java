@@ -272,7 +272,7 @@ public class BoardView extends View {
 	}
 
 	private void clearScreen(Canvas canvas) {
-		p.setColor(getResources().getColor(android.R.color.holo_red_dark));
+		p.setColor(theme.backgroundColor);
 		canvas.drawRect(0, 0, width / 2, height, p);
 	}
 

@@ -11,10 +11,10 @@ import com.serwylo.lexica.view.ThemeProperties;
 
 class ScoreTabViewHolder extends RecyclerView.ViewHolder {
 
-    private final AppCompatActivity activity;
+    private final ScoreActivity activity;
     private final FrameLayout parent;
 
-    ScoreTabViewHolder(@NonNull AppCompatActivity activity, @NonNull FrameLayout parent) {
+    ScoreTabViewHolder(@NonNull ScoreActivity activity, @NonNull FrameLayout parent) {
         super(parent);
         this.activity = activity;
         this.parent = parent;

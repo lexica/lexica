@@ -23,6 +23,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +35,10 @@ import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.BoardView;
 import com.serwylo.lexica.view.ThemeProperties;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
 import mehdi.sakout.fancybuttons.FancyButton;
 
 public class ScoreActivity extends AppCompatActivity {
@@ -44,9 +49,6 @@ public class ScoreActivity extends AppCompatActivity {
 	public static final String SCORE_PREF_FILE = "prefs_score_file";
 
 	private Game game;
-	private BoardView bv;
-	private View highlighted;
-	private String definitionProvider;
 
 	public ScoreActivity() {
 		super();
@@ -59,15 +61,9 @@ public class ScoreActivity extends AppCompatActivity {
 
 		setContentView(R.layout.score);
 
-		definitionProvider = initialiseDefinitionProvider();
 		Game game = initialiseGame(savedInstanceState);
-		initialiseView(game);
 		this.game = game;
-	}
-
-	private String initialiseDefinitionProvider() {
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		return prefs.getString("definitionProvider", "duckduckgo");
+		initialiseView(game);
 	}
 
 	@NonNull

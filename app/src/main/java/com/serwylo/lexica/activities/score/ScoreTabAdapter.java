@@ -59,7 +59,7 @@ class ScoreTabAdapter extends RecyclerView.Adapter<ScoreTabViewHolder> {
         throw new IllegalArgumentException("Score activity adapter only support two items, but was asked for item at position " + position);
     }
 
-    private ScoreTabViewHolder createEmptyView(AppCompatActivity activity) {
+    private ScoreTabViewHolder createEmptyView(ScoreActivity activity) {
         FrameLayout frame = new FrameLayout(activity);
         frame.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));

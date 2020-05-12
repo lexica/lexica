@@ -1,14 +1,12 @@
 package com.serwylo.lexica.activities.score;
 
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Game;
@@ -16,7 +14,9 @@ import com.serwylo.lexica.view.BoardView;
 
 import net.healeys.trie.Solution;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 class MissedWordsViewBinder extends ScoreWordsViewBinder {
@@ -38,19 +38,24 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
             possible.remove(w);
         }
 
-
-        LinearLayout missedVG = missedWordsView.findViewById(R.id.words);
+        List<Item> items = new ArrayList<>(possible.size());
         for (String word : possible) {
             final Solution solution = game.getSolutions().get(word).get(0);
-            addWord(missedVG, word, game.getWordScore(word), true, new View.OnClickListener() {
+            items.add(new Item(word, game.getWordScore(word), true, new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     bv.highlight(solution.getPositions());
                     bv.invalidate();
                     // TODO: Highlight selected word.
                 }
-            });
+            }));
         }
 
+        RecyclerView words = missedWordsView.findViewById(R.id.words);
+        words.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
+        words.setHasFixedSize(true);
+        words.setAdapter(new Adapter(items));
+
     }
+
 }
