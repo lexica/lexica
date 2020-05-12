@@ -14,113 +14,147 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package com.serwylo.lexica.view;
+
+import com.serwylo.lexica.R;
+import com.serwylo.lexica.game.Game;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.Typeface;
+import android.graphics.Shader;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.serwylo.lexica.R;
-import com.serwylo.lexica.game.Board;
-import com.serwylo.lexica.game.Game;
-
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class BoardView extends View {
 
-	private Board board;
+	@SuppressWarnings("unused")
+	protected static final String TAG = "LexicaView";
+
 	private Game game;
 
-	/** @see #highlight(Integer[]) */
-	private Integer[] highlightedCells;
+	private final ThemeProperties theme;
 
-	private final Paint p;
-	public final int paddingSize;
-	private String scoreType;
+	private int width;
+	private int height;
+	private int gridsize;
+	private float boxsize;
+	private int boardWidth;
+	private Paint p;
+	private Set<Integer> highlightedPositions = new HashSet<>();
+
+	public BoardView(Context context) {
+		this(context, null);
+	}
 
 	public BoardView(Context context, AttributeSet attrs) {
-		super(context,attrs);
+		this( context, attrs, R.attr.lexicaViewStyle );
+	}
 
-		board = null;
-		game = null;
-		highlightedCells = new Integer[0];
+	public BoardView(Context context, AttributeSet attrs, int defStyle) {
+		super( context, attrs, defStyle);
+
+		theme = new ThemeProperties(context, attrs, defStyle);
 
 		p = new Paint();
 		p.setTextAlign(Paint.Align.CENTER);
 		p.setAntiAlias(true);
 		p.setStrokeWidth(2);
-
-		paddingSize = getResources().getDimensionPixelSize(R.dimen.padding);
 	}
 
-	public void setScoreType(String scoreType) {
-		this.scoreType = scoreType;
+	@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+	public BoardView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+		super(context, attrs, defStyleAttr, defStyleRes);
+
+		theme = new ThemeProperties(context, attrs, defStyleAttr);
+
+		p = new Paint();
+		p.setTextAlign(Paint.Align.CENTER);
+		p.setAntiAlias(true);
+		p.setStrokeWidth(2);
 	}
 
-	private boolean isCellHighlighted(int x, int y) {
-		int cellNumber = y * board.getWidth() + x;
-		for (int highlightedCell : highlightedCells) {
-			if (highlightedCell == cellNumber) {
-				return true;
-			}
-		}
+	public void setGame(Game game) {
+		this.game = game;
 
-		return false;
+		boardWidth = game.getBoard().getWidth();
+	}
+
+	public void highlight(Integer[] highlightedPositions) {
+		this.highlightedPositions = new HashSet<>();
+		this.highlightedPositions.addAll(Arrays.asList(highlightedPositions));
+	}
+
+	private void setDimensions(int w, int h) {
+		width = w;
+		height = h;
+
+		gridsize = Math.min(width, height);
+		boxsize = ((float) gridsize) / boardWidth;
 	}
 
 	private final Rect textBounds = new Rect();
 
-	@Override
-	public void onDraw(Canvas canvas) {
-		int width = getWidth() - paddingSize - 2;
-		int height = getHeight() - paddingSize - 2;
-
-
-		// Draw white box
-		p.setARGB(255, 255, 255, 255);
-		canvas.drawRect(paddingSize / 2, paddingSize, paddingSize / 2 + width, paddingSize + height, p);
-
-		if (board == null) {
+	private void drawBoard(Canvas canvas) {
+		if (game == null) {
 			return;
 		}
 
-		float boxsize = ((float) height) / board.getWidth();
+		// Draw boxes
+		for (int i = 0; i < game.getBoard().getSize(); i++) {
+			int pos = game.getBoard().getRotatedPosition(i);
+			int weight = game.getWeight(pos);
 
-		// Draw touched boxes
-		p.setARGB(255, 255, 255, 0);
-		for (int x = 0; x < board.getWidth(); x++) {
-			for (int y = 0; y < board.getWidth(); y++) {
-				if (!isCellHighlighted(x, y)) {
-					continue;
+			int x = i % game.getBoard().getWidth();
+			int y = i / game.getBoard().getWidth();
+
+			if (highlightedPositions.contains(i)) {
+				p.setARGB(255, 255, 255, 0);
+			} else {
+				if (game.hintModeColor()) {
+					int[] rgb = game.getWeightColor(weight);
+					// TODO: Rejig these colours into a theme for the new UI.
+					p.setARGB(255, rgb[0], rgb[1], rgb[2]);
+				} else {
+					p.setColor(theme.tileBackgroundColour);
 				}
-
-				float left = (paddingSize / 2) + (boxsize * x);
-				float top = paddingSize + (boxsize * y);
-				float right = (paddingSize / 2) + (boxsize * (x + 1));
-				float bottom = paddingSize + (boxsize * (y + 1));
-
-				canvas.drawRect(left, top, right, bottom, p);
 			}
+
+			float left = boxsize * x;
+			float top = boxsize * y;
+			float right = boxsize * (x + 1);
+			float bottom = boxsize * (y + 1);
+			canvas.drawRect(left, top, right, bottom, p);
 		}
 
-		// Draw grid
-		p.setARGB(255, 0, 0, 0);
+		// Draw grid, but exclude the first and last line (both horizontally and vertically.
+		p.setColor(theme.tileBorderColour);
+		p.setStrokeWidth(theme.tileBorderWidth);
 
 		// Vertical lines
-		for (float i = paddingSize / 2; i <= paddingSize / 2 + width; i += boxsize) {
-			canvas.drawLine(i, paddingSize, i, paddingSize + height, p);
+		for (float i = boxsize; i <= gridsize - boxsize; i += boxsize) {
+			canvas.drawLine(i, 0, i, gridsize, p);
 		}
 		// Horizontal lines
-		for (float i = paddingSize; i <= paddingSize + height; i += boxsize) {
-			canvas.drawLine(paddingSize / 2, i, paddingSize / 2 + width, i, p);
+		for (float i = boxsize; i <= gridsize - boxsize; i += boxsize) {
+			canvas.drawLine(0, i, gridsize, i, p);
 		}
 
-		p.setARGB(255, 0, 0, 0);
-		p.setTypeface(Typeface.MONOSPACE);
+		p.setColor(theme.tileForegroundColour);
+		p.setTypeface(Fonts.get().getSansSerifCondensed());
 		float textSize = boxsize * 0.8f;
 		p.setTextSize(textSize);
 
@@ -128,49 +162,126 @@ public class BoardView extends View {
 		p.getTextBounds("A", 0, 1, textBounds);
 		float offset = textBounds.exactCenterY();
 
-		// Draw letters
-		for (int x = 0; x < board.getWidth(); x++) {
-			for (int y = 0; y < board.getWidth(); y++) {
-				String letter = board.elementAt(x, y);
+		for (int x = 0; x < boardWidth; x++) {
+			for (int y = 0; y < boardWidth; y++) {
+				int pos = game.getBoard().getRotatedPosition(y * boardWidth + x);
+				int weight = game.getWeight(pos);
+
+				if (game.hintModeColor() || game.hintModeCount()) {
+					int color = (weight == 0) ? 150 : 0;
+					p.setARGB(255, color, color, color);
+				} else {
+					p.setARGB(255, 0, 0, 0);
+				}
+
+				if (game.hintModeCount()) {
+					p.setTextSize(textSize / 4);
+					p.setTextAlign(Paint.Align.LEFT);
+					canvas.drawText(""+weight,
+							(x * boxsize) + 8,
+							((y + 1) * boxsize) - 6,
+							p);
+				}
+
+				String letter = game.getBoard().elementAt(x, y);
 				String letterForDisplay = game.getLanguage().toDisplay(letter);
 				p.setTextSize(textSize);
 				p.setTextAlign(Paint.Align.CENTER);
 				canvas.drawText(letterForDisplay,
-						(paddingSize / 2) + (x * boxsize) + (boxsize / 2),
-						paddingSize + (y * boxsize) + (boxsize / 2) - offset,
+						(x * boxsize) + (boxsize / 2),
+						(y * boxsize) + (boxsize / 2) - offset,
 						p);
-				if (Game.SCORE_LETTERS.equals(scoreType)) {
+				if (Game.SCORE_LETTERS.equals(game.getScoreType())) {
 					String score = String.valueOf(game.getLanguage().getPointsForLetter(letter));
 					p.setTextSize(textSize / 4);
 					p.setTextAlign(Paint.Align.RIGHT);
 					canvas.drawText(score,
-							paddingSize / 2 + ((x + 1) * boxsize) - 4,
-							paddingSize + ((y + 1) * boxsize) - 6,
+							((x + 1) * boxsize) - 8,
+							((y + 1) * boxsize) - 6,
 							p);
 				}
 			}
 		}
-
 	}
 
-	@Override
-	protected void onMeasure (int wSpec, int hSpec) {
-		int side = Math.min(MeasureSpec.getSize(wSpec), MeasureSpec.getSize(hSpec));
-		setMeasuredDimension(side,side);
-	}
+	private FontHeightMeasurer fontHeights = new FontHeightMeasurer();
 
-	public void setGame(Game game) {
-		board = game.getBoard();
-		this.game = game;
+	/**
+	 * In each render loop, we need to do several measurements of different font sizes. The height
+	 * of a font wont change between renders, so we cache the height calculations.
+	 */
+	private static class FontHeightMeasurer {
+		private Map<Integer, Integer> fontSizeToPixelHeight = new HashMap<>();
+
+		public int getHeight(int fontSize) {
+			if (!fontSizeToPixelHeight.containsKey(fontSize)) {
+				Paint p = new Paint();
+				p.setTextSize(fontSize);
+				Rect bounds = new Rect();
+				p.getTextBounds("A", 0, 1, bounds);
+				int height = bounds.height();
+				fontSizeToPixelHeight.put(fontSize, height);
+			}
+
+			return fontSizeToPixelHeight.get(fontSize);
+		}
 	}
 
 	/**
-	 * Bitmask of highlighted cells on the board.
-	 * The first bit to the right (i.e. represented by the integer "1") is the flag to say whether
-	 * the first cell (i.e. x = 0, y = 0) is highlighted or not.
+	 * Each time we draw a word, we need to:
+	 *  - Measure it and decide how much space it takes.
+	 *  - Potentially fade it out if it is too far to the right.
+	 *  - Potentially add a strike over the top of it if it is not a word.
+	 *  - Colourise it correctly to indicate that it has already been used in the past.
+	 *  - Maybe more?
+	 *
+	 *  After drawing, we can return the right hand size, to indicate how much space we took up
+	 *  when rendering. This can be used to decide where to start the following word.
 	 */
-	public void highlight(Integer[] highlightedCells) {
-		this.highlightedCells = highlightedCells;
+	private float drawWord(@NonNull Canvas canvas, String word, float x, float y, boolean isWord, boolean hasBeenUsedBefore) {
+		word = word.toUpperCase(game.getLanguage().getLocale());
+
+		p.setTextSize(theme.textSizeNormal);
+		p.setTypeface(Fonts.get().getSansSerifBold());
+		p.getTextBounds(word, 0, word.length(), textBounds);
+		float height = textBounds.height();
+		float width = textBounds.width();
+
+		p.setColor(hasBeenUsedBefore ? theme.previouslySelectedWordColour : theme.selectedWordColour);
+
+		p.setTextSize(theme.textSizeNormal);
+		p.setTypeface(Fonts.get().getSansSerifBold());
+		p.setTextAlign(Paint.Align.LEFT); // TODO: RTL support.
+		canvas.drawText(word, x, y + height, p);
+
+		if (!isWord) {
+			// Strike-through
+			p.setStrokeWidth(6);
+			canvas.drawLine(x, y + height / 2, x + width, y + height / 2, p);
+		}
+
+		if (x + width > getWidth() - theme.scorePadding) {
+			// Fade out the word as it approaches the end of the screen.
+			Shader shaderA = new LinearGradient(getWidth() - theme.scorePadding * 5, y, getWidth() - theme.scorePadding * 2, y, 0x00ffffff, theme.backgroundColor, Shader.TileMode.CLAMP);
+			p.setShader(shaderA);
+			canvas.drawRect(getWidth() - theme.scorePadding * 5, y - 2, getWidth(), y + height + 2, p);
+			p.setShader(null);
+		}
+
+		return x + width;
+	}
+
+	private void clearScreen(Canvas canvas) {
+		p.setColor(getResources().getColor(android.R.color.holo_red_dark));
+		canvas.drawRect(0, 0, width / 2, height, p);
+	}
+
+	@Override
+	public void onDraw(Canvas canvas) {
+		setDimensions(getMeasuredWidth(), getMeasuredHeight());
+
+		clearScreen(canvas);
+		drawBoard(canvas);
 	}
 
 }

@@ -29,7 +29,6 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
 
         final BoardView bv = missedWordsView.findViewById(R.id.missed_board);
         bv.setGame(game);
-        bv.setScoreType(game.getScoreType());
 
         Set<String> possible = game.getSolutions().keySet();
 
