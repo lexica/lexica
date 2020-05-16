@@ -26,6 +26,7 @@ public abstract class Language {
             langs.put("jp", new Japanese());
             langs.put("nl", new Dutch());
             langs.put("pl", new Polish());
+            langs.put("pt_BR", new PortugueseBR());
             langs.put("ru", new Russian());
             langs.put("uk", new Ukrainian());
 
