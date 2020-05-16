@@ -31,28 +31,44 @@ class ScoreWordsViewBinder {
         public final @NonNull String word;
         public final int points;
         public final boolean valid;
-        public final @Nullable View.OnClickListener onViewWord;
+        public final @Nullable ViewWordListener viewWordListener;
 
-        Item(@NonNull String word, int points, boolean valid, @Nullable View.OnClickListener onViewWord) {
+        Item(@NonNull String word, int points, boolean valid, @Nullable ViewWordListener viewWordListener) {
             this.word = word;
             this.points = points;
             this.valid = valid;
-            this.onViewWord = onViewWord;
+            this.viewWordListener = viewWordListener;
         }
     }
 
     class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
+        private static final int TYPE_NORMAL = 0;
+        private static final int TYPE_SELECTED = 1;
+
         private final List<Item> items;
+
+        @Nullable
+        private Item selectedItem = null;
 
         Adapter(List<Item> items) {
             this.items = items;
         }
 
+        public void setSelectedItem(@Nullable Item item) {
+            this.selectedItem = item;
+        }
+
+        @Nullable
+        public Item getSelectedItem() {
+            return selectedItem;
+        }
+
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ViewHolder(activity.getLayoutInflater().inflate(R.layout.score_summary_word, parent, false));
+            int layout = viewType == TYPE_SELECTED ? R.layout.score_summary_word__selected : R.layout.score_summary_word;
+            return new ViewHolder(activity.getLayoutInflater().inflate(layout, parent, false));
         }
 
         @Override
@@ -65,6 +81,14 @@ class ScoreWordsViewBinder {
             return items.size();
         }
 
+        @Override
+        public int getItemViewType(int position) {
+            if (items.get(position) == selectedItem) {
+                return TYPE_SELECTED;
+            }
+
+            return TYPE_NORMAL;
+        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -104,15 +128,28 @@ class ScoreWordsViewBinder {
             }
 
             FancyButton viewWord = itemView.findViewById(R.id.view_word);
-            if (item.onViewWord == null) {
+            if (item.viewWordListener == null) {
                 viewWord.setVisibility(View.GONE);
                 viewWord.setOnClickListener(null);
+                itemView.setOnClickListener(null);
             } else {
                 viewWord.setVisibility(View.VISIBLE);
-                viewWord.setOnClickListener(item.onViewWord);
+                View.OnClickListener listener = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        item.viewWordListener.onViewWord(item.word);
+                    }
+                };
+
+                viewWord.setOnClickListener(listener);
+                itemView.setOnClickListener(listener);
             }
         }
 
+    }
+
+    interface ViewWordListener {
+        public void onViewWord(String word);
     }
 
 }

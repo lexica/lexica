@@ -33,6 +33,7 @@
 		android:layout_width="0dp"
 		android:layout_height="0dp"
 		android:layout_marginTop="?attr/scorePadding"
+		tools:listitem="@layout/score_summary_word"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/missed_board_wrapper"

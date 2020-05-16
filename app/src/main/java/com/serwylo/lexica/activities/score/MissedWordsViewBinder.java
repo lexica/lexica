@@ -12,8 +12,6 @@ import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.BoardView;
 
-import net.healeys.trie.Solution;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,7 +19,7 @@ import java.util.Set;
 
 class MissedWordsViewBinder extends ScoreWordsViewBinder {
 
-    MissedWordsViewBinder(@NonNull AppCompatActivity activity, FrameLayout parent, @NonNull Game game) {
+    MissedWordsViewBinder(@NonNull AppCompatActivity activity, FrameLayout parent, final @NonNull Game game) {
 
         super(activity, game);
 
@@ -30,7 +28,7 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
         final BoardView bv = missedWordsView.findViewById(R.id.missed_board);
         bv.setGame(game);
 
-        Set<String> possible = game.getSolutions().keySet();
+        final Set<String> possible = game.getSolutions().keySet();
 
         Iterator<String> uniqueWords = game.uniqueListIterator();
         while(uniqueWords.hasNext()) {
@@ -38,23 +36,56 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
             possible.remove(w);
         }
 
-        List<Item> items = new ArrayList<>(possible.size());
-        for (String word : possible) {
-            final Solution solution = game.getSolutions().get(word).get(0);
-            items.add(new Item(word, game.getWordScore(word), true, new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    bv.highlight(solution.getPositions());
-                    bv.invalidate();
-                    // TODO: Highlight selected word.
-                }
-            }));
-        }
-
-        RecyclerView words = missedWordsView.findViewById(R.id.words);
+        final RecyclerView words = missedWordsView.findViewById(R.id.words);
         words.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
         words.setHasFixedSize(true);
-        words.setAdapter(new Adapter(items));
+
+        final List<Item> items = new ArrayList<>(possible.size());
+        final Adapter adapter = new Adapter(items);
+
+        ViewWordListener onViewWord = new ViewWordListener() {
+            @Override
+            public void onViewWord(String word) {
+                bv.highlight(game.getSolutions().get(word).get(0).getPositions());
+                bv.invalidate();
+
+                // Clear out the old selected item, find the new selected item, then notify the
+                // adapter about both items so they can be updated.
+                int index = -1;
+                int previouslySelectedIndex = -1;
+                Item previouslySelectedItem = adapter.getSelectedItem();
+                Item newSelectedItem = null;
+                for (int i = 0; i < items.size(); i ++) {
+                    String itemWord = items.get(i).word;
+                    if (itemWord.equals(word)) {
+                        index = i;
+                        newSelectedItem = items.get(i);
+                    } else if (previouslySelectedItem != null && itemWord.equals(previouslySelectedItem.word)) {
+                        previouslySelectedIndex = i;
+                    }
+
+                    if (index != -1 && (previouslySelectedItem == null || previouslySelectedIndex != -1)) {
+                        break;
+                    }
+                }
+
+                adapter.setSelectedItem(newSelectedItem);
+
+                if (index != -1) {
+                    adapter.notifyItemChanged(index);
+                }
+
+                if (previouslySelectedIndex != -1) {
+                    adapter.notifyItemChanged(previouslySelectedIndex);
+                }
+            }
+        };
+
+        for (String word : possible) {
+            items.add(new Item(word, game.getWordScore(word), true, onViewWord));
+        }
+
+        words.setAdapter(adapter);
 
     }
 
