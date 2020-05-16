@@ -86,4 +86,5 @@
     <string name="dialog_no_saved">Não há jogo salvo. Se você conseguir ler esta mensagem, provavelmente algo está errado.</string>
     <string name="pref_dict_pl">Polonês</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
+    <string name="pref_dict_pt_BR">Português (Brasil)</string>
 </resources>
