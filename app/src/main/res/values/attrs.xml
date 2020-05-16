@@ -38,6 +38,7 @@
         <attr format="color" name="homeScreenMainButtonBackground" />
         <attr format="color" name="homeScreenMainButtonBackground_focused" />
         <attr format="color" name="homeScreenSecondaryButtonBackground" />
+        <attr format="color" name="homeScreenSecondaryButtonBackground_selected" />
         <attr format="color" name="homeScreenSecondaryButtonBackground_focused" />
         <attr format="color" name="homeScreenSecondaryButtonBackground_disabled" />
         <attr format="color" name="homeScreenSecondaryButtonTextColour" />

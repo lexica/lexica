@@ -30,6 +30,7 @@
     <color name="homeScreenMainButtonBackground">@color/colorPrimary</color>
     <color name="homeScreenMainButtonBackground_focused">@color/timerBackgroundColour</color>
     <color name="homeScreenSecondaryButtonBackground">@color/timerBackgroundColour</color>
+    <color name="homeScreenSecondaryButtonBackground_selected">#F8D882</color>
     <color name="homeScreenSecondaryButtonBackground_focused">#FFE39A</color>
     <color name="homeScreenSecondaryButtonBackground_disabled">#FFE39A</color>
     <color name="homeScreenSecondaryButtonTextColour">@color/selectedWordColour</color>

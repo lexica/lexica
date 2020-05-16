@@ -20,8 +20,10 @@ package com.serwylo.lexica.activities.score;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
@@ -50,14 +52,23 @@ public class ScoreActivity extends AppCompatActivity {
 
 	private Game game;
 
-	public ScoreActivity() {
-		super();
-
-	}
+	private int buttonBackgroundColorSelected;
+	private int buttonBackgroundColor;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		// Surely there is a better way to get theme attributes then this. Unfortunately we can't
+		// make use of the ThemeProperties helper class in Lexica because that is only useful
+		// to Views not Activities, due to the way in which Views receive all of their attributes
+		// when constructed.
+		Resources.Theme themes = getTheme();
+		TypedValue themeValues = new TypedValue();
+		themes.resolveAttribute(R.attr.homeScreenSecondaryButtonBackground_selected, themeValues, true);
+		buttonBackgroundColorSelected = themeValues.data;
+		themes.resolveAttribute(R.attr.homeScreenSecondaryButtonBackground, themeValues, true);
+		buttonBackgroundColor = themeValues.data;
 
 		setContentView(R.layout.score);
 
@@ -93,19 +104,26 @@ public class ScoreActivity extends AppCompatActivity {
 		recycler.setHasFixedSize(true);
 		recycler.setAdapter(new ScoreTabAdapter(this, game));
 
-		FancyButton found = findViewById(R.id.found_words_button);
+		final FancyButton found = findViewById(R.id.found_words_button);
+		final FancyButton missed = findViewById(R.id.missed_words_button);
+
+		found.setBackgroundColor(buttonBackgroundColorSelected);
+
 		found.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				recycler.scrollToPosition(0);
+				found.setBackgroundColor(buttonBackgroundColorSelected);
+				missed.setBackgroundColor(buttonBackgroundColor);
 			}
 		});
 
-		FancyButton missed = findViewById(R.id.missed_words_button);
 		missed.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				recycler.scrollToPosition(1);
+				found.setBackgroundColor(buttonBackgroundColor);
+				missed.setBackgroundColor(buttonBackgroundColorSelected);
 			}
 		});
 
