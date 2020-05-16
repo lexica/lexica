@@ -16,6 +16,7 @@ public class PortugueseBR extends Language {
         letterPoints.put("à", 1);
         letterPoints.put("ã", 1);
         letterPoints.put("â", 1);
+        letterPoints.put("å", 1);
         letterPoints.put("e", 1);
         letterPoints.put("é", 1);
         letterPoints.put("ê", 1);
@@ -23,10 +24,12 @@ public class PortugueseBR extends Language {
         letterPoints.put("i", 1);
         letterPoints.put("í", 1);
         letterPoints.put("î", 1);
+        letterPoints.put("ï", 1);
         letterPoints.put("o", 1);
         letterPoints.put("ó", 1);
         letterPoints.put("ô", 1);
         letterPoints.put("õ", 1);
+        letterPoints.put("ö", 1);
         letterPoints.put("s", 1);
         letterPoints.put("u", 1);
         letterPoints.put("ú", 1);
@@ -63,6 +66,7 @@ public class PortugueseBR extends Language {
         letterPoints.put("k", 2);
         letterPoints.put("w", 2);
         letterPoints.put("y", 2);
+
     }
 
     @Override
