@@ -288,7 +288,9 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		float height = textBounds.height();
 		float width = textBounds.width();
 
-		p.setColor(hasBeenUsedBefore ? theme.previouslySelectedWordColour : theme.selectedWordColour);
+		p.setColor(!isWord
+				? theme.notAWordColour
+				: (hasBeenUsedBefore ? theme.previouslySelectedWordColour : theme.selectedWordColour));
 
 		p.setTextSize(theme.textSizeNormal);
 		p.setTypeface(Fonts.get().getSansSerifBold());

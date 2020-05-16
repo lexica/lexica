@@ -20,7 +20,7 @@
     <color name="currentWordColour">@color/tileForegroundColour</color>
     <color name="previouslySelectedWordColour">#88ffffff</color>
     <color name="selectedWordColour">#ffffff</color>
-    <color name="notAWordColour">#ffffff</color>
+    <color name="notAWordColour">@color/previouslySelectedWordColour</color>
     <color name="scoreBackgroundColour">#f0cb69</color>
     <color name="timerBackgroundColour">#f0cb69</color>
     <color name="timerStartForegroundColour">#edb641</color>
