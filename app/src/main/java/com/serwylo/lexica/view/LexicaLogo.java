@@ -77,7 +77,7 @@ public class LexicaLogo extends View {
 
 		switch(color) {
 			case BACKGROUND:
-				p.setARGB(255,255,255,255);
+				p.setColor(theme.homeScreenTileBackgroundColour);
 			break;
 			case MAIN:
 				p.setColor(theme.tileBackgroundColour);

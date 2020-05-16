@@ -55,6 +55,7 @@ public class BoardView extends View {
 	private int boardWidth;
 	private Paint p;
 	private Set<Integer> highlightedPositions = new HashSet<>();
+	private int maxWeight;
 
 	public BoardView(Context context) {
 		this(context, null);
@@ -90,6 +91,7 @@ public class BoardView extends View {
 	public void setGame(Game game) {
 		this.game = game;
 
+		maxWeight = game.getMaxWeight(); // Don't calculate this on each paint for performance.
 		boardWidth = game.getBoard().getWidth();
 	}
 
@@ -116,18 +118,17 @@ public class BoardView extends View {
 		// Draw boxes
 		for (int i = 0; i < game.getBoard().getSize(); i++) {
 			int pos = game.getBoard().getRotatedPosition(i);
-			int weight = game.getWeight(pos);
 
 			int x = i % game.getBoard().getWidth();
 			int y = i / game.getBoard().getWidth();
 
 			if (highlightedPositions.contains(i)) {
-				p.setARGB(255, 255, 255, 0);
+				p.setColor(theme.tileHighlightColour);
 			} else {
 				if (game.hintModeColor()) {
-					int[] rgb = game.getWeightColor(weight);
-					// TODO: Rejig these colours into a theme for the new UI.
-					p.setARGB(255, rgb[0], rgb[1], rgb[2]);
+					int weight = game.getWeight(pos);
+					int colour = weight == 0 ? theme.hintModeUnusableLetterBackgroundColour : theme.getHintModeGradientColour((float)weight / maxWeight);
+					p.setColor(colour);
 				} else {
 					p.setColor(theme.tileBackgroundColour);
 				}
@@ -168,10 +169,10 @@ public class BoardView extends View {
 				int weight = game.getWeight(pos);
 
 				if (game.hintModeColor() || game.hintModeCount()) {
-					int color = (weight == 0) ? 150 : 0;
-					p.setARGB(255, color, color, color);
+					int colour = (weight == 0) ? theme.hintModeUnusableLetterColour : theme.tileForegroundColour;
+					p.setColor(colour);
 				} else {
-					p.setARGB(255, 0, 0, 0);
+					p.setColor(theme.tileForegroundColour);
 				}
 
 				if (game.hintModeCount()) {

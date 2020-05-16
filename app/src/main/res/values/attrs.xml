@@ -9,7 +9,16 @@
         <attr format="color" name="colorPrimaryDark" />
         <attr format="color" name="tileForegroundColour" />
         <attr format="color" name="tileBackgroundColour" />
+        <attr format="color" name="homeScreenTileBackgroundColour" />
         <attr format="color" name="tileBorderColour" />
+        <attr format="color" name="tileHighlightColour" />
+        <attr format="color" name="hintModeColour0" />
+        <attr format="color" name="hintModeColour1" />
+        <attr format="color" name="hintModeColour2" />
+        <attr format="color" name="hintModeColour3" />
+        <attr format="color" name="hintModeColour4" />
+        <attr format="color" name="hintModeUnusableLetterColour" />
+        <attr format="color" name="hintModeUnusableLetterBackgroundColour" />
         <attr format="color" name="currentWordColour" />
         <attr format="dimension" name="currentWordSize" />
         <attr format="color" name="previouslySelectedWordColour" />

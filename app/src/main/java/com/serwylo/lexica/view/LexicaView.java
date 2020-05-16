@@ -67,11 +67,13 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	private Paint p;
 	private Set<Integer> highlighted = new HashSet<>();
+	private int maxWeight;
 
 	public LexicaView(Context context, Game g) {
 		this(context);
 
 		game = g;
+		maxWeight = game.getMaxWeight(); // Don't calculate this on each paint for performance.
 		boardWidth = game.getBoard().getWidth();
 
 		mFingerTracker = new FingerTracker(game);
@@ -127,18 +129,17 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		// Draw boxes
 		for (int i = 0; i < game.getBoard().getSize(); i++) {
 			int pos = game.getBoard().getRotatedPosition(i);
-			int weight = game.getWeight(pos);
 
 			int x = i % game.getBoard().getWidth();
 			int y = i / game.getBoard().getWidth();
 
 			if (highlighted.contains(i)) {
-				p.setARGB(255, 255, 255, 0);
+				p.setColor(theme.tileHighlightColour);
 			} else {
 				if (game.hintModeColor()) {
-					int[] rgb = game.getWeightColor(weight);
-					// TODO: Rejig these colours into a theme for the new UI.
-					p.setARGB(255, rgb[0], rgb[1], rgb[2]);
+					int weight = game.getWeight(pos);
+					int colour = weight == 0 ? theme.hintModeUnusableLetterBackgroundColour : theme.getHintModeGradientColour((float)weight / maxWeight);
+					p.setColor(colour);
 				} else {
 					p.setColor(theme.tileBackgroundColour);
 				}
@@ -179,10 +180,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 				int weight = game.getWeight(pos);
 
 				if (game.hintModeColor() || game.hintModeCount()) {
-					int color = (weight == 0) ? 150 : 0;
-					p.setARGB(255, color, color, color);
+					int color = (weight == 0) ? theme.hintModeUnusableLetterColour : 0;
+					p.setColor(color);
 				} else {
-					p.setARGB(255, 0, 0, 0);
+					p.setColor(theme.tileForegroundColour);
 				}
 
 				if (game.hintModeCount()) {

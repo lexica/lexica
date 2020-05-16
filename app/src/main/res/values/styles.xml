@@ -18,7 +18,16 @@
 
         <item name="tileForegroundColour">@color/tileForegroundColour</item>
         <item name="tileBackgroundColour">@color/tileBackgroundColour</item>
+        <item name="homeScreenTileBackgroundColour">@color/homeScreenTileBackgroundColour</item>
         <item name="tileBorderColour">@color/tileBorderColour</item>
+        <item name="tileHighlightColour">@color/tileHighlightColour</item>
+        <item name="hintModeColour0">@color/hintModeColour0</item>
+        <item name="hintModeColour1">@color/hintModeColour1</item>
+        <item name="hintModeColour2">@color/hintModeColour2</item>
+        <item name="hintModeColour3">@color/hintModeColour3</item>
+        <item name="hintModeColour4">@color/hintModeColour4</item>
+        <item name="hintModeUnusableLetterColour">@color/hintModeUnusableLetterColour</item>
+        <item name="hintModeUnusableLetterBackgroundColour">@color/hintModeUnusableLetterBackgroundColour</item>
         <item name="currentWordColour">@color/currentWordColour</item>
         <item name="previouslySelectedWordColour">@color/previouslySelectedWordColour</item>
         <item name="selectedWordColour">@color/selectedWordColour</item>

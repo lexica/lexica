@@ -20,6 +20,9 @@ package com.serwylo.lexica.game;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.GradientDrawable;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.preference.PreferenceManager;
@@ -532,6 +535,16 @@ public class Game implements Synchronizer.Counter {
 
 	public int getWeight(int pos) {
 		return weights[pos];
+	}
+
+	public int getMaxWeight() {
+		int max = 0;
+		for (int weight : weights) {
+			if (weight > max) {
+				max = weight;
+			}
+		}
+		return max;
 	}
 
 	public int[] getWeightColor(int idx) {

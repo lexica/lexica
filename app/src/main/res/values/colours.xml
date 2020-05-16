@@ -4,10 +4,19 @@
     <color name="colorPrimary">#edb641</color>
     <color name="colorPrimaryDark">#0f447c</color>
 
+    <color name="hintModeColour4">#f94828</color>
+    <color name="hintModeColour3">#fd8d3c</color>
+    <color name="hintModeColour2">#febb56</color>
+    <color name="hintModeColour1">#fee289</color>
+    <color name="hintModeColour0">#fffcc5</color>
+    <color name="hintModeUnusableLetterColour">#888888</color>
+    <color name="hintModeUnusableLetterBackgroundColour">#ffffff</color>
 
     <color name="tileForegroundColour">#3d3c3b</color>
     <color name="tileBackgroundColour">#f9f8d7</color>
+    <color name="homeScreenTileBackgroundColour">#ffffff</color>
     <color name="tileBorderColour">#b1ad9c</color>
+    <color name="tileHighlightColour">#ffff00</color>
     <color name="currentWordColour">@color/tileForegroundColour</color>
     <color name="previouslySelectedWordColour">#88ffffff</color>
     <color name="selectedWordColour">#ffffff</color>
