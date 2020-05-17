@@ -25,7 +25,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.TypedValue;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,12 +33,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.serwylo.lexica.GameSaverTransient;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Game;
-import com.serwylo.lexica.view.BoardView;
-import com.serwylo.lexica.view.ThemeProperties;
-
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 

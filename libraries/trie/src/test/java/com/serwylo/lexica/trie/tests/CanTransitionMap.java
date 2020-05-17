@@ -31,7 +31,6 @@ public class CanTransitionMap implements TransitionMap {
     CanTransitionMap(LetterFrequency frequency, Language language) {
         List<String> lettersList = new ArrayList<>(frequency.getLetters());
 
-        Map<String, String> mandatorySuffixes = new HashMap<>();
         for (String letter : frequency.getLetters()) {
             String letterWithSuffix = language.applyMandatorySuffix(letter);
             if (!letterWithSuffix.equals(letter)) {

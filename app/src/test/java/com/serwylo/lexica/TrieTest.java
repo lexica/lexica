@@ -36,7 +36,7 @@ public abstract class TrieTest {
 		}
 	}
 
-	public static void addWords(Trie trie, String[] words, Language language) {
+	public static void addWords(Trie trie, String[] words) {
 		for (String word : words) {
 			trie.addWord(word);
 		}

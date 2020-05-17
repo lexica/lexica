@@ -166,7 +166,7 @@ public class FullUsGbTrieTest extends TrieTest {
 		String[] words = readDictionary(language);
 		assertEquals(77517, words.length);
 
-		addWords(trie, words, language);
+		addWords(trie, words);
 
 		assertTrieMatches("After adding entire US dictionary to a new Trie", trie, words, null);
 	}
@@ -181,7 +181,7 @@ public class FullUsGbTrieTest extends TrieTest {
 		String[] words = readDictionary(language);
 		assertEquals(77097, words.length);
 
-		addWords(trie, words, language);
+		addWords(trie, words);
 
 		assertTrieMatches("After adding entire GB dictionary to a new Trie", trie, words, null);
 	}

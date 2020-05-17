@@ -1,6 +1,5 @@
 package com.serwylo.lexica.trie.tests;
 
-import com.serwylo.lexica.lang.DeGerman;
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.Persian;
 import com.serwylo.lexica.trie.util.LetterFrequency;

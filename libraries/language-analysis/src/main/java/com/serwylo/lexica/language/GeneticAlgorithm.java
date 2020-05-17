@@ -267,7 +267,7 @@ public class GeneticAlgorithm {
             this.stats = stats;
         }
 
-        double getScore() throws IOException {
+        double getScore() {
 
             return Math.max(1, stats.getMean() * stats.getMean() - stats.getStandardDeviation() * stats.getStandardDeviation() * FITNESS_CALC_STANDARD_DEVIATION_MULTIPLIER);
 
@@ -277,11 +277,7 @@ public class GeneticAlgorithm {
 
         public String toString() {
             if (cachedStringRepresentation == null) {
-                try {
-                    cachedStringRepresentation = "Min: " + (int) stats.getMin() + ", mean: " + (int) stats.getMean() + ", max: " + (int) stats.getMax() + ", stddev: " + (int) stats.getStandardDeviation() + ", score: " + (int) getScore();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                cachedStringRepresentation = "Min: " + (int) stats.getMin() + ", mean: " + (int) stats.getMean() + ", max: " + (int) stats.getMax() + ", stddev: " + (int) stats.getStandardDeviation() + ", score: " + (int) getScore();
             }
 
             return cachedStringRepresentation;

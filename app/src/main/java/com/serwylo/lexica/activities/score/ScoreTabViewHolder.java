@@ -3,11 +3,9 @@ package com.serwylo.lexica.activities.score;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.serwylo.lexica.game.Game;
-import com.serwylo.lexica.view.ThemeProperties;
 
 class ScoreTabViewHolder extends RecyclerView.ViewHolder {
 

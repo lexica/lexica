@@ -21,11 +21,9 @@ import com.serwylo.lexica.game.Game;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.Shader;
-import androidx.annotation.NonNull;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
@@ -34,9 +32,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class BoardView extends View {
@@ -203,73 +199,6 @@ public class BoardView extends View {
 				}
 			}
 		}
-	}
-
-	private FontHeightMeasurer fontHeights = new FontHeightMeasurer();
-
-	/**
-	 * In each render loop, we need to do several measurements of different font sizes. The height
-	 * of a font wont change between renders, so we cache the height calculations.
-	 */
-	private static class FontHeightMeasurer {
-		private Map<Integer, Integer> fontSizeToPixelHeight = new HashMap<>();
-
-		public int getHeight(int fontSize) {
-			if (!fontSizeToPixelHeight.containsKey(fontSize)) {
-				Paint p = new Paint();
-				p.setTextSize(fontSize);
-				Rect bounds = new Rect();
-				p.getTextBounds("A", 0, 1, bounds);
-				int height = bounds.height();
-				fontSizeToPixelHeight.put(fontSize, height);
-			}
-
-			return fontSizeToPixelHeight.get(fontSize);
-		}
-	}
-
-	/**
-	 * Each time we draw a word, we need to:
-	 *  - Measure it and decide how much space it takes.
-	 *  - Potentially fade it out if it is too far to the right.
-	 *  - Potentially add a strike over the top of it if it is not a word.
-	 *  - Colourise it correctly to indicate that it has already been used in the past.
-	 *  - Maybe more?
-	 *
-	 *  After drawing, we can return the right hand size, to indicate how much space we took up
-	 *  when rendering. This can be used to decide where to start the following word.
-	 */
-	private float drawWord(@NonNull Canvas canvas, String word, float x, float y, boolean isWord, boolean hasBeenUsedBefore) {
-		word = word.toUpperCase(game.getLanguage().getLocale());
-
-		p.setTextSize(theme.textSizeNormal);
-		p.setTypeface(Fonts.get().getSansSerifBold());
-		p.getTextBounds(word, 0, word.length(), textBounds);
-		float height = textBounds.height();
-		float width = textBounds.width();
-
-		p.setColor(hasBeenUsedBefore ? theme.previouslySelectedWordColour : theme.selectedWordColour);
-
-		p.setTextSize(theme.textSizeNormal);
-		p.setTypeface(Fonts.get().getSansSerifBold());
-		p.setTextAlign(Paint.Align.LEFT); // TODO: RTL support.
-		canvas.drawText(word, x, y + height, p);
-
-		if (!isWord) {
-			// Strike-through
-			p.setStrokeWidth(6);
-			canvas.drawLine(x, y + height / 2, x + width, y + height / 2, p);
-		}
-
-		if (x + width > getWidth() - theme.scorePadding) {
-			// Fade out the word as it approaches the end of the screen.
-			Shader shaderA = new LinearGradient(getWidth() - theme.scorePadding * 5, y, getWidth() - theme.scorePadding * 2, y, 0x00ffffff, theme.backgroundColor, Shader.TileMode.CLAMP);
-			p.setShader(shaderA);
-			canvas.drawRect(getWidth() - theme.scorePadding * 5, y - 2, getWidth(), y + height + 2, p);
-			p.setShader(null);
-		}
-
-		return x + width;
 	}
 
 	private void clearScreen(Canvas canvas) {

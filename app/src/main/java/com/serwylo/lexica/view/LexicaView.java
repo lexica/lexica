@@ -29,8 +29,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.ViewUtils;
-import androidx.core.text.TextUtilsCompat;
 import androidx.core.view.ViewCompat;
 
 import com.serwylo.lexica.R;

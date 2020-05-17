@@ -47,34 +47,6 @@ public class LetterFrequency {
         }
     }
 
-    public int getMaxTotalLetterCount() {
-        int max = 0;
-        for (List<Integer> counts : letterCounts.values()) {
-            int countsForLetter = 0;
-
-            for (int letterCount : counts) {
-                countsForLetter += letterCount;
-            }
-
-            if (countsForLetter > max) {
-                max = countsForLetter;
-            }
-        }
-        return max;
-    }
-
-    public int getMaxSingleLetterCount() {
-        int max = 0;
-        for (List<Integer> counts : letterCounts.values()) {
-            for (int letterCount : counts) {
-                if (letterCount > max) {
-                    max = letterCount;
-                }
-            }
-        }
-        return max;
-    }
-
     public Set<String> getLetters() {
         return letterCounts.keySet();
     }
@@ -136,32 +108,4 @@ public class LetterFrequency {
         return true;
     }
 
-    public String toSingleLetterCountString() {
-        StringBuilder sb = new StringBuilder();
-        int max = getMaxSingleLetterCount();
-        for (String letter : getLetters()) {
-            sb.append(letter);
-            for (int count : getCountsForLetter(letter)) {
-                sb.append(" ");
-                sb.append(Integer.toString((int) Math.ceil((double)(count) / max * 100)));
-            }
-            sb.append("\n");
-        }
-        return sb.toString();
-    }
-
-    public String toTotalLetterCountString() {
-        StringBuilder sb = new StringBuilder();
-        int max = getMaxSingleLetterCount();
-        for (String letter : getLetters()) {
-            sb.append(letter);
-            int pos = 1;
-            for (int count : getCountsForLetter(letter)) {
-                sb.append(" ");
-                sb.append(Integer.toString((int) Math.ceil((double)(count) / max * 100) * pos));
-            }
-            sb.append("\n");
-        }
-        return sb.toString();
-    }
 }

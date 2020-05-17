@@ -95,7 +95,7 @@ public class TransitionMapTest {
 
     private static byte[] serializedUsTrie(Trie trie) {
         Language language = new EnglishUS();
-        TrieTest.addWords(trie, FullUsGbTrieTest.readDictionary(language), language);
+        TrieTest.addWords(trie, FullUsGbTrieTest.readDictionary(language));
         return TrieTest.serialize(trie);
     }
 
