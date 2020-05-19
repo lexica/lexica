@@ -86,4 +86,5 @@
     <string name="pref_boardSize_dialog">Valitse laudan koko</string>
     <string name="pref_boardSize_summary">Valitse pelilaudan koko</string>
     <string name="pref_dict_pt_BR">portugali (Brasilia)</string>
+    <string name="pref_boardSize">Laudan koko</string>
 </resources>
