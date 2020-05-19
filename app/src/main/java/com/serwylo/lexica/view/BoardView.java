@@ -119,14 +119,14 @@ public class BoardView extends View {
 			int y = i / game.getBoard().getWidth();
 
 			if (highlightedPositions.contains(i)) {
-				p.setColor(theme.tileHighlightColour);
+				p.setColor(theme.board.tile.highlightColour);
 			} else {
 				if (game.hintModeColor()) {
 					int weight = game.getWeight(pos);
-					int colour = weight == 0 ? theme.hintModeUnusableLetterBackgroundColour : theme.getHintModeGradientColour((float)weight / maxWeight);
+					int colour = weight == 0 ? theme.board.tile.hintModeUnusableLetterBackgroundColour : theme.board.tile.getHintModeGradientColour((float)weight / maxWeight);
 					p.setColor(colour);
 				} else {
-					p.setColor(theme.tileBackgroundColour);
+					p.setColor(theme.board.tile.backgroundColour);
 				}
 			}
 
@@ -138,8 +138,8 @@ public class BoardView extends View {
 		}
 
 		// Draw grid, but exclude the first and last line (both horizontally and vertically.
-		p.setColor(theme.tileBorderColour);
-		p.setStrokeWidth(theme.tileBorderWidth);
+		p.setColor(theme.board.tile.borderColour);
+		p.setStrokeWidth(theme.board.tile.borderWidth);
 
 		// Vertical lines
 		for (float i = boxsize; i <= gridsize - boxsize; i += boxsize) {
@@ -150,7 +150,7 @@ public class BoardView extends View {
 			canvas.drawLine(0, i, gridsize, i, p);
 		}
 
-		p.setColor(theme.tileForegroundColour);
+		p.setColor(theme.board.tile.foregroundColour);
 		p.setTypeface(Fonts.get().getSansSerifCondensed());
 		float textSize = boxsize * 0.8f;
 		p.setTextSize(textSize);
@@ -165,10 +165,10 @@ public class BoardView extends View {
 				int weight = game.getWeight(pos);
 
 				if (game.hintModeColor() || game.hintModeCount()) {
-					int colour = (weight == 0) ? theme.hintModeUnusableLetterColour : theme.tileForegroundColour;
+					int colour = (weight == 0) ? theme.board.tile.hintModeUnusableLetterColour : theme.board.tile.foregroundColour;
 					p.setColor(colour);
 				} else {
-					p.setColor(theme.tileForegroundColour);
+					p.setColor(theme.board.tile.foregroundColour);
 				}
 
 				if (game.hintModeCount()) {
@@ -202,7 +202,7 @@ public class BoardView extends View {
 	}
 
 	private void clearScreen(Canvas canvas) {
-		p.setColor(theme.backgroundColor);
+		p.setColor(theme.game.backgroundColor);
 		canvas.drawRect(0, 0, width / 2, height, p);
 	}
 

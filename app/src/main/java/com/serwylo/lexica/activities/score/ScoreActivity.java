@@ -58,9 +58,9 @@ public class ScoreActivity extends AppCompatActivity {
 		// when constructed.
 		Resources.Theme themes = getTheme();
 		TypedValue themeValues = new TypedValue();
-		themes.resolveAttribute(R.attr.homeScreenSecondaryButtonBackground_selected, themeValues, true);
+		themes.resolveAttribute(R.attr.home__secondary_button_background_selected, themeValues, true);
 		buttonBackgroundColorSelected = themeValues.data;
-		themes.resolveAttribute(R.attr.homeScreenSecondaryButtonBackground, themeValues, true);
+		themes.resolveAttribute(R.attr.home__secondary_button_background, themeValues, true);
 		buttonBackgroundColor = themeValues.data;
 
 		setContentView(R.layout.score);

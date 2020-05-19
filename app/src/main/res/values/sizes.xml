@@ -4,12 +4,9 @@
     <dimen name="homeScreenButtonPadding">20dp</dimen>
 
     <dimen name="padding">0dp</dimen>
-    <dimen name="textSizeMinimum">12sp</dimen>
-    <dimen name="textSizeSmall">16sp</dimen>
-    <dimen name="textSizeNormal">20sp</dimen>
-    <dimen name="textSizeLarge">30sp</dimen>
 
     <dimen name="currentWordSize">34sp</dimen>
+    <dimen name="pastWordSize">20sp</dimen>
 
     <dimen name="timerHeight">15dp</dimen>
     <dimen name="timerBorderWidth">0dp</dimen>

@@ -1,70 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="AppTheme.Base"/>
-
-    <style name="AppTheme.NoActionBar" parent="AppTheme.Base">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="AppTheme.Light" parent="AppTheme.Light.Base">
+        <item name="lexicaViewStyle">@style/AppTheme.Light.Base</item>
     </style>
 
-    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme.Dark" parent="AppTheme.Dark.Base">
+        <item name="lexicaViewStyle">@style/AppTheme.Dark.Base</item>
+    </style>
+
+    <style name="AppTheme.Dark.Base" parent="AppTheme.Base">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="actionBarStyle">@style/Widget.AppCompat.Light.ActionBar.Solid</item>
 
-        <item name="scoreHeadingTextSize">@dimen/scoreHeadingTextSize</item>
-        <item name="scoreTextSize">@dimen/scoreTextSize</item>
-        <item name="scorePadding">@dimen/scorePadding</item>
-        <item name="scorePaddingHalf">@dimen/scorePaddingHalf</item>
+        <item name="board__tile__foreground_colour">@color/grey_0</item>
+        <item name="board__tile__background_colour">@color/yellow_1</item>
+        <item name="home__tile__background_colour">@color/white</item>
+        <item name="board__tile__border_colour">@color/grey_2</item>
+        <item name="board__tile__highlight_colour">@color/yellow_2</item>
 
-        <item name="tileForegroundColour">@color/tileForegroundColour</item>
-        <item name="tileBackgroundColour">@color/tileBackgroundColour</item>
-        <item name="homeScreenTileBackgroundColour">@color/homeScreenTileBackgroundColour</item>
-        <item name="tileBorderColour">@color/tileBorderColour</item>
-        <item name="tileHighlightColour">@color/tileHighlightColour</item>
-        <item name="hintModeColour0">@color/hintModeColour0</item>
-        <item name="hintModeColour1">@color/hintModeColour1</item>
-        <item name="hintModeColour2">@color/hintModeColour2</item>
-        <item name="hintModeColour3">@color/hintModeColour3</item>
-        <item name="hintModeColour4">@color/hintModeColour4</item>
-        <item name="hintModeUnusableLetterColour">@color/hintModeUnusableLetterColour</item>
-        <item name="hintModeUnusableLetterBackgroundColour">@color/hintModeUnusableLetterBackgroundColour</item>
-        <item name="currentWordColour">@color/currentWordColour</item>
-        <item name="previouslySelectedWordColour">@color/previouslySelectedWordColour</item>
-        <item name="selectedWordColour">@color/selectedWordColour</item>
-        <item name="notAWordColour">@color/notAWordColour</item>
-        <item name="scoreBackgroundColour">@color/scoreBackgroundColour</item>
-        <item name="timerBackgroundColour">@color/timerBackgroundColour</item>
-        <item name="timerStartForegroundColour">@color/timerStartForegroundColour</item>
-        <item name="timerMidForegroundColour">@color/timerMidForegroundColour</item>
-        <item name="timerEndForegroundColour">@color/timerEndForegroundColour</item>
-        <item name="scoreHeadingTextColour">@color/selectedWordColour</item>
-        <item name="scoreTextColour">@color/selectedWordColour</item>
+        <item name="board__hint_mode_colour_0">@color/gradient_yellow_to_red_0</item>
+        <item name="board__hint_mode_colour_1">@color/gradient_yellow_to_red_1</item>
+        <item name="board__hint_mode_colour_2">@color/gradient_yellow_to_red_2</item>
+        <item name="board__hint_mode_colour_3">@color/gradient_yellow_to_red_3</item>
+        <item name="board__hint_mode_colour_4">@color/gradient_yellow_to_red_4</item>
+        <item name="board__hint_mode_unusable_letter_colour">@color/grey_1</item>
+        <item name="board__hint_mode_unusable_letter_background_colour">@color/white</item>
 
-        <item name="currentWordSize">@dimen/currentWordSize</item>
+        <item name="game__background_colour">@color/orange_1</item>
+        <item name="game__current_word_colour">@color/grey_0</item>
+        <item name="game__previously_selected_word_colour">@color/white_faint</item>
+        <item name="game__selected_word_colour">@color/white</item>
+        <item name="game__not_a_word_colour">@color/white_faint</item>
+        <item name="game__score__background_colour">@color/orange_2</item>
+        <item name="game__timer__background_colour">@color/orange_2</item>
+        <item name="game__timer__start_foreground_colour">@color/orange_1</item>
+        <item name="game__timer__mid_foreground_colour">@color/orange_1</item>
+        <item name="game__timer__end_foreground_colour">@color/orange_1</item>
+        <item name="game__score__heading_text_colour">@color/white</item>
+        <item name="game__score__text_colour">@color/white</item>
 
-        <item name="homeScreenLetterPadding">@dimen/homeScreenLetterPadding</item>
-        <item name="padding">@dimen/padding</item>
-        <item name="timerHeight">@dimen/timerHeight</item>
-        <item name="timerBorderWidth">@dimen/timerBorderWidth</item>
-        <item name="tileBorderWidth">@dimen/tileBorderWidth</item>
-        <item name="textSizeMinimum">@dimen/textSizeMinimum</item>
-        <item name="textSizeSmall">@dimen/textSizeSmall</item>
-        <item name="textSizeNormal">@dimen/textSizeNormal</item>
-        <item name="textSizeLarge">@dimen/textSizeLarge</item>
+        <item name="score__background_colour">@color/orange_1</item>
+        <item name="score__missed_board_background_colour">@color/orange_2</item>
 
-        <item name="homeScreenButtonPadding">@dimen/homeScreenButtonPadding</item>
-        <item name="homeScreenHighScoreLabelColour">@color/homeScreenHighScoreLabelColour</item>
-        <item name="homeScreenMainButtonBackground">@color/homeScreenMainButtonBackground</item>
-        <item name="homeScreenMainButtonBackground_focused">@color/homeScreenMainButtonBackground_focused</item>
-        <item name="homeScreenSecondaryButtonBackground">@color/homeScreenSecondaryButtonBackground</item>
-        <item name="homeScreenSecondaryButtonBackground_selected">@color/homeScreenSecondaryButtonBackground_selected</item>
-        <item name="homeScreenSecondaryButtonBackground_focused">@color/homeScreenSecondaryButtonBackground_focused</item>
-        <item name="homeScreenSecondaryButtonBackground_disabled">@color/homeScreenSecondaryButtonBackground_disabled</item>
-        <item name="homeScreenSecondaryButtonTextColour">@color/homeScreenSecondaryButtonTextColour</item>
-        <item name="homeScreenSecondaryButtonTextColour_disabled">@color/homeScreenSecondaryButtonTextColour_disabled</item>
+        <item name="home__background_colour">@color/orange_1</item>
+        <item name="home__high_score_label_colour">@color/grey_0</item>
+        <item name="home__main_button_background">@color/orange_1</item>
+        <item name="home__main_button_background__focused">@color/orange_2</item>
+        <item name="home__secondary_button_background">@color/orange_2</item>
+        <item name="home__secondary_button_background_selected">@color/orange_3</item>
+        <item name="home__secondary_button_background_focused">@color/orange_4</item>
+        <item name="home__secondary_button_background_disabled">@color/orange_4</item>
+        <item name="home__secondary_button_text_colour">@color/white</item>
+        <item name="home__secondary_button_text_colour_disabled">@color/white</item>
     </style>
 
-    <style name="Widget_LexicaView" parent="AppTheme.Base" />
-    <style name="Widget_BoardView" parent="AppTheme.Base" />
+    <style name="AppTheme.Light.Base" parent="AppTheme.Base">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+
+        <item name="board__tile__foreground_colour">@color/grey_0</item>
+        <item name="board__tile__background_colour">@color/yellow_1</item>
+        <item name="home__tile__background_colour">@color/white</item>
+        <item name="board__tile__border_colour">@color/grey_2</item>
+        <item name="board__tile__highlight_colour">@color/yellow_2</item>
+
+        <item name="board__hint_mode_colour_0">@color/gradient_yellow_to_red_0</item>
+        <item name="board__hint_mode_colour_1">@color/gradient_yellow_to_red_1</item>
+        <item name="board__hint_mode_colour_2">@color/gradient_yellow_to_red_2</item>
+        <item name="board__hint_mode_colour_3">@color/gradient_yellow_to_red_3</item>
+        <item name="board__hint_mode_colour_4">@color/gradient_yellow_to_red_4</item>
+        <item name="board__hint_mode_unusable_letter_colour">@color/grey_1</item>
+        <item name="board__hint_mode_unusable_letter_background_colour">@color/white</item>
+
+        <item name="game__background_colour">@color/orange_1</item>
+        <item name="game__current_word_colour">@color/grey_0</item>
+        <item name="game__previously_selected_word_colour">@color/white_faint</item>
+        <item name="game__selected_word_colour">@color/white</item>
+        <item name="game__not_a_word_colour">@color/white_faint</item>
+        <item name="game__score__background_colour">@color/orange_2</item>
+        <item name="game__timer__background_colour">@color/orange_2</item>
+        <item name="game__timer__start_foreground_colour">@color/orange_1</item>
+        <item name="game__timer__mid_foreground_colour">@color/orange_1</item>
+        <item name="game__timer__end_foreground_colour">@color/orange_1</item>
+        <item name="game__score__heading_text_colour">@color/white</item>
+        <item name="game__score__text_colour">@color/white</item>
+
+        <item name="score__background_colour">@color/orange_1</item>
+        <item name="score__missed_board_background_colour">@color/orange_2</item>
+
+        <item name="home__background_colour">@color/orange_1</item>
+        <item name="home__high_score_label_colour">@color/grey_0</item>
+        <item name="home__main_button_background">@color/orange_1</item>
+        <item name="home__main_button_background__focused">@color/orange_2</item>
+        <item name="home__secondary_button_background">@color/orange_2</item>
+        <item name="home__secondary_button_background_selected">@color/orange_3</item>
+        <item name="home__secondary_button_background_focused">@color/orange_4</item>
+        <item name="home__secondary_button_background_disabled">@color/orange_4</item>
+        <item name="home__secondary_button_text_colour">@color/white</item>
+        <item name="home__secondary_button_text_colour_disabled">@color/white</item>
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="game__score__heading_text_size">@dimen/scoreHeadingTextSize</item>
+        <item name="game__score__value_text_size">@dimen/scoreTextSize</item>
+        <item name="game__score__padding">@dimen/scorePadding</item>
+        <item name="game__score__padding_half">@dimen/scorePaddingHalf</item>
+
+        <item name="game__timer__height">@dimen/timerHeight</item>
+        <item name="game__timer__border_width">@dimen/timerBorderWidth</item>
+        <item name="game__tile__border_width">@dimen/tileBorderWidth</item>
+
+        <item name="game__current_word_size">@dimen/currentWordSize</item>
+        <item name="game__past_word_size">@dimen/pastWordSize</item>
+
+        <item name="home__letter_padding">@dimen/homeScreenLetterPadding</item>
+        <item name="home__button_padding">@dimen/homeScreenButtonPadding</item>
+
+        <item name="padding">@dimen/padding</item>
+    </style>
 
 </resources>

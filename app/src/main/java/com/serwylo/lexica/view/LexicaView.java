@@ -111,14 +111,14 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		height = h;
 
 		if (width < height) {
-			gridsize = width - (2 * theme.paddingSize);
+			gridsize = width - (2 * theme.padding);
 		} else {
-			gridsize = height - (2 * theme.paddingSize) - theme.timerHeight;
+			gridsize = height - (2 * theme.padding) - theme.game.timer.height;
 		}
 		boxsize = ((float) gridsize) / boardWidth;
 
 		if (mFingerTracker != null) {
-			mFingerTracker.boundBoard(theme.paddingSize + gridsize, theme.paddingSize + theme.timerHeight + gridsize);
+			mFingerTracker.boundBoard(theme.padding + gridsize, theme.padding + theme.game.timer.height + gridsize);
 		}
 	}
 
@@ -129,7 +129,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	}
 
 	private void drawBoard(Canvas canvas) {
-		int topOfGrid = theme.paddingSize;
+		int topOfGrid = theme.padding;
+
+		p.setColor(0x00ff00);
+		canvas.drawRect(0, 0, 100, 200, p);
 
 		// Draw boxes
 		for (int i = 0; i < game.getBoard().getSize(); i++) {
@@ -139,38 +142,38 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			int y = i / game.getBoard().getWidth();
 
 			if (highlighted.contains(i)) {
-				p.setColor(theme.tileHighlightColour);
+				p.setColor(theme.board.tile.highlightColour);
 			} else {
 				if (game.hintModeColor()) {
 					int weight = game.getWeight(pos);
-					int colour = weight == 0 ? theme.hintModeUnusableLetterBackgroundColour : theme.getHintModeGradientColour((float)weight / maxWeight);
+					int colour = weight == 0 ? theme.board.tile.hintModeUnusableLetterBackgroundColour : theme.board.tile.getHintModeGradientColour((float)weight / maxWeight);
 					p.setColor(colour);
 				} else {
-					p.setColor(theme.tileBackgroundColour);
+					p.setColor(theme.board.tile.backgroundColour);
 				}
 			}
 
-			float left = theme.paddingSize + (boxsize * x);
+			float left = theme.padding + (boxsize * x);
 			float top = topOfGrid + (boxsize * y);
-			float right = theme.paddingSize + (boxsize * (x + 1));
+			float right = theme.padding + (boxsize * (x + 1));
 			float bottom = topOfGrid + (boxsize * (y + 1));
 			canvas.drawRect(left, top, right, bottom, p);
 		}
 
 		// Draw grid, but exclude the first and last line (both horizontally and vertically.
-		p.setColor(theme.tileBorderColour);
-		p.setStrokeWidth(theme.tileBorderWidth);
+		p.setColor(theme.board.tile.borderColour);
+		p.setStrokeWidth(theme.board.tile.borderWidth);
 
 		// Vertical lines
-		for (float i = theme.paddingSize + boxsize; i <= theme.paddingSize + gridsize - boxsize; i += boxsize) {
+		for (float i = theme.padding + boxsize; i <= theme.padding + gridsize - boxsize; i += boxsize) {
 			canvas.drawLine(i, topOfGrid, i, gridsize + topOfGrid, p);
 		}
 		// Horizontal lines
 		for (float i = topOfGrid + boxsize; i <= topOfGrid + gridsize - boxsize; i += boxsize) {
-			canvas.drawLine(theme.paddingSize, i, gridsize + theme.paddingSize, i, p);
+			canvas.drawLine(theme.padding, i, gridsize + theme.padding, i, p);
 		}
 
-		p.setColor(theme.tileForegroundColour);
+		p.setColor(theme.board.tile.foregroundColour);
 		p.setTypeface(Fonts.get().getSansSerifCondensed());
 		float textSize = boxsize * 0.8f;
 		p.setTextSize(textSize);
@@ -185,17 +188,17 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 				int weight = game.getWeight(pos);
 
 				if (game.hintModeColor() || game.hintModeCount()) {
-					int color = (weight == 0) ? theme.hintModeUnusableLetterColour : theme.tileForegroundColour;
+					int color = (weight == 0) ? theme.board.tile.hintModeUnusableLetterColour : theme.board.tile.foregroundColour;
 					p.setColor(color);
 				} else {
-					p.setColor(theme.tileForegroundColour);
+					p.setColor(theme.board.tile.foregroundColour);
 				}
 
 				if (game.hintModeCount()) {
 					p.setTextSize(textSize / 4);
 					p.setTextAlign(Paint.Align.LEFT);
 					canvas.drawText(""+weight,
-							theme.paddingSize + (x * boxsize) + 8,
+							theme.padding + (x * boxsize) + 8,
 							topOfGrid + ((y + 1) * boxsize) - 6,
 							p);
 				}
@@ -205,7 +208,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 				p.setTextSize(textSize);
 				p.setTextAlign(Paint.Align.CENTER);
 				canvas.drawText(letterForDisplay,
-						theme.paddingSize + (x * boxsize) + (boxsize / 2),
+						theme.padding + (x * boxsize) + (boxsize / 2),
 						topOfGrid + (y * boxsize) + (boxsize / 2) - offset,
 						p);
 				if (Game.SCORE_LETTERS.equals(game.getScoreType())) {
@@ -213,7 +216,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 					p.setTextSize(textSize / 4);
 					p.setTextAlign(Paint.Align.RIGHT);
 					canvas.drawText(score,
-							theme.paddingSize + ((x + 1) * boxsize) - 8,
+							theme.padding + ((x + 1) * boxsize) - 8,
 							topOfGrid + ((y + 1) * boxsize) - 6,
 							p);
 				}
@@ -224,20 +227,20 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private void drawTimer(Canvas canvas, boolean isRtl) {
 		// Background for timer. Depending on the theme, may be the same colour as the rest
 		// of the background.
-		p.setColor(theme.timerBackgroundColour);
-		canvas.drawRect(0, height - theme.timerHeight - theme.timerBorderWidth - theme.timerBorderWidth, width, height, p);
+		p.setColor(theme.game.timer.backgroundColour);
+		canvas.drawRect(0, height - theme.game.timer.height - theme.game.timer.borderWidth - theme.game.timer.borderWidth, width, height, p);
 
 		if (timeRemaining < 1000) {
-			p.setColor(theme.timerEndForegroundColour);
+			p.setColor(theme.game.timer.endForegroundColour);
 		} else if (timeRemaining < 3000) {
-			p.setColor(theme.timerMidForegroundColour);
+			p.setColor(theme.game.timer.midForegroundColour);
 		} else {
-			p.setColor(theme.timerStartForegroundColour);
+			p.setColor(theme.game.timer.startForegroundColour);
 		}
 
 		int pixelWidth = width * timeRemaining / game.getMaxTimeRemaining();
 
-		canvas.drawRect(isRtl ? width - pixelWidth : 0, height - theme.timerHeight - theme.timerBorderWidth, isRtl ? width : pixelWidth, height, p);
+		canvas.drawRect(isRtl ? width - pixelWidth : 0, height - theme.game.timer.height - theme.game.timer.borderWidth, isRtl ? width : pixelWidth, height, p);
 	}
 
 	private FontHeightMeasurer fontHeights = new FontHeightMeasurer();
@@ -280,17 +283,17 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	private float drawPastWord(@NonNull Canvas canvas, boolean isRtl, String word, float x, float y, boolean isWord, boolean hasBeenUsedBefore) {
 		word = word.toUpperCase(game.getLanguage().getLocale());
 
-		p.setTextSize(theme.textSizeNormal);
+		p.setTextSize(theme.game.pastWordTextSize);
 		p.setTypeface(Fonts.get().getSansSerifBold());
 		p.getTextBounds(word, 0, word.length(), textBounds);
 		float height = textBounds.height();
 		float width = textBounds.width();
 
 		p.setColor(!isWord
-				? theme.notAWordColour
-				: (hasBeenUsedBefore ? theme.previouslySelectedWordColour : theme.selectedWordColour));
+				? theme.game.notAWordColour
+				: (hasBeenUsedBefore ? theme.game.previouslySelectedWordColour : theme.game.selectedWordColour));
 
-		p.setTextSize(theme.textSizeNormal);
+		p.setTextSize(theme.game.pastWordTextSize);
 		p.setTypeface(Fonts.get().getSansSerifBold());
 		p.setTextAlign(Paint.Align.LEFT);
 		canvas.drawText(
@@ -312,17 +315,17 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		// Fade out the word as it approaches the end of the screen.
 		if (isRtl) {
-			if (x - width < theme.scorePadding) {
-				Shader shaderA = new LinearGradient(theme.scorePadding * 5, y, theme.scorePadding * 2, y, 0x00ffffff, theme.backgroundColor, Shader.TileMode.CLAMP);
+			if (x - width < theme.game.score.padding) {
+				Shader shaderA = new LinearGradient(theme.game.score.padding * 5, y, theme.game.score.padding * 2, y, 0x00ffffff, theme.game.backgroundColor, Shader.TileMode.CLAMP);
 				p.setShader(shaderA);
-				canvas.drawRect(0, y - 2, theme.scorePadding * 5, y + height + 2, p);
+				canvas.drawRect(0, y - 2, theme.game.score.padding * 5, y + height + 2, p);
 				p.setShader(null);
 			}
 		} else {
-			if (x + width > getWidth() - theme.scorePadding) {
-				Shader shaderA = new LinearGradient(getWidth() - theme.scorePadding * 5, y, getWidth() - theme.scorePadding * 2, y, 0x00ffffff, theme.backgroundColor, Shader.TileMode.CLAMP);
+			if (x + width > getWidth() - theme.game.score.padding) {
+				Shader shaderA = new LinearGradient(getWidth() - theme.game.score.padding * 5, y, getWidth() - theme.game.score.padding * 2, y, 0x00ffffff, theme.game.backgroundColor, Shader.TileMode.CLAMP);
 				p.setShader(shaderA);
-				canvas.drawRect(getWidth() - theme.scorePadding * 5, y - 2, getWidth(), y + height + 2, p);
+				canvas.drawRect(getWidth() - theme.game.score.padding * 5, y - 2, getWidth(), y + height + 2, p);
 				p.setShader(null);
 			}
 		}
@@ -332,8 +335,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 	private void drawWordList(Canvas canvas, boolean isRtl, float top, float bottom) {
 
-		int currentWordHeight = fontHeights.getHeight(theme.currentWordSize);
-		int pastWordHeight = fontHeights.getHeight(theme.textSizeNormal);
+		int currentWordHeight = fontHeights.getHeight(theme.game.currentWordSize);
+		int pastWordHeight = fontHeights.getHeight(theme.game.pastWordTextSize);
 		int wordListPadding = (int)((bottom - top - currentWordHeight - pastWordHeight) / 3);
 
 		float pos = top + wordListPadding + currentWordHeight;
@@ -342,7 +345,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		// Otherwise, show the last word that was selected.
 		String bigWordToShow = currentWord;
 		if (bigWordToShow != null) {
-			p.setColor(theme.currentWordColour);
+			p.setColor(theme.game.currentWordColour);
 		} else {
 			ListIterator<String> pastWords = game.listIterator();
 			if (pastWords.hasNext()) {
@@ -362,8 +365,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 
 		if (bigWordToShow != null) {
-			p.setColor(theme.currentWordColour);
-			p.setTextSize(theme.currentWordSize);
+			p.setColor(theme.game.currentWordColour);
+			p.setTextSize(theme.game.currentWordSize);
 			p.setTypeface(Fonts.get().getSansSerifCondensed());
 			p.setTextAlign(Paint.Align.CENTER);
 			canvas.drawText(bigWordToShow.toUpperCase(game.getLanguage().getLocale()), width / 2, pos, p);
@@ -371,9 +374,9 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 
 		// draw words
-		pos += wordListPadding / 2 + theme.textSizeSmall;
+		pos += wordListPadding / 2 + theme.game.pastWordTextSize;
 
-		float x = isRtl ? getWidth() - theme.scorePadding : theme.scorePadding;
+		float x = isRtl ? getWidth() - theme.game.score.padding : theme.game.score.padding;
 		ListIterator<String> pastWords = game.listIterator();
 
 		// Don't bother showing past words if there isn't enough vertical space on this screen.
@@ -391,22 +394,22 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 				}
 			}
 
-			x = isRtl ? newX - theme.scorePadding : newX + theme.scorePadding;
+			x = isRtl ? newX - theme.game.score.padding : newX + theme.game.score.padding;
 
 			// Don't bother rendering words which push off the screen.
-			if (isLayoutRtl() && x < theme.scorePadding || !isLayoutRtl() && x > getWidth() - theme.scorePadding) {
+			if (isLayoutRtl() && x < theme.game.score.padding || !isLayoutRtl() && x > getWidth() - theme.game.score.padding) {
 				break;
 			}
 		}
 	}
 
 	private void drawScore(Canvas canvas, boolean isRtl) {
-		float headingHeight = fontHeights.getHeight(theme.scoreHeadingTextSize);
-		float valueHeight = fontHeights.getHeight(theme.scoreTextSize);
+		float headingHeight = fontHeights.getHeight(theme.game.score.headingTextSize);
+		float valueHeight = fontHeights.getHeight(theme.game.score.textSize);
 
-		float scoreHeight = theme.scorePadding + headingHeight + theme.scorePadding / 2 + valueHeight + theme.scorePadding;
-		float totalTimerHeight = theme.timerBorderWidth * 2 + theme.timerHeight;
-		p.setColor(theme.scoreBackgroundColour);
+		float scoreHeight = theme.game.score.padding + headingHeight + theme.game.score.padding / 2 + valueHeight + theme.game.score.padding;
+		float totalTimerHeight = theme.game.timer.borderWidth * 2 + theme.game.timer.height;
+		p.setColor(theme.game.score.backgroundColour);
 		canvas.drawRect(0,height - totalTimerHeight - scoreHeight, width,height - totalTimerHeight, p);
 
 		float scoreStartY = height - totalTimerHeight - scoreHeight;
@@ -432,23 +435,23 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 		p.setTextAlign(Paint.Align.CENTER);
 
-		float headingHeight = fontHeights.getHeight(theme.scoreHeadingTextSize);
+		float headingHeight = fontHeights.getHeight(theme.game.score.headingTextSize);
 
-		p.setColor(theme.scoreHeadingTextColour);
-		p.setTextSize(theme.scoreHeadingTextSize);
+		p.setColor(theme.game.score.headingTextColour);
+		p.setTextSize(theme.game.score.headingTextSize);
 		p.setTypeface(Fonts.get().getSansSerifCondensed());
-		canvas.drawText(heading, x + panelWidth / 2, y + theme.scorePadding + headingHeight, p);
+		canvas.drawText(heading, x + panelWidth / 2, y + theme.game.score.padding + headingHeight, p);
 
-		float valueHeight = fontHeights.getHeight(theme.scoreTextSize);
+		float valueHeight = fontHeights.getHeight(theme.game.score.textSize);
 
-		p.setColor(theme.scoreTextColour);
-		p.setTextSize(theme.scoreTextSize);
+		p.setColor(theme.game.score.textColour);
+		p.setTextSize(theme.game.score.textSize);
 		p.setTypeface(Fonts.get().getSansSerifBold());
-		canvas.drawText(value, x + panelWidth / 2, y + theme.scorePadding + headingHeight + theme.scorePadding / 2 + valueHeight, p);
+		canvas.drawText(value, x + panelWidth / 2, y + theme.game.score.padding + headingHeight + theme.game.score.padding / 2 + valueHeight, p);
 	}
 
 	private void clearScreen(Canvas canvas) {
-		p.setColor(theme.backgroundColor);
+		p.setColor(theme.game.backgroundColor);
 		canvas.drawRect(0, 0, width, height, p);
 	}
 
@@ -456,7 +459,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 	public void onDraw(Canvas canvas) {
 		setDimensions(getMeasuredWidth(), getMeasuredHeight());
 
-		canvas.drawColor(getResources().getColor(R.color.background));
+		canvas.drawColor(theme.scoreScreenBackgroundColour);
 
 		if (game.getStatus() != Game.GameStatus.GAME_RUNNING) return;
 
@@ -621,8 +624,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		}
 
 		void boundBoard(int w, int h) {
-			left = theme.paddingSize;
-			top = theme.paddingSize;
+			left = theme.padding;
+			top = theme.padding;
 			width = w;
 			height = h;
 

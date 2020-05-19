@@ -24,8 +24,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.LexicaView;
@@ -36,10 +38,20 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
 
 	private Synchronizer synch;
 	private Game game;
+	private FrameLayout gameWrapper;
+	private Toolbar toolbar;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.game);
+
+		gameWrapper = findViewById(R.id.game_wrapper);
+		toolbar = findViewById(R.id.toolbar);
+		toolbar.setTitle(R.string.app_name);
+		setSupportActionBar(toolbar);
+
 		if(savedInstanceState != null) {
 			try {
 				restoreGame(savedInstanceState);
@@ -68,14 +80,12 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
 		} catch (Exception e) {
 			Log.e(TAG,"top level",e);
 		}
-
-		getSupportActionBar().setElevation(0);
     }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.game_menu, menu);
+		inflater.inflate(R.menu.game_menu, toolbar.getMenu());
 		return true;
 	}
 
@@ -103,42 +113,27 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
 
 	private void newGame() {
 		game = new Game(this);
-
-		LexicaView lv = new LexicaView(this,game);
-
-		if(synch != null) {
-			synch.abort();
-		}
-		synch = new Synchronizer();
-		synch.setCounter(game);
-		synch.addEvent(lv);
-		synch.setFinalizer(this);
-
-		ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(
-			ViewGroup.LayoutParams.FILL_PARENT,
-			ViewGroup.LayoutParams.FILL_PARENT);
-		setContentView(lv,lp);
-		lv.setKeepScreenOn(true);
-		lv.setFocusableInTouchMode(true);
+		setupGameView(game);
 	}
 
 	private void restoreGame() {
 		clearSavedGame();
 		game = new Game(this, new GameSaverPersistent(this));
-		restoreGame(game);
+		setupGameView(game);
 	}
 
 	private void restoreGame(Bundle bun) {
 		game = new Game(this,new GameSaverTransient(bun));
-		restoreGame(game);
+		setupGameView(game);
 	}
 
-	private void restoreGame(Game game) {
-		LexicaView lv = new LexicaView(this,game);
+	private void setupGameView(Game game) {
+		LexicaView lv = new LexicaView(this, game);
 
 		if(synch != null) {
 			synch.abort();
 		}
+
 		synch = new Synchronizer();
 		synch.setCounter(game);
 		synch.addEvent(lv);
@@ -147,9 +142,11 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
 		ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(
 			ViewGroup.LayoutParams.FILL_PARENT,
 			ViewGroup.LayoutParams.FILL_PARENT);
-		setContentView(lv,lp);
 		lv.setKeepScreenOn(true);
 		lv.setFocusableInTouchMode(true);
+
+		gameWrapper.removeAllViews();
+		gameWrapper.addView(lv,lp);
 	}
 
 	private void saveGame() {

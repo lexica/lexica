@@ -3,7 +3,7 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:padding="@dimen/padding"
-	android:background="@color/background">
+	android:background="?attr/score__background_colour">
 
 	<LinearLayout
 		android:layout_width="fill_parent"
@@ -69,7 +69,7 @@
     	android:layout_width="fill_parent"
     	android:layout_height="fill_parent"
 		android:orientation="vertical"
-		android:background="@color/background"
+		android:background="?attr/score__background_colour"
 		android:id="@+id/missed_words"
     	>
 	

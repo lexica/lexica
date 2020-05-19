@@ -74,15 +74,15 @@ public class LexicaLogo extends View {
 
 		switch(color) {
 			case BACKGROUND:
-				p.setColor(theme.homeScreenTileBackgroundColour);
+				p.setColor(theme.home.tile.backgroundColour);
 			break;
 			case MAIN:
-				p.setColor(theme.tileBackgroundColour);
+				p.setColor(theme.board.tile.backgroundColour);
 			break;
 		}
 
 		canvas.drawRect(x,y,x + size,y + size,p);
-		p.setColor(theme.tileForegroundColour);
+		p.setColor(theme.board.tile.foregroundColour);
 		p.setTypeface(Fonts.get().getSansSerifCondensed());
 		float textSize = size * 0.8f;
 		p.setTextSize(textSize);

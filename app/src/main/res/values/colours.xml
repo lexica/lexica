@@ -1,40 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#edb641</color>
-    <color name="background">@color/colorPrimary</color>
-    <color name="colorPrimaryDark">#D7960D</color>
+    <color name="colorPrimary">@color/orange_1</color>
+    <color name="colorPrimaryDark">@color/orange_0</color>
 
-    <color name="hintModeColour4">#f94828</color>
-    <color name="hintModeColour3">#fd8d3c</color>
-    <color name="hintModeColour2">#febb56</color>
-    <color name="hintModeColour1">#fee289</color>
-    <color name="hintModeColour0">#fffcc5</color>
-    <color name="hintModeUnusableLetterColour">#888888</color>
-    <color name="hintModeUnusableLetterBackgroundColour">#ffffff</color>
+    <color name="gradient_yellow_to_red_4">#f94828</color>
+    <color name="gradient_yellow_to_red_3">#fd8d3c</color>
+    <color name="gradient_yellow_to_red_2">#febb56</color>
+    <color name="gradient_yellow_to_red_1">#fee289</color>
+    <color name="gradient_yellow_to_red_0">#fffcc5</color>
 
-    <color name="tileForegroundColour">#3d3c3b</color>
-    <color name="tileBackgroundColour">#f9f8d7</color>
-    <color name="homeScreenTileBackgroundColour">#ffffff</color>
-    <color name="tileBorderColour">#b1ad9c</color>
-    <color name="tileHighlightColour">#ffff00</color>
-    <color name="currentWordColour">@color/tileForegroundColour</color>
-    <color name="previouslySelectedWordColour">#88ffffff</color>
-    <color name="selectedWordColour">#ffffff</color>
-    <color name="notAWordColour">@color/previouslySelectedWordColour</color>
-    <color name="scoreBackgroundColour">#f0cb69</color>
-    <color name="timerBackgroundColour">#f0cb69</color>
-    <color name="timerStartForegroundColour">#edb641</color>
-    <color name="timerMidForegroundColour">#edb641</color>
-    <color name="timerEndForegroundColour">#edb641</color>
+    <color name="grey_0">#3d3c3b</color>
+    <color name="grey_1">#888888</color>
+    <color name="grey_2">#b1ad9c</color>
 
-    <color name="homeScreenMainButtonBackground">@color/colorPrimary</color>
-    <color name="homeScreenMainButtonBackground_focused">@color/timerBackgroundColour</color>
-    <color name="homeScreenSecondaryButtonBackground">@color/timerBackgroundColour</color>
-    <color name="homeScreenSecondaryButtonBackground_selected">#F8D882</color>
-    <color name="homeScreenSecondaryButtonBackground_focused">#FFE39A</color>
-    <color name="homeScreenSecondaryButtonBackground_disabled">#FFE39A</color>
-    <color name="homeScreenSecondaryButtonTextColour">@color/selectedWordColour</color>
-    <color name="homeScreenSecondaryButtonTextColour_disabled">@color/selectedWordColour</color>
-    <color name="homeScreenHighScoreLabelColour">@color/tileForegroundColour</color>
+    <color name="yellow_1">#f9f8d7</color>
+    <color name="yellow_2">#ffff00</color>
 
+    <color name="white">#ffffff</color>
+    <color name="white_faint">#88ffffff</color>
+
+    <color name="orange_0">#D7960D</color>
+    <color name="orange_1">#edb641</color>
+    <color name="orange_2">#f0cb69</color>
+    <color name="orange_3">#F8D882</color>
+    <color name="orange_4">#FFE39A</color>
 </resources>
