@@ -36,10 +36,54 @@
     <string name="pref_dict_beta">%1$s (Beta)</string>
     <string name="pref_dict_us">englanti (US)</string>
     <string name="pref_dict_uk_ua">ukraina</string>
-    <string name="pref_dict_uk">englanti (YK)</string>
+    <string name="pref_dict_uk">englanti (UK)</string>
     <string name="pref_dict_ru">venäjä</string>
     <string name="pref_dict_pl">puola</string>
     <string name="pref_dict_nl">hollanti</string>
     <string name="pref_dict_jp">japani</string>
     <string name="pref_dict_it">italia</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Internet</string>
+    <string name="pref_definitionProvider_dialog">Valitse määritelmien tarjoaja</string>
+    <string name="pref_definitionProvider_summary">Valitse käytettävä määritelmien tarjoaja. Jos valittua tarjoajaa ei ole asennettu, DuckDuckGota käytetään.</string>
+    <string name="pref_definitionProvider">Määritelmien tarjoaja</string>
+    <string name="pref_breakdown_summary">Näytetäänkö sanojen määrä eripituisille sanoille erikseen</string>
+    <string name="pref_breakdown">Näytä sanojen pituuksien erittely</string>
+    <string name="pref_resetScores_summary">Ennätykset tallennetaan erikseen jokaiselle yhdistelmälle yllä olevia asetuksia. Paina nollataksesi kaikki pisteet.</string>
+    <string name="reset_scores_prompt">Oletko varma, että halueat nollata kaikkien pelitilojen ennätykset\?</string>
+    <string name="high_scores_reset">Ennätykset on nollattu.</string>
+    <string name="pref_resetScores">Nollaa ennätykset</string>
+    <string name="high_score">Ennätys: %1$d</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d %%)</string>
+    <string name="total_score">Pisteitä yhteensä:</string>
+    <string name="total_words">Sanoja yhteensä:</string>
+    <string name="missed_words">Löytämättömät sanat</string>
+    <string name="define_word"><u>Määritelmä</u> </string>
+    <string name="hide_unique">Piilota ainutlaatuiset sanat</string>
+    <string name="show_unique">Näytä ainutlaatuiset sanat</string>
+    <string name="hide_missed">Piilota löytämättömät sanat</string>
+    <string name="show_missed">Näytä löytämättömät sanat</string>
+    <string name="menu_rotate_board">Käännä lautaa</string>
+    <string name="dialog_about_content">Kosketa näyttöä ja liikuta sormeasi viereisien laattojen mukaisesti muodostaaksesi sanoja. Etsi niin monta sanaa kuin ehdit, aikaa on kolme minuuttia.
+\n
+\nPisteytys:
+\n4x4-laudalla sanojen pitää olla vähintään kolmikirjaimisia. 5x5-laudalla sanojen pitää olla vähintään nelikirjaimisia. Kolmi- ja nelikirjaimet sanat ovat yhden pisteen arvoisia. Pidemmät sanat ovat useamman pisteen arvoisia. Erisnimiä ei lasketa.
+\n
+\n</string>
+    <string name="dialog_no_saved">Peliä ei ole tallennettu. Jos luet tätä viestiä, jokin on todennäköisesti mennyt rikki.</string>
+    <string name="pref_sounds_summary">Käytetäänkö äänitehosteita vai ei</string>
+    <string name="pref_sounds">Äänet käytössä</string>
+    <string name="hint_both">Molemmat</string>
+    <string name="hint_colour">Laatan väri</string>
+    <string name="tile_count">Sanojen määrä</string>
+    <string name="hint_none">Pois käytöstä</string>
+    <string name="pref_hintMode_dialog">Vihjeiden tyyppi</string>
+    <string name="pref_hintMode_summary">Näyttää, kuinka monessa sanassa kutakin kirjainta voi käyttää</string>
+    <string name="pref_hintMode">Vihjeiden tyyppi</string>
+    <string name="letter_points">Kirjainpisteet</string>
+    <string name="pref_scoreType_dialog">Valitse pisteytystapa</string>
+    <string name="pref_scoreType_summary">Valitse pisteidenlaskutapa</string>
+    <string name="pref_scoreType">Pisteytystapa</string>
+    <string name="pref_boardSize_dialog">Valitse laudan koko</string>
+    <string name="pref_boardSize_summary">Valitse pelilaudan koko</string>
+    <string name="pref_dict_pt_BR">portugali (Brasilia)</string>
 </resources>
