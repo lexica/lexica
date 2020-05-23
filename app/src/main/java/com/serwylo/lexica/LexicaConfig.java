@@ -36,22 +36,7 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
 		addPreferencesFromResource(R.xml.preferences);
         findPreference("resetScores").setOnPreferenceClickListener(this);
         highlightBetaLanguages();
-        setDefaultToDeviceLanguage();
-    }
-
-    private void setDefaultToDeviceLanguage() {
-        ListPreference pref = (ListPreference) findPreference("dict");
-        CharSequence[] entries = pref.getEntries();
-        CharSequence[] values = pref.getEntryValues();
-        for (int i = 0; i < entries.length; i ++) {
-            Language language = Language.fromOrNull(values[i].toString());
-            if (language != null) {
-                if (language.getLocale() == getResources().getConfiguration().locale) {
-                    pref.setDefaultValue(entries[i]);
-                    return;
-                }
-            }
-        }
+        setUsedLexicon();
     }
 
     private void highlightBetaLanguages() {
@@ -67,6 +52,11 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
             }
         }
         pref.setEntries(entries);
+    }
+
+    private void setUsedLexicon() {
+        ListPreference pref = (ListPreference) findPreference("dict");
+        pref.setValue(new Util().getLexiconString(this));
     }
 
     @Override

@@ -9,7 +9,6 @@
 		android:summary="@string/pref_dict_summary"
 		android:entries="@array/dict_choices_entries"
 		android:entryValues="@array/dict_choices_entryvalues"
-		android:defaultValue="US"
 		android:dialogTitle="@string/pref_dict_dialog"
 	/>
 

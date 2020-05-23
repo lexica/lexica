@@ -29,6 +29,7 @@ import android.util.SparseIntArray;
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
+import com.serwylo.lexica.Util;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.EnglishUS;
@@ -306,7 +307,7 @@ public class Game implements Synchronizer.Counter {
 		SharedPreferences prefs =
 			PreferenceManager.getDefaultSharedPreferences(c);
 
-		String languageCode = prefs.getString("dict", "US");
+		String languageCode = new Util().getLexiconString(context);
 		language = Language.fromOrNull(languageCode);
 		if (language == null) {
 			// Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_GB")
