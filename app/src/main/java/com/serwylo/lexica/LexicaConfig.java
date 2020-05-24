@@ -36,6 +36,7 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
 		addPreferencesFromResource(R.xml.preferences);
         findPreference("resetScores").setOnPreferenceClickListener(this);
         highlightBetaLanguages();
+        setUsedLexicon();
     }
 
     private void highlightBetaLanguages() {
@@ -51,6 +52,11 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
             }
         }
         pref.setEntries(entries);
+    }
+
+    private void setUsedLexicon() {
+        ListPreference pref = (ListPreference) findPreference("dict");
+        pref.setValue(new Util().getLexiconString(this));
     }
 
     @Override
