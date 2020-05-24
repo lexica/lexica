@@ -76,7 +76,7 @@ public class PortugueseBR extends Language {
 
     @Override
     public Locale getLocale() {
-        return new Locale("pt_BR");
+        return new Locale("pt", "BR");
     }
 
     @Override

@@ -16,7 +16,7 @@
     <string name="pref_dict_it">İtalyanca</string>
     <string name="pref_dict_ca">Katalanca</string>
     <string name="pref_dict_es">İspanyolca</string>
-    <string name="pref_dict_jp">Japonca</string>
+    <string name="pref_dict_ja">Japonca</string>
     <string name="pref_dict_ru">Rusça</string>
     <string name="pref_dict_beta">%1$s (Beta sürüm)</string>
     <string name="pref_boardSize">Tahta Boyutu</string>

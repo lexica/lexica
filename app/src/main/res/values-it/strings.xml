@@ -77,7 +77,7 @@
     <string name="pref_scoreType_summary">Seleziona un tipo di punteggio</string>
     <string name="pref_scoreType">Tipo di punteggio</string>
     <string name="pref_dict_nl">Olandese</string>
-    <string name="pref_dict_jp">Giapponese</string>
+    <string name="pref_dict_ja">Giapponese</string>
     <string name="pref_dict_it">Italiano</string>
     <string name="pref_dict_hu">Ungherese</string>
     <string name="pref_dict_fr_fr">Francese</string>

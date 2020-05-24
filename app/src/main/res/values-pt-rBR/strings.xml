@@ -8,7 +8,7 @@
     <string name="words">PALAVRAS</string>
     <string name="time_30m">30 minutos</string>
     <string name="pref_definitionProvider_summary">Selecione o provedor de definições a usar. Se o provedor selecionado não estiver instalado, será utilizado o DuckDuckGo.</string>
-    <string name="pref_dict_jp">Japonês</string>
+    <string name="pref_dict_ja">Japonês</string>
     <string name="pref_dict_es">Espanhol</string>
     <string name="define_word"><u>Definição</u> </string>
     <string name="dialog_ok">OK</string>

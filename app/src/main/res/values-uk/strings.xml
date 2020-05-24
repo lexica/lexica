@@ -93,7 +93,7 @@
 	<string name="pref_definitionProvider">Провайдер значень слів</string>
 	<string name="pref_definitionProvider_summary">Вкажіть бажаного провайдера значень слів. Стандартно використовується DuckDuckGo.</string>
 	<string name="pref_definitionProvider_dialog">Вкажіть провайдера значень слів</string>
-	<string name="pref_dict_jp">Японська</string>
+	<string name="pref_dict_ja">Японська</string>
 	<string name="pref_dict_ru">Російська</string>
 	<string name="pref_dict_hu">Угорська</string>
 	<string name="pref_dict_uk_ua">Українська</string>

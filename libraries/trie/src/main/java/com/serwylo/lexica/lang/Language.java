@@ -23,7 +23,7 @@ public abstract class Language {
             langs.put("fr_FR", new French());
             langs.put("hu", new Hungarian());
             langs.put("it", new Italian());
-            langs.put("jp", new Japanese());
+            langs.put("ja", new Japanese());
             langs.put("nl", new Dutch());
             langs.put("pl", new Polish());
             langs.put("pt_BR", new PortugueseBR());

@@ -40,7 +40,7 @@
     <string name="pref_dict_ru">venäjä</string>
     <string name="pref_dict_pl">puola</string>
     <string name="pref_dict_nl">hollanti</string>
-    <string name="pref_dict_jp">japani</string>
+    <string name="pref_dict_ja">japani</string>
     <string name="pref_dict_it">italia</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Internet</string>
     <string name="pref_definitionProvider_dialog">Valitse määritelmien tarjoaja</string>

@@ -74,7 +74,7 @@
     <string name="pref_dict_fr_fr">フランス語</string>
     <string name="pref_dict_hu">ハンガリー語</string>
     <string name="pref_dict_it">イタリア語</string>
-    <string name="pref_dict_jp">日本語</string>
+    <string name="pref_dict_ja">日本語</string>
     <string name="pref_dict_ru">ロシア語</string>
     <string name="pref_hintMode">ヒントモード</string>
     <string name="pref_hintMode_summary">各文字で使用できる単語の数を表示します</string>

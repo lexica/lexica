@@ -8,7 +8,7 @@
 		<item>@string/pref_dict_fr_fr</item>
 		<item>@string/pref_dict_hu</item>
 		<item>@string/pref_dict_it</item>
-		<item>@string/pref_dict_jp</item>
+		<item>@string/pref_dict_ja</item>
 		<item>@string/pref_dict_nl</item>
 		<item>@string/pref_dict_pl</item>
 		<item>@string/pref_dict_pt_BR</item>
@@ -28,7 +28,7 @@
 		<item>fr_FR</item>
 		<item>hu</item>
 		<item>it</item>
-		<item>jp</item>
+		<item>ja</item>
 		<item>nl</item>
 		<item>pl</item>
 		<item>pt_BR</item>
