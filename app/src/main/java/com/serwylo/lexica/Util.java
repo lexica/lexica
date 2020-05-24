@@ -23,12 +23,12 @@ public class Util {
 
         String systemLanguage = context.getResources().getConfiguration().locale.getLanguage();
         String[] dictionaryLanguages = context.getResources().getStringArray(R.array.dict_choices_entryvalues);
-        for (int i = 0; i < dictionaryLanguages.length; i ++) {
-            Language language = Language.fromOrNull(dictionaryLanguages[i]);
+        for (String dictionaryLanguage : dictionaryLanguages) {
+            Language language = Language.fromOrNull(dictionaryLanguage);
             if (language != null) {
-                if (systemLanguage == language.getLocale().getLanguage()) {
-                    Log.d(TAG, "Language " + dictionaryLanguages[i] + " best matches " + systemLanguage);
-                    return dictionaryLanguages[i];
+                if (systemLanguage != null && systemLanguage.equals(language.getLocale().getLanguage())) {
+                    Log.d(TAG, "Language " + dictionaryLanguage + " best matches " + systemLanguage);
+                    return dictionaryLanguage;
                 }
             }
         }
