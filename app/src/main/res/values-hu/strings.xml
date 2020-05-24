@@ -16,7 +16,7 @@
     <string name="pref_dict_it">Olasz</string>
     <string name="pref_dict_ca">Katalán</string>
     <string name="pref_dict_es">Spanyol</string>
-    <string name="pref_dict_jp">Japán</string>
+    <string name="pref_dict_ja">Japán</string>
     <string name="pref_dict_ru">Orosz</string>
     <string name="pref_dict_beta">%1$s (béta)</string>
     <string name="pref_boardSize">Táblaméret</string>

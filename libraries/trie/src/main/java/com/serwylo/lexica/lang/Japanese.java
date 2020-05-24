@@ -118,12 +118,12 @@ public class Japanese extends Language {
 
     @Override
     public Locale getLocale() {
-        return new Locale("jp");
+        return new Locale("ja");
     }
 
     @Override
     public String getName() {
-        return "jp";
+        return "ja";
     }
 
     @Override
