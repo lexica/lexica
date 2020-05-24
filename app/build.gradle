@@ -28,6 +28,11 @@ android {
             shrinkResources false
         }
     }
+
+    testOptions {
+        // http://tools.android.com/tech-docs/unit-testing-support#TOC-Method-...-not-mocked.-
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
