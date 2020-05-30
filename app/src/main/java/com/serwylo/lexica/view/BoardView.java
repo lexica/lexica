@@ -137,7 +137,7 @@ public class BoardView extends View {
 			canvas.drawRect(left, top, right, bottom, p);
 		}
 
-		// Draw grid, but exclude the first and last line (both horizontally and vertically.
+		// Draw grid, but exclude the first and last line (both horizontally and vertically unless asked)
 		p.setColor(theme.board.tile.borderColour);
 		p.setStrokeWidth(theme.board.tile.borderWidth);
 
@@ -148,6 +148,15 @@ public class BoardView extends View {
 		// Horizontal lines
 		for (float i = boxsize; i <= gridsize - boxsize; i += boxsize) {
 			canvas.drawLine(0, i, gridsize, i, p);
+		}
+
+		if (theme.board.hasOuterBorder) {
+			p.setStyle(Paint.Style.STROKE);
+			p.setColor(theme.board.tile.borderColour);
+			p.setStrokeWidth(theme.board.tile.borderWidth);
+			canvas.drawRect(0, 0, width, height, p);
+
+			p.setStyle(Paint.Style.FILL);
 		}
 
 		p.setColor(theme.board.tile.foregroundColour);
@@ -201,16 +210,10 @@ public class BoardView extends View {
 		}
 	}
 
-	private void clearScreen(Canvas canvas) {
-		p.setColor(theme.game.backgroundColor);
-		canvas.drawRect(0, 0, width / 2, height, p);
-	}
-
 	@Override
 	public void onDraw(Canvas canvas) {
 		setDimensions(getMeasuredWidth(), getMeasuredHeight());
 
-		clearScreen(canvas);
 		drawBoard(canvas);
 	}
 

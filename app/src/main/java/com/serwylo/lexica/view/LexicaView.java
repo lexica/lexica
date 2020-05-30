@@ -160,7 +160,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			canvas.drawRect(left, top, right, bottom, p);
 		}
 
-		// Draw grid, but exclude the first and last line (both horizontally and vertically.
+		// Draw grid, but exclude the first and last line (both horizontally and vertically unless asked)
 		p.setColor(theme.board.tile.borderColour);
 		p.setStrokeWidth(theme.board.tile.borderWidth);
 
@@ -169,7 +169,8 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			canvas.drawLine(i, topOfGrid, i, gridsize + topOfGrid, p);
 		}
 		// Horizontal lines
-		for (float i = topOfGrid + boxsize; i <= topOfGrid + gridsize - boxsize; i += boxsize) {
+		float finalHorizontalLinePosition = theme.board.hasOuterBorder ? topOfGrid + gridsize : topOfGrid + gridsize - boxsize;
+		for (float i = topOfGrid + boxsize; i <= finalHorizontalLinePosition; i += boxsize) {
 			canvas.drawLine(theme.padding, i, gridsize + theme.padding, i, p);
 		}
 

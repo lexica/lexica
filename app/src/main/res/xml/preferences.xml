@@ -48,6 +48,15 @@
 		android:summary="@string/pref_resetScores_summary"
 	/>
 
+	<ListPreference
+		android:key="theme"
+		android:title="@string/pref_theme"
+		android:entries="@array/theme_choices_entries"
+		android:entryValues="@array/theme_choices_entryvalues"
+		android:defaultValue="light"
+		android:dialogTitle="@string/pref_theme_dialog"
+		/>
+
 	<CheckBoxPreference
 		android:key="showBreakdown"
 		android:defaultValue="false"

@@ -10,7 +10,7 @@
 		android:id="@+id/score_wrapper"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
-		android:background="?attr/game__score__background_colour"
+		android:background="?attr/score__values_background_colour"
 		app:layout_constraintTop_toTopOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintEnd_toEndOf="parent">

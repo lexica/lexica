@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.Px;
+import androidx.annotation.StyleableRes;
 import androidx.core.graphics.ColorUtils;
 
 import com.serwylo.lexica.R;
@@ -17,23 +18,52 @@ public class ThemeProperties {
 	public final GameProperties game;
 	public final BoardProperties board;
 
+	public static class TileProperties {
+
+		@ColorInt public final int backgroundColour;
+		@ColorInt public final int foregroundColour;
+		@ColorInt public final int borderColour;
+		@Px public final int borderWidth;
+		@ColorInt public final int highlightColour;
+
+		public TileProperties(TypedArray array, @StyleableRes int bg, @StyleableRes int fg, @StyleableRes int borderColour, @StyleableRes int borderWidth) {
+			backgroundColour = array.getColor(bg, 0x000000);
+			foregroundColour = array.getColor(fg, 0xffffff);
+			this.borderColour = array.getColor(borderColour, 0x00000000);
+			this.borderWidth = array.getDimensionPixelSize(borderWidth, 2);
+			highlightColour = 0x00000000;
+		}
+
+		public TileProperties(TypedArray array, @StyleableRes int bg, @StyleableRes int fg, @StyleableRes int borderColour, @StyleableRes int borderWidth, @StyleableRes int highlight) {
+			backgroundColour = array.getColor(bg, 0x000000);
+			foregroundColour = array.getColor(fg, 0xffffff);
+			this.borderColour = array.getColor(borderColour, 0x00000000);
+			this.borderWidth = array.getDimensionPixelSize(borderWidth, 2);
+			highlightColour = array.getColor(highlight, 0x00000000);
+		}
+	}
+
 	public static class HomeProperties {
 
-		public final TileProperties tile;
+		public final TileProperties bgTile;
+		public final TileProperties fgTile;
 
 		@ColorInt public final int backgroundColor;
 
-		public static class TileProperties {
-
-			@ColorInt public final int backgroundColour;
-
-			public TileProperties(TypedArray array) {
-				backgroundColour = array.getColor(R.styleable.LexicaView_home__tile__background_colour, 0xffffff);
-			}
-		}
-
 		public HomeProperties(TypedArray array) {
-			this.tile = new TileProperties(array);
+			this.bgTile = new TileProperties(
+					array,
+					R.styleable.LexicaView_home__bg_tile__background_colour,
+					R.styleable.LexicaView_home__bg_tile__foreground_colour,
+					R.styleable.LexicaView_home__bg_tile__border_colour,
+					R.styleable.LexicaView_home__bg_tile__border_width);
+
+			this.fgTile = new TileProperties(
+					array,
+					R.styleable.LexicaView_home__fg_tile__background_colour,
+					R.styleable.LexicaView_home__fg_tile__foreground_colour,
+					R.styleable.LexicaView_home__fg_tile__border_colour,
+					R.styleable.LexicaView_home__fg_tile__border_width);
 
 			backgroundColor = array.getColor(R.styleable.LexicaView_home__background_colour, 0xedb641);
 		}
@@ -43,26 +73,27 @@ public class ThemeProperties {
 	public static class BoardProperties {
 
 		public final TileProperties tile;
+		public final boolean hasOuterBorder;
 
-		public static class TileProperties {
+		public static class TileProperties extends ThemeProperties.TileProperties {
 
 			@Px public final int borderWidth;
-			@ColorInt public final int backgroundColour;
-			@ColorInt public final int foregroundColour;
-			@ColorInt public final int borderColour;
-			@ColorInt public final int highlightColour;
 			private final @ColorInt int[] hintModeColours;
 			@ColorInt public final int hintModeUnusableLetterColour;
 			@ColorInt public final int hintModeUnusableLetterBackgroundColour;
 
 			public TileProperties(TypedArray array) {
 
+				super(
+						array,
+						R.styleable.LexicaView_board__tile__background_colour,
+						R.styleable.LexicaView_board__tile__foreground_colour,
+						R.styleable.LexicaView_board__tile__border_colour,
+						R.styleable.LexicaView_board__tile__border_width,
+						R.styleable.LexicaView_board__tile__highlight_colour);
+
 				borderWidth = array.getDimensionPixelSize(R.styleable.LexicaView_game__tile__border_width, 1 /* dp */);
 
-				backgroundColour = array.getColor(R.styleable.LexicaView_board__tile__background_colour, 0xf9f8d7);
-				foregroundColour = array.getColor(R.styleable.LexicaView_board__tile__foreground_colour, 0x3d3c3b);
-				borderColour = array.getColor(R.styleable.LexicaView_board__tile__border_colour, 0x3d3c3b);
-				highlightColour = array.getColor(R.styleable.LexicaView_board__tile__highlight_colour, 0xffff00);
 				hintModeColours = new int[] {
 						array.getColor(R.styleable.LexicaView_board__hint_mode_colour_0, 0xffffff),
 						array.getColor(R.styleable.LexicaView_board__hint_mode_colour_1, 0xffffff),
@@ -70,6 +101,7 @@ public class ThemeProperties {
 						array.getColor(R.styleable.LexicaView_board__hint_mode_colour_3, 0xffffff),
 						array.getColor(R.styleable.LexicaView_board__hint_mode_colour_4, 0xffffff)
 				};
+
 				hintModeUnusableLetterColour = array.getColor(R.styleable.LexicaView_board__hint_mode_unusable_letter_colour, 0x888888);
 				hintModeUnusableLetterBackgroundColour = array.getColor(R.styleable.LexicaView_board__hint_mode_unusable_letter_background_colour, 0x888888);
 
@@ -108,6 +140,8 @@ public class ThemeProperties {
 
 		public BoardProperties(TypedArray array) {
 			this.tile = new TileProperties(array);
+
+			this.hasOuterBorder = array.getBoolean(R.styleable.LexicaView_board__has_outer_border, false);
 		}
 	}
 
@@ -184,7 +218,7 @@ public class ThemeProperties {
 
 	public ThemeProperties(Context context, AttributeSet attrs, int defStyle) {
 
-		final TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.LexicaView, defStyle, R.style.AppTheme_Base);
+		final TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.LexicaView, defStyle, R.style.AppTheme_Light);
 
 		this.home = new HomeProperties(array);
 		this.game = new GameProperties(array);

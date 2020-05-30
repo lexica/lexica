@@ -75,7 +75,7 @@
 		fancy:fb_textSize="18sp"
 		fancy:fb_defaultColor="?attr/home__secondary_button_background"
 		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-		fancy:fb_disabledColor="?attr/home__secondary_button_background_focused"
+		fancy:fb_disabledColor="?attr/home__secondary_button_background"
 		fancy:fb_text="@string/restore_game"
 		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
 		fancy:fb_disabledTextColor="?attr/home__secondary_button_text_colour_disabled"

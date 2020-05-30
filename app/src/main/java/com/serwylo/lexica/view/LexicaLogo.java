@@ -72,17 +72,17 @@ public class LexicaLogo extends View {
 	private void drawTile(Canvas canvas, Paint p, String letter, BoxColor color,
 		int x, int y, int size, float offset) {
 
-		switch(color) {
-			case BACKGROUND:
-				p.setColor(theme.home.tile.backgroundColour);
-			break;
-			case MAIN:
-				p.setColor(theme.board.tile.backgroundColour);
-			break;
-		}
-
+		ThemeProperties.TileProperties tileColours = color == BoxColor.BACKGROUND ? theme.home.bgTile : theme.home.fgTile;
+		p.setColor(tileColours.backgroundColour);
 		canvas.drawRect(x,y,x + size,y + size,p);
-		p.setColor(theme.board.tile.foregroundColour);
+
+		p.setColor(tileColours.borderColour);
+		p.setStrokeWidth(tileColours.borderWidth);
+		p.setStyle(Paint.Style.STROKE);
+		canvas.drawRect(x,y,x + size,y + size,p);
+
+		p.setStyle(Paint.Style.FILL);
+		p.setColor(tileColours.foregroundColour);
 		p.setTypeface(Fonts.get().getSansSerifCondensed());
 		float textSize = size * 0.8f;
 		p.setTextSize(textSize);

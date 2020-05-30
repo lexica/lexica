@@ -7,9 +7,10 @@
 
         <attr format="color" name="board__tile__foreground_colour" />
         <attr format="color" name="board__tile__background_colour" />
-        <attr format="color" name="home__tile__background_colour" />
         <attr format="color" name="board__tile__border_colour" />
+        <attr format="color" name="board__tile__border_width" />
         <attr format="color" name="board__tile__highlight_colour" />
+        <attr format="boolean" name="board__has_outer_border" />
         <attr format="color" name="board__hint_mode_colour_0" />
         <attr format="color" name="board__hint_mode_colour_1" />
         <attr format="color" name="board__hint_mode_colour_2" />
@@ -33,6 +34,7 @@
         <attr format="color" name="game__score__text_colour" />
 
         <attr format="color" name="score__background_colour" />
+        <attr format="color" name="score__values_background_colour" />
         <attr format="color" name="score__missed_board_background_colour" />
 
         <attr format="dimension" name="home__letter_padding" />
@@ -47,6 +49,14 @@
         <attr format="color" name="home__secondary_button_background_disabled" />
         <attr format="color" name="home__secondary_button_text_colour" />
         <attr format="color" name="home__secondary_button_text_colour_disabled" />
+        <attr format="color" name="home__bg_tile__background_colour" />
+        <attr format="color" name="home__bg_tile__foreground_colour" />
+        <attr format="color" name="home__bg_tile__border_colour" />
+        <attr format="color" name="home__bg_tile__border_width" />
+        <attr format="color" name="home__fg_tile__background_colour" />
+        <attr format="color" name="home__fg_tile__foreground_colour" />
+        <attr format="color" name="home__fg_tile__border_colour" />
+        <attr format="color" name="home__fg_tile__border_width" />
 
         <attr format="dimension" name="padding" />
         <attr format="dimension" name="game__timer__height" />

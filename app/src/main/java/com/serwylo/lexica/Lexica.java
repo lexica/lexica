@@ -45,6 +45,7 @@ public class Lexica extends Activity {
     public void onCreate(Bundle savedInstanceState) {
 		try {
        		super.onCreate(savedInstanceState);
+			ThemeManager.getInstance().applyTheme(this);
 			splashScreen();
 		} catch (Exception e) {
 			// Log.e(TAG,"top level",e);

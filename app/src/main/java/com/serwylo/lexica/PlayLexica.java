@@ -44,6 +44,7 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		ThemeManager.getInstance().applyTheme(this);
 
 		setContentView(R.layout.game);
 

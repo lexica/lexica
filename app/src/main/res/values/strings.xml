@@ -93,4 +93,8 @@
     <string name="pref_definitionProvider_summary">Select a definition provider to use. If the selected provider is not installed, DuckDuckGo will be used.</string>
     <string name="pref_definitionProvider_dialog">Select Definition Provider</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
+    <string name="pref_theme">Theme</string>
+    <string name="pref_theme_dialog">Select Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
 </resources>

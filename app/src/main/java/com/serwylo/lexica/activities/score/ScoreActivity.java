@@ -32,6 +32,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.serwylo.lexica.GameSaverTransient;
 import com.serwylo.lexica.R;
+import com.serwylo.lexica.ThemeManager;
 import com.serwylo.lexica.game.Game;
 
 import mehdi.sakout.fancybuttons.FancyButton;
@@ -51,6 +52,7 @@ public class ScoreActivity extends AppCompatActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		ThemeManager.getInstance().applyTheme(this);
 
 		// Surely there is a better way to get theme attributes then this. Unfortunately we can't
 		// make use of the ThemeProperties helper class in Lexica because that is only useful

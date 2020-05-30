@@ -19,6 +19,7 @@ package com.serwylo.lexica;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -30,15 +31,29 @@ import androidx.appcompat.app.AlertDialog;
 import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.lang.Language;
 
-public class LexicaConfig extends PreferenceActivity implements Preference.OnPreferenceClickListener {
+public class LexicaConfig extends PreferenceActivity implements Preference.OnPreferenceClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
        	super.onCreate(savedInstanceState);
+        ThemeManager.getInstance().applyTheme(this);
 		addPreferencesFromResource(R.xml.preferences);
         findPreference("resetScores").setOnPreferenceClickListener(this);
         highlightBetaLanguages();
         setUsedLexicon();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+
+    }
+
+    @Override
+    public void onPause() {
+        getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        super.onPause();
     }
 
     private void highlightBetaLanguages() {
@@ -87,5 +102,15 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
     private void clearHighScores() {
         getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().apply();
         Toast.makeText(this, R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if ("theme".equals(key)) {
+            ThemeManager themeManager = ThemeManager.getInstance();
+            themeManager.rememberTheme(this);
+            themeManager.applyTheme(this);
+            themeManager.forceRestartActivityToRetheme(this);
+        }
     }
 }
