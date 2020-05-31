@@ -19,41 +19,25 @@ package com.serwylo.lexica;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 
 import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.lang.Language;
 
-public class LexicaConfig extends PreferenceActivity implements Preference.OnPreferenceClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
+public class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceClickListener {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-       	super.onCreate(savedInstanceState);
-        ThemeManager.getInstance().applyTheme(this);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 		addPreferencesFromResource(R.xml.preferences);
         findPreference("resetScores").setOnPreferenceClickListener(this);
         highlightBetaLanguages();
         setUsedLexicon();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
-
-    }
-
-    @Override
-    public void onPause() {
-        getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
-        super.onPause();
     }
 
     private void highlightBetaLanguages() {
@@ -73,13 +57,13 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
 
     private void setUsedLexicon() {
         ListPreference pref = (ListPreference) findPreference("dict");
-        pref.setValue(new Util().getLexiconString(this));
+        pref.setValue(new Util().getLexiconString(getContext()));
     }
 
     @Override
     public boolean onPreferenceClick(Preference preference) {
         if ("resetScores".equals(preference.getKey())) {
-            new AlertDialog.Builder(this)
+            new AlertDialog.Builder(getContext())
                     .setTitle(getString(R.string.pref_resetScores))
                     .setMessage(getString(R.string.reset_scores_prompt))
                     .setPositiveButton(android.R.string.ok, promptListener)
@@ -100,17 +84,7 @@ public class LexicaConfig extends PreferenceActivity implements Preference.OnPre
     };
 
     private void clearHighScores() {
-        getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().apply();
-        Toast.makeText(this, R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if ("theme".equals(key)) {
-            ThemeManager themeManager = ThemeManager.getInstance();
-            themeManager.rememberTheme(this);
-            themeManager.applyTheme(this);
-            themeManager.forceRestartActivityToRetheme(this);
-        }
+        getContext().getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().apply();
+        Toast.makeText(getContext(), R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
     }
 }

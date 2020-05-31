@@ -42,7 +42,8 @@
 			</intent-filter>
         </activity>
 
-        <activity android:name=".LexicaConfig" android:exported="false">
+        <activity android:name=".SettingsActivity" android:exported="false" android:parentActivityName=".Lexica">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Lexica" />
 			<intent-filter>
 				<action android:name="com.serwylo.lexica.action.CONFIGURE" />
 				<category android:name="android.intent.category.DEFAULT" />

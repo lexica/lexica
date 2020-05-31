@@ -134,7 +134,7 @@
         <item name="home__bg_tile__border_colour">@color/yellow_1</item>
         <item name="home__fg_tile__background_colour">@color/yellow_1</item>
         <item name="home__fg_tile__foreground_colour">@color/grey_1</item>
-        <item name="home__fg_tile__border_colour">@color/grey_4</item>
+        <item name="home__fg_tile__border_colour">@android:color/transparent</item>
 
         <!-- START DIMENSIONS: Shouldn't change between light and dark themes -->
         <item name="game__score__heading_text_size">@dimen/scoreHeadingTextSize</item>

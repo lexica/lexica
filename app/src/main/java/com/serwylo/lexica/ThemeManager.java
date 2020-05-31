@@ -23,7 +23,8 @@ public class ThemeManager {
         return instance;
     }
 
-    private static final String PREFERENCE_NAME = "theme";
+    public static final String PREFERENCE_NAME = "theme";
+
     private static final String THEME_LIGHT = "light";
     private static final String THEME_DARK = "dark";
 
