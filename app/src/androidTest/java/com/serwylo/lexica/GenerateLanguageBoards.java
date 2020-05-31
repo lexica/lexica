@@ -1,14 +1,16 @@
 package com.serwylo.lexica;
 
 
-import android.support.test.espresso.DataInteraction;
-import android.support.test.espresso.ViewInteraction;
-import android.support.test.rule.ActivityTestRule;
-import android.test.suitebuilder.annotation.LargeTest;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+
+import androidx.test.core.app.ApplicationProvider;
+import androidx.test.espresso.DataInteraction;
+import androidx.test.espresso.ViewInteraction;
+import androidx.test.filters.LargeTest;
+import androidx.test.rule.ActivityTestRule;
 
 import com.serwylo.lexica.lang.Language;
 
@@ -23,19 +25,18 @@ import org.junit.runners.Parameterized;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
-import static android.support.test.InstrumentationRegistry.getTargetContext;
-import static android.support.test.espresso.Espresso.onData;
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
-import static android.support.test.espresso.Espresso.pressBack;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.scrollTo;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
-import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.Espresso.onData;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
+import static androidx.test.espresso.Espresso.pressBack;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
+import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.is;
@@ -46,15 +47,15 @@ import static org.junit.Assert.assertTrue;
  * CI on every commit. Once it tests something more meaningful than starting a game and ending it
  * (e.g. simulating users dragging their fingers on a real board, selecting real words) then it
  * should probably be promoted to CI.
+ *
+ * To be run on at least emulator 29 (e.g. because there are some system strings, such as the action
+ * menu overflow "more options" text which may be specific to this version.
  */
 @LargeTest
 @RunWith(Parameterized.class)
 public class GenerateLanguageBoards {
 
     private static final String TAG = "GenerateLanguageBoards";
-
-    private static final int NUM_BOARDS_TO_GENERATE = 3;
-
 
     /**
      * Each language should have a static initializer block which contains a Scrabble-like score for
@@ -86,13 +87,15 @@ public class GenerateLanguageBoards {
 
     private void generateLanguageBoards(Language language) {
         Log.d(TAG, "Running test for " + language.getName() + " board");
-        fromHomeNavigateToPreferences();
-        fromPreferencesSelectLanguage(language);
-        fromPreferencesSelectBoardSize();
-        fromPreferencesSelectScoreType();
-        pressBack();
 
-        for (int i = 0; i < NUM_BOARDS_TO_GENERATE; i ++) {
+        for (int i = 0; i < 3; i ++) {
+            fromHomeNavigateToPreferences();
+            fromPreferencesSelectLanguage(language);
+            fromPreferencesSelectBoardSize(i);
+            fromPreferencesSelectScoreType(i == 0 ? 0 : 1); // Normal scoring first, then scrabble scoring
+            fromPreferencesSelectHintMode(i); // First no hints, then just one type, then the other
+            pressBack();
+
             fromHomeStartNewGame();
             fromGameRotateBoard();
             fromGameSaveGame();
@@ -107,74 +110,81 @@ public class GenerateLanguageBoards {
     }
 
     private void fromHomeNavigateToPreferences() {
-        ViewInteraction preferencesButton = onView(
-                allOf(withId(R.id.preferences), withText("Preferences"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        3),
-                                0),
-                        isDisplayed()));
-        preferencesButton.perform(click());
+        ViewInteraction fancyButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
+        fancyButton.perform(click());
     }
 
     private void fromPreferencesSelectLanguage(Language language) {
-        DataInteraction dictionaryPreference = onData(anything())
-                .inAdapterView(allOf(withId(android.R.id.list),
+        ViewInteraction dictionaryPreference = onView(
+                allOf(withId(R.id.recycler_view),
                         childAtPosition(
-                                withClassName(is("android.widget.LinearLayout")),
-                                0)))
-                .atPosition(0);
-        dictionaryPreference.perform(click());
+                                withId(android.R.id.list_container),
+                                0)));
+        dictionaryPreference.perform(actionOnItemAtPosition(0, click()));
 
         DataInteraction selectLangView = onData(anything())
-                .inAdapterView(allOf(withClassName(is("com.android.internal.app.AlertController$RecycleListView")),
+                .inAdapterView(allOf(withId(R.id.select_dialog_listview),
                         childAtPosition(
-                                withClassName(is("android.widget.FrameLayout")),
+                                withId(R.id.contentPanel),
                                 0)))
                 .atPosition(getIndexForLanguage(language));
         selectLangView.perform(click());
     }
 
-    private void fromPreferencesSelectBoardSize() {
-        DataInteraction boardSizePreference = onData(anything())
-                .inAdapterView(allOf(withId(android.R.id.list),
+    private void fromPreferencesSelectBoardSize(int index) {
+        ViewInteraction boardSizePreference = onView(
+                allOf(withId(R.id.recycler_view),
                         childAtPosition(
-                                withClassName(is("android.widget.LinearLayout")),
-                                0)))
-                .atPosition(1);
-        boardSizePreference.perform(click());
+                                withId(android.R.id.list_container),
+                                0)));
+        boardSizePreference.perform(actionOnItemAtPosition(1, click()));
 
         DataInteraction selectBoardSizeView = onData(anything())
-                .inAdapterView(allOf(withClassName(is("com.android.internal.app.AlertController$RecycleListView")),
+                .inAdapterView(allOf(withId(R.id.select_dialog_listview),
                         childAtPosition(
-                                withClassName(is("android.widget.FrameLayout")),
+                                withId(R.id.contentPanel),
                                 0)))
-                .atPosition(0);
+                .atPosition(index);
         selectBoardSizeView.perform(click());
     }
 
-    private void fromPreferencesSelectScoreType() {
-        DataInteraction selectScoreTypePreference = onData(anything())
-                .inAdapterView(allOf(withId(android.R.id.list),
+    private void fromPreferencesSelectScoreType(int index) {
+        ViewInteraction selectScoreTypePreference = onView(
+                allOf(withId(R.id.recycler_view),
                         childAtPosition(
-                                withClassName(is("android.widget.LinearLayout")),
-                                0)))
-                .atPosition(3);
-        selectScoreTypePreference.perform(click());
+                                withId(android.R.id.list_container),
+                                0)));
+        selectScoreTypePreference.perform(actionOnItemAtPosition(3, click()));
 
         DataInteraction selectScoreTypeView = onData(anything())
-                .inAdapterView(allOf(withClassName(is("com.android.internal.app.AlertController$RecycleListView")),
+                .inAdapterView(allOf(withId(R.id.select_dialog_listview),
                         childAtPosition(
-                                withClassName(is("android.widget.FrameLayout")),
+                                withId(R.id.contentPanel),
                                 0)))
-                .atPosition(1);
+                .atPosition(index);
+        selectScoreTypeView.perform(click());
+    }
+
+    private void fromPreferencesSelectHintMode(int index) {
+        ViewInteraction selectScoreTypePreference = onView(
+                allOf(withId(R.id.recycler_view),
+                        childAtPosition(
+                                withId(android.R.id.list_container),
+                                0)));
+        selectScoreTypePreference.perform(actionOnItemAtPosition(7, click()));
+
+        DataInteraction selectScoreTypeView = onData(anything())
+                .inAdapterView(allOf(withId(R.id.select_dialog_listview),
+                        childAtPosition(
+                                withId(R.id.contentPanel),
+                                0)))
+                .atPosition(index);
         selectScoreTypeView.perform(click());
     }
 
     private int getIndexForLanguage(Language language) {
         int langIndex = -1;
-        String[] languageValues = getTargetContext().getResources().getStringArray(R.array.dict_choices_entryvalues);
+        String[] languageValues = ApplicationProvider.getApplicationContext().getResources().getStringArray(R.array.dict_choices_entryvalues);
         for (int i = 0; i < languageValues.length; i ++) {
             String lang = languageValues[i];
             if (lang.equals(language.getName()) || language.getName().equals("en_US") && lang.equals("US") || language.getName().equals("en_GB") && lang.equals("UK")) {
@@ -192,24 +202,23 @@ public class GenerateLanguageBoards {
     }
 
     private void fromGameRotateBoard() {
-        ViewInteraction rotateMenuItem = onView(
-                allOf(withId(R.id.rotate), withContentDescription("Rotate Board"),
+        ViewInteraction rotateBoardMenuItem = onView(
+                allOf(withId(R.id.rotate), withContentDescription(R.string.menu_rotate_board),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(R.id.action_bar),
+                                        withId(R.id.toolbar),
                                         1),
                                 0),
                         isDisplayed()));
-        rotateMenuItem.perform(click());
-
+        rotateBoardMenuItem.perform(click());
     }
 
     private void fromGameSaveGame() {
         ViewInteraction saveMenuItem = onView(
-                allOf(withId(R.id.save_game), withContentDescription("Save Game"),
+                allOf(withId(R.id.save_game), withContentDescription(R.string.menu_save_game),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(R.id.action_bar),
+                                        withId(R.id.toolbar),
                                         1),
                                 1),
                         isDisplayed()));
@@ -217,67 +226,48 @@ public class GenerateLanguageBoards {
     }
 
     private void fromHomeRestoreGame() {
-        ViewInteraction restoreButton = onView(
-                allOf(withId(R.id.restore_game), withText("Restore Game"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        2),
-                                1),
-                        isDisplayed()));
+        ViewInteraction restoreButton = onView(allOf(withId(R.id.restore_game), isDisplayed()));
         restoreButton.perform(click());
     }
 
     private void fromGameEndGame() {
         openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
 
-        ViewInteraction endGameMenuItem = onView(
-                allOf(withId(R.id.title), withText("End Game"),
+        ViewInteraction appCompatTextView = onView(
+                allOf(withId(R.id.title), withText(R.string.menu_end_game),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.support.v7.view.menu.ListMenuItemView")),
+                                        withId(R.id.content),
                                         0),
                                 0),
                         isDisplayed()));
-        endGameMenuItem.perform(click());
+        appCompatTextView.perform(click());
     }
 
     private void fromPostGameSelectMissingWords() {
-
         ViewInteraction missingWordsTab = onView(
-                allOf(childAtPosition(
-                        allOf(withId(android.R.id.tabs),
+                allOf(withId(R.id.missed_words_button),
+                        childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0)),
-                        1),
+                                        withId(android.R.id.content),
+                                        0),
+                                2),
                         isDisplayed()));
         missingWordsTab.perform(click());
     }
 
     private void fromMissingWordsViewWord(int index) {
-        ViewInteraction wordView = onView(
-                allOf(withText("View"),
+        ViewInteraction recyclerView4 = onView(
+                allOf(withId(R.id.words),
                         childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        index),
-                                2)));
-        wordView.perform(scrollTo(), click());
+                                withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")),
+                                1)));
+        recyclerView4.perform(actionOnItemAtPosition(index, click()));
     }
 
     private void fromMissingWordsReturnHome() {
-        ViewInteraction homeButton = onView(
-                allOf(withId(R.id.missed_close_score), withText("OK"),
-                        childAtPosition(
-                                allOf(withId(R.id.missed_words),
-                                        childAtPosition(
-                                                withClassName(is("android.widget.FrameLayout")),
-                                                1)),
-                                2),
-                        isDisplayed()));
-        homeButton.perform(click());
-
+        ViewInteraction backButton = onView(allOf(withId(R.id.back_button), isDisplayed()));
+        backButton.perform(click());
     }
 
     private static Matcher<View> childAtPosition(
