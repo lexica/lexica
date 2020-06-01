@@ -12,7 +12,7 @@ import java.util.List;
  * Mock {@link TransitionMap} for testing, which only cares about the letters on the board, not
  * whether you are allowed to transition from one to another. You can _always_ transition from
  * one to another.
- *
+ * <p>
  * There is some hackery here to allow for a number of letters which is not a perfect square.
  * For example, the english alphabet includes 26 letters, but a normal board can only have 25 or
  * 36 letters. Thus, this cheats by effectively repeating the last letter in {@link #getWidth()}
@@ -42,9 +42,7 @@ public class CanTransitionMap implements TransitionMap {
     }
 
     CanTransitionMap() {
-        this.letters = new String[]{
-                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "qu", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-        };
+        this.letters = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "qu", "r", "s", "t", "u", "v", "w", "x", "y", "z",};
     }
 
     @Override
@@ -72,6 +70,6 @@ public class CanTransitionMap implements TransitionMap {
 
     @Override
     public int getWidth() {
-        return (int)Math.ceil(Math.sqrt(letters.length));
+        return (int) Math.ceil(Math.sqrt(letters.length));
     }
 }

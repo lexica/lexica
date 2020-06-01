@@ -62,7 +62,7 @@ public class LetterFrequency {
     public HashMap<String, Integer> getLetterCountsForWord(String word) {
         HashMap<String, Integer> counts = new HashMap<>();
 
-        for (int i = 0; i < word.length(); i ++) {
+        for (int i = 0; i < word.length(); i++) {
             String letter = word.substring(i, i + 1);
             String letterWithSuffix = language.applyMandatorySuffix(letter);
 
@@ -93,7 +93,7 @@ public class LetterFrequency {
             // Some words may have a "q" without a "u". We will not add the "q"
             // to our letter frequencies if this is the case.
             boolean shouldInclude = true;
-            for (int i = 0; i < letterWithSuffix.length(); i ++) {
+            for (int i = 0; i < letterWithSuffix.length(); i++) {
                 if (word.length() <= position + i || word.charAt(position + i) != letterWithSuffix.charAt(i)) {
                     shouldInclude = false;
                     break;

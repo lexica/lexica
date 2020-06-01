@@ -22,80 +22,81 @@ import android.os.Handler;
 import java.util.LinkedList;
 
 public class Synchronizer implements Runnable {
-	@SuppressWarnings("unused")
-	private static String TAG = "Synchronizer";
+    @SuppressWarnings("unused")
+    private static String TAG = "Synchronizer";
 
-	/**
-	 * Anything less than 15 ticks will result in the Android Espresso framework thinking that
-	 * the game is in a continuous loop, rather than idling. There are "correct" ways to fix this
-	 * using IdlingResources, but changing it so it is at least 15 high is the simplest.
-	 */
-	public static final int TICK_FREQ = 15;
+    /**
+     * Anything less than 15 ticks will result in the Android Espresso framework thinking that
+     * the game is in a continuous loop, rather than idling. There are "correct" ways to fix this
+     * using IdlingResources, but changing it so it is at least 15 high is the simplest.
+     */
+    public static final int TICK_FREQ = 15;
 
-	public interface Counter {
-		int tick();
-	}
+    public interface Counter {
+        int tick();
+    }
 
-	public interface Event {
-		void tick(int i);
-	}
+    public interface Event {
+        void tick(int i);
+    }
 
-	public interface Finalizer {
-		void doFinalEvent();
-	}
+    public interface Finalizer {
+        void doFinalEvent();
+    }
 
-	private Counter mainCounter;
-	private Finalizer mainFinalizer;
-	private final LinkedList<Event> events;
-	private boolean done;
-	private final Handler handler;
+    private Counter mainCounter;
+    private Finalizer mainFinalizer;
+    private final LinkedList<Event> events;
+    private boolean done;
+    private final Handler handler;
 
-	public Synchronizer() {
-		mainCounter = null;
-		mainFinalizer = null;
-		events = new LinkedList<>();
-		done = false;
+    public Synchronizer() {
+        mainCounter = null;
+        mainFinalizer = null;
+        events = new LinkedList<>();
+        done = false;
 
-		handler = new Handler();
-	}
+        handler = new Handler();
+    }
 
-	public void setCounter(Counter c) {
-		mainCounter = c;
-	}
+    public void setCounter(Counter c) {
+        mainCounter = c;
+    }
 
-	public void setFinalizer(Finalizer f) {
-		mainFinalizer = f;
-	}
+    public void setFinalizer(Finalizer f) {
+        mainFinalizer = f;
+    }
 
-	public void addEvent(Event e) {
-		events.add(e);
-	}
+    public void addEvent(Event e) {
+        events.add(e);
+    }
 
-	public void start() {
-		done = false;
-		handler.postDelayed(this,TICK_FREQ);
-	}
+    public void start() {
+        done = false;
+        handler.postDelayed(this, TICK_FREQ);
+    }
 
-	public void run() {
-		if(done) return;
-		int time = mainCounter.tick();
+    public void run() {
+        if (done)
+            return;
+        int time = mainCounter.tick();
 
-		for (Event event : events) {
-			event.tick(time);
-		}
+        for (Event event : events) {
+            event.tick(time);
+        }
 
-		if (time <= 0) {
-			if(mainFinalizer != null) {
-				mainFinalizer.doFinalEvent();
-			}
-		}
+        if (time <= 0) {
+            if (mainFinalizer != null) {
+                mainFinalizer.doFinalEvent();
+            }
+        }
 
-		handler.postDelayed(this,TICK_FREQ);
-	}
+        handler.postDelayed(this, TICK_FREQ);
+    }
 
-	public void abort() {
-		done = true;
-	}
+    public void abort() {
+        done = true;
+    }
 
 }
 

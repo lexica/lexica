@@ -59,8 +59,7 @@ class ScoreTabAdapter extends RecyclerView.Adapter<ScoreTabViewHolder> {
 
     private ScoreTabViewHolder createEmptyView(ScoreActivity activity) {
         FrameLayout frame = new FrameLayout(activity);
-        frame.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT));
+        frame.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         return new ScoreTabViewHolder(activity, frame);
     }
 

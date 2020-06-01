@@ -7,9 +7,8 @@ import android.preference.PreferenceManager;
 
 /**
  * This class is based on GPLv3 licensed code from F-Droid client:
- *
- *   https://gitlab.com/fdroid/fdroidclient/-/blob/master/app/src/main/java/org/fdroid/fdroid/FDroidApp.java
- *
+ * <p>
+ * https://gitlab.com/fdroid/fdroidclient/-/blob/master/app/src/main/java/org/fdroid/fdroid/FDroidApp.java
  */
 public class ThemeManager {
 
@@ -46,9 +45,7 @@ public class ThemeManager {
     }
 
     public void rememberTheme(Context context) {
-        currentTheme = PreferenceManager
-                .getDefaultSharedPreferences(context)
-                .getString(PREFERENCE_NAME, THEME_LIGHT);
+        currentTheme = PreferenceManager.getDefaultSharedPreferences(context).getString(PREFERENCE_NAME, THEME_LIGHT);
     }
 
     public void applyTheme(Activity activity) {

@@ -20,25 +20,25 @@ package net.healeys.trie;
  * An abstract filter used to identify whether a particular string is a word.
  */
 public interface WordFilter {
-	/**
-	 * Identifies whether or not a string of characters is actually a
-	 * valid word.
-	 *
-	 * @param	word	A string of characters believed to be a word
-	 * @return			Whether or not the string is a word
-	 */
-	boolean isWord(String word);
+    /**
+     * Identifies whether or not a string of characters is actually a
+     * valid word.
+     *
+     * @param    word    A string of characters believed to be a word
+     * @return Whether or not the string is a word
+     */
+    boolean isWord(String word);
 
-	class MinLength implements WordFilter {
-		private final int minLength;
+    class MinLength implements WordFilter {
+        private final int minLength;
 
-		public MinLength(int minLength) {
-			this.minLength = minLength;
-		}
+        public MinLength(int minLength) {
+            this.minLength = minLength;
+        }
 
-		@Override
-		public boolean isWord(String word) {
-			return word != null && word.length() >= minLength;
-		}
-	}
+        @Override
+        public boolean isWord(String word) {
+            return word != null && word.length() >= minLength;
+        }
+    }
 }

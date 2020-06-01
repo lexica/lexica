@@ -28,10 +28,12 @@ class ScoreWordsViewBinder {
     }
 
     static class Item {
-        public final @NonNull String word;
+        public final @NonNull
+        String word;
         public final int points;
         public final boolean valid;
-        public final @Nullable ViewWordListener viewWordListener;
+        public final @Nullable
+        ViewWordListener viewWordListener;
 
         Item(@NonNull String word, int points, boolean valid, @Nullable ViewWordListener viewWordListener) {
             this.word = word;

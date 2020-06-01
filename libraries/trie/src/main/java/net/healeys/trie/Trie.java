@@ -9,18 +9,18 @@ import java.util.Map;
 
 public abstract class Trie implements WordFilter {
 
-	protected Language language;
+    protected Language language;
 
-	public Trie(Language language) {
-		this.language = language;
-	}
+    public Trie(Language language) {
+        this.language = language;
+    }
 
-	public abstract void addWord(String w);
+    public abstract void addWord(String w);
 
-	public abstract boolean isWord(String w);
+    public abstract boolean isWord(String w);
 
-	public abstract void write(OutputStream out) throws IOException;
+    public abstract void write(OutputStream out) throws IOException;
 
-	public abstract Map<String, List<Solution>> solver(TransitionMap m, WordFilter filter);
+    public abstract Map<String, List<Solution>> solver(TransitionMap m, WordFilter filter);
 
 }

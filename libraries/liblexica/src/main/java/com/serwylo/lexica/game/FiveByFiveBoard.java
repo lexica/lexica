@@ -19,19 +19,19 @@
 package com.serwylo.lexica.game;
 
 public class FiveByFiveBoard extends Board {
-	private static final int SIZE = 25;
-	private static final int WIDTH = 5;
+    private static final int SIZE = 25;
+    private static final int WIDTH = 5;
 
-	public FiveByFiveBoard(String[] b) {
-		super(b);
-	}
+    public FiveByFiveBoard(String[] b) {
+        super(b);
+    }
 
-	public int getSize() {
-		return SIZE;
-	}
+    public int getSize() {
+        return SIZE;
+    }
 
-	public int getWidth() {
-		return WIDTH;
-	}
+    public int getWidth() {
+        return WIDTH;
+    }
 
 }

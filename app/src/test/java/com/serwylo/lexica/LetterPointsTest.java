@@ -31,7 +31,7 @@ public class LetterPointsTest {
     public static List<Language[]> getAllLanguages() {
         List<Language[]> langs = new ArrayList<>(Language.getAllLanguages().size());
         for (Language lang : Language.getAllLanguages().values()) {
-            langs.add(new Language[] { lang });
+            langs.add(new Language[]{lang});
         }
         return langs;
     }

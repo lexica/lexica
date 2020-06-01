@@ -19,19 +19,19 @@
 package com.serwylo.lexica.game;
 
 public class SixBySixBoard extends Board {
-	private static final int SIZE = 36;
-	private static final int WIDTH = 6;
+    private static final int SIZE = 36;
+    private static final int WIDTH = 6;
 
-	public SixBySixBoard(String[] b) {
-		super(b);
-	}
+    public SixBySixBoard(String[] b) {
+        super(b);
+    }
 
-	public int getSize() {
-		return SIZE;
-	}
+    public int getSize() {
+        return SIZE;
+    }
 
-	public int getWidth() {
-		return WIDTH;
-	}
+    public int getWidth() {
+        return WIDTH;
+    }
 
 }

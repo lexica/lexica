@@ -23,30 +23,30 @@ package net.healeys.trie;
  */
 public interface TransitionMap {
 
-	boolean canTransition(int fromX, int fromY, int toX, int toY);
-	
-	/**
-	 * Provides the value stored at a particular position.
-	 *
-	 * May be more than one letter (see {@link com.serwylo.lexica.lang.Language#applyMandatorySuffix(String)}).
-	 *
-	 * @param	position	the id of a position
-	 * @return				the value stored at that position
-	 */
-	String valueAt(int position);
+    boolean canTransition(int fromX, int fromY, int toX, int toY);
 
-	/**
-	 * Provides the number of positions available on a particular board.
-	 *
-	 * @return				the number of positions
-	 */
-	int getSize();
+    /**
+     * Provides the value stored at a particular position.
+     * <p>
+     * May be more than one letter (see {@link com.serwylo.lexica.lang.Language#applyMandatorySuffix(String)}).
+     *
+     * @param    position    the id of a position
+     * @return the value stored at that position
+     */
+    String valueAt(int position);
 
-	int getWidth();
+    /**
+     * Provides the number of positions available on a particular board.
+     *
+     * @return the number of positions
+     */
+    int getSize();
 
-	/**
-	 * Whether or not the user is allowed to backrack to squares they've already visited.
-	 */
-	boolean canRevisit();
+    int getWidth();
+
+    /**
+     * Whether or not the user is allowed to backrack to squares they've already visited.
+     */
+    boolean canRevisit();
 
 }

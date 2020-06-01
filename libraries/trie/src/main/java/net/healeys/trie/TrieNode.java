@@ -7,18 +7,18 @@ import java.io.OutputStream;
 
 public abstract class TrieNode {
 
-	protected Language language;
+    protected Language language;
 
-	public TrieNode(Language language) {
-		this.language = language;
-	}
+    public TrieNode(Language language) {
+        this.language = language;
+    }
 
-	public abstract void writeNode(OutputStream out) throws IOException;
+    public abstract void writeNode(OutputStream out) throws IOException;
 
-	public abstract TrieNode addSuffix(String word, int currentPosition);
+    public abstract TrieNode addSuffix(String word, int currentPosition);
 
-	public abstract boolean word();
+    public abstract boolean word();
 
-	public abstract boolean isTail();
+    public abstract boolean isTail();
 
 }

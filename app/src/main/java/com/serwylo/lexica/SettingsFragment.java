@@ -24,9 +24,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
 
 import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.lang.Language;
@@ -35,7 +35,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-		addPreferencesFromResource(R.xml.preferences);
+        addPreferencesFromResource(R.xml.preferences);
         getResetCoresPreference().setOnPreferenceClickListener(preference -> promptThenResetScores());
         highlightBetaLanguages();
         setUsedLexicon();
@@ -45,7 +45,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         ListPreference pref = getLexiconPreferences();
         CharSequence[] entries = pref.getEntries();
         CharSequence[] values = pref.getEntryValues();
-        for (int i = 0; i < entries.length; i ++) {
+        for (int i = 0; i < entries.length; i++) {
             Language language = Language.fromOrNull(values[i].toString());
             if (language != null) {
                 if (language.isBeta()) {
@@ -83,15 +83,11 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     public boolean promptThenResetScores() {
-        new AlertDialog.Builder(getContext())
-                .setTitle(getString(R.string.pref_resetScores))
-                .setMessage(getString(R.string.reset_scores_prompt))
-                .setPositiveButton(android.R.string.ok, (dialog, which) -> {
-                    if (which == DialogInterface.BUTTON_POSITIVE) {
-                        clearHighScores();
-                    }
-                })
-                .create().show();
+        new AlertDialog.Builder(getContext()).setTitle(getString(R.string.pref_resetScores)).setMessage(getString(R.string.reset_scores_prompt)).setPositiveButton(android.R.string.ok, (dialog, which) -> {
+            if (which == DialogInterface.BUTTON_POSITIVE) {
+                clearHighScores();
+            }
+        }).create().show();
 
         return true;
     }

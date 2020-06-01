@@ -31,55 +31,55 @@ import mehdi.sakout.fancybuttons.FancyButton;
 
 public class Lexica extends Activity {
 
-	@SuppressWarnings("unused")
-	protected static final String TAG = "Lexica";
+    @SuppressWarnings("unused")
+    protected static final String TAG = "Lexica";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		ThemeManager.getInstance().applyTheme(this);
-		splashScreen();
+        super.onCreate(savedInstanceState);
+        ThemeManager.getInstance().applyTheme(this);
+        splashScreen();
     }
 
-	private void splashScreen() {
-		setContentView(R.layout.splash);
+    private void splashScreen() {
+        setContentView(R.layout.splash);
 
-		FancyButton newGame = findViewById(R.id.new_game);
-		newGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.NEW_GAME")));
+        FancyButton newGame = findViewById(R.id.new_game);
+        newGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.NEW_GAME")));
 
-		if(savedGame()) {
-			FancyButton restoreGame = findViewById(R.id.restore_game);
-			restoreGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.RESTORE_GAME")));
-			restoreGame.setEnabled(true);
-		}
+        if (savedGame()) {
+            FancyButton restoreGame = findViewById(R.id.restore_game);
+            restoreGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.RESTORE_GAME")));
+            restoreGame.setEnabled(true);
+        }
 
-		FancyButton about = findViewById(R.id.about);
-		about.setOnClickListener(v -> {
-			Intent i = new Intent(Intent.ACTION_VIEW);
-			Uri u = Uri.parse("https://github.com/lexica/lexica");
-			i.setData(u);
-			startActivity(i);
-		});
+        FancyButton about = findViewById(R.id.about);
+        about.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            Uri u = Uri.parse("https://github.com/lexica/lexica");
+            i.setData(u);
+            startActivity(i);
+        });
 
-		FancyButton preferences = findViewById(R.id.preferences);
-		preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));
+        FancyButton preferences = findViewById(R.id.preferences);
+        preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));
 
-		int highScoreValue = ScoreActivity.getHighScore(this);
+        int highScoreValue = ScoreActivity.getHighScore(this);
 
-		TextView highScoreLabel = findViewById(R.id.high_score_label);
-		highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
+        TextView highScoreLabel = findViewById(R.id.high_score_label);
+        highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
 
-		TextView highScore = findViewById(R.id.high_score);
-		highScore.setText(String.format(Locale.getDefault(), "%d", highScoreValue));
-	}
+        TextView highScore = findViewById(R.id.high_score);
+        highScore.setText(String.format(Locale.getDefault(), "%d", highScoreValue));
+    }
 
-	public void onResume() {
-		super.onResume();
-		splashScreen();
-	}
+    public void onResume() {
+        super.onResume();
+        splashScreen();
+    }
 
-	public boolean savedGame() {
-		return new GameSaverPersistent(this).hasSavedGame();
-	}
+    public boolean savedGame() {
+        return new GameSaverPersistent(this).hasSavedGame();
+    }
 
 }

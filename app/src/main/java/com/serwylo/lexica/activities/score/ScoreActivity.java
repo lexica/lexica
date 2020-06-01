@@ -38,117 +38,114 @@ import mehdi.sakout.fancybuttons.FancyButton;
 
 public class ScoreActivity extends AppCompatActivity {
 
-	@SuppressWarnings("unused")
-	private static final String TAG = "ScoreActivity";
+    @SuppressWarnings("unused")
+    private static final String TAG = "ScoreActivity";
 
-	public static final String SCORE_PREF_FILE = "prefs_score_file";
+    public static final String SCORE_PREF_FILE = "prefs_score_file";
 
-	private Game game;
+    private Game game;
 
-	private int buttonBackgroundColorSelected;
-	private int buttonBackgroundColor;
+    private int buttonBackgroundColorSelected;
+    private int buttonBackgroundColor;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		ThemeManager.getInstance().applyTheme(this);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ThemeManager.getInstance().applyTheme(this);
 
-		// Surely there is a better way to get theme attributes then this. Unfortunately we can't
-		// make use of the ThemeProperties helper class in Lexica because that is only useful
-		// to Views not Activities, due to the way in which Views receive all of their attributes
-		// when constructed.
-		Resources.Theme themes = getTheme();
-		TypedValue themeValues = new TypedValue();
-		themes.resolveAttribute(R.attr.home__secondary_button_background_selected, themeValues, true);
-		buttonBackgroundColorSelected = themeValues.data;
-		themes.resolveAttribute(R.attr.home__secondary_button_background, themeValues, true);
-		buttonBackgroundColor = themeValues.data;
+        // Surely there is a better way to get theme attributes then this. Unfortunately we can't
+        // make use of the ThemeProperties helper class in Lexica because that is only useful
+        // to Views not Activities, due to the way in which Views receive all of their attributes
+        // when constructed.
+        Resources.Theme themes = getTheme();
+        TypedValue themeValues = new TypedValue();
+        themes.resolveAttribute(R.attr.home__secondary_button_background_selected, themeValues, true);
+        buttonBackgroundColorSelected = themeValues.data;
+        themes.resolveAttribute(R.attr.home__secondary_button_background, themeValues, true);
+        buttonBackgroundColor = themeValues.data;
 
-		setContentView(R.layout.score);
+        setContentView(R.layout.score);
 
-		Game game = initialiseGame(savedInstanceState);
-		this.game = game;
-		initialiseView(game);
-	}
+        Game game = initialiseGame(savedInstanceState);
+        this.game = game;
+        initialiseView(game);
+    }
 
-	@NonNull
-	private Game initialiseGame(Bundle savedInstanceState) {
+    @NonNull
+    private Game initialiseGame(Bundle savedInstanceState) {
 
-		Game game;
+        Game game;
 
-		if(savedInstanceState != null) {
-			game = new Game(this, new GameSaverTransient(savedInstanceState));
+        if (savedInstanceState != null) {
+            game = new Game(this, new GameSaverTransient(savedInstanceState));
 
-		} else {
-			Intent intent = getIntent();
-			Bundle bun = intent.getExtras();
-			game = new Game(this,new GameSaverTransient(bun));
-		}
+        } else {
+            Intent intent = getIntent();
+            Bundle bun = intent.getExtras();
+            game = new Game(this, new GameSaverTransient(bun));
+        }
 
-		game.initializeDictionary();
+        game.initializeDictionary();
 
-		return game;
+        return game;
 
-	}
+    }
 
-	private void initialiseView(@NonNull Game game) {
+    private void initialiseView(@NonNull Game game) {
 
-		final RecyclerView recycler = findViewById(R.id.recycler_view);
-		recycler.setLayoutManager(new NonScrollingHorizontalLayoutManager(this));
-		recycler.setHasFixedSize(true);
-		recycler.setAdapter(new ScoreTabAdapter(this, game));
+        final RecyclerView recycler = findViewById(R.id.recycler_view);
+        recycler.setLayoutManager(new NonScrollingHorizontalLayoutManager(this));
+        recycler.setHasFixedSize(true);
+        recycler.setAdapter(new ScoreTabAdapter(this, game));
 
-		final FancyButton found = findViewById(R.id.found_words_button);
-		final FancyButton missed = findViewById(R.id.missed_words_button);
+        final FancyButton found = findViewById(R.id.found_words_button);
+        final FancyButton missed = findViewById(R.id.missed_words_button);
 
-		found.setBackgroundColor(buttonBackgroundColorSelected);
+        found.setBackgroundColor(buttonBackgroundColorSelected);
 
-		found.setOnClickListener(view -> {
-			recycler.scrollToPosition(0);
-			found.setBackgroundColor(buttonBackgroundColorSelected);
-			missed.setBackgroundColor(buttonBackgroundColor);
-		});
+        found.setOnClickListener(view -> {
+            recycler.scrollToPosition(0);
+            found.setBackgroundColor(buttonBackgroundColorSelected);
+            missed.setBackgroundColor(buttonBackgroundColor);
+        });
 
-		missed.setOnClickListener(view -> {
-			recycler.scrollToPosition(1);
-			found.setBackgroundColor(buttonBackgroundColor);
-			missed.setBackgroundColor(buttonBackgroundColorSelected);
-		});
+        missed.setOnClickListener(view -> {
+            recycler.scrollToPosition(1);
+            found.setBackgroundColor(buttonBackgroundColor);
+            missed.setBackgroundColor(buttonBackgroundColorSelected);
+        });
 
-		FancyButton back = findViewById(R.id.back_button);
-		back.setOnClickListener(view -> finish());
+        FancyButton back = findViewById(R.id.back_button);
+        back.setOnClickListener(view -> finish());
 
-	}
+    }
 
-	@Override
-	protected void onSaveInstanceState(@NonNull Bundle outState) {
-		super.onSaveInstanceState(outState);
-		game.save(new GameSaverTransient(outState));
-	}
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        game.save(new GameSaverTransient(outState));
+    }
 
-	void setHighScore(int score) {
-		String key = ScoreActivity.highScoreKey(this);
-		SharedPreferences prefs = getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE);
-		int highScore = prefs.getInt(key, 0);
-		if (score > highScore) {
-			SharedPreferences.Editor edit = prefs.edit();
-			edit.putInt(key, score);
-			edit.apply();
-		}
-	}
+    void setHighScore(int score) {
+        String key = ScoreActivity.highScoreKey(this);
+        SharedPreferences prefs = getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE);
+        int highScore = prefs.getInt(key, 0);
+        if (score > highScore) {
+            SharedPreferences.Editor edit = prefs.edit();
+            edit.putInt(key, score);
+            edit.apply();
+        }
+    }
 
-	static String highScoreKey(Context c) {
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
-		return prefs.getString("dict", "US")
-				+ prefs.getString("boardSize", "16")
-				+ prefs.getString(Game.SCORE_TYPE, Game.SCORE_WORDS)
-				+ prefs.getString("maxTimeRemaining", "180");
-	}
+    static String highScoreKey(Context c) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+        return prefs.getString("dict", "US") + prefs.getString("boardSize", "16") + prefs.getString(Game.SCORE_TYPE, Game.SCORE_WORDS) + prefs.getString("maxTimeRemaining", "180");
+    }
 
-	public static int getHighScore(Context c) {
-		SharedPreferences prefs = c.getSharedPreferences(SCORE_PREF_FILE, Context.MODE_PRIVATE);
-		return prefs.getInt(highScoreKey(c), 0);
-	}
+    public static int getHighScore(Context c) {
+        SharedPreferences prefs = c.getSharedPreferences(SCORE_PREF_FILE, Context.MODE_PRIVATE);
+        return prefs.getInt(highScoreKey(c), 0);
+    }
 
 }
 

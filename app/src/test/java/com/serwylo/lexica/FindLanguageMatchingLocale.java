@@ -21,11 +21,7 @@ public class FindLanguageMatchingLocale {
     private final Locale pt_PT = new Locale("pt", "PT");
     private final Locale ja_JP = new Locale("ja", "JP");
 
-    private final Collection<Language> AVAILABLE_LANGS = Collections.unmodifiableCollection(Arrays.<Language>asList(
-            new MockLanguage("en", "GB"),
-            new MockLanguage("pt"),
-            new MockLanguage("pt", "BR")
-    ));
+    private final Collection<Language> AVAILABLE_LANGS = Collections.unmodifiableCollection(Arrays.<Language>asList(new MockLanguage("en", "GB"), new MockLanguage("pt"), new MockLanguage("pt", "BR")));
 
     @Test
     public void findExactMatch() {

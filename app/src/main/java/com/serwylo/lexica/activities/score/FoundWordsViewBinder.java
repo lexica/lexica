@@ -32,16 +32,16 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
 
         Iterator<String> uniqueWords = game.uniqueListIterator();
         List<Item> items = new ArrayList<>();
-        while(uniqueWords.hasNext()) {
+        while (uniqueWords.hasNext()) {
             String w = uniqueWords.next();
 
-            if(game.isWord(w) && game.getWordScore(w) > 0) {
+            if (game.isWord(w) && game.getWordScore(w) > 0) {
                 int points = game.getWordScore(w);
-                items.add(new Item(w,points,true, null));
+                items.add(new Item(w, points, true, null));
                 score += points;
                 numWords++;
             } else {
-                items.add(new Item(w,0,false, null));
+                items.add(new Item(w, 0, false, null));
             }
 
             possible.remove(w);
@@ -60,11 +60,11 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
             max_score += game.getWordScore(w);
         }
 
-        int totalScorePercentage = (int)(((double)score/max_score)*100);
+        int totalScorePercentage = (int) (((double) score / max_score) * 100);
         TextView scorePercentage = foundWordsView.findViewById(R.id.score_value);
         scorePercentage.setText(activity.getString(R.string.value_max_percentage, score, max_score, totalScorePercentage));
 
-        int totalWordsPercentage = (int)(((double)numWords/max_words)*100);
+        int totalWordsPercentage = (int) (((double) numWords / max_words) * 100);
         TextView scoreValue = foundWordsView.findViewById(R.id.words_value);
         scoreValue.setText(activity.getString(R.string.value_max_percentage, numWords, max_words, totalWordsPercentage));
 

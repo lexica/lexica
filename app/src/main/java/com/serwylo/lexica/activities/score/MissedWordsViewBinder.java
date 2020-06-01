@@ -31,7 +31,7 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
         final Set<String> possible = game.getSolutions().keySet();
 
         Iterator<String> uniqueWords = game.uniqueListIterator();
-        while(uniqueWords.hasNext()) {
+        while (uniqueWords.hasNext()) {
             String w = uniqueWords.next();
             possible.remove(w);
         }
@@ -53,7 +53,7 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
             int previouslySelectedIndex = -1;
             Item previouslySelectedItem = adapter.getSelectedItem();
             Item newSelectedItem = null;
-            for (int i = 0; i < items.size(); i ++) {
+            for (int i = 0; i < items.size(); i++) {
                 String itemWord = items.get(i).word;
                 if (itemWord.equals(word)) {
                     index = i;

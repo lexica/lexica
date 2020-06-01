@@ -38,10 +38,10 @@ public class Util {
     /**
      * If we don't find an exact match, then we will still try to give the user a lexicon
      * from the same language, even if not the same country. In order of precedence, prefer:
-     *
-     *  - An exact match of language + country (e.g. "pt_BR").
-     *  - Just lang without country (e.g. "pt_BR" should match "pt" over "pt_PT").
-     *  - Same lang different country (e.g. "pt_BR" matches "pt_PT") <- Likely still better than choosing English.
+     * <p>
+     * - An exact match of language + country (e.g. "pt_BR").
+     * - Just lang without country (e.g. "pt_BR" should match "pt" over "pt_PT").
+     * - Same lang different country (e.g. "pt_BR" matches "pt_PT") <- Likely still better than choosing English.
      */
     public static Language findBestMatchOrNull(Locale toSearch, Collection<Language> availableLanguages) {
 

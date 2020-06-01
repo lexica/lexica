@@ -47,7 +47,7 @@ import static org.junit.Assert.assertTrue;
  * CI on every commit. Once it tests something more meaningful than starting a game and ending it
  * (e.g. simulating users dragging their fingers on a real board, selecting real words) then it
  * should probably be promoted to CI.
- *
+ * <p>
  * To be run on at least emulator 29 (e.g. because there are some system strings, such as the action
  * menu overflow "more options" text which may be specific to this version.
  */
@@ -72,7 +72,7 @@ public class GenerateLanguageBoards {
     public static List<Language[]> getAllLanguages() {
         List<Language[]> langs = new ArrayList<>(Language.getAllLanguages().size());
         for (Language lang : Language.getAllLanguages().values()) {
-            langs.add(new Language[] { lang });
+            langs.add(new Language[]{lang});
         }
         return langs;
     }
@@ -88,7 +88,7 @@ public class GenerateLanguageBoards {
     private void generateLanguageBoards(Language language) {
         Log.d(TAG, "Running test for " + language.getName() + " board");
 
-        for (int i = 0; i < 3; i ++) {
+        for (int i = 0; i < 3; i++) {
             fromHomeNavigateToPreferences();
             fromPreferencesSelectLanguage(language);
             fromPreferencesSelectBoardSize(i);
@@ -115,77 +115,41 @@ public class GenerateLanguageBoards {
     }
 
     private void fromPreferencesSelectLanguage(Language language) {
-        ViewInteraction dictionaryPreference = onView(
-                allOf(withId(R.id.recycler_view),
-                        childAtPosition(
-                                withId(android.R.id.list_container),
-                                0)));
+        ViewInteraction dictionaryPreference = onView(allOf(withId(R.id.recycler_view), childAtPosition(withId(android.R.id.list_container), 0)));
         dictionaryPreference.perform(actionOnItemAtPosition(0, click()));
 
-        DataInteraction selectLangView = onData(anything())
-                .inAdapterView(allOf(withId(R.id.select_dialog_listview),
-                        childAtPosition(
-                                withId(R.id.contentPanel),
-                                0)))
-                .atPosition(getIndexForLanguage(language));
+        DataInteraction selectLangView = onData(anything()).inAdapterView(allOf(withId(R.id.select_dialog_listview), childAtPosition(withId(R.id.contentPanel), 0))).atPosition(getIndexForLanguage(language));
         selectLangView.perform(click());
     }
 
     private void fromPreferencesSelectBoardSize(int index) {
-        ViewInteraction boardSizePreference = onView(
-                allOf(withId(R.id.recycler_view),
-                        childAtPosition(
-                                withId(android.R.id.list_container),
-                                0)));
+        ViewInteraction boardSizePreference = onView(allOf(withId(R.id.recycler_view), childAtPosition(withId(android.R.id.list_container), 0)));
         boardSizePreference.perform(actionOnItemAtPosition(1, click()));
 
-        DataInteraction selectBoardSizeView = onData(anything())
-                .inAdapterView(allOf(withId(R.id.select_dialog_listview),
-                        childAtPosition(
-                                withId(R.id.contentPanel),
-                                0)))
-                .atPosition(index);
+        DataInteraction selectBoardSizeView = onData(anything()).inAdapterView(allOf(withId(R.id.select_dialog_listview), childAtPosition(withId(R.id.contentPanel), 0))).atPosition(index);
         selectBoardSizeView.perform(click());
     }
 
     private void fromPreferencesSelectScoreType(int index) {
-        ViewInteraction selectScoreTypePreference = onView(
-                allOf(withId(R.id.recycler_view),
-                        childAtPosition(
-                                withId(android.R.id.list_container),
-                                0)));
+        ViewInteraction selectScoreTypePreference = onView(allOf(withId(R.id.recycler_view), childAtPosition(withId(android.R.id.list_container), 0)));
         selectScoreTypePreference.perform(actionOnItemAtPosition(3, click()));
 
-        DataInteraction selectScoreTypeView = onData(anything())
-                .inAdapterView(allOf(withId(R.id.select_dialog_listview),
-                        childAtPosition(
-                                withId(R.id.contentPanel),
-                                0)))
-                .atPosition(index);
+        DataInteraction selectScoreTypeView = onData(anything()).inAdapterView(allOf(withId(R.id.select_dialog_listview), childAtPosition(withId(R.id.contentPanel), 0))).atPosition(index);
         selectScoreTypeView.perform(click());
     }
 
     private void fromPreferencesSelectHintMode(int index) {
-        ViewInteraction selectScoreTypePreference = onView(
-                allOf(withId(R.id.recycler_view),
-                        childAtPosition(
-                                withId(android.R.id.list_container),
-                                0)));
+        ViewInteraction selectScoreTypePreference = onView(allOf(withId(R.id.recycler_view), childAtPosition(withId(android.R.id.list_container), 0)));
         selectScoreTypePreference.perform(actionOnItemAtPosition(7, click()));
 
-        DataInteraction selectScoreTypeView = onData(anything())
-                .inAdapterView(allOf(withId(R.id.select_dialog_listview),
-                        childAtPosition(
-                                withId(R.id.contentPanel),
-                                0)))
-                .atPosition(index);
+        DataInteraction selectScoreTypeView = onData(anything()).inAdapterView(allOf(withId(R.id.select_dialog_listview), childAtPosition(withId(R.id.contentPanel), 0))).atPosition(index);
         selectScoreTypeView.perform(click());
     }
 
     private int getIndexForLanguage(Language language) {
         int langIndex = -1;
         String[] languageValues = ApplicationProvider.getApplicationContext().getResources().getStringArray(R.array.dict_choices_entryvalues);
-        for (int i = 0; i < languageValues.length; i ++) {
+        for (int i = 0; i < languageValues.length; i++) {
             String lang = languageValues[i];
             if (lang.equals(language.getName()) || language.getName().equals("en_US") && lang.equals("US") || language.getName().equals("en_GB") && lang.equals("UK")) {
                 langIndex = i;
@@ -202,26 +166,12 @@ public class GenerateLanguageBoards {
     }
 
     private void fromGameRotateBoard() {
-        ViewInteraction rotateBoardMenuItem = onView(
-                allOf(withId(R.id.rotate), withContentDescription(R.string.menu_rotate_board),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.toolbar),
-                                        1),
-                                0),
-                        isDisplayed()));
+        ViewInteraction rotateBoardMenuItem = onView(allOf(withId(R.id.rotate), withContentDescription(R.string.menu_rotate_board), childAtPosition(childAtPosition(withId(R.id.toolbar), 1), 0), isDisplayed()));
         rotateBoardMenuItem.perform(click());
     }
 
     private void fromGameSaveGame() {
-        ViewInteraction saveMenuItem = onView(
-                allOf(withId(R.id.save_game), withContentDescription(R.string.menu_save_game),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.toolbar),
-                                        1),
-                                1),
-                        isDisplayed()));
+        ViewInteraction saveMenuItem = onView(allOf(withId(R.id.save_game), withContentDescription(R.string.menu_save_game), childAtPosition(childAtPosition(withId(R.id.toolbar), 1), 1), isDisplayed()));
         saveMenuItem.perform(click());
     }
 
@@ -233,35 +183,17 @@ public class GenerateLanguageBoards {
     private void fromGameEndGame() {
         openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
 
-        ViewInteraction appCompatTextView = onView(
-                allOf(withId(R.id.title), withText(R.string.menu_end_game),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.content),
-                                        0),
-                                0),
-                        isDisplayed()));
+        ViewInteraction appCompatTextView = onView(allOf(withId(R.id.title), withText(R.string.menu_end_game), childAtPosition(childAtPosition(withId(R.id.content), 0), 0), isDisplayed()));
         appCompatTextView.perform(click());
     }
 
     private void fromPostGameSelectMissingWords() {
-        ViewInteraction missingWordsTab = onView(
-                allOf(withId(R.id.missed_words_button),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                2),
-                        isDisplayed()));
+        ViewInteraction missingWordsTab = onView(allOf(withId(R.id.missed_words_button), childAtPosition(childAtPosition(withId(android.R.id.content), 0), 2), isDisplayed()));
         missingWordsTab.perform(click());
     }
 
     private void fromMissingWordsViewWord(int index) {
-        ViewInteraction recyclerView4 = onView(
-                allOf(withId(R.id.words),
-                        childAtPosition(
-                                withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")),
-                                1)));
+        ViewInteraction recyclerView4 = onView(allOf(withId(R.id.words), childAtPosition(withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")), 1)));
         recyclerView4.perform(actionOnItemAtPosition(index, click()));
     }
 
@@ -270,8 +202,7 @@ public class GenerateLanguageBoards {
         backButton.perform(click());
     }
 
-    private static Matcher<View> childAtPosition(
-            final Matcher<View> parentMatcher, final int position) {
+    private static Matcher<View> childAtPosition(final Matcher<View> parentMatcher, final int position) {
 
         return new TypeSafeMatcher<View>() {
             @Override
@@ -283,8 +214,7 @@ public class GenerateLanguageBoards {
             @Override
             public boolean matchesSafely(View view) {
                 ViewParent parent = view.getParent();
-                return parent instanceof ViewGroup && parentMatcher.matches(parent)
-                        && view.equals(((ViewGroup) parent).getChildAt(position));
+                return parent instanceof ViewGroup && parentMatcher.matches(parent) && view.equals(((ViewGroup) parent).getChildAt(position));
             }
         };
     }
