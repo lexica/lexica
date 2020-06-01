@@ -22,6 +22,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.ListPreference;
@@ -30,18 +31,18 @@ import androidx.preference.Preference;
 import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.lang.Language;
 
-public class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceClickListener {
+public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 		addPreferencesFromResource(R.xml.preferences);
-        findPreference("resetScores").setOnPreferenceClickListener(this);
+        getResetCoresPreference().setOnPreferenceClickListener(preference -> promptThenResetScores());
         highlightBetaLanguages();
         setUsedLexicon();
     }
 
     private void highlightBetaLanguages() {
-        ListPreference pref = (ListPreference) findPreference("dict");
+        ListPreference pref = getLexiconPreferences();
         CharSequence[] entries = pref.getEntries();
         CharSequence[] values = pref.getEntryValues();
         for (int i = 0; i < entries.length; i ++) {
@@ -55,33 +56,45 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
         pref.setEntries(entries);
     }
 
-    private void setUsedLexicon() {
+    @NonNull
+    private Preference getResetCoresPreference() {
+        Preference preference = findPreference("resetScores");
+
+        if (preference == null) {
+            throw new IllegalArgumentException("Could not find reset scores preference.");
+        }
+
+        return preference;
+    }
+
+    @NonNull
+    private ListPreference getLexiconPreferences() {
         ListPreference pref = (ListPreference) findPreference("dict");
-        pref.setValue(new Util().getLexiconString(getContext()));
+
+        if (pref == null) {
+            throw new IllegalArgumentException("Could not find lexicon/dictionary preference.");
+        }
+
+        return pref;
     }
 
-    @Override
-    public boolean onPreferenceClick(Preference preference) {
-        if ("resetScores".equals(preference.getKey())) {
-            new AlertDialog.Builder(getContext())
-                    .setTitle(getString(R.string.pref_resetScores))
-                    .setMessage(getString(R.string.reset_scores_prompt))
-                    .setPositiveButton(android.R.string.ok, promptListener)
-                    .setNegativeButton(android.R.string.cancel, promptListener)
-                    .create().show();
-            return true;
-        }
-        return false;
+    private void setUsedLexicon() {
+        getLexiconPreferences().setValue(new Util().getLexiconString(getContext()));
     }
 
-    private DialogInterface.OnClickListener promptListener = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            if (which == DialogInterface.BUTTON_POSITIVE) {
-                clearHighScores();
-            }
-        }
-    };
+    public boolean promptThenResetScores() {
+        new AlertDialog.Builder(getContext())
+                .setTitle(getString(R.string.pref_resetScores))
+                .setMessage(getString(R.string.reset_scores_prompt))
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                    if (which == DialogInterface.BUTTON_POSITIVE) {
+                        clearHighScores();
+                    }
+                })
+                .create().show();
+
+        return true;
+    }
 
     private void clearHighScores() {
         getContext().getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().apply();

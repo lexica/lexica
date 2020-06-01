@@ -24,7 +24,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.TypedValue;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -104,36 +103,25 @@ public class ScoreActivity extends AppCompatActivity {
 
 		found.setBackgroundColor(buttonBackgroundColorSelected);
 
-		found.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				recycler.scrollToPosition(0);
-				found.setBackgroundColor(buttonBackgroundColorSelected);
-				missed.setBackgroundColor(buttonBackgroundColor);
-			}
+		found.setOnClickListener(view -> {
+			recycler.scrollToPosition(0);
+			found.setBackgroundColor(buttonBackgroundColorSelected);
+			missed.setBackgroundColor(buttonBackgroundColor);
 		});
 
-		missed.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				recycler.scrollToPosition(1);
-				found.setBackgroundColor(buttonBackgroundColor);
-				missed.setBackgroundColor(buttonBackgroundColorSelected);
-			}
+		missed.setOnClickListener(view -> {
+			recycler.scrollToPosition(1);
+			found.setBackgroundColor(buttonBackgroundColor);
+			missed.setBackgroundColor(buttonBackgroundColorSelected);
 		});
 
 		FancyButton back = findViewById(R.id.back_button);
-		back.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				finish();
-			}
-		});
+		back.setOnClickListener(view -> finish());
 
 	}
 
 	@Override
-	protected void onSaveInstanceState(Bundle outState) {
+	protected void onSaveInstanceState(@NonNull Bundle outState) {
 		super.onSaveInstanceState(outState);
 		game.save(new GameSaverTransient(outState));
 	}

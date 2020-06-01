@@ -22,14 +22,8 @@ public class TrieBuilder {
 		readCorpus(language, dictFile, outTrie);
 
 		for (File outputFile : outputTrieFiles) {
-			FileOutputStream of = null;
-			try {
-				of = new FileOutputStream(outputFile, false);
+			try (FileOutputStream of = new FileOutputStream(outputFile, false)) {
 				outTrie.write(new DataOutputStream(of));
-			} finally {
-				if (of != null) {
-					of.close();
-				}
 			}
 		}
 	}

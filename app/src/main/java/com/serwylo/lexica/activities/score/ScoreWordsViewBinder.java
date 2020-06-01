@@ -111,12 +111,7 @@ class ScoreWordsViewBinder {
                 word.setPaintFlags(word.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
                 score.setVisibility(View.VISIBLE);
                 define.setVisibility(View.VISIBLE);
-                define.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        definer.define(item.word);
-                    }
-                });
+                define.setOnClickListener(v -> definer.define(item.word));
 
             } else {
 
@@ -134,12 +129,7 @@ class ScoreWordsViewBinder {
                 itemView.setOnClickListener(null);
             } else {
                 viewWord.setVisibility(View.VISIBLE);
-                View.OnClickListener listener = new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        item.viewWordListener.onViewWord(item.word);
-                    }
-                };
+                View.OnClickListener listener = v -> item.viewWordListener.onViewWord(item.word);
 
                 viewWord.setOnClickListener(listener);
                 itemView.setOnClickListener(listener);
@@ -149,7 +139,7 @@ class ScoreWordsViewBinder {
     }
 
     interface ViewWordListener {
-        public void onViewWord(String word);
+        void onViewWord(String word);
     }
 
 }

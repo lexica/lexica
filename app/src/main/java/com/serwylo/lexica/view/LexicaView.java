@@ -370,12 +370,12 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 			p.setTextSize(theme.game.currentWordSize);
 			p.setTypeface(Fonts.get().getSansSerifCondensed());
 			p.setTextAlign(Paint.Align.CENTER);
-			canvas.drawText(bigWordToShow.toUpperCase(game.getLanguage().getLocale()), width / 2, pos, p);
+			canvas.drawText(bigWordToShow.toUpperCase(game.getLanguage().getLocale()), width / 2f, pos, p);
 		}
 
 
 		// draw words
-		pos += wordListPadding / 2 + theme.game.pastWordTextSize;
+		pos += wordListPadding / 2f + theme.game.pastWordTextSize;
 
 		float x = isRtl ? getWidth() - theme.game.score.padding : theme.game.score.padding;
 		ListIterator<String> pastWords = game.listIterator();
@@ -408,13 +408,13 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		float headingHeight = fontHeights.getHeight(theme.game.score.headingTextSize);
 		float valueHeight = fontHeights.getHeight(theme.game.score.textSize);
 
-		float scoreHeight = theme.game.score.padding + headingHeight + theme.game.score.padding / 2 + valueHeight + theme.game.score.padding;
+		float scoreHeight = theme.game.score.padding + headingHeight + theme.game.score.padding / 2f + valueHeight + theme.game.score.padding;
 		float totalTimerHeight = theme.game.timer.borderWidth * 2 + theme.game.timer.height;
 		p.setColor(theme.game.score.backgroundColour);
 		canvas.drawRect(0,height - totalTimerHeight - scoreHeight, width,height - totalTimerHeight, p);
 
 		float scoreStartY = height - totalTimerHeight - scoreHeight;
-		float panelWidth = width / 3;
+		float panelWidth = width / 3f;
 
 		drawWordList(canvas, isRtl,  boardWidth * boxsize, scoreStartY);
 
@@ -448,7 +448,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 		p.setColor(theme.game.score.textColour);
 		p.setTextSize(theme.game.score.textSize);
 		p.setTypeface(Fonts.get().getSansSerifBold());
-		canvas.drawText(value, x + panelWidth / 2, y + theme.game.score.padding + headingHeight + theme.game.score.padding / 2 + valueHeight, p);
+		canvas.drawText(value, x + panelWidth / 2, y + theme.game.score.padding + headingHeight + theme.game.score.padding / 2f + valueHeight, p);
 	}
 
 	private void clearScreen(Canvas canvas) {

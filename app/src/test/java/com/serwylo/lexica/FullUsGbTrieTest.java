@@ -112,10 +112,7 @@ public class FullUsGbTrieTest extends TrieTest {
 		List<String> expectedWords = new ArrayList<>();
 		Collections.addAll(expectedWords, WORDS);
 
-		List<String> actualWords = new ArrayList<>();
-		for (String w : solutions.keySet()) {
-			actualWords.add(w);
-		}
+		List<String> actualWords = new ArrayList<>(solutions.keySet());
 
 		Collections.sort(expectedWords);
 		Collections.sort(actualWords);

@@ -1,11 +1,8 @@
 package com.serwylo.lexica;
 
-import android.support.annotation.Nullable;
-
 import com.serwylo.lexica.lang.Language;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -19,6 +16,7 @@ public class FindLanguageMatchingLocale {
     private final Locale en_GB = new Locale("en", "GB");
     private final Locale en_US = new Locale("en", "US");
     private final Locale pt = new Locale("pt");
+    private final Locale gb = new Locale("gb");
     private final Locale pt_BR = new Locale("pt", "BR");
     private final Locale pt_PT = new Locale("pt", "PT");
     private final Locale ja_JP = new Locale("ja", "JP");
@@ -51,6 +49,7 @@ public class FindLanguageMatchingLocale {
     @Test
     public void cantFindMatch() {
         Assert.assertNull(Util.findBestMatchOrNull(ja_JP, AVAILABLE_LANGS));
+        Assert.assertNull(Util.findBestMatchOrNull(gb, AVAILABLE_LANGS));
 
         Assert.assertNotNull(Util.findBestMatchOrNull(en_GB, AVAILABLE_LANGS));
         Assert.assertNotNull(Util.findBestMatchOrNull(en_US, AVAILABLE_LANGS));
@@ -74,7 +73,7 @@ public class FindLanguageMatchingLocale {
             this(languageCode, "");
         }
 
-        MockLanguage(String languageCode, @Nullable String countryCode) {
+        MockLanguage(String languageCode, String countryCode) {
             this.languageCode = languageCode;
             this.countryCode = countryCode;
         }

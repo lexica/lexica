@@ -36,7 +36,7 @@ public class LexicaLogo extends View {
 
 	private enum BoxColor {BACKGROUND, MAIN}
 
-	private static final String LETTERS[] = {
+	private static final String[] LETTERS = {
 		"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
 		"O","P","Qu","R","S","T","U","V","W","X","Y","Z"
 	};
@@ -86,7 +86,7 @@ public class LexicaLogo extends View {
 		p.setTypeface(Fonts.get().getSansSerifCondensed());
 		float textSize = size * 0.8f;
 		p.setTextSize(textSize);
-		canvas.drawText(letter,x + size / 2,y + (size / 2) - offset, p);
+		canvas.drawText(letter,x + size / 2f,y + (size / 2f) - offset, p);
 
 	}
 
@@ -119,7 +119,7 @@ public class LexicaLogo extends View {
 		int deviceWidth = displayMetrics.widthPixels;
 
 		int size = Math.min(deviceHeight,deviceWidth) / 8;
-		p.setTextSize(size*8/10);
+		p.setTextSize(size*8f/10f);
 
 		// Find vertical center offset
 		Rect textBounds = new Rect();
@@ -140,7 +140,7 @@ public class LexicaLogo extends View {
 		int totalInnerPadding = paddingSize * 5;
 
 		size = (Math.min(deviceHeight,deviceWidth) - outerPadding - totalInnerPadding ) / 6;
-		p.setTextSize(size*8/10);
+		p.setTextSize(size*8f/10f);
 
 		// Find vertical center offset
 		p.getTextBounds("A", 0, 1, textBounds);

@@ -30,14 +30,13 @@ import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
 import com.serwylo.lexica.Util;
-import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.EnglishUS;
+import com.serwylo.lexica.lang.Language;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.StringTrie;
 import net.healeys.trie.Trie;
-import net.healeys.trie.WordFilter;
 
 import java.io.IOException;
 import java.util.Date;
@@ -243,13 +242,10 @@ public class Game implements Synchronizer.Counter {
 		language = Language.fromOrNull(languageCode);
 		if (language == null) {
 			// Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_GB")
-			switch (languageCode) {
-				case "UK":
-					language = new EnglishGB();
-					break;
-				default:
-					language = new EnglishUS();
-					break;
+			if ("UK".equals(languageCode)) {
+				language = new EnglishGB();
+			} else {
+				language = new EnglishUS();
 			}
 		}
 		Log.d(TAG, "Language (from preferences): " + language.getName());
@@ -292,11 +288,7 @@ public class Game implements Synchronizer.Counter {
 					board,
 					language);
 
-			solutions = dict.solver(board,new WordFilter() {
-				public boolean isWord(String w) {
-					return w.length() >= minWordLength;
-				}
-			});
+			solutions = dict.solver(board, w -> w.length() >= minWordLength);
 
 			Log.d(TAG, "Initializing "  + language.getName() + " dictionary");
 			for (String word: solutions.keySet()) {

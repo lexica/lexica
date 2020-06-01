@@ -18,13 +18,9 @@
 package com.serwylo.lexica;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import com.serwylo.lexica.activities.score.ScoreActivity;
@@ -38,65 +34,35 @@ public class Lexica extends Activity {
 	@SuppressWarnings("unused")
 	protected static final String TAG = "Lexica";
 
-	private static final int DIALOG_NO_SAVED = 1;
-
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-		try {
-       		super.onCreate(savedInstanceState);
-			ThemeManager.getInstance().applyTheme(this);
-			splashScreen();
-		} catch (Exception e) {
-			// Log.e(TAG,"top level",e);
-		}
+		super.onCreate(savedInstanceState);
+		ThemeManager.getInstance().applyTheme(this);
+		splashScreen();
     }
 
 	private void splashScreen() {
 		setContentView(R.layout.splash);
 
 		FancyButton newGame = findViewById(R.id.new_game);
-		// Log.d(TAG,"b="+b);
-		newGame.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				startActivity(new Intent("com.serwylo.lexica.action.NEW_GAME"));
-			}
-		});
+		newGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.NEW_GAME")));
 
 		if(savedGame()) {
 			FancyButton restoreGame = findViewById(R.id.restore_game);
-			restoreGame.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
-					if(savedGame()) {
-						// Log.d(TAG,"restoring game");
-						startActivity(new
-							Intent("com.serwylo.lexica.action.RESTORE_GAME"));
-					} else {
-						// Log.d(TAG,"no saved game :(");
-						showDialog(DIALOG_NO_SAVED);
-					}
-				}
-			});
+			restoreGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.RESTORE_GAME")));
 			restoreGame.setEnabled(true);
 		}
 
 		FancyButton about = findViewById(R.id.about);
-		about.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				Uri u = Uri.parse("https://github.com/lexica/lexica");
-				i.setData(u);
-				startActivity(i);
-			}
+		about.setOnClickListener(v -> {
+			Intent i = new Intent(Intent.ACTION_VIEW);
+			Uri u = Uri.parse("https://github.com/lexica/lexica");
+			i.setData(u);
+			startActivity(i);
 		});
 
 		FancyButton preferences = findViewById(R.id.preferences);
-		preferences.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				startActivity(new
-					Intent("com.serwylo.lexica.action.CONFIGURE"));
-			}
-		});
+		preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));
 
 		int highScoreValue = ScoreActivity.getHighScore(this);
 
@@ -107,11 +73,6 @@ public class Lexica extends Activity {
 		highScore.setText(String.format(Locale.getDefault(), "%d", highScoreValue));
 	}
 
-	public void onPause() {
-		super.onPause();
-		// Log.d(TAG,"Pausing");
-	}
-
 	public void onResume() {
 		super.onResume();
 		splashScreen();
@@ -119,25 +80,6 @@ public class Lexica extends Activity {
 
 	public boolean savedGame() {
 		return new GameSaverPersistent(this).hasSavedGame();
-	}
-
-	@Override
-	protected Dialog onCreateDialog(int id) {
-		switch(id) {
-			case DIALOG_NO_SAVED:
-				return new AlertDialog.Builder(this)
-					.setTitle(getResources().
-						getString(R.string.dialog_no_saved))
-					.setPositiveButton(R.string.dialog_ok,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-								int whichButton) {
-									// do nothing.
-								}
-						})
-					.create();
-		}
-		return null;
 	}
 
 }

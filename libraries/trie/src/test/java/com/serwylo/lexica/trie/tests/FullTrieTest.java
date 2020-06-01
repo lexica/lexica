@@ -19,6 +19,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertNotNull;
+
 public class FullTrieTest extends TrieTest {
 
 	@Test
@@ -73,6 +75,7 @@ public class FullTrieTest extends TrieTest {
 		try {
 			List<String> words = new ArrayList<>(80000);
 			InputStream stream = FullTrieTest.class.getClassLoader().getResourceAsStream(language.getDictionaryFileName());
+			assertNotNull(stream);
 			BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 			String line = reader.readLine();
 			while (line != null) {

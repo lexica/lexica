@@ -43,41 +43,38 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
         final List<Item> items = new ArrayList<>(possible.size());
         final Adapter adapter = new Adapter(items);
 
-        ViewWordListener onViewWord = new ViewWordListener() {
-            @Override
-            public void onViewWord(String word) {
-                bv.highlight(game.getSolutions().get(word).get(0).getPositions());
-                bv.invalidate();
+        ViewWordListener onViewWord = word -> {
+            bv.highlight(game.getSolutions().get(word).get(0).getPositions());
+            bv.invalidate();
 
-                // Clear out the old selected item, find the new selected item, then notify the
-                // adapter about both items so they can be updated.
-                int index = -1;
-                int previouslySelectedIndex = -1;
-                Item previouslySelectedItem = adapter.getSelectedItem();
-                Item newSelectedItem = null;
-                for (int i = 0; i < items.size(); i ++) {
-                    String itemWord = items.get(i).word;
-                    if (itemWord.equals(word)) {
-                        index = i;
-                        newSelectedItem = items.get(i);
-                    } else if (previouslySelectedItem != null && itemWord.equals(previouslySelectedItem.word)) {
-                        previouslySelectedIndex = i;
-                    }
-
-                    if (index != -1 && (previouslySelectedItem == null || previouslySelectedIndex != -1)) {
-                        break;
-                    }
+            // Clear out the old selected item, find the new selected item, then notify the
+            // adapter about both items so they can be updated.
+            int index = -1;
+            int previouslySelectedIndex = -1;
+            Item previouslySelectedItem = adapter.getSelectedItem();
+            Item newSelectedItem = null;
+            for (int i = 0; i < items.size(); i ++) {
+                String itemWord = items.get(i).word;
+                if (itemWord.equals(word)) {
+                    index = i;
+                    newSelectedItem = items.get(i);
+                } else if (previouslySelectedItem != null && itemWord.equals(previouslySelectedItem.word)) {
+                    previouslySelectedIndex = i;
                 }
 
-                adapter.setSelectedItem(newSelectedItem);
-
-                if (index != -1) {
-                    adapter.notifyItemChanged(index);
+                if (index != -1 && (previouslySelectedItem == null || previouslySelectedIndex != -1)) {
+                    break;
                 }
+            }
 
-                if (previouslySelectedIndex != -1) {
-                    adapter.notifyItemChanged(previouslySelectedIndex);
-                }
+            adapter.setSelectedItem(newSelectedItem);
+
+            if (index != -1) {
+                adapter.notifyItemChanged(index);
+            }
+
+            if (previouslySelectedIndex != -1) {
+                adapter.notifyItemChanged(previouslySelectedIndex);
             }
         };
 

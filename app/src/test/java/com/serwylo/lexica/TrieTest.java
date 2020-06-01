@@ -1,7 +1,5 @@
 package com.serwylo.lexica;
 
-import com.serwylo.lexica.lang.Language;
-
 import net.healeys.trie.Trie;
 
 import org.junit.Assert;

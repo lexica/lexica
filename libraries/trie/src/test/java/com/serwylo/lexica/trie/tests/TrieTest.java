@@ -2,6 +2,7 @@ package com.serwylo.lexica.trie.tests;
 
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.trie.util.LetterFrequency;
+import com.sun.istack.internal.NotNull;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.Trie;
@@ -71,7 +72,7 @@ public abstract class TrieTest {
 			String log = message + ": ";
 			word = word.toLowerCase(language.getLocale());
 			allWords.add(word);
-			assertTrue(log + word + " should be a word", trie.isWord(word));;
+			assertTrue(log + word + " should be a word", trie.isWord(word));
 		}
 
 		onlyContains(language, trie, allWords);
@@ -89,6 +90,7 @@ public abstract class TrieTest {
 		}
 	}
 
+	@NotNull
 	public static byte[] serialize(Trie trie) {
 		try {
 			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

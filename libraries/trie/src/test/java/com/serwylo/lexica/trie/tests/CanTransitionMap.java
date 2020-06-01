@@ -6,9 +6,7 @@ import com.serwylo.lexica.trie.util.LetterFrequency;
 import net.healeys.trie.TransitionMap;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Mock {@link TransitionMap} for testing, which only cares about the letters on the board, not
@@ -22,7 +20,7 @@ import java.util.Map;
  */
 public class CanTransitionMap implements TransitionMap {
 
-    private String[] letters;
+    private final String[] letters;
 
     CanTransitionMap(String[] letters) {
         this.letters = letters;

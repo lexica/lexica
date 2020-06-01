@@ -49,7 +49,7 @@ public class BoardView extends View {
 	private int gridsize;
 	private float boxsize;
 	private int boardWidth;
-	private Paint p;
+	private final Paint p;
 	private Set<Integer> highlightedPositions = new HashSet<>();
 	private int maxWeight;
 

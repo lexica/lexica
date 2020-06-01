@@ -2,7 +2,6 @@ package com.serwylo.lexica;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,12 +26,7 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavUtils.navigateUpFromSameTask(SettingsActivity.this);
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> NavUtils.navigateUpFromSameTask(SettingsActivity.this));
 
 
         getSupportFragmentManager()

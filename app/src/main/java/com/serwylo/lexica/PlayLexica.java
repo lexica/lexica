@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -219,7 +220,7 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
 	}
 
 	@Override
-	protected void onSaveInstanceState(Bundle outState) {
+	protected void onSaveInstanceState(@NonNull Bundle outState) {
 		super.onSaveInstanceState(outState);
 		saveGame(outState);
 	}
