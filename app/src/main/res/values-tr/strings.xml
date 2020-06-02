@@ -58,8 +58,8 @@
     <string name="hide_unique">Eşsiz Kelimeleri Gizle</string>
     <string name="view_word"><u>Göster</u></string>
     <string name="define_word"><u>Tanımla</u></string>
-    <string name="words">KELİMELER</string>
-    <string name="score">PUAN</string>
+    <string name="words">Kelimeler</string>
+    <string name="score">Puan</string>
     <string name="found_words">Bulunan Kelimeler</string>
     <string name="missed_words">Bulunamayan Kelimeler</string>
     <string name="total_words">Toplam Kelimeler:</string>
@@ -87,4 +87,9 @@
     <string name="pref_definitionProvider_dictionaryProvider_online">Çevrim içi</string>
     <string name="pref_dict_pl">Lehçe</string>
     <string name="pref_dict_pt_BR">Portekizce (Brezilya)</string>
+    <string name="time">Süre</string>
+    <string name="theme_dark">Karanlık</string>
+    <string name="theme_light">Aydınlık</string>
+    <string name="pref_theme_dialog">Tema Seç</string>
+    <string name="pref_theme">Tema</string>
 </resources>
