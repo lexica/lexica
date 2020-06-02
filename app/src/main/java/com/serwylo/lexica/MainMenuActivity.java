@@ -29,7 +29,7 @@ import java.util.Locale;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
-public class Lexica extends Activity {
+public class MainMenuActivity extends Activity {
 
     @SuppressWarnings("unused")
     protected static final String TAG = "Lexica";

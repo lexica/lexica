@@ -23,17 +23,19 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
 
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.LexicaView;
 
-public class PlayLexica extends AppCompatActivity implements Synchronizer.Finalizer {
+public class GameActivity extends AppCompatActivity implements Synchronizer.Finalizer {
 
     protected static final String TAG = "PlayLexica";
 
@@ -53,6 +55,8 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(v -> navigateToHome());
 
         if (savedInstanceState != null) {
             try {
@@ -96,11 +100,6 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
         switch (item.getItemId()) {
             case R.id.rotate:
                 game.rotateBoard();
-                break;
-            case R.id.save_game:
-                synch.abort();
-                saveGame();
-                finish();
                 break;
             case R.id.end_game:
                 game.endNow();
@@ -163,6 +162,12 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
             game.pause();
             game.save(new GameSaverTransient(state));
         }
+    }
+
+    private void navigateToHome() {
+        synch.abort();
+        saveGame();
+        NavUtils.navigateUpFromSameTask(this);
     }
 
     public void onPause() {

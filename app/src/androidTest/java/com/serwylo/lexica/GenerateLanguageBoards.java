@@ -83,7 +83,7 @@ public class GenerateLanguageBoards {
     }
 
     @Rule
-    public ActivityTestRule<Lexica> mActivityTestRule = new ActivityTestRule<>(Lexica.class);
+    public ActivityTestRule<MainMenuActivity> mActivityTestRule = new ActivityTestRule<>(MainMenuActivity.class);
 
     private void generateLanguageBoards(Language language) {
         Log.d(TAG, "Running test for " + language.getName() + " board");

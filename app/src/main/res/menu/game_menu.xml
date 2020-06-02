@@ -5,10 +5,8 @@
 		android:title="@string/menu_rotate_board"
 		android:icon="@drawable/ic_rotate_right_white_24dp"
 		app:showAsAction="always"/>
-	<item android:id="@+id/save_game" 
-		android:title="@string/menu_save_game"
-		android:icon="@drawable/ic_save_white_24dp"
-		app:showAsAction="ifRoom"/>
 	<item android:id="@+id/end_game"
-		android:title="@string/menu_end_game" />
+		android:title="@string/menu_end_game"
+		android:icon="@drawable/ic_close_white"
+		app:showAsAction="always"/>
 </menu>

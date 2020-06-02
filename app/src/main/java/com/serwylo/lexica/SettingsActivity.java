@@ -28,7 +28,6 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> NavUtils.navigateUpFromSameTask(SettingsActivity.this));
 
-
         getSupportFragmentManager().beginTransaction().replace(R.id.settings_wrapper, new SettingsFragment()).commit();
 
     }

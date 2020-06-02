@@ -11,7 +11,7 @@
 		android:supportsRtl="true"
 		android:allowBackup="true">
 
-        <activity android:name=".Lexica"
+        <activity android:name=".MainMenuActivity"
 			android:screenOrientation="portrait"
 			android:configChanges="orientation|keyboardHidden">
             <intent-filter>
@@ -20,9 +20,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PlayLexica"
+        <activity android:name=".GameActivity"
 			android:screenOrientation="portrait"
-			android:configChanges="orientation|keyboardHidden">
+			android:configChanges="orientation|keyboardHidden"
+			android:parentActivityName=".MainMenuActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
 			<intent-filter>
 				<action android:name="com.serwylo.lexica.action.NEW_GAME" />
 				<category android:name="android.intent.category.DEFAULT" />
@@ -42,8 +44,8 @@
 			</intent-filter>
         </activity>
 
-        <activity android:name=".SettingsActivity" android:exported="false" android:parentActivityName=".Lexica">
-			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Lexica" />
+        <activity android:name=".SettingsActivity" android:exported="false" android:parentActivityName=".MainMenuActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
 			<intent-filter>
 				<action android:name="com.serwylo.lexica.action.CONFIGURE" />
 				<category android:name="android.intent.category.DEFAULT" />
