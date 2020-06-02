@@ -78,7 +78,7 @@
     <string name="total_words">Sammanlagda ord:</string>
     <string name="total_score">Sammanlagda poäng:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="high_score">Rekord: %1$d</string>
+    <string name="high_score">Rekord</string>
     <string name="pref_resetScores_summary">Rekord är spårade för varje kombination av inställningarna ovan. Tryck för att återställa alla rekord till noll.</string>
     <string name="pref_resetScores">Återställ rekord</string>
     <string name="high_scores_reset">Rekord har blivit återställda.</string>

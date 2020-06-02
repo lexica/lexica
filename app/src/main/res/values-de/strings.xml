@@ -53,7 +53,7 @@
     <string name="pref_scoreType_dialog">Bewertungstyp auswählen</string>
     <string name="word_length">Wortlänge</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="high_score">Highscore: %1$d</string>
+    <string name="high_score">Highscore</string>
     <string name="pref_resetScores_summary">Highscore wird für jede Kombination der oben genannten Einstellungen aufgezeichnet. Antippen, um alle Ergebnisse auf Null zurückzusetzen.</string>
     <string name="pref_resetScores">Highscore zurücksetzen</string>
     <string name="high_scores_reset">Highscore wurde zurückgesetzt</string>

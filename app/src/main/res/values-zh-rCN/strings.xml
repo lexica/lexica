@@ -55,7 +55,7 @@
     <string name="word_length">单词长度</string>
     <string name="letter_points">字母分数</string>
     <string name="score">分数</string>
-    <string name="high_score">高分纪录：%1$d</string>
+    <string name="high_score">高分纪录</string>
     <string name="pref_resetScores_summary">游戏为每个游戏模式纪录最高分，按此以重设所有分数纪录至零分。</string>
     <string name="pref_resetScores">重设高分纪录</string>
     <string name="high_scores_reset">您已重设高分纪录。</string>

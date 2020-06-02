@@ -65,7 +65,7 @@
     <string name="total_words">Összes szó:</string>
     <string name="total_score">Összes pontszám:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="high_score">Legjobb pontszám: %1$d</string>
+    <string name="high_score">Legjobb pontszám</string>
     <string name="pref_resetScores_summary">A legjobb pontszámok a fenti beállítások minden egyes kombinációjánál követésre kerülnek. Koppintson az összes pontszám nullára történő visszaállításához.</string>
     <string name="pref_resetScores">Legjobb pontszámok visszaállítása</string>
     <string name="high_scores_reset">A legjobb pontszámok vissza lettek állítva.</string>

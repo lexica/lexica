@@ -67,6 +67,9 @@ public class Lexica extends Activity {
         int highScoreValue = ScoreActivity.getHighScore(this);
 
         TextView highScoreLabel = findViewById(R.id.high_score_label);
+
+        // TODO: Leaving format argument here for now, until all strings.xml have been replaced for each lang to no
+        //       longer have this argument. Otherwise, they will likely crash at runtime.
         highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
 
         TextView highScore = findViewById(R.id.high_score);

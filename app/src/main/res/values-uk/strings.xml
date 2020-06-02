@@ -81,7 +81,7 @@
 	<string name="total_score">Очки:</string>
 	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
 
-	<string name="high_score">Рекорд: %1$d</string>
+	<string name="high_score">Рекорд</string>
 	<string name="pref_resetScores_summary">Рекорди зберігаються для кожної комбінації налаштувань. Натисніть, щоб обнулити всі рекорди.</string>
 	<string name="pref_resetScores">Обнулити рекорди</string>
     <string name="high_scores_reset">Рекорди обнулено</string>

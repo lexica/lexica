@@ -62,7 +62,7 @@
     <string name="pref_dict_uk_ua">Ucraino</string>
     <string name="pref_dict_ru">Russo</string>
     <string name="pref_dict_pl">Polacco</string>
-    <string name="high_score">Punteggio più alto: %1$d</string>
+    <string name="high_score">Punteggio più alto</string>
     <string name="score">PUNTEGGIO</string>
     <string name="hint_both">Tutti e due</string>
     <string name="hint_colour">Colore del bordo</string>

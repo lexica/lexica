@@ -55,7 +55,7 @@
     <string name="word_length">単語の長さ</string>
     <string name="letter_points">文字のポイント</string>
     <string name="score">スコア</string>
-    <string name="high_score">ハイスコア: %1$d</string>
+    <string name="high_score">ハイスコア</string>
     <string name="pref_resetScores_summary">ハイスコアは、上記設定の組み合わせごとに記録されます。タップすると、すべてのスコアをゼロにリセットします。</string>
     <string name="pref_resetScores">ハイスコアをリセット</string>
     <string name="high_scores_reset">ハイスコアをリセットしました。</string>
