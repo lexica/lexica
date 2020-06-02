@@ -56,6 +56,7 @@ public abstract class Language {
      * Converts a lowercase representation into something for display. For example, in the case
      * of an English "qu", it should probably be displayed with a capitol "Q" but lower case "u":
      * "Qu";
+     *
      * @param value The lowercase string, as it is stored in the serialized trie.
      */
     public abstract String toDisplay(String value);
@@ -129,14 +130,14 @@ public abstract class Language {
 
     /**
      * A URL which we can send the player to in order to define a word.
-     *
+     * <p>
      * Must include a single {@link String#format(String, Object...)} "%s" placeholder.
-     *
+     * <p>
      * By default, uses DuckDuckGo, however individual languages may have their own more appropriate
      * sources to use.
-     *
+     * <p>
      * Note: This is only used if the "Online" dictionary provider is selected from preferences.
-     *       If "AARD2" or "QuickDic" is selected, they will take precedence.
+     * If "AARD2" or "QuickDic" is selected, they will take precedence.
      */
     public String getDefinitionUrl() {
         return "https://duckduckgo.com/?ia=definition&q=define+%s";

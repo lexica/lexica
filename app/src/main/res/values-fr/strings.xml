@@ -55,7 +55,7 @@
     <string name="word_length">Longueur des mots</string>
     <string name="letter_points">Valeur des lettres</string>
     <string name="score">SCORE</string>
-    <string name="high_score">Meilleur score : %1$d</string>
+    <string name="high_score">Meilleur score </string>
     <string name="pref_resetScores_summary">Le logiciel garde en mémoire les meilleurs scores. Appuyez ici pour remettre à zéro la mémoire.</string>
     <string name="pref_resetScores">Remettre à Zéro les meilleurs scores</string>
     <string name="high_scores_reset">Les scores ont été remis à zéro.</string>

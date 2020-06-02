@@ -4,7 +4,7 @@
     <string name="pref_dict_ca">Καταλανικά</string>
     <string name="pref_dict_beta">%1$s (Beta)</string>
     <string name="time_5m">5 λεπτά</string>
-    <string name="high_score">Υψηλή βαθμολογία: %1$d</string>
+    <string name="high_score">Υψηλή βαθμολογία</string>
     <string name="words">ΛΈΞΕΙΣ</string>
     <string name="time_30m">30 λεπτά</string>
     <string name="pref_definitionProvider_summary">Επιλέξτε μια υπηρεσία παροχής ορισμού για χρήση. Εάν η επιλεγμένη υπηρεσία παροχής δεν είναι εγκατεστημένη, θα χρησιμοποιηθεί το DuckDuckGo.</string>

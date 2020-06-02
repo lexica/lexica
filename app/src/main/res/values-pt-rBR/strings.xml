@@ -4,7 +4,7 @@
     <string name="pref_dict_ca">Catalão</string>
     <string name="pref_dict_beta">%1$s (Beta)</string>
     <string name="time_5m">5 minutos</string>
-    <string name="high_score">Recorde: %1$d</string>
+    <string name="high_score">Recorde</string>
     <string name="words">PALAVRAS</string>
     <string name="time_30m">30 minutos</string>
     <string name="pref_definitionProvider_summary">Selecione o provedor de definições a usar. Se o provedor selecionado não estiver instalado, será utilizado o DuckDuckGo.</string>

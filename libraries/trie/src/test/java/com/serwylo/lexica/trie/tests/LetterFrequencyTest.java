@@ -1,6 +1,5 @@
 package com.serwylo.lexica.trie.tests;
 
-import com.serwylo.lexica.lang.DeGerman;
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.Persian;
 import com.serwylo.lexica.trie.util.LetterFrequency;
@@ -48,9 +47,9 @@ public class LetterFrequencyTest {
         assertCounts(letters.getCountsForLetter("u"));
     }
 
-    private static void assertCounts(List<Integer> actualCounts, int ... expectedCounts) {
+    private static void assertCounts(List<Integer> actualCounts, int... expectedCounts) {
         assertEquals(expectedCounts.length, actualCounts.size());
-        for (int i = 0; i < expectedCounts.length; i ++) {
+        for (int i = 0; i < expectedCounts.length; i++) {
             int actual = actualCounts.get(i);
             assertEquals(expectedCounts[i], actual);
         }

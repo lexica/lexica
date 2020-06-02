@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:background="?attr/score__background_colour"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:fancy="http://schemas.android.com/apk/res-auto">
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recycler_view"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		tools:listitem="@layout/score_found_words"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/found_words_button" />
+
+	<mehdi.sakout.fancybuttons.FancyButton
+		android:id="@+id/found_words_button"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:paddingTop="?attr/home__button_padding"
+		android:paddingBottom="?attr/home__button_padding"
+		fancy:fb_fontIconResource="&#xf058;"
+		fancy:fb_fontIconSize="24sp"
+		fancy:fb_textSize="18sp"
+		fancy:fb_defaultColor="?attr/home__secondary_button_background"
+		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
+		fancy:fb_text="@string/found_words"
+		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+		fancy:fb_iconPosition="top"
+		app:layout_constraintWidth_percent="0.34"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<mehdi.sakout.fancybuttons.FancyButton
+		android:id="@+id/missed_words_button"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:paddingTop="?attr/home__button_padding"
+		android:paddingBottom="?attr/home__button_padding"
+		fancy:fb_text="@string/missed_words"
+		fancy:fb_fontIconResource="&#xf057;"
+		fancy:fb_fontIconSize="24sp"
+		fancy:fb_textSize="18sp"
+		fancy:fb_defaultColor="?attr/home__secondary_button_background"
+		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
+		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+		fancy:fb_iconPosition="top"
+		app:layout_constraintWidth_percent="0.34"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toEndOf="@id/found_words_button" />
+
+	<mehdi.sakout.fancybuttons.FancyButton
+		android:id="@+id/back_button"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:paddingTop="?attr/home__button_padding"
+		android:paddingBottom="?attr/home__button_padding"
+		fancy:fb_text="Back"
+		fancy:fb_fontIconResource="&#xf0a8;"
+		fancy:fb_fontIconSize="24sp"
+		fancy:fb_textSize="18sp"
+		fancy:fb_defaultColor="?attr/home__secondary_button_background"
+		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
+		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+		fancy:fb_iconPosition="top"
+		app:layout_constraintWidth_percent="0.34"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/missed_words_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

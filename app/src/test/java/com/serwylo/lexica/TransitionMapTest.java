@@ -2,8 +2,8 @@ package com.serwylo.lexica;
 
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.FourByFourBoard;
-import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.EnglishUS;
+import com.serwylo.lexica.lang.Language;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.StringTrie;
@@ -25,30 +25,25 @@ import static org.junit.Assert.assertTrue;
 
 public class TransitionMapTest {
 
-    private static final Board BOARD = new FourByFourBoard(new String[] {
-            "b", "e", "x", "x",
-            "d", "a", "n", "x",
-            "x", "r", "k", "x",
-            "x", "x", "x", "x",
-    });
+    private static final Board BOARD = new FourByFourBoard(new String[]{"b", "e", "x", "x", "d", "a", "n", "x", "x", "r", "k", "x", "x", "x", "x", "x",});
 
     // Only a subset of all possible solutions.
     private static final LinkedHashMap<String, Solution> SOLUTIONS = new LinkedHashMap<>();
 
     static {
         // Note: Don't include "a", "an", or "be" because they are too short.
-        SOLUTIONS.put("bed",   new Solution.Default("bed",   new Integer[] { xy(0, 0), xy(1, 0), xy(0, 1) }));
-        SOLUTIONS.put("bad",   new Solution.Default("bad",   new Integer[] { xy(0, 0), xy(1, 1), xy(0, 1) }));
-        SOLUTIONS.put("ban",   new Solution.Default("ban",   new Integer[] { xy(0, 0), xy(1, 1), xy(2, 1) }));
-        SOLUTIONS.put("ran",   new Solution.Default("ran",   new Integer[] { xy(1, 2), xy(1, 1), xy(2, 1) }));
-        SOLUTIONS.put("bean",  new Solution.Default("bean",  new Integer[] { xy(0, 0), xy(1, 0), xy(1, 1), xy(2, 1) }));
-        SOLUTIONS.put("bane",  new Solution.Default("bane",  new Integer[] { xy(0, 0), xy(1, 1), xy(2, 1), xy(1, 0) }));
-        SOLUTIONS.put("barn",  new Solution.Default("barn",  new Integer[] { xy(0, 0), xy(1, 1), xy(1, 2), xy(2, 1) }));
-        SOLUTIONS.put("darn",  new Solution.Default("darn",  new Integer[] { xy(0, 1), xy(1, 1), xy(1, 2), xy(2, 1) }));
-        SOLUTIONS.put("beard", new Solution.Default("beard", new Integer[] { xy(0, 0), xy(1, 0), xy(1, 1), xy(1, 2), xy(0, 1) }));
-        SOLUTIONS.put("ear",   new Solution.Default("ear",   new Integer[] { xy(1, 0), xy(1, 1), xy(1, 2) }));
-        SOLUTIONS.put("earn",  new Solution.Default("earn",  new Integer[] { xy(1, 0), xy(1, 1), xy(1, 2), xy(2, 1) }));
-        SOLUTIONS.put("bard",  new Solution.Default("bard",  new Integer[] { xy(0, 0), xy(1, 1), xy(1, 2), xy(0, 1) }));
+        SOLUTIONS.put("bed", new Solution.Default("bed", new Integer[]{xy(0, 0), xy(1, 0), xy(0, 1)}));
+        SOLUTIONS.put("bad", new Solution.Default("bad", new Integer[]{xy(0, 0), xy(1, 1), xy(0, 1)}));
+        SOLUTIONS.put("ban", new Solution.Default("ban", new Integer[]{xy(0, 0), xy(1, 1), xy(2, 1)}));
+        SOLUTIONS.put("ran", new Solution.Default("ran", new Integer[]{xy(1, 2), xy(1, 1), xy(2, 1)}));
+        SOLUTIONS.put("bean", new Solution.Default("bean", new Integer[]{xy(0, 0), xy(1, 0), xy(1, 1), xy(2, 1)}));
+        SOLUTIONS.put("bane", new Solution.Default("bane", new Integer[]{xy(0, 0), xy(1, 1), xy(2, 1), xy(1, 0)}));
+        SOLUTIONS.put("barn", new Solution.Default("barn", new Integer[]{xy(0, 0), xy(1, 1), xy(1, 2), xy(2, 1)}));
+        SOLUTIONS.put("darn", new Solution.Default("darn", new Integer[]{xy(0, 1), xy(1, 1), xy(1, 2), xy(2, 1)}));
+        SOLUTIONS.put("beard", new Solution.Default("beard", new Integer[]{xy(0, 0), xy(1, 0), xy(1, 1), xy(1, 2), xy(0, 1)}));
+        SOLUTIONS.put("ear", new Solution.Default("ear", new Integer[]{xy(1, 0), xy(1, 1), xy(1, 2)}));
+        SOLUTIONS.put("earn", new Solution.Default("earn", new Integer[]{xy(1, 0), xy(1, 1), xy(1, 2), xy(2, 1)}));
+        SOLUTIONS.put("bard", new Solution.Default("bard", new Integer[]{xy(0, 0), xy(1, 1), xy(1, 2), xy(0, 1)}));
     }
 
     static int xy(int x, int y) {
@@ -95,7 +90,7 @@ public class TransitionMapTest {
 
     private static byte[] serializedUsTrie(Trie trie) {
         Language language = new EnglishUS();
-        TrieTest.addWords(trie, FullUsGbTrieTest.readDictionary(language), language);
+        TrieTest.addWords(trie, FullUsGbTrieTest.readDictionary(language));
         return TrieTest.serialize(trie);
     }
 

@@ -1,9 +1,9 @@
 apply plugin: 'java'
 
 dependencies {
-    compile project(':libraries:liblexica')
-    compile project(':libraries:trie')
-    compile "org.apache.commons:commons-math:2.2"
+    implementation project(':libraries:liblexica')
+    implementation project(':libraries:trie')
+    implementation "org.apache.commons:commons-math:2.2"
 }
 
 jar {

@@ -15,11 +15,11 @@
    viewBox="0 0 192.0002 192.0006"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="ic_launcher.svg"
-   inkscape:export-filename="/home/pete/code/lexica/assets/ic_launcher.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-filename="/home/pete/code/lexica/app/src/main/ic_launcher-web.png"
+   inkscape:export-xdpi="256"
+   inkscape:export-ydpi="256">
   <defs
      id="defs4">
     <linearGradient
@@ -1313,16 +1313,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="415.60738"
-     inkscape:cy="118.05338"
+     inkscape:zoom="2"
+     inkscape:cx="119.55952"
+     inkscape:cy="94.717113"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g7626"
      showgrid="false"
      units="px"
-     inkscape:window-width="952"
-     inkscape:window-height="729"
-     inkscape:window-x="410"
+     inkscape:window-width="1916"
+     inkscape:window-height="1041"
+     inkscape:window-x="0"
      inkscape:window-y="18"
      inkscape:window-maximized="0"
      fit-margin-top="0"
@@ -1337,7 +1337,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1354,14 +1354,14 @@
          ry="20.483646"
          rx="20.483646"
          y="909.8468"
-         x="-27.108786"
+         x="-27.108788"
          height="192"
          width="192"
          id="rect4217-0-6-5-6"
-         style="fill:#03a9f4;fill-opacity:1;stroke:none" />
+         style="fill:#edb641;fill-opacity:1;stroke:none" />
       <rect
          transform="matrix(2.6185443,0,0,2.6185443,-1293.4064,-610.82762)"
-         style="opacity:1;fill:#0a91ce;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.52756631;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter6914)"
+         style="opacity:1;fill:#cf9f3a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.52756631;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter6914)"
          id="rect6884"
          width="51.937252"
          height="51.937252"
@@ -1380,8 +1380,8 @@
          id="rect6918"
          inkscape:connector-curvature="0" />
       <path
-         style="fill:#0a91ce;fill-opacity:1;stroke:none"
-         d="m -27.10858,1077.3638 0,4 c 0,11.3479 9.1365,20.4824 20.4844002,20.4824 l 151.0311998,0 c 11.348,0 20.4844,-9.1345 20.4844,-20.4824 l 0,-4 c 0,11.3479 -9.1364,20.4824 -20.4844,20.4824 l -151.0311998,0 c -11.3479002,0 -20.4844002,-9.1345 -20.4844002,-20.4824 z"
+         style="fill:#cf9f39;fill-opacity:1;stroke:none"
+         d="m -27.10858,1077.3638 v 4 c 0,11.3479 9.1365,20.4824 20.4844,20.4824 h 151.0312 c 11.348,0 20.4844,-9.1345 20.4844,-20.4824 v -4 c 0,11.3479 -9.1364,20.4824 -20.4844,20.4824 H -6.62418 c -11.3479,0 -20.4844,-9.1345 -20.4844,-20.4824 z"
          id="rect6975"
          inkscape:connector-curvature="0" />
       <rect
@@ -1389,7 +1389,7 @@
          id="rect6986"
          width="192"
          height="192"
-         x="-27.108786"
+         x="-27.108788"
          y="909.8468"
          rx="20.483646"
          ry="20.483646"

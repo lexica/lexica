@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="padding">10dp</dimen>
-    <dimen name="timerHeight">10dp</dimen>
-    <dimen name="textSizeMinimum">12sp</dimen>
-    <dimen name="textSizeSmall">16sp</dimen>
-    <dimen name="textSizeNormal">20sp</dimen>
-    <dimen name="textSizeLarge">30sp</dimen>
+    <dimen name="homeScreenLetterPadding">10dp</dimen>
+    <dimen name="homeScreenButtonPadding">20dp</dimen>
+
+    <dimen name="padding">0dp</dimen>
+
+    <dimen name="currentWordSize">34sp</dimen>
+    <dimen name="pastWordSize">20sp</dimen>
+
+    <dimen name="timerHeight">15dp</dimen>
+    <dimen name="timerBorderWidth">0dp</dimen>
+    <dimen name="tileBorderWidth">0.75dp</dimen>
+
+    <dimen name="scoreHeadingTextSize">18sp</dimen>
+    <dimen name="scoreTextSize">22sp</dimen>
+    <dimen name="scorePadding">12dp</dimen>
+    <dimen name="scorePaddingHalf">6dp</dimen>
 </resources>

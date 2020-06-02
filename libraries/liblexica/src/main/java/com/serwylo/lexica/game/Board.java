@@ -20,85 +20,85 @@ package com.serwylo.lexica.game;
 import net.healeys.trie.TransitionMap;
 
 public abstract class Board implements TransitionMap {
-	private String[] board;
-	private Integer[] positions;
+    private String[] board;
+    private Integer[] positions;
 
-	public Board(String[] b) {
-		board = b;
-		positions = new Integer[getSize()];
-		for (int i = 0; i < getSize(); i++) {
-			positions[i] = i;
-		}
-	}
+    public Board(String[] b) {
+        board = b;
+        positions = new Integer[getSize()];
+        for (int i = 0; i < getSize(); i++) {
+            positions[i] = i;
+        }
+    }
 
-	/**
-	 * May be more than one character (see {@link com.serwylo.lexica.lang.Language#applyMandatorySuffix(String)}).
-	 */
-	public synchronized String elementAt(int i) {
-		return board[i];
-	}
+    /**
+     * May be more than one character (see {@link com.serwylo.lexica.lang.Language#applyMandatorySuffix(String)}).
+     */
+    public synchronized String elementAt(int i) {
+        return board[i];
+    }
 
-	/**
-	 * May be more than one character (see {@link com.serwylo.lexica.lang.Language#applyMandatorySuffix(String)}).
-	 */
-	public synchronized String elementAt(int x,int y) {
-		return board[x+getWidth()*y];
-	}
+    /**
+     * May be more than one character (see {@link com.serwylo.lexica.lang.Language#applyMandatorySuffix(String)}).
+     */
+    public synchronized String elementAt(int x, int y) {
+        return board[x + getWidth() * y];
+    }
 
-	public synchronized String valueAt(int i) {
-		return board[i];
-	}
+    public synchronized String valueAt(int i) {
+        return board[i];
+    }
 
-	public synchronized String toString() {
-		StringBuilder sb = new StringBuilder();
-		boolean first = true;
-		for (String cell : board) {
-			if (!first) {
-				sb.append(',').append(cell);
-			} else {
-				first = false;
-				sb.append(cell);
-			}
-		}
-		return sb.toString();
-	}
+    public synchronized String toString() {
+        StringBuilder sb = new StringBuilder();
+        boolean first = true;
+        for (String cell : board) {
+            if (!first) {
+                sb.append(',').append(cell);
+            } else {
+                first = false;
+                sb.append(cell);
+            }
+        }
+        return sb.toString();
+    }
 
-	public synchronized void rotate() {
-		String[] newbrd = new String[getSize()];
-		Integer[] newpos = new Integer[getSize()];
+    public synchronized void rotate() {
+        String[] newbrd = new String[getSize()];
+        Integer[] newpos = new Integer[getSize()];
 
-		int w = getWidth();
+        int w = getWidth();
 
-		for(int i=0;i<getSize();i++) {
-			int adjusted = w*(i%w)+((w-1)-(i/w));
-			newbrd[adjusted] = board[i];
-			newpos[adjusted] = positions[i];
-		}
+        for (int i = 0; i < getSize(); i++) {
+            int adjusted = w * (i % w) + ((w - 1) - (i / w));
+            newbrd[adjusted] = board[i];
+            newpos[adjusted] = positions[i];
+        }
 
-		board = newbrd;
-		positions = newpos;
-	}
+        board = newbrd;
+        positions = newpos;
+    }
 
-	public abstract int getWidth();
+    public abstract int getWidth();
 
-	public int getRotatedPosition(int x) {
-		return positions[x];
-	}
+    public int getRotatedPosition(int x) {
+        return positions[x];
+    }
 
-	@Override
-	public boolean canTransition(int fromX, int fromY, int toX, int toY) {
-		if (fromX >= getWidth() || fromY >= getWidth() || toX >= getWidth() || toY >= getWidth()) {
-			return false;
-		}
+    @Override
+    public boolean canTransition(int fromX, int fromY, int toX, int toY) {
+        if (fromX >= getWidth() || fromY >= getWidth() || toX >= getWidth() || toY >= getWidth()) {
+            return false;
+        }
 
-		int xDistance = Math.abs(fromX - toX);
-		int yDistance = Math.abs(fromY - toY);
+        int xDistance = Math.abs(fromX - toX);
+        int yDistance = Math.abs(fromY - toY);
 
-		return (xDistance == 1 && yDistance == 1 || xDistance == 0 && yDistance == 1 || xDistance == 1 && yDistance == 0);
-	}
+        return (xDistance == 1 && yDistance == 1 || xDistance == 0 && yDistance == 1 || xDistance == 1 && yDistance == 0);
+    }
 
-	@Override
-	public boolean canRevisit() {
-		return false;
-	}
+    @Override
+    public boolean canRevisit() {
+        return false;
+    }
 }

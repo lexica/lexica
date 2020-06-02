@@ -139,12 +139,14 @@ public class CharProbGenerator {
         }
 
         int peekProb() {
-            if (probQueue.isEmpty()) return 0;
+            if (probQueue.isEmpty())
+                return 0;
             return probQueue.peek();
         }
 
         int getProb() {
-            if (probQueue.isEmpty()) return 0;
+            if (probQueue.isEmpty())
+                return 0;
             return probQueue.remove();
         }
 

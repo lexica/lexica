@@ -1,9 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="AppTheme.Base"/>
+    <style name="AppTheme.Light" parent="AppTheme.Light.Base">
+        <item name="lexicaViewStyle">@style/AppTheme.Light.Base</item>
+    </style>
 
-    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme.Dark" parent="AppTheme.Dark.Base">
+        <item name="lexicaViewStyle">@style/AppTheme.Dark.Base</item>
+    </style>
+
+    <style name="AppTheme.Dark.Base" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="actionBarStyle">@style/Widget.AppCompat.ActionBar.Solid</item>
+
+        <item name="board__tile__foreground_colour">@color/yellow_1</item>
+        <item name="board__tile__background_colour">@color/grey_2</item>
+        <item name="board__tile__border_colour">@color/yellow_1</item>
+        <item name="board__tile__highlight_colour">@color/orange_2</item>
+        <item name="board__has_outer_border">true</item>
+
+        <item name="board__hint_mode_colour_0">@color/gradient_yellow_to_red_0</item>
+        <item name="board__hint_mode_colour_1">@color/gradient_yellow_to_red_1</item>
+        <item name="board__hint_mode_colour_2">@color/gradient_yellow_to_red_2</item>
+        <item name="board__hint_mode_colour_3">@color/gradient_yellow_to_red_3</item>
+        <item name="board__hint_mode_colour_4">@color/gradient_yellow_to_red_4</item>
+        <item name="board__hint_mode_unusable_letter_colour">@color/grey_3</item>
+        <item name="board__hint_mode_unusable_letter_background_colour">@color/white</item>
+
+        <item name="game__background_colour">@color/grey_1</item>
+        <item name="game__current_word_colour">@color/yellow_1</item>
+        <item name="game__previously_selected_word_colour">@color/yellow_1_faint</item>
+        <item name="game__selected_word_colour">@color/yellow_1</item>
+        <item name="game__not_a_word_colour">@color/yellow_1_faint</item>
+        <item name="game__score__background_colour">@color/grey_2</item>
+        <item name="game__timer__background_colour">@color/orange_0</item>
+        <item name="game__timer__start_foreground_colour">@color/orange_2</item>
+        <item name="game__timer__mid_foreground_colour">@color/orange_2</item>
+        <item name="game__timer__end_foreground_colour">@color/orange_2</item>
+        <item name="game__score__heading_text_colour">@color/yellow_1</item>
+        <item name="game__score__text_colour">@color/yellow_1</item>
+
+        <item name="score__background_colour">@color/grey_2</item>
+        <item name="score__values_background_colour">@color/orange_2</item>
+        <item name="score__missed_board_background_colour">@color/grey_1</item>
+
+        <item name="home__background_colour">@color/grey_2</item>
+        <item name="home__high_score_label_colour">@color/yellow_1</item>
+        <item name="home__main_button_background">@color/orange_2</item>
+        <item name="home__main_button_background__focused">@color/orange_3</item>
+        <item name="home__secondary_button_background">@color/grey_1</item>
+        <item name="home__secondary_button_background_selected">@color/orange_2</item>
+        <item name="home__secondary_button_background_focused">@color/grey_4</item>
+        <item name="home__secondary_button_background_disabled">@color/grey_0</item>
+        <item name="home__secondary_button_text_colour">@color/yellow_1</item>
+        <item name="home__secondary_button_text_colour_disabled">@color/yellow_1</item>
+        <item name="home__bg_tile__background_colour">@color/grey_1</item>
+        <item name="home__bg_tile__foreground_colour">@color/yellow_1</item>
+        <item name="home__bg_tile__border_colour">@color/grey_3</item>
+        <item name="home__fg_tile__background_colour">@color/yellow_1</item>
+        <item name="home__fg_tile__foreground_colour">@color/grey_1</item>
+        <item name="home__fg_tile__border_colour">@color/grey_4</item>
+
+        <!-- START DIMENSIONS: Shouldn't change between light and dark themes -->
+        <item name="game__score__heading_text_size">@dimen/scoreHeadingTextSize</item>
+        <item name="game__score__value_text_size">@dimen/scoreTextSize</item>
+        <item name="game__score__padding">@dimen/scorePadding</item>
+        <item name="game__score__padding_half">@dimen/scorePaddingHalf</item>
+
+        <item name="game__timer__height">@dimen/timerHeight</item>
+        <item name="game__timer__border_width">@dimen/timerBorderWidth</item>
+
+        <item name="game__current_word_size">@dimen/currentWordSize</item>
+        <item name="game__past_word_size">@dimen/pastWordSize</item>
+
+        <item name="home__letter_padding">@dimen/homeScreenLetterPadding</item>
+        <item name="home__button_padding">@dimen/homeScreenButtonPadding</item>
+        <item name="home__bg_tile__border_width">@dimen/tileBorderWidth</item>
+        <item name="home__fg_tile__border_width">@dimen/tileBorderWidth</item>
+
+        <item name="padding">@dimen/padding</item>
+        <!-- END DIMENSIONS -->
     </style>
+
+    <style name="AppTheme.Light.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+
+        <item name="board__tile__foreground_colour">@color/grey_1</item>
+        <item name="board__tile__background_colour">@color/yellow_1</item>
+        <item name="board__tile__border_colour">@color/grey_4</item>
+        <item name="board__tile__highlight_colour">@color/yellow_2</item>
+        <item name="board__tile__border_width">@dimen/tileBorderWidth</item>
+        <item name="board__has_outer_border">false</item>
+
+        <item name="board__hint_mode_colour_0">@color/gradient_yellow_to_red_0</item>
+        <item name="board__hint_mode_colour_1">@color/gradient_yellow_to_red_1</item>
+        <item name="board__hint_mode_colour_2">@color/gradient_yellow_to_red_2</item>
+        <item name="board__hint_mode_colour_3">@color/gradient_yellow_to_red_3</item>
+        <item name="board__hint_mode_colour_4">@color/gradient_yellow_to_red_4</item>
+        <item name="board__hint_mode_unusable_letter_colour">@color/grey_3</item>
+        <item name="board__hint_mode_unusable_letter_background_colour">@color/white</item>
+
+        <item name="game__background_colour">@color/orange_2</item>
+        <item name="game__current_word_colour">@color/grey_1</item>
+        <item name="game__previously_selected_word_colour">@color/white_faint</item>
+        <item name="game__selected_word_colour">@color/white</item>
+        <item name="game__not_a_word_colour">@color/white_faint</item>
+        <item name="game__score__background_colour">@color/orange_3</item>
+        <item name="game__timer__background_colour">@color/orange_3</item>
+        <item name="game__timer__start_foreground_colour">@color/orange_2</item>
+        <item name="game__timer__mid_foreground_colour">@color/orange_2</item>
+        <item name="game__timer__end_foreground_colour">@color/orange_2</item>
+        <item name="game__score__heading_text_colour">@color/white</item>
+        <item name="game__score__text_colour">@color/white</item>
+
+        <item name="score__background_colour">@color/orange_2</item>
+        <item name="score__values_background_colour">@color/orange_2</item>
+        <item name="score__missed_board_background_colour">@color/orange_3</item>
+
+        <item name="home__background_colour">@color/orange_2</item>
+        <item name="home__high_score_label_colour">@color/grey_1</item>
+        <item name="home__main_button_background">@color/orange_2</item>
+        <item name="home__main_button_background__focused">@color/orange_3</item>
+        <item name="home__secondary_button_background">@color/orange_3</item>
+        <item name="home__secondary_button_background_selected">@color/orange_4</item>
+        <item name="home__secondary_button_background_focused">@color/orange_5</item>
+        <item name="home__secondary_button_background_disabled">@color/orange_5</item>
+        <item name="home__secondary_button_text_colour">@color/white</item>
+        <item name="home__secondary_button_text_colour_disabled">@color/white</item>
+        <item name="home__bg_tile__background_colour">@color/white</item>
+        <item name="home__bg_tile__foreground_colour">@color/grey_1</item>
+        <item name="home__bg_tile__border_colour">@color/yellow_1</item>
+        <item name="home__fg_tile__background_colour">@color/yellow_1</item>
+        <item name="home__fg_tile__foreground_colour">@color/grey_1</item>
+        <item name="home__fg_tile__border_colour">@android:color/transparent</item>
+
+        <!-- START DIMENSIONS: Shouldn't change between light and dark themes -->
+        <item name="game__score__heading_text_size">@dimen/scoreHeadingTextSize</item>
+        <item name="game__score__value_text_size">@dimen/scoreTextSize</item>
+        <item name="game__score__padding">@dimen/scorePadding</item>
+        <item name="game__score__padding_half">@dimen/scorePaddingHalf</item>
+
+        <item name="game__timer__height">@dimen/timerHeight</item>
+        <item name="game__timer__border_width">@dimen/timerBorderWidth</item>
+
+        <item name="game__current_word_size">@dimen/currentWordSize</item>
+        <item name="game__past_word_size">@dimen/pastWordSize</item>
+
+        <item name="home__letter_padding">@dimen/homeScreenLetterPadding</item>
+        <item name="home__button_padding">@dimen/homeScreenButtonPadding</item>
+        <item name="home__bg_tile__border_width">@dimen/tileBorderWidth</item>
+        <item name="home__fg_tile__border_width">@dimen/tileBorderWidth</item>
+
+        <item name="padding">@dimen/padding</item>
+        <!-- END DIMENSIONS -->
+    </style>
+
 </resources>

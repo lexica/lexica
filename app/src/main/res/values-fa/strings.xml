@@ -69,7 +69,7 @@
 	<string name="letter_points">امتیاز هر حرف</string>
 
 	<string name="score">امتیاز</string>
-	<string name="high_score">امتیاز بالا: %1$d</string>
+	<string name="high_score">امتیاز بالا</string>
 	<string name="pref_resetScores_summary">امتیازات برتر برای هر ترکیبی از تنظیمات بالا دنبال می‌شوند. برای بازنشانی همهٔ امتیازات به صفر، ضربه بزنید.</string>
 	<string name="pref_resetScores">بازنشانی امتیازهای برتر</string>
     <string name="high_scores_reset">امتیازهای برتر بازنشانی شده است.</string>

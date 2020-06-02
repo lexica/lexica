@@ -75,7 +75,7 @@
     <string name="high_scores_reset">S\'han reinicialitzat les millors puntuacions.</string>
     <string name="pref_resetScores">Restableix les millors puntuacions</string>
     <string name="pref_resetScores_summary">L\'aplicació enregistra les puntuacions més altes per a cadascuna de les configuracions anteriors. Toqueu aquí per a restablir-les totes a zero.</string>
-    <string name="high_score">Millor puntuació: %1$d</string>
+    <string name="high_score">Millor puntuació</string>
     <string name="hint_both">Ambdós</string>
     <string name="hint_colour">Color de la fitxa</string>
     <string name="tile_count">Nombre de mots</string>

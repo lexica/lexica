@@ -66,7 +66,7 @@
     <string name="total_words">Wszystkich słów:</string>
     <string name="total_score">Łączny wynik:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="high_score">Najlepszy wynik: %1$d</string>
+    <string name="high_score">Najlepszy wynik</string>
     <string name="pref_resetScores_summary">Najlepsze wyniki są śledzone dla każdej kombinacji powyższych ustawień. Stuknij, aby zresetować wszystkie wyniki do zera.</string>
     <string name="pref_resetScores">Zresetuj najlepsze wyniki</string>
     <string name="high_scores_reset">Najlepsze wyniki zostały zresetowane.</string>

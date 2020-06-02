@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#84afdc</color>
-    <color name="colorPrimary">#277bd4</color>
-    <color name="colorPrimaryDark">#0f447c</color>
+    <color name="colorPrimary">@color/orange_2</color>
+    <color name="colorPrimaryDark">@color/orange_1</color>
+
+    <color name="gradient_yellow_to_red_4">#f94828</color>
+    <color name="gradient_yellow_to_red_3">#fd8d3c</color>
+    <color name="gradient_yellow_to_red_2">#febb56</color>
+    <color name="gradient_yellow_to_red_1">#fee289</color>
+    <color name="gradient_yellow_to_red_0">#fffcc5</color>
+
+    <color name="grey_0">#201F1F</color>
+    <color name="grey_1">#3d3c3b</color>
+    <color name="grey_2">#413f3b</color>
+    <color name="grey_3">#908E89</color>
+    <color name="grey_4">#b1ad9c</color>
+
+    <color name="yellow_1">#f9f8d7</color>
+    <color name="yellow_1_faint">#88f9f8d7</color>
+    <color name="yellow_2">#ffff00</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_faint">#88ffffff</color>
+
+    <color name="orange_0">#6b5c3f</color>
+    <color name="orange_1">#D7960D</color>
+    <color name="orange_2">#edb641</color>
+    <color name="orange_3">#f0cb69</color>
+    <color name="orange_4">#F8D882</color>
+    <color name="orange_5">#FFE39A</color>
 </resources>

@@ -55,7 +55,7 @@
     <string name="total_words">Totalt antall ord:</string>
     <string name="total_score">Total poengsum:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="high_score">Høyeste poengsum: %1$d</string>
+    <string name="high_score">Høyeste poengsum</string>
     <string name="pref_resetScores_summary">Høyeste poengsum spores for hver kombinasjon av ovennevnte innstillinger. Trykk for å tilbakestille alle poengsummer til null.</string>
     <string name="pref_resetScores">Tilbakestill bestenoteringsliste</string>
     <string name="high_scores_reset">Bestenoteringslisten har blitt tilbakestilt.</string>

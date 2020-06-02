@@ -47,34 +47,6 @@ public class LetterFrequency {
         }
     }
 
-    public int getMaxTotalLetterCount() {
-        int max = 0;
-        for (List<Integer> counts : letterCounts.values()) {
-            int countsForLetter = 0;
-
-            for (int letterCount : counts) {
-                countsForLetter += letterCount;
-            }
-
-            if (countsForLetter > max) {
-                max = countsForLetter;
-            }
-        }
-        return max;
-    }
-
-    public int getMaxSingleLetterCount() {
-        int max = 0;
-        for (List<Integer> counts : letterCounts.values()) {
-            for (int letterCount : counts) {
-                if (letterCount > max) {
-                    max = letterCount;
-                }
-            }
-        }
-        return max;
-    }
-
     public Set<String> getLetters() {
         return letterCounts.keySet();
     }
@@ -90,7 +62,7 @@ public class LetterFrequency {
     public HashMap<String, Integer> getLetterCountsForWord(String word) {
         HashMap<String, Integer> counts = new HashMap<>();
 
-        for (int i = 0; i < word.length(); i ++) {
+        for (int i = 0; i < word.length(); i++) {
             String letter = word.substring(i, i + 1);
             String letterWithSuffix = language.applyMandatorySuffix(letter);
 
@@ -121,7 +93,7 @@ public class LetterFrequency {
             // Some words may have a "q" without a "u". We will not add the "q"
             // to our letter frequencies if this is the case.
             boolean shouldInclude = true;
-            for (int i = 0; i < letterWithSuffix.length(); i ++) {
+            for (int i = 0; i < letterWithSuffix.length(); i++) {
                 if (word.length() <= position + i || word.charAt(position + i) != letterWithSuffix.charAt(i)) {
                     shouldInclude = false;
                     break;
@@ -136,32 +108,4 @@ public class LetterFrequency {
         return true;
     }
 
-    public String toSingleLetterCountString() {
-        StringBuilder sb = new StringBuilder();
-        int max = getMaxSingleLetterCount();
-        for (String letter : getLetters()) {
-            sb.append(letter);
-            for (int count : getCountsForLetter(letter)) {
-                sb.append(" ");
-                sb.append(Integer.toString((int) Math.ceil((double)(count) / max * 100)));
-            }
-            sb.append("\n");
-        }
-        return sb.toString();
-    }
-
-    public String toTotalLetterCountString() {
-        StringBuilder sb = new StringBuilder();
-        int max = getMaxSingleLetterCount();
-        for (String letter : getLetters()) {
-            sb.append(letter);
-            int pos = 1;
-            for (int count : getCountsForLetter(letter)) {
-                sb.append(" ");
-                sb.append(Integer.toString((int) Math.ceil((double)(count) / max * 100) * pos));
-            }
-            sb.append("\n");
-        }
-        return sb.toString();
-    }
 }

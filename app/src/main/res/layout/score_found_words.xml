@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:background="?attr/score__background_colour"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/score_wrapper"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:background="?attr/score__values_background_colour"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent">
+
+		<TextView
+			android:id="@+id/words_label"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:text="@string/words"
+			android:textSize="?attr/game__score__heading_text_size"
+			android:textColor="?attr/game__score__heading_text_colour"
+			android:paddingTop="?attr/game__score__padding"
+			android:paddingEnd="?attr/game__score__padding"
+			android:paddingRight="?attr/game__score__padding"
+			android:paddingStart="?attr/game__score__padding"
+			android:paddingLeft="?attr/game__score__padding"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/words_value"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			tools:text="6/241"
+			android:textSize="?attr/game__score__value_text_size"
+			android:textColor="?attr/game__score__text_colour"
+			android:paddingEnd="?attr/game__score__padding"
+			android:paddingRight="?attr/game__score__padding"
+			android:paddingStart="?attr/game__score__padding"
+			android:paddingLeft="?attr/game__score__padding"
+			android:paddingBottom="?attr/game__score__padding"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/words_label" />
+
+		<TextView
+			android:id="@+id/score_label"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:text="@string/score"
+			android:textSize="?attr/game__score__heading_text_size"
+			android:textColor="?attr/game__score__heading_text_colour"
+			android:paddingTop="?attr/game__score__padding"
+			android:paddingEnd="?attr/game__score__padding"
+			android:paddingRight="?attr/game__score__padding"
+			android:paddingStart="?attr/game__score__padding"
+			android:paddingLeft="?attr/game__score__padding"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/score_value"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			tools:text="8/151"
+			android:textSize="?attr/game__score__value_text_size"
+			android:textColor="?attr/game__score__text_colour"
+			android:paddingEnd="?attr/game__score__padding"
+			android:paddingRight="?attr/game__score__padding"
+			android:paddingStart="?attr/game__score__padding"
+			android:paddingLeft="?attr/game__score__padding"
+			android:paddingBottom="?attr/game__score__padding"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/score_label" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/words"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/score_wrapper"
+		app:layout_constraintBottom_toBottomOf="parent"
+		tools:listitem="@layout/score_summary_word"
+		android:scrollbars="vertical" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

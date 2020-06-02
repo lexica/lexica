@@ -17,7 +17,6 @@
 
 package com.serwylo.lexica.view;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -25,7 +24,6 @@ import android.graphics.Paint;
 import android.graphics.Picture;
 import android.graphics.Rect;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -36,132 +34,131 @@ import java.util.Random;
 
 public class LexicaLogo extends View {
 
-	private enum BoxColor { WHITE, YELLOW}
+    private enum BoxColor {BACKGROUND, MAIN}
 
-	private static final String LETTERS[] = {
-		"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
-		"O","P","Qu","R","S","T","U","V","W","X","Y","Z"
-	};
+    private static final String[] LETTERS = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Qu", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
-	private Picture cached;
+    private Picture cached;
+    private final ThemeProperties theme;
 
-	public LexicaLogo(Context context, AttributeSet attrs) {
-		super(context,attrs);
-		setupSoftwareCanvas();
-		cached = null;
-	}
+    public LexicaLogo(Context context) {
+        this(context, (AttributeSet) null);
+    }
 
-	/**
-	 * Newer versions of android don't allow Picture's to be drawn to hardware accelerated canvases.
-	 * It seems that as of some time in the past, the default is to use hardware acceleration
-	 * for canvases. This sets the view to use a software canvas.
-	 */
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	private void setupSoftwareCanvas() {
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-			setLayerType(LAYER_TYPE_SOFTWARE, null);
-		}
-	}
+    public LexicaLogo(Context context, AttributeSet attrs) {
+        this(context, attrs, R.attr.lexicaViewStyle);
+    }
 
-	private void drawTile(Canvas canvas, Paint p, String letter, BoxColor color,
-		int x, int y, int size, float offset) {
+    public LexicaLogo(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs);
+        setupSoftwareCanvas();
+        cached = null;
 
-		switch(color) {
-			case WHITE:
-				p.setARGB(255,255,255,255);
-			break;
-			case YELLOW:
-				p.setARGB(255,255,255,0);
-			break;
-		}
+        theme = new ThemeProperties(context, attrs, defStyle);
+    }
 
-		// draw background
-		canvas.drawRect(x,y,x+size,y+size,p);
+    /**
+     * Newer versions of android don't allow Picture's to be drawn to hardware accelerated canvases.
+     * It seems that as of some time in the past, the default is to use hardware acceleration
+     * for canvases. This sets the view to use a software canvas.
+     */
+    private void setupSoftwareCanvas() {
+        setLayerType(LAYER_TYPE_SOFTWARE, null);
+    }
 
-		// draw border
-		p.setARGB(255,0,0,0);
-		canvas.drawLine(x,y,x+size,y,p);
-		canvas.drawLine(x,y,x,y+size,p);
-		canvas.drawLine(x+size,y,x+size,y+size,p);
-		canvas.drawLine(x,y+size,x+size,y+size,p);
+    private void drawTile(Canvas canvas, Paint p, String letter, BoxColor color, int x, int y, int size, float offset) {
 
-		canvas.drawText(letter,x+size/2,y+(size/2)-offset,p);
+        ThemeProperties.TileProperties tileColours = color == BoxColor.BACKGROUND ? theme.home.bgTile : theme.home.fgTile;
+        p.setColor(tileColours.backgroundColour);
+        canvas.drawRect(x, y, x + size, y + size, p);
 
-	}
+        p.setColor(tileColours.borderColour);
+        p.setStrokeWidth(tileColours.borderWidth);
+        p.setStyle(Paint.Style.STROKE);
+        canvas.drawRect(x, y, x + size, y + size, p);
 
-	@Override
-	public void onDraw(Canvas canvas) {
-		if(cached == null) {
-			int height = getHeight();
-			int width = getWidth();
-			cached = new Picture();
-			drawOnCanvas(cached.beginRecording(width,height));
-			cached.endRecording();
-		}
+        p.setStyle(Paint.Style.FILL);
+        p.setColor(tileColours.foregroundColour);
+        p.setTypeface(Fonts.get().getSansSerifCondensed());
+        float textSize = size * 0.8f;
+        p.setTextSize(textSize);
+        canvas.drawText(letter, x + size / 2f, y + (size / 2f) - offset, p);
 
-		cached.draw(canvas);
-	}
+    }
 
-	private void drawOnCanvas(Canvas canvas) {
-		Paint p = new Paint();
-		p.setAntiAlias(true);
-		p.setTypeface(Typeface.MONOSPACE);
-		p.setTextAlign(Paint.Align.CENTER);
+    @Override
+    public void onDraw(Canvas canvas) {
+        if (cached == null) {
+            int height = getHeight();
+            int width = getWidth();
+            cached = new Picture();
+            drawOnCanvas(cached.beginRecording(width, height));
+            cached.endRecording();
+        }
 
-		int paddingSize = getResources().getDimensionPixelSize(R.dimen.padding);
-		int height = getHeight();
-		int width = getWidth();
+        cached.draw(canvas);
+    }
 
-		DisplayMetrics displayMetrics = new DisplayMetrics();
-		((Activity)getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-		int deviceHeight = displayMetrics.heightPixels;
-		int deviceWidth = displayMetrics.widthPixels;
+    private void drawOnCanvas(Canvas canvas) {
+        Paint p = new Paint();
+        p.setAntiAlias(true);
+        p.setTypeface(Typeface.MONOSPACE);
+        p.setTextAlign(Paint.Align.CENTER);
 
-		int size = Math.min(deviceHeight,deviceWidth) / 8;
-		p.setTextSize(size*8/10);
+        int paddingSize = getResources().getDimensionPixelSize(R.dimen.homeScreenLetterPadding);
+        int height = getHeight();
+        int width = getWidth();
 
-		// Find vertical center offset
-		Rect textBounds = new Rect();
-		p.getTextBounds("A", 0, 1, textBounds);
-		float offset = textBounds.exactCenterY();
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int deviceHeight = displayMetrics.heightPixels;
+        int deviceWidth = displayMetrics.widthPixels;
 
-		Random rng = new Random();
+        int size = Math.min(deviceHeight, deviceWidth) / 8;
+        p.setTextSize(size * 8f / 10f);
 
-		for(int i=0;i<20;i++) {
-			String l = LETTERS[rng.nextInt(LETTERS.length)];
-			int x = rng.nextInt(width-size-10)+5;
-			int y = rng.nextInt(height-size-10)+5;
+        // Find vertical center offset
+        Rect textBounds = new Rect();
+        p.getTextBounds("A", 0, 1, textBounds);
+        float offset = textBounds.exactCenterY();
 
-			drawTile(canvas,p,l,BoxColor.WHITE,x,y,size,offset);
-		}
+        Random rng = new Random();
 
-		int outerPadding = paddingSize * 2;
-		int totalInnerPadding = paddingSize * 5;
+        for (int i = 0; i < 20; i++) {
+            String l = LETTERS[rng.nextInt(LETTERS.length)];
+            int x = rng.nextInt(width - size - 10) + 5;
+            int y = rng.nextInt(height - size - 10) + 5;
 
-		size = (Math.min(deviceHeight,deviceWidth) - outerPadding - totalInnerPadding ) / 6;
-		p.setTextSize(size*8/10);
+            drawTile(canvas, p, l, BoxColor.BACKGROUND, x, y, size, offset);
+        }
 
-		// Find vertical center offset
-		p.getTextBounds("A", 0, 1, textBounds);
-		offset = textBounds.exactCenterY();
+        int outerPadding = paddingSize * 2;
+        int totalInnerPadding = paddingSize * 5;
 
-		int totalWidthOfTiles = 6 * size;
-		int y = (height - size) / 2;
-		int dx = (width - totalWidthOfTiles - outerPadding) / 5 + size;
-		int x = paddingSize;
-		drawTile(canvas,p,"L",BoxColor.YELLOW,x,y,size,offset);
-		x += dx;
-		drawTile(canvas,p,"E",BoxColor.YELLOW,x,y,size,offset);
-		x += dx;
-		drawTile(canvas,p,"X",BoxColor.YELLOW,x,y,size,offset);
-		x += dx;
-		drawTile(canvas,p,"I",BoxColor.YELLOW,x,y,size,offset);
-		x += dx;
-		drawTile(canvas,p,"C",BoxColor.YELLOW,x,y,size,offset);
-		x += dx;
-		drawTile(canvas,p,"A",BoxColor.YELLOW,x,y,size,offset);
+        size = (Math.min(deviceHeight, deviceWidth) - outerPadding - totalInnerPadding) / 6;
+        p.setTextSize(size * 8f / 10f);
 
-	}
+        // Find vertical center offset
+        p.getTextBounds("A", 0, 1, textBounds);
+        offset = textBounds.exactCenterY();
+
+        int totalWidthOfTiles = 6 * size;
+        int y = (height - size) / 2;
+        int dx = (width - totalWidthOfTiles - outerPadding) / 5 + size;
+        int x = paddingSize;
+        drawTile(canvas, p, "L", BoxColor.MAIN, x, y, size, offset);
+        x += dx;
+        drawTile(canvas, p, "E", BoxColor.MAIN, x, y, size, offset);
+        x += dx;
+        drawTile(canvas, p, "X", BoxColor.MAIN, x, y, size, offset);
+        x += dx;
+        drawTile(canvas, p, "I", BoxColor.MAIN, x, y, size, offset);
+        x += dx;
+        drawTile(canvas, p, "C", BoxColor.MAIN, x, y, size, offset);
+        x += dx;
+        drawTile(canvas, p, "A", BoxColor.MAIN, x, y, size, offset);
+
+    }
 
 }
 

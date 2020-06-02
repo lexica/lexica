@@ -14,163 +14,197 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package com.serwylo.lexica.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.Typeface;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+
 import com.serwylo.lexica.R;
-import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.Game;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class BoardView extends View {
 
-	private Board board;
-	private Game game;
+    @SuppressWarnings("unused")
+    protected static final String TAG = "LexicaView";
 
-	/** @see #highlight(Integer[]) */
-	private Integer[] highlightedCells = new Integer[0];
+    private Game game;
 
-	private final Paint p;
-	public final int paddingSize;
-	private String scoreType;
+    private final ThemeProperties theme;
 
-	public BoardView(Context context, AttributeSet attrs) {
-		super(context,attrs);
+    private int width;
+    private int height;
+    private int gridsize;
+    private float boxsize;
+    private int boardWidth;
+    private final Paint p;
+    private Set<Integer> highlightedPositions = new HashSet<>();
+    private int maxWeight;
 
-		board = null;
-		game = null;
-		highlightedCells = new Integer[0];
+    public BoardView(Context context) {
+        this(context, null);
+    }
 
-		p = new Paint();
-		p.setTextAlign(Paint.Align.CENTER);
-		p.setAntiAlias(true);
-		p.setStrokeWidth(2);
+    public BoardView(Context context, AttributeSet attrs) {
+        this(context, attrs, R.attr.lexicaViewStyle);
+    }
 
-		paddingSize = getResources().getDimensionPixelSize(R.dimen.padding);
-	}
+    public BoardView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
 
-	public void setScoreType(String scoreType) {
-		this.scoreType = scoreType;
-	}
+        theme = new ThemeProperties(context, attrs, defStyle);
 
-	private boolean isCellHighlighted(int x, int y) {
-		int cellNumber = y * board.getWidth() + x;
-		for (int highlightedCell : highlightedCells) {
-			if (highlightedCell == cellNumber) {
-				return true;
-			}
-		}
+        p = new Paint();
+        p.setTextAlign(Paint.Align.CENTER);
+        p.setAntiAlias(true);
+        p.setStrokeWidth(2);
+    }
 
-		return false;
-	}
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public BoardView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
 
-	private final Rect textBounds = new Rect();
+        theme = new ThemeProperties(context, attrs, defStyleAttr);
 
-	@Override
-	public void onDraw(Canvas canvas) {
-		int width = getWidth() - paddingSize - 2;
-		int height = getHeight() - paddingSize - 2;
+        p = new Paint();
+        p.setTextAlign(Paint.Align.CENTER);
+        p.setAntiAlias(true);
+        p.setStrokeWidth(2);
+    }
 
+    public void setGame(Game game) {
+        this.game = game;
 
-		// Draw white box
-		p.setARGB(255, 255, 255, 255);
-		canvas.drawRect(paddingSize / 2, paddingSize, paddingSize / 2 + width, paddingSize + height, p);
+        maxWeight = game.getMaxWeight(); // Don't calculate this on each paint for performance.
+        boardWidth = game.getBoard().getWidth();
+    }
 
-		if (board == null) {
-			return;
-		}
+    public void highlight(Integer[] highlightedPositions) {
+        this.highlightedPositions = new HashSet<>();
+        this.highlightedPositions.addAll(Arrays.asList(highlightedPositions));
+    }
 
-		float boxsize = ((float) height) / board.getWidth();
+    private void setDimensions(int w, int h) {
+        width = w;
+        height = h;
 
-		// Draw touched boxes
-		p.setARGB(255, 255, 255, 0);
-		for (int x = 0; x < board.getWidth(); x++) {
-			for (int y = 0; y < board.getWidth(); y++) {
-				if (!isCellHighlighted(x, y)) {
-					continue;
-				}
+        gridsize = Math.min(width, height);
+        boxsize = ((float) gridsize) / boardWidth;
+    }
 
-				float left = (paddingSize / 2) + (boxsize * x);
-				float top = paddingSize + (boxsize * y);
-				float right = (paddingSize / 2) + (boxsize * (x + 1));
-				float bottom = paddingSize + (boxsize * (y + 1));
+    private final Rect textBounds = new Rect();
 
-				canvas.drawRect(left, top, right, bottom, p);
-			}
-		}
+    private void drawBoard(Canvas canvas) {
+        if (game == null) {
+            return;
+        }
 
-		// Draw grid
-		p.setARGB(255, 0, 0, 0);
+        // Draw boxes
+        for (int i = 0; i < game.getBoard().getSize(); i++) {
+            int pos = game.getBoard().getRotatedPosition(i);
 
-		// Vertical lines
-		for (float i = paddingSize / 2; i <= paddingSize / 2 + width; i += boxsize) {
-			canvas.drawLine(i, paddingSize, i, paddingSize + height, p);
-		}
-		// Horizontal lines
-		for (float i = paddingSize; i <= paddingSize + height; i += boxsize) {
-			canvas.drawLine(paddingSize / 2, i, paddingSize / 2 + width, i, p);
-		}
+            int x = i % game.getBoard().getWidth();
+            int y = i / game.getBoard().getWidth();
 
-		p.setARGB(255, 0, 0, 0);
-		p.setTypeface(Typeface.MONOSPACE);
-		float textSize = boxsize * 0.8f;
-		p.setTextSize(textSize);
+            if (highlightedPositions.contains(i)) {
+                p.setColor(theme.board.tile.highlightColour);
+            } else {
+                if (game.hintModeColor()) {
+                    int weight = game.getWeight(pos);
+                    int colour = weight == 0 ? theme.board.tile.hintModeUnusableLetterBackgroundColour : theme.board.tile.getHintModeGradientColour((float) weight / maxWeight);
+                    p.setColor(colour);
+                } else {
+                    p.setColor(theme.board.tile.backgroundColour);
+                }
+            }
 
-		// Find vertical center offset
-		p.getTextBounds("A", 0, 1, textBounds);
-		float offset = textBounds.exactCenterY();
+            float left = boxsize * x;
+            float top = boxsize * y;
+            float right = boxsize * (x + 1);
+            float bottom = boxsize * (y + 1);
+            canvas.drawRect(left, top, right, bottom, p);
+        }
 
-		// Draw letters
-		for (int x = 0; x < board.getWidth(); x++) {
-			for (int y = 0; y < board.getWidth(); y++) {
-				String letter = board.elementAt(x, y);
-				String letterForDisplay = game.getLanguage().toDisplay(letter);
-				p.setTextSize(textSize);
-				p.setTextAlign(Paint.Align.CENTER);
-				canvas.drawText(letterForDisplay,
-						(paddingSize / 2) + (x * boxsize) + (boxsize / 2),
-						paddingSize + (y * boxsize) + (boxsize / 2) - offset,
-						p);
-				if (Game.SCORE_LETTERS.equals(scoreType)) {
-					String score = String.valueOf(game.getLanguage().getPointsForLetter(letter));
-					p.setTextSize(textSize / 4);
-					p.setTextAlign(Paint.Align.RIGHT);
-					canvas.drawText(score,
-							paddingSize / 2 + ((x + 1) * boxsize) - 4,
-							paddingSize + ((y + 1) * boxsize) - 6,
-							p);
-				}
-			}
-		}
+        // Draw grid, but exclude the first and last line (both horizontally and vertically unless asked)
+        p.setColor(theme.board.tile.borderColour);
+        p.setStrokeWidth(theme.board.tile.borderWidth);
 
-	}
+        // Vertical lines
+        for (float i = boxsize; i <= gridsize - boxsize; i += boxsize) {
+            canvas.drawLine(i, 0, i, gridsize, p);
+        }
+        // Horizontal lines
+        for (float i = boxsize; i <= gridsize - boxsize; i += boxsize) {
+            canvas.drawLine(0, i, gridsize, i, p);
+        }
 
-	@Override
-	protected void onMeasure (int wSpec, int hSpec) {
-		int side = Math.min(MeasureSpec.getSize(wSpec), MeasureSpec.getSize(hSpec));
-		setMeasuredDimension(side,side);
-	}
+        if (theme.board.hasOuterBorder) {
+            p.setStyle(Paint.Style.STROKE);
+            p.setColor(theme.board.tile.borderColour);
+            p.setStrokeWidth(theme.board.tile.borderWidth);
+            canvas.drawRect(0, 0, width, height, p);
 
-	public void setGame(Game game) {
-		board = game.getBoard();
-		this.game = game;
-	}
+            p.setStyle(Paint.Style.FILL);
+        }
 
-	/**
-	 * Bitmask of highlighted cells on the board.
-	 * The first bit to the right (i.e. represented by the integer "1") is the flag to say whether
-	 * the first cell (i.e. x = 0, y = 0) is highlighted or not.
-	 */
-	public void highlight(Integer[] highlightedCells) {
-		this.highlightedCells = highlightedCells;
-	}
+        p.setColor(theme.board.tile.foregroundColour);
+        p.setTypeface(Fonts.get().getSansSerifCondensed());
+        float textSize = boxsize * 0.8f;
+        p.setTextSize(textSize);
+
+        // Find vertical center offset
+        p.getTextBounds("A", 0, 1, textBounds);
+        float offset = textBounds.exactCenterY();
+
+        for (int x = 0; x < boardWidth; x++) {
+            for (int y = 0; y < boardWidth; y++) {
+                int pos = game.getBoard().getRotatedPosition(y * boardWidth + x);
+                int weight = game.getWeight(pos);
+
+                if (game.hintModeColor() || game.hintModeCount()) {
+                    int colour = (weight == 0) ? theme.board.tile.hintModeUnusableLetterColour : theme.board.tile.foregroundColour;
+                    p.setColor(colour);
+                } else {
+                    p.setColor(theme.board.tile.foregroundColour);
+                }
+
+                if (game.hintModeCount()) {
+                    p.setTextSize(textSize / 4);
+                    p.setTextAlign(Paint.Align.LEFT);
+                    canvas.drawText("" + weight, (x * boxsize) + 8, ((y + 1) * boxsize) - 6, p);
+                }
+
+                String letter = game.getBoard().elementAt(x, y);
+                String letterForDisplay = game.getLanguage().toDisplay(letter);
+                p.setTextSize(textSize);
+                p.setTextAlign(Paint.Align.CENTER);
+                canvas.drawText(letterForDisplay, (x * boxsize) + (boxsize / 2), (y * boxsize) + (boxsize / 2) - offset, p);
+                if (Game.SCORE_LETTERS.equals(game.getScoreType())) {
+                    String score = String.valueOf(game.getLanguage().getPointsForLetter(letter));
+                    p.setTextSize(textSize / 4);
+                    p.setTextAlign(Paint.Align.RIGHT);
+                    canvas.drawText(score, ((x + 1) * boxsize) - 8, ((y + 1) * boxsize) - 6, p);
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onDraw(Canvas canvas) {
+        setDimensions(getMeasuredWidth(), getMeasuredHeight());
+
+        drawBoard(canvas);
+    }
 
 }

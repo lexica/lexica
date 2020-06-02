@@ -52,7 +52,7 @@
     <string name="reset_scores_prompt">Oletko varma, että halueat nollata kaikkien pelitilojen ennätykset\?</string>
     <string name="high_scores_reset">Ennätykset on nollattu.</string>
     <string name="pref_resetScores">Nollaa ennätykset</string>
-    <string name="high_score">Ennätys: %1$d</string>
+    <string name="high_score">Ennätys</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d %%)</string>
     <string name="total_score">Pisteitä yhteensä:</string>
     <string name="total_words">Sanoja yhteensä:</string>

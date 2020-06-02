@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LexicaView">
+        <attr name="text" format="string" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+
+        <attr format="color" name="board__tile__foreground_colour" />
+        <attr format="color" name="board__tile__background_colour" />
+        <attr format="color" name="board__tile__border_colour" />
+        <attr format="color" name="board__tile__border_width" />
+        <attr format="color" name="board__tile__highlight_colour" />
+        <attr format="boolean" name="board__has_outer_border" />
+        <attr format="color" name="board__hint_mode_colour_0" />
+        <attr format="color" name="board__hint_mode_colour_1" />
+        <attr format="color" name="board__hint_mode_colour_2" />
+        <attr format="color" name="board__hint_mode_colour_3" />
+        <attr format="color" name="board__hint_mode_colour_4" />
+        <attr format="color" name="board__hint_mode_unusable_letter_colour" />
+        <attr format="color" name="board__hint_mode_unusable_letter_background_colour" />
+        <attr format="color" name="game__background_colour" />
+        <attr format="color" name="game__current_word_colour" />
+        <attr format="dimension" name="game__current_word_size" />
+        <attr format="dimension" name="game__past_word_size" />
+        <attr format="color" name="game__previously_selected_word_colour" />
+        <attr format="color" name="game__selected_word_colour" />
+        <attr format="color" name="game__not_a_word_colour" />
+        <attr format="color" name="game__score__background_colour" />
+        <attr format="color" name="game__timer__background_colour" />
+        <attr format="color" name="game__timer__start_foreground_colour" />
+        <attr format="color" name="game__timer__mid_foreground_colour" />
+        <attr format="color" name="game__timer__end_foreground_colour" />
+        <attr format="color" name="game__score__heading_text_colour" />
+        <attr format="color" name="game__score__text_colour" />
+
+        <attr format="color" name="score__background_colour" />
+        <attr format="color" name="score__values_background_colour" />
+        <attr format="color" name="score__missed_board_background_colour" />
+
+        <attr format="dimension" name="home__letter_padding" />
+        <attr format="dimension" name="home__button_padding" />
+        <attr format="color" name="home__background_colour" />
+        <attr format="color" name="home__high_score_label_colour" />
+        <attr format="color" name="home__main_button_background" />
+        <attr format="color" name="home__main_button_background__focused" />
+        <attr format="color" name="home__secondary_button_background" />
+        <attr format="color" name="home__secondary_button_background_selected" />
+        <attr format="color" name="home__secondary_button_background_focused" />
+        <attr format="color" name="home__secondary_button_background_disabled" />
+        <attr format="color" name="home__secondary_button_text_colour" />
+        <attr format="color" name="home__secondary_button_text_colour_disabled" />
+        <attr format="color" name="home__bg_tile__background_colour" />
+        <attr format="color" name="home__bg_tile__foreground_colour" />
+        <attr format="color" name="home__bg_tile__border_colour" />
+        <attr format="color" name="home__bg_tile__border_width" />
+        <attr format="color" name="home__fg_tile__background_colour" />
+        <attr format="color" name="home__fg_tile__foreground_colour" />
+        <attr format="color" name="home__fg_tile__border_colour" />
+        <attr format="color" name="home__fg_tile__border_width" />
+
+        <attr format="dimension" name="padding" />
+        <attr format="dimension" name="game__timer__height" />
+        <attr format="dimension" name="game__timer__border_width" />
+        <attr format="dimension" name="game__tile__border_width" />
+        <attr format="dimension" name="game__score__padding" />
+        <attr format="dimension" name="game__score__padding_half" />
+
+        <attr format="dimension" name="game__score__heading_text_size" />
+        <attr format="dimension" name="game__score__value_text_size" />
+    </declare-styleable>
+
+    <declare-styleable name="LexicaViewTheme">
+        <attr name="lexicaViewStyle" format="reference"/>
+    </declare-styleable>
+</resources>

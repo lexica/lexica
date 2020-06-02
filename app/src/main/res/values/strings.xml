@@ -74,14 +74,15 @@
     <string name="hide_unique">Hide Unique Words</string>
     <string name="view_word"><u>View</u></string>
     <string name="define_word"><u>Define</u> </string>
-    <string name="words">WORDS</string>
-    <string name="score">SCORE</string>
+    <string name="words">Words</string>
+    <string name="score">Score</string>
+	<string name="time">Time</string>
     <string name="found_words">Found Words</string>
     <string name="missed_words">Missed Words</string>
     <string name="total_words">Total Words:</string>
     <string name="total_score">Total Score:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="high_score">High Score: %1$d</string>
+    <string name="high_score">High Score</string>
     <string name="pref_resetScores_summary">High scores are tracked for each combination of the above settings. Tap to reset all scores to zero.</string>
     <string name="pref_resetScores">Reset High Scores</string>
     <string name="high_scores_reset">High scores have been reset.</string>
@@ -92,4 +93,8 @@
     <string name="pref_definitionProvider_summary">Select a definition provider to use. If the selected provider is not installed, DuckDuckGo will be used.</string>
     <string name="pref_definitionProvider_dialog">Select Definition Provider</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
+    <string name="pref_theme">Theme</string>
+    <string name="pref_theme_dialog">Select Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
 </resources>

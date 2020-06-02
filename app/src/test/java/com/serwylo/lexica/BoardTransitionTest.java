@@ -22,22 +22,12 @@ public class BoardTransitionTest {
 
     @Test
     public void persianBoard() {
-        String[] board = new String[] {
-                "و", "ﻗ", "ن", "ﻫ",
-                "ﻒ", "ز", "ﺮ", "ا",
-                "ﻒ", "غ", "ا", "م",
-                "ﻒ", "ه", "ﺮ", "ی",
-        };
+        String[] board = new String[]{"و", "ﻗ", "ن", "ﻫ", "ﻒ", "ز", "ﺮ", "ا", "ﻒ", "غ", "ا", "م", "ﻒ", "ه", "ﺮ", "ی",};
 
         StringTrie trie = new StringTrie(new Persian());
         trie.addWord("وزغهایمان");
 
-        TrieTest.assertTrieMatches(
-                "Contains Persian word وزغهایمان",
-                trie,
-                new String[] {"وزغهایمان"},
-                new String[] {"non Persian word"}
-        );
+        TrieTest.assertTrieMatches("Contains Persian word وزغهایمان", trie, new String[]{"وزغهایمان"}, new String[]{"non Persian word"});
 
         Map<String, List<Solution>> solutions = trie.solver(new FourByFourBoard(board), new WordFilter.MinLength(3));
         assertEquals(1, solutions.size());
@@ -46,13 +36,7 @@ public class BoardTransitionTest {
     @Test
     public void fiveByFive() {
 
-        Board board = new FiveByFiveBoard(new String[] {
-                "A", "B", "C", "D", "E",
-                "F", "G", "H", "I", "J",
-                "K", "L", "M", "N", "O",
-                "P", "Q", "R", "S", "T",
-                "U", "V", "W", "X", "Y",
-        });
+        Board board = new FiveByFiveBoard(new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y",});
 
         assertCanTransition(board, "A", "B", "F", "G");
         assertCannotTransition(board, "A", "C", "D", "E", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y");
@@ -67,12 +51,7 @@ public class BoardTransitionTest {
     @Test
     public void fourByFour() {
 
-        Board board = new FourByFourBoard(new String[] {
-                "A", "B", "C", "D",
-                "E", "F", "G", "H",
-                "I", "J", "K", "L",
-                "M", "N", "O", "P",
-        });
+        Board board = new FourByFourBoard(new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",});
 
         assertCanTransition(board, "A", "B", "E", "F");
         assertCannotTransition(board, "A", "C", "D", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P");
@@ -124,13 +103,13 @@ public class BoardTransitionTest {
 
     }
 
-    private void assertCanTransition(Board board, String from, String ... to) {
+    private void assertCanTransition(Board board, String from, String... to) {
         for (String toLetter : to) {
             assertCanTransition(board, from, toLetter);
         }
     }
 
-    private void assertCannotTransition(Board board, String from, String ... to) {
+    private void assertCannotTransition(Board board, String from, String... to) {
         for (String toLetter : to) {
             assertCannotTransition(board, from, toLetter);
         }
@@ -163,7 +142,7 @@ public class BoardTransitionTest {
     }
 
     private int positionOf(Board board, String letter) {
-        for (int i = 0; i < board.getSize(); i ++) {
+        for (int i = 0; i < board.getSize(); i++) {
             if (board.elementAt(i).equals(letter)) {
                 return i;
             }

@@ -6,15 +6,13 @@ import com.serwylo.lexica.trie.util.LetterFrequency;
 import net.healeys.trie.TransitionMap;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Mock {@link TransitionMap} for testing, which only cares about the letters on the board, not
  * whether you are allowed to transition from one to another. You can _always_ transition from
  * one to another.
- *
+ * <p>
  * There is some hackery here to allow for a number of letters which is not a perfect square.
  * For example, the english alphabet includes 26 letters, but a normal board can only have 25 or
  * 36 letters. Thus, this cheats by effectively repeating the last letter in {@link #getWidth()}
@@ -22,7 +20,7 @@ import java.util.Map;
  */
 public class CanTransitionMap implements TransitionMap {
 
-    private String[] letters;
+    private final String[] letters;
 
     CanTransitionMap(String[] letters) {
         this.letters = letters;
@@ -31,7 +29,6 @@ public class CanTransitionMap implements TransitionMap {
     CanTransitionMap(LetterFrequency frequency, Language language) {
         List<String> lettersList = new ArrayList<>(frequency.getLetters());
 
-        Map<String, String> mandatorySuffixes = new HashMap<>();
         for (String letter : frequency.getLetters()) {
             String letterWithSuffix = language.applyMandatorySuffix(letter);
             if (!letterWithSuffix.equals(letter)) {
@@ -45,9 +42,7 @@ public class CanTransitionMap implements TransitionMap {
     }
 
     CanTransitionMap() {
-        this.letters = new String[]{
-                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "qu", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-        };
+        this.letters = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "qu", "r", "s", "t", "u", "v", "w", "x", "y", "z",};
     }
 
     @Override
@@ -75,6 +70,6 @@ public class CanTransitionMap implements TransitionMap {
 
     @Override
     public int getWidth() {
-        return (int)Math.ceil(Math.sqrt(letters.length));
+        return (int) Math.ceil(Math.sqrt(letters.length));
     }
 }

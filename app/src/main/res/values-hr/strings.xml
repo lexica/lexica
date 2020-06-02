@@ -4,7 +4,7 @@
     <string name="pref_dict_ca">Katalonski</string>
     <string name="pref_dict_beta">%1$s (beta)</string>
     <string name="time_5m">5 minuta</string>
-    <string name="high_score">Najbolji rezultat: %1$d</string>
+    <string name="high_score">Najbolji rezultat</string>
     <string name="words">RIJEČI</string>
     <string name="time_30m">30 minuta</string>
     <string name="pref_definitionProvider_summary">Odaberi pružatelja definicija koji će se koristiti. Ako odabrani pružatelj nije instaliran, koristit će se DuckDuckGo.</string>
