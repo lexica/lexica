@@ -5,7 +5,7 @@
     <string name="pref_dict_beta">%1$s (Beta)</string>
     <string name="time_5m">5 minutos</string>
     <string name="high_score">Recorde</string>
-    <string name="words">PALAVRAS</string>
+    <string name="words">Palavras</string>
     <string name="time_30m">30 minutos</string>
     <string name="pref_definitionProvider_summary">Selecione o provedor de definições a usar. Se o provedor selecionado não estiver instalado, será utilizado o DuckDuckGo.</string>
     <string name="pref_dict_ja">Japonês</string>
@@ -21,7 +21,7 @@
     <string name="menu_end_game">Fim de jogo</string>
     <string name="button_ok">OK</string>
     <string name="pref_dict_nl">Holandês</string>
-    <string name="score">PONTUAÇÃO</string>
+    <string name="score">Pontuação</string>
     <string name="pref_boardSize">Tamanho do tabuleiro</string>
     <string name="pref_dict_fa">Persa</string>
     <string name="pref_boardSize_dialog">Selecione o tamanho do tabuleiro</string>
@@ -87,4 +87,9 @@
     <string name="pref_dict_pl">Polonês</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pt_BR">Português (Brasil)</string>
+    <string name="theme_dark">Escuro</string>
+    <string name="theme_light">Claro</string>
+    <string name="pref_theme_dialog">Selecionar tema</string>
+    <string name="pref_theme">Tema</string>
+    <string name="time">Tempo</string>
 </resources>
