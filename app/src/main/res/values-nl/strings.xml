@@ -43,7 +43,7 @@
     <string name="hide_unique">Unieke woorden verbergen</string>
     <string name="view_word"><u>Tonen</u></string>
     <string name="define_word">"&lt;u&gt;Betekenis tonen&lt;/u&gt; "<u>Definiëren</u> </string>
-    <string name="words">WOORDEN</string>
+    <string name="words">Woorden</string>
     <string name="found_words">Gevonden woorden</string>
     <string name="missed_words">Gemiste woorden</string>
     <string name="total_words">Totaal aantal woorden:</string>
@@ -54,7 +54,7 @@
     <string name="pref_scoreType_dialog">Scorenotatie kiezen</string>
     <string name="word_length">Woordlengte</string>
     <string name="letter_points">Letterpunten</string>
-    <string name="score">SCORE</string>
+    <string name="score">Score</string>
     <string name="high_score">Topscore</string>
     <string name="pref_resetScores_summary">Topscores worden bijgehouden voor elke combinatie van bovenstaande instellingen. Druk om alle scores terug te zetten op nul.</string>
     <string name="pref_resetScores">Topscores terugzetten op nul</string>
@@ -87,4 +87,9 @@
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pl">Pools</string>
     <string name="pref_dict_pt_BR">Portugees (Brazilië)</string>
+    <string name="theme_dark">Donker</string>
+    <string name="theme_light">Licht</string>
+    <string name="pref_theme_dialog">Thema kiezen</string>
+    <string name="pref_theme">Thema</string>
+    <string name="time">Tijd</string>
 </resources>
