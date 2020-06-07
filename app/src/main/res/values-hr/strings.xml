@@ -5,7 +5,7 @@
     <string name="pref_dict_beta">%1$s (beta)</string>
     <string name="time_5m">5 minuta</string>
     <string name="high_score">Najbolji rezultat</string>
-    <string name="words">RIJEČI</string>
+    <string name="words">Riječi</string>
     <string name="time_30m">30 minuta</string>
     <string name="pref_definitionProvider_summary">Odaberi pružatelja definicija koji će se koristiti. Ako odabrani pružatelj nije instaliran, koristit će se DuckDuckGo.</string>
     <string name="pref_dict_ja">Japanski</string>
@@ -21,7 +21,7 @@
     <string name="menu_end_game">Završi igru</string>
     <string name="button_ok">U redu</string>
     <string name="pref_dict_nl">Nizozemski</string>
-    <string name="score">REZULTAT</string>
+    <string name="score">Rezultat</string>
     <string name="pref_boardSize">Veličina ploče</string>
     <string name="pref_dict_fa">persijski</string>
     <string name="pref_boardSize_dialog">Odaberi veličinu ploče</string>
@@ -86,4 +86,10 @@
     <string name="dialog_no_saved">Nijedna igra nije spremljena. Ako ovu poruku možeš pročitati, vjerojatno je nešto pokvareno.</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pl">Poljski</string>
+    <string name="theme_dark">Tamna</string>
+    <string name="theme_light">Svjetla</string>
+    <string name="pref_theme_dialog">Odaberi temu</string>
+    <string name="pref_theme">Tema</string>
+    <string name="time">Vrijeme</string>
+    <string name="pref_dict_pt_BR">Portugalski (Brazil)</string>
 </resources>
