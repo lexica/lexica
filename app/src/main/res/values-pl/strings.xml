@@ -59,8 +59,8 @@
     <string name="hide_unique">Ukryj unikatowe słowa</string>
     <string name="view_word"><u>Widok</u></string>
     <string name="define_word"><u>Definiuj</u> </string>
-    <string name="words">SŁOWA</string>
-    <string name="score">PUNKTACJA</string>
+    <string name="words">Słowa</string>
+    <string name="score">Wynik</string>
     <string name="found_words">Znalezione słowa</string>
     <string name="missed_words">Brakujące słowa</string>
     <string name="total_words">Wszystkich słów:</string>
@@ -87,4 +87,9 @@
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pt_BR">Portugalski (Brazylia)</string>
     <string name="pref_dict_pl">Polski</string>
+    <string name="theme_dark">Ciemna</string>
+    <string name="theme_light">Jasny</string>
+    <string name="pref_theme_dialog">Wybierz Motyw</string>
+    <string name="pref_theme">Motyw</string>
+    <string name="time">Czas</string>
 </resources>
