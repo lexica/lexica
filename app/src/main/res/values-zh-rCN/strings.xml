@@ -87,4 +87,9 @@
     <string name="pref_dict_pl">波兰语</string>
     <string name="pref_dict_hu">匈牙利语</string>
     <string name="pref_dict_pt_BR">葡萄牙语(巴西)</string>
+    <string name="theme_dark">深色</string>
+    <string name="theme_light">浅色</string>
+    <string name="pref_theme_dialog">选择主题</string>
+    <string name="pref_theme">主题</string>
+    <string name="time">时间</string>
 </resources>
