@@ -395,6 +395,10 @@ public class Game implements Synchronizer.Counter {
                 wordList.addFirst(word);
                 playSound(0);
                 removeWeight(cap);
+
+                if (wordCount == solutions.size()) {
+                    endNow();
+                }
             }
         } else {
             // Word is not really a word
