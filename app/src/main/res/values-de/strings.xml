@@ -40,7 +40,7 @@
     <string name="total_score">Punkte insgesamt:</string>
     <string name="total_words">Wörter insgesamt:</string>
     <string name="view_word"><u>Ansicht</u></string>
-    <string name="words">WÖRTER</string>
+    <string name="words">Wörter</string>
     <string name="dialog_no_saved">Es wird kein Spiel gespeichert. Wenn Ihnen diese Nachricht angezeigt wird, ist wahrscheinlich etwas nicht in Ordnung.</string>
     <string name="dialog_about_content">Berühren Sie den Bildschirm und bewegen Sie Ihren Finger über benachbarte Felder, um Wörter zu buchstabieren. Sie haben drei Minuten, um so viele Wörter wie möglich zu finden.
 \n
@@ -62,7 +62,7 @@
     <string name="letter_points">Buchstabenwertung</string>
     <string name="pref_hintMode">Hinweis Modus</string>
     <string name="pref_hintMode_summary">Zeigt die Anzahl Wörter in der jeder Buchstabe verwendet werden kann</string>
-    <string name="score">PUNKTE</string>
+    <string name="score">Punkte</string>
     <string name="pref_definitionProvider">Wörterbuch</string>
     <string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird auf DuckDuckGo zurückgegriffen.</string>
     <string name="pref_definitionProvider_dialog">Wörterbuchauswahl</string>
@@ -87,4 +87,9 @@
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pl">Polnisch</string>
     <string name="pref_dict_pt_BR">Portugiesisch (Brasilien)</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="theme_light">Hell</string>
+    <string name="pref_theme_dialog">Thema auswählen</string>
+    <string name="pref_theme">Thema</string>
+    <string name="time">Zeit</string>
 </resources>
