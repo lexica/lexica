@@ -1,2 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="dialog_about_title">O Lexica</string>
+    <string name="dialog_cancel">Zrušiť</string>
+    <string name="dialog_ok">OK</string>
+    <string name="pref_sounds">Zvuky povolené</string>
+    <string name="hint_both">Obidve</string>
+    <string name="hint_colour">Farebné dlaždice</string>
+    <string name="tile_count">Počet slov</string>
+    <string name="hint_none">Zakázané</string>
+    <string name="pref_hintMode_dialog">Režim nápovedy</string>
+    <string name="pref_dict">Slovník</string>
+    <string name="pref_hintMode">Režim nápovedy</string>
+    <string name="word_length">Dĺžka slova</string>
+    <string name="pref_scoreType_dialog">Zvoľte spôsob bodovania</string>
+    <string name="pref_scoreType_summary">Zvoľte spôsob bodovania</string>
+    <string name="pref_scoreType">Spôsob bodovania</string>
+    <string name="time_30m">30 minút</string>
+    <string name="time_20m">20 minút</string>
+    <string name="time_10m">10 minút</string>
+    <string name="time_5m">5 minút</string>
+    <string name="time_3m">3 minúty</string>
+    <string name="pref_timeLimit_dialog">Zvoľte časový limit</string>
+    <string name="pref_timeLimit_summary">Zvoľte časový limit</string>
+    <string name="pref_timeLimit">Časový limit</string>
+    <string name="pref_boardSize_dialog">Zvoľte veľkosť hracej plochy</string>
+    <string name="pref_boardSize_summary">Zvoľte veľkosť hracej plochy</string>
+    <string name="pref_boardSize">Veľkosť hracej plochy</string>
+    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="pref_dict_us">Angličtina (US)</string>
+    <string name="pref_dict_uk_ua">Ukrajinčina</string>
+    <string name="pref_dict_uk">Angličtina (UK)</string>
+    <string name="pref_dict_ru">Ruština</string>
+    <string name="pref_dict_pt_BR">Portugalčina (Brazília)</string>
+    <string name="pref_dict_pl">Poľština</string>
+    <string name="pref_dict_nl">Holandčina</string>
+    <string name="pref_dict_ja">Japončina</string>
+    <string name="pref_dict_it">Taliančina</string>
+    <string name="pref_dict_hu">Maďarčina</string>
+    <string name="pref_dict_fr_fr">Francúzština</string>
+    <string name="pref_dict_fa">Perzština</string>
+    <string name="pref_dict_es">Španielčina</string>
+    <string name="pref_dict_de_de">Nemčina</string>
+    <string name="pref_dict_ca">Katalánčina</string>
+    <string name="pref_dict_dialog">Vyberte slovník</string>
+    <string name="pref_dict_summary">Vyberte jazyk hry</string>
+    <string name="new_game">Nová hra</string>
+    <string name="prefs">Nastavenia</string>
+    <string name="restore_game">Obnoviť hru</string>
+    <string name="app_name">Lexica</string>
+</resources>
