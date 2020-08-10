@@ -1,53 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lexica</string>
-
     <string name="new_game">Новая игра</string>
     <string name="restore_game">Продолжить</string>
-	<string name="prefs">Настройки</string>
-
-	<string name="pref_dict">Словарь</string>
-	<string name="pref_dict_summary">Выберите используемый словарь</string>
-	<string name="pref_dict_dialog">Выберите словарь</string>
-	<string name="pref_dict_us">Английский (Соединëнные Штаты)</string>
-	<string name="pref_dict_uk">Английский (Великобритания)</string>
-	<string name="pref_dict_de_de">Немецкий</string>
-	<string name="pref_dict_nl">Нидерландский</string>
-	<string name="pref_dict_fa">Фарси</string>
-	<string name="pref_dict_fr_fr">Французский</string>
-	<string name="pref_dict_it">Итальянский</string>
-	<string name="pref_dict_ca">Каталанский</string>
-	<string name="pref_dict_es">Испанский</string>
-	<string name="pref_dict_beta">%1$s (Бета)</string>
-
-	<string name="pref_boardSize">Размер поля</string>
-	<string name="pref_boardSize_summary">Выберите размер поля</string>
-	<string name="pref_boardSize_dialog">Выберите размер поля</string>
-
-	<string name="pref_timeLimit">Игровое время</string>
-	<string name="pref_timeLimit_summary">Выберите время на игру</string>
-	<string name="pref_timeLimit_dialog">Выберите время на игру</string>
-	<string name="time_3m">3 минуты</string>
-	<string name="time_5m">5 минут</string>
-	<string name="time_10m">10 минут</string>
-	<string name="time_20m">20 минут</string>
-	<string name="time_30m">30 минут</string>
-
-	<string name="pref_scoreType">Начисление очков</string>
-	<string name="pref_scoreType_summary">Выберите метод начисления очков</string>
-	<string name="pref_scoreType_dialog">Выберите метод начисления очков</string>
-	<string name="word_length">По длине слов</string>
-	<string name="letter_points">По очкам букв</string>
-
-	<string name="pref_sounds">Звуки</string>
-	<string name="pref_sounds_summary">Использовать звуковые эффекты или нет?</string>
-
-	<string name="dialog_no_saved">Игра не сохранена. Возможно, что-то пошло не так.</string>
-	<string name="dialog_ok">OK</string>
-	<string name="dialog_cancel">Отмена</string>
-
-	<string name="dialog_about_title">О Lexica</string>
-	<string name="dialog_about_content">
+    <string name="prefs">Настройки</string>
+    <string name="pref_dict">Словарь</string>
+    <string name="pref_dict_summary">Выберите язык для игры</string>
+    <string name="pref_dict_dialog">Выберите словарь</string>
+    <string name="pref_dict_us">Английский (Соединëнные Штаты)</string>
+    <string name="pref_dict_uk">Английский (Великобритания)</string>
+    <string name="pref_dict_de_de">Немецкий</string>
+    <string name="pref_dict_nl">Нидерландский</string>
+    <string name="pref_dict_fa">Фарси</string>
+    <string name="pref_dict_fr_fr">Французский</string>
+    <string name="pref_dict_it">Итальянский</string>
+    <string name="pref_dict_ca">Каталанский</string>
+    <string name="pref_dict_es">Испанский</string>
+    <string name="pref_dict_beta">%1$s (Бета)</string>
+    <string name="pref_boardSize">Размер поля</string>
+    <string name="pref_boardSize_summary">Выберите размер поля</string>
+    <string name="pref_boardSize_dialog">Выберите размер поля</string>
+    <string name="pref_timeLimit">Игровое время</string>
+    <string name="pref_timeLimit_summary">Выберите время на игру</string>
+    <string name="pref_timeLimit_dialog">Выберите время на игру</string>
+    <string name="time_3m">3 минуты</string>
+    <string name="time_5m">5 минут</string>
+    <string name="time_10m">10 минут</string>
+    <string name="time_20m">20 минут</string>
+    <string name="time_30m">30 минут</string>
+    <string name="pref_scoreType">Начисление очков</string>
+    <string name="pref_scoreType_summary">Выберите метод начисления очков</string>
+    <string name="pref_scoreType_dialog">Выберите метод начисления очков</string>
+    <string name="word_length">По длине слов</string>
+    <string name="letter_points">По очкам букв</string>
+    <string name="pref_sounds">Звуки</string>
+    <string name="pref_sounds_summary">Использовать звуковые эффекты или нет</string>
+    <string name="dialog_no_saved">Игра не сохранена. Возможно, что-то пошло не так.</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_about_title">О Lexica</string>
+    <string name="dialog_about_content">
 	Коснитесь экрана и водите пальцем по примыкающим друг к другу квадратам для составления слов. 
 	Попытайтесь найти как можно больше слов за отведëнное время.
 
@@ -55,41 +47,51 @@
 	\nНа полях 4x4 слова должны иметь длину от трëх букв, на полях 5x5 - от четырëх.
 	Трëх- или четырëхбуквенные слова приносят одно очко. Более длинные слова приносят больше очков. Собственные имена существительные (имена людей, животных, названия объектов и пр.) не считаются.\n\n
 	</string>
-
-	<string name="menu_rotate_board">Повернуть поле</string>
-	<string name="menu_save_game">Сохранить игру</string>
-	<string name="menu_end_game">Закончить игру</string>
-	<string name="button_ok">OK</string>
-
-	<string name="about">About</string>
-
-	<string name="show_missed">Показать пропущенные слова</string>
-	<string name="hide_missed">Скрыть пропущенные слова</string>
-
-	<string name="show_unique">Показать уникальные слова</string>
-	<string name="hide_unique">Скрыть уникальные слова</string>
-
-	<string name="view_word"><u>Просмотреть</u></string>
-	<string name="define_word"><u>Значение</u> </string>
-
-	<string name="words">СЛОВА</string>
-	<string name="score">ОЧКИ</string>
-	<string name="found_words">Найденные слова</string>
-	<string name="missed_words">Пропущенные слова</string>
-	<string name="total_words">Угадано слов:</string>
-	<string name="total_score">Очки:</string>
-	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-
-	<string name="high_score">Лучший результат</string>
-	<string name="pref_resetScores_summary">Рекорды записываются для каждой комбинации настроек. Нажмите, чтобы сбросить все рекорды.</string>
-	<string name="pref_resetScores">Сбросить рекорды</string>
-    <string name="high_scores_reset">Рекорды были удалены</string>
-	<string name="reset_scores_prompt">Вы уверены в том, что хотите удалить рекорды для всех режимов игры?</string>
-
+    <string name="menu_rotate_board">Повернуть поле</string>
+    <string name="menu_save_game">Сохранить игру</string>
+    <string name="menu_end_game">Закончить игру</string>
+    <string name="button_ok">OK</string>
+    <string name="about">О программе</string>
+    <string name="show_missed">Показать пропущенные слова</string>
+    <string name="hide_missed">Скрыть пропущенные слова</string>
+    <string name="show_unique">Показать уникальные слова</string>
+    <string name="hide_unique">Скрыть уникальные слова</string>
+    <string name="view_word"><u>Просмотреть</u></string>
+    <string name="define_word"><u>Значение</u> </string>
+    <string name="words">Слова</string>
+    <string name="score">Очки</string>
+    <string name="found_words">Найденные слова</string>
+    <string name="missed_words">Пропущенные слова</string>
+    <string name="total_words">Угадано слов:</string>
+    <string name="total_score">Очки:</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="high_score">Лучший результат</string>
+    <string name="pref_resetScores_summary">Рекорды записываются для каждой комбинации настроек. Нажмите, чтобы сбросить все рекорды.</string>
+    <string name="pref_resetScores">Сбросить рекорды</string>
+    <string name="high_scores_reset">Рекорды были удалены.</string>
+    <string name="reset_scores_prompt">Вы уверены в том, что хотите удалить рекорды для всех режимов игры?</string>
     <string name="pref_breakdown">Показывать количество слов одной длины</string>
-	<string name="pref_breakdown_summary">Показывать количество слов каждой длины во время игры</string>
-
-	<string name="pref_definitionProvider">Провайдер значений слов</string>
-	<string name="pref_definitionProvider_summary">Выберите желаемый провайдер значений слов. По умолчанию используется DuckDuckGo.</string>
-	<string name="pref_definitionProvider_dialog">Выберите провайдер значений слов</string>
+    <string name="pref_breakdown_summary">Показывать количество слов каждой длины во время игры</string>
+    <string name="pref_definitionProvider">Провайдер значений слов</string>
+    <string name="pref_definitionProvider_summary">Выберите желаемый провайдер значений слов. По умолчанию используется DuckDuckGo.</string>
+    <string name="pref_definitionProvider_dialog">Выберите провайдер значений слов</string>
+    <string name="hint_both">Обе</string>
+    <string name="hint_colour">Цвет плитки</string>
+    <string name="hint_none">Отключено</string>
+    <string name="pref_hintMode_dialog">Режим подсказки</string>
+    <string name="pref_hintMode_summary">Показывает количество слов, в которых можно использовать каждую букву</string>
+    <string name="pref_hintMode">Режим подсказки</string>
+    <string name="theme_dark">Темная</string>
+    <string name="theme_light">Светлая</string>
+    <string name="pref_theme_dialog">Выберите тему</string>
+    <string name="pref_theme">Тема</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Онлайн</string>
+    <string name="time">Время</string>
+    <string name="tile_count">Количество слов</string>
+    <string name="pref_dict_uk_ua">Украинский</string>
+    <string name="pref_dict_ru">Русский</string>
+    <string name="pref_dict_pt_BR">Португальский (Бразилия)</string>
+    <string name="pref_dict_pl">Польский</string>
+    <string name="pref_dict_ja">Японский</string>
+    <string name="pref_dict_hu">Венгерский</string>
 </resources>
