@@ -5,8 +5,8 @@
     <string name="restore_game">Obnovit hru</string>
     <string name="prefs">Možnosti</string>
     <string name="pref_dict">Slovník</string>
-    <string name="pref_dict_summary">Zvolte slovník, který bude hra využívat</string>
-    <string name="pref_dict_dialog">Zvolit slovník</string>
+    <string name="pref_dict_summary">Vyberte jazyk hry</string>
+    <string name="pref_dict_dialog">Zvolte slovník</string>
     <string name="pref_dict_ca">Katalánština</string>
     <string name="pref_dict_de_de">Němčina</string>
     <string name="pref_dict_es">Španělština</string>
@@ -33,4 +33,19 @@
     <string name="time_30m">30 minut</string>
     <string name="pref_scoreType">Způsob bodování</string>
     <string name="pref_scoreType_summary">Zvolte způsob bodování</string>
+    <string name="about">O aplikaci</string>
+    <string name="button_ok">OK</string>
+    <string name="menu_end_game">Ukončit hru</string>
+    <string name="menu_save_game">Uložit hru</string>
+    <string name="menu_rotate_board">Otočit desku</string>
+    <string name="dialog_about_title">O Lexica</string>
+    <string name="dialog_cancel">Zrušit</string>
+    <string name="dialog_ok">OK</string>
+    <string name="hint_colour">Barevné dlaždice</string>
+    <string name="tile_count">Počet slov</string>
+    <string name="word_length">Délka slova</string>
+    <string name="pref_scoreType_dialog">Zvolte způsob bodování</string>
+    <string name="pref_dict_uk_ua">Ukrajinština</string>
+    <string name="pref_dict_pt_BR">Portugalština (Brazílie)</string>
+    <string name="pref_dict_pl">Polština</string>
 </resources>
