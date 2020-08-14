@@ -48,4 +48,48 @@
     <string name="prefs">Nastavenia</string>
     <string name="restore_game">Obnoviť hru</string>
     <string name="app_name">Lexica</string>
+    <string name="dialog_about_content">Dotknite sa obrazovky a posúvaním prsta do susedných štvorcov hláskujte slová. Máte tri minúty na to, aby ste našli čo najviac slov.
+\n
+\nBodovanie:
+\nNa doskách 4x4 musia byť slová dlhé najmenej tri písmená. Na doskách 5x5 musia byť slová dlhé najmenej štyri písmená. Za slová, ktoré majú tri alebo štyri písmená, dostanete jeden bod. Za dlhšie slová viac bodov. Vlastné mená sa nezapočítavajú.
+\n
+\n</string>
+    <string name="pref_breakdown_summary">Či sa dĺžky slov majú zobraziť v rozpise slov</string>
+    <string name="pref_resetScores_summary">Skóre je sledované pre každú kombináciu vyššie uvedených nastavení. Ťuknutím na položku vynulujete skóre u všetkých nastavení.</string>
+    <string name="hide_unique">Skryť jedinečné slová</string>
+    <string name="show_unique">Zobraziť jedinečné slová</string>
+    <string name="pref_hintMode_summary">Ukáže počet slov, v ktorých sa dané písmeno vyskytuje</string>
+    <string name="letter_points">Body za písmená</string>
+    <string name="theme_dark">Tmavý</string>
+    <string name="theme_light">Svetlý</string>
+    <string name="pref_theme_dialog">Vyberte motív</string>
+    <string name="pref_theme">Motív</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
+    <string name="pref_definitionProvider_dialog">Vyberte poskytovateľa definícií</string>
+    <string name="pref_definitionProvider_summary">Vyberte poskytovateľa definícií, ktorý chcete použiť. Ak nie je nainštalovaný vybraný poskytovateľ, použije sa DuckDuckGo.</string>
+    <string name="pref_definitionProvider">Poskytovateľ definícií</string>
+    <string name="pref_breakdown">Zobraziť rozpis podľa dĺžky slova</string>
+    <string name="reset_scores_prompt">Ste si istý, že chcete vynulovať skóre pre všetky herné režimy\?</string>
+    <string name="high_scores_reset">Skóre vynulované.</string>
+    <string name="pref_resetScores">Vynulovať Skóre</string>
+    <string name="high_score">Najvyššie skóre</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="total_score">Celkové skóre:</string>
+    <string name="total_words">Celkový počet slov:</string>
+    <string name="missed_words">Nenájdené slová</string>
+    <string name="found_words">Nájdené slová</string>
+    <string name="time">Čas</string>
+    <string name="score">Skóre</string>
+    <string name="words">Slová</string>
+    <string name="define_word"><u>Definovať</u> </string>
+    <string name="view_word"><u>Zobraziť</u></string>
+    <string name="hide_missed">Skryť nenájdené slová</string>
+    <string name="show_missed">Zobraziť nenájdené slová</string>
+    <string name="about">O aplikácii</string>
+    <string name="button_ok">OK</string>
+    <string name="menu_end_game">Ukončiť hru</string>
+    <string name="menu_save_game">Uložiť hru</string>
+    <string name="menu_rotate_board">Otočiť dosku</string>
+    <string name="dialog_no_saved">Neexistuje žiadna uložená hra. Ak čítate túto správu, pravdepodobne je niečo pokazené.</string>
+    <string name="pref_sounds_summary">Či sú zvukové efekty povolené</string>
 </resources>
