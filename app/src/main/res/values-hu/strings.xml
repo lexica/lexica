@@ -58,8 +58,8 @@
     <string name="hide_unique">Egyedi szavak elrejtése</string>
     <string name="view_word"><u>Nézet</u></string>
     <string name="define_word"><u>Meghatározás</u> </string>
-    <string name="words">SZAVAK</string>
-    <string name="score">PONTSZÁM</string>
+    <string name="words">Szavak</string>
+    <string name="score">Pontszám</string>
     <string name="found_words">Megtalált szavak</string>
     <string name="missed_words">Hiányzó szavak</string>
     <string name="total_words">Összes szó:</string>
@@ -84,4 +84,12 @@
     <string name="hint_colour">Csempe színe</string>
     <string name="hint_both">Mindkettő</string>
     <string name="pref_dict_uk_ua">Ukrán</string>
+    <string name="theme_dark">Sötét</string>
+    <string name="theme_light">Világos</string>
+    <string name="pref_theme_dialog">Téma kiválasztása</string>
+    <string name="pref_theme">Téma</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
+    <string name="time">Idő</string>
+    <string name="pref_dict_pt_BR">Portugál (Brazília)</string>
+    <string name="pref_dict_pl">Lengyel</string>
 </resources>
