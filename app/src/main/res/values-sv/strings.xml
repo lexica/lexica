@@ -71,8 +71,8 @@
     <string name="define_word">
         <u>Definiera</u>
     </string>
-    <string name="words">ORD</string>
-    <string name="score">POÄNG</string>
+    <string name="words">ord</string>
+    <string name="score">Poäng</string>
     <string name="found_words">Hittade ord</string>
     <string name="missed_words">Misslyckade ord</string>
     <string name="total_words">Sammanlagda ord:</string>
@@ -88,4 +88,12 @@
     <string name="pref_definitionProvider">Definitionsleverantör</string>
     <string name="pref_definitionProvider_summary">Välj en definitionsleverantör att använda. Om den valda leverantörer inte är installerad så kommer att DuckDuckGo att användas.</string>
     <string name="pref_definitionProvider_dialog">Välj definitionsleverantör</string>
+    <string name="theme_dark">Mörkt</string>
+    <string name="theme_light">Ljust</string>
+    <string name="pref_theme_dialog">Välj tema</string>
+    <string name="pref_theme">Tema</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
+    <string name="time">Tid</string>
+    <string name="pref_dict_pt_BR">Portugisiska (Brasilien)</string>
+    <string name="pref_dict_pl">Polska</string>
 </resources>
