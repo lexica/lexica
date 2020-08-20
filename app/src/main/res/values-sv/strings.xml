@@ -65,12 +65,8 @@
     <string name="hide_missed">Göm misslyckade ord</string>
     <string name="show_unique">Visa unika ord</string>
     <string name="hide_unique">Göm unika ord</string>
-    <string name="view_word">
-        <u>Visa</u>
-    </string>
-    <string name="define_word">
-        <u>Definiera</u>
-    </string>
+    <string name="view_word"><u>Visa</u></string>
+    <string name="define_word"><u>Definiera</u> </string>
     <string name="words">ord</string>
     <string name="score">Poäng</string>
     <string name="found_words">Hittade ord</string>
