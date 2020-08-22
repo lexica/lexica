@@ -10,3 +10,9 @@ local.properties
 # Binary file, created as part of the build.
 app/src/main/res/raw/words*.bin
 app/src/test/resources/words*.bin
+
+# Ruby bundler gems
+vendor
+.bundle
+
+fastlane/Appfile

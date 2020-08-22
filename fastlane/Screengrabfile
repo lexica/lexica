@@ -1,0 +1,19 @@
+# remove the leading '#' to uncomment lines
+
+app_package_name('com.serwylo.lexica')
+use_tests_in_classes(['com.serwylo.lexica.FastlaneScreengrabTest'])
+
+use_adb_root(true)
+
+app_apk_path('app/build/outputs/apk/debug/app-debug.apk')
+tests_apk_path('app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')
+
+# Note, for some reason "ca" and "fi" always seem to fail and produce weird output.
+# If that happens, just comment out other languages and then regenerate (but careful of clear_previous_screenshots)
+locales(['zh','uk','tr','sv','ru','pt','pl','nl','nb','ja','it','hu','hr','fr','fi','en-US','el','de','ca'])
+
+# clear all previously generated screenshots in your local output directory before creating new ones
+clear_previous_screenshots(true)
+
+# For more information about all available options run
+#   fastlane screengrab --help
