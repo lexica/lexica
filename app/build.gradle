@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.serwylo.lexica"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-        minSdkVersion 14
+        minSdkVersion 18
     }
 
     lintOptions {
@@ -55,13 +55,16 @@ dependencies {
     implementation 'com.github.medyo:fancybuttons:1.9.1'
 
     testImplementation "junit:junit:4.12"
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test:core:1.2.0'
     androidTestImplementation 'androidx.test:rules:1.2.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0-alpha03'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0-rc01'
+
+    androidTestImplementation 'tools.fastlane:screengrab:2.0.0', {
+        exclude group: 'androidx.test.uiautomator', module: 'uiautomator'
+    }
 }
 
 afterEvaluate {

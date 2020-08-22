@@ -166,13 +166,13 @@ public class GenerateLanguageBoards {
     }
 
     private void fromGameRotateBoard() {
-        ViewInteraction rotateBoardMenuItem = onView(allOf(withId(R.id.rotate), withContentDescription(R.string.menu_rotate_board), childAtPosition(childAtPosition(withId(R.id.toolbar), 1), 0), isDisplayed()));
-        rotateBoardMenuItem.perform(click());
+        ViewInteraction actionMenuItemView = onView(allOf(withId(R.id.rotate), withContentDescription(R.string.menu_rotate_board), childAtPosition(childAtPosition(withId(R.id.toolbar), 2), 0), isDisplayed()));
+        actionMenuItemView.perform(click());
     }
 
     private void fromGameSaveGame() {
-        ViewInteraction saveMenuItem = onView(allOf(withId(R.id.save_game), withContentDescription(R.string.menu_save_game), childAtPosition(childAtPosition(withId(R.id.toolbar), 1), 1), isDisplayed()));
-        saveMenuItem.perform(click());
+        ViewInteraction upButton = onView(allOf(childAtPosition(allOf(withId(R.id.toolbar), childAtPosition(withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")), 0)), 1), isDisplayed()));
+        upButton.perform(click());
     }
 
     private void fromHomeRestoreGame() {
@@ -181,20 +181,18 @@ public class GenerateLanguageBoards {
     }
 
     private void fromGameEndGame() {
-        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
-
-        ViewInteraction appCompatTextView = onView(allOf(withId(R.id.title), withText(R.string.menu_end_game), childAtPosition(childAtPosition(withId(R.id.content), 0), 0), isDisplayed()));
-        appCompatTextView.perform(click());
+        ViewInteraction endGame = onView(allOf(withId(R.id.end_game), withContentDescription(R.string.menu_end_game)));
+        endGame.perform(click());
     }
 
     private void fromPostGameSelectMissingWords() {
-        ViewInteraction missingWordsTab = onView(allOf(withId(R.id.missed_words_button), childAtPosition(childAtPosition(withId(android.R.id.content), 0), 2), isDisplayed()));
-        missingWordsTab.perform(click());
+        ViewInteraction missedWords = onView(withId(R.id.missed_words_button));
+        missedWords.perform(click());
     }
 
     private void fromMissingWordsViewWord(int index) {
-        ViewInteraction recyclerView4 = onView(allOf(withId(R.id.words), childAtPosition(withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")), 1)));
-        recyclerView4.perform(actionOnItemAtPosition(index, click()));
+        ViewInteraction wordList = onView(allOf(withId(R.id.words), childAtPosition(withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")), 1)));
+        wordList.perform(actionOnItemAtPosition(index, click()));
     }
 
     private void fromMissingWordsReturnHome() {
