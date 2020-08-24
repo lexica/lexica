@@ -1,2 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="dialog_about_content">Liiguta sõnaruute ekraanil nii, et neist moodustuksid sõnad. Otsi nii palju, kui jõuad ning aega on selleks kolm minutit.
+\n
+\nTulemuste arvutamine:
+\n4x4 mängulaual peavad sõnad olema vähemalt kolme tähe pikkused. 5x5 mängulaual peavad sõnad olema vähemalt nelja tähe pikkused. Kolme- ja neljatähelised sõnad annavad ühe punkti. Pikemate sõnade eest saab rohkem punkte. Nimed ei lähe sõnadena arvesse.
+\n
+\n</string>
+    <string name="pref_breakdown_summary">Kas sõnade loendur kuvab erineva pikkusega sõnad eraldi</string>
+    <string name="theme_dark">Tume</string>
+    <string name="theme_light">Hele</string>
+    <string name="pref_theme_dialog">Vali teema</string>
+    <string name="pref_theme">Teema</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Veebiotsing</string>
+    <string name="pref_definitionProvider_dialog">Valige sõnaselgituse pakkuja</string>
+    <string name="pref_definitionProvider_summary">Vali allikas, mille põhjal kuvame sõnade selgitusi. Kui vastavat rakendust pole paigaldatud, siis kasutame DuckDuckGo veebiotsingut.</string>
+    <string name="pref_definitionProvider">Sõnade selgituse allikas</string>
+    <string name="define_word">"&lt;u&gt;Näita selgitust&lt;/u&gt; "<u>Define</u> </string>
+    <string name="pref_breakdown">Näita sõnapikkuste jaotust</string>
+    <string name="reset_scores_prompt">Kas sa oled kindel, et soovid kõikide mänguvariantide kõik senised rekordid kustutada\?</string>
+    <string name="high_scores_reset">Kõik senised rekordid on kustutatud.</string>
+    <string name="pref_resetScores">Nulli parimad tulemused</string>
+    <string name="pref_resetScores_summary">Parimate tulemuste osas peetakse arvet ülalpool toodud seadistuste iga kombinatsiooni kohta. Kõikide rekordite nullimiseks vajuta siia.</string>
+    <string name="high_score">Parim tulemus</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="total_score">Tulemus kokku:</string>
+    <string name="total_words">Sõnu kokku:</string>
+    <string name="found_words">Leitud sõnad</string>
+    <string name="missed_words">Leidmata sõnad</string>
+    <string name="time">Aeg</string>
+    <string name="score">Tulemus</string>
+    <string name="words">Sõnu</string>
+    <string name="view_word">&lt;u&gt;Näita&lt;/u&gt;<u>View</u></string>
+    <string name="dialog_about_title">Teave Lexica kohta</string>
+    <string name="menu_end_game">Lõpeta mäng</string>
+    <string name="menu_save_game">Salvesta mäng</string>
+    <string name="menu_rotate_board">Pööra mängulauda</string>
+    <string name="dialog_cancel">Tühista</string>
+    <string name="dialog_ok">Sobib</string>
+    <string name="dialog_no_saved">Ühtegi mängu pole salvestatud. Kui sa saad lugeda seda sõnumit, siis on midagi katki läinud.</string>
+    <string name="pref_sounds_summary">Kas heliefektid on lubatud või mitte</string>
+    <string name="pref_sounds">Helid on sisse lülitatud</string>
+    <string name="hint_both">Mõlemad</string>
+    <string name="hint_colour">Paani värv</string>
+    <string name="tile_count">Sõnade arv</string>
+    <string name="hint_none">Välja lülitatud</string>
+    <string name="pref_hintMode_dialog">Vihje tüüp</string>
+    <string name="pref_hintMode_summary">Näitab kui mitmes sõnas iga tähte saab kasutada</string>
+    <string name="pref_hintMode">Vihje tüüp</string>
+    <string name="letter_points">Tähepunktid</string>
+    <string name="pref_boardSize_dialog">Vali mängulaua suurus</string>
+    <string name="hide_unique">Peida kordumatud sõnad</string>
+    <string name="show_unique">Näita kordumatuid sõnu</string>
+    <string name="hide_missed">Peida leidmata jäänud sõnad</string>
+    <string name="show_missed">Näita leidmata jäänud sõnu</string>
+    <string name="about">Lähemalt meist</string>
+    <string name="button_ok">Sobib</string>
+    <string name="word_length">Sõnade pikkus</string>
+    <string name="pref_scoreType_dialog">Vali sobilik punktiarvestuse tüüp</string>
+    <string name="pref_scoreType_summary">Vali sobilik punktiarvestuse tüüp</string>
+    <string name="pref_scoreType">Punktiarvestuse tüüp</string>
+    <string name="time_30m">30 minutit</string>
+    <string name="time_20m">20 minutit</string>
+    <string name="time_10m">10 minutit</string>
+    <string name="time_5m">5 minutit</string>
+    <string name="time_3m">3 minutit</string>
+    <string name="pref_timeLimit_dialog">Vali ajapiirang</string>
+    <string name="pref_timeLimit_summary">Vali ajapiirang</string>
+    <string name="pref_timeLimit">Ajapiirang</string>
+    <string name="pref_boardSize_summary">Vali mängulaua suurus</string>
+    <string name="pref_boardSize">Mängulaua suurus</string>
+    <string name="pref_dict_beta">% 1 $ s (beetaversioon)</string>
+    <string name="pref_dict_us">inglise (US)</string>
+    <string name="pref_dict_uk_ua">ukraina</string>
+    <string name="pref_dict_uk">inglise (UK)</string>
+    <string name="pref_dict_ru">vene</string>
+    <string name="pref_dict_pt_BR">portugali (Brasilia)</string>
+    <string name="pref_dict_pl">poola</string>
+    <string name="pref_dict_nl">hollandi</string>
+    <string name="pref_dict_ja">jaapani</string>
+    <string name="pref_dict_it">itaalia</string>
+    <string name="pref_dict_hu">ungari</string>
+    <string name="pref_dict_fr_fr">prantsuse</string>
+    <string name="pref_dict_fa">pärsia</string>
+    <string name="pref_dict_es">hispaania</string>
+    <string name="pref_dict_de_de">saksa</string>
+    <string name="pref_dict_ca">katalaani</string>
+    <string name="pref_dict_dialog">Vali leksikon</string>
+    <string name="pref_dict_summary">Vali mängu keel</string>
+    <string name="pref_dict">Leksikon</string>
+    <string name="prefs">Eelistused</string>
+    <string name="restore_game">Taasta mäng</string>
+    <string name="new_game">Uus mäng</string>
+    <string name="app_name">Lexica</string>
+</resources>
