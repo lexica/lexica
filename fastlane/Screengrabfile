@@ -10,7 +10,22 @@ tests_apk_path('app/build/outputs/apk/androidTest/debug/app-debug-androidTest.ap
 
 # Note, for some reason "ca" and "fi" always seem to fail and produce weird output.
 # If that happens, just comment out other languages and then regenerate (but careful of clear_previous_screenshots)
-locales(['zh','uk','tr','sv','ru','pt','pl','nl','nb','ja','it','hu','hr','fr','fi','en-US','el','de','ca'])
+# Also manually changed the language codes for the following, so that they will work with the play store:
+#   el -> el-GR
+#   de -> de-DE
+#   fi -> fi-FI
+#   fr -> fr-FR
+#   hu -> hu-HU
+#   it -> it-IT
+#   ja -> ja-JP
+#   nl -> nl-NL
+#   pl -> pl-PL
+#   pt -> pt-PT (should probably create both pt-PT and pt-BR)
+#   ru -> ru-RU
+#   sv -> sv-SE
+#   tr -> tr-TR
+#   zh -> zh-CN (should probably create both zh-CN and zh-TW - and zh-HK if available)
+locales(['zh-CN','uk','tr-TR','sv-SE','ru-RU','pt-PT','pl-PL','nl-NL','nb','ja-JP','it-IT','hu-HU','hr','fr-FR','fi-FI','en-US','el-GR','de-DE','ca'])
 
 # clear all previously generated screenshots in your local output directory before creating new ones
 clear_previous_screenshots(true)
