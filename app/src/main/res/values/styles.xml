@@ -19,11 +19,11 @@
         <item name="board__tile__highlight_colour">@color/orange_2</item>
         <item name="board__has_outer_border">true</item>
 
-        <item name="board__hint_mode_colour_0">@color/gradient_yellow_to_red_0</item>
-        <item name="board__hint_mode_colour_1">@color/gradient_yellow_to_red_1</item>
-        <item name="board__hint_mode_colour_2">@color/gradient_yellow_to_red_2</item>
-        <item name="board__hint_mode_colour_3">@color/gradient_yellow_to_red_3</item>
-        <item name="board__hint_mode_colour_4">@color/gradient_yellow_to_red_4</item>
+        <item name="board__hint_mode_colour_0">@color/gradient_dark_red_0</item>
+        <item name="board__hint_mode_colour_1">@color/gradient_dark_red_1</item>
+        <item name="board__hint_mode_colour_2">@color/gradient_dark_red_2</item>
+        <item name="board__hint_mode_colour_3">@color/gradient_dark_red_3</item>
+        <item name="board__hint_mode_colour_4">@color/gradient_dark_red_4</item>
         <item name="board__hint_mode_unusable_letter_colour">@color/grey_3</item>
         <item name="board__hint_mode_unusable_letter_background_colour">@color/white</item>
 
