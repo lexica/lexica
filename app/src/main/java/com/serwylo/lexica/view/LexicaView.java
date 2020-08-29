@@ -276,7 +276,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         word = word.toUpperCase(game.getLanguage().getLocale());
 
         p.setTextSize(theme.game.pastWordTextSize);
-        p.setTypeface(Fonts.get().getSansSerifBold());
+        p.setTypeface(isWord && !hasBeenUsedBefore ? Fonts.get().getSansSerifBold() : Fonts.get().getSansSerifCondensed());
         p.getTextBounds(word, 0, word.length(), textBounds);
         float height = textBounds.height();
         float width = textBounds.width();
@@ -284,7 +284,6 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         p.setColor(!isWord ? theme.game.notAWordColour : (hasBeenUsedBefore ? theme.game.previouslySelectedWordColour : theme.game.selectedWordColour));
 
         p.setTextSize(theme.game.pastWordTextSize);
-        p.setTypeface(Fonts.get().getSansSerifBold());
         p.setTextAlign(Paint.Align.LEFT);
         canvas.drawText(word, isRtl ? x - width : x, y + height, p);
 
@@ -333,13 +332,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
                 String lastWord = pastWords.next();
                 if (lastWord.startsWith("+")) {
                     bigWordToShow = lastWord.substring(1);
-                    // p.setColor(previouslySelectedWordColour);
                 } else if (game.isWord(lastWord)) {
                     bigWordToShow = lastWord;
-                    // p.setColor(selectedWordColour);
                 } else {
                     bigWordToShow = lastWord;
-                    // p.setColor(notAWordColour);
                 }
             }
         }
