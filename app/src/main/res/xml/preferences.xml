@@ -88,4 +88,13 @@
 		android:dialogTitle="@string/pref_definitionProvider_dialog"
 		/>
 
+	<ListPreference
+			android:defaultValue="alphabetically"
+			android:dialogTitle="@string/pref_missedWordsSort_dialog"
+			android:entries="@array/missed_words_sort_choices_entries"
+			android:entryValues="@array/missed_words_choices_entryvalues"
+			android:key="missedWordsSort"
+			android:summary="@string/pref_missedWordsSort_summary"
+			android:title="@string/pref_missedWordsSort" />
+
 </PreferenceScreen>

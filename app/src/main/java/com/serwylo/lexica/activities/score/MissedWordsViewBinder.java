@@ -12,14 +12,11 @@ import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.BoardView;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 class MissedWordsViewBinder extends ScoreWordsViewBinder {
 
-    MissedWordsViewBinder(@NonNull AppCompatActivity activity, FrameLayout parent, final @NonNull Game game) {
+    MissedWordsViewBinder(@NonNull AppCompatActivity activity, FrameLayout parent, final @NonNull Game game, Comparator<Item> comparator) {
 
         super(activity, game);
 
@@ -81,6 +78,8 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
         for (String word : possible) {
             items.add(new Item(word, game.getWordScore(word), true, onViewWord));
         }
+
+        items.sort(comparator);
 
         words.setAdapter(adapter);
 

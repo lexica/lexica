@@ -95,6 +95,17 @@
 		<item>hint_both</item>
 	</string-array>
 
+	<string-array name="missed_words_sort_choices_entries">
+		<item>@string/pref_missedWordsSort_type_alphabetical</item>
+		<item>@string/pref_missedWordsSort_type_length</item>
+		<item>@string/pref_missedWordsSort_type_score</item>
+	</string-array>
+	<string-array name="missed_words_choices_entryvalues">
+		<item>missedWordsSort_alphabetical</item>
+		<item>missedWordsSort_length</item>
+		<item>missedWordsSort_score</item>
+	</string-array>
+
 	<string-array name="definition_provider_choices_entries">
 		<item>@string/pref_definitionProvider_dictionaryProvider_online</item>
 		<item>AARD2</item>
