@@ -13,6 +13,9 @@ import java.util.Comparator;
 
 class ScoreTabViewHolder extends RecyclerView.ViewHolder {
 
+    private static final String MISSED_WORDS_SORT = "missedWordsSort";
+    private static final String DEFAULT_SORT = "alphabetically";
+
     private final ScoreActivity activity;
     private final FrameLayout parent;
 
@@ -27,7 +30,7 @@ class ScoreTabViewHolder extends RecyclerView.ViewHolder {
     }
 
     void bindMissedWords(@NonNull Game game) {
-        String sortMode = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext()).getString("missedWordsSort", "alphabetically");
+        String sortMode = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext()).getString(MISSED_WORDS_SORT, DEFAULT_SORT);
         Comparator<ScoreWordsViewBinder.Item> comparator = (item0, item1) -> 0;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
