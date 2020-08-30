@@ -30,7 +30,7 @@ public class LetterFrequency {
             int count = entry.getValue();
 
             if (!letterCounts.containsKey(letter)) {
-                letterCounts.put(letter, new ArrayList<Integer>());
+                letterCounts.put(letter, new ArrayList<>());
             }
 
             // Ensure there are enough values populated in the list.
@@ -100,9 +100,7 @@ public class LetterFrequency {
                 }
             }
 
-            if (!shouldInclude) {
-                return false;
-            }
+            return shouldInclude;
         }
 
         return true;

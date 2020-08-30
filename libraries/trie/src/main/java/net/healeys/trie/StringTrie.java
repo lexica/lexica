@@ -61,7 +61,7 @@ public class StringTrie extends Trie {
                 }
 
                 if (!transitions.containsKey(from)) {
-                    transitions.put(from, new HashSet<String>());
+                    transitions.put(from, new HashSet<>());
                 }
 
                 transitions.get(from).addAll(transitionTo);
@@ -199,7 +199,7 @@ public class StringTrie extends Trie {
             prefix.append(value);
             positions.add(i);
 
-            recursiveSolver(transitions, filter, nextNode, i, new HashSet<Integer>(), prefix, solutions, positions);
+            recursiveSolver(transitions, filter, nextNode, i, new HashSet<>(), prefix, solutions, positions);
 
             positions.remove(positions.size() - 1);
             prefix.delete(prefix.length() - value.length(), prefix.length());
