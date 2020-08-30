@@ -276,7 +276,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         word = word.toUpperCase(game.getLanguage().getLocale());
 
         p.setTextSize(theme.game.pastWordTextSize);
-        p.setTypeface(Fonts.get().getSansSerifBold());
+        p.setTypeface(isWord && !hasBeenUsedBefore ? Fonts.get().getSansSerifBold() : Fonts.get().getSansSerifCondensed());
         p.getTextBounds(word, 0, word.length(), textBounds);
         float height = textBounds.height();
         float width = textBounds.width();
@@ -284,7 +284,6 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         p.setColor(!isWord ? theme.game.notAWordColour : (hasBeenUsedBefore ? theme.game.previouslySelectedWordColour : theme.game.selectedWordColour));
 
         p.setTextSize(theme.game.pastWordTextSize);
-        p.setTypeface(Fonts.get().getSansSerifBold());
         p.setTextAlign(Paint.Align.LEFT);
         canvas.drawText(word, isRtl ? x - width : x, y + height, p);
 
@@ -325,31 +324,33 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         // If halfway through selecting the current word, then show that.
         // Otherwise, show the last word that was selected.
         String bigWordToShow = currentWord;
-        if (bigWordToShow != null) {
-            p.setColor(theme.game.currentWordColour);
-        } else {
+        int scoreForBigWord = 0;
+        p.setColor(theme.game.currentWordColour);
+        if (bigWordToShow == null) {
             ListIterator<String> pastWords = game.listIterator();
             if (pastWords.hasNext()) {
                 String lastWord = pastWords.next();
                 if (lastWord.startsWith("+")) {
+                    p.setColor(theme.game.previouslySelectedWordColour);
                     bigWordToShow = lastWord.substring(1);
-                    // p.setColor(previouslySelectedWordColour);
+                    scoreForBigWord = game.getWordScore(bigWordToShow);
                 } else if (game.isWord(lastWord)) {
                     bigWordToShow = lastWord;
-                    // p.setColor(selectedWordColour);
+                    scoreForBigWord = game.getWordScore(bigWordToShow);
                 } else {
                     bigWordToShow = lastWord;
-                    // p.setColor(notAWordColour);
                 }
             }
         }
 
 
         if (bigWordToShow != null) {
-            p.setColor(theme.game.currentWordColour);
             p.setTextSize(theme.game.currentWordSize);
             p.setTypeface(Fonts.get().getSansSerifCondensed());
             p.setTextAlign(Paint.Align.CENTER);
+            if (scoreForBigWord > 0) {
+                bigWordToShow = isLayoutRtl() ? "+" + scoreForBigWord + " " + bigWordToShow : bigWordToShow + " +" + scoreForBigWord;
+            }
             canvas.drawText(bigWordToShow.toUpperCase(game.getLanguage().getLocale()), width / 2f, pos, p);
         }
 
