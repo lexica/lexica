@@ -324,16 +324,19 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         // If halfway through selecting the current word, then show that.
         // Otherwise, show the last word that was selected.
         String bigWordToShow = currentWord;
-        if (bigWordToShow != null) {
-            p.setColor(theme.game.currentWordColour);
-        } else {
+        int scoreForBigWord = 0;
+        p.setColor(theme.game.currentWordColour);
+        if (bigWordToShow == null) {
             ListIterator<String> pastWords = game.listIterator();
             if (pastWords.hasNext()) {
                 String lastWord = pastWords.next();
                 if (lastWord.startsWith("+")) {
+                    p.setColor(theme.game.previouslySelectedWordColour);
                     bigWordToShow = lastWord.substring(1);
+                    scoreForBigWord = game.getWordScore(bigWordToShow);
                 } else if (game.isWord(lastWord)) {
                     bigWordToShow = lastWord;
+                    scoreForBigWord = game.getWordScore(bigWordToShow);
                 } else {
                     bigWordToShow = lastWord;
                 }
@@ -342,10 +345,12 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
 
         if (bigWordToShow != null) {
-            p.setColor(theme.game.currentWordColour);
             p.setTextSize(theme.game.currentWordSize);
             p.setTypeface(Fonts.get().getSansSerifCondensed());
             p.setTextAlign(Paint.Align.CENTER);
+            if (scoreForBigWord > 0) {
+                bigWordToShow = isLayoutRtl() ? "+" + scoreForBigWord + " " + bigWordToShow : bigWordToShow + " +" + scoreForBigWord;
+            }
             canvas.drawText(bigWordToShow.toUpperCase(game.getLanguage().getLocale()), width / 2f, pos, p);
         }
 
