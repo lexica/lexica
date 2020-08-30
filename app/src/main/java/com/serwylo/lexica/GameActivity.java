@@ -140,7 +140,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         synch.addEvent(lv);
         synch.setFinalizer(this);
 
-        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
+        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         lv.setKeepScreenOn(true);
         lv.setFocusableInTouchMode(true);
 

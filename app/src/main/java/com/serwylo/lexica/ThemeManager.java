@@ -3,7 +3,8 @@ package com.serwylo.lexica;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.preference.PreferenceManager;
+
+import androidx.preference.PreferenceManager;
 
 /**
  * This class is based on GPLv3 licensed code from F-Droid client:
