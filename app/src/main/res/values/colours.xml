@@ -9,6 +9,12 @@
     <color name="gradient_yellow_to_red_1">#fee289</color>
     <color name="gradient_yellow_to_red_0">#fffcc5</color>
 
+    <color name="gradient_dark_red_4">#67000d</color>
+    <color name="gradient_dark_red_3">#a50f15</color>
+    <color name="gradient_dark_red_2">#cb181d</color>
+    <color name="gradient_dark_red_1">#ef3b2c</color>
+    <color name="gradient_dark_red_0">#fb6a4a</color>
+
     <color name="grey_0">#201F1F</color>
     <color name="grey_1">#3d3c3b</color>
     <color name="grey_2">#413f3b</color>
