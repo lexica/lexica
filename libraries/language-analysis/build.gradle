@@ -3,7 +3,7 @@ apply plugin: 'java'
 dependencies {
     implementation project(':libraries:liblexica')
     implementation project(':libraries:trie')
-    implementation "org.apache.commons:commons-math:2.2"
+    implementation "org.apache.commons:commons-math3:3.6.1"
 }
 
 jar {
