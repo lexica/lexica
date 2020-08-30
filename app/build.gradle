@@ -6,13 +6,17 @@ android {
 
     defaultConfig {
         applicationId "com.serwylo.lexica"
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 10100
+        versionName "1.1.0"
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     lintOptions {
         // The ranslations are crowd-sourced, and so will likely never be 100% complete for all locales.
-        disable 'MissingTranslation'
+        disable 'MissingTranslation', 'GoogleAppIndexingWarning'
 
         // Due to getting the following error with Travis CI:
         //   /home/travis/build/lexica/lexica/app: Error: The SDK platform-tools version ((21)) is too old  to check APIs compiled with API 23; please update [NewApi]
@@ -36,8 +40,13 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
+        encoding "UTF-8"
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*'
     }
 }
 
