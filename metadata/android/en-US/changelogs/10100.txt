@@ -1,0 +1,7 @@
+ * Entire new theme, including dark mode! (thanks elbotho for the design)
+ * Brazilian Portugese dictionary (thanks rffontenelle) 
+ * Updated translations (thanks to the numerous wonderful translators in the community)
+ * End game when all words found (thanks adam-poteralowicz)
+ * Fixed dark theme hint mode colours
+
+Please provide any feedback or report any issues on the issue tracker at https://github.com/lexica/lexica/issues.
