@@ -87,4 +87,10 @@
     <string name="pref_definitionProvider_dictionaryProvider_online">På nett</string>
     <string name="pref_dict_pl">Polsk</string>
     <string name="pref_dict_pt_BR">Portugisisk (Brasil)</string>
+    <string name="sort">Sorter</string>
+    <string name="theme_dark">Mørk</string>
+    <string name="theme_light">Lys</string>
+    <string name="pref_theme_dialog">Draktvalg</string>
+    <string name="pref_theme">Drakt</string>
+    <string name="time">Tid</string>
 </resources>
