@@ -13,19 +13,38 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Game;
 
+import java.util.Collections;
 import java.util.List;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
-class ScoreWordsViewBinder {
+abstract class ScoreWordsViewBinder {
 
     protected final AppCompatActivity activity;
     protected final WordDefiner definer;
+    protected final Sorter sorter;
+    protected final Game game;
 
-    ScoreWordsViewBinder(AppCompatActivity activity, @NonNull Game game) {
+    ScoreWordsViewBinder(AppCompatActivity activity, @NonNull Game game, @NonNull Sorter sorter) {
+        this.game = game;
         this.activity = activity;
         this.definer = new WordDefiner(activity, game.getLanguage());
+        this.sorter = sorter;
+
+        this.sorter.addListener(this::sortItems);
     }
+
+    public void sortItems() {
+        getSortButton().setIconResource(sorter.getIconResource());
+        Collections.sort(getItems(), this.sorter);
+        getAdapter().notifyDataSetChanged();
+    }
+
+    abstract protected FancyButton getSortButton();
+
+    abstract protected List<Item> getItems();
+
+    abstract protected Adapter getAdapter();
 
     static class Item {
         public final @NonNull

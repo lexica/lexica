@@ -16,10 +16,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import mehdi.sakout.fancybuttons.FancyButton;
+
 class FoundWordsViewBinder extends ScoreWordsViewBinder {
 
-    FoundWordsViewBinder(@NonNull ScoreActivity activity, FrameLayout parent, @NonNull Game game) {
-        super(activity, game);
+    private final Adapter adapter;
+    private final List<Item> items;
+    private final FancyButton sortButton;
+
+    FoundWordsViewBinder(@NonNull ScoreActivity activity, FrameLayout parent, @NonNull Game game, @NonNull Sorter sorter) {
+        super(activity, game, sorter);
 
         View foundWordsView = activity.getLayoutInflater().inflate(R.layout.score_found_words, parent, true);
 
@@ -31,7 +37,7 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
         int max_words = possible.size();
 
         Iterator<String> uniqueWords = game.uniqueListIterator();
-        List<Item> items = new ArrayList<>();
+        items = new ArrayList<>();
         while (uniqueWords.hasNext()) {
             String w = uniqueWords.next();
 
@@ -47,10 +53,12 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
             possible.remove(w);
         }
 
+        adapter = new Adapter(items);
+
         RecyclerView words = foundWordsView.findViewById(R.id.words);
         words.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
         words.setHasFixedSize(true);
-        words.setAdapter(new Adapter(items));
+        words.setAdapter(adapter);
 
         activity.setHighScore(score);
 
@@ -68,6 +76,24 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
         TextView scoreValue = foundWordsView.findViewById(R.id.words_value);
         scoreValue.setText(activity.getString(R.string.value_max_percentage, numWords, max_words, totalWordsPercentage));
 
+        sortButton = foundWordsView.findViewById(R.id.btn_sort);
+        sortButton.setIconResource(sorter.getIconResource());
+        sortButton.setOnClickListener(v -> sorter.changeSort());
+
+        sortItems();
+
+    }
+
+    protected FancyButton getSortButton() {
+        return sortButton;
+    }
+
+    protected List<Item> getItems() {
+        return items;
+    }
+
+    protected Adapter getAdapter() {
+        return adapter;
     }
 
 }

@@ -18,11 +18,12 @@ class ScoreTabViewHolder extends RecyclerView.ViewHolder {
         this.parent = parent;
     }
 
-    void bindFoundWords(@NonNull Game game) {
-        new FoundWordsViewBinder(activity, parent, game);
+    void bindFoundWords(@NonNull Game game, @NonNull Sorter sorter) {
+        new FoundWordsViewBinder(activity, parent, game, sorter);
     }
 
-    void bindMissedWords(@NonNull Game game) {
-        new MissedWordsViewBinder(activity, parent, game);
+    void bindMissedWords(@NonNull Game game, @NonNull Sorter sorter) {
+        new MissedWordsViewBinder(activity, parent, game, sorter);
     }
+
 }
