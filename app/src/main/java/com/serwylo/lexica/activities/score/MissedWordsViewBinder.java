@@ -13,7 +13,6 @@ import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.BoardView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -25,10 +24,11 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
     private final Adapter adapter;
     private final BoardView boardView;
     private final List<Item> items;
+    private final FancyButton sortButton;
 
-    MissedWordsViewBinder(@NonNull AppCompatActivity activity, FrameLayout parent, final @NonNull Game game) {
+    MissedWordsViewBinder(@NonNull AppCompatActivity activity, FrameLayout parent, final @NonNull Game game, @NonNull Sorter sorter) {
 
-        super(activity, game);
+        super(activity, game, sorter);
 
         View missedWordsView = activity.getLayoutInflater().inflate(R.layout.score_missed_words, parent, true);
 
@@ -52,20 +52,26 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
             items.add(new Item(word, game.getWordScore(word), true, this::onViewWord));
         }
 
-        Collections.sort(items, this.sorter);
-
-        this.adapter = new Adapter(items);
+        adapter = new Adapter(items);
         words.setAdapter(this.adapter);
 
-        FancyButton sortButton = missedWordsView.findViewById(R.id.btn_sort);
+        sortButton = missedWordsView.findViewById(R.id.btn_sort);
         sortButton.setIconResource(sorter.getIconResource());
-        sortButton.setOnClickListener(v -> {
-            sorter.changeSort();
-            sortButton.setIconResource(sorter.getIconResource());
-            Collections.sort(items, this.sorter);
-            adapter.notifyDataSetChanged();
-        });
+        sortButton.setOnClickListener(v -> sorter.changeSort());
 
+        sortItems();
+    }
+
+    protected FancyButton getSortButton() {
+        return sortButton;
+    }
+
+    protected List<Item> getItems() {
+        return items;
+    }
+
+    protected Adapter getAdapter() {
+        return adapter;
     }
 
     private void onViewWord(String word) {

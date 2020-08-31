@@ -5,19 +5,20 @@ import android.content.SharedPreferences;
 
 import androidx.preference.PreferenceManager;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Helper class for end of game word list sorting.
- *
+ * <p>
  * Does three different things to do with sorting of words:
- *
- *  - Cycling through different sort orders (alphabetical asc -> alphabetical desc -> points asc -> points desc).
- *  - Remembering the users last sort order (via preferences).
- *  - Understanding which font awesome icon resource corresponds to the current order (alphabetical, points, asc, desc).
- *
+ * <p>
+ * - Cycling through different sort orders (alphabetical asc -> alphabetical desc -> points asc -> points desc).
+ * - Remembering the users last sort order (via preferences).
+ * - Understanding which font awesome icon resource corresponds to the current order (alphabetical, points, asc, desc).
  */
 class Sorter implements Comparator<ScoreWordsViewBinder.Item> {
 
@@ -51,6 +52,8 @@ class Sorter implements Comparator<ScoreWordsViewBinder.Item> {
     private String sortBy;
     private String sortOrder;
 
+    private final List<OnSortListener> listeners = new ArrayList<>(2);
+
     Sorter(Context context) {
         this.preferences = PreferenceManager.getDefaultSharedPreferences(context);
         this.sortBy = this.preferences.getString(SCORE_SCREEN_SORT_BY, DEFAULT_SORT_BY);
@@ -63,10 +66,10 @@ class Sorter implements Comparator<ScoreWordsViewBinder.Item> {
 
     /**
      * Cycles through the four sorting conditions, the orders are:
-     *  - alphabetical asc
-     *  - alphabetical desc
-     *  - points asc
-     *  - points desc
+     * - alphabetical asc
+     * - alphabetical desc
+     * - points asc
+     * - points desc
      */
     public void changeSort() {
         if (SORT_DESC.equals(sortOrder)) {
@@ -76,10 +79,11 @@ class Sorter implements Comparator<ScoreWordsViewBinder.Item> {
             sortOrder = SORT_DESC;
         }
 
-        this.preferences.edit()
-                .putString(SCORE_SCREEN_SORT_ORDER, sortOrder)
-                .putString(SCORE_SCREEN_SORT_BY, sortBy)
-                .apply();
+        this.preferences.edit().putString(SCORE_SCREEN_SORT_ORDER, sortOrder).putString(SCORE_SCREEN_SORT_BY, sortBy).apply();
+
+        for (OnSortListener listener : listeners) {
+            listener.onSort();
+        }
     }
 
     @Override
@@ -111,4 +115,13 @@ class Sorter implements Comparator<ScoreWordsViewBinder.Item> {
     private int compareAlpha(ScoreWordsViewBinder.Item item1, ScoreWordsViewBinder.Item item2) {
         return item1.word.compareTo(item2.word);
     }
+
+    public void addListener(OnSortListener listener) {
+        this.listeners.add(listener);
+    }
+
+    interface OnSortListener {
+        void onSort();
+    }
+
 }

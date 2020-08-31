@@ -13,12 +13,14 @@ class ScoreTabAdapter extends RecyclerView.Adapter<ScoreTabViewHolder> {
     private static final int VIEW_TYPE_FOUND_WORDS = 1;
     private static final int VIEW_TYPE_MISSED_WORDS = 2;
 
-    private ScoreActivity scoreActivity;
-    private Game game;
+    private final ScoreActivity scoreActivity;
+    private final Game game;
+    private final Sorter sorter;
 
     ScoreTabAdapter(@NonNull ScoreActivity scoreActivity, @NonNull Game game) {
         this.scoreActivity = scoreActivity;
         this.game = game;
+        this.sorter = new Sorter(scoreActivity);
     }
 
     @NonNull
@@ -26,9 +28,9 @@ class ScoreTabAdapter extends RecyclerView.Adapter<ScoreTabViewHolder> {
     public ScoreTabViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ScoreTabViewHolder viewHolder = createEmptyView(scoreActivity);
         if (viewType == VIEW_TYPE_FOUND_WORDS) {
-            viewHolder.bindFoundWords(game);
+            viewHolder.bindFoundWords(game, sorter);
         } else if (viewType == VIEW_TYPE_MISSED_WORDS) {
-            viewHolder.bindMissedWords(game);
+            viewHolder.bindMissedWords(game, sorter);
         } else {
             throw new IllegalArgumentException("The viewType should be either VIEW_TYPE_FOUND_WORDS or VIEW_TYPE_MISSED_WORDS, but got " + viewType);
         }
