@@ -10,6 +10,7 @@
 		android:id="@+id/missed_board_wrapper"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:padding="?attr/game__score__padding"
 		android:background="?attr/score__missed_board_background_colour"
 		app:layout_constraintHeight_percent="0.4"
 		app:layout_constraintTop_toTopOf="parent"
@@ -20,10 +21,15 @@
 			android:id="@+id/missed_board"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
-			android:layout_margin="?attr/game__score__padding"
 			app:layout_constraintDimensionRatio="W,1:1"
 			app:layout_constraintTop_toTopOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent" />
+
+		<include layout="@layout/score_sort_button"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintBottom_toBottomOf="parent" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
@@ -32,7 +38,6 @@
 		android:id="@+id/words"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
-		android:layout_marginTop="?attr/game__score__padding"
 		tools:listitem="@layout/score_summary_word"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"

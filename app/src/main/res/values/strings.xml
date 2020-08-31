@@ -97,10 +97,5 @@
     <string name="pref_theme_dialog">Select Theme</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
-    <string name="pref_missedWordsSort">Missed Words Sort</string>
-    <string name="pref_missedWordsSort_dialog">Missed Words Sort</string>
-    <string name="pref_missedWordsSort_summary">The sorting mode of missed words after each game</string>
-    <string name="pref_missedWordsSort_type_alphabetical">Alphabetically</string>
-    <string name="pref_missedWordsSort_type_length">By Length</string>
-    <string name="pref_missedWordsSort_type_score">By Score</string>
+    <string name="sort">Sort</string>
 </resources>

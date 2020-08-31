@@ -77,13 +77,20 @@
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
+	<include layout="@layout/score_sort_button"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_margin="?attr/game__score__padding"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/score_wrapper" />
+
 	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/words"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/score_wrapper"
+		app:layout_constraintTop_toBottomOf="@id/btn_sort"
 		app:layout_constraintBottom_toBottomOf="parent"
 		tools:listitem="@layout/score_summary_word"
 		android:scrollbars="vertical" />

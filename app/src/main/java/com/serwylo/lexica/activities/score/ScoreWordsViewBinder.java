@@ -21,10 +21,14 @@ class ScoreWordsViewBinder {
 
     protected final AppCompatActivity activity;
     protected final WordDefiner definer;
+    protected final Sorter sorter;
+    protected final Game game;
 
     ScoreWordsViewBinder(AppCompatActivity activity, @NonNull Game game) {
+        this.game = game;
         this.activity = activity;
         this.definer = new WordDefiner(activity, game.getLanguage());
+        this.sorter = new Sorter(activity);
     }
 
     static class Item {

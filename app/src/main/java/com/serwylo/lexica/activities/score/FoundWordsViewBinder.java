@@ -12,9 +12,12 @@ import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Game;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+
+import mehdi.sakout.fancybuttons.FancyButton;
 
 class FoundWordsViewBinder extends ScoreWordsViewBinder {
 
@@ -47,10 +50,12 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
             possible.remove(w);
         }
 
+        final Adapter adapter = new Adapter(items);
+
         RecyclerView words = foundWordsView.findViewById(R.id.words);
         words.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
         words.setHasFixedSize(true);
-        words.setAdapter(new Adapter(items));
+        words.setAdapter(adapter);
 
         activity.setHighScore(score);
 
@@ -67,6 +72,15 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
         int totalWordsPercentage = (int) (((double) numWords / max_words) * 100);
         TextView scoreValue = foundWordsView.findViewById(R.id.words_value);
         scoreValue.setText(activity.getString(R.string.value_max_percentage, numWords, max_words, totalWordsPercentage));
+
+        final FancyButton sortButton = foundWordsView.findViewById(R.id.btn_sort);
+        sortButton.setIconResource(sorter.getIconResource());
+        sortButton.setOnClickListener(v -> {
+            sorter.changeSort();
+            sortButton.setIconResource(sorter.getIconResource());
+            Collections.sort(items, this.sorter);
+            adapter.notifyDataSetChanged();
+        });
 
     }
 
