@@ -9,7 +9,7 @@ import net.healeys.trie.StringTrie;
 import net.healeys.trie.Trie;
 import net.healeys.trie.WordFilter;
 
-import org.apache.commons.math.stat.descriptive.SummaryStatistics;
+import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;

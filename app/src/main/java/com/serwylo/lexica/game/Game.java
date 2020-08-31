@@ -22,9 +22,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.SparseIntArray;
+
+import androidx.preference.PreferenceManager;
 
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;

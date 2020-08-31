@@ -69,7 +69,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @NonNull
     private ListPreference getLexiconPreferences() {
-        ListPreference pref = (ListPreference) findPreference("dict");
+        ListPreference pref = findPreference("dict");
 
         if (pref == null) {
             throw new IllegalArgumentException("Could not find lexicon/dictionary preference.");

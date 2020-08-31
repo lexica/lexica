@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
 	  xmlns:app="http://schemas.android.com/apk/res-auto">
-	<item android:id="@+id/rotate" 
+	<item android:id="@+id/rotate"
 		android:title="@string/menu_rotate_board"
-		android:icon="@drawable/ic_rotate_right_white_24dp"
+		android:icon="@drawable/ic_rotate_right_white"
 		app:showAsAction="always"/>
 	<item android:id="@+id/end_game"
 		android:title="@string/menu_end_game"

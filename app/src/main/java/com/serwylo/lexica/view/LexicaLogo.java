@@ -42,7 +42,7 @@ public class LexicaLogo extends View {
     private final ThemeProperties theme;
 
     public LexicaLogo(Context context) {
-        this(context, (AttributeSet) null);
+        this(context, null);
     }
 
     public LexicaLogo(Context context, AttributeSet attrs) {

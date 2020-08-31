@@ -5,7 +5,6 @@ import com.serwylo.lexica.trie.util.LetterFrequency;
 
 import net.healeys.trie.Solution;
 import net.healeys.trie.Trie;
-import net.healeys.trie.WordFilter;
 
 import org.junit.Assert;
 
@@ -31,12 +30,7 @@ public abstract class TrieTest {
             frequency.addWord(word);
         }
 
-        Map<String, List<Solution>> solutions = trie.solver(new CanTransitionMap(frequency, language), new WordFilter() {
-            @Override
-            public boolean isWord(String word) {
-                return true;
-            }
-        });
+        Map<String, List<Solution>> solutions = trie.solver(new CanTransitionMap(frequency, language), word -> true);
 
         List<String> expected = new ArrayList<>(expectedWords);
         List<String> actual = new ArrayList<>(solutions.keySet());

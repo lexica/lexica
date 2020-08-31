@@ -2,8 +2,9 @@ package com.serwylo.lexica;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.util.Log;
+
+import androidx.preference.PreferenceManager;
 
 import com.serwylo.lexica.lang.Language;
 
