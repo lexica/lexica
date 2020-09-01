@@ -5,6 +5,8 @@ use_tests_in_classes(['com.serwylo.lexica.FastlaneScreengrabTest'])
 
 use_adb_root(true)
 
+use_timestamp_suffix(false)
+
 app_apk_path('app/build/outputs/apk/debug/app-debug.apk')
 tests_apk_path('app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')
 

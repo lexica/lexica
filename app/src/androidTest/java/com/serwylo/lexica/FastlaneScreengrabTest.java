@@ -63,15 +63,17 @@ public class FastlaneScreengrabTest {
         Screengrab.screenshot("02_game_light");
 
         endGame();
-
-        Screengrab.screenshot("03_end_game_light");
-
         showMissedWords();
         selectMissedWord();
 
-        Screengrab.screenshot("04_missed_words_light");
+        Screengrab.screenshot("03_missed_words_light");
 
         back();
+        showPreferences();
+
+        Screengrab.screenshot("04_preferences");
+
+        up();
         setupDarkTheme();
         selectLanguage(Locale.JAPANESE);
 
@@ -81,6 +83,11 @@ public class FastlaneScreengrabTest {
 
         Screengrab.screenshot("06_game_dark");
 
+    }
+
+    private void showPreferences() {
+        ViewInteraction fancyButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
+        fancyButton.perform(click());
     }
 
     private void setupDarkTheme() {
