@@ -7,6 +7,7 @@
 This is not meant to be comprehensive, but it should at least touch on the main aspects of adding a language.
 
 * [ ] **Add a dictionary file** - `./add-lang.sh de DE` (will require the relevant GNU ASpell library to be installed)
+* [ ] **Attribute dictionary source** - Add a relevant `assets/dictionaries/dictionary.*.LICENSE` file
 * [ ] **Make Gradle aware of the language** - Add `"de_DE",` to the `languages` array in `build.gradle`
 * [ ] **Generate a trie representation of the dictionary** - `./gradlew buildDictionary_de`
 * [ ] **Subclass `Language`** - Add it to the `libraries/trie` library
