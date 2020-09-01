@@ -16,3 +16,4 @@ vendor
 .bundle
 
 fastlane/Appfile
+fastlane/api*.json

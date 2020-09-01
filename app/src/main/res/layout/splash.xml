@@ -52,74 +52,84 @@
 		android:layout_height="wrap_content"
 		android:paddingTop="?attr/home__button_padding"
 		android:paddingBottom="?attr/home__button_padding"
-		fancy:fb_iconPosition="left"
-		fancy:fb_fontIconResource="&#xf144;"
-		fancy:fb_fontIconSize="28sp"
-		fancy:fb_textSize="28sp"
-		fancy:fb_text="@string/new_game"
+		app:layout_constraintBottom_toTopOf="@+id/button_wrapper"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
 		fancy:fb_defaultColor="?attr/home__main_button_background"
 		fancy:fb_focusColor="?attr/home__main_button_background__focused"
-		app:layout_constraintBottom_toTopOf="@+id/restore_game"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent" />
+		fancy:fb_fontIconResource="&#xf144;"
+		fancy:fb_fontIconSize="28sp"
+		fancy:fb_iconPosition="left"
+		fancy:fb_text="@string/new_game"
+		fancy:fb_textSize="28sp">
 
-	<mehdi.sakout.fancybuttons.FancyButton
-		android:id="@+id/restore_game"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:paddingTop="?attr/home__button_padding"
-		android:paddingBottom="?attr/home__button_padding"
-		android:enabled="false"
-		fancy:fb_fontIconResource="&#xf021;"
-		fancy:fb_fontIconSize="24sp"
-		fancy:fb_textSize="18sp"
-		fancy:fb_defaultColor="?attr/home__secondary_button_background"
-		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-		fancy:fb_disabledColor="?attr/home__secondary_button_background"
-		fancy:fb_text="@string/restore_game"
-		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
-		fancy:fb_disabledTextColor="?attr/home__secondary_button_text_colour_disabled"
-		fancy:fb_iconPosition="top"
-		app:layout_constraintWidth_percent="0.34"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintStart_toStartOf="parent" />
+	</mehdi.sakout.fancybuttons.FancyButton>
 
-	<mehdi.sakout.fancybuttons.FancyButton
-		android:id="@+id/about"
-		android:layout_width="0dp"
+	<LinearLayout
+		android:id="@+id/button_wrapper"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:paddingTop="?attr/home__button_padding"
-		android:paddingBottom="?attr/home__button_padding"
-		fancy:fb_text="@string/about"
-		fancy:fb_fontIconResource="&#xf059;"
-		fancy:fb_fontIconSize="24sp"
-		fancy:fb_textSize="18sp"
-		fancy:fb_defaultColor="?attr/home__secondary_button_background"
-		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
-		fancy:fb_iconPosition="top"
-		app:layout_constraintWidth_percent="0.34"
+		android:orientation="horizontal"
 		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintStart_toEndOf="@id/restore_game" />
+		app:layout_constraintEnd_toEndOf="@+id/lexicaLogo"
+		app:layout_constraintStart_toStartOf="@+id/lexicaLogo">
 
-	<mehdi.sakout.fancybuttons.FancyButton
-		android:id="@+id/preferences"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:paddingTop="?attr/home__button_padding"
-		android:paddingBottom="?attr/home__button_padding"
-		fancy:fb_text="@string/prefs"
-		fancy:fb_fontIconResource="&#xf013;"
-		fancy:fb_fontIconSize="24sp"
-		fancy:fb_textSize="18sp"
-		fancy:fb_defaultColor="?attr/home__secondary_button_background"
-		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
-		fancy:fb_iconPosition="top"
-		app:layout_constraintWidth_percent="0.34"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toEndOf="@id/about" />
+		<mehdi.sakout.fancybuttons.FancyButton
+			android:id="@+id/about"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:paddingTop="?attr/home__button_padding"
+			android:paddingBottom="?attr/home__button_padding"
+			app:layout_constraintWidth_percent="0.34"
+			fancy:fb_defaultColor="?attr/home__secondary_button_background"
+			fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
+			fancy:fb_fontIconResource="&#xf059;"
+			fancy:fb_fontIconSize="24sp"
+			fancy:fb_iconPosition="top"
+			fancy:fb_text="@string/about"
+			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+			fancy:fb_textSize="18sp" />
+
+		<mehdi.sakout.fancybuttons.FancyButton
+			android:id="@+id/restore_game"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:enabled="false"
+			android:paddingTop="?attr/home__button_padding"
+			android:paddingBottom="?attr/home__button_padding"
+			app:layout_constraintWidth_percent="0.34"
+			fancy:fb_defaultColor="?attr/home__secondary_button_background"
+			fancy:fb_disabledColor="?attr/home__secondary_button_background"
+			fancy:fb_disabledTextColor="?attr/home__secondary_button_text_colour_disabled"
+			fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
+			fancy:fb_fontIconResource="&#xf021;"
+			fancy:fb_fontIconSize="24sp"
+			fancy:fb_iconPosition="top"
+			fancy:fb_text="@string/restore_game"
+			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+			fancy:fb_textSize="18sp" />
+
+		<mehdi.sakout.fancybuttons.FancyButton
+			android:id="@+id/preferences"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:paddingTop="?attr/home__button_padding"
+			android:paddingBottom="?attr/home__button_padding"
+			app:layout_constraintWidth_percent="0.34"
+			fancy:fb_defaultColor="?attr/home__secondary_button_background"
+			fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
+			fancy:fb_fontIconResource="&#xf013;"
+			fancy:fb_fontIconSize="24sp"
+			fancy:fb_iconPosition="top"
+			fancy:fb_text="@string/prefs"
+			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+			fancy:fb_textSize="18sp">
+
+		</mehdi.sakout.fancybuttons.FancyButton>
+	</LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
