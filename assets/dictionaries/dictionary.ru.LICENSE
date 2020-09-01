@@ -1,0 +1,7 @@
+Source: http://scon155.phys.msu.su/~swan/orthography.html
+
+As per https://github.com/lexica/lexica/pull/161, the list was filtered out with another (noun) dictionary:
+
+$ cut -d/ -f1 < ru_RU-lebedev-ie.dic | sort -u > 1.txt
+$ sed s/[ёЁ]/е/ < russian_nouns.txt | sort -u >> 1.txt
+$ sort 1.txt | uniq -d > dictionary.ru.txt
