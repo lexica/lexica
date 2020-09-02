@@ -36,13 +36,17 @@
         <attr format="color" name="score__background_colour" />
         <attr format="color" name="score__values_background_colour" />
         <attr format="color" name="score__missed_board_background_colour" />
+        <attr format="color" name="score__word_background_colour" />
+        <attr format="color" name="score__word_background_colour_selected" />
 
         <attr format="dimension" name="home__letter_padding" />
         <attr format="dimension" name="home__button_padding" />
         <attr format="color" name="home__background_colour" />
         <attr format="color" name="home__high_score_label_colour" />
         <attr format="color" name="home__main_button_background" />
+        <attr format="color" name="home__main_button_border" />
         <attr format="color" name="home__main_button_background__focused" />
+        <attr format="color" name="home__secondary_button_border" />
         <attr format="color" name="home__secondary_button_background" />
         <attr format="color" name="home__secondary_button_background_selected" />
         <attr format="color" name="home__secondary_button_background_focused" />

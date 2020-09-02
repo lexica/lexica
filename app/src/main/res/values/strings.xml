@@ -97,5 +97,6 @@
     <string name="pref_theme_dialog">Select Theme</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
+    <string name="theme_high_contrast">High Contrast</string>
     <string name="sort">Sort</string>
 </resources>
