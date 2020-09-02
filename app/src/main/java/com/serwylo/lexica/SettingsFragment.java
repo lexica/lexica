@@ -36,7 +36,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.preferences);
-        getResetCoresPreference().setOnPreferenceClickListener(preference -> promptThenResetScores());
+        getResetScoresPreference().setOnPreferenceClickListener(preference -> promptThenResetScores());
         highlightBetaLanguages();
         setUsedLexicon();
     }
@@ -57,7 +57,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     @NonNull
-    private Preference getResetCoresPreference() {
+    private Preference getResetScoresPreference() {
         Preference preference = findPreference("resetScores");
 
         if (preference == null) {
@@ -83,11 +83,13 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     public boolean promptThenResetScores() {
-        new AlertDialog.Builder(getContext()).setTitle(getString(R.string.pref_resetScores)).setMessage(getString(R.string.reset_scores_prompt)).setPositiveButton(android.R.string.ok, (dialog, which) -> {
-            if (which == DialogInterface.BUTTON_POSITIVE) {
-                clearHighScores();
-            }
-        }).create().show();
+        new AlertDialog.Builder(getContext())
+                .setTitle(getString(R.string.pref_resetScores))
+                .setMessage(getString(R.string.reset_scores_prompt))
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> clearHighScores())
+                .setNegativeButton(android.R.string.cancel, (dialog, which) -> {})
+                .create()
+                .show();
 
         return true;
     }
