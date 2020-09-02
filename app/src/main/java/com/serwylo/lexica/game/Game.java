@@ -295,7 +295,7 @@ public class Game implements Synchronizer.Counter {
                 // languages without this aid. Once they go out of beta, then it seems inappropriate
                 // to print this.
                 if (language.isBeta()) {
-                    Log.d(TAG, "Word: " + word);
+                    Log.d(TAG, "Word: " + word.toUpperCase(getLanguage().getLocale()));
                 }
             }
         } catch (IOException e) {
