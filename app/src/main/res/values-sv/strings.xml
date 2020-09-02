@@ -79,7 +79,7 @@
     <string name="pref_resetScores">Återställ rekord</string>
     <string name="high_scores_reset">Rekord har blivit återställda.</string>
     <string name="reset_scores_prompt">Är du säker på att du vill återställa alla rekord för alla spellägen till noll\?</string>
-    <string name="pref_breakdown">Visa ordlängd haveri</string>
+    <string name="pref_breakdown">Visa ordlängder</string>
     <string name="pref_breakdown_summary">Huravida ord räknaren sorterar antal efter ordlängd</string>
     <string name="pref_definitionProvider">Definitionsleverantör</string>
     <string name="pref_definitionProvider_summary">Välj en definitionsleverantör att använda. Om den valda leverantörer inte är installerad så kommer att DuckDuckGo att användas.</string>
@@ -92,4 +92,5 @@
     <string name="time">Tid</string>
     <string name="pref_dict_pt_BR">Portugisiska (Brasilien)</string>
     <string name="pref_dict_pl">Polska</string>
+    <string name="sort">Sortera</string>
 </resources>

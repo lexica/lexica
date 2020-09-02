@@ -92,4 +92,5 @@
     <string name="pref_theme_dialog">Selecionar tema</string>
     <string name="pref_theme">Tema</string>
     <string name="time">Tempo</string>
+    <string name="sort">Ordenar</string>
 </resources>
