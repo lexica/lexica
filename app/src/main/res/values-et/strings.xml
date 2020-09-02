@@ -93,4 +93,5 @@
     <string name="new_game">Uus mäng</string>
     <string name="app_name">Lexica</string>
     <string name="sort">Järjesta</string>
+    <string name="theme_high_contrast">Väga kontrastne</string>
 </resources>
