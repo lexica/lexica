@@ -112,7 +112,19 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
     }
 
     private void newGame() {
-        game = new Game(this);
+        Game bestGame = new Game(this);
+        int numAttempts = 0;
+        while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
+            Log.d(TAG, "Generating another board, because the previous one only had " + bestGame.getMaxWordCount() + " words, but we want at least 45. Will give up after 5 tries.");
+            Game nextAttempt = new Game(this);
+            if (nextAttempt.getMaxWordCount() > bestGame.getMaxWordCount()) {
+                bestGame = nextAttempt;
+            }
+            numAttempts ++;
+        }
+
+        Log.d(TAG, "Generated new board with " + bestGame.getMaxWordCount() + " words");
+        this.game = bestGame;
         setupGameView(game);
     }
 
