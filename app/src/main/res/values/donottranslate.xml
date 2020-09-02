@@ -76,10 +76,12 @@
 	<string-array name="theme_choices_entries">
 		<item>@string/theme_light</item>
 		<item>@string/theme_dark</item>
+		<item>@string/theme_high_contrast</item>
 	</string-array>
 	<string-array name="theme_choices_entryvalues">
 		<item>light</item>
 		<item>dark</item>
+		<item>high_contrast</item>
 	</string-array>
 
 	<string-array name="hint_mode_choices_entries">

@@ -27,6 +27,7 @@ public class ThemeManager {
 
     private static final String THEME_LIGHT = "light";
     private static final String THEME_DARK = "dark";
+    private static final String THEME_HIGH_CONTRAST = "high_contrast";
 
     private String currentTheme = null;
 
@@ -60,6 +61,8 @@ public class ThemeManager {
 
         if (THEME_DARK.equals(currentTheme)) {
             return R.style.AppTheme_Dark;
+        } else if (THEME_HIGH_CONTRAST.equals(currentTheme)) {
+            return R.style.AppTheme_HighContrast;
         } else {
             return R.style.AppTheme_Light;
         }
