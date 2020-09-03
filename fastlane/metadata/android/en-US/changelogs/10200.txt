@@ -1,0 +1,15 @@
+News:
+ * Support Lexica development via GitHub Sponsors :)
+
+Features:
+ * Sort list of words at the end of the game (thanks gsheridansmith)
+ * New Russian dictionary (thanks ildar)
+ * High contrast theme
+ * Russian words defined using wiktionary instead of DDG
+ * Prefer game boards with at least 45 words
+
+Bugfixes:
+ * Fix misaligned buttons in certain languages
+ * Add missing "cancel" option when resetting high scores
+
+Please provide any feedback or report any issues on the issue tracker at https://github.com/lexica/lexica/issues.
