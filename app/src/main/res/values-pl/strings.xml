@@ -92,4 +92,6 @@
     <string name="pref_theme_dialog">Wybierz Motyw</string>
     <string name="pref_theme">Motyw</string>
     <string name="time">Czas</string>
+    <string name="sort">Sortuj</string>
+    <string name="theme_high_contrast">Wysoki Kontrast</string>
 </resources>
