@@ -92,4 +92,6 @@
     <string name="menu_rotate_board">Otočiť dosku</string>
     <string name="dialog_no_saved">Neexistuje žiadna uložená hra. Ak čítate túto správu, pravdepodobne je niečo pokazené.</string>
     <string name="pref_sounds_summary">Či sú zvukové efekty povolené</string>
+    <string name="sort">Zoradiť</string>
+    <string name="theme_high_contrast">Vysoký kontrast</string>
 </resources>
