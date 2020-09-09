@@ -13,7 +13,7 @@
     <string name="pref_theme">Teema</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Veebiotsing</string>
     <string name="pref_definitionProvider_dialog">Valige sõnaselgituse pakkuja</string>
-    <string name="pref_definitionProvider_summary">Vali allikas, mille põhjal kuvame sõnade selgitusi. Kui vastavat rakendust pole paigaldatud, siis kasutame DuckDuckGo veebiotsingut.</string>
+    <string name="pref_definitionProvider_summary">Vali allikas, mille põhjal kuvame sõnade selgitusi. Kui vastavat rakendust pole paigaldatud, siis kasutame veebipõhist Wiktionary andmekogu.</string>
     <string name="pref_definitionProvider">Sõnade selgituse allikas</string>
     <string name="define_word">"&lt;u&gt;Näita selgitust&lt;/u&gt; "<u>Define</u> </string>
     <string name="pref_breakdown">Näita sõnapikkuste jaotust</string>
