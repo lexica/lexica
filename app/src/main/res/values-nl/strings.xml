@@ -63,7 +63,7 @@
     <string name="pref_breakdown">Woordlengte-uitleg tonen</string>
     <string name="pref_breakdown_summary">Of de woordenteller wel of niet woorden moet tonen op woordlengte</string>
     <string name="pref_definitionProvider">Betekenisdienst</string>
-    <string name="pref_definitionProvider_summary">Kies de te gebruiken betekenisdienst. Als de geselecteerde dienst niet geïnstalleerd is, dan zal DuckDuckGo worden gebruikt.</string>
+    <string name="pref_definitionProvider_summary">Kies de te gebruiken betekenisdienst. Als de geselecteerde dienst niet geïnstalleerd is, dan zal een online-bron als Wiktionary worden gebruikt.</string>
     <string name="pref_definitionProvider_dialog">Betekenisdienst kiezen</string>
     <string name="pref_dict_de_de">Duits</string>
     <string name="pref_dict_nl">Nederlands</string>
