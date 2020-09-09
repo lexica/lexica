@@ -1,0 +1,7 @@
+News:
+ * Support Lexica development via GitHub Sponsors :)
+
+Features:
+ * Use Wiktionary instead of DuckDuckGo for defintions. This enables language specific definitions, whereas previously only English definitions would work well.
+
+Please provide any feedback or report any issues on the issue tracker at https://github.com/lexica/lexica/issues.
