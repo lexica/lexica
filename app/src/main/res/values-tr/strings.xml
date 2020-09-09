@@ -73,7 +73,7 @@
     <string name="pref_breakdown">Kelime Uzunluğu Dağılımını Göster</string>
     <string name="pref_breakdown_summary">Kelime sayısının kelime uzunluğuna göre gösterilip gösterilmediği</string>
     <string name="pref_definitionProvider">Tanım Sağlayıcısı</string>
-    <string name="pref_definitionProvider_summary">Kullanılacak bir tanım sağlayıcı seçin. Seçilen sağlayıcı yüklenmemişse, DuckDuckGo kullanılacaktır.</string>
+    <string name="pref_definitionProvider_summary">Kullanılacak bir tanım sağlayıcı seçin. Seçilen sağlayıcı yüklenmemişse, Wiktionary gibi çevrim içi bir kaynak kullanılacaktır.</string>
     <string name="pref_definitionProvider_dialog">Tanım Sağlayıcıyı Seç</string>
     <string name="pref_dict_hu">Macarca</string>
     <string name="pref_hintMode">İpucu modu</string>
