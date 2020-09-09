@@ -41,7 +41,7 @@
     <string name="pref_hintMode_summary">Visar hur många ord varje bokstav kan bli använd i</string>
     <string name="pref_hintMode_dialog">Ledtrådsläge</string>
     <string name="hint_none">Inaktiverat</string>
-    <string name="tile_count">Numret av ord</string>
+    <string name="tile_count">Antalet ord</string>
     <string name="hint_colour">Panelfärg</string>
     <string name="hint_both">Både</string>
     <string name="pref_sounds">Ljud aktiverat</string>
@@ -50,10 +50,10 @@
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Avbryt</string>
     <string name="dialog_about_title">Om Lexica</string>
-    <string name="dialog_about_content">Rör på skärmen och flytta ditt finger för att bilda en fyrkantig markering som du använder för att stava ord. Du har tre minuter på dig att hitta så många ord some möjligt.
+    <string name="dialog_about_content">Sätt fingret på skärmen på första bokstaven, dra till intilliggande bokstäver för att bilda ett ord. Du har tre minuter på dig att hitta så många ord som möjligt.
 \n
 \nPoängräkning:
-\nPå 4x4 brädor så måste ord vara max tre bokstäver långa. På 5x5 brädor så måste ord vara max 4 bokstäver långa. Ord som har tre eller fyra bokstäver är värda ett poäng. Längre ord är värda mer poäng. Egennamn räknas inte.
+\nPå 4x4 bräden så måste ord vara minst tre bokstäver långa. På 5x5 bräden så måste ord vara minst 4 bokstäver långa. Ord som har tre eller fyra bokstäver är värda ett poäng. Längre ord är värda mer poäng. Egennamn räknas inte.
 \n
 \n</string>
     <string name="menu_rotate_board">Rotera brädet</string>
@@ -61,13 +61,13 @@
     <string name="menu_end_game">Avslut spelet</string>
     <string name="button_ok">OK</string>
     <string name="about">Om</string>
-    <string name="show_missed">Visa misslyckade ord</string>
+    <string name="show_missed">Missade ord</string>
     <string name="hide_missed">Göm misslyckade ord</string>
     <string name="show_unique">Visa unika ord</string>
     <string name="hide_unique">Göm unika ord</string>
     <string name="view_word"><u>Visa</u></string>
     <string name="define_word"><u>Definiera</u> </string>
-    <string name="words">ord</string>
+    <string name="words">Ord</string>
     <string name="score">Poäng</string>
     <string name="found_words">Hittade ord</string>
     <string name="missed_words">Misslyckade ord</string>
