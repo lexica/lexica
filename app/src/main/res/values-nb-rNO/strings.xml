@@ -63,7 +63,7 @@
     <string name="pref_breakdown">Vis inndeling av ordlengde</string>
     <string name="pref_breakdown_summary">Hvorvidt eller ei ordtellingen viser ord etter ordlengde</string>
     <string name="pref_definitionProvider">Definisjonstilbyder</string>
-    <string name="pref_definitionProvider_summary">Velg en definisjonstilbyder å bruke. Hvis valg definisjonstilbyder ikke er installert, vil DuckDuckGo bli brukt.</string>
+    <string name="pref_definitionProvider_summary">Velg en definisjonstilbyder å bruke. Hvis valgt definisjonstilbyder ikke er installert, vil en nettbasert kilde som Wiktionary bli brukt.</string>
     <string name="pref_definitionProvider_dialog">Velg definisjonstilbyder</string>
     <string name="pref_dict_de_de">Tysk</string>
     <string name="pref_dict_nl">Nederlandsk</string>
