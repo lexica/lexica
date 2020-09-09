@@ -2,6 +2,7 @@ package com.serwylo.lexica;
 
 import android.os.Bundle;
 
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.Game;
 
@@ -36,8 +37,8 @@ public class GameSaverTransient extends GameSaver {
     }
 
     @Override
-    public int readMaxTimeRemaining() {
-        return bundle.getInt(MAX_TIME_REMAINING, DEFAULT_MAX_TIME_REMAINING);
+    public GameMode readGameMode() {
+        return bundle.getParcelable(GAME_MODE);
     }
 
     @Override
@@ -68,12 +69,12 @@ public class GameSaverTransient extends GameSaver {
     }
 
     @Override
-    public void save(Board board, int timeRemaining, int maxTimeRemaining, String wordListToString, String scoreType, int wordCount, Date start, Game.GameStatus status) {
+    public void save(Board board, int timeRemaining, GameMode gameMode, String wordListToString, String scoreType, int wordCount, Date start, Game.GameStatus status) {
         bundle.putInt(GameSaver.BOARD_SIZE, board.getSize());
 
         bundle.putString(GameSaver.GAME_BOARD, board.toString());
         bundle.putInt(GameSaver.TIME_REMAINING, timeRemaining);
-        bundle.putInt(GameSaver.MAX_TIME_REMAINING, maxTimeRemaining);
+        bundle.putParcelable(GameSaver.GAME_MODE, gameMode);
         bundle.putString(GameSaver.WORDS, wordListToString);
         bundle.putString(SCORE_TYPE, scoreType);
         bundle.putInt(GameSaver.WORD_COUNT, wordCount);

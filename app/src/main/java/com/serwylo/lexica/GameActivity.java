@@ -25,12 +25,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.LexicaView;
 
@@ -79,7 +81,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                     restoreGame();
                     break;
                 case "com.serwylo.lexica.action.NEW_GAME":
-                    newGame();
+                    newGame(getIntent().getExtras().getParcelable("gameMode"));
                     break;
             }
         } catch (Exception e) {
@@ -111,12 +113,12 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         return game.getStatus() != Game.GameStatus.GAME_FINISHED;
     }
 
-    private void newGame() {
-        Game bestGame = new Game(this);
+    private void newGame(GameMode gameMode) {
+        Game bestGame = new Game(this, gameMode);
         int numAttempts = 0;
         while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
             Log.d(TAG, "Generating another board, because the previous one only had " + bestGame.getMaxWordCount() + " words, but we want at least 45. Will give up after 5 tries.");
-            Game nextAttempt = new Game(this);
+            Game nextAttempt = new Game(this, gameMode);
             if (nextAttempt.getMaxWordCount() > bestGame.getMaxWordCount()) {
                 bestGame = nextAttempt;
             }
@@ -189,8 +191,10 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
 
     public void onResume() {
         super.onResume();
-        if (game == null)
-            newGame();
+        if (game == null) {
+            Toast.makeText(this, "An error occured restoring your game", Toast.LENGTH_SHORT).show();;
+            NavUtils.navigateUpFromSameTask(this);
+        }
 
         switch (game.getStatus()) {
             case GAME_STARTING:

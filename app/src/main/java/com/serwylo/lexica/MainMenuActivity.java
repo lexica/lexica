@@ -45,7 +45,7 @@ public class MainMenuActivity extends Activity {
         setContentView(R.layout.splash);
 
         FancyButton newGame = findViewById(R.id.new_game);
-        newGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.NEW_GAME")));
+        newGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CHOOSE_GAME_MODE")));
 
         if (savedGame()) {
             FancyButton restoreGame = findViewById(R.id.restore_game);

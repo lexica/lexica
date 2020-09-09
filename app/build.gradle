@@ -34,6 +34,10 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     testOptions {
         // http://tools.android.com/tech-docs/unit-testing-support#TOC-Method-...-not-mocked.-
         unitTests.returnDefaultValues = true
@@ -62,6 +66,14 @@ dependencies {
     // Used for buttons on the home page and elsewhere, because the default Android ones just aren't
     // quite customizable without having to go into <selectors> and such.
     implementation 'com.github.medyo:fancybuttons:1.9.1'
+
+    // Lombok needs to be before Room, because Room expects getters and setters that are generated
+    // by lombok.
+    compileOnly "org.projectlombok:lombok:1.18.12"
+    annotationProcessor "org.projectlombok:lombok:1.18.12"
+
+    implementation 'androidx.room:room-runtime:2.2.5'
+    annotationProcessor 'androidx.room:room-compiler:2.2.5'
 
     testImplementation "junit:junit:4.13"
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'

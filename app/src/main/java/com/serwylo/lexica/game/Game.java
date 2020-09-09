@@ -31,6 +31,7 @@ import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
 import com.serwylo.lexica.Util;
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.EnglishUS;
 import com.serwylo.lexica.lang.Language;
@@ -104,13 +105,16 @@ public class Game implements Synchronizer.Counter {
     private SoundPool mSoundPool;
     private int[] soundIds;
 
+    private GameMode gameMode;
+
     public Game(Context c, GameSaver saver) {
 
+        gameMode = saver.readGameMode();
         status = GameStatus.GAME_STARTING;
         wordCount = 0;
 
         context = c;
-        loadPreferences(c);
+        loadPreferences(c, gameMode);
 
         try {
             switch (saver.readBoardSize()) {
@@ -125,7 +129,7 @@ public class Game implements Synchronizer.Counter {
                     break;
             }
 
-            maxTimeRemaining = saver.readMaxTimeRemaining();
+            maxTimeRemaining = saver.readGameMode().getTimeLimitSeconds();
             timeRemaining = saver.readTimeRemaining();
             maxTime = timeRemaining;
             start = saver.readStart();
@@ -154,13 +158,14 @@ public class Game implements Synchronizer.Counter {
         }
     }
 
-    public Game(Context c) {
+    public Game(Context c, GameMode gameMode) {
+        this.gameMode = gameMode;
         status = GameStatus.GAME_STARTING;
         wordCount = 0;
         wordList = new LinkedList<>();
 
         context = c;
-        loadPreferences(c);
+        loadPreferences(c, gameMode);
 
         String lettersFileName = language.getLetterDistributionFileName();
         int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
@@ -234,7 +239,7 @@ public class Game implements Synchronizer.Counter {
         initializeDictionary();
     }
 
-    private void loadPreferences(Context c) {
+    private void loadPreferences(Context c, GameMode gameMode) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
 
         String languageCode = new Util().getLexiconString(context);
@@ -249,6 +254,7 @@ public class Game implements Synchronizer.Counter {
         }
         Log.d(TAG, "Language (from preferences): " + language.getName());
 
+        // TODO: Use GameMode for this
         switch (prefs.getString("boardSize", "16")) {
             case "16":
                 boardSize = 16;
@@ -264,11 +270,13 @@ public class Game implements Synchronizer.Counter {
                 break;
         }
 
-        maxTimeRemaining = 100 * Integer.parseInt(prefs.getString("maxTimeRemaining", "180"));
+        maxTimeRemaining = 100 * gameMode.getTimeLimitSeconds();
 
         if (prefs.getBoolean("soundsEnabled", false)) {
             initSoundPool(c);
         }
+
+        // TODO: Use GameMode for both of these.
         scoreType = prefs.getString(SCORE_TYPE, SCORE_WORDS);
         hintMode = prefs.getString(HINT_MODE, "hint_none");
     }
@@ -352,7 +360,7 @@ public class Game implements Synchronizer.Counter {
     }
 
     public void save(GameSaver saver) {
-        saver.save(board, timeRemaining, getMaxTimeRemaining(), wordListToString(), scoreType, wordCount, start, status);
+        saver.save(board, timeRemaining, gameMode, wordListToString(), scoreType, wordCount, start, status);
     }
 
     public void start() {

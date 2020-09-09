@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.Game;
 
@@ -46,8 +47,9 @@ public class GameSaverPersistent extends GameSaver {
     }
 
     @Override
-    public int readMaxTimeRemaining() {
-        return getPrefs().getInt(MAX_TIME_REMAINING, DEFAULT_MAX_TIME_REMAINING);
+    public GameMode readGameMode() {
+        // TODO: Serialize this.
+        return null;
     }
 
     @Override
@@ -76,14 +78,14 @@ public class GameSaverPersistent extends GameSaver {
     }
 
     @Override
-    public void save(Board board, int timeRemaining, int maxTimeRemaining, String wordListToString, String scoreType, int wordCount, Date start, Game.GameStatus status) {
+    public void save(Board board, int timeRemaining, GameMode gameMode, String wordListToString, String scoreType, int wordCount, Date start, Game.GameStatus status) {
 
         SharedPreferences.Editor prefs = getPrefs().edit();
         prefs.putInt(BOARD_SIZE, board.getSize());
 
         prefs.putString(GAME_BOARD, board.toString());
         prefs.putInt(TIME_REMAINING, timeRemaining);
-        prefs.putInt(MAX_TIME_REMAINING, maxTimeRemaining);
+        // TODO: Serialize and save game mode...
         prefs.putString(WORDS, wordListToString);
         prefs.putString(SCORE_TYPE, scoreType);
         prefs.putInt(WORD_COUNT, wordCount);
