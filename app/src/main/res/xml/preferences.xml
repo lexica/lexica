@@ -78,6 +78,7 @@
 		android:summary="@string/pref_sounds_summary"
 	/>
 
+	<!-- The default value of "duckduckgo" is a legacy option which means "Online source" -->
 	<ListPreference
 		android:key="definitionProvider"
 		android:title="@string/pref_definitionProvider"

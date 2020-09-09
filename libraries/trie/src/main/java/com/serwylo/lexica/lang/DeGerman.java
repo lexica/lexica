@@ -80,4 +80,9 @@ public class DeGerman extends Language {
     protected Map<String, Integer> getLetterPoints() {
         return letterPoints;
     }
+
+    @Override
+    public String getDefinitionUrl() {
+        return getWiktionaryDefinitionUrl("de");
+    }
 }

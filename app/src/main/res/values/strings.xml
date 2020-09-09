@@ -90,7 +90,7 @@
     <string name="pref_breakdown">Show Word Length Breakdown</string>
     <string name="pref_breakdown_summary">Whether or not the word count shows counts by word length</string>
     <string name="pref_definitionProvider">Definition Provider</string>
-    <string name="pref_definitionProvider_summary">Select a definition provider to use. If the selected provider is not installed, DuckDuckGo will be used.</string>
+    <string name="pref_definitionProvider_summary">Select a definition provider to use. If the selected provider is not installed, an online source such as Wiktionary will be used.</string>
     <string name="pref_definitionProvider_dialog">Select Definition Provider</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_theme">Theme</string>
