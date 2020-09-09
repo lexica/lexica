@@ -48,8 +48,8 @@
     <string name="hide_unique">Skjul unike ord</string>
     <string name="view_word"><u>Vis</u></string>
     <string name="define_word"><u>Definer</u> </string>
-    <string name="words">ORD</string>
-    <string name="score">POENGSUM</string>
+    <string name="words">Ord</string>
+    <string name="score">Poengsum</string>
     <string name="found_words">Funnede ord</string>
     <string name="missed_words">Oversette ord</string>
     <string name="total_words">Totalt antall ord:</string>
@@ -93,4 +93,5 @@
     <string name="pref_theme_dialog">Draktvalg</string>
     <string name="pref_theme">Drakt</string>
     <string name="time">Tid</string>
+    <string name="theme_high_contrast">Høykontrast</string>
 </resources>

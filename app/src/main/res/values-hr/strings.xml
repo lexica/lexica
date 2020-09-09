@@ -92,4 +92,6 @@
     <string name="pref_theme">Tema</string>
     <string name="time">Vrijeme</string>
     <string name="pref_dict_pt_BR">Portugalski (Brazil)</string>
+    <string name="sort">Razvrstaj</string>
+    <string name="theme_high_contrast">Visoki kontrast</string>
 </resources>
