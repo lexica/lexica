@@ -98,6 +98,11 @@ public class FindLanguageMatchingLocale {
         public String applyMandatorySuffix(String value) {
             return null;
         }
+
+        @Override
+        public String getDefinitionUrl() {
+            return "";
+        }
     }
 
 }

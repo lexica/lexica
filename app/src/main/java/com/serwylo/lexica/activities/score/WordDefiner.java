@@ -25,6 +25,8 @@ public class WordDefiner {
         this.language = language;
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        // "duckduckgo" is a legacy value which has now been re-purposed to mean "Online source".
         definitionProvider = prefs.getString("definitionProvider", "duckduckgo");
     }
 

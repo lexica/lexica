@@ -131,16 +131,19 @@ public abstract class Language {
     /**
      * A URL which we can send the player to in order to define a word.
      * <p>
-     * Must include a single {@link String#format(String, Object...)} "%s" placeholder.
+     * Must include a single {@link String#format(String, Object...)} "%s" placeholder for the word
+     * to be defined.
      * <p>
-     * By default, uses DuckDuckGo, however individual languages may have their own more appropriate
-     * sources to use.
+     * Unless a specific dictionary is required for a certain language, you probably want to use the
+     * {@link Language#getWiktionaryDefinitionUrl(String)} helper method.
      * <p>
      * Note: This is only used if the "Online" dictionary provider is selected from preferences.
      * If "AARD2" or "QuickDic" is selected, they will take precedence.
      */
-    public String getDefinitionUrl() {
-        return "https://duckduckgo.com/?ia=definition&q=define+%s";
+    abstract public String getDefinitionUrl();
+
+    protected static String getWiktionaryDefinitionUrl(String langCode) {
+        return "https://" + langCode + ".wiktionary.org/wiki/%s";
     }
 
     public static class NotFound extends Exception {

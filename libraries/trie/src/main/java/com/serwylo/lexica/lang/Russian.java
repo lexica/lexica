@@ -82,6 +82,6 @@ public class Russian extends Language {
 
     @Override
     public String getDefinitionUrl() {
-        return "https://ru.wiktionary.org/wiki/%s";
+        return getWiktionaryDefinitionUrl("ru");
     }
 }

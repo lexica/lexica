@@ -84,4 +84,13 @@ public class Ukrainian extends Language {
     protected Map<String, Integer> getLetterPoints() {
         return letterPoints;
     }
+
+    /**
+     * At time of writing, the Ukranian wiktionary only has 10,000 definitions, which may be a bit
+     * slim.
+     */
+    @Override
+    public String getDefinitionUrl() {
+        return getWiktionaryDefinitionUrl("uk");
+    }
 }

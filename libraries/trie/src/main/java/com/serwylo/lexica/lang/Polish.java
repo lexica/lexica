@@ -90,7 +90,7 @@ public class Polish extends Language {
 
     /**
      * The dictionary used for Polish is from https://sjp.pl, which also happens to include a
-     * definition service. Therefore, it seems appropriate to use this over DuckDuckGo.
+     * definition service. Therefore, it seems appropriate to use this over Wiktionary.
      */
     @Override
     public String getDefinitionUrl() {
