@@ -1,5 +1,7 @@
 # Lexica: The Android Word Game
 
+[<img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg">](https://liberapay.com/Lexica/donate)
+
 [![Build Status](https://travis-ci.org/lexica/lexica.svg?branch=master)](https://travis-ci.org/lexica/lexica) <a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
   <img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
 </a>
@@ -44,8 +46,7 @@ Alternatively, you can import the project into Android Studio and build/run test
 
 This fork is based on the [original Lexic](http://code.google.com/p/lexic).
 
-So far, differences include:
- * Removed unsupported multiplayer options
- * Better support for screens with higher resolutions
- * Action bar support
- * Minor Tweaks to the UI
+Some differences include:
+ * Multiple international dictionaries and an internationalised UI.
+ * New scoring modes, hint modes, and other options.
+ * New user interface, including multiple themes.
