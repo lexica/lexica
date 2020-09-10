@@ -6,7 +6,7 @@
     <string name="pref_theme">थीम</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">ऑनलाईन</string>
     <string name="pref_definitionProvider_dialog">व्याख्या प्रदाता निवडा</string>
-    <string name="pref_definitionProvider_summary">वापरण्यासाठी व्याख्या प्रदाता निवडा. जर निवडलेला प्रदाता स्थापित केलेला नसेल तर डकडकगो वापरला जाईल.</string>
+    <string name="pref_definitionProvider_summary">वापरण्यासाठी व्याख्या प्रदाता निवडा. जर निवडलेला प्रदाता स्थापित केलेला नसेल, तर विकीशनरी सारखा ऑनलाइन स्त्रोत वापरला जाईल.</string>
     <string name="pref_definitionProvider">व्याख्या प्रदाता</string>
     <string name="pref_breakdown_summary">शब्द संख्या शब्दांच्या लांबीनुसार गणना दर्शवते की नाही</string>
     <string name="pref_breakdown">शब्द लांबी ब्रेकडाउन दर्शवा</string>
@@ -92,4 +92,6 @@
     <string name="new_game">नवीन खेळ</string>
     <string name="pref_dict_summary">खेळासाठी भाषा निवडा</string>
     <string name="app_name">लेक्सिका</string>
+    <string name="sort">क्रमवारी लावा</string>
+    <string name="theme_high_contrast">उच्च तीव्रता</string>
 </resources>
