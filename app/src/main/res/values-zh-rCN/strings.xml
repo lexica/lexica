@@ -63,7 +63,7 @@
     <string name="pref_breakdown">显示单词长度分析</string>
     <string name="pref_breakdown_summary">选择是否显示版面上各单词的长度</string>
     <string name="pref_definitionProvider">定义来源</string>
-    <string name="pref_definitionProvider_summary">选择定义来源。如果您没有安装所选的定义来源，游戏將使用DuckDuckGo的字典服务。</string>
+    <string name="pref_definitionProvider_summary">选择要使用的定义提供程序。如果未安装所选的提供程序，则将使用在线源，如Wiktionary。</string>
     <string name="pref_definitionProvider_dialog">选择定义來源</string>
     <string name="pref_dict_de_de">德语</string>
     <string name="pref_dict_nl">荷兰语</string>
