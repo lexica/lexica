@@ -82,7 +82,7 @@
     <string name="pref_breakdown">Visa ordlängder</string>
     <string name="pref_breakdown_summary">Huravida ord räknaren sorterar antal efter ordlängd</string>
     <string name="pref_definitionProvider">Definitionsleverantör</string>
-    <string name="pref_definitionProvider_summary">Välj en definitionsleverantör att använda. Om den valda leverantörer inte är installerad så kommer att DuckDuckGo att användas.</string>
+    <string name="pref_definitionProvider_summary">Välj en definitionsleverantör att använda. Om den valda leverantören inte är installerad kommer en onlinekälla som Wiktionary att användas.</string>
     <string name="pref_definitionProvider_dialog">Välj definitionsleverantör</string>
     <string name="theme_dark">Mörkt</string>
     <string name="theme_light">Ljust</string>
