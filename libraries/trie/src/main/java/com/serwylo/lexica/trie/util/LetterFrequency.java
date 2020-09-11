@@ -18,6 +18,8 @@ public class LetterFrequency {
 
     private final Language language;
     private final HashMap<String, List<Integer>> letterCounts = new HashMap<>();
+    private HashMap<String, Integer> totalLetterCounts = null;
+    private int maxCount = 0;
 
     public LetterFrequency(Language language) {
         this.language = language;
@@ -57,6 +59,39 @@ public class LetterFrequency {
         }
 
         return letterCounts.get(letter);
+    }
+
+    private void ensureTotalLetterCounts() {
+        if (totalLetterCounts == null) {
+            totalLetterCounts = new HashMap<>();
+            for (Map.Entry<String, List<Integer>> entry : letterCounts.entrySet()) {
+                List<Integer> countsForLetter = getCountsForLetter(entry.getKey());
+                int totalCountForLetter = 0;
+                for (int i = 1; i < countsForLetter.size(); i ++) {
+                    totalCountForLetter += countsForLetter.get(i);
+                }
+
+                totalLetterCounts.put(entry.getKey(), totalCountForLetter);
+            }
+
+            for (Map.Entry<String, Integer> entry : totalLetterCounts.entrySet()) {
+                int count = entry.getValue();
+                if (count > maxCount) {
+                    maxCount = count;
+                }
+            }
+
+        }
+    }
+
+    public int getTotalCountForLetter(String letter) {
+        ensureTotalLetterCounts();
+        return totalLetterCounts.get(letter);
+    }
+
+    public int getMaxCount() {
+        ensureTotalLetterCounts();
+        return maxCount;
     }
 
     public HashMap<String, Integer> getLetterCountsForWord(String word) {
