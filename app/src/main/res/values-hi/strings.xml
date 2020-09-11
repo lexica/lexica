@@ -1,2 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="sort">क्रमानुसार</string>
+    <string name="theme_high_contrast">उच्च विषमता</string>
+    <string name="theme_dark">गहरा रंग का थीम</string>
+    <string name="theme_light">प्रकाशित</string>
+    <string name="pref_theme_dialog">थीम चयन करें</string>
+    <string name="pref_theme">थीम</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">ऑनलाइन</string>
+    <string name="pref_definitionProvider_dialog">परिभाषा प्रदाता का चयन करें</string>
+    <string name="pref_definitionProvider_summary">उपयोग करने के लिए एक परिभाषा प्रदाता का चयन करें। यदि चयनित प्रदाता स्थापित नहीं है, तो एक ऑनलाइन स्रोत जैसे विक्षनरी का उपयोग किया जाएगा।</string>
+    <string name="pref_definitionProvider">परिभाषा प्रदाता</string>
+    <string name="pref_breakdown_summary">शब्द गणना शब्द लंबाई द्वारा मायने रखती है या नहीं</string>
+    <string name="pref_breakdown">शब्द की लंबाई का ब्रेकडाउन दिखाएं</string>
+    <string name="reset_scores_prompt">क्या आप वाकई सभी गेम मोड के लिए सभी उच्च स्कोर को शून्य पर रीसेट करना चाहते हैं\?</string>
+    <string name="high_scores_reset">उच्च स्कोर रीसेट कर दिया गया है।</string>
+    <string name="pref_resetScores">उच्च स्कोर रीसेट करें</string>
+    <string name="pref_resetScores_summary">उपरोक्त सेटिंग्स के प्रत्येक संयोजन के लिए उच्च स्कोर ट्रैक किए जाते हैं। सभी स्कोर शून्य पर रीसेट करने के लिए टैप करें।</string>
+    <string name="high_score">उच्च स्कोर</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="total_score">कुल स्कोर:</string>
+    <string name="total_words">कुल शब्द:</string>
+    <string name="missed_words">छूटे हुए शब्द</string>
+    <string name="found_words">खोजे शब्द</string>
+    <string name="time">अवधि</string>
+    <string name="score">स्कोर</string>
+    <string name="words">शब्द</string>
+    <string name="define_word">"&lt;u&gt; परिभाषित&lt;/u&gt; "<u>Define</u> </string>
+    <string name="view_word">&lt;u&gt;दर्शन &lt;/u&gt;<u>View</u></string>
+    <string name="hide_unique">अद्वितीय शब्द छिपाएं</string>
+    <string name="show_unique">अद्वितीय शब्द दिखाएं</string>
+    <string name="hide_missed">छूटे हुए शब्द छुपाएं</string>
+    <string name="show_missed">छूटे हुए शब्द दिखाएं</string>
+    <string name="about">(के) बारे में</string>
+    <string name="button_ok">ठीक है</string>
+    <string name="menu_end_game">खेल को अंत करें</string>
+    <string name="menu_save_game">खेल को सेव करें</string>
+    <string name="menu_rotate_board">बोर्ड घुमाएँ</string>
+    <string name="dialog_about_content">स्क्रीन को टच करें और शब्दों को वर्तनी के लिए अपनी उंगली को बगल के वर्गों में ले जाएं। आपके पास यथासंभव तीन शब्द खोजने के लिए तीन मिनट हैं।
+\n
+\nस्कोरिंग:
+\n४x४ बोर्डों पर, शब्द कम से कम तीन अक्षर लंबे होने चाहिए। ५x५ बोर्डों पर, शब्द कम से कम चार अक्षर लंबे होने चाहिए। ३ या ४ अक्षर वाले शब्द एक अंक के लायक हैं। लंबे शब्द अधिक अंक के लायक हैं। उचित संज्ञाएं नहीं गिनी जाती है
+\n
+\n</string>
+    <string name="dialog_about_title">लेक्सिका के बारे में</string>
+    <string name="dialog_cancel">रद्द करें</string>
+    <string name="dialog_ok">ठीक है</string>
+    <string name="dialog_no_saved">कोई खेल नहीं बचा है। यदि आप इस संदेश को पढ़ सकते हैं, तो कुछ टूटने की संभावना है।</string>
+    <string name="pref_sounds_summary">ध्वनि प्रभाव सक्षम हैं या नहीं</string>
+    <string name="pref_sounds">आवाज़ सक्षम</string>
+    <string name="hint_both">दोनों</string>
+    <string name="hint_colour">टाइल के रंग</string>
+    <string name="tile_count">शब्दों की संख्या</string>
+    <string name="hint_none">निर्योग्य</string>
+    <string name="pref_hintMode_dialog">संकेत मोड</string>
+    <string name="pref_hintMode_summary">प्रत्येक पत्र में इस्तेमाल किए जा सकने वाले शब्दों की संख्या दिखाता है</string>
+    <string name="pref_hintMode">संकेत मोड</string>
+    <string name="letter_points">अक्षर अंक</string>
+    <string name="word_length">शब्द की लंबाई</string>
+    <string name="pref_scoreType_dialog">स्कोरिंग प्रणाली चुनें</string>
+    <string name="pref_scoreType_summary">एक स्कोरिंग प्रणाली चुनें</string>
+    <string name="pref_scoreType">स्कोरिंग प्रणाली</string>
+    <string name="time_30m">३० मिनट</string>
+    <string name="time_20m">२० मिनट</string>
+    <string name="time_10m">१० मिनट</string>
+    <string name="time_5m">५ मिनट</string>
+    <string name="time_3m">३ मिनट</string>
+    <string name="pref_timeLimit_dialog">समय सीमा चुनें</string>
+    <string name="pref_timeLimit_summary">एक समय सीमा चुनें</string>
+    <string name="pref_timeLimit">समय सीमा</string>
+    <string name="pref_boardSize_dialog">बोर्ड माप चुनें</string>
+    <string name="pref_boardSize_summary">एक बोर्ड माप चुनें</string>
+    <string name="pref_boardSize">बोर्ड माप</string>
+    <string name="pref_dict_beta">%1$s (बीटा)</string>
+    <string name="pref_dict_us">अंग्रेज़ी (यू. एस.)</string>
+    <string name="pref_dict_uk_ua">यूक्रेनी</string>
+    <string name="pref_dict_uk">अंग्रेजी (यू.किं.)</string>
+    <string name="pref_dict_ru">रूसी</string>
+    <string name="pref_dict_pt_BR">पुर्तगाली (ब्राज़ील)</string>
+    <string name="pref_dict_pl">पोलिश</string>
+    <string name="pref_dict_nl">डच</string>
+    <string name="pref_dict_ja">जापानी</string>
+    <string name="pref_dict_it">इटालियन</string>
+    <string name="pref_dict_hu">हंगेरियन</string>
+    <string name="pref_dict_fr_fr">फ्रेंच</string>
+    <string name="pref_dict_fa">फ़ारसी</string>
+    <string name="pref_dict_es">स्पेनिश</string>
+    <string name="pref_dict_de_de">जर्मन</string>
+    <string name="pref_dict_ca">काटलान</string>
+    <string name="pref_dict_dialog">एक शब्दकोश का चयन करें</string>
+    <string name="pref_dict_summary">खेल के लिए एक भाषा चुनें</string>
+    <string name="pref_dict">शब्दकोश</string>
+    <string name="prefs">प्राथमिकताएँ</string>
+    <string name="restore_game">पुराना गेम पुनर्स्थापित करें</string>
+    <string name="new_game">नया गेम</string>
+    <string name="app_name">लेकसिका</string>
+</resources>
