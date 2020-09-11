@@ -26,7 +26,7 @@ allprojects {
 
 task buildLanguageAnalysis(type: GradleBuild) {
     buildFile = file('libraries/language-analysis/build.gradle')
-    tasks = ['build']
+    tasks = ['shadowJar']
 }
 
 task buildTrieBuilder(type: GradleBuild) {
@@ -80,7 +80,7 @@ languages.each { lang ->
 
     task "analyseLanguage_${lang}"(dependsOn: [buildLanguageAnalysis, langTask], type: JavaExec) {
         main = 'com.serwylo.lexica.language.LanguageAnalysisApp'
-        classpath 'libraries/language-analysis/build/libs/language-analysis.jar'
+        classpath 'libraries/language-analysis/build/libs/language-analysis-all.jar'
         args = [
                 lang,
                 file('app/src/main/res/raw/'),
