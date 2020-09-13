@@ -556,7 +556,6 @@ abbaute
 abbauten
 abbautest
 abbautet
-abbé
 abbedang
 abbedäng
 abbedänge
@@ -631,7 +630,6 @@ abberufet
 abberufne
 abberufst
 abberuft
-abbés
 abbestell
 abbet
 abbete
@@ -4406,7 +4404,6 @@ abredeten
 abredetet
 abreg
 abrege
-abrégé
 abregel
 abregele
 abregeln
@@ -4419,7 +4416,6 @@ abregen
 abregend
 abregende
 abregens
-abrégés
 abregest
 abreget
 abregle
@@ -6872,7 +6868,6 @@ achelte
 achelten
 acheltest
 acheltet
-acheuléen
 achilles
 achirie
 achirien
@@ -8019,8 +8014,6 @@ agrariers
 agrarisch
 agrarland
 agreement
-agrément
-agréments
 agrigento
 agronom
 agronomen
@@ -9649,7 +9642,6 @@ ampelmann
 ampeln
 amper
 ampere
-ampère
 amperes
 ampfer
 ampfern
@@ -15174,8 +15166,6 @@ apatiten
 apatites
 apatits
 aper
-aperçu
-aperçus
 apere
 aperem
 aperen
@@ -15201,9 +15191,7 @@ apernder
 aperndes
 aperns
 apero
-apéro
 aperos
-apéros
 aperst
 aperste
 aperstem
@@ -16544,8 +16532,6 @@ assistent
 assistenz
 assistier
 assists
-associé
-associés
 assoluta
 assolutas
 assonanz
@@ -16938,10 +16924,6 @@ atropin
 atropins
 ätsch
 attacca
-attaché
-attachée
-attachéen
-attachés
 attachier
 attacke
 attacken
@@ -22964,8 +22946,6 @@ autocues
 autodach
 autodache
 autodachs
-autodafé
-autodafés
 autodieb
 autodiebe
 autodiebs
@@ -23911,7 +23891,6 @@ bähtet
 bähung
 bähungen
 bahuvrihi
-bahuvrīhi
 bai
 baiao
 baien
@@ -24641,7 +24620,6 @@ bantus
 banus
 baobab
 baobabs
-baoulé
 baphomet
 baphomets
 bapp
@@ -25527,7 +25505,6 @@ bäumchen
 bäumchens
 baume
 bäume
-baumégrad
 baumel
 baumele
 baumeln
@@ -25962,8 +25939,6 @@ beäugtes
 beäugtest
 beäugtet
 beaus
-beauté
-beautés
 beauty
 beautys
 beb
@@ -26023,7 +25998,6 @@ bebautest
 bebautet
 bebauung
 bebe
-bébé
 beben
 bebend
 bebende
@@ -26033,7 +26007,6 @@ bebender
 bebendes
 bebenherd
 bebens
-bébés
 bebest
 bebet
 bebilder
@@ -26082,7 +26055,6 @@ bebustem
 bebusten
 bebuster
 bebustes
-béchamel
 becher
 bechere
 becherest
@@ -30596,8 +30568,6 @@ berentens
 berentest
 berentet
 berentete
-béret
-bérets
 bereu
 bereue
 bereuen
@@ -30657,9 +30627,7 @@ bergens
 bergente
 bergenten
 bergere
-bergère
 bergeren
-bergèren
 berges
 bergest
 berget
@@ -31543,8 +31511,6 @@ besiegung
 besieh
 besiehst
 besieht
-bésigue
-bésigues
 besik
 besiks
 besing
@@ -31566,8 +31532,6 @@ besinnet
 besinnst
 besinnt
 besinnung
-bésique
-bésiques
 besitz
 besitze
 besitzen
@@ -32293,7 +32257,6 @@ betbänken
 betbruder
 betbrüder
 bete
-bête
 beteil
 beteile
 beteilen
@@ -32316,7 +32279,6 @@ betel
 betelnuss
 betels
 beten
-bêten
 betend
 betende
 betendem
@@ -33523,10 +33485,6 @@ beziffern
 beziffert
 beziffre
 beziffret
-bézigue
-bézigues
-bézique
-béziques
 bezirk
 bezirke
 bezirken
@@ -36221,8 +36179,6 @@ bodensatz
 bodenvase
 bodenwert
 bodenzahl
-bodhrán
-bodhráns
 bodig
 bodige
 bodigen
@@ -36304,11 +36260,8 @@ bogtet
 bohei
 boheis
 boheme
-bohème
 bohemien
-bohémien
 bohemiens
-bohémiens
 bohle
 bohlen
 bohlenweg
@@ -36444,8 +36397,6 @@ bojetest
 bojetet
 bokkie
 bokkies
-bokmål
-bokmåls
 bol
 bola
 bolandi
@@ -37090,8 +37041,6 @@ bötchens
 bote
 böte
 botel
-botellón
-botellóns
 boteln
 botels
 boten
@@ -37147,8 +37096,6 @@ botulin
 botuline
 botulinen
 botulins
-bouclé
-bouclés
 boudoir
 boudoirs
 bougie
@@ -37179,8 +37126,6 @@ bourbons
 bourette
 bouretten
 bourgeois
-bourrée
-bourrées
 bourrette
 bouteille
 boutique
@@ -37321,7 +37266,6 @@ brabbelte
 brabble
 brabblest
 brabblet
-brač
 brach
 bräch
 brache
@@ -40044,7 +39988,6 @@ cabrio
 cabriolet
 cabrios
 cabs
-cachaça
 cache
 cachenez
 cacher
@@ -40073,16 +40016,11 @@ caesium
 caesiums
 cafard
 cafards
-café
-caféhaus
-cafés
 cafete
 cafeten
 cafeteria
 cafetier
-cafétier
 cafetiers
-cafétiers
 caipi
 caipis
 caisson
@@ -40119,7 +40057,6 @@ callboys
 callgirl
 callgirls
 calls
-caló
 calumet
 calumets
 calvados
@@ -40189,8 +40126,6 @@ campusse
 campussen
 canaille
 canaillen
-canapé
-canapés
 canasta
 canastas
 cancan
@@ -40295,8 +40230,6 @@ carepaket
 cargo
 cargokult
 cargos
-cariñena
-cariñenas
 carioca
 cariocas
 caritas
@@ -40526,8 +40459,6 @@ centesimo
 centgenau
 centime
 centimes
-céntimo
-céntimos
 centmünze
 centromer
 centrum
@@ -40659,8 +40590,6 @@ charis
 charisma
 charismas
 charismen
-charité
-charités
 charitin
 charity
 charivari
@@ -40724,9 +40653,7 @@ chasuble
 chasubles
 chat
 chateau
-château
 chateaus
-châteaus
 chaten
 chatend
 chatende
@@ -40844,8 +40771,6 @@ chemikant
 chemiker
 chemikern
 chemikers
-cheminée
-cheminées
 chemisch
 chemische
 chemisett
@@ -40897,9 +40822,6 @@ chickee
 chickees
 chicks
 chico
-chicorée
-chicoréen
-chicorées
 chicos
 chics
 chicst
@@ -41368,8 +41290,6 @@ cleverste
 clevner
 clevnern
 clevners
-cliché
-clichés
 client
 clients
 clinch
@@ -41410,11 +41330,8 @@ clochard
 clochards
 clog
 clogs
-cloisonné
 clone
 clones
-cloqué
-cloqués
 closure
 closures
 cloth
@@ -41592,11 +41509,6 @@ coenzym
 coenzyme
 coenzymen
 coenzyms
-cœur
-cœurass
-cœurasse
-cœurassen
-cœurs
 cofaktor
 cofaktors
 coffein
@@ -41698,11 +41610,9 @@ compilats
 compiler
 compilern
 compilers
-composé
 composer
 composern
 composers
-composés
 comprette
 computer
 computere
@@ -41726,8 +41636,6 @@ confer
 confiseur
 conga
 congas
-consommé
-consommés
 consulter
 container
 containre
@@ -41788,8 +41696,6 @@ corden
 cordes
 cordhose
 cordhosen
-córdoba
-córdobas
 cords
 cordsamt
 cordsamte
@@ -41880,11 +41786,9 @@ countys
 coup
 coupage
 coupe
-coupé
 coupen
 couperose
 coupes
-coupés
 couplet
 couplets
 coupon
@@ -41976,8 +41880,6 @@ craniales
 craniota
 cranium
 craniums
-craquelé
-craquelés
 crash
 crashe
 crashen
@@ -42026,10 +41928,7 @@ creek
 creeks
 crem
 crema
-crémant
-crémants
 creme
-crème
 cremen
 cremend
 cremende
@@ -42039,7 +41938,6 @@ cremender
 cremendes
 cremens
 cremes
-crèmes
 cremest
 cremet
 cremeweiß
@@ -42059,8 +41957,6 @@ cremtest
 cremtet
 creole
 creolen
-crêpe
-crêpes
 crescendi
 crescendo
 cretici
@@ -42088,8 +41984,6 @@ crimpte
 crimpten
 crimptest
 crimptet
-croisé
-croisés
 croissant
 cromargan
 cromlech
@@ -42105,12 +41999,9 @@ crossrade
 crossrads
 crotalus
 croupier
-croupière
 croupiers
 croupon
 croupons
-croûton
-croûtons
 crow
 cru
 cruis
@@ -42137,7 +42028,6 @@ cryptofon
 crystal
 crystals
 csardas
-csárdás
 csikos
 culemeyer
 culotte
@@ -42182,8 +42072,6 @@ curare
 curares
 curcuma
 curcumen
-curé
-curés
 curette
 curetten
 curie
@@ -42239,8 +42127,6 @@ cuttete
 cutteten
 cuttetest
 cuttetet
-cuvée
-cuvées
 cyan
 cyanat
 cyanate
@@ -44040,7 +43926,6 @@ dekokte
 dekokten
 dekoktes
 dekokts
-dekolleté
 dekor
 dekorativ
 dekore
@@ -44559,8 +44444,6 @@ dermaßen
 dermata
 dermatika
 dermatose
-dernière
-dernièren
 dero
 derogativ
 derogier
@@ -44571,7 +44454,6 @@ derouten
 derowegen
 derrick
 derricks
-derrière
 dersauf
 dersäuf
 dersaufe
@@ -44702,7 +44584,6 @@ detektive
 detektivs
 detektor
 detektors
-détente
 detergens
 detonator
 detonier
@@ -45561,7 +45442,6 @@ dimorphen
 dimorpher
 dimorphes
 dimotiki
-dimotikí
 dinar
 dinare
 dinaren
@@ -46149,8 +46029,6 @@ dohle
 dohlen
 dohne
 dohnen
-dōjinshi
-dōjinshis
 dojo
 dojos
 doket
@@ -46378,10 +46256,8 @@ domstift
 domstifte
 domstifts
 don
-doña
 donarit
 donarits
-doñas
 donator
 donatoren
 donatorin
@@ -46830,9 +46706,7 @@ doubelte
 doubelten
 doubeltet
 double
-doublé
 doubles
-doublés
 doublest
 doublet
 doublier
@@ -46896,9 +46770,7 @@ draft
 draften
 draftens
 dragee
-dragée
 dragees
-dragées
 drageur
 drageure
 drageuren
@@ -47173,12 +47045,10 @@ dräntest
 dräntet
 dränung
 dränungen
-drapé
 drapee
 drapees
 draperie
 draperien
-drapés
 drapier
 drapiere
 drapieren
@@ -49852,7 +49722,6 @@ egalisier
 egalitär
 egalitäre
 egalität
-Égalité
 egart
 egel
 egeln
@@ -53407,8 +53276,6 @@ eisbruch
 eisbruche
 eisbrüche
 eisbruchs
-eiscafé
-eiscafés
 eischale
 eischalen
 eischnee
@@ -53788,8 +53655,6 @@ ejizierst
 ejiziert
 ejizierte
 ekart
-ekarté
-ekartés
 ekarts
 ekchymose
 ekel
@@ -55016,9 +54881,7 @@ enostalen
 enostaler
 enostales
 enquete
-enquête
 enqueten
-enquêten
 enragiert
 ensemble
 ensembles
@@ -56039,9 +55902,7 @@ entrecht
 entrechte
 entrecote
 entree
-entrée
 entrees
-entrées
 entreetür
 entreiß
 entreiße
@@ -56557,8 +56418,6 @@ enurese
 enuresen
 enveloppe
 envers
-envoyé
-envoyés
 enzephala
 enzian
 enziane
@@ -56689,8 +56548,6 @@ epilog
 epiloge
 epilogen
 epilogs
-epinglé
-epinglés
 epinikien
 epinikion
 epiphania
@@ -61763,10 +61620,8 @@ exporteur
 exportier
 exports
 expos
-exposé
 exposee
 exposees
-exposés
 expositi
 expositur
 expositus
@@ -65584,10 +65439,8 @@ filius
 filiusse
 filiussen
 filler
-fillér
 fillern
 fillers
-fillérs
 film
 filmabend
 filmautor
@@ -69061,7 +68914,6 @@ framens
 frames
 frameword
 franc
-française
 franchise
 francium
 franciums
@@ -69139,10 +68991,8 @@ franztest
 franztet
 frappant
 frappante
-frappé
 frappee
 frappees
-frappés
 frappier
 frappiere
 frappiert
@@ -69906,8 +69756,6 @@ frohstem
 frohsten
 frohster
 frohstes
-froissé
-froissés
 fromm
 fromme
 frömmel
@@ -70624,8 +70472,6 @@ fulminant
 fulminanz
 fumarole
 fumarolen
-fumé
-fumés
 fummel
 fummele
 fummelei
@@ -72162,9 +72008,6 @@ gärbens
 garbsen
 garbsens
 gärbstahl
-garçon
-garçonne
-garçons
 garde
 gardemaß
 gardemaße
@@ -77973,16 +77816,10 @@ gemauztem
 gemauzten
 gemauzter
 gemauztes
-gemècht
-gemèchte
 gemechtem
-gemèchtem
 gemechten
-gemèchten
 gemechter
-gemèchter
 gemechtes
-gemèchtes
 gemecker
 gemeckere
 gemeckers
@@ -83659,12 +83496,10 @@ gitzis
 giveaway
 giveaways
 glace
-glacé
 glacee
 glacees
 glacen
 glaces
-glacés
 glacier
 glaciere
 glacieren
@@ -84587,7 +84422,6 @@ gode
 godel
 godeln
 godemiche
-godemiché
 goden
 göden
 goder
@@ -85851,7 +85685,6 @@ greenfees
 greenhorn
 greens
 gregarine
-grège
 greif
 greifarm
 greifarme
@@ -86913,10 +86746,6 @@ grutrecht
 gruts
 grütze
 grützen
-gruyére
-gruyère
-gruyéres
-gruyères
 gsälz
 gschaftl
 gschaftln
@@ -86980,7 +86809,6 @@ guanos
 guarana
 guaranas
 guarani
-guaraní
 guardein
 guardeine
 guardeins
@@ -87136,7 +86964,6 @@ gültiger
 gültigere
 gültiges
 gültigste
-gulyás
 gumma
 gummas
 gummata
@@ -87825,9 +87652,7 @@ habitats
 habite
 habiten
 habits
-habitué
 habituell
-habitués
 habitus
 hablich
 habliche
@@ -87849,7 +87674,6 @@ habubs
 habutai
 habutais
 hach
-haché
 hachel
 hachele
 hacheln
@@ -87861,7 +87685,6 @@ hachelt
 hachelte
 hachelten
 hacheltet
-hachés
 hachle
 hachse
 hachsen
@@ -90372,8 +90195,6 @@ hauwerkes
 hauwerks
 haüyn
 haüyns
-hávamál
-hávamáls
 havaneser
 havarie
 havarien
@@ -95795,7 +95616,6 @@ hoteldieb
 hotelfach
 hotelgast
 hotelier
-hotelière
 hoteliers
 hotelkoch
 hotelpage
@@ -99612,8 +99432,6 @@ jasmin
 jasmine
 jasminen
 jasmins
-jaspé
-jaspés
 jaspis
 jaspisse
 jaspissen
@@ -108177,9 +107995,7 @@ koalierte
 koalisier
 koalition
 koan
-kōan
 koans
-kōans
 koautor
 koautoren
 koautorin
@@ -113718,7 +113534,6 @@ kyries
 kyrilliza
 kyrtosis
 kyu
-kyū
 kyudo
 kyus
 kzs
@@ -114459,7 +114274,6 @@ lambrusco
 lambskin
 lambskins
 lambswool
-lamé
 lamee
 lamees
 lamellar
@@ -114470,7 +114284,6 @@ lamenti
 lamentier
 lamento
 lamentos
-lamés
 lametta
 lamettas
 lamina
@@ -114553,8 +114366,6 @@ lämplein
 lämpleins
 lamprete
 lampreten
-lançade
-lançaden
 lancier
 lanciere
 lancieren
@@ -114727,8 +114538,6 @@ landsers
 landsfrau
 landsitz
 landsitze
-landsmål
-landsmåls
 landsmann
 landstadt
 landstück
@@ -117433,8 +117242,6 @@ lesebands
 lesebuch
 lesebuche
 lesebuchs
-lesecafé
-lesecafés
 lesedrama
 leseecke
 leseecken
@@ -117739,7 +117546,6 @@ liberos
 libertär
 libertäre
 libertät
-liberté
 libertin
 libertins
 libidinös
@@ -118357,7 +118163,6 @@ lineatur
 linefeed
 linga
 lingala
-lingála
 lingam
 lingams
 lingas
@@ -118466,9 +118271,7 @@ linnenen
 linnener
 linnenes
 linnens
-linnésch
 linnesche
-linnésche
 linoleum
 linoleums
 linon
@@ -121190,8 +120993,6 @@ mackern
 mackers
 macklich
 mackliche
-macramé
-macramés
 macula
 maculae
 madagasse
@@ -121255,7 +121056,6 @@ madrigal
 madrigale
 madrigals
 madrilene
-maestà
 maestosi
 maestoso
 maestosos
@@ -121790,8 +121590,6 @@ maite
 maiten
 maitest
 maitet
-maître
-maîtres
 maium
 maiumen
 maiumens
@@ -121937,8 +121735,6 @@ mäkligere
 mäkliges
 mäkligste
 mako
-makoré
-makorés
 makos
 makossa
 makra
@@ -121985,7 +121781,6 @@ maladster
 maladstes
 malagassi
 malagasy
-malagueña
 malaie
 malaien
 malaiin
@@ -123508,9 +123303,7 @@ matetees
 mathe
 mathetik
 matinee
-matinée
 matineen
-matinéen
 matjes
 matratze
 matratzen
@@ -123948,40 +123741,22 @@ mazzen
 mazzens
 mebibyte
 mebibytes
-mèch
 mechanik
-mèche
 mechen
-mèchen
 mechend
-mèchend
 mechende
-mèchende
 mechendem
-mèchendem
 mechenden
-mèchenden
 mechender
-mèchender
 mechendes
-mèchendes
 mechens
-mèchens
-mèchenst
 mechest
 mechet
-mèchet
 mechst
-mèchst
-mècht
 mechte
-mèchte
 mechten
-mèchten
 mechtest
-mèchtest
 mechtet
-mèchtet
 mechulle
 mechullem
 mechullen
@@ -124486,8 +124261,6 @@ meldetest
 meldetet
 meldung
 meldungen
-mêlée
-mêlées
 melier
 meliere
 melieren
@@ -125094,7 +124867,6 @@ metallern
 metallers
 metalles
 metallic
-métallisé
 metallne
 metallnem
 metallnen
@@ -127391,9 +127163,7 @@ mohrs
 mohshärte
 moin
 moira
-moiré
 moiren
-moirés
 moirier
 moiriere
 moirieren
@@ -128499,8 +128269,6 @@ mouillier
 moulage
 moulagen
 moulages
-mouliné
-moulinés
 moulinier
 mounte
 mounten
@@ -130648,7 +130416,6 @@ nachtbar
 nachtbars
 nachtblau
 nachtbus
-nachtcafé
 nachtclub
 nachte
 nächte
@@ -131160,7 +130927,6 @@ nährbier
 nährboden
 nährböden
 nährcreme
-nährcrème
 nähre
 nähren
 nährend
@@ -131565,12 +131331,7 @@ näslinge
 näslingen
 naslings
 näslings
-nasobēm
 nasobema
-nasobēme
-nasobēmen
-nasobēmes
-nasobēms
 nass
 näss
 nassauer
@@ -131692,10 +131453,8 @@ natrium
 natriums
 natron
 natrons
-natté
 natter
 nattern
-nattés
 natur
 naturarzt
 naturbad
@@ -131981,10 +131740,6 @@ negierter
 negiertes
 negiertet
 negierung
-negligé
-négligé
-negligés
-négligés
 negligier
 negoziier
 negrid
@@ -131996,7 +131751,6 @@ negrides
 negrito
 negritos
 negritude
-négritude
 negroide
 negroiden
 negus
@@ -133327,7 +133081,6 @@ nodulären
 nodulärer
 noduläres
 nodus
-noël
 noesis
 noetik
 noetisch
@@ -133935,8 +133688,6 @@ notzucht
 notzutun
 nougat
 nougats
-nouméa
-nouveauté
 nova
 novä
 novae
@@ -135533,7 +135284,6 @@ oldowans
 oldtimer
 oldtimern
 oldtimers
-olé
 öle
 Öle
 olea
@@ -135887,7 +135637,6 @@ omelettes
 omeletts
 omen
 omens
-omertà
 omi
 omikron
 omikrons
@@ -137716,8 +137465,6 @@ pamps
 pampses
 pampusche
 pan
-panaché
-panachés
 panade
 panaden
 panamaer
@@ -137726,11 +137473,9 @@ panamaers
 panamahut
 panasch
 panasche
-panasché
 panaschee
 panaschen
 panasches
-panaschés
 panaschs
 panazee
 panazeen
@@ -138026,7 +137771,6 @@ pappkiste
 päpple
 päpplest
 päpplet
-pappmaché
 pappnase
 pappnasen
 papps
@@ -138583,7 +138327,6 @@ passbild
 passbilde
 passbilds
 passe
-passé
 pässe
 passen
 pässen
@@ -138792,9 +138535,6 @@ patronats
 patrone
 patronen
 patronin
-patrónit
-patrónite
-patrónits
 patrons
 patronym
 patronyme
@@ -139675,8 +139415,6 @@ perl
 perlchen
 perlchens
 perle
-perlèche
-perlèches
 perlen
 perlend
 perlende
@@ -139902,8 +139640,6 @@ petalite
 petaliten
 petalits
 petameter
-pétanque
-pétanques
 petarde
 petarden
 petechie
@@ -141151,9 +140887,7 @@ piesle
 pieslest
 pieslet
 pieta
-pietà
 pietas
-pietàs
 pietät
 pietätlos
 pietersen
@@ -142837,9 +142571,7 @@ podcastet
 podcasts
 podest
 podesta
-podestà
 podestas
-podestàs
 podestat
 podeste
 podesten
@@ -142967,9 +142699,7 @@ pökelten
 pökeltest
 pökeltet
 pokemon
-pokémon
 pokemons
-pokémons
 poker
 pöker
 pokere
@@ -144283,11 +144013,9 @@ prälaten
 prälatin
 prälatur
 praline
-praliné
 pralinee
 pralinees
 pralinen
-pralinés
 prall
 pralle
 prallem
@@ -144512,7 +144240,6 @@ präzises
 präzisest
 präzisier
 präzision
-précis
 predella
 predellas
 predellen
@@ -144621,8 +144348,6 @@ prelltest
 prelltet
 prellung
 prellwand
-prélude
-préludes
 preludio
 premier
 premiere
@@ -145347,8 +145072,6 @@ prostyloi
 prostylos
 protasen
 protasis
-protegé
-protegés
 protegier
 proteid
 proteide
@@ -147148,11 +146871,8 @@ quatschte
 qubit
 qubits
 quebecer
-québecer
 quebecern
-québecern
 quebecers
-québecers
 quebracho
 quechua
 quechuas
@@ -147405,7 +147125,6 @@ quetzals
 queue
 queues
 quiche
-quiché
 quiches
 quick
 quicke
@@ -149268,8 +148987,6 @@ rathause
 rathäuser
 rathauses
 rätin
-ratiné
-ratinés
 rating
 ratings
 ratinier
@@ -150064,8 +149781,6 @@ ravte
 ravten
 ravtest
 ravtet
-rayé
-rayés
 raygras
 raygrase
 raygräser
@@ -150275,8 +149990,6 @@ rebusse
 rebussen
 recall
 recalls
-recamière
-récamiere
 receiver
 receivern
 receivers
@@ -150612,9 +150325,7 @@ refraktor
 refraktur
 refugee
 refugees
-refugié
 refugien
-refugiés
 refugium
 refugiums
 refundier
@@ -151886,8 +151597,6 @@ renen
 renes
 renette
 renetten
-renforcé
-renforcés
 renftel
 renin
 renins
@@ -152237,11 +151946,9 @@ resultate
 resultats
 resultier
 resume
-résumé
 resümee
 resümees
 resumes
-résumés
 resümier
 resümiere
 resümiert
@@ -152393,7 +152100,6 @@ reunierst
 reuniert
 reunierte
 reunion
-réunion
 reunionen
 reunions
 reuse
@@ -153028,8 +152734,6 @@ rikambio
 rikambios
 rikscha
 rikschas
-riksmål
-riksmåls
 rill
 rille
 rillen
@@ -153316,7 +153020,6 @@ rissiges
 rissigst
 rissigste
 rissole
-rissolé
 rissolen
 risst
 risswunde
@@ -154027,10 +153730,8 @@ römischem
 römischen
 römischer
 römisches
-rommé
 rommee
 rommees
-rommés
 romni
 romnija
 ronde
@@ -154115,7 +153816,6 @@ röscheres
 rösches
 röscheste
 rose
-rosé
 rosen
 rosenart
 rosenduft
@@ -154134,12 +153834,8 @@ rosenrots
 rosenthal
 roseole
 roseolen
-rosés
 rosette
 rosetten
-roséwein
-roséweine
-roséweins
 rosig
 rosige
 rosigem
@@ -154693,8 +154389,6 @@ rotzunge
 rotzungen
 rotzusehn
 roubaiser
-roué
-roués
 rouge
 rouges
 roulade
@@ -163251,9 +162945,7 @@ seal
 seals
 sealskin
 sealskins
-séance
 seancen
-séancen
 sebcha
 sebchas
 seborrhö
@@ -164579,9 +164271,6 @@ senologie
 senon
 senonen
 senons
-señor
-señora
-señorita
 sens
 sensal
 sensale
@@ -164639,9 +164328,7 @@ separater
 separates
 separator
 separee
-séparée
 separees
-séparées
 separier
 separiere
 separiert
@@ -164695,8 +164382,6 @@ sequoias
 sequoie
 sequoien
 sera
-sérac
-séracs
 serafisch
 serail
 serails
@@ -165187,13 +164872,9 @@ shockings
 shoddy
 shoddys
 shogun
-shōgun
 shogune
-shōgune
 shogunen
-shōgunen
 shoguns
-shōguns
 shona
 shooter
 shootern
@@ -165755,8 +165436,6 @@ signieret
 signierst
 signiert
 signierte
-signifié
-signifiés
 signora
 signore
 signori
@@ -166364,7 +166043,6 @@ skabrösen
 skabröser
 skabröses
 skai
-skål
 skala
 skalahöhe
 skalar
@@ -167232,9 +166910,7 @@ söhrtest
 söhrtet
 soigniert
 soiree
-soirée
 soireen
-soiréen
 soja
 sojabohne
 sojamehl
@@ -167463,7 +167139,6 @@ solublen
 solubler
 solubles
 solution
-solutréen
 solvens
 solvent
 solvente
@@ -167832,10 +167507,8 @@ sou
 soubrette
 souchong
 souchongs
-soufflé
 soufflee
 soufflees
-soufflés
 souffleur
 soufflier
 souk
@@ -170412,7 +170085,6 @@ stamm
 stammbaum
 stammbuch
 stammburg
-stammcafé
 stämmchen
 stamme
 stämme
@@ -171206,8 +170878,6 @@ stegreifs
 stegs
 steh
 stehauf
-stehcafé
-stehcafés
 stehe
 stehen
 stehend
@@ -175567,9 +175237,7 @@ tabakland
 tabaks
 tabakware
 tabatiere
-tabboulé
 tabbouleh
-tabboulés
 tabe
 tabelle
 tabellen
@@ -175607,8 +175275,6 @@ tabloids
 taborit
 taboriten
 taboritin
-taboulé
-taboulés
 täbris
 tabs
 tabtaste
@@ -176037,7 +175703,6 @@ tailleurs
 taillier
 tailliere
 tailliert
-taíno
 tais
 taiwaner
 taiwanern
@@ -176590,8 +176255,6 @@ tanzbein
 tanzboden
 tanzböden
 tanzbums
-tanzcafé
-tanzcafés
 tänzchen
 tänzchens
 tanzdiele
@@ -180760,12 +180423,10 @@ tourist
 touristen
 touristik
 touristin
-tourné
 tournedos
 tournee
 tourneen
 tournees
-tournés
 tournier
 tourst
 tourt
@@ -182692,8 +182353,6 @@ trouble
 troubles
 troupier
 troupiers
-trouvère
-trouvères
 troyer
 troyern
 troyers
@@ -183479,10 +183138,8 @@ tupften
 tupftest
 tupftet
 tupi
-tupí
 tupilak
 tupilaks
-tupinambá
 tupis
 tür
 türangel
@@ -183743,7 +183400,6 @@ turon
 turons
 türrahmen
 türriegel
-turrón
 türschild
 türspalt
 türspalte
@@ -190245,10 +189901,6 @@ varianzen
 variation
 varietas
 varietät
-varieté
-variété
-varietés
-variétés
 variier
 variiere
 variieren
@@ -196505,7 +196157,6 @@ vogts
 vogue
 voicemail
 voigts
-voilà
 voile
 voiles
 voip
@@ -197771,7 +197422,6 @@ vornimmst
 vornimmt
 vornüber
 vornweg
-võro
 vorort
 vororte
 vororten
@@ -202293,8 +201943,6 @@ welliger
 welligere
 welliges
 welligste
-welliné
-wellinés
 wellis
 wellness
 wellpappe
@@ -205825,7 +205473,6 @@ xerosen
 xerotherm
 xhosa
 xiang
-ximénez
 xis
 xitsonga
 xoana
@@ -209220,9 +208867,7 @@ zivilstes
 zivis
 ziziphus
 zloty
-złoty
 zlotys
-złotys
 zmittag
 zmittags
 zmorge

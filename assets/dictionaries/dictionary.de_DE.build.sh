@@ -18,8 +18,8 @@ echo "Lowercasing wordlist and blacklist..."
 cat "$BUILD_DIR/blacklist" | tr '[:upper:]' '[:lower:]' | sort | uniq > "$BUILD_DIR/remove"
 cat "$BUILD_DIR/words"     | tr '[:upper:]' '[:lower:]' | sort | uniq > "$BUILD_DIR/keep"
 
-echo "Removing blacklist words and dumping dictionary to $DICT_FILE..."
-grep --line-regexp --invert-match --file="$BUILD_DIR/remove" "$BUILD_DIR/keep" | awk 'length($0) < 10 && length($0) > 2' > "$DICT_FILE"
+echo "Removing blacklist words, loanwords, and dumping dictionary to $DICT_FILE..."
+grep --line-regexp --invert-match --file="$BUILD_DIR/remove" "$BUILD_DIR/keep" | awk 'length($0) < 10 && length($0) > 2' | grep -v -P "[àáâåçčéèêēëīíïîłñōóõœšūûú]" > "$DICT_FILE"
 
 echo "Copying license from source repo..."
 cp "$BUILD_DIR/COPYING" "$LICENSE_FILE"
