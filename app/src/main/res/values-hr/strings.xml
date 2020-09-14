@@ -7,7 +7,7 @@
     <string name="high_score">Najbolji rezultat</string>
     <string name="words">Riječi</string>
     <string name="time_30m">30 minuta</string>
-    <string name="pref_definitionProvider_summary">Odaberi pružatelja definicija koji će se koristiti. Ako odabrani pružatelj nije instaliran, koristit će se DuckDuckGo.</string>
+    <string name="pref_definitionProvider_summary">Odaberi pružatelja definicija koji će se koristiti. Ako odabrani pružatelj nije instaliran, koristit će se internetski izvor kao što je „Vječnik”.</string>
     <string name="pref_dict_ja">Japanski</string>
     <string name="pref_dict_es">Španjolski</string>
     <string name="define_word">"&lt;u&gt;Definiraj&lt;/u&gt; "<u>Define</u> </string>
