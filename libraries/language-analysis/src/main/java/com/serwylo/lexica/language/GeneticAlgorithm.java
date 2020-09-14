@@ -44,6 +44,8 @@ public class GeneticAlgorithm {
     private static final int FITNESS_CALC_BOARDS_TO_GENERATE = 100;
     private static final double RATE_OF_MUTATION = 0.05;
     private static final double RATE_OF_NEW_RANDOM_GENOMES = 0.05;
+    private static final int MAX_BEST_TO_KEEP = NUM_OF_GENOMES / 4;
+    private static final boolean PENALISE_INFREQUENT_LETTERS = false;
 
     /**
      * From experience, it seems that the more we focus on a low standard deviation, the better
@@ -106,7 +108,7 @@ public class GeneticAlgorithm {
             SummaryStatistics stats = summariseGenomeScores(currentPopulation);
             for (Genome genome : currentPopulation) {
                 // Add the best scoring genome straight into the new population
-                if ((int) genome.getFitness().getScore() == (int) stats.getMax()) {
+                if ((int) genome.getFitness().getScore() == (int) stats.getMax() && nextPopulation.size() < MAX_BEST_TO_KEEP) {
                     nextPopulation.add(genome);
                 }
             }
@@ -259,11 +261,15 @@ public class GeneticAlgorithm {
 
     static class Gene {
 
-        public static Gene createRandom(String letter, int count) {
-            int currentCount = (int) (Math.random() * 99) + 1; // 1 - 100 inclusive.
+        public static Gene createRandom(String letter, LetterFrequency frequencies) {
+            int initialMax = PENALISE_INFREQUENT_LETTERS
+                    ? (int)( (double)frequencies.getTotalCountForLetter(letter) / frequencies.getMaxCount() * 99)
+                    : 99;
+
+            int currentCount = (int) (Math.random() * Math.max(initialMax, 10)) + 1; // 1 to [max|99] inclusive.
             List<Integer> occurrences = new ArrayList<>();
 
-            for (int i = 1; i <= count; i++) {
+            for (int i = 1; i <= frequencies.getCountsForLetter(letter).size(); i++) {
                 occurrences.add(currentCount);
                 int max = Math.max(0, currentCount - (i * 10));
                 currentCount = Math.max(1, (int) (Math.random() * max));
@@ -298,7 +304,7 @@ public class GeneticAlgorithm {
             LetterFrequency letters = allLetters(dictionaryDir, language);
             List<Gene> genes = new ArrayList<>(letters.getLetters().size());
             for (String letter : letters.getLetters()) {
-                genes.add(Gene.createRandom(letter, letters.getCountsForLetter(letter).size()));
+                genes.add(Gene.createRandom(letter, letters));
             }
 
             return new Genome(trieDir, language, genes);
@@ -380,7 +386,7 @@ public class GeneticAlgorithm {
             for (int i = 0; i < genes.size(); i++) {
                 double random = Math.random();
                 if (random < 0.05) {
-                    child.add(Gene.createRandom(genes.get(i).letter, allLetters(dictionaryDir, language).getCountsForLetter(genes.get(i).letter).size()));
+                    child.add(Gene.createRandom(genes.get(i).letter, allLetters(dictionaryDir, language)));
                 } else if (random < 0.5) {
                     child.add(genes.get(i));
                 } else {

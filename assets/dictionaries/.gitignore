@@ -1,0 +1,3 @@
+# Some dictionaries (e.g. german) have a build script associated with them.
+# They will dump temporary info into a "build/" directory, which we don't need in git.
+build/
