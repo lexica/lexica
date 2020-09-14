@@ -1,0 +1,7 @@
+News:
+ * Support Lexica development via Liberapay or GitHub Sponsors :)
+
+Features:
+ * Improved german dictionary (including nouns!!!). Thanks to all those contributing on GitHub to help choose an appropriate wordlist.
+
+Please provide any feedback or report any issues on the issue tracker at https://github.com/lexica/lexica/issues.
