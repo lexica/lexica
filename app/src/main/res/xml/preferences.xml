@@ -10,6 +10,7 @@
 		android:entries="@array/dict_choices_entries"
 		android:entryValues="@array/dict_choices_entryvalues"
 		android:dialogTitle="@string/pref_dict_dialog"
+		android:iconSpaceReserved="false"
 	/>
 
 	<ListPreference
@@ -20,6 +21,7 @@
 		android:entryValues="@array/board_size_choices_entryvalues"
 		android:defaultValue="16"
 		android:dialogTitle="@string/pref_boardSize_dialog"
+		android:iconSpaceReserved="false"
 	/>
 
 	<ListPreference
@@ -30,6 +32,7 @@
 		android:entryValues="@array/time_limit_choices_entryvalues"
 		android:defaultValue="180"
 		android:dialogTitle="@string/pref_timeLimit_dialog"
+		android:iconSpaceReserved="false"
 	/>
 
 	<ListPreference
@@ -40,12 +43,14 @@
 		android:entryValues="@array/score_type_choices_entryvalues"
 		android:defaultValue="W"
 		android:dialogTitle="@string/pref_scoreType_dialog"
+		android:iconSpaceReserved="false"
 	/>
 
 	<PreferenceScreen
 		android:key="resetScores"
 		android:title="@string/pref_resetScores"
 		android:summary="@string/pref_resetScores_summary"
+		android:iconSpaceReserved="false"
 	/>
 
 	<ListPreference
@@ -55,13 +60,15 @@
 		android:entryValues="@array/theme_choices_entryvalues"
 		android:defaultValue="light"
 		android:dialogTitle="@string/pref_theme_dialog"
-		/>
+		android:iconSpaceReserved="false"
+	/>
 
 	<CheckBoxPreference
 		android:key="showBreakdown"
 		android:defaultValue="false"
 		android:title="@string/pref_breakdown"
 		android:summary="@string/pref_breakdown_summary"
+		android:iconSpaceReserved="false"
 	/>
 
 	<ListPreference
@@ -71,11 +78,15 @@
 		android:entryValues="@array/hint_mode_choices_entryvalues"
 		android:key="hintMode"
 		android:summary="@string/pref_hintMode_summary"
-		android:title="@string/pref_hintMode" />
+		android:title="@string/pref_hintMode"
+		android:iconSpaceReserved="false"
+	/>
+	
 	<CheckBoxPreference
 		android:key="soundsEnabled"
 		android:title="@string/pref_sounds"
 		android:summary="@string/pref_sounds_summary"
+		android:iconSpaceReserved="false"
 	/>
 
 	<!-- The default value of "duckduckgo" is a legacy option which means "Online source" -->
@@ -87,6 +98,7 @@
 		android:entryValues="@array/definition_provider_choices_entryvalues"
 		android:defaultValue="duckduckgo"
 		android:dialogTitle="@string/pref_definitionProvider_dialog"
-		/>
+		android:iconSpaceReserved="false"
+	/>
 
 </PreferenceScreen>
