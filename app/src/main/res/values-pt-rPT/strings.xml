@@ -29,7 +29,7 @@
     <string name="pref_scoreType_dialog">Selecionar Tipo de Pontuação</string>
     <string name="pref_hintMode_dialog">Modo de dica</string>
     <string name="hint_none">Desativado</string>
-    <string name="tile_count">Número de palavras</string>
+    <string name="tile_count">Quantidade de palavras</string>
     <string name="hint_colour">Cor do título</string>
     <string name="hint_both">Ambos</string>
     <string name="theme_dark">Escuro</string>
@@ -41,7 +41,7 @@
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pl">Polonês</string>
     <string name="pref_definitionProvider_dialog">Selecione o provedor de definições</string>
-    <string name="pref_definitionProvider_summary">Selecione o provedor de definições a usar. Se o provedor selecionado não estiver instalado, será utilizado o DuckDuckGo.</string>
+    <string name="pref_definitionProvider_summary">Selecione um provedor de definição para usar. Se o provedor selecionado não estiver instalado, uma fonte online como o Wiktionary será usada.</string>
     <string name="pref_definitionProvider">Provedor de definições</string>
     <string name="pref_breakdown_summary">Se a contagem de palavras mostra ou não as contagens por tamanho da palavra</string>
     <string name="pref_breakdown">Mostrar detalhamento do tamanho da palavra</string>
@@ -92,4 +92,6 @@
     <string name="pref_boardSize">Tamanho do tabuleiro</string>
     <string name="pref_dict_dialog">Selecione o léxico</string>
     <string name="pref_dict">Léxico</string>
+    <string name="sort">Ordenar</string>
+    <string name="theme_high_contrast">Alto contraste</string>
 </resources>
