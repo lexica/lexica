@@ -9,6 +9,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 import androidx.preference.PreferenceManager;
 
+import com.serwylo.lexica.databinding.SettingsBinding;
+
 public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override
@@ -21,14 +23,14 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.settings);
+        SettingsBinding binding = SettingsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(v -> NavUtils.navigateUpFromSameTask(SettingsActivity.this));
+        binding.toolbar.setNavigationOnClickListener(v -> NavUtils.navigateUpFromSameTask(SettingsActivity.this));
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.settings_wrapper, new SettingsFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(binding.settingsWrapper.getId(), new SettingsFragment()).commit();
 
     }
 

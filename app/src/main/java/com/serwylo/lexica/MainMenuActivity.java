@@ -21,13 +21,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.serwylo.lexica.activities.score.ScoreActivity;
+import com.serwylo.lexica.databinding.SplashBinding;
 
 import java.util.Locale;
-
-import mehdi.sakout.fancybuttons.FancyButton;
 
 public class MainMenuActivity extends Activity {
 
@@ -42,38 +40,30 @@ public class MainMenuActivity extends Activity {
     }
 
     private void splashScreen() {
-        setContentView(R.layout.splash);
 
-        FancyButton newGame = findViewById(R.id.new_game);
-        newGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CHOOSE_GAME_MODE")));
+        SplashBinding binding = SplashBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.newGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CHOOSE_GAME_MODE")));
 
         if (savedGame()) {
-            FancyButton restoreGame = findViewById(R.id.restore_game);
-            restoreGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.RESTORE_GAME")));
-            restoreGame.setEnabled(true);
+            binding.restoreGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.RESTORE_GAME")));
+            binding.restoreGame.setEnabled(true);
         }
 
-        FancyButton about = findViewById(R.id.about);
-        about.setOnClickListener(v -> {
+        binding.about.setOnClickListener(v -> {
             Intent i = new Intent(Intent.ACTION_VIEW);
             Uri u = Uri.parse("https://github.com/lexica/lexica");
             i.setData(u);
             startActivity(i);
         });
 
-        FancyButton preferences = findViewById(R.id.preferences);
-        preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));
-
-        int highScoreValue = ScoreActivity.getHighScore(this);
-
-        TextView highScoreLabel = findViewById(R.id.high_score_label);
+        binding.preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));
 
         // TODO: Leaving format argument here for now, until all strings.xml have been replaced for each lang to no
         //       longer have this argument. Otherwise, they will likely crash at runtime.
-        highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
-
-        TextView highScore = findViewById(R.id.high_score);
-        highScore.setText(String.format(Locale.getDefault(), "%d", highScoreValue));
+        binding.highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
+        binding.highScore.setText(String.format(Locale.getDefault(), "%d", ScoreActivity.getHighScore(this)));
     }
 
     public void onResume() {
