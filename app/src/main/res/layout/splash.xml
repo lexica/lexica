@@ -8,6 +8,29 @@
 	android:background="?attr/home__background_colour"
 	android:orientation="vertical">
 
+	<mehdi.sakout.fancybuttons.FancyButton
+		android:id="@+id/game_mode_button"
+		app:layout_constraintEnd_toEndOf="@id/lexicaLogo"
+		app:layout_constraintTop_toTopOf="parent"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		fancy:fb_fontIconResource="&#xf091;"
+		fancy:fb_fontIconSize="?attr/game__score__heading_text_size"
+		fancy:fb_radius="12dp"
+		fancy:fb_iconPaddingLeft="8dp"
+		fancy:fb_iconPaddingRight="8dp"
+		fancy:fb_iconPaddingTop="8dp"
+		fancy:fb_iconPaddingBottom="8dp"
+		android:paddingEnd="8dp"
+		android:paddingStart="8dp"
+		fancy:fb_text="Marathon"
+		fancy:fb_defaultColor="?attr/home__secondary_button_background"
+		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
+		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+		android:layout_marginTop="?attr/game__score__padding"
+		android:layout_marginEnd="?attr/game__score__padding"
+		android:layout_marginStart="?attr/game__score__padding" />
+
 	<TextView
 		android:id="@+id/high_score_label"
 		android:layout_width="wrap_content"
@@ -15,7 +38,7 @@
 		android:textSize="?attr/game__score__heading_text_size"
 		android:textColor="?attr/game__score__heading_text_colour"
 		app:layout_constraintEnd_toEndOf="@id/lexicaLogo"
-		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/game_mode_button"
 		android:paddingTop="?attr/game__score__padding"
 		android:paddingEnd="?attr/game__score__padding"
 		android:paddingRight="?attr/game__score__padding"

@@ -19,11 +19,17 @@ package com.serwylo.lexica;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+
+import androidx.preference.PreferenceManager;
 
 import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.databinding.SplashBinding;
+import com.serwylo.lexica.db.Database;
+import com.serwylo.lexica.db.GameMode;
 
 import java.util.Locale;
 
@@ -36,15 +42,24 @@ public class MainMenuActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemeManager.getInstance().applyTheme(this);
-        splashScreen();
+        load();
     }
 
-    private void splashScreen() {
+    private void splashScreen(GameMode gameMode) {
 
         SplashBinding binding = SplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.newGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CHOOSE_GAME_MODE")));
+        binding.newGame.setOnClickListener(v -> {
+            Intent intent = new Intent("com.serwylo.lexica.action.NEW_GAME");
+            intent.putExtra("gameMode", gameMode);
+            startActivity(intent);
+        });
+
+        binding.newGame.setText("New " + gameMode.getLabel() + " Game");
+
+        binding.gameModeButton.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CHOOSE_GAME_MODE")));
+        binding.gameModeButton.setText(gameMode.getLabel());
 
         if (savedGame()) {
             binding.restoreGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.RESTORE_GAME")));
@@ -68,11 +83,23 @@ public class MainMenuActivity extends Activity {
 
     public void onResume() {
         super.onResume();
-        splashScreen();
+        load();
     }
 
     public boolean savedGame() {
         return new GameSaverPersistent(this).hasSavedGame();
+    }
+
+    private int getCurrentGameModeId() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        return prefs.getInt("gameMode", 1);
+    }
+
+    private void load() {
+        AsyncTask.execute(() -> {
+            final GameMode gameMode = Database.get(this).gameModeDao().getById(2);
+            runOnUiThread(() -> splashScreen(gameMode));
+        });
     }
 
 }

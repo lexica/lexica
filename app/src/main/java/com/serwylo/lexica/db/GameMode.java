@@ -9,44 +9,73 @@ import androidx.room.PrimaryKey;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @AllArgsConstructor
 @Entity
+@Data
 @Builder
 public class GameMode implements Parcelable {
 
-    @Getter
-    @Setter
+    public static final String HINT_MODE = "hintMode";
+    public static final String SCORE_TYPE = "scoreType";
+    public static final String SCORE_WORDS = "W";
+    public static final String SCORE_LETTERS = "L";
+
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    @Getter
-    @Setter
     @NonNull
     private String label;
 
-    @Getter
-    @Setter
     @NonNull
     private String description;
 
-    @Getter
-    @Setter
+    /**
+     * 16, 25, 36.
+     */
+    private int boardSize;
+
     private int timeLimitSeconds;
 
-    public GameMode(@NonNull String label, @NonNull String description, int timeLimitSeconds) {
+    /**
+     * Between 3 and 9.
+     */
+    private int minWordLength;
+
+    @NonNull
+    private String scoreType;
+
+    @NonNull
+    private String hintMode;
+
+    public GameMode(@NonNull String label, @NonNull String description, int boardSize, int timeLimitSeconds, int minWordLength, @NonNull String scoreType, @NonNull String hintMode) {
         this.label = label;
         this.description = description;
+        this.boardSize = boardSize;
         this.timeLimitSeconds = timeLimitSeconds;
+        this.minWordLength = minWordLength;
+        this.scoreType = scoreType;
+        this.hintMode = hintMode;
     }
 
     protected GameMode(Parcel in) {
         id = in.readInt();
         label = in.readString();
         description = in.readString();
+        boardSize = in.readInt();
         timeLimitSeconds = in.readInt();
+        minWordLength = in.readInt();
+        scoreType = in.readString();
+        hintMode = in.readString();
+    }
+
+    public boolean hintModeCount() {
+        return hintMode.equals("tile_count") || hintMode.equals("hint_both");
+    }
+
+    public boolean hintModeColor() {
+        return hintMode.equals("hint_colour") || hintMode.equals("hint_both");
     }
 
     public static final Creator<GameMode> CREATOR = new Creator<GameMode>() {
@@ -71,6 +100,10 @@ public class GameMode implements Parcelable {
         dest.writeInt(id);
         dest.writeString(label);
         dest.writeString(description);
+        dest.writeInt(boardSize);
         dest.writeInt(timeLimitSeconds);
+        dest.writeInt(minWordLength);
+        dest.writeString(scoreType);
+        dest.writeString(hintMode);
     }
 }

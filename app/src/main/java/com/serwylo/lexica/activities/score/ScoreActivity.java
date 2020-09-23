@@ -32,10 +32,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.serwylo.lexica.GameSaverTransient;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.ThemeManager;
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Game;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
+// TODO: Refactor this to use Game Modes.
 public class ScoreActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")
@@ -139,7 +141,7 @@ public class ScoreActivity extends AppCompatActivity {
 
     static String highScoreKey(Context c) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
-        return prefs.getString("dict", "US") + prefs.getString("boardSize", "16") + prefs.getString(Game.SCORE_TYPE, Game.SCORE_WORDS) + prefs.getString("maxTimeRemaining", "180");
+        return prefs.getString("dict", "US") + prefs.getString("boardSize", "16") + prefs.getString(GameMode.SCORE_TYPE, GameMode.SCORE_WORDS) + prefs.getString("maxTimeRemaining", "180");
     }
 
     public static int getHighScore(Context c) {

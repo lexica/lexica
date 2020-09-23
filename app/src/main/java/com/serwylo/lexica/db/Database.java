@@ -44,19 +44,31 @@ public abstract class Database extends RoomDatabase {
                 dao.insert(GameMode.builder()
                         .label("Marathon")
                         .description("Try to find all words, without any time pressure")
-                        .timeLimitSeconds(600)
+                        .timeLimitSeconds(1800)
+                        .boardSize(36)
+                        .hintMode("")
+                        .minWordLength(5)
+                        .scoreType(GameMode.SCORE_LETTERS)
                         .build());
 
                 dao.insert(GameMode.builder()
                         .label("Sprint")
                         .description("Short game to find as many words as possible")
                         .timeLimitSeconds(180)
+                        .boardSize(25)
+                        .hintMode("")
+                        .minWordLength(4)
+                        .scoreType(GameMode.SCORE_LETTERS)
                         .build());
 
                 dao.insert(GameMode.builder()
-                        .label("Easy")
+                        .label("Beginner")
                         .description("Use hints to help find words")
                         .timeLimitSeconds(180)
+                        .boardSize(16)
+                        .hintMode("hint_both")
+                        .minWordLength(3)
+                        .scoreType(GameMode.SCORE_WORDS)
                         .build());
 
             });

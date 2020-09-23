@@ -52,11 +52,6 @@ import java.util.Map;
 
 public class Game implements Synchronizer.Counter {
 
-    public static final String HINT_MODE = "hintMode";
-    public static final String SCORE_TYPE = "scoreType";
-    public static final String SCORE_WORDS = "W";
-    public static final String SCORE_LETTERS = "L";
-
     private static final String TAG = "Game";
     private int timeRemaining;
     private int maxTime;
@@ -65,8 +60,6 @@ public class Game implements Synchronizer.Counter {
 
     private Board board;
     private int score;
-    private String scoreType;
-    private String hintMode;
 
     public enum GameStatus {GAME_STARTING, GAME_RUNNING, GAME_PAUSED, GAME_FINISHED}
 
@@ -134,7 +127,6 @@ public class Game implements Synchronizer.Counter {
             maxTime = timeRemaining;
             start = saver.readStart();
 
-            scoreType = saver.readScoreType();
             String[] wordArray = saver.readWords();
             wordList = new LinkedList<>();
             wordsUsed = new LinkedHashSet<>();
@@ -254,31 +246,13 @@ public class Game implements Synchronizer.Counter {
         }
         Log.d(TAG, "Language (from preferences): " + language.getName());
 
-        // TODO: Use GameMode for this
-        switch (prefs.getString("boardSize", "16")) {
-            case "16":
-                boardSize = 16;
-                minWordLength = 3;
-                break;
-            case "25":
-                boardSize = 25;
-                minWordLength = 4;
-                break;
-            case "36":
-                boardSize = 36;
-                minWordLength = 5;
-                break;
-        }
-
+        boardSize = gameMode.getBoardSize();
+        minWordLength = gameMode.getMinWordLength();
         maxTimeRemaining = 100 * gameMode.getTimeLimitSeconds();
 
         if (prefs.getBoolean("soundsEnabled", false)) {
             initSoundPool(c);
         }
-
-        // TODO: Use GameMode for both of these.
-        scoreType = prefs.getString(SCORE_TYPE, SCORE_WORDS);
-        hintMode = prefs.getString(HINT_MODE, "hint_none");
     }
 
     public void initializeDictionary() {
@@ -360,7 +334,7 @@ public class Game implements Synchronizer.Counter {
     }
 
     public void save(GameSaver saver) {
-        saver.save(board, timeRemaining, gameMode, wordListToString(), scoreType, wordCount, start, status);
+        saver.save(board, timeRemaining, gameMode, wordListToString(), wordCount, start, status);
     }
 
     public void start() {
@@ -418,7 +392,7 @@ public class Game implements Synchronizer.Counter {
     }
 
     public int getWordScore(String word) {
-        if (SCORE_WORDS.equals(scoreType)) {
+        if (GameMode.SCORE_WORDS.equals(gameMode.getScoreType())) {
             return WORD_POINTS[word.length()];
         } else {
             int score = 0;
@@ -444,7 +418,7 @@ public class Game implements Synchronizer.Counter {
     }
 
     public String getScoreType() {
-        return scoreType;
+        return gameMode.getScoreType();
     }
 
     public int getMaxWordCount() {
@@ -466,11 +440,11 @@ public class Game implements Synchronizer.Counter {
     }
 
     public boolean hintModeCount() {
-        return hintMode.equals("tile_count") || hintMode.equals("hint_both");
+        return gameMode.hintModeCount();
     }
 
     public boolean hintModeColor() {
-        return hintMode.equals("hint_colour") || hintMode.equals("hint_both");
+        return gameMode.hintModeColor();
     }
 
     public ListIterator<String> listIterator() {

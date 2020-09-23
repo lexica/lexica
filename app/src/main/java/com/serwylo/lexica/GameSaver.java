@@ -29,8 +29,6 @@ public abstract class GameSaver {
 
     public abstract boolean hasSavedGame();
 
-    public abstract String readScoreType();
-
     public abstract int readWordCount();
 
     public abstract String[] readWords();
@@ -51,5 +49,5 @@ public abstract class GameSaver {
         return TextUtils.isEmpty(string) ? new String[]{} : string.split(",");
     }
 
-    public abstract void save(Board board, int timeRemaining, GameMode gameMode, String wordListToString, String scoreType, int wordCount, Date start, Game.GameStatus status);
+    public abstract void save(Board board, int timeRemaining, GameMode gameMode, String wordListToString, int wordCount, Date start, Game.GameStatus status);
 }

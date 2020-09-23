@@ -2,6 +2,9 @@ package com.serwylo.lexica;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,13 +24,15 @@ import java.util.List;
 
 public class ChooseGameModeActivity extends AppCompatActivity {
 
+    private ChooseGameModeBinding binding;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         ThemeManager.getInstance().applyTheme(this);
 
-        ChooseGameModeBinding binding = ChooseGameModeBinding.inflate(getLayoutInflater());
+        binding = ChooseGameModeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.gameModeList.setAdapter(new Adapter());
@@ -35,6 +40,25 @@ public class ChooseGameModeActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.choose_game_mode_menu, binding.toolbar.getMenu());
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.new_game_mode) {
+            addGameMode();
+        }
+        return true;
+    }
+
+    private void addGameMode() {
+
     }
 
     public class Adapter extends RecyclerView.Adapter<ViewHolder> {
@@ -89,6 +113,19 @@ public class ChooseGameModeActivity extends AppCompatActivity {
         public void bind(GameMode gameMode, View.OnClickListener listener) {
             binding.label.setText(gameMode.getLabel());
             binding.description.setText(gameMode.getDescription());
+
+            binding.statusTime.setText((gameMode.getTimeLimitSeconds() / 60) + " mins");
+            binding.statusBoardSize.setText((int)Math.sqrt(gameMode.getBoardSize()) + "x" + (int)Math.sqrt(gameMode.getBoardSize()));
+            binding.statusScoreType.setText(gameMode.getScoreType().equals("W") ? "Letter" : "Length");
+            binding.statusMinLength.setText("≥ " + gameMode.getMinWordLength());
+
+            if (gameMode.hintModeColor() || gameMode.hintModeCount()) {
+                binding.statusHintMode.setVisibility(View.VISIBLE);
+                binding.statusHintMode.setText("Hints");
+            } else {
+                binding.statusHintMode.setVisibility(View.GONE);
+            }
+
             binding.getRoot().setOnClickListener(listener);
         }
     }
