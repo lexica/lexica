@@ -29,6 +29,13 @@
 			</intent-filter>
 		</activity>
 
+		<activity android:name=".NewGameModeActivity"
+			android:screenOrientation="portrait"
+			android:configChanges="orientation|keyboardHidden"
+			android:parentActivityName=".ChooseGameModeActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ChooseGameModeActivity" />
+		</activity>
+
 		<activity android:name=".GameActivity"
 			android:screenOrientation="portrait"
 			android:configChanges="orientation|keyboardHidden"

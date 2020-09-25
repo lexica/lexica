@@ -58,7 +58,7 @@ public class ChooseGameModeActivity extends AppCompatActivity {
     }
 
     private void addGameMode() {
-
+        startActivity(new Intent(this, NewGameModeActivity.class));
     }
 
     public class Adapter extends RecyclerView.Adapter<ViewHolder> {

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<ListPreference
+		android:key="boardSize"
+		android:title="@string/pref_boardSize"
+		android:summary="@string/pref_boardSize_summary"
+		android:entries="@array/board_size_choices_entries"
+		android:entryValues="@array/board_size_choices_entryvalues"
+		android:defaultValue="16"
+		android:dialogTitle="@string/pref_boardSize_dialog"
+	/>
+
+	<ListPreference
+		android:key="maxTimeRemaining"
+		android:title="@string/pref_timeLimit"
+		android:summary="@string/pref_timeLimit_summary"
+		android:entries="@array/time_limit_choices_entries"
+		android:entryValues="@array/time_limit_choices_entryvalues"
+		android:defaultValue="180"
+		android:dialogTitle="@string/pref_timeLimit_dialog"
+	/>
+
+	<ListPreference
+		android:key="scoreType"
+		android:title="@string/pref_scoreType"
+		android:summary="@string/pref_scoreType_summary"
+		android:entries="@array/score_type_choices_entries"
+		android:entryValues="@array/score_type_choices_entryvalues"
+		android:defaultValue="W"
+		android:dialogTitle="@string/pref_scoreType_dialog"
+	/>
+
+	<ListPreference
+		android:defaultValue="hint_none"
+		android:dialogTitle="@string/pref_hintMode_dialog"
+		android:entries="@array/hint_mode_choices_entries"
+		android:entryValues="@array/hint_mode_choices_entryvalues"
+		android:key="hintMode"
+		android:summary="@string/pref_hintMode_summary"
+		android:title="@string/pref_hintMode" />
+
+</PreferenceScreen>
