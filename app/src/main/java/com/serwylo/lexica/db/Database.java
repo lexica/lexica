@@ -49,6 +49,7 @@ public abstract class Database extends RoomDatabase {
                         .hintMode("")
                         .minWordLength(5)
                         .scoreType(GameMode.SCORE_LETTERS)
+                        .isCustom(false)
                         .build());
 
                 dao.insert(GameMode.builder()
@@ -59,6 +60,7 @@ public abstract class Database extends RoomDatabase {
                         .hintMode("")
                         .minWordLength(4)
                         .scoreType(GameMode.SCORE_LETTERS)
+                        .isCustom(false)
                         .build());
 
                 dao.insert(GameMode.builder()
@@ -69,6 +71,7 @@ public abstract class Database extends RoomDatabase {
                         .hintMode("hint_both")
                         .minWordLength(3)
                         .scoreType(GameMode.SCORE_WORDS)
+                        .isCustom(false)
                         .build());
 
             });

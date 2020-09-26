@@ -112,7 +112,7 @@ public class ChooseGameModeActivity extends AppCompatActivity {
 
         public void bind(GameMode gameMode, View.OnClickListener listener) {
             binding.label.setText(gameMode.getLabel());
-            binding.description.setText(gameMode.getDescription());
+            binding.description.setText(gameMode.isCustom() ? "Custom game mode" : gameMode.getDescription());
 
             binding.statusTime.setText((gameMode.getTimeLimitSeconds() / 60) + " mins");
             binding.statusBoardSize.setText((int)Math.sqrt(gameMode.getBoardSize()) + "x" + (int)Math.sqrt(gameMode.getBoardSize()));

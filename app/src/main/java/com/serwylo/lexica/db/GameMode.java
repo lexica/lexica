@@ -49,7 +49,9 @@ public class GameMode implements Parcelable {
     @NonNull
     private String hintMode;
 
-    public GameMode(@NonNull String label, @NonNull String description, int boardSize, int timeLimitSeconds, int minWordLength, @NonNull String scoreType, @NonNull String hintMode) {
+    private boolean isCustom;
+
+    public GameMode(@NonNull String label, @NonNull String description, int boardSize, int timeLimitSeconds, int minWordLength, @NonNull String scoreType, @NonNull String hintMode, boolean isCustom) {
         this.label = label;
         this.description = description;
         this.boardSize = boardSize;
@@ -57,6 +59,7 @@ public class GameMode implements Parcelable {
         this.minWordLength = minWordLength;
         this.scoreType = scoreType;
         this.hintMode = hintMode;
+        this.isCustom = isCustom;
     }
 
     protected GameMode(Parcel in) {
@@ -68,6 +71,7 @@ public class GameMode implements Parcelable {
         minWordLength = in.readInt();
         scoreType = in.readString();
         hintMode = in.readString();
+        isCustom = in.readInt() == 1;
     }
 
     public boolean hintModeCount() {
@@ -105,5 +109,6 @@ public class GameMode implements Parcelable {
         dest.writeInt(minWordLength);
         dest.writeString(scoreType);
         dest.writeString(hintMode);
+        dest.writeInt(isCustom ? 1 : 0);
     }
 }
