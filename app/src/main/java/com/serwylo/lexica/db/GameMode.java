@@ -23,7 +23,7 @@ public class GameMode implements Parcelable {
     public static final String SCORE_LETTERS = "L";
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private long gameModeId;
 
     @NonNull
     private String label;
@@ -63,7 +63,7 @@ public class GameMode implements Parcelable {
     }
 
     protected GameMode(Parcel in) {
-        id = in.readInt();
+        gameModeId = in.readLong();
         label = in.readString();
         description = in.readString();
         boardSize = in.readInt();
@@ -101,7 +101,7 @@ public class GameMode implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
+        dest.writeLong(gameModeId);
         dest.writeString(label);
         dest.writeString(description);
         dest.writeInt(boardSize);

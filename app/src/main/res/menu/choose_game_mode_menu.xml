@@ -3,6 +3,6 @@
 	  xmlns:app="http://schemas.android.com/apk/res-auto">
 	<item android:id="@+id/new_game_mode"
 		android:title="New"
-		android:icon="@android:drawable/ic_menu_add"
+		android:icon="@drawable/ic_add"
 		app:showAsAction="always"/>
 </menu>

@@ -12,9 +12,7 @@ import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Game;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -29,28 +27,10 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
 
         View foundWordsView = activity.getLayoutInflater().inflate(R.layout.score_found_words, parent, true);
 
-        Set<String> possible = game.getSolutions().keySet();
-
-        int score = 0;
-        int max_score;
-        int numWords = 0;
-        int max_words = possible.size();
-
-        Iterator<String> uniqueWords = game.uniqueListIterator();
-        items = new ArrayList<>();
-        while (uniqueWords.hasNext()) {
-            String w = uniqueWords.next();
-
-            if (game.isWord(w) && game.getWordScore(w) > 0) {
-                int points = game.getWordScore(w);
-                items.add(new Item(w, points, true, null));
-                score += points;
-                numWords++;
-            } else {
-                items.add(new Item(w, 0, false, null));
-            }
-
-            possible.remove(w);
+        ScoreCalculator score = new ScoreCalculator(game);
+        items = new ArrayList<>(score.getItems().size());
+        for (ScoreCalculator.Selected selected : score.getItems()) {
+            items.add(new Item(selected.getWord(), selected.getScore(), true /*selected.isWord() */, null));
         }
 
         adapter = new Adapter(items);
@@ -60,21 +40,15 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
         words.setHasFixedSize(true);
         words.setAdapter(adapter);
 
-        activity.setHighScore(score);
+        activity.setHighScore(score.getScore());
 
-        max_score = score;
-
-        for (String w : possible) {
-            max_score += game.getWordScore(w);
-        }
-
-        int totalScorePercentage = (int) (((double) score / max_score) * 100);
+        int totalScorePercentage = (int) (((double) score.getScore() / score.getMaxScore()) * 100);
         TextView scorePercentage = foundWordsView.findViewById(R.id.score_value);
-        scorePercentage.setText(activity.getString(R.string.value_max_percentage, score, max_score, totalScorePercentage));
+        scorePercentage.setText(activity.getString(R.string.value_max_percentage, score.getScore(), score.getMaxScore(), totalScorePercentage));
 
-        int totalWordsPercentage = (int) (((double) numWords / max_words) * 100);
+        int totalWordsPercentage = (int) (((double) score.getNumWords() / score.getMaxWords()) * 100);
         TextView scoreValue = foundWordsView.findViewById(R.id.words_value);
-        scoreValue.setText(activity.getString(R.string.value_max_percentage, numWords, max_words, totalWordsPercentage));
+        scoreValue.setText(activity.getString(R.string.value_max_percentage, score.getNumWords(), score.getMaxWords(), totalWordsPercentage));
 
         sortButton = foundWordsView.findViewById(R.id.btn_sort);
         sortButton.setIconResource(sorter.getIconResource());

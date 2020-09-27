@@ -30,6 +30,7 @@ import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.databinding.SplashBinding;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
+import com.serwylo.lexica.db.Result;
 
 import java.util.Locale;
 
@@ -45,7 +46,7 @@ public class MainMenuActivity extends Activity {
         load();
     }
 
-    private void splashScreen(GameMode gameMode) {
+    private void splashScreen(GameMode gameMode, Result highScore) {
 
         SplashBinding binding = SplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -78,7 +79,9 @@ public class MainMenuActivity extends Activity {
         // TODO: Leaving format argument here for now, until all strings.xml have been replaced for each lang to no
         //       longer have this argument. Otherwise, they will likely crash at runtime.
         binding.highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
-        binding.highScore.setText(String.format(Locale.getDefault(), "%d", ScoreActivity.getHighScore(this)));
+        long score = ScoreActivity.getHighScore(this);
+        score = highScore == null ? 0 : highScore.getScore();
+        binding.highScore.setText(String.format(Locale.getDefault(), "%d", score));
     }
 
     public void onResume() {
@@ -98,7 +101,8 @@ public class MainMenuActivity extends Activity {
     private void load() {
         AsyncTask.execute(() -> {
             final GameMode gameMode = Database.get(this).gameModeDao().getById(2);
-            runOnUiThread(() -> splashScreen(gameMode));
+            final Result highScore = Database.get(this).resultDao().findHighScore(gameMode.getGameModeId());
+            runOnUiThread(() -> splashScreen(gameMode, highScore));
         });
     }
 

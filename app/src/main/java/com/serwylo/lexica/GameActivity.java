@@ -32,9 +32,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
+import com.serwylo.lexica.activities.score.ScoreCalculator;
+import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
+import com.serwylo.lexica.db.Result;
+import com.serwylo.lexica.db.SelectedWord;
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.LexicaView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameActivity extends AppCompatActivity implements Synchronizer.Finalizer {
 
@@ -227,11 +234,43 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         synch.abort();
         clearSavedGame();
 
-        Bundle bun = new Bundle();
+        final Bundle bun = new Bundle();
         game.save(new GameSaverTransient(bun));
 
+        Database.writeExecutor.execute(() -> {
+
+            ScoreCalculator score = new ScoreCalculator(game);
+
+            Result result = Result.builder()
+                .gameModeId(game.getGameMode().getGameModeId())
+                .langCode(game.getLanguage().getName())
+                .score(score.getScore())
+                .maxScore(score.getMaxScore())
+                .numWords(score.getNumWords())
+                .maxNumWords(score.getMaxWords())
+                .build();
+
+            Database.get(this).resultDao().insert(result);
+
+            List<SelectedWord> words = new ArrayList<>(score.getItems().size());
+            for (ScoreCalculator.Selected word : score.getItems()) {
+                words.add(
+                        SelectedWord.builder()
+                                .resultId(result.getResultId())
+                                .points(word.getScore())
+                                .word(word.getWord())
+                                .build());
+            }
+
+            Database.get(this).selectedWordDao().insert(words);
+
+            showScore(bun);
+        });
+    }
+
+    private void showScore(Bundle bundleWithSavedGame) {
         Intent scoreIntent = new Intent("com.serwylo.lexica.action.SCORE");
-        scoreIntent.putExtras(bun);
+        scoreIntent.putExtras(bundleWithSavedGame);
 
         startActivity(scoreIntent);
 
