@@ -30,6 +30,7 @@ import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.databinding.SplashBinding;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
+import com.serwylo.lexica.db.GameModeRepository;
 import com.serwylo.lexica.db.Result;
 
 import java.util.Locale;
@@ -100,7 +101,8 @@ public class MainMenuActivity extends Activity {
 
     private void load() {
         AsyncTask.execute(() -> {
-            final GameMode gameMode = Database.get(this).gameModeDao().getById(2);
+            final GameModeRepository gameModeRepository = new GameModeRepository(getApplication());
+            final GameMode gameMode = gameModeRepository.loadCurrentGameMode();
             final Result highScore = Database.get(this).resultDao().findHighScore(gameMode.getGameModeId());
             runOnUiThread(() -> splashScreen(gameMode, highScore));
         });

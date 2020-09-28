@@ -20,7 +20,10 @@ public interface GameModeDao {
     @Query("SELECT * FROM GameMode")
     LiveData<List<GameMode>> getAllGameModes();
 
+    @Query("SELECT * FROM GameMode ORDER BY gameModeId LIMIT 0, 1")
+    GameMode getFirst();
+
     @Query("SELECT * FROM GameMode WHERE gameModeId = :id")
-    GameMode getById(int id);
+    GameMode getById(long id);
 
 }

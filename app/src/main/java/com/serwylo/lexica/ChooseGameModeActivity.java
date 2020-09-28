@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,6 +20,7 @@ import com.serwylo.lexica.databinding.ChooseGameModeBinding;
 import com.serwylo.lexica.databinding.GameModeItemBinding;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
+import com.serwylo.lexica.db.GameModeRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +40,7 @@ public class ChooseGameModeActivity extends AppCompatActivity {
 
         binding.gameModeList.setAdapter(new Adapter());
         binding.gameModeList.setLayoutManager(new LinearLayoutManager(this));
+        binding.gameModeList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -85,7 +89,7 @@ public class ChooseGameModeActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             GameMode mode = gameModes.get(position);
-            holder.bind(mode, v -> startGame(mode));
+            holder.bind(mode, v -> selectGameMode(mode));
         }
 
         @Override
@@ -94,10 +98,9 @@ public class ChooseGameModeActivity extends AppCompatActivity {
         }
     }
 
-    private void startGame(GameMode mode) {
-        Intent intent = new Intent("com.serwylo.lexica.action.NEW_GAME");
-        intent.putExtra("gameMode", mode);
-        startActivity(intent);
+    private void selectGameMode(GameMode mode) {
+        new GameModeRepository(getApplication()).saveCurrentGameMode(mode);
+        NavUtils.navigateUpFromSameTask(this);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
