@@ -8,7 +8,7 @@
     <string name="pref_theme">ערכת נושא</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">באינטרנט</string>
     <string name="pref_definitionProvider_dialog">בחר ספק הגדרה</string>
-    <string name="pref_definitionProvider_summary">בחר ספק הגדרה לשימוש. אם הספק שנבחר לא מותקן, ישתמש ב DuckDuckGo.</string>
+    <string name="pref_definitionProvider_summary">נא לבחור בספק הגדרה לשימוש. אם הספק הנבחר לא מותקן ייעשה שימוש במקור כגון ויקימילון.</string>
     <string name="pref_definitionProvider">ספק הגדרה</string>
     <string name="pref_breakdown_summary">בין אם ספירת המילים מציגה ספירות לפי אורך המילה ובין אם לא</string>
     <string name="pref_breakdown">הצג פירוט אורך מילים</string>
