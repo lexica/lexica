@@ -9,12 +9,12 @@
 	<string name="pref_dict">Словник</string>
 	<string name="pref_dict_summary">Вкажіть мову словника</string>
 	<string name="pref_dict_dialog">Вкажіть мову словника</string>
-	<string name="pref_dict_us">Англійська (США)</string>
-	<string name="pref_dict_uk">Англійська (Великобританія)</string>
-	<string name="pref_dict_de_de">Німецька</string>
+	<string name="pref_dict_en_US">Англійська (США)</string>
+	<string name="pref_dict_en_GB">Англійська (Великобританія)</string>
+	<string name="pref_dict_de_DE">Німецька</string>
 	<string name="pref_dict_nl">Нідерландська</string>
 	<string name="pref_dict_fa">Фарсі</string>
-	<string name="pref_dict_fr_fr">Французька</string>
+	<string name="pref_dict_fr_FR">Французька</string>
 	<string name="pref_dict_it">Італійська</string>
 	<string name="pref_dict_ca">Каталанська</string>
 	<string name="pref_dict_es">Іспанська</string>
@@ -96,5 +96,5 @@
 	<string name="pref_dict_ja">Японська</string>
 	<string name="pref_dict_ru">Російська</string>
 	<string name="pref_dict_hu">Угорська</string>
-	<string name="pref_dict_uk_ua">Українська</string>
+	<string name="pref_dict_uk">Українська</string>
 </resources>

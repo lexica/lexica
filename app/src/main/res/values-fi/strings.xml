@@ -8,10 +8,10 @@
     <string name="pref_dict_summary">Valitse pelin kieli</string>
     <string name="pref_dict_dialog">Valitse leksikko</string>
     <string name="pref_dict_ca">katalaani</string>
-    <string name="pref_dict_de_de">saksa</string>
+    <string name="pref_dict_de_DE">saksa</string>
     <string name="pref_dict_es">espanja</string>
     <string name="pref_dict_fa">persia</string>
-    <string name="pref_dict_fr_fr">ranska</string>
+    <string name="pref_dict_fr_FR">ranska</string>
     <string name="pref_dict_hu">unkari</string>
     <string name="found_words">Löydetyt sanat</string>
     <string name="score">Pisteet</string>
@@ -34,9 +34,9 @@
     <string name="pref_timeLimit_summary">Valitse aikaraja</string>
     <string name="pref_timeLimit">Aikaraja</string>
     <string name="pref_dict_beta">%1$s (Beta)</string>
-    <string name="pref_dict_us">englanti (US)</string>
-    <string name="pref_dict_uk_ua">ukraina</string>
-    <string name="pref_dict_uk">englanti (UK)</string>
+    <string name="pref_dict_en_US">englanti (US)</string>
+    <string name="pref_dict_uk">ukraina</string>
+    <string name="pref_dict_en_GB">englanti (UK)</string>
     <string name="pref_dict_ru">venäjä</string>
     <string name="pref_dict_pl">puola</string>
     <string name="pref_dict_nl">hollanti</string>

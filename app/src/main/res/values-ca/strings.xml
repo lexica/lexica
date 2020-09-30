@@ -7,8 +7,8 @@
     <string name="pref_dict">Lèxic</string>
     <string name="pref_dict_summary">Seleccioneu la llengua de la partida</string>
     <string name="pref_dict_dialog">Seleccioneu un lèxic</string>
-    <string name="pref_dict_us">Anglès (Estats Units)</string>
-    <string name="pref_dict_uk">Anglès (Regne Unit)</string>
+    <string name="pref_dict_en_US">Anglès (Estats Units)</string>
+    <string name="pref_dict_en_GB">Anglès (Regne Unit)</string>
     <string name="pref_boardSize">Mida del tauler</string>
     <string name="pref_boardSize_summary">Seleccioneu la mida del tauler</string>
     <string name="pref_boardSize_dialog">Seleccioneu la mida del tauler</string>
@@ -58,10 +58,10 @@
     <string name="pref_definitionProvider">Proveïdor de definicions</string>
     <string name="pref_definitionProvider_summary">Seleccioneu un proveïdor de definicions. Si el que heu triat no s’ha instal·lat, es farà servir el DuckDuckGo.</string>
     <string name="pref_definitionProvider_dialog">Seleccioneu el proveïdor de definicions</string>
-    <string name="pref_dict_de_de">Alemany</string>
+    <string name="pref_dict_de_DE">Alemany</string>
     <string name="pref_dict_nl">Neerlandès</string>
     <string name="pref_dict_beta">%1$s (beta)</string>
-    <string name="pref_dict_fr_fr">Francès</string>
+    <string name="pref_dict_fr_FR">Francès</string>
     <string name="pref_dict_it">Italià</string>
     <string name="pref_dict_ca">Català</string>
     <string name="pref_dict_es">Castellà</string>
@@ -84,7 +84,7 @@
     <string name="pref_hintMode_summary">Mostra el nombre de mots en què es pot usar cada lletra</string>
     <string name="pref_hintMode">Mode de pistes</string>
     <string name="letter_points">Valor de les lletres</string>
-    <string name="pref_dict_uk_ua">Ucraïnès</string>
+    <string name="pref_dict_uk">Ucraïnès</string>
     <string name="pref_dict_pl">Polonès</string>
     <string name="pref_dict_pt_BR">Portuguès (Brasil)</string>
 </resources>

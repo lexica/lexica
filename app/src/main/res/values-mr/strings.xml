@@ -70,9 +70,9 @@
     <string name="pref_boardSize_summary">बोर्डाचा आकार निवडा</string>
     <string name="pref_boardSize">बोर्डाचा आकार</string>
     <string name="pref_dict_beta">%1$s (बीटा)</string>
-    <string name="pref_dict_us">इंग्रजी (यू. एस.)</string>
-    <string name="pref_dict_uk_ua">युक्रेनियन</string>
-    <string name="pref_dict_uk">इंग्रजी (यू. के.)</string>
+    <string name="pref_dict_en_US">इंग्रजी (यू. एस.)</string>
+    <string name="pref_dict_uk">युक्रेनियन</string>
+    <string name="pref_dict_en_GB">इंग्रजी (यू. के.)</string>
     <string name="pref_dict_ru">रशियन</string>
     <string name="pref_dict_pt_BR">पोर्तुगीज (ब्राझील)</string>
     <string name="pref_dict_pl">पोलिश</string>
@@ -80,10 +80,10 @@
     <string name="pref_dict_ja">जपानी</string>
     <string name="pref_dict_it">इटालियन</string>
     <string name="pref_dict_hu">हंगेरियन</string>
-    <string name="pref_dict_fr_fr">फ्रेंच</string>
+    <string name="pref_dict_fr_FR">फ्रेंच</string>
     <string name="pref_dict_fa">फारसी</string>
     <string name="pref_dict_es">स्पॅनिश</string>
-    <string name="pref_dict_de_de">जर्मन</string>
+    <string name="pref_dict_de_DE">जर्मन</string>
     <string name="pref_dict_ca">कॅटलन</string>
     <string name="pref_dict_dialog">कोश निवडा</string>
     <string name="pref_dict">कोश</string>

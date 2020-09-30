@@ -21,8 +21,8 @@
     <string name="pref_dict">Lexikon</string>
     <string name="pref_dict_dialog">Ein Lexikon auswählen</string>
     <string name="pref_dict_summary">Wähle eine Sprache für das Spiel aus</string>
-    <string name="pref_dict_uk">Englisch (UK)</string>
-    <string name="pref_dict_us">Englisch (US)</string>
+    <string name="pref_dict_en_GB">Englisch (UK)</string>
+    <string name="pref_dict_en_US">Englisch (US)</string>
     <string name="pref_sounds">Klänge aktiviert</string>
     <string name="pref_sounds_summary">Ob Soundeffekte aktiviert sind oder nicht</string>
     <string name="pref_timeLimit">Zeitbegrenzung</string>
@@ -66,10 +66,10 @@
     <string name="pref_definitionProvider">Wörterbuch</string>
     <string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird eine Online-Quelle wie Wiktionary verwendet.</string>
     <string name="pref_definitionProvider_dialog">Wörterbuchauswahl</string>
-    <string name="pref_dict_de_de">Deutsch</string>
+    <string name="pref_dict_de_DE">Deutsch</string>
     <string name="pref_dict_nl">Niederländisch</string>
     <string name="pref_dict_fa">Persisch</string>
-    <string name="pref_dict_fr_fr">Französisch</string>
+    <string name="pref_dict_fr_FR">Französisch</string>
     <string name="pref_dict_it">Italienisch</string>
     <string name="pref_dict_ca">Katalanisch</string>
     <string name="pref_dict_es">Spanisch</string>
@@ -83,7 +83,7 @@
     <string name="tile_count">Anzahl Wörter</string>
     <string name="hint_colour">Farbe der Kacheln</string>
     <string name="hint_both">Beide</string>
-    <string name="pref_dict_uk_ua">Ukrainisch</string>
+    <string name="pref_dict_uk">Ukrainisch</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pl">Polnisch</string>
     <string name="pref_dict_pt_BR">Portugiesisch (Brasilien)</string>

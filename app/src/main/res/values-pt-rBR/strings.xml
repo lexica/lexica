@@ -26,7 +26,7 @@
     <string name="pref_dict_fa">Persa</string>
     <string name="pref_boardSize_dialog">Selecione o Tamanho do Tabuleiro</string>
     <string name="pref_dict_dialog">Selecione o léxico</string>
-    <string name="pref_dict_uk_ua">Ucraniano</string>
+    <string name="pref_dict_uk">Ucraniano</string>
     <string name="pref_timeLimit_dialog">Selecione o Tempo Limite</string>
     <string name="pref_breakdown">Mostrar Detalhamento do Tamanho da Palavra</string>
     <string name="missed_words">Palavras Não Encontradas</string>
@@ -37,7 +37,7 @@
     <string name="letter_points">Pontos de Letras</string>
     <string name="menu_save_game">Salvar Jogo</string>
     <string name="time_10m">10 Minutos</string>
-    <string name="pref_dict_us">Inglês (EUA)</string>
+    <string name="pref_dict_en_US">Inglês (EUA)</string>
     <string name="show_missed">Mostrar Palavras que Faltam</string>
     <string name="pref_dict_ru">Russo</string>
     <string name="pref_breakdown_summary">Se a contagem de palavras mostra ou não as contagens por tamanho da palavra</string>
@@ -49,7 +49,7 @@
     <string name="pref_hintMode_summary">Mostra o número de palavras em que cada letra pode ser usada</string>
     <string name="restore_game">Restaurar Jogo</string>
     <string name="pref_hintMode">Modo de Dicas</string>
-    <string name="pref_dict_uk">Inglês (Reino Unido)</string>
+    <string name="pref_dict_en_GB">Inglês (Reino Unido)</string>
     <string name="total_score">Pontuação Total:</string>
     <string name="pref_resetScores">Zerar Recordes</string>
     <string name="time_3m">3 Minutos</string>
@@ -71,7 +71,7 @@
 \n</string>
     <string name="pref_scoreType">Tipo de Pontuação</string>
     <string name="menu_rotate_board">Girar o Tabuleiro</string>
-    <string name="pref_dict_de_de">Alemão</string>
+    <string name="pref_dict_de_DE">Alemão</string>
     <string name="pref_timeLimit_summary">Selecione um tempo limite</string>
     <string name="pref_scoreType_summary">Selecione um tipo de pontuação</string>
     <string name="dialog_about_title">Sobre o Lexica</string>
@@ -80,7 +80,7 @@
     <string name="high_scores_reset">Os recordes foram zerados.</string>
     <string name="hide_unique">Ocultar palavras únicas</string>
     <string name="reset_scores_prompt">Deseja realmente zerar os recordes de todos os modos de jogo\?</string>
-    <string name="pref_dict_fr_fr">Francês</string>
+    <string name="pref_dict_fr_FR">Francês</string>
     <string name="pref_dict">Léxico</string>
     <string name="hint_colour">Cor da grade</string>
     <string name="dialog_no_saved">Não há jogo salvo. Se você consegue ler esta mensagem, provavelmente algo está errado.</string>

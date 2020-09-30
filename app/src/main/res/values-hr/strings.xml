@@ -26,7 +26,7 @@
     <string name="pref_dict_fa">persijski</string>
     <string name="pref_boardSize_dialog">Odaberi veličinu ploče</string>
     <string name="pref_dict_dialog">Odaberi leksikon</string>
-    <string name="pref_dict_uk_ua">Ukrajinski</string>
+    <string name="pref_dict_uk">Ukrajinski</string>
     <string name="pref_timeLimit_dialog">Odaberi vremensko ograničenje</string>
     <string name="pref_breakdown">Pokaži razgradnju duljine riječi</string>
     <string name="missed_words">Propuštene riječi</string>
@@ -37,7 +37,7 @@
     <string name="letter_points">Bodovi za riječi</string>
     <string name="menu_save_game">Spremi igru</string>
     <string name="time_10m">10 minuta</string>
-    <string name="pref_dict_us">Engleski (SAD)</string>
+    <string name="pref_dict_en_US">Engleski (SAD)</string>
     <string name="show_missed">Prikaži propuštene riječi</string>
     <string name="pref_dict_ru">Ruski</string>
     <string name="pref_breakdown_summary">Je li broj riječi prikazuje brojeve po duljini riječi</string>
@@ -49,7 +49,7 @@
     <string name="pref_hintMode_summary">Prikazuje broj riječi u kojem se svako slovo može koristiti</string>
     <string name="restore_game">Obnovi igru</string>
     <string name="pref_hintMode">Modus savjeta</string>
-    <string name="pref_dict_uk">Engleski (UK)</string>
+    <string name="pref_dict_en_GB">Engleski (UK)</string>
     <string name="total_score">Ukupni rezultat:</string>
     <string name="pref_resetScores">Resetiraj najviše rezultate</string>
     <string name="time_3m">3 minute</string>
@@ -71,7 +71,7 @@
 \n</string>
     <string name="pref_scoreType">Vrsta bodovanja</string>
     <string name="menu_rotate_board">Okreni ploču</string>
-    <string name="pref_dict_de_de">Njemački</string>
+    <string name="pref_dict_de_DE">Njemački</string>
     <string name="pref_timeLimit_summary">Odaberi vremensko ograničenje</string>
     <string name="pref_scoreType_summary">Odaberi vrstu bodovanja</string>
     <string name="dialog_about_title">O programu Lexica</string>
@@ -80,7 +80,7 @@
     <string name="high_scores_reset">Najviši rezultati su resetirani.</string>
     <string name="hide_unique">Sakrij jedinstvene riječi</string>
     <string name="reset_scores_prompt">Sigurno želiš resetirati sve najviše rezultate za sve moduse igre na nulu\?</string>
-    <string name="pref_dict_fr_fr">Francuski</string>
+    <string name="pref_dict_fr_FR">Francuski</string>
     <string name="pref_dict">Leksikon</string>
     <string name="hint_colour">Boja pločica</string>
     <string name="dialog_no_saved">Nijedna igra nije spremljena. Ako ovu poruku možeš pročitati, vjerojatno je nešto pokvareno.</string>

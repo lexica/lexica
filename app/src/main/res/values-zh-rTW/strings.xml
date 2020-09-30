@@ -8,8 +8,8 @@
 	<string name="pref_dict">字典</string>
 	<string name="pref_dict_summary">選擇遊戲字典</string>
 	<string name="pref_dict_dialog">選擇字典</string>
-	<string name="pref_dict_us">美式英文</string>
-	<string name="pref_dict_uk">英式英文</string>
+	<string name="pref_dict_en_US">美式英文</string>
+	<string name="pref_dict_en_GB">英式英文</string>
 
 	<string name="pref_boardSize">圖版大小</string>
 	<string name="pref_boardSize_summary">選擇圖版大小</string>
@@ -80,10 +80,10 @@
 	<string name="pref_definitionProvider">定義來源</string>
 	<string name="pref_definitionProvider_summary">選擇定義來源。如果您沒有安裝所選的定義來源，遊戲將使用DuckDuckGo的字典服務。</string>
 	<string name="pref_definitionProvider_dialog">選擇定義來源</string>
-<string name="pref_dict_de_de">德文</string>
+<string name="pref_dict_de_DE">德文</string>
 	<string name="pref_dict_nl">荷蘭文</string>
 	<string name="pref_dict_fa">波斯文</string>
-	<string name="pref_dict_fr_fr">法文</string>
+	<string name="pref_dict_fr_FR">法文</string>
 	<string name="pref_dict_it">義大利文</string>
 	<string name="pref_dict_ca">加泰隆尼亞文</string>
 	<string name="pref_dict_es">西班牙文</string>

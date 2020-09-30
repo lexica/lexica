@@ -6,8 +6,8 @@
     <string name="prefs">Preferenze</string>
     <string name="pref_dict_summary">Seleziona una lingua per il gioco</string>
     <string name="pref_dict_dialog">Seleziona un lessico</string>
-    <string name="pref_dict_us">Inglese (Stati Uniti)</string>
-    <string name="pref_dict_uk">Inglese (RU)</string>
+    <string name="pref_dict_en_US">Inglese (Stati Uniti)</string>
+    <string name="pref_dict_en_GB">Inglese (RU)</string>
     <string name="pref_boardSize">Dimensioni della tavola</string>
     <string name="pref_boardSize_summary">Seleziona le dimensioni della tavola</string>
     <string name="pref_boardSize_dialog">Seleziona le dimensioni della tavola</string>
@@ -50,7 +50,7 @@
     <string name="total_score">Punteggio totale:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="pref_dict_beta">%1$s (Beta)</string>
-    <string name="pref_dict_uk_ua">Ucraino</string>
+    <string name="pref_dict_uk">Ucraino</string>
     <string name="pref_dict_ru">Russo</string>
     <string name="pref_dict_pl">Polacco</string>
     <string name="high_score">Punteggio più alto</string>
@@ -71,10 +71,10 @@
     <string name="pref_dict_ja">Giapponese</string>
     <string name="pref_dict_it">Italiano</string>
     <string name="pref_dict_hu">Ungherese</string>
-    <string name="pref_dict_fr_fr">Francese</string>
+    <string name="pref_dict_fr_FR">Francese</string>
     <string name="pref_dict_fa">Persiano</string>
     <string name="pref_dict_es">Spagnolo</string>
-    <string name="pref_dict_de_de">Tedesco</string>
+    <string name="pref_dict_de_DE">Tedesco</string>
     <string name="pref_dict_ca">Catalano</string>
     <string name="pref_breakdown">Mostra l\'interruzione della lunghezza delle parole</string>
     <string name="reset_scores_prompt">Sei sicuro di voler resettare tutti i punteggi migliori per tutte le modalità di gioco\?</string>

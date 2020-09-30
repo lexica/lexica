@@ -20,8 +20,8 @@
     <string name="pref_boardSize_summary">Избери размер на таблото</string>
     <string name="pref_dict">Речник</string>
     <string name="pref_dict_dialog">Избери Речник</string>
-    <string name="pref_dict_uk">Обединеното Кралство</string>
-    <string name="pref_dict_us">Съединените Щати</string>
+    <string name="pref_dict_en_GB">Обединеното Кралство</string>
+    <string name="pref_dict_en_US">Съединените Щати</string>
     <string name="pref_sounds">Звуците са разрешени</string>
 <string name="restore_game">Възстановяване на Игра</string>
 	<string name="prefs">Предпочитания</string>

@@ -2,10 +2,10 @@
 <resources>
 	<string-array name="dict_choices_entries">
 		<item>@string/pref_dict_ca</item>
-		<item>@string/pref_dict_de_de</item>
+		<item>@string/pref_dict_de_DE</item>
 		<item>@string/pref_dict_es</item>
 		<item>@string/pref_dict_fa</item>
-		<item>@string/pref_dict_fr_fr</item>
+		<item>@string/pref_dict_fr_FR</item>
 		<item>@string/pref_dict_hu</item>
 		<item>@string/pref_dict_it</item>
 		<item>@string/pref_dict_ja</item>
@@ -13,9 +13,9 @@
 		<item>@string/pref_dict_pl</item>
 		<item>@string/pref_dict_pt_BR</item>
 		<item>@string/pref_dict_ru</item>
-		<item>@string/pref_dict_uk_ua</item>
 		<item>@string/pref_dict_uk</item>
-		<item>@string/pref_dict_us</item>
+		<item>@string/pref_dict_en_GB</item>
+		<item>@string/pref_dict_en_US</item>
 	</string-array>
 	<string-array name="dict_choices_entryvalues">
 		<!-- Other than US & UK (named like that for legacy reasons because it was too much effort

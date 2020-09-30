@@ -120,6 +120,13 @@ public abstract class Language {
     }
 
     public static Language fromOrNull(String name) {
+        // Special cases to deal with legacy code that uses these as language codes in the preference system.
+        if ("UK".equals(name)) {
+            return new EnglishGB();
+        } else if ("US".equals(name)) {
+            return new EnglishUS();
+        }
+
         return getAllLanguages().get(name);
     }
 

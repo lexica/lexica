@@ -27,9 +27,9 @@
     <string name="pref_boardSize_summary">Zvoľte veľkosť hracej plochy</string>
     <string name="pref_boardSize">Veľkosť hracej plochy</string>
     <string name="pref_dict_beta">%1$s (Beta)</string>
-    <string name="pref_dict_us">Angličtina (US)</string>
-    <string name="pref_dict_uk_ua">Ukrajinčina</string>
-    <string name="pref_dict_uk">Angličtina (UK)</string>
+    <string name="pref_dict_en_US">Angličtina (US)</string>
+    <string name="pref_dict_uk">Ukrajinčina</string>
+    <string name="pref_dict_en_GB">Angličtina (UK)</string>
     <string name="pref_dict_ru">Ruština</string>
     <string name="pref_dict_pt_BR">Portugalčina (Brazília)</string>
     <string name="pref_dict_pl">Poľština</string>
@@ -37,10 +37,10 @@
     <string name="pref_dict_ja">Japončina</string>
     <string name="pref_dict_it">Taliančina</string>
     <string name="pref_dict_hu">Maďarčina</string>
-    <string name="pref_dict_fr_fr">Francúzština</string>
+    <string name="pref_dict_fr_FR">Francúzština</string>
     <string name="pref_dict_fa">Perzština</string>
     <string name="pref_dict_es">Španielčina</string>
-    <string name="pref_dict_de_de">Nemčina</string>
+    <string name="pref_dict_de_DE">Nemčina</string>
     <string name="pref_dict_ca">Katalánčina</string>
     <string name="pref_dict_dialog">Vyberte slovník</string>
     <string name="pref_dict_summary">Vyberte jazyk hry</string>

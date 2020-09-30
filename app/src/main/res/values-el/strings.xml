@@ -35,7 +35,7 @@
     <string name="letter_points">Σημεία γραμμάτων</string>
     <string name="menu_save_game">Αποθήκευση παιχνιδιού</string>
     <string name="time_10m">10 λεπτά</string>
-    <string name="pref_dict_us">Αγγλικά (ΗΠΑ)</string>
+    <string name="pref_dict_en_US">Αγγλικά (ΗΠΑ)</string>
     <string name="show_missed">Εμφάνιση χαμένων λέξεων</string>
     <string name="pref_dict_ru">Ρωσικά</string>
     <string name="pref_breakdown_summary">Αν ο αριθμός των λέξεων εμφανίζεται ή όχι μετράει με μήκος λέξης</string>
@@ -45,7 +45,7 @@
     <string name="pref_scoreType_dialog">Επιλογή τύπου βαθμολόγησης</string>
     <string name="pref_dict_it">Ιταλικά</string>
     <string name="restore_game">Επαναφορά παιχνιδιού</string>
-    <string name="pref_dict_uk">Αγγλικά (ΗΒ)</string>
+    <string name="pref_dict_en_GB">Αγγλικά (ΗΒ)</string>
     <string name="total_score">Συνολική βαθμολογία:</string>
     <string name="pref_resetScores">Μηδενισμός υψηλών βαθμολογιών</string>
     <string name="time_3m">3 λεπτά</string>
@@ -68,7 +68,7 @@
 \n</string>
     <string name="pref_scoreType">Τύπος βαθμολόγησης</string>
     <string name="menu_rotate_board">Περιστροφή πίνακα</string>
-    <string name="pref_dict_de_de">Γερμανικά</string>
+    <string name="pref_dict_de_DE">Γερμανικά</string>
     <string name="pref_timeLimit_summary">Επιλογή χρονικού ορίου</string>
     <string name="pref_scoreType_summary">Επιλογή τύπου βαθμολόγησης</string>
     <string name="dialog_about_title">Σχετικά με τη Lexica</string>
@@ -77,7 +77,7 @@
     <string name="high_scores_reset">Οι υψηλοί βαθμοί έχουν μηδενιστεί.</string>
     <string name="hide_unique">Απόκρυψη μοναδικών λέξεων</string>
     <string name="reset_scores_prompt">Είστε βέβαιοι ότι θέλετε να επαναφέρετε όλες τις υψηλές βαθμολογίες για όλους τους τρόπους παιχνιδιού στο μηδέν;</string>
-    <string name="pref_dict_fr_fr">Γαλλικά</string>
+    <string name="pref_dict_fr_FR">Γαλλικά</string>
     <string name="pref_dict">Λεξικό</string>
     <string name="dialog_no_saved">Δεν υπάρχει αποθηκευμένο παιχνίδι. Αν μπορείτε να διαβάσετε αυτό το μήνυμα, κάτι είναι πιθανόν σπασμένο.</string>
 </resources>
