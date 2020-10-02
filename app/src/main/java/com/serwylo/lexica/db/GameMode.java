@@ -17,7 +17,6 @@ import lombok.Data;
 @Builder
 public class GameMode implements Parcelable {
 
-    public static final String HINT_MODE = "hintMode";
     public static final String SCORE_TYPE = "scoreType";
     public static final String SCORE_WORDS = "W";
     public static final String SCORE_LETTERS = "L";

@@ -12,7 +12,10 @@ import java.util.List;
 public interface GameModeDao {
 
     @Insert
-    void insert(GameMode gameMode);
+    long insert(GameMode gameMode);
+
+    @Insert
+    void insert(List<GameMode> gameModes);
 
     @Delete
     void delete(GameMode gameMode);

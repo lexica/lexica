@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 
 import androidx.preference.PreferenceManager;
 
+import java.util.List;
+
 public class GameModeRepository {
 
     private static final String PREF_CURRENT_GAME_MODE_ID = "currentGameModeId";

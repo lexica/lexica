@@ -32,6 +32,7 @@ import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.db.GameModeRepository;
 import com.serwylo.lexica.db.Result;
+import com.serwylo.lexica.db.ResultRepository;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.LanguageLabel;
 
@@ -101,16 +102,17 @@ public class MainMenuActivity extends Activity {
         return new GameSaverPersistent(this).hasSavedGame();
     }
 
-    private int getCurrentGameModeId() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        return prefs.getInt("gameMode", 1);
-    }
-
     private void load() {
         AsyncTask.execute(() -> {
+            String languageCode = new Util().getLexiconString(this);
+            Language language = Language.fromOrNull(languageCode);
+
             final GameModeRepository gameModeRepository = new GameModeRepository(getApplication());
+            final ResultRepository resultRepository = new ResultRepository(getApplication());
+
             final GameMode gameMode = gameModeRepository.loadCurrentGameMode();
-            final Result highScore = Database.get(this).resultDao().findHighScore(gameMode.getGameModeId());
+            final Result highScore = resultRepository.findHighScore(gameMode, language);
+
             runOnUiThread(() -> splashScreen(gameMode, highScore));
         });
     }

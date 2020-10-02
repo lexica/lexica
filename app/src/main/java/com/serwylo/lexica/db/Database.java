@@ -7,11 +7,15 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.serwylo.lexica.db.migration.MigrateHighScoresFromPreferences;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @androidx.room.Database(entities = {GameMode.class, Result.class, SelectedWord.class}, version = 1)
 public abstract class Database extends RoomDatabase {
+
+    protected static final String TAG = "Database";
 
     public abstract GameModeDao gameModeDao();
     public abstract ResultDao resultDao();
@@ -26,7 +30,7 @@ public abstract class Database extends RoomDatabase {
             synchronized (Database.class) {
                 if (instance == null) {
                     instance = Room.databaseBuilder(context.getApplicationContext(), Database.class, "lexica")
-                            .addCallback(initialiseDataCallback)
+                            .addCallback(new InitializationCallback(context))
                             .build();
                 }
             }
@@ -35,48 +39,26 @@ public abstract class Database extends RoomDatabase {
         return instance;
     }
 
-    private static RoomDatabase.Callback initialiseDataCallback = new RoomDatabase.Callback() {
+    public static class InitializationCallback extends RoomDatabase.Callback {
+
+        private final Context context;
+
+        private InitializationCallback(Context context) {
+            this.context = context;
+        }
+
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
             writeExecutor.execute(() -> {
-                GameModeDao dao = instance.gameModeDao();
+                GameModeDao gameModeDao = instance.gameModeDao();
+                ResultDao resultDao = instance.resultDao();
 
-                dao.insert(GameMode.builder()
-                        .label("Marathon")
-                        .description("Try to find all words, without any time pressure")
-                        .timeLimitSeconds(1800)
-                        .boardSize(36)
-                        .hintMode("")
-                        .minWordLength(5)
-                        .scoreType(GameMode.SCORE_LETTERS)
-                        .isCustom(false)
-                        .build());
-
-                dao.insert(GameMode.builder()
-                        .label("Sprint")
-                        .description("Short game to find as many words as possible")
-                        .timeLimitSeconds(180)
-                        .boardSize(25)
-                        .hintMode("")
-                        .minWordLength(4)
-                        .scoreType(GameMode.SCORE_LETTERS)
-                        .isCustom(false)
-                        .build());
-
-                dao.insert(GameMode.builder()
-                        .label("Beginner")
-                        .description("Use hints to help find words")
-                        .timeLimitSeconds(180)
-                        .boardSize(16)
-                        .hintMode("hint_both")
-                        .minWordLength(3)
-                        .scoreType(GameMode.SCORE_WORDS)
-                        .isCustom(false)
-                        .build());
+                new MigrateHighScoresFromPreferences(context).initialiseDb(gameModeDao, resultDao);
 
             });
         }
-    };
+    }
+
 }
