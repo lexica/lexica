@@ -32,6 +32,8 @@ import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.db.GameModeRepository;
 import com.serwylo.lexica.db.Result;
+import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.lang.LanguageLabel;
 
 import java.util.Locale;
 
@@ -60,8 +62,13 @@ public class MainMenuActivity extends Activity {
 
         binding.newGame.setText("New " + gameMode.getLabel() + " Game");
 
-        binding.gameModeButton.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CHOOSE_GAME_MODE")));
+        binding.gameModeButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseGameModeActivity.class)));
         binding.gameModeButton.setText(gameMode.getLabel());
+
+        String languageCode = new Util().getLexiconString(this);
+        Language language = Language.fromOrNull(languageCode);
+        binding.languageButton.setText(LanguageLabel.getLabel(this, language));
+        binding.languageButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseLexiconActivity.class)));
 
         if (savedGame()) {
             binding.restoreGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.RESTORE_GAME")));

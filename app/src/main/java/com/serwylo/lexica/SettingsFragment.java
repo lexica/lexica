@@ -37,23 +37,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.preferences);
         getResetScoresPreference().setOnPreferenceClickListener(preference -> promptThenResetScores());
-        highlightBetaLanguages();
-        setUsedLexicon();
-    }
-
-    private void highlightBetaLanguages() {
-        ListPreference pref = getLexiconPreferences();
-        CharSequence[] entries = pref.getEntries();
-        CharSequence[] values = pref.getEntryValues();
-        for (int i = 0; i < entries.length; i++) {
-            Language language = Language.fromOrNull(values[i].toString());
-            if (language != null) {
-                if (language.isBeta()) {
-                    entries[i] = getString(R.string.pref_dict_beta, entries[i]);
-                }
-            }
-        }
-        pref.setEntries(entries);
     }
 
     @NonNull
@@ -65,21 +48,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         }
 
         return preference;
-    }
-
-    @NonNull
-    private ListPreference getLexiconPreferences() {
-        ListPreference pref = findPreference("dict");
-
-        if (pref == null) {
-            throw new IllegalArgumentException("Could not find lexicon/dictionary preference.");
-        }
-
-        return pref;
-    }
-
-    private void setUsedLexicon() {
-        getLexiconPreferences().setValue(new Util().getLexiconString(getContext()));
     }
 
     public boolean promptThenResetScores() {

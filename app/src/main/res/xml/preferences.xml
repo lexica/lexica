@@ -3,16 +3,6 @@
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<ListPreference
-		android:key="dict"
-		android:title="@string/pref_dict"
-		android:summary="@string/pref_dict_summary"
-		android:entries="@array/dict_choices_entries"
-		android:entryValues="@array/dict_choices_entryvalues"
-		android:dialogTitle="@string/pref_dict_dialog"
-		android:iconSpaceReserved="false"
-	/>
-
 	<PreferenceScreen
 		android:key="resetScores"
 		android:title="@string/pref_resetScores"

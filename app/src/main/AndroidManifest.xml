@@ -23,10 +23,6 @@
 			android:configChanges="orientation|keyboardHidden"
 			android:parentActivityName=".MainMenuActivity">
 			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
-			<intent-filter>
-				<action android:name="com.serwylo.lexica.action.CHOOSE_GAME_MODE" />
-				<category android:name="android.intent.category.DEFAULT" />
-			</intent-filter>
 		</activity>
 
 		<activity android:name=".NewGameModeActivity"
@@ -34,6 +30,13 @@
 			android:configChanges="orientation|keyboardHidden"
 			android:parentActivityName=".ChooseGameModeActivity">
 			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".ChooseGameModeActivity" />
+		</activity>
+
+		<activity android:name=".ChooseLexiconActivity"
+			android:screenOrientation="portrait"
+			android:configChanges="orientation|keyboardHidden"
+			android:parentActivityName=".MainMenuActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
 		</activity>
 
 		<activity android:name=".GameActivity"
