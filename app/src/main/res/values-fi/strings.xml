@@ -14,8 +14,8 @@
     <string name="pref_dict_fr_fr">ranska</string>
     <string name="pref_dict_hu">unkari</string>
     <string name="found_words">Löydetyt sanat</string>
-    <string name="score">PISTEET</string>
-    <string name="words">SANAT</string>
+    <string name="score">Pisteet</string>
+    <string name="words">Sanat</string>
     <string name="view_word"><u>Näytä</u></string>
     <string name="about">Tietoja</string>
     <string name="button_ok">OK</string>
@@ -44,7 +44,7 @@
     <string name="pref_dict_it">italia</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Internet</string>
     <string name="pref_definitionProvider_dialog">Valitse määritelmien tarjoaja</string>
-    <string name="pref_definitionProvider_summary">Valitse käytettävä määritelmien tarjoaja. Jos valittua tarjoajaa ei ole asennettu, DuckDuckGota käytetään.</string>
+    <string name="pref_definitionProvider_summary">Valitse käytettävä määritelmien tarjoaja. Jos valittua tarjoajaa ei ole asennettu, internet-lähdettä kuten Wiktionarya käytetään.</string>
     <string name="pref_definitionProvider">Määritelmien tarjoaja</string>
     <string name="pref_breakdown_summary">Näytetäänkö sanojen määrä eripituisille sanoille erikseen</string>
     <string name="pref_breakdown">Näytä sanojen pituuksien erittely</string>
@@ -87,4 +87,11 @@
     <string name="pref_boardSize_summary">Valitse pelilaudan koko</string>
     <string name="pref_dict_pt_BR">portugali (Brasilia)</string>
     <string name="pref_boardSize">Laudan koko</string>
+    <string name="sort">Lajittele</string>
+    <string name="theme_high_contrast">Korkea kontrasti</string>
+    <string name="theme_dark">Tumma</string>
+    <string name="theme_light">Vaalea</string>
+    <string name="pref_theme_dialog">Valitse teema</string>
+    <string name="pref_theme">Teema</string>
+    <string name="time">Aika</string>
 </resources>
