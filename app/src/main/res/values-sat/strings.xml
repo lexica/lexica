@@ -1,2 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="sort">ᱥᱚᱨᱴ</string>
+    <string name="theme_high_contrast">ᱦᱟᱭ ᱠᱚᱱᱴᱨᱟᱥᱴ</string>
+    <string name="theme_dark">ᱧᱩᱛ</string>
+    <string name="theme_light">ᱟᱨᱥᱟᱞ</string>
+    <string name="pref_theme_dialog">ᱛᱷᱤᱢ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_theme">ᱛᱷᱤᱢ</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">ᱚᱱᱞᱟᱭᱤᱱ</string>
+    <string name="pref_definitionProvider_dialog">ᱩᱯᱴᱩᱢ ᱮᱢᱚᱜᱼᱤᱡ ᱪᱚᱭᱚᱱ ᱮᱢ</string>
+    <string name="pref_definitionProvider_summary">ᱩᱯᱨᱩᱢ ᱮᱢᱚᱜᱼᱤᱡ ᱪᱚᱭᱚᱱ ᱮᱢ ᱾ ᱡᱩᱫᱤ ᱪᱚᱭᱚᱱ ᱟᱠᱟᱱ ᱮᱢᱚᱜᱼᱤᱡ ᱵᱟᱝ ᱪᱚᱭᱚᱱ ᱠᱷᱟᱱ, ᱚᱱᱞᱟᱭᱤᱱ ᱥᱨᱚᱛ ᱣᱤᱠᱤᱥᱭᱚᱱᱟᱨᱭ ᱵᱮᱵᱷᱟᱨᱚᱜᱼᱟ ᱾</string>
+    <string name="pref_definitionProvider">ᱩᱯᱨᱩᱢ ᱮᱢᱚᱜᱼᱤᱡ</string>
+    <string name="pref_breakdown_summary">ᱟᱲᱟ ᱦᱤᱥᱟᱹᱵ ᱫᱚ ᱦᱤᱥᱟᱹᱵ ᱟᱲᱟ ᱡᱤᱞᱤᱝ ᱠᱟᱛᱮ ᱫᱮᱠᱷᱟᱣᱮᱫ ᱟᱭ ᱥᱮ ᱵᱟᱝᱟ</string>
+    <string name="pref_breakdown">ᱟᱲᱟ ᱡᱤᱞᱤᱧ ᱨᱟᱹᱯᱩᱫ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱢᱮ</string>
+    <string name="reset_scores_prompt">ᱟᱢ ᱡᱷᱚᱛᱚ ᱞᱮᱠᱷᱟ ᱛᱮ ᱡᱷᱚᱛᱚ ᱠᱷᱮᱞ ᱠᱚ ᱨᱮᱭᱟᱜ ᱢᱚᱰ ᱠᱚ ᱡᱷᱚᱛᱚ ᱦᱟᱭ ᱥᱠᱚᱨ ᱠᱚ ᱐ ᱥᱟᱱᱟᱢ ᱠᱟᱱᱟ ᱥᱮ\?</string>
+    <string name="high_scores_reset">ᱦᱟᱭ ᱥᱠᱚᱨ ᱫᱚ ᱨᱤᱥᱮᱴ ᱟᱠᱟᱱᱟ ᱾</string>
+    <string name="pref_resetScores">ᱦᱟᱭ ᱥᱠᱚᱨ ᱠᱚ ᱨᱤᱥᱚᱴ ᱢᱮ</string>
+    <string name="pref_resetScores_summary">"ᱪᱮᱛᱟᱱ ᱥᱟᱡᱟᱣ ᱠᱷᱚᱱ ᱨᱮᱭᱟᱜ ᱢᱮᱞ ᱛᱮ ᱦᱟᱭ ᱥᱠᱚᱨ ᱴᱨᱟᱠ ᱚᱜᱼᱟ ᱾ ᱡᱷᱚᱛᱚ ᱥᱠᱚᱨ ᱠᱚ ᱐ ᱛᱮ ᱨᱤᱥᱮᱴ ᱞᱟᱹᱜᱤᱫ  ᱚᱛᱟᱭ ᱢᱮ ᱾"</string>
+    <string name="high_score">ᱡᱟᱭ ᱥᱠᱚᱨ</string>
+    <string name="total_score">ᱢᱩᱴ ᱥᱠᱚᱨ:</string>
+    <string name="total_words">ᱢᱩᱴ ᱟᱲᱟ ᱠᱚ:</string>
+    <string name="missed_words">ᱟᱲᱟ ᱠᱚ ᱵᱟᱹᱱᱩᱜᱼᱟ</string>
+    <string name="found_words">ᱟᱲᱟ ᱠᱚ ᱧᱟᱢ ᱮᱱᱟ</string>
+    <string name="time">ᱥᱚᱢᱚᱭ</string>
+    <string name="score">ᱥᱠᱚᱨ</string>
+    <string name="words">ᱟᱲᱟ</string>
+    <string name="define_word"><u>ᱰᱤᱯᱷᱟᱭᱤᱱ</u> </string>
+    <string name="view_word"><u>ᱫᱮᱠᱷᱟᱣ</u></string>
+    <string name="hide_unique">ᱱᱟᱶᱟ ᱟᱲᱟ ᱩᱠᱩᱭ ᱢᱮ</string>
+    <string name="show_unique">ᱱᱟᱶᱟ ᱟᱲᱟ ᱫᱮᱠᱷᱟᱣ ᱢᱮ</string>
+    <string name="dialog_about_content">ᱟᱲᱟ ᱥᱟᱲᱮ ᱪᱷᱚ ᱞᱟᱹᱜᱤᱫ ᱥᱠᱨᱤᱱ ᱠᱚ ᱴᱤᱯᱟᱹᱣ ᱢᱮ ᱟᱨ ᱠᱟᱹᱴᱩᱵ ᱛᱮ ᱥᱩᱨ ᱯᱩᱱ ᱠᱚᱬ ᱩᱪᱟᱹᱲ ᱢᱮ ᱾ ᱟᱢ ᱴᱷᱮᱱ ᱯᱮᱭ ᱴᱤᱯᱤᱡ ᱜᱮ ᱢᱮᱱᱟᱜᱼᱟ ᱡᱷᱚᱛᱚ ᱯᱨᱚᱵᱞᱮᱢ ᱴᱷᱤᱠ ᱠᱟᱹᱜᱤᱫ ᱾
+\n
+\nᱥᱠᱚᱨᱤᱝ:
+\n᱔x᱔ ᱵᱚᱰ ᱠᱚ, ᱟᱲᱟ ᱫᱚ ᱯᱮ ᱞᱮᱴᱚᱨ ᱡᱤᱞᱤᱧ ᱛᱟᱦᱮᱸᱱ ᱢᱟ ᱾ ᱕x᱕ ᱵᱚᱰ ᱨᱮ, ᱟᱲᱟ ᱠᱚ ᱯᱩᱱ ᱞᱮᱴᱚᱨ ᱦᱩᱭᱩᱜ ᱠᱟᱛᱷᱟ ᱾ ᱟᱲᱟ ᱡᱩᱫᱤ ᱯᱮ ᱟᱨ ᱵᱟᱝ ᱯᱩᱱ ᱞᱮᱴᱚᱨ ᱛᱟᱦᱮᱸᱱ ᱠᱷᱟᱱ ᱢᱤᱫᱴᱟᱹᱝ ᱯᱚᱭᱮᱸᱴ ᱾ ᱡᱤᱞᱤᱧ ᱟᱲᱟ ᱠᱷᱟᱱ ᱟᱨᱦᱚᱸ ᱯᱚᱮᱸᱱᱴ ᱠᱚ ᱧᱟᱢᱟᱢ ᱾ ᱯᱨᱚᱯᱟᱹᱨ ᱱᱟᱩᱱ ᱫᱚ ᱵᱟᱝ ᱦᱤᱥᱟᱹᱵᱚᱜᱼᱟ ᱾
+\n
+\n</string>
+    <string name="hide_missed">ᱵᱟᱹᱱᱩᱜ ᱠᱟᱱ ᱟᱲᱟ ᱠᱚ ᱩᱠᱩᱭ ᱢᱮ</string>
+    <string name="show_missed">ᱵᱟᱹᱱᱩᱜ ᱠᱟᱱ ᱟᱲᱟ ᱠᱚ ᱫᱮᱠᱷᱟᱣᱢᱮ</string>
+    <string name="about">ᱵᱟᱵᱚᱛ</string>
+    <string name="button_ok">ᱴᱷᱤᱠ</string>
+    <string name="menu_end_game">ᱠᱷᱮᱞ ᱵᱚᱸᱫ ᱮᱱᱟ</string>
+    <string name="menu_save_game">ᱠᱷᱮᱞ ᱥᱟᱸᱪᱟᱣ</string>
+    <string name="menu_rotate_board">ᱵᱚᱰ ᱟᱹᱪᱩᱨ ᱢᱮ</string>
+    <string name="dialog_about_title">ᱞᱮᱠᱥᱤᱠᱟ ᱵᱟᱵᱚᱛ</string>
+    <string name="dialog_cancel">ᱵᱟᱹᱰᱨᱟᱹ</string>
+    <string name="dialog_ok">ᱴᱷᱤᱠ</string>
+    <string name="dialog_no_saved">ᱪᱮᱫ ᱦᱚᱸ ᱠᱷᱮᱞ ᱵᱟᱭ ᱥᱟᱸᱪᱟᱣ ᱟᱠᱟᱱᱟ ᱾ ᱟᱢ ᱡᱩᱫᱤ ᱱᱚᱶᱟ ᱠᱷᱚᱵᱟᱨ ᱯᱟᱲᱦᱟᱣ ᱮᱫ ᱟᱢ, ᱠᱤᱪᱷᱤ ᱨᱟᱹᱯᱩᱫ ᱠᱚᱜᱼᱟ ᱾</string>
+    <string name="pref_sounds_summary">ᱥᱟᱲᱮ ᱤᱯᱷᱮᱠᱼᱴ ᱮᱢ ᱮᱱᱟ ᱥᱮ ᱵᱟᱝᱟ</string>
+    <string name="pref_sounds">ᱥᱟᱲᱮ ᱮᱢᱮᱱᱟ</string>
+    <string name="hint_both">ᱵᱟᱨᱭᱟ</string>
+    <string name="hint_colour">ᱴᱟᱭᱤᱞ ᱨᱚᱸᱝ</string>
+    <string name="tile_count">ᱟᱲᱟ ᱟᱮᱭᱟᱜ ᱮᱞ</string>
+    <string name="hint_none">ᱵᱚᱸᱫᱚ</string>
+    <string name="pref_hintMode_dialog">ᱦᱤᱸᱴ ᱢᱚᱰ</string>
+    <string name="pref_hintMode_summary">ᱞᱮᱴᱚᱨ ᱨᱮ ᱛᱤᱱᱟᱸᱝ ᱟᱲᱟ ᱠᱚ ᱢᱮᱱᱟᱜᱼᱟ ᱫᱮᱠᱷᱟᱣᱟᱭ</string>
+    <string name="pref_hintMode">ᱦᱤᱸᱴ ᱢᱚᱰ</string>
+    <string name="letter_points">ᱪᱤᱴᱷᱤ ᱯᱚᱮᱸᱴ ᱠᱚ</string>
+    <string name="word_length">ᱟᱲᱟ ᱞᱚᱸᱵᱟ</string>
+    <string name="pref_scoreType_dialog">ᱥᱠᱚᱨᱤᱝ ᱯᱨᱚᱠᱟᱨ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_scoreType_summary">ᱥᱠᱚᱨᱤᱝ ‌ᱯᱨᱚᱠᱟᱨ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_scoreType">ᱥᱠᱚᱨᱤᱝ ᱯᱨᱚᱠᱟᱨ</string>
+    <string name="time_30m">᱓᱐ ᱴᱤᱯᱤᱡᱠᱚ</string>
+    <string name="time_20m">᱒᱐ ᱴᱤᱯᱤᱡᱠᱚ</string>
+    <string name="time_10m">᱑᱐ ᱴᱤᱯᱤᱡᱠᱚ</string>
+    <string name="time_5m">᱕ ᱴᱤᱯᱤᱡᱠᱚ</string>
+    <string name="time_3m">᱓ ᱴᱤᱯᱤᱡᱠᱚ</string>
+    <string name="pref_timeLimit_dialog">ᱥᱚᱢᱚᱭ ᱞᱤᱢᱤᱴ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_timeLimit_summary">ᱥᱚᱢᱚᱭ ᱞᱤᱢᱤᱴ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_timeLimit">ᱥᱚᱢᱚᱭ ᱞᱤᱢᱤᱴ</string>
+    <string name="pref_boardSize_dialog">ᱵᱚᱰ ᱢᱟᱯ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_boardSize_summary">ᱵᱚᱰ ᱢᱟᱯ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_boardSize">ᱵᱚᱰ ᱢᱟᱯ</string>
+    <string name="pref_dict_beta">%1$s (ᱵᱮᱴᱟ)</string>
+    <string name="pref_dict_us">ᱤᱝᱨᱡᱤ (ᱭᱩᱮᱥ)</string>
+    <string name="pref_dict_uk_ua">ᱭᱩᱠᱨᱮᱱᱤᱭᱟᱹᱱ</string>
+    <string name="pref_dict_uk">ᱤᱝᱨᱡᱤ(ᱭᱩ. ᱠ)</string>
+    <string name="pref_dict_ru">ᱨᱟᱹᱥᱥᱤᱭᱟᱹᱱ</string>
+    <string name="pref_dict_pt_BR">ᱯᱚᱨᱛᱩᱜᱤᱡ(ᱵᱨᱟᱡᱤᱞ)</string>
+    <string name="pref_dict_pl">ᱯᱚᱞᱤᱥᱷ</string>
+    <string name="pref_dict_nl">ᱰᱟᱹᱪ</string>
+    <string name="pref_dict_ja">ᱡᱟᱯᱟᱱᱤᱡ</string>
+    <string name="pref_dict_it">ᱤᱴᱟᱞᱤᱭᱟᱱ</string>
+    <string name="pref_dict_hu">ᱦᱟᱹᱝᱜᱟᱨᱤᱭᱟᱹᱱ</string>
+    <string name="pref_dict_fr_fr">ᱯᱷᱨᱮᱸᱪ</string>
+    <string name="pref_dict_fa">ᱯᱟᱹᱨᱥᱤᱭᱟᱹᱱ</string>
+    <string name="pref_dict_es">ᱥᱯᱮᱱᱤᱥᱷ</string>
+    <string name="pref_dict_de_de">ᱡᱟᱹᱨᱢᱟᱹᱱ</string>
+    <string name="pref_dict_ca">ᱠᱟᱴᱟᱞᱟᱱ</string>
+    <string name="pref_dict_dialog">ᱞᱮᱠᱥᱤᱠᱚᱱ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_dict_summary">ᱠᱷᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱯᱟᱹᱨᱥᱤ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_dict">ᱞᱤᱠᱥᱤᱠᱚᱱ</string>
+    <string name="prefs">ᱠᱩᱥᱤᱠᱚ</string>
+    <string name="restore_game">ᱠᱷᱮᱞ ᱫᱩᱦᱲᱟᱹ ᱫᱚᱦᱚ</string>
+    <string name="new_game">ᱱᱟᱶᱟ ᱠᱷᱮᱞ</string>
+    <string name="app_name">ᱞᱮᱠᱥᱠᱟ</string>
+</resources>
