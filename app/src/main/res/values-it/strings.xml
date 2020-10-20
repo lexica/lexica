@@ -21,26 +21,17 @@
     <string name="time_30m">30 minuti</string>
     <string name="pref_sounds">Suoni abilitati</string>
     <string name="pref_sounds_summary">Se i suoni sono abilitati oppure no</string>
-    <string name="dialog_no_saved">Nessuna partita salvata.
-\nSe stai leggendo
-\nquesto messaggio qualcosa non ha funzionato.</string>
+    <string name="dialog_no_saved">Nessuna partita salvata. Se stai leggendo questo messaggio qualcosa non ha funzionato.</string>
     <string name="dialog_ok">Accetta</string>
     <string name="dialog_cancel">Annulla</string>
     <string name="dialog_about_title">Informazioni su Lexica</string>
     <string name="pref_dict">Lessico</string>
-    <string name="dialog_about_content">"
-\n Tocca lo schermo e traccia col dito per scrivere le parole.
-\nPuoi passare da una casella ad un\'altra adiacente in verticale, orizzontale o diagonale.
-\nHai tre minuti per trovare più parole che puoi.
+    <string name="dialog_about_content">Tocca lo schermo e traccia col dito per scrivere le parole. Puoi passare da una casella ad un\'altra adiacente in verticale, orizzontale o diagonale. Hai tre minuti per trovare più parole che puoi.
 \n
-\nPunteggio
-\nIn una tavola 4x4 le parole devono essere lunghe almeno tre lettere.
-\nIn una tavola 5x5 le parole devono essere lunghe almeno quattro lettere.
-\nLe parole che hanno tre o quattro lettere valgono un punto, parole più lunghe valgono più punti.
-\nI nomi propri non sono validi.
+\nPunteggio:
+\nIn una tavola 4×4 le parole devono essere lunghe almeno tre lettere. In una tavola 5×5 le parole devono essere lunghe almeno quattro lettere. Le parole che hanno tre o quattro lettere valgono un punto, parole più lunghe valgono più punti. I nomi propri non sono validi.
 \n
-\n
-\n "</string>
+\n</string>
     <string name="menu_rotate_board">Ruota la tavola</string>
     <string name="menu_save_game">Salva la partita</string>
     <string name="menu_end_game">Termina la partita</string>
@@ -52,7 +43,7 @@
     <string name="hide_unique">Nascondi le parole non ripetute</string>
     <string name="view_word"><u>Guarda</u></string>
     <string name="define_word"><u>Definisci</u> </string>
-    <string name="words">PAROLE</string>
+    <string name="words">Parole</string>
     <string name="found_words">Parole trovate</string>
     <string name="missed_words">Parole non trovate</string>
     <string name="total_words">Parole totali:</string>
@@ -63,7 +54,7 @@
     <string name="pref_dict_ru">Russo</string>
     <string name="pref_dict_pl">Polacco</string>
     <string name="high_score">Punteggio più alto</string>
-    <string name="score">PUNTEGGIO</string>
+    <string name="score">Punteggio</string>
     <string name="hint_both">Tutti e due</string>
     <string name="hint_colour">Colore del bordo</string>
     <string name="tile_count">Numero di parole</string>
@@ -93,7 +84,14 @@
     <string name="pref_breakdown_summary">Se il contatore di parole mostri i conteggi per lunghezza di parola</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">In linea</string>
     <string name="pref_definitionProvider_dialog">Seleziona il fornitore di definizioni</string>
-    <string name="pref_definitionProvider_summary">Seleziona un fornitore di definizioni per usarlo. DuckDuckGo verrà utilizzato se il fornitore selezionato non è installato.</string>
+    <string name="pref_definitionProvider_summary">Seleziona un fornitore di definizioni per usarlo. Se il fornitore selezionato non è installato, una fonte in linea come il Wikizionario verrà utilizzata.</string>
     <string name="pref_definitionProvider">Fornitore di definizioni</string>
     <string name="pref_dict_pt_BR">Portoghese (Brasile)</string>
+    <string name="sort">Ordina</string>
+    <string name="theme_high_contrast">Contrasto elevato</string>
+    <string name="theme_dark">Scuro</string>
+    <string name="theme_light">Chiaro</string>
+    <string name="pref_theme_dialog">Seleziona un tema</string>
+    <string name="pref_theme">Tema</string>
+    <string name="time">Tempo</string>
 </resources>
