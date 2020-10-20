@@ -48,23 +48,23 @@
 \nAuf 4×4 großen Spielfeldern müssen Wörter mindestens drei Buchstaben lang sein, auf 5×5 großen Spielfeldern mindestens vier Buchstaben lang. Wörter, die drei oder vier Buchstaben lang sind, zählen einen Punkt. Längere Wörter zählen mehr Punkte. Eigennamen zählen nicht.
 \n
 \n</string>
-    <string name="pref_scoreType">Bewertungstyp</string>
-    <string name="pref_scoreType_summary">Einen Bewertungstyp auswählen</string>
-    <string name="pref_scoreType_dialog">Bewertungstyp auswählen</string>
+    <string name="pref_scoreType">Wertungsmodus</string>
+    <string name="pref_scoreType_summary">Wertungsmodus auswählen</string>
+    <string name="pref_scoreType_dialog">Wähle ein Wertungsmodus</string>
     <string name="word_length">Wortlänge</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="high_score">Highscore</string>
-    <string name="pref_resetScores_summary">Highscore wird für jede Kombination der oben genannten Einstellungen aufgezeichnet. Antippen, um alle Ergebnisse auf Null zurückzusetzen.</string>
-    <string name="pref_resetScores">Highscore zurücksetzen</string>
-    <string name="high_scores_reset">Highscore wurde zurückgesetzt</string>
-    <string name="reset_scores_prompt">Möchten Sie wirklich alle Highscores für alle Spielmodi auf Null zurücksetzen?</string>
+    <string name="high_score">Höchste Punktzahl</string>
+    <string name="pref_resetScores_summary">Die höchste Punktzahl wird für jede Kombination der oben genannten Einstellungen aufgezeichnet. Antippen, um alle Ergebnisse auf Null zurückzusetzen.</string>
+    <string name="pref_resetScores">Höchste Punktzahlen zurücksetzen</string>
+    <string name="high_scores_reset">Höchste Punktzahl wurde zurückgesetzt</string>
+    <string name="reset_scores_prompt">Bist du dir sicher, dass du alle höchste Punktzahlen in allen Spielmodi zurücksetzen möchtest\?</string>
     <string name="pref_breakdown">Wortlängen-Aufschlüsselung anzeigen</string>
-    <string name="letter_points">Buchstabenwertung</string>
-    <string name="pref_hintMode">Hinweis Modus</string>
+    <string name="letter_points">Buchstabenpunkte</string>
+    <string name="pref_hintMode">Hinweise</string>
     <string name="pref_hintMode_summary">Zeigt die Anzahl Wörter in der jeder Buchstabe verwendet werden kann</string>
     <string name="score">Punkte</string>
     <string name="pref_definitionProvider">Wörterbuch</string>
-    <string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird auf DuckDuckGo zurückgegriffen.</string>
+    <string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird eine Online-Quelle wie Wiktionary verwendet.</string>
     <string name="pref_definitionProvider_dialog">Wörterbuchauswahl</string>
     <string name="pref_dict_de_de">Deutsch</string>
     <string name="pref_dict_nl">Niederländisch</string>
@@ -78,10 +78,10 @@
     <string name="pref_dict_beta">%1$s (Beta)</string>
     <string name="pref_dict_hu">Ungarisch</string>
     <string name="pref_breakdown_summary">Wählen, ob bei Zahl der zu findenden Wörter zusätzlich die Wortlänge angezeigt wird</string>
-    <string name="pref_hintMode_dialog">Hinweis Modus</string>
+    <string name="pref_hintMode_dialog">Hinweise</string>
     <string name="hint_none">Deaktiviert</string>
-    <string name="tile_count">Zahl der Wörter</string>
-    <string name="hint_colour">Feld Farbe</string>
+    <string name="tile_count">Anzahl Wörter</string>
+    <string name="hint_colour">Farbe der Kacheln</string>
     <string name="hint_both">Beide</string>
     <string name="pref_dict_uk_ua">Ukrainisch</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
@@ -92,4 +92,6 @@
     <string name="pref_theme_dialog">Thema auswählen</string>
     <string name="pref_theme">Thema</string>
     <string name="time">Zeit</string>
+    <string name="sort">Sortieren</string>
+    <string name="theme_high_contrast">Hoher Kontrast</string>
 </resources>
