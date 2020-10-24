@@ -37,6 +37,8 @@ public class MigrateHighScoresFromPreferencesTest {
         // Given we are migrating during startup for a new version, we really don't want to crash, so it should
         // return null if it gets junk somehow.
         assertNull(migration.maybeGameModeFromPref("INVALID?", "15"));
+        assertNull(migration.maybeGameModeFromPref(null, "15"));
+        assertNull(migration.maybeGameModeFromPref("US36L600", null));
 
         MigrateHighScoresFromPreferences.LegacyHighScore usLargeBoard = migration.maybeGameModeFromPref("US36L600", 8);
         assertEquals(Language.from("en_US").getName(), usLargeBoard.getLanguage().getName());

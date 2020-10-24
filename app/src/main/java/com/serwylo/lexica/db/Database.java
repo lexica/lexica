@@ -56,7 +56,6 @@ public abstract class Database extends RoomDatabase {
                 ResultDao resultDao = instance.resultDao();
 
                 new MigrateHighScoresFromPreferences(context).initialiseDb(gameModeDao, resultDao);
-
             });
         }
     }

@@ -1,6 +1,7 @@
 package com.serwylo.lexica;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -38,12 +39,16 @@ public class ChooseGameModeActivity extends AppCompatActivity {
         binding = ChooseGameModeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.gameModeList.setAdapter(new Adapter());
         binding.gameModeList.setLayoutManager(new LinearLayoutManager(this));
         binding.gameModeList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        AsyncTask.execute(() -> {
+            GameMode current = new GameModeRepository(getApplication()).loadCurrentGameMode();
+            runOnUiThread(() -> binding.gameModeList.setAdapter(new Adapter(current)));
+        });
     }
 
     @Override
@@ -69,7 +74,9 @@ public class ChooseGameModeActivity extends AppCompatActivity {
 
         private List<GameMode> gameModes = new ArrayList<>();
 
-        public Adapter() {
+        private GameMode selectedItem;
+
+        public Adapter(GameMode selectedItem) {
             Database.get(getApplicationContext())
                     .gameModeDao()
                     .getAllGameModes()
@@ -77,6 +84,8 @@ public class ChooseGameModeActivity extends AppCompatActivity {
                         Adapter.this.gameModes = gameModes;
                         notifyDataSetChanged();
                     });
+
+            this.selectedItem = selectedItem;
         }
 
         @NonNull
@@ -89,7 +98,7 @@ public class ChooseGameModeActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             GameMode mode = gameModes.get(position);
-            holder.bind(mode, v -> selectGameMode(mode));
+            holder.bind(mode, selectedItem.getGameModeId() == mode.getGameModeId(), v -> selectGameMode(mode));
         }
 
         @Override
@@ -113,7 +122,9 @@ public class ChooseGameModeActivity extends AppCompatActivity {
             this.binding = viewBinding;
         }
 
-        public void bind(GameMode gameMode, View.OnClickListener listener) {
+        public void bind(GameMode gameMode, boolean isSelected, View.OnClickListener listener) {
+            binding.getRoot().setSelected(isSelected);
+
             binding.label.setText(gameMode.getLabel());
             binding.description.setText(gameMode.isCustom() ? "Custom game mode" : gameMode.getDescription());
 

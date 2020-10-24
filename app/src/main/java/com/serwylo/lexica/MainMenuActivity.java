@@ -104,6 +104,11 @@ public class MainMenuActivity extends Activity {
 
     private void load() {
         AsyncTask.execute(() -> {
+            // Force migrations to run prior to querying the database.
+            // This is required because we populate default game modes, for which we need at least one to be present.
+            // https://stackoverflow.com/a/55067991
+            Database.get(this).getOpenHelper().getReadableDatabase();
+
             String languageCode = new Util().getLexiconString(this);
             Language language = Language.fromOrNull(languageCode);
 

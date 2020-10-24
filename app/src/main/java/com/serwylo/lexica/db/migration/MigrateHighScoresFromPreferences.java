@@ -155,6 +155,12 @@ public class MigrateHighScoresFromPreferences {
      */
     LegacyHighScore maybeGameModeFromPref(String key, Object value) {
         Log.d(TAG, "Checking existing preference \"" + key + "\" to see if it is a high score.");
+
+        if (key == null) {
+            Log.w(TAG, "Key should have been supplied, but got null.");
+            return null;
+        }
+
         Pattern pattern = Pattern.compile("^(\\w\\w(_\\w\\w)?)(\\d+)([WL])(\\d+)$");
         Matcher matcher = pattern.matcher(key);
         if (!matcher.find()) {
@@ -163,6 +169,11 @@ public class MigrateHighScoresFromPreferences {
         }
 
         Log.i(TAG, "Found existing high score preference \"" + key + "\" with value " + value);
+
+        if (!(value instanceof Integer)) {
+            Log.w(TAG, "Expected " + value + " to be an integer.");
+            return null;
+        }
 
         String langCode = matcher.group(1);
         int boardSize = Integer.parseInt(Objects.requireNonNull(matcher.group(3)));

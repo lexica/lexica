@@ -4,6 +4,9 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
+	android:background="@drawable/selectable_item_background_light"
+	android:focusable="true"
+	android:clickable="true"
 	xmlns:fancy="http://schemas.android.com/apk/res-auto"
 	android:padding="8dp"> <!-- TODO: Why doesn't this work with ?attr/padding -->
 
@@ -12,6 +15,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:textSize="22sp"
+		android:textColor="?attr/game__score__text_colour"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		tools:text="Marathon" />
@@ -20,6 +24,7 @@
 		android:id="@+id/description"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:textColor="?attr/game__score__text_colour"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/label"
 		android:paddingBottom="8dp"
@@ -32,7 +37,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		fancy:fb_fontIconResource="&#xf017;"
-		fancy:fb_textColor="@android:color/black"
+		fancy:fb_textColor="?attr/game__score__text_colour"
 		fancy:fb_defaultColor="@android:color/transparent"
 		fancy:fb_text="3 mins"
 		fancy:fb_iconPosition="top" />
@@ -45,7 +50,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		fancy:fb_fontIconResource="&#xf009;"
-		fancy:fb_textColor="@android:color/black"
+		fancy:fb_textColor="?attr/game__score__text_colour"
 		fancy:fb_defaultColor="@android:color/transparent"
 		fancy:fb_text="3x3"
 		fancy:fb_iconPosition="top" />
@@ -58,7 +63,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		fancy:fb_fontIconResource="&#xf091;"
-		fancy:fb_textColor="@android:color/black"
+		fancy:fb_textColor="?attr/game__score__text_colour"
 		fancy:fb_defaultColor="@android:color/transparent"
 		fancy:fb_text="Letter"
 		fancy:fb_iconPosition="top" />
@@ -71,7 +76,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		fancy:fb_fontIconResource="&#xf160;"
-		fancy:fb_textColor="@android:color/black"
+		fancy:fb_textColor="?attr/game__score__text_colour"
 		fancy:fb_defaultColor="@android:color/transparent"
 		fancy:fb_text="≥ 3"
 		fancy:fb_iconPosition="top" />
@@ -84,7 +89,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		fancy:fb_fontIconResource="&#xf0fa;"
-		fancy:fb_textColor="@android:color/black"
+		fancy:fb_textColor="?attr/game__score__text_colour"
 		fancy:fb_defaultColor="@android:color/transparent"
 		fancy:fb_text="No hints"
 		fancy:fb_iconPosition="top" />
