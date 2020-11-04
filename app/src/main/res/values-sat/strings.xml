@@ -79,19 +79,19 @@
     <string name="pref_dict_pt_BR">ᱯᱚᱨᱛᱩᱜᱤᱡ(ᱵᱨᱟᱡᱤᱞ)</string>
     <string name="pref_dict_pl">ᱯᱚᱞᱤᱥᱷ</string>
     <string name="pref_dict_nl">ᱰᱟᱹᱪ</string>
-    <string name="pref_dict_ja">ᱡᱟᱯᱟᱱᱤᱡ</string>
+    <string name="pref_dict_ja">ᱡᱟᱯᱟᱱᱤᱡᱽ</string>
     <string name="pref_dict_it">ᱤᱴᱟᱞᱤᱭᱟᱱ</string>
     <string name="pref_dict_hu">ᱦᱟᱹᱝᱜᱟᱨᱤᱭᱟᱹᱱ</string>
     <string name="pref_dict_fr_fr">ᱯᱷᱨᱮᱸᱪ</string>
     <string name="pref_dict_fa">ᱯᱟᱹᱨᱥᱤᱭᱟᱹᱱ</string>
-    <string name="pref_dict_es">ᱥᱯᱮᱱᱤᱥᱷ</string>
+    <string name="pref_dict_es">ᱥᱯᱮᱱᱤᱥ</string>
     <string name="pref_dict_de_de">ᱡᱟᱹᱨᱢᱟᱹᱱ</string>
     <string name="pref_dict_ca">ᱠᱟᱴᱟᱞᱟᱱ</string>
-    <string name="pref_dict_dialog">ᱞᱮᱠᱥᱤᱠᱚᱱ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
-    <string name="pref_dict_summary">ᱠᱷᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱯᱟᱹᱨᱥᱤ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
+    <string name="pref_dict_dialog">ᱞᱮᱠᱥᱤᱠᱚᱱ ᱪᱚᱭᱚᱱ ᱢᱮᱸ</string>
+    <string name="pref_dict_summary">ᱠᱷᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱯᱟᱹᱨᱥᱤ ᱪᱚᱭᱚᱱ ᱢᱮᱸ</string>
     <string name="pref_dict">ᱞᱤᱠᱥᱤᱠᱚᱱ</string>
     <string name="prefs">ᱠᱩᱥᱤᱠᱚ</string>
-    <string name="restore_game">ᱠᱷᱮᱞ ᱫᱩᱦᱲᱟᱹ ᱫᱚᱦᱚ</string>
+    <string name="restore_game">ᱠᱷᱮᱞ ᱫᱩᱦᱲᱟᱹ ᱫᱚᱦᱚᱭ ᱢᱮᱸ</string>
     <string name="new_game">ᱱᱟᱶᱟ ᱠᱷᱮᱞ</string>
     <string name="app_name">ᱞᱮᱠᱥᱠᱟ</string>
 </resources>
