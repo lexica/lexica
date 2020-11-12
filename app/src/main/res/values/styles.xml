@@ -12,7 +12,7 @@
         <item name="lexicaViewStyle">@style/AppTheme.HighContrast.Base</item>
     </style>
 
-    <style name="AppTheme.HighContrast.Base" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme.HighContrast.Base" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@android:color/black</item>
         <item name="colorPrimaryDark">@android:color/black</item>
         <item name="actionBarStyle">@style/Widget.AppCompat.ActionBar.Solid</item>
@@ -43,6 +43,10 @@
         <item name="game__timer__end_foreground_colour">@android:color/black</item>
         <item name="game__score__heading_text_colour">@android:color/black</item>
         <item name="game__score__text_colour">@android:color/black</item>
+
+        <item name="list__selectable_item_background">@drawable/selectable_item_background_high_contrast</item>
+        <item name="list__background_colour">@color/white</item>
+        <item name="list__text_colour">@color/grey_1</item>
 
         <item name="score__background_colour">@android:color/white</item>
         <item name="score__values_background_colour">@android:color/white</item>
@@ -90,7 +94,7 @@
         <!-- END DIMENSIONS -->
     </style>
 
-    <style name="AppTheme.Dark.Base" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme.Dark.Base" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="actionBarStyle">@style/Widget.AppCompat.ActionBar.Solid</item>
@@ -121,6 +125,10 @@
         <item name="game__timer__end_foreground_colour">@color/orange_2</item>
         <item name="game__score__heading_text_colour">@color/yellow_1</item>
         <item name="game__score__text_colour">@color/yellow_1</item>
+
+        <item name="list__selectable_item_background">@drawable/selectable_item_background_dark</item>
+        <item name="list__background_colour">@color/grey_1</item>
+        <item name="list__text_colour">@color/yellow_1</item>
 
         <item name="score__background_colour">@color/grey_2</item>
         <item name="score__values_background_colour">@color/orange_2</item>
@@ -168,7 +176,7 @@
         <!-- END DIMENSIONS -->
     </style>
 
-    <style name="AppTheme.Light.Base" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.Light.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
@@ -200,6 +208,10 @@
         <item name="game__timer__end_foreground_colour">@color/orange_2</item>
         <item name="game__score__heading_text_colour">@color/white</item>
         <item name="game__score__text_colour">@color/white</item>
+
+        <item name="list__selectable_item_background">@drawable/selectable_item_background_light</item>
+        <item name="list__background_colour">@color/orange_3</item>
+        <item name="list__text_colour">@color/white</item>
 
         <item name="score__background_colour">@color/orange_2</item>
         <item name="score__values_background_colour">@color/orange_2</item>

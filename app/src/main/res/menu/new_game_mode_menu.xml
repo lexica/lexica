@@ -4,6 +4,6 @@
 	<item
 		android:id="@+id/save"
 		android:icon="@drawable/ic_save"
-		android:title="Save"
+		android:title="@string/menu_save_game_mode"
 		app:showAsAction="always" />
 </menu>

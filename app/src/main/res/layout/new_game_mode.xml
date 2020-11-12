@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/list__background_colour"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fancy="http://schemas.android.com/apk/res-auto">
 
@@ -24,8 +25,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         android:padding="24dp"
-        android:hint="Name"
-        app:helperText="Used when choosing game modes and recording high scores.">
+        android:hint="@string/input_game_mode_name_hint"
+        app:helperText="@string/input_game_mode_name_description">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/label"
@@ -43,7 +44,7 @@
         android:layout_height="wrap_content"
         fancy:fb_fontIconSize="30dp"
         fancy:fb_fontIconResource="&#xf017;"
-        fancy:fb_textColor="@android:color/black"
+        fancy:fb_textColor="?attr/list__text_colour"
         fancy:fb_defaultColor="@android:color/transparent"
         fancy:fb_text="@string/pref_timeLimit"
         fancy:fb_iconPosition="top" />
@@ -52,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@+id/time"
-        android:hint="Minutes"
+        app:helperText="@string/input_game_mode_minutes_description"
         app:layout_constraintStart_toEndOf="@id/form_label"
         app:layout_constraintTop_toTopOf="@id/status_time"
         app:layout_constraintBottom_toBottomOf="@id/status_time">
@@ -76,7 +77,7 @@
         android:layout_height="wrap_content"
         fancy:fb_fontIconSize="30dp"
         fancy:fb_fontIconResource="&#xf009;"
-        fancy:fb_textColor="@android:color/black"
+        fancy:fb_textColor="?attr/list__text_colour"
         fancy:fb_defaultColor="@android:color/transparent"
         fancy:fb_text="@string/pref_boardSize"
         fancy:fb_iconPosition="top" />
@@ -88,23 +89,29 @@
         app:layout_constraintTop_toTopOf="@id/status_board_size"
         app:layout_constraintBottom_toBottomOf="@id/status_board_size"
         android:orientation="horizontal">
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/board_size_4x4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4x4"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             tools:ignore="HardcodedText" />
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/board_size_5x5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5x5"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             tools:ignore="HardcodedText" />
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/board_size_6x6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="6x6"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             tools:ignore="HardcodedText" />
     </RadioGroup>
 
@@ -119,7 +126,7 @@
         android:layout_height="wrap_content"
         fancy:fb_fontIconSize="30dp"
         fancy:fb_fontIconResource="&#xf091;"
-        fancy:fb_textColor="@android:color/black"
+        fancy:fb_textColor="?attr/list__text_colour"
         fancy:fb_defaultColor="@android:color/transparent"
         fancy:fb_text="@string/pref_scoreType"
         fancy:fb_iconPosition="top" />
@@ -131,15 +138,19 @@
         app:layout_constraintTop_toTopOf="@id/status_score_type"
         app:layout_constraintBottom_toBottomOf="@id/status_score_type"
         android:orientation="vertical">
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/score_type_word_length"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             android:text="@string/word_length" />
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/score_type_letter_points"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             android:text="@string/letter_points" />
     </RadioGroup>
 
@@ -154,7 +165,7 @@
         android:layout_height="wrap_content"
         fancy:fb_fontIconSize="30dp"
         fancy:fb_fontIconResource="&#xf160;"
-        fancy:fb_textColor="@android:color/black"
+        fancy:fb_textColor="?attr/list__text_colour"
         fancy:fb_defaultColor="@android:color/transparent"
         fancy:fb_text="Min word length"
         fancy:fb_iconPosition="top" />
@@ -166,29 +177,37 @@
         app:layout_constraintTop_toTopOf="@id/status_min_length"
         app:layout_constraintBottom_toBottomOf="@id/status_min_length"
         android:orientation="horizontal">
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/min_word_length_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             tools:ignore="HardcodedText" />
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/min_word_length_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             tools:ignore="HardcodedText" />
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/min_word_length_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             tools:ignore="HardcodedText" />
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/min_word_length_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="6"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             tools:ignore="HardcodedText" />
     </RadioGroup>
 
@@ -203,7 +222,7 @@
         android:layout_height="wrap_content"
         fancy:fb_fontIconSize="30dp"
         fancy:fb_fontIconResource="&#xf0fa;"
-        fancy:fb_textColor="@android:color/black"
+        fancy:fb_textColor="?attr/list__text_colour"
         fancy:fb_defaultColor="@android:color/transparent"
         fancy:fb_text="@string/pref_hintMode"
         fancy:fb_iconPosition="top" />
@@ -216,16 +235,20 @@
         app:layout_constraintBottom_toBottomOf="@id/status_hint_mode"
         android:orientation="vertical">
 
-        <CheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/hint_colour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             android:text="@string/hint_colour" />
 
-        <CheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/hint_tile_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?attr/list__text_colour"
+            app:buttonTint="?attr/list__text_colour"
             android:text="@string/tile_count" />
 
     </LinearLayout>

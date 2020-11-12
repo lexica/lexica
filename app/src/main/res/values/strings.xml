@@ -99,4 +99,9 @@
     <string name="theme_dark">Dark</string>
     <string name="theme_high_contrast">High Contrast</string>
     <string name="sort">Sort</string>
+    <string name="input_game_mode_name_hint">Name</string>
+    <string name="input_game_mode_name_description">For choosing game mode / recording high scores</string>
+    <string name="input_game_mode_minutes_description">Time limit in minutes</string>
+    <string name="menu_new_game_mode">New</string>
+    <string name="menu_save_game_mode">Save</string>
 </resources>

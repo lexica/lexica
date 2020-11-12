@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.serwylo.lexica.databinding.ChooseLexiconBinding;
 import com.serwylo.lexica.databinding.LexiconListItemBinding;
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.LanguageLabel;
 
@@ -40,7 +41,6 @@ public class ChooseLexiconActivity extends AppCompatActivity {
 
         binding.lexiconList.setAdapter(new Adapter());
         binding.lexiconList.setLayoutManager(new LinearLayoutManager(this));
-        binding.lexiconList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -49,6 +49,8 @@ public class ChooseLexiconActivity extends AppCompatActivity {
     public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
         private List<Language> languages;
+
+        private Language selectedLanguage;
 
         public Adapter() {
             Map<String, Language> languagesWithLabels = getLanguagesWithLabels();
@@ -61,6 +63,9 @@ public class ChooseLexiconActivity extends AppCompatActivity {
             for (String label : labels) {
                 languages.add(languagesWithLabels.get(label));
             }
+
+            String languageCode = new Util().getLexiconString(ChooseLexiconActivity.this);
+            selectedLanguage = Language.fromOrNull(languageCode);
         }
 
         private Map<String, Language> getLanguagesWithLabels() {
@@ -83,7 +88,7 @@ public class ChooseLexiconActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             Language language = languages.get(position);
-            holder.bind(language, v -> selectLexicon(language));
+            holder.bind(language, language.getName().equals(selectedLanguage.getName()), v -> selectLexicon(language));
         }
 
         @Override
@@ -113,7 +118,9 @@ public class ChooseLexiconActivity extends AppCompatActivity {
             this.context = context;
         }
 
-        public void bind(Language language, View.OnClickListener listener) {
+        public void bind(Language language, boolean isSelected, View.OnClickListener listener) {
+            binding.getRoot().setSelected(isSelected);
+
             String label = LanguageLabel.getLabel(context, language);
 
             binding.language.setText(label);

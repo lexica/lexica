@@ -40,7 +40,6 @@ public class ChooseGameModeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.gameModeList.setLayoutManager(new LinearLayoutManager(this));
-        binding.gameModeList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
