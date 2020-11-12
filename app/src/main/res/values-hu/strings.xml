@@ -25,21 +25,11 @@
     <string name="pref_timeLimit">Időkorlát</string>
     <string name="pref_timeLimit_summary">Időkorlát kiválasztása</string>
     <string name="pref_timeLimit_dialog">Időkorlát kiválasztása</string>
-    <string name="time_3m">3 perc</string>
-    <string name="time_5m">5 perc</string>
-    <string name="time_10m">10 perc</string>
-    <string name="time_20m">20 perc</string>
-    <string name="time_30m">30 perc</string>
     <string name="pref_scoreType">Pontozás típusa</string>
-    <string name="pref_scoreType_summary">Pontozás típusának kiválasztása</string>
-    <string name="pref_scoreType_dialog">Pontozás típusának kiválasztása</string>
     <string name="word_length">Szóhossz</string>
     <string name="letter_points">Betűpontok</string>
     <string name="pref_sounds">Hangok engedélyezve</string>
     <string name="pref_sounds_summary">A hangok legyenek-e engedélyezve vagy sem</string>
-    <string name="dialog_no_saved">Nincs mentett játék. Ha el tudja olvasni ezt az üzenetet, akkor valószínűleg valami elromlott.</string>
-    <string name="dialog_ok">OK</string>
-    <string name="dialog_cancel">Mégse</string>
     <string name="dialog_about_title">A Lexica névjegye</string>
     <string name="dialog_about_content">Érintse meg a kijelzőt, és mozgassa az ujját a szomszédos négyzetekre a szavak betűzéséhez. Három perce van arra, hogy a lehető legtöbb szót megtalálja. 
 \n
@@ -78,11 +68,8 @@
     <string name="pref_dict_hu">Magyar</string>
     <string name="pref_hintMode">Tipp mód</string>
     <string name="pref_hintMode_summary">Megjeleníti a szavak számát, amelyekben az egyes betűket használni lehet</string>
-    <string name="pref_hintMode_dialog">Tipp mód</string>
-    <string name="hint_none">Letiltva</string>
     <string name="tile_count">Szavak száma</string>
     <string name="hint_colour">Csempe színe</string>
-    <string name="hint_both">Mindkettő</string>
     <string name="pref_dict_uk">Ukrán</string>
     <string name="theme_dark">Sötét</string>
     <string name="theme_light">Világos</string>

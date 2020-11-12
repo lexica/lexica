@@ -46,28 +46,15 @@
 \n
 \n</string>
     <string name="dialog_about_title">Sobre o Lexica</string>
-    <string name="dialog_cancel">Cancelar</string>
-    <string name="dialog_ok">OK</string>
-    <string name="dialog_no_saved">Não há jogos gravados. Se conseguir ler esta mensagem, provavelmente algo está errado.</string>
     <string name="pref_sounds_summary">Se os efeitos sonoros estão ou não ativados</string>
     <string name="pref_sounds">Sons ativados</string>
-    <string name="hint_both">Ambos</string>
     <string name="hint_colour">Cor do título</string>
     <string name="tile_count">Quantidade de palavras</string>
-    <string name="hint_none">Desativado</string>
-    <string name="pref_hintMode_dialog">Modo de dica</string>
     <string name="pref_hintMode_summary">Mostra a quantidade de palavras em que cada letra pode ser usada</string>
     <string name="pref_hintMode">Modo de dicas</string>
     <string name="letter_points">Pontos de letras</string>
     <string name="word_length">Tamanho da palavra</string>
-    <string name="pref_scoreType_dialog">Selecionar Tipo de Pontuação</string>
-    <string name="pref_scoreType_summary">Selecione um tipo de pontuação</string>
     <string name="pref_scoreType">Tipo de Pontuação</string>
-    <string name="time_30m">30 minutos</string>
-    <string name="time_20m">20 minutos</string>
-    <string name="time_10m">10 minutos</string>
-    <string name="time_5m">5 minutos</string>
-    <string name="time_3m">3 minutos</string>
     <string name="pref_timeLimit_dialog">Selecione o tempo limite</string>
     <string name="pref_timeLimit_summary">Selecione um tempo limite</string>
     <string name="pref_timeLimit">Tempo limite</string>

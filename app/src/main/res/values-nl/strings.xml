@@ -15,16 +15,8 @@
     <string name="pref_timeLimit">Tijdslimiet</string>
     <string name="pref_timeLimit_summary">Kies een tijdslimiet</string>
     <string name="pref_timeLimit_dialog">Tijdslimiet kiezen</string>
-    <string name="time_3m">3 minuten</string>
-    <string name="time_5m">5 minuten</string>
-    <string name="time_10m">10 minuten</string>
-    <string name="time_20m">20 minuten</string>
-    <string name="time_30m">30 minuten</string>
     <string name="pref_sounds">Geluiden ingeschakeld</string>
     <string name="pref_sounds_summary">Geluidseffecten in-/uitschakelen</string>
-    <string name="dialog_no_saved">Er is geen opgeslagen spel beschikbaar. Als je dit bericht kunt lezen, dan is er waarschijnlijk iets kapot.</string>
-    <string name="dialog_ok">Oké</string>
-    <string name="dialog_cancel">Annuleren</string>
     <string name="dialog_about_title">Over Lexica</string>
     <string name="dialog_about_content">Raak het scherm aan en verplaats je vinger naar aangrenzende vakjes om woorden te leggen. Je hebt 3 minuten de tijd om zoveel mogelijk woorden te maken.
 \n 
@@ -50,8 +42,6 @@
     <string name="total_score">Totaalscore:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="pref_scoreType">Scorenotatie</string>
-    <string name="pref_scoreType_summary">Kies een scorenotatie</string>
-    <string name="pref_scoreType_dialog">Scorenotatie kiezen</string>
     <string name="word_length">Woordlengte</string>
     <string name="letter_points">Letterpunten</string>
     <string name="score">Score</string>
@@ -78,11 +68,8 @@
     <string name="pref_dict_hu">Hongaars</string>
     <string name="pref_hintMode">Tips tonen</string>
     <string name="pref_hintMode_summary">Toont het aantal woorden waarin letters kunnen worden gebruikt</string>
-    <string name="pref_hintMode_dialog">Tips tonen</string>
-    <string name="hint_none">Uitgeschakeld</string>
     <string name="tile_count">Aantal woorden</string>
     <string name="hint_colour">Tegelkleur</string>
-    <string name="hint_both">Beide</string>
     <string name="pref_dict_uk">Oekraïens</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pl">Pools</string>

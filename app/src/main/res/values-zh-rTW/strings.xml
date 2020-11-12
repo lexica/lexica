@@ -18,18 +18,9 @@
 	<string name="pref_timeLimit">時限</string>
 	<string name="pref_timeLimit_summary">選擇時間限制</string>
 	<string name="pref_timeLimit_dialog">選擇時間限制</string>
-	<string name="time_3m">3分鐘</string>
-	<string name="time_5m">5分鐘</string>
-	<string name="time_10m">10分鐘</string>
-	<string name="time_20m">20分鐘</string>
-	<string name="time_30m">30分鐘</string>
 
 	<string name="pref_sounds">音效</string>
 	<string name="pref_sounds_summary">選擇遊戲會否發出音效</string>
-
-	<string name="dialog_no_saved">沒有儲存遊戲。如果您看到此訊息，遊戲很可能出現了問題。</string>
-	<string name="dialog_ok">確定</string>
-	<string name="dialog_cancel">取消</string>
 
 	<string name="dialog_about_title">關於Lexica</string>
 	<string name="menu_rotate_board">旋轉圖版</string>
@@ -62,8 +53,6 @@
 
 	<string name="value_max_percentage">%1$d/%2$d（%3$d%%）</string>
 <string name="pref_scoreType">計分方式</string>
-	<string name="pref_scoreType_summary">選擇一套計分方式</string>
-	<string name="pref_scoreType_dialog">選擇計分方式</string>
 	<string name="word_length">單詞長度</string>
 	<string name="letter_points">字母分數</string>
 

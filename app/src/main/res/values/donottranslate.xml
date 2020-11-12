@@ -1,78 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="dict_choices_entries">
-		<item>@string/pref_dict_ca</item>
-		<item>@string/pref_dict_de_DE</item>
-		<item>@string/pref_dict_es</item>
-		<item>@string/pref_dict_fa</item>
-		<item>@string/pref_dict_fr_FR</item>
-		<item>@string/pref_dict_hu</item>
-		<item>@string/pref_dict_it</item>
-		<item>@string/pref_dict_ja</item>
-		<item>@string/pref_dict_nl</item>
-		<item>@string/pref_dict_pl</item>
-		<item>@string/pref_dict_pt_BR</item>
-		<item>@string/pref_dict_ru</item>
-		<item>@string/pref_dict_uk</item>
-		<item>@string/pref_dict_en_GB</item>
-		<item>@string/pref_dict_en_US</item>
-	</string-array>
-	<string-array name="dict_choices_entryvalues">
-		<!-- Other than US & UK (named like that for legacy reasons because it was too much effort
-		     to migrate old preferences when internationalising this game), try to use a more
-		     standardised language format. -->
-		<item>ca</item>
-		<item>de_DE</item>
-		<item>es</item>
-		<item>fa</item>
-		<item>fr_FR</item>
-		<item>hu</item>
-		<item>it</item>
-		<item>ja</item>
-		<item>nl</item>
-		<item>pl</item>
-		<item>pt_BR</item>
-		<item>ru</item>
-		<item>uk</item>
-		<item>UK</item>
-		<item>US</item>
-	</string-array>
-
-	<string-array name="board_size_choices_entries">
-		<item>4x4</item>
-		<item>5x5</item>
-		<item>6x6</item>
-	</string-array>
-	<string-array name="board_size_choices_entryvalues">
-		<item>16</item>
-		<item>25</item>
-		<item>36</item>
-	</string-array>
-
-	<string-array name="score_type_choices_entries">
-		<item>@string/word_length</item>
-		<item>@string/letter_points</item>
-	</string-array>
-	<string-array name="score_type_choices_entryvalues">
-		<item>W</item>
-		<item>L</item>
-	</string-array>
-
-	<string-array name="time_limit_choices_entries">
-		<item>@string/time_3m</item>
-		<item>@string/time_5m</item>
-		<item>@string/time_10m</item>
-		<item>@string/time_20m</item>
-		<item>@string/time_30m</item>
-	</string-array>
-	<string-array name="time_limit_choices_entryvalues">
-		<item>180</item>
-		<item>300</item>
-		<item>600</item>
-		<item>1200</item>
-		<item>1800</item>
-	</string-array>
-
 	<string-array name="theme_choices_entries">
 		<item>@string/theme_light</item>
 		<item>@string/theme_dark</item>
@@ -82,19 +9,6 @@
 		<item>light</item>
 		<item>dark</item>
 		<item>high_contrast</item>
-	</string-array>
-
-	<string-array name="hint_mode_choices_entries">
-		<item>@string/hint_none</item>
-		<item>@string/tile_count</item>
-		<item>@string/hint_colour</item>
-		<item>@string/hint_both</item>
-	</string-array>
-	<string-array name="hint_mode_choices_entryvalues">
-		<item>hint_none</item>
-		<item>tile_count</item>
-		<item>hint_colour</item>
-		<item>hint_both</item>
 	</string-array>
 
 	<string-array name="definition_provider_choices_entries">

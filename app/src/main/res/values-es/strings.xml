@@ -18,18 +18,9 @@
 	<string name="pref_timeLimit">Límite de tiempo</string>
 	<string name="pref_timeLimit_summary">Selecciona el límite de tiempo</string>
 	<string name="pref_timeLimit_dialog">Selecciona el límite de tiempo</string>
-	<string name="time_3m">3 Minutos</string>
-	<string name="time_5m">5 Minutos</string>
-	<string name="time_10m">10 Minutos</string>
-	<string name="time_20m">20 Minutos</string>
-	<string name="time_30m">30 Minutos</string>
 
 	<string name="pref_sounds">Sonido Habilitado</string>
 	<string name="pref_sounds_summary">Si los efectos de sonidos están habilitados o no</string>
-
-	<string name="dialog_no_saved">No hay partidas guardadas. Si lees este mensaje, probablemente algo está estropeado.</string>
-	<string name="dialog_ok">Aceptar</string>
-	<string name="dialog_cancel">Cancelar</string>
 
 	<string name="dialog_about_title">Sobre Léxica</string>
 	<string name="dialog_about_content">"

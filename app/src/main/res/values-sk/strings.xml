@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="dialog_about_title">O Lexica</string>
-    <string name="dialog_cancel">Zrušiť</string>
-    <string name="dialog_ok">OK</string>
     <string name="pref_sounds">Zvuky povolené</string>
-    <string name="hint_both">Obidve</string>
     <string name="hint_colour">Farebné dlaždice</string>
     <string name="tile_count">Počet slov</string>
-    <string name="hint_none">Zakázané</string>
-    <string name="pref_hintMode_dialog">Režim nápovedy</string>
     <string name="pref_dict">Slovník</string>
     <string name="pref_hintMode">Režim nápovedy</string>
     <string name="word_length">Dĺžka slova</string>
-    <string name="pref_scoreType_dialog">Zvoľte spôsob bodovania</string>
-    <string name="pref_scoreType_summary">Zvoľte spôsob bodovania</string>
     <string name="pref_scoreType">Spôsob bodovania</string>
-    <string name="time_30m">30 minút</string>
-    <string name="time_20m">20 minút</string>
-    <string name="time_10m">10 minút</string>
-    <string name="time_5m">5 minút</string>
-    <string name="time_3m">3 minúty</string>
     <string name="pref_timeLimit_dialog">Zvoľte časový limit</string>
     <string name="pref_timeLimit_summary">Zvoľte časový limit</string>
     <string name="pref_timeLimit">Časový limit</string>
@@ -90,7 +78,6 @@
     <string name="menu_end_game">Ukončiť hru</string>
     <string name="menu_save_game">Uložiť hru</string>
     <string name="menu_rotate_board">Otočiť dosku</string>
-    <string name="dialog_no_saved">Neexistuje žiadna uložená hra. Ak čítate túto správu, pravdepodobne je niečo pokazené.</string>
     <string name="pref_sounds_summary">Či sú zvukové efekty povolené</string>
     <string name="sort">Zoradiť</string>
     <string name="theme_high_contrast">Vysoký kontrast</string>

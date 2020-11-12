@@ -18,18 +18,9 @@
 	<string name="pref_timeLimit">محدودیت زمان</string>
 	<string name="pref_timeLimit_summary">محدودیت زمانی را مشخص کنید</string>
 	<string name="pref_timeLimit_dialog">انتخاب محدودیت زمانی</string>
-	<string name="time_3m">۳ دقیقه</string>
-	<string name="time_5m">۵ دقیقه</string>
-	<string name="time_10m">۱۰ دقیقه</string>
-	<string name="time_20m">۲۰ دقیقه</string>
-	<string name="time_30m">۳۰ دقیقه</string>
 
 	<string name="pref_sounds">با صدا</string>
 	<string name="pref_sounds_summary">صدای بازی فعال است یا خیر</string>
-
-	<string name="dialog_no_saved">بازی ذخیره شده‌ای وجود ندارد. اگر توانستید این پیام را بخوانید، احتمالاً یک جای کار می‌لنگد.</string>
-	<string name="dialog_ok">باشه</string>
-	<string name="dialog_cancel">بی‌خیال</string>
 
 	<string name="dialog_about_title">دربارهٔ لکسیکا</string>
 	<string name="dialog_about_content">صفحه را لمس کنید و انگشت‌تان را به مربع‌های مجاور ببرید تا واژه‌ها را هجی کنید. سه دقیقه زمان دارید تا بیشترین واژهٔ ممکن را بیابید.
@@ -63,8 +54,6 @@
 	<string name="total_score">امتیاز کل:</string>
 	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
 <string name="pref_scoreType">نوع امتیازگیری</string>
-	<string name="pref_scoreType_summary">یک نوع امتیازگیری انتخاب کنید</string>
-	<string name="pref_scoreType_dialog">انتخاب نوع امتیازگیری</string>
 	<string name="word_length">طول واژه</string>
 	<string name="letter_points">امتیاز هر حرف</string>
 

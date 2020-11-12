@@ -41,28 +41,15 @@
 \n
 \n</string>
     <string name="dialog_about_title">लेक्सिका बद्दल</string>
-    <string name="dialog_cancel">रद्द</string>
-    <string name="dialog_ok">ठीक</string>
-    <string name="dialog_no_saved">कोणताही गेम जतन केलेला नाही. आपण हा संदेश वाचू शकत असाल तर काहीतरी बिघडलेले असल्याची शक्यता आहे.</string>
     <string name="pref_sounds_summary">ध्वनी प्रभाव सक्षम आहेत की नाही</string>
     <string name="pref_sounds">ध्वनी सक्षम केला</string>
-    <string name="hint_both">दोन्ही</string>
     <string name="hint_colour">टाइल रंग</string>
     <string name="tile_count">शब्दसंख्या</string>
-    <string name="hint_none">अक्षम</string>
-    <string name="pref_hintMode_dialog">इशारा मोड</string>
     <string name="pref_hintMode_summary">प्रत्येक अक्षर वापरल्या जाऊ शकेल अशा शब्दांची संख्या दर्शविते</string>
     <string name="pref_hintMode">हिंट मोड</string>
     <string name="letter_points">अक्षराचे गुण</string>
     <string name="word_length">शब्दाची लांबी</string>
     <string name="pref_scoreType">गुणांकन प्रकार</string>
-    <string name="pref_scoreType_summary">गुणांकन प्रकार निवडा</string>
-    <string name="pref_scoreType_dialog">गुणांकन प्रकार निवडा</string>
-    <string name="time_30m">३० मिनिटे</string>
-    <string name="time_20m">२० मिनिटे</string>
-    <string name="time_10m">१० मिनिटे</string>
-    <string name="time_5m">५ मिनिटे</string>
-    <string name="time_3m">३ मिनिटे</string>
     <string name="pref_timeLimit_dialog">वेळ मर्यादा निवडा</string>
     <string name="pref_timeLimit_summary">वेळ मर्यादा निवडा</string>
     <string name="pref_timeLimit">वेळ मर्यादा</string>

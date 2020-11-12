@@ -27,24 +27,13 @@
 	<string name="pref_timeLimit">Тривалість гри</string>
 	<string name="pref_timeLimit_summary">Вкажіть тривалість гри</string>
 	<string name="pref_timeLimit_dialog">Вкажіть тривалість гри</string>
-	<string name="time_3m">3 хвилини</string>
-	<string name="time_5m">5 хвилин</string>
-	<string name="time_10m">10 хвилин</string>
-	<string name="time_20m">20 хвилин</string>
-	<string name="time_30m">30 хвилин</string>
 
 	<string name="pref_scoreType">Нарахування очок</string>
-	<string name="pref_scoreType_summary">Вкажіть метод нарахування очок</string>
-	<string name="pref_scoreType_dialog">Вкажіть метод нарахування очок</string>
 	<string name="word_length">За довжиною слів</string>
 	<string name="letter_points">За очками букв</string>
 
 	<string name="pref_sounds">Звуки</string>
 	<string name="pref_sounds_summary">Використовувати звукові ефекти чи ні?</string>
-
-	<string name="dialog_no_saved">Гру не збережено. Можлива сталася помилка.</string>
-	<string name="dialog_ok">Добре</string>
-	<string name="dialog_cancel">Скасувати</string>
 
 	<string name="dialog_about_title">Про Lexica</string>
 	<string name="dialog_about_content">

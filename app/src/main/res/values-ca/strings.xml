@@ -15,16 +15,8 @@
     <string name="pref_timeLimit">Límit de temps</string>
     <string name="pref_timeLimit_summary">Seleccioneu el límit de temps</string>
     <string name="pref_timeLimit_dialog">Seleccioneu el límit de temps</string>
-    <string name="time_3m">3 minuts</string>
-    <string name="time_5m">5 minuts</string>
-    <string name="time_10m">10 minuts</string>
-    <string name="time_20m">20 minuts</string>
-    <string name="time_30m">30 minuts</string>
     <string name="pref_sounds">Habilita el so</string>
     <string name="pref_sounds_summary">Si voleu els efectes de so</string>
-    <string name="dialog_no_saved">No hi ha cap partida desada. Si podeu llegir aquest missatge, alguna cosa s\'ha espatllat.</string>
-    <string name="dialog_ok">D’acord</string>
-    <string name="dialog_cancel">Cancel·la</string>
     <string name="dialog_about_title">Quant al Lexica</string>
     <string name="dialog_about_content">Toqueu la pantalla i mogueu el dit a les caselles adjacents per a lletrejar mots. Teniu tres minuts per trobar-hi tants mots com sigui possible.
 \n
@@ -50,8 +42,6 @@
     <string name="total_score">Puntuació total:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="pref_scoreType">Tipus de puntuació</string>
-    <string name="pref_scoreType_summary">Seleccioneu un tipus de puntuació</string>
-    <string name="pref_scoreType_dialog">Seleccioneu un tipus de puntuació</string>
     <string name="word_length">Longitud dels mots</string>
     <string name="score">PUNTUACIÓ</string>
     <string name="reset_scores_prompt">Segur que voleu reinicialitzar les puntuacions altes de tots els modes de partida a zero\?</string>
@@ -76,11 +66,8 @@
     <string name="pref_resetScores">Restableix les millors puntuacions</string>
     <string name="pref_resetScores_summary">L\'aplicació enregistra les puntuacions més altes per a cadascuna de les configuracions anteriors. Toqueu aquí per a restablir-les totes a zero.</string>
     <string name="high_score">Millor puntuació</string>
-    <string name="hint_both">Ambdós</string>
     <string name="hint_colour">Color de la fitxa</string>
     <string name="tile_count">Nombre de mots</string>
-    <string name="hint_none">Desactivat</string>
-    <string name="pref_hintMode_dialog">Mode de pistes</string>
     <string name="pref_hintMode_summary">Mostra el nombre de mots en què es pot usar cada lletra</string>
     <string name="pref_hintMode">Mode de pistes</string>
     <string name="letter_points">Valor de les lletres</string>

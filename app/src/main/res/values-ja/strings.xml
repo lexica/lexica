@@ -15,16 +15,8 @@
     <string name="pref_timeLimit">制限時間</string>
     <string name="pref_timeLimit_summary">制限時間を選択します</string>
     <string name="pref_timeLimit_dialog">制限時間を選択</string>
-    <string name="time_3m">3 分</string>
-    <string name="time_5m">5 分</string>
-    <string name="time_10m">10 分</string>
-    <string name="time_20m">20 分</string>
-    <string name="time_30m">30 分</string>
     <string name="pref_sounds">サウンドが有効です</string>
     <string name="pref_sounds_summary">効果音を有効にするかどうか</string>
-    <string name="dialog_no_saved">ゲームは保存されていません。このメッセージが表示されるのは、何かが壊れている可能性あります。</string>
-    <string name="dialog_ok">OK</string>
-    <string name="dialog_cancel">キャンセル</string>
     <string name="dialog_about_title">Lexica について</string>
     <string name="dialog_about_content">画面にタッチして、単語のつづりに隣接するマスに指を移動します。3 分間に可能な限り多くの単語を探してください。
 \n
@@ -50,8 +42,6 @@
     <string name="total_score">合計スコア:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="pref_scoreType">得点の種類</string>
-    <string name="pref_scoreType_summary">得点の種類を選択します</string>
-    <string name="pref_scoreType_dialog">得点の種類を選択</string>
     <string name="word_length">単語の長さ</string>
     <string name="letter_points">文字のポイント</string>
     <string name="score">スコア</string>
@@ -78,11 +68,8 @@
     <string name="pref_dict_ru">ロシア語</string>
     <string name="pref_hintMode">ヒントモード</string>
     <string name="pref_hintMode_summary">各文字で使用できる単語の数を表示します</string>
-    <string name="pref_hintMode_dialog">ヒントモード</string>
-    <string name="hint_none">無効</string>
     <string name="tile_count">単語数</string>
     <string name="hint_colour">タイルの色</string>
-    <string name="hint_both">両方</string>
     <string name="pref_dict_uk">ウクライナ語</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">オンライン</string>
     <string name="pref_dict_pl">ポーランド語</string>

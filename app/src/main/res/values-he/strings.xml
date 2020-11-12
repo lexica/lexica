@@ -43,28 +43,15 @@
 \n
 \n</string>
     <string name="dialog_about_title">על Lexica</string>
-    <string name="dialog_cancel">בטל</string>
-    <string name="dialog_ok">אוקי</string>
-    <string name="dialog_no_saved">אין שום משחק שנשמר. אם אתה יכול לקרוא הודעה זו, סביר להניח שמשהו השתבש.</string>
     <string name="pref_sounds_summary">בין אם אפקטים קוליים מופעלים ובין אם לא</string>
     <string name="pref_sounds">צלילים מופעלים</string>
-    <string name="hint_both">שניהם</string>
     <string name="hint_colour">צבע אריח</string>
     <string name="tile_count">מספר מילים</string>
-    <string name="hint_none">מושבת</string>
-    <string name="pref_hintMode_dialog">מצב רמז</string>
     <string name="pref_hintMode_summary">מראה את מספר המילים שבהן ניתן להשתמש בכל אות</string>
     <string name="pref_hintMode">מצב רמז</string>
     <string name="letter_points">נקודות אות</string>
     <string name="word_length">אורך מילה</string>
-    <string name="pref_scoreType_dialog">בחר סוג ניקוד</string>
     <string name="pref_scoreType">סוג ניקוד</string>
-    <string name="pref_scoreType_summary">בחר סוג ניקוד</string>
-    <string name="time_30m">30 דקות</string>
-    <string name="time_20m">20 דקות</string>
-    <string name="time_10m">10 דקות</string>
-    <string name="time_5m">5 דקות</string>
-    <string name="time_3m">3 דקות</string>
     <string name="pref_timeLimit_dialog">בחר מגבלת זמן</string>
     <string name="pref_timeLimit_summary">בחר מגבלת זמן</string>
     <string name="pref_timeLimit">מגבלת זמן</string>

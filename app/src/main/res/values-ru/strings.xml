@@ -23,21 +23,11 @@
     <string name="pref_timeLimit">Игровое время</string>
     <string name="pref_timeLimit_summary">Выберите время на игру</string>
     <string name="pref_timeLimit_dialog">Выберите время на игру</string>
-    <string name="time_3m">3 минуты</string>
-    <string name="time_5m">5 минут</string>
-    <string name="time_10m">10 минут</string>
-    <string name="time_20m">20 минут</string>
-    <string name="time_30m">30 минут</string>
     <string name="pref_scoreType">Начисление очков</string>
-    <string name="pref_scoreType_summary">Выберите метод начисления очков</string>
-    <string name="pref_scoreType_dialog">Выберите метод начисления очков</string>
     <string name="word_length">По длине слов</string>
     <string name="letter_points">По очкам букв</string>
     <string name="pref_sounds">Звуки</string>
     <string name="pref_sounds_summary">Использовать звуковые эффекты или нет</string>
-    <string name="dialog_no_saved">Игра не сохранена. Возможно, что-то пошло не так.</string>
-    <string name="dialog_ok">OK</string>
-    <string name="dialog_cancel">Отмена</string>
     <string name="dialog_about_title">О Lexica</string>
     <string name="dialog_about_content">
 	Коснитесь экрана и водите пальцем по примыкающим друг к другу квадратам для составления слов. 
@@ -75,10 +65,7 @@
     <string name="pref_definitionProvider">Провайдер значений слов</string>
     <string name="pref_definitionProvider_summary">Выберите желаемый провайдер значений слов. По умолчанию используется DuckDuckGo.</string>
     <string name="pref_definitionProvider_dialog">Выберите провайдер значений слов</string>
-    <string name="hint_both">Обе</string>
     <string name="hint_colour">Цвет плитки</string>
-    <string name="hint_none">Отключено</string>
-    <string name="pref_hintMode_dialog">Режим подсказки</string>
     <string name="pref_hintMode_summary">Показывает количество слов, в которых можно использовать каждую букву</string>
     <string name="pref_hintMode">Режим подсказки</string>
     <string name="theme_dark">Темная</string>

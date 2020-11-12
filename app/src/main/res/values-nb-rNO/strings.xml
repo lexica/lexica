@@ -15,21 +15,11 @@
     <string name="pref_timeLimit">Tidsgrense</string>
     <string name="pref_timeLimit_summary">Velg en tidsgrense</string>
     <string name="pref_timeLimit_dialog">Velg tidsgrense</string>
-    <string name="time_3m">Tre minutter</string>
-    <string name="time_5m">Fem minutter</string>
-    <string name="time_10m">Ti minutter</string>
-    <string name="time_20m">20 minutter</string>
-    <string name="time_30m">Én halvtime</string>
     <string name="pref_scoreType">Poengivningstype</string>
-    <string name="pref_scoreType_summary">Velg poenggivningstype</string>
-    <string name="pref_scoreType_dialog">Velg peonggivningstype</string>
     <string name="word_length">Ordlengde</string>
     <string name="letter_points">Bokstavpoeng</string>
     <string name="pref_sounds">Lyder påskrudd</string>
     <string name="pref_sounds_summary">Hvorvidt eller ei lydeffekter er påskrudd</string>
-    <string name="dialog_no_saved">Det er ingen lagrede spill. Hvis du kan lese denne meldingen, har antagelig noe gått i stykker.</string>
-    <string name="dialog_ok">OK</string>
-    <string name="dialog_cancel">Avbryt</string>
     <string name="dialog_about_title">Om Lexica</string>
     <string name="dialog_about_content">Trykk på skjermen og flytt fingeren til hosliggende firkanter for å stave ord. Du har tre minutter på å finne så mange ord som mulig.
 \n
@@ -78,11 +68,8 @@
     <string name="pref_dict_hu">Ungarsk</string>
     <string name="pref_hintMode">Hintmodus</string>
     <string name="pref_hintMode_summary">Viser antall ord hver bokstav kan brukes i</string>
-    <string name="pref_hintMode_dialog">Hintmodus</string>
-    <string name="hint_none">Avskrudd</string>
     <string name="tile_count">Antall ord</string>
     <string name="hint_colour">Flisfarge</string>
-    <string name="hint_both">Begge</string>
     <string name="pref_dict_uk">Ukrainsk</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">På nett</string>
     <string name="pref_dict_pl">Polsk</string>

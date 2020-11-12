@@ -43,28 +43,15 @@
 \n
 \n</string>
     <string name="dialog_about_title">लेक्सिका के बारे में</string>
-    <string name="dialog_cancel">रद्द करें</string>
-    <string name="dialog_ok">ठीक है</string>
-    <string name="dialog_no_saved">कोई खेल नहीं बचा है। यदि आप इस संदेश को पढ़ सकते हैं, तो कुछ टूटने की संभावना है।</string>
     <string name="pref_sounds_summary">ध्वनि प्रभाव सक्षम हैं या नहीं</string>
     <string name="pref_sounds">आवाज़ सक्षम</string>
-    <string name="hint_both">दोनों</string>
     <string name="hint_colour">टाइल के रंग</string>
     <string name="tile_count">शब्दों की संख्या</string>
-    <string name="hint_none">निर्योग्य</string>
-    <string name="pref_hintMode_dialog">संकेत मोड</string>
     <string name="pref_hintMode_summary">प्रत्येक पत्र में इस्तेमाल किए जा सकने वाले शब्दों की संख्या दिखाता है</string>
     <string name="pref_hintMode">संकेत मोड</string>
     <string name="letter_points">अक्षर अंक</string>
     <string name="word_length">शब्द की लंबाई</string>
-    <string name="pref_scoreType_dialog">स्कोरिंग प्रणाली चुनें</string>
-    <string name="pref_scoreType_summary">एक स्कोरिंग प्रणाली चुनें</string>
     <string name="pref_scoreType">स्कोरिंग प्रणाली</string>
-    <string name="time_30m">३० मिनट</string>
-    <string name="time_20m">२० मिनट</string>
-    <string name="time_10m">१० मिनट</string>
-    <string name="time_5m">५ मिनट</string>
-    <string name="time_3m">३ मिनट</string>
     <string name="pref_timeLimit_dialog">समय सीमा चुनें</string>
     <string name="pref_timeLimit_summary">एक समय सीमा चुनें</string>
     <string name="pref_timeLimit">समय सीमा</string>
