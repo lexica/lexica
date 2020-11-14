@@ -15,8 +15,6 @@ import java.util.concurrent.Executors;
 @androidx.room.Database(entities = {GameMode.class, Result.class, SelectedWord.class}, version = 1)
 public abstract class Database extends RoomDatabase {
 
-    protected static final String TAG = "Database";
-
     public abstract GameModeDao gameModeDao();
     public abstract ResultDao resultDao();
     public abstract SelectedWordDao selectedWordDao();
@@ -30,34 +28,12 @@ public abstract class Database extends RoomDatabase {
             synchronized (Database.class) {
                 if (instance == null) {
                     instance = Room.databaseBuilder(context.getApplicationContext(), Database.class, "lexica")
-                            .addCallback(new InitializationCallback(context))
                             .build();
                 }
             }
         }
 
         return instance;
-    }
-
-    public static class InitializationCallback extends RoomDatabase.Callback {
-
-        private final Context context;
-
-        private InitializationCallback(Context context) {
-            this.context = context;
-        }
-
-        @Override
-        public void onCreate(@NonNull SupportSQLiteDatabase db) {
-            super.onCreate(db);
-
-            writeExecutor.execute(() -> {
-                GameModeDao gameModeDao = instance.gameModeDao();
-                ResultDao resultDao = instance.resultDao();
-
-                new MigrateHighScoresFromPreferences(context).initialiseDb(gameModeDao, resultDao);
-            });
-        }
     }
 
 }

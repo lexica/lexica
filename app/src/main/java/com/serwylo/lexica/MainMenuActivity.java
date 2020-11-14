@@ -33,6 +33,7 @@ import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.db.GameModeRepository;
 import com.serwylo.lexica.db.Result;
 import com.serwylo.lexica.db.ResultRepository;
+import com.serwylo.lexica.db.migration.MigrateHighScoresFromPreferences;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.LanguageLabel;
 
@@ -102,10 +103,12 @@ public class MainMenuActivity extends Activity {
 
     private void load() {
         AsyncTask.execute(() -> {
+
             // Force migrations to run prior to querying the database.
             // This is required because we populate default game modes, for which we need at least one to be present.
             // https://stackoverflow.com/a/55067991
-            Database.get(this).getOpenHelper().getReadableDatabase();
+            final Database db = Database.get(this);
+            db.getOpenHelper().getReadableDatabase();
 
             String languageCode = new Util().getLexiconString(this);
             Language language = Language.fromOrNull(languageCode);
@@ -113,10 +116,15 @@ public class MainMenuActivity extends Activity {
             final GameModeRepository gameModeRepository = new GameModeRepository(getApplication());
             final ResultRepository resultRepository = new ResultRepository(getApplication());
 
+            if (!gameModeRepository.hasGameModes()) {
+                new MigrateHighScoresFromPreferences(this).initialiseDb(db.gameModeDao(), db.resultDao());
+            }
+
             final GameMode gameMode = gameModeRepository.loadCurrentGameMode();
             final Result highScore = resultRepository.findHighScore(gameMode, language);
 
             runOnUiThread(() -> splashScreen(gameMode, highScore));
+
         });
     }
 

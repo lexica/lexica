@@ -110,4 +110,9 @@ public class GameMode implements Parcelable {
         dest.writeString(hintMode);
         dest.writeInt(isCustom ? 1 : 0);
     }
+
+    @Override
+    public String toString() {
+        return "Game Mode [id: " + gameModeId + ", label: " + label + "]";
+    }
 }
