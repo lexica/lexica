@@ -130,7 +130,7 @@ public class ChooseGameModeActivity extends AppCompatActivity {
 
             binding.statusTime.setText((gameMode.getTimeLimitSeconds() / 60) + " mins");
             binding.statusBoardSize.setText((int)Math.sqrt(gameMode.getBoardSize()) + "x" + (int)Math.sqrt(gameMode.getBoardSize()));
-            binding.statusScoreType.setText(gameMode.getScoreType().equals("W") ? "Letter" : "Length");
+            binding.statusScoreType.setText(gameMode.getScoreType().equals("W") ? "Length" : "Letter");
             binding.statusMinLength.setText("≥ " + gameMode.getMinWordLength());
 
             if (gameMode.hintModeColor() || gameMode.hintModeCount()) {
