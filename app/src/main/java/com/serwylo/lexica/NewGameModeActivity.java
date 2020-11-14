@@ -37,23 +37,22 @@ public class NewGameModeActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        binding.toolbar.setNavigationOnClickListener(v -> NavUtils.navigateUpFromSameTask(NewGameModeActivity.this));
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.choose_game_mode_menu, binding.toolbar.getMenu());
+        inflater.inflate(R.menu.new_game_mode_menu, binding.toolbar.getMenu());
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.new_game_mode) {
+        if (item.getItemId() == R.id.save) {
             createNewGameMode();
+            return true;
         }
-        return true;
+        return this.onOptionsItemSelected(item);
     }
 
     private void createNewGameMode() {

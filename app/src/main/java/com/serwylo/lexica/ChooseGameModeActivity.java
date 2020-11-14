@@ -61,8 +61,9 @@ public class ChooseGameModeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.new_game_mode) {
             addGameMode();
+            return true;
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     private void addGameMode() {

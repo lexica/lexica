@@ -61,8 +61,6 @@ public class MainMenuActivity extends Activity {
             startActivity(intent);
         });
 
-        binding.newGame.setText("New " + gameMode.getLabel() + " Game");
-
         binding.gameModeButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseGameModeActivity.class)));
         binding.gameModeButton.setText(gameMode.getLabel());
 
