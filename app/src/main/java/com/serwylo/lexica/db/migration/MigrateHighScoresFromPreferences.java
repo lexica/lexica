@@ -37,25 +37,27 @@ public class MigrateHighScoresFromPreferences {
 
         Log.i(TAG, "Creating default game modes.");
         for (GameMode defaultGameMode : defaultGameModes()) {
+            Log.i(TAG, "Inserting game mode: " + defaultGameMode.getLabel());
             savedGameModes.put(gameModeDao.insert(defaultGameMode), defaultGameMode);
         }
 
         Log.i(TAG, "Looking through legacy preferences to find high scores and migrate to the database.");
+        Log.i(TAG, "Cannot record other stats like max possible score for that run because they are not available in the older version of Lexica.");
         for (LegacyHighScore score : migrateHighScoresFromPrefs()) {
 
-            Log.i(TAG, "Migrating legacy high score (" + score.getHighScore() + " and creating associated custom game mode.");
+            Log.i(TAG, "Migrating legacy high score (" + score + ") and ensuring it is linked to appropriate game mode.");
 
             long gameModeId = findMatchingGameModeId(score.getGameMode(), savedGameModes);
             if (gameModeId > 0) {
-                Log.i(TAG, "Found another high score for game mode " + gameModeId + ", this time for language " + score.getLanguage().getName());
+                Log.i(TAG, "Using game mode " + gameModeId);
             } else {
                 gameModeId = gameModeDao.insert(score.getGameMode());
                 savedGameModes.put(gameModeId, score.getGameMode());
 
-                Log.i(TAG, "Created new custom game mode " + gameModeId + " to record high score for language " + score.getLanguage().getName());
+                Log.i(TAG, "Created custom game mode " + gameModeId);
             }
 
-            Log.i(TAG, "Saving high score of " + score.getHighScore() + " against game mode " + gameModeId + " for language " + score.getLanguage().getName() + ". Note - will not record other stats like max possible score for that run because they are not available.");
+            Log.i(TAG, "Saving high score of " + score.getHighScore() + " against game mode " + gameModeId + " for language " + score.getLanguage().getName() + ".");
             Result result = Result.builder().gameModeId(gameModeId).langCode(score.getLanguage().getName()).maxNumWords(0).numWords(0).maxScore(score.getHighScore()).score(score.getHighScore()).build();
 
             resultDao.insert(result);
@@ -82,24 +84,24 @@ public class MigrateHighScoresFromPreferences {
         List<GameMode> gameModes = new ArrayList<>(3);
 
         gameModes.add(GameMode.builder()
+                .label("Sprint")
+                .description("Short game to find as many words as possible")
+                .timeLimitSeconds(180)
+                .boardSize(16)
+                .hintMode("")
+                .minWordLength(3)
+                .scoreType(GameMode.SCORE_WORDS)
+                .isCustom(false)
+                .build());
+
+        gameModes.add(GameMode.builder()
                 .label("Marathon")
                 .description("Try to find all words, without any time pressure")
                 .timeLimitSeconds(1800)
                 .boardSize(36)
                 .hintMode("")
                 .minWordLength(5)
-                .scoreType(GameMode.SCORE_LETTERS)
-                .isCustom(false)
-                .build());
-
-        gameModes.add(GameMode.builder()
-                .label("Sprint")
-                .description("Short game to find as many words as possible")
-                .timeLimitSeconds(180)
-                .boardSize(25)
-                .hintMode("")
-                .minWordLength(4)
-                .scoreType(GameMode.SCORE_LETTERS)
+                .scoreType(GameMode.SCORE_WORDS)
                 .isCustom(false)
                 .build());
 
@@ -111,6 +113,17 @@ public class MigrateHighScoresFromPreferences {
                 .hintMode("hint_both")
                 .minWordLength(3)
                 .scoreType(GameMode.SCORE_WORDS)
+                .isCustom(false)
+                .build());
+
+        gameModes.add(GameMode.builder()
+                .label("Letter Points")
+                .description("Score more points for using less common letters")
+                .timeLimitSeconds(180)
+                .boardSize(25)
+                .hintMode("")
+                .minWordLength(4)
+                .scoreType(GameMode.SCORE_LETTERS)
                 .isCustom(false)
                 .build());
 
@@ -221,5 +234,10 @@ public class MigrateHighScoresFromPreferences {
         private final Language language;
         private final GameMode gameMode;
         private final int highScore;
+
+        public String toString() {
+            int size = (int) Math.sqrt(gameMode.getBoardSize());
+            return "Game Mode [" + gameMode.getTimeLimitSeconds() + "s / " + size + "x" + size + " / " + gameMode.getScoreType() + " / >= " + gameMode.getMinWordLength() + "], Lang: " + language.getName() + ", High Score: " + highScore;
+        }
     }
 }
