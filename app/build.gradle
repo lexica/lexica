@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
@@ -69,11 +70,6 @@ dependencies {
     // quite customizable without having to go into <selectors> and such.
     implementation 'com.github.medyo:fancybuttons:1.9.1'
 
-    // Lombok needs to be before Room, because Room expects getters and setters that are generated
-    // by lombok.
-    compileOnly "org.projectlombok:lombok:1.18.12"
-    annotationProcessor "org.projectlombok:lombok:1.18.12"
-
     implementation 'androidx.room:room-runtime:2.2.5'
     annotationProcessor 'androidx.room:room-compiler:2.2.5'
 
@@ -91,6 +87,7 @@ dependencies {
     }
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
 }
 
 afterEvaluate {

@@ -50,8 +50,6 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 
-import lombok.Getter;
-
 public class Game implements Synchronizer.Counter {
 
     private static final String TAG = "Game";
@@ -100,7 +98,6 @@ public class Game implements Synchronizer.Counter {
     private SoundPool mSoundPool;
     private int[] soundIds;
 
-    @Getter
     private GameMode gameMode;
 
     public Game(Context c, GameSaver saver) {
@@ -191,6 +188,10 @@ public class Game implements Synchronizer.Counter {
         score = 0;
         wordsUsed = new LinkedHashSet<>();
         initializeWeights();
+    }
+
+    public GameMode getGameMode() {
+        return gameMode;
     }
 
     public Language getLanguage() {

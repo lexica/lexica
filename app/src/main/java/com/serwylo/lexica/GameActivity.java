@@ -241,25 +241,21 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
 
             ScoreCalculator score = new ScoreCalculator(game);
 
-            Result result = Result.builder()
-                .gameModeId(game.getGameMode().getGameModeId())
-                .langCode(game.getLanguage().getName())
-                .score(score.getScore())
-                .maxScore(score.getMaxScore())
-                .numWords(score.getNumWords())
-                .maxNumWords(score.getMaxWords())
-                .build();
+            Result result = new Result(
+                    0,
+                    game.getGameMode().getGameModeId(),
+                    game.getLanguage().getName(),
+                    score.getScore(),
+                    score.getMaxScore(),
+                    score.getNumWords(),
+                    score.getMaxWords()
+            );
 
             Database.get(this).resultDao().insert(result);
 
             List<SelectedWord> words = new ArrayList<>(score.getItems().size());
             for (ScoreCalculator.Selected word : score.getItems()) {
-                words.add(
-                        SelectedWord.builder()
-                                .resultId(result.getResultId())
-                                .points(word.getScore())
-                                .word(word.getWord())
-                                .build());
+                words.add(new SelectedWord(0, result.getResultId(), word.getWord(), word.getScore()));
             }
 
             Database.get(this).selectedWordDao().insert(words);
