@@ -5,14 +5,17 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.serwylo.lexica.db.converters.GameModeTypeConverter;
 import com.serwylo.lexica.db.migration.MigrateHighScoresFromPreferences;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @androidx.room.Database(entities = {GameMode.class, Result.class, SelectedWord.class}, version = 1)
+@TypeConverters(GameModeTypeConverter.class)
 public abstract class Database extends RoomDatabase {
 
     public abstract GameModeDao gameModeDao();

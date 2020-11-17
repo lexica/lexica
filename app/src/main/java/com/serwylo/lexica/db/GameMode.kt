@@ -1,10 +1,12 @@
 package com.serwylo.lexica.db
 
+import android.content.Context
 import android.os.Parcelable
 import androidx.room.PrimaryKey
-import android.os.Parcel
 import androidx.room.Entity
+import com.serwylo.lexica.R
 import kotlinx.android.parcel.Parcelize
+import kotlin.math.sqrt
 
 @Parcelize
 @Entity
@@ -13,9 +15,9 @@ data class GameMode (
         @PrimaryKey(autoGenerate = true)
         var gameModeId: Long = 0,
 
-        val label: String,
+        val type: Type,
 
-        val description: String,
+        val customLabel: String? = null,
 
         /**
          * 16, 25, 36.
@@ -33,9 +35,48 @@ data class GameMode (
 
         val hintMode: String,
 
-        val isCustom: Boolean,
-
 ) : Parcelable {
+
+    enum class Type {
+        SPRINT,
+        MARATHON,
+        BEGINNER,
+        LETTER_POINTS,
+        CUSTOM,
+        LEGACY,
+    }
+
+    fun label(context: Context): String {
+        return when (type) {
+            Type.SPRINT -> context.getString(R.string.game_mode_sprint)
+            Type.MARATHON -> context.getString(R.string.game_mode_marathon)
+            Type.BEGINNER -> context.getString(R.string.game_mode_beginner)
+            Type.LETTER_POINTS -> context.getString(R.string.game_mode_letter_points)
+
+            Type.LEGACY -> {
+                val duration = context.resources.getQuantityString(R.plurals.num_minutes, timeLimitSeconds / 60, timeLimitSeconds / 60)
+                val boardWidth = sqrt(boardSize.toDouble()).toInt()
+                val size = "${boardWidth}x${boardWidth}"
+                val score = if (SCORE_LETTERS == scoreType) context.getString(R.string.letter_points) else context.getString(R.string.word_length)
+                return "$duration / $size / $score"
+            }
+
+            // Don't bother internationalizing, because there should always be a custom label
+            // when the type is custom, though Kotlin doesn't know this.
+            Type.CUSTOM -> customLabel ?: "Custom"
+        }
+    }
+
+    fun description(context: Context): String {
+        return when (type) {
+            Type.SPRINT -> context.getString(R.string.game_mode_sprint_description)
+            Type.MARATHON -> context.getString(R.string.game_mode_marathon_description)
+            Type.BEGINNER -> context.getString(R.string.game_mode_beginner_description)
+            Type.LETTER_POINTS -> context.getString(R.string.game_mode_letter_points_description)
+            Type.CUSTOM -> context.getString(R.string.game_mode_custom_description)
+            Type.LEGACY -> context.getString(R.string.game_mode_legacy_description)
+        }
+    }
 
     fun hintModeCount(): Boolean {
         return hintMode == "tile_count" || hintMode == "hint_both"
@@ -46,7 +87,7 @@ data class GameMode (
     }
 
     override fun toString(): String {
-        return "Game Mode [id: $gameModeId, label: $label]"
+        return "Game Mode [id: $gameModeId, type: $type]"
     }
 
     companion object {

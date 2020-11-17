@@ -90,4 +90,21 @@
     <string name="input_game_mode_minutes_description">Time limit in minutes</string>
     <string name="menu_new_game_mode">New</string>
     <string name="menu_save_game_mode">Save</string>
+    <string name="custom_game_mode">Custom game mode</string>
+    <string name="game_mode_sprint">Sprint</string>
+    <string name="game_mode_sprint_description">Short game to find as many words as possible</string>
+    <string name="game_mode_marathon">Marathon</string>
+    <string name="game_mode_marathon_description">Try to find all words, without any time pressure</string>
+    <string name="game_mode_beginner">Beginner</string>
+    <string name="game_mode_beginner_description">Use hints to help find words</string>
+    <string name="game_mode_letter_points">Letter Points</string>
+    <string name="game_mode_letter_points_description">Score more points for using less common letters</string>
+    <string name="game_mode_custom">Custom</string>
+    <string name="game_mode_custom_description">Custom game mode</string>
+    <string name="game_mode_legacy">Legacy</string>
+    <string name="game_mode_legacy_description">Used in an earlier version of Lexica</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d mins</item>
+    </plurals>
 </resources>

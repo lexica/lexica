@@ -20,7 +20,7 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
 
         val savedGameModes = HashMap<Long, GameMode>()
         defaultGameModes.forEach { defaultGameMode ->
-            Log.i(TAG, "Inserting game mode: " + defaultGameMode.label)
+            Log.i(TAG, "Inserting game mode: " + defaultGameMode.label(context))
             savedGameModes[gameModeDao.insert(defaultGameMode)] = defaultGameMode
         }
 
@@ -128,9 +128,7 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
         }
 
         val gameMode = GameMode(
-                label = "Custom",
-                description = "Used in earlier versions of Lexica",
-                isCustom = true,
+                type = GameMode.Type.LEGACY,
                 boardSize = boardSize,
                 scoreType = scoreType ?: "W",
                 timeLimitSeconds = maxTimeRemaining,
@@ -161,44 +159,36 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
         private val defaultGameModes:List<GameMode> =
                 listOf(
                         GameMode(
-                                label = "Sprint",
-                                description = "Short game to find as many words as possible",
+                                type = GameMode.Type.SPRINT,
                                 timeLimitSeconds = 180,
                                 boardSize = 16,
                                 hintMode = "",
                                 minWordLength = 3,
                                 scoreType = GameMode.SCORE_WORDS,
-                                isCustom = false,
                         ),
                         GameMode(
-                                label = "Marathon",
-                                description = "Try to find all words, without any time pressure",
+                                type = GameMode.Type.MARATHON,
                                 timeLimitSeconds = 1800,
                                 boardSize = 36,
                                 hintMode = "",
                                 minWordLength = 5,
                                 scoreType = GameMode.SCORE_WORDS,
-                                isCustom = false,
                         ),
                         GameMode(
-                                label = "Beginner",
-                                description = "Use hints to help find words",
+                                type = GameMode.Type.BEGINNER,
                                 timeLimitSeconds = 180,
                                 boardSize = 16,
                                 hintMode = "hint_both",
                                 minWordLength = 3,
                                 scoreType = GameMode.SCORE_WORDS,
-                                isCustom = false,
                         ),
                         GameMode(
-                                label = "Letter Points",
-                                description = "Score more points for using less common letters",
+                                type = GameMode.Type.LETTER_POINTS,
                                 timeLimitSeconds = 180,
                                 boardSize = 25,
                                 hintMode = "",
                                 minWordLength = 4,
                                 scoreType = GameMode.SCORE_LETTERS,
-                                isCustom = false,
                         )
                 )
 

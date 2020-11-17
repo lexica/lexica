@@ -103,24 +103,26 @@ class ChooseGameModeActivity : AppCompatActivity() {
         NavUtils.navigateUpFromSameTask(this)
     }
 
-    class ViewHolder(private val binding: GameModeItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: GameModeItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(gameMode: GameMode, isSelected: Boolean, listener: View.OnClickListener?) {
+
+            val context = this@ChooseGameModeActivity
 
             val boardWidth = sqrt(gameMode.boardSize.toDouble()).toInt()
 
             binding.root.setOnClickListener(listener)
             binding.root.isSelected = isSelected
-            binding.label.text = gameMode.label
-            binding.description.text = if (gameMode.isCustom) "Custom game mode" else gameMode.description // TODO: Internationalise
-            binding.statusTime.setText((gameMode.timeLimitSeconds / 60).toString() + " mins") // TODO: Internationalise
+            binding.label.text = gameMode.label(context)
+            binding.description.text = gameMode.description(context)
+            binding.statusTime.setText(context.resources.getQuantityString(R.plurals.num_minutes, gameMode.timeLimitSeconds / 60, gameMode.timeLimitSeconds / 60))
             binding.statusBoardSize.setText("${boardWidth}x${boardWidth}")
-            binding.statusScoreType.setText(if (gameMode.scoreType == "W") "Length" else "Letter") // TODO: Internationalise
+            binding.statusScoreType.setText(if (gameMode.scoreType == "W") context.getString(R.string.word_length) else context.getString(R.string.letter_points))
             binding.statusMinLength.setText("≥ " + gameMode.minWordLength) // TODO: RTL
 
             if (gameMode.hintModeColor() || gameMode.hintModeCount()) {
                 binding.statusHintMode.visibility = View.VISIBLE
-                binding.statusHintMode.setText("Hints") // TODO: Internationalise
+                binding.statusHintMode.setText(context.getString(R.string.pref_hintMode))
             } else {
                 binding.statusHintMode.visibility = View.GONE
             }

@@ -70,14 +70,13 @@ class NewGameModeActivity : AppCompatActivity() {
 
         val gameMode = GameMode(
                 gameModeId = 0,
-                label = selectedLabel(),
-                description = "",
+                type = GameMode.Type.CUSTOM,
+                customLabel = selectedLabel(),
                 boardSize = boardSize,
                 timeLimitSeconds = selectedTimeLimitInSeconds(),
                 minWordLength = minWordLength,
                 scoreType = scoreType,
                 hintMode = selectedHintMode(),
-                isCustom = true
         )
 
         Database.writeExecutor.execute {

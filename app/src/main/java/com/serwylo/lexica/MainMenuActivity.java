@@ -63,7 +63,7 @@ public class MainMenuActivity extends Activity {
         });
 
         binding.gameModeButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseGameModeActivity.class)));
-        binding.gameModeButton.setText(gameMode.getLabel());
+        binding.gameModeButton.setText(gameMode.label(this));
 
         String languageCode = new Util().getLexiconString(this);
         Language language = Language.fromOrNull(languageCode);
