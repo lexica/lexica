@@ -8,6 +8,7 @@ import com.serwylo.lexica.R
 import kotlinx.android.parcel.Parcelize
 import kotlin.math.sqrt
 
+
 @Parcelize
 @Entity
 data class GameMode (
@@ -86,6 +87,19 @@ data class GameMode (
         return hintMode == "hint_colour" || hintMode == "hint_both"
     }
 
+    fun serialize(): String {
+        return StringBuilder()
+                .appendLine(gameModeId)
+                .appendLine(type.name)
+                .appendLine(customLabel ?: "")
+                .appendLine(boardSize)
+                .appendLine(timeLimitSeconds)
+                .appendLine(minWordLength)
+                .appendLine(scoreType)
+                .appendLine(hintMode)
+                .toString()
+    }
+
     override fun toString(): String {
         return "Game Mode [id: $gameModeId, type: $type]"
     }
@@ -94,6 +108,22 @@ data class GameMode (
         const val SCORE_TYPE = "scoreType"
         const val SCORE_WORDS = "W"
         const val SCORE_LETTERS = "L"
+
+        @JvmStatic fun deserialize(modeString: String): GameMode {
+            val parts = modeString.split("\n")
+
+            return GameMode(
+                    gameModeId = parts[0].toLong(),
+                    type = Type.valueOf(parts[1]),
+                    customLabel = if (parts[2] == "") null else parts[2],
+                    boardSize = parts[3].toInt(),
+                    timeLimitSeconds = parts[4].toInt(),
+                    minWordLength = parts[5].toInt(),
+                    scoreType = parts[6],
+                    hintMode = parts[7],
+            )
+        }
+
     }
 
 }

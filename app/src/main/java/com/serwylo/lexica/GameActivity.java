@@ -199,7 +199,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
     public void onResume() {
         super.onResume();
         if (game == null) {
-            Toast.makeText(this, "An error occured restoring your game", Toast.LENGTH_SHORT).show();;
+            Toast.makeText(this, R.string.error_restoring_game, Toast.LENGTH_SHORT).show();;
             NavUtils.navigateUpFromSameTask(this);
         }
 

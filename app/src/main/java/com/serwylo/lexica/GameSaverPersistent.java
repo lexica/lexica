@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Board;
@@ -43,8 +44,12 @@ public class GameSaverPersistent extends GameSaver {
 
     @Override
     public GameMode readGameMode() {
-        // TODO: Serialize this.
-        return null;
+        String gameModeString = getPrefs().getString(GAME_MODE, null);
+        if (gameModeString == null) {
+            throw new IllegalStateException("Could not deserialize game mode, as the saved value was null.");
+        }
+
+        return GameMode.deserialize(gameModeString);
     }
 
     @Override
@@ -76,15 +81,12 @@ public class GameSaverPersistent extends GameSaver {
     public void save(Board board, int timeRemaining, GameMode gameMode, String wordListToString, int wordCount, Date start, Game.GameStatus status) {
 
         SharedPreferences.Editor prefs = getPrefs().edit();
+        prefs.putString(GAME_MODE, gameMode.serialize());
         prefs.putInt(BOARD_SIZE, board.getSize());
-
         prefs.putString(GAME_BOARD, board.toString());
         prefs.putInt(TIME_REMAINING, timeRemaining);
         prefs.putString(WORDS, wordListToString);
         prefs.putInt(WORD_COUNT, wordCount);
-
-        // TODO: Serialize and save game mode...
-        // prefs.putString(GAME_MODE, gameMode);
 
         prefs.putBoolean(ACTIVE_GAME, true);
         prefs.apply();

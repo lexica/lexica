@@ -17,7 +17,6 @@ public abstract class GameSaver {
     protected static final int DEFAULT_WORD_COUNT = 0;
 
     protected static final String ACTIVE_GAME = "activeGame";
-    protected static final String SCORE_TYPE = "scoreType";
     protected static final String WORD_COUNT = "wordCount";
     protected static final String WORDS = "words";
     protected static final String GAME_MODE = "gameMode";

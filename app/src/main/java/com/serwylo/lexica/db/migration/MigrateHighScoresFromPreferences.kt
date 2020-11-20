@@ -2,7 +2,7 @@ package com.serwylo.lexica.db.migration
 
 import android.content.Context
 import android.util.Log
-import com.serwylo.lexica.activities.score.ScoreActivity
+import com.serwylo.lexica.GameSaverPersistent
 import com.serwylo.lexica.db.GameMode
 import com.serwylo.lexica.db.GameModeDao
 import com.serwylo.lexica.db.Result
@@ -15,6 +15,12 @@ import kotlin.math.sqrt
 class MigrateHighScoresFromPreferences(private val context: Context) {
 
     fun initialiseDb(gameModeDao: GameModeDao, resultDao: ResultDao) {
+
+        // Unfortunately the new way of persisting saved games depends on a game mode being present
+        // in the database. Given existing versions did not have this, it is simplest to just clear
+        // this for now. Apologies to anyone reading this who was frustrated at losing their game!
+        Log.i(TAG, "Sorry, we need to clear your current game. Apologies if you had a wonderful game going, it is just too difficult to migrate this to the new game mode system. Hopefully the improvements gained by this new structure make it worth it! Thanks.");
+        GameSaverPersistent(context).clearSavedGame()
 
         Log.i(TAG, "Creating default game modes.")
 
@@ -64,7 +70,7 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
     private fun migrateHighScoresFromPrefs(): List<LegacyHighScore> {
 
         val customGameModes: MutableList<LegacyHighScore> = ArrayList()
-        val prefs = context.getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).all
+        val prefs = context.getSharedPreferences(SCORE_PREF_FILE, Context.MODE_PRIVATE).all
         for (key in prefs.keys) {
             try {
                 val gameMode = maybeGameModeFromPref(key, prefs[key])
@@ -154,7 +160,9 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
 
     companion object {
 
+
         private const val TAG = "MigrateScoresFromPrefs"
+        private val SCORE_PREF_FILE = "prefs_score_file"
 
         private val defaultGameModes:List<GameMode> =
                 listOf(

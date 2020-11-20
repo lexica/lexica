@@ -103,6 +103,7 @@
     <string name="game_mode_custom_description">Custom game mode</string>
     <string name="game_mode_legacy">Legacy</string>
     <string name="game_mode_legacy_description">Used in an earlier version of Lexica</string>
+    <string name="error_restoring_game">An error occurred restoring your game</string>
     <plurals name="num_minutes">
         <item quantity="one">%d min</item>
         <item quantity="other">%d mins</item>
