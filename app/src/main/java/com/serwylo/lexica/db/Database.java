@@ -2,14 +2,11 @@ package com.serwylo.lexica.db;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
-import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.serwylo.lexica.db.converters.GameModeTypeConverter;
-import com.serwylo.lexica.db.migration.MigrateHighScoresFromPreferences;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -30,7 +30,7 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
         ScoreCalculator score = new ScoreCalculator(game);
         items = new ArrayList<>(score.getItems().size());
         for (ScoreCalculator.Selected selected : score.getItems()) {
-            items.add(new Item(selected.getWord(), selected.getScore(), true /*selected.isWord() */, null));
+            items.add(new Item(selected.getWord(), selected.getScore(), true /*selected.isWord() */, null)); // TODO: Ah... what?
         }
 
         adapter = new Adapter(items);
@@ -39,8 +39,6 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
         words.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
         words.setHasFixedSize(true);
         words.setAdapter(adapter);
-
-        activity.setHighScore(score.getScore());
 
         int totalScorePercentage = (int) (((double) score.getScore() / score.getMaxScore()) * 100);
         TextView scorePercentage = foundWordsView.findViewById(R.id.score_value);

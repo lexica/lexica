@@ -242,7 +242,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
             ScoreCalculator score = new ScoreCalculator(game);
 
             Result result = new Result(
-                    0,
+                    0, // Leaving blank because Room will create an ID for it after insert.
                     game.getGameMode().getGameModeId(),
                     game.getLanguage().getName(),
                     score.getScore(),
@@ -255,6 +255,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
 
             List<SelectedWord> words = new ArrayList<>(score.getItems().size());
             for (ScoreCalculator.Selected word : score.getItems()) {
+                // As above, don't specify an ID as Room will create it after inserting.
                 words.add(new SelectedWord(0, result.getResultId(), word.getWord(), word.getScore()));
             }
 

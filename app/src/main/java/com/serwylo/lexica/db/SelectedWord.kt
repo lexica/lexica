@@ -5,6 +5,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
+/**
+ * Record each word that is found for every game played.
+ * TODO: Benchmark this after lots of games have been played. How big does this get?
+ */
 @Parcelize
 @Entity
 data class SelectedWord(

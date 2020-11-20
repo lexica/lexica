@@ -53,6 +53,8 @@ class ChooseLexiconActivity : AppCompatActivity() {
         }
 
         init {
+            // This and teh expression below is used to provide a list of languages which is sorted
+            // by their internationalised name.
             val languagesWithLabels = Language.getAllLanguages()
                     .values
                     .associateBy { LanguageLabel.getLabel(this@ChooseLexiconActivity, it) }

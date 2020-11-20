@@ -29,6 +29,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.serwylo.lexica.activities.score.ScoreActivity;
+import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.lang.Language;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
@@ -63,7 +64,9 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     private void clearHighScores() {
-        getContext().getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().apply();
-        Toast.makeText(getContext(), R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
+        Database.writeExecutor.execute(() -> {
+            Database.get(getContext()).resultDao().deleteAll();
+            Toast.makeText(getContext(), R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
+        });
     }
 }

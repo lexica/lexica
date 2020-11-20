@@ -1,9 +1,7 @@
 package com.serwylo.lexica.db
 
-import android.app.Application
 import android.content.SharedPreferences
 import android.util.Log
-import androidx.preference.PreferenceManager
 
 class GameModeRepository(
         private val gameModeDao: GameModeDao,

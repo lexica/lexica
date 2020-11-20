@@ -105,7 +105,6 @@ data class GameMode (
     }
 
     companion object {
-        const val SCORE_TYPE = "scoreType"
         const val SCORE_WORDS = "W"
         const val SCORE_LETTERS = "L"
 
