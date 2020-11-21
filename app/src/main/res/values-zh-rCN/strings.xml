@@ -5,16 +5,10 @@
     <string name="restore_game">返回游戏</string>
     <string name="prefs">设置</string>
     <string name="pref_dict">词典</string>
-    <string name="pref_dict_summary">选择游戏语言</string>
-    <string name="pref_dict_dialog">选择一部词典</string>
     <string name="pref_dict_en_US">美式英语</string>
     <string name="pref_dict_en_GB">英式英语</string>
     <string name="pref_boardSize">版面</string>
-    <string name="pref_boardSize_summary">选择版面大小</string>
-    <string name="pref_boardSize_dialog">选择版面大小</string>
     <string name="pref_timeLimit">时限</string>
-    <string name="pref_timeLimit_summary">选择时间限制</string>
-    <string name="pref_timeLimit_dialog">选择时间限制</string>
     <string name="pref_sounds">音效</string>
     <string name="pref_sounds_summary">选择游戏会否发出音效</string>
     <string name="dialog_about_title">关于Lexica</string>
@@ -62,7 +56,7 @@
     <string name="pref_dict_it">意大利语</string>
     <string name="pref_dict_ca">加泰罗尼亚语</string>
     <string name="pref_dict_es">西班牙语</string>
-    <string name="pref_dict_beta">%1$s（测试中）</string>
+    <string name="lexicon_is_in_beta">测试中</string>
     <string name="pref_dict_ja">日语</string>
     <string name="pref_dict_ru">俄语</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">在线</string>

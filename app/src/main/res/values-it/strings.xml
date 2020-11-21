@@ -4,16 +4,10 @@
     <string name="new_game">Nuova partita</string>
     <string name="restore_game">Riprendi partita salvata</string>
     <string name="prefs">Preferenze</string>
-    <string name="pref_dict_summary">Seleziona una lingua per il gioco</string>
-    <string name="pref_dict_dialog">Seleziona un lessico</string>
     <string name="pref_dict_en_US">Inglese (Stati Uniti)</string>
     <string name="pref_dict_en_GB">Inglese (RU)</string>
     <string name="pref_boardSize">Dimensioni della tavola</string>
-    <string name="pref_boardSize_summary">Seleziona le dimensioni della tavola</string>
-    <string name="pref_boardSize_dialog">Seleziona le dimensioni della tavola</string>
     <string name="pref_timeLimit">Limite di tempo</string>
-    <string name="pref_timeLimit_summary">Seleziona un limite di tempo</string>
-    <string name="pref_timeLimit_dialog">Seleziona un limite di tempo</string>
     <string name="pref_sounds">Suoni abilitati</string>
     <string name="pref_sounds_summary">Se i suoni sono abilitati oppure no</string>
     <string name="dialog_about_title">Informazioni su Lexica</string>
@@ -41,7 +35,7 @@
     <string name="total_words">Parole totali:</string>
     <string name="total_score">Punteggio totale:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
     <string name="pref_dict_uk">Ucraino</string>
     <string name="pref_dict_ru">Russo</string>
     <string name="pref_dict_pl">Polacco</string>

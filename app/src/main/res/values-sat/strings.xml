@@ -52,13 +52,9 @@
     <string name="letter_points">ᱪᱤᱴᱷᱤ ᱯᱚᱮᱸᱴ ᱠᱚ</string>
     <string name="word_length">ᱟᱲᱟ ᱞᱚᱸᱵᱟ</string>
     <string name="pref_scoreType">ᱥᱠᱚᱨᱤᱝ ᱯᱨᱚᱠᱟᱨ</string>
-    <string name="pref_timeLimit_dialog">ᱥᱚᱢᱚᱭ ᱞᱤᱢᱤᱴ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
-    <string name="pref_timeLimit_summary">ᱥᱚᱢᱚᱭ ᱞᱤᱢᱤᱴ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
     <string name="pref_timeLimit">ᱥᱚᱢᱚᱭ ᱞᱤᱢᱤᱴ</string>
-    <string name="pref_boardSize_dialog">ᱵᱚᱰ ᱢᱟᱯ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
-    <string name="pref_boardSize_summary">ᱵᱚᱰ ᱢᱟᱯ ᱪᱚᱭᱚᱱ ᱢᱮ</string>
     <string name="pref_boardSize">ᱵᱚᱰ ᱢᱟᱯ</string>
-    <string name="pref_dict_beta">%1$s (ᱵᱮᱴᱟ)</string>
+    <string name="lexicon_is_in_beta">ᱵᱮᱴᱟ</string>
     <string name="pref_dict_en_US">ᱤᱝᱨᱡᱤ (ᱭᱩᱮᱥ)</string>
     <string name="pref_dict_uk">ᱤᱝᱨᱡᱤ(ᱭᱩ. ᱠ)</string>
     <string name="pref_dict_ru">ᱨᱟᱹᱥᱥᱤᱭᱟᱹᱱ</string>
@@ -73,8 +69,6 @@
     <string name="pref_dict_es">ᱥᱯᱮᱱᱤᱥ</string>
     <string name="pref_dict_de_DE">ᱡᱟᱹᱨᱢᱟᱹᱱ</string>
     <string name="pref_dict_ca">ᱠᱟᱴᱟᱞᱟᱱ</string>
-    <string name="pref_dict_dialog">ᱞᱮᱠᱥᱤᱠᱚᱱ ᱪᱚᱭᱚᱱ ᱢᱮᱸ</string>
-    <string name="pref_dict_summary">ᱠᱷᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱯᱟᱹᱨᱥᱤ ᱪᱚᱭᱚᱱ ᱢᱮᱸ</string>
     <string name="pref_dict">ᱞᱤᱠᱥᱤᱠᱚᱱ</string>
     <string name="prefs">ᱠᱩᱥᱤᱠᱚ</string>
     <string name="restore_game">ᱠᱷᱮᱞ ᱫᱩᱦᱲᱟᱹ ᱫᱚᱦᱚᱭ ᱢᱮᱸ</string>

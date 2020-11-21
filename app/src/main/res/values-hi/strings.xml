@@ -52,13 +52,9 @@
     <string name="letter_points">अक्षर अंक</string>
     <string name="word_length">शब्द की लंबाई</string>
     <string name="pref_scoreType">स्कोरिंग प्रणाली</string>
-    <string name="pref_timeLimit_dialog">समय सीमा चुनें</string>
-    <string name="pref_timeLimit_summary">एक समय सीमा चुनें</string>
     <string name="pref_timeLimit">समय सीमा</string>
-    <string name="pref_boardSize_dialog">बोर्ड माप चुनें</string>
-    <string name="pref_boardSize_summary">एक बोर्ड माप चुनें</string>
     <string name="pref_boardSize">बोर्ड माप</string>
-    <string name="pref_dict_beta">%1$s (बीटा)</string>
+    <string name="lexicon_is_in_beta">बीटा</string>
     <string name="pref_dict_en_US">अंग्रेज़ी (यू. एस.)</string>
     <string name="pref_dict_uk">यूक्रेनी</string>
     <string name="pref_dict_en_GB">अंग्रेजी (यू.किं.)</string>
@@ -74,8 +70,6 @@
     <string name="pref_dict_es">स्पेनिश</string>
     <string name="pref_dict_de_DE">जर्मन</string>
     <string name="pref_dict_ca">काटलान</string>
-    <string name="pref_dict_dialog">एक शब्दकोश का चयन करें</string>
-    <string name="pref_dict_summary">खेल के लिए एक भाषा चुनें</string>
     <string name="pref_dict">शब्दकोश</string>
     <string name="prefs">प्राथमिकताएँ</string>
     <string name="restore_game">पुराना गेम पुनर्स्थापित करें</string>

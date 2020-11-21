@@ -6,18 +6,12 @@
 	<string name="prefs">تنظیمات</string>
 
 	<string name="pref_dict">واژه‌نامه</string>
-	<string name="pref_dict_summary">واژه‌نامه‌ای را برای استفاده انتخاب نمایید</string>
-	<string name="pref_dict_dialog">انتخاب واژه‌نامه</string>
 	<string name="pref_dict_en_US">انگلیسی آمریکایی</string>
 	<string name="pref_dict_en_GB">انگلیسی بریتانیایی</string>
 
 	<string name="pref_boardSize">اندازهٔ صفحه</string>
-	<string name="pref_boardSize_summary">اندازهٔ صفحه را تعیین نمایید</string>
-	<string name="pref_boardSize_dialog">انتخاب اندازهٔ صفحه</string>
 
 	<string name="pref_timeLimit">محدودیت زمان</string>
-	<string name="pref_timeLimit_summary">محدودیت زمانی را مشخص کنید</string>
-	<string name="pref_timeLimit_dialog">انتخاب محدودیت زمانی</string>
 
 	<string name="pref_sounds">با صدا</string>
 	<string name="pref_sounds_summary">صدای بازی فعال است یا خیر</string>

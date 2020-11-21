@@ -5,16 +5,10 @@
     <string name="restore_game">ゲームを復元</string>
     <string name="prefs">設定</string>
     <string name="pref_dict">レキシコン</string>
-    <string name="pref_dict_summary">ゲームの言語を選択します</string>
-    <string name="pref_dict_dialog">レキシコンを選択</string>
     <string name="pref_dict_en_US">英語 (US)</string>
     <string name="pref_dict_en_GB">英語 (UK)</string>
     <string name="pref_boardSize">ボード サイズ</string>
-    <string name="pref_boardSize_summary">ボードのサイズを選択します</string>
-    <string name="pref_boardSize_dialog">ボードのサイズを選択</string>
     <string name="pref_timeLimit">制限時間</string>
-    <string name="pref_timeLimit_summary">制限時間を選択します</string>
-    <string name="pref_timeLimit_dialog">制限時間を選択</string>
     <string name="pref_sounds">サウンドが有効です</string>
     <string name="pref_sounds_summary">効果音を有効にするかどうか</string>
     <string name="dialog_about_title">Lexica について</string>
@@ -57,7 +51,7 @@
     <string name="pref_definitionProvider_dialog">定義プロバイダーを選択</string>
     <string name="pref_dict_de_DE">ドイツ語</string>
     <string name="pref_dict_nl">オランダ語</string>
-    <string name="pref_dict_beta">%1$s (ベータ)</string>
+    <string name="lexicon_is_in_beta">ベータ</string>
     <string name="pref_dict_ca">カタルーニャ語</string>
     <string name="pref_dict_es">スペイン語</string>
     <string name="pref_dict_fa">ペルシア語</string>

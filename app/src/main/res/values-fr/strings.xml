@@ -5,16 +5,10 @@
     <string name="restore_game">Reprendre la partie</string>
     <string name="prefs">Préférences</string>
     <string name="pref_dict">Lexique</string>
-    <string name="pref_dict_summary">Sélectionner une langue pour le jeu</string>
-    <string name="pref_dict_dialog">Sélectionner un lexique</string>
     <string name="pref_dict_en_US">Anglais (États-Unis)</string>
     <string name="pref_dict_en_GB">Anglais (Royaume-Uni)</string>
     <string name="pref_boardSize">Taille de la grille</string>
-    <string name="pref_boardSize_summary">Sélectionner une taille de grille</string>
-    <string name="pref_boardSize_dialog">Sélection de taille de grille</string>
     <string name="pref_timeLimit">Durée d\'une partie</string>
-    <string name="pref_timeLimit_summary">Sélectionner la durée</string>
-    <string name="pref_timeLimit_dialog">Sélection de la durée</string>
     <string name="pref_sounds">Effets sonores</string>
     <string name="pref_sounds_summary">Activer ou désactiver les effets sonores</string>
     <string name="dialog_about_title">À propos de Lexica</string>
@@ -60,7 +54,7 @@
     <string name="pref_dict_it">Italien</string>
     <string name="pref_dict_ca">Catalan</string>
     <string name="pref_dict_es">Espagnol</string>
-    <string name="pref_dict_beta">%1$s (Bêta)</string>
+    <string name="lexicon_is_in_beta">Bêta</string>
     <string name="pref_dict_fa">Persan</string>
     <string name="pref_dict_fr_FR">Français</string>
     <string name="pref_dict_ja">Japonais</string>

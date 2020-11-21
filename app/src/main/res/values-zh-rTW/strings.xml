@@ -6,18 +6,12 @@
 	<string name="prefs">設定</string>
 
 	<string name="pref_dict">字典</string>
-	<string name="pref_dict_summary">選擇遊戲字典</string>
-	<string name="pref_dict_dialog">選擇字典</string>
 	<string name="pref_dict_en_US">美式英文</string>
 	<string name="pref_dict_en_GB">英式英文</string>
 
 	<string name="pref_boardSize">圖版大小</string>
-	<string name="pref_boardSize_summary">選擇圖版大小</string>
-	<string name="pref_boardSize_dialog">選擇圖版大小</string>
 
 	<string name="pref_timeLimit">時限</string>
-	<string name="pref_timeLimit_summary">選擇時間限制</string>
-	<string name="pref_timeLimit_dialog">選擇時間限制</string>
 
 	<string name="pref_sounds">音效</string>
 	<string name="pref_sounds_summary">選擇遊戲會否發出音效</string>
@@ -76,7 +70,7 @@
 	<string name="pref_dict_it">義大利文</string>
 	<string name="pref_dict_ca">加泰隆尼亞文</string>
 	<string name="pref_dict_es">西班牙文</string>
-	<string name="pref_dict_beta">%1$s（測試中）</string>
+	<string name="lexicon_is_in_beta">測試中</string>
 
 	<string name="pref_dict_ja">日文</string>
 	<string name="pref_dict_ru">俄文</string>

@@ -7,8 +7,6 @@
 	<string name="prefs">Налаштування</string>
 
 	<string name="pref_dict">Словник</string>
-	<string name="pref_dict_summary">Вкажіть мову словника</string>
-	<string name="pref_dict_dialog">Вкажіть мову словника</string>
 	<string name="pref_dict_en_US">Англійська (США)</string>
 	<string name="pref_dict_en_GB">Англійська (Великобританія)</string>
 	<string name="pref_dict_de_DE">Німецька</string>
@@ -18,15 +16,11 @@
 	<string name="pref_dict_it">Італійська</string>
 	<string name="pref_dict_ca">Каталанська</string>
 	<string name="pref_dict_es">Іспанська</string>
-	<string name="pref_dict_beta">%1$s (Бета)</string>
+	<string name="lexicon_is_in_beta">Бета</string>
 
 	<string name="pref_boardSize">Розмір поля</string>
-	<string name="pref_boardSize_summary">Вкажіть розмір поля</string>
-	<string name="pref_boardSize_dialog">Вкажіть розмір поля</string>
 
 	<string name="pref_timeLimit">Тривалість гри</string>
-	<string name="pref_timeLimit_summary">Вкажіть тривалість гри</string>
-	<string name="pref_timeLimit_dialog">Вкажіть тривалість гри</string>
 
 	<string name="pref_scoreType">Нарахування очок</string>
 	<string name="word_length">За довжиною слів</string>

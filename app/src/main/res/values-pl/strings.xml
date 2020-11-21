@@ -5,8 +5,6 @@
     <string name="restore_game">Przywrócić grę</string>
     <string name="prefs">Preferencje</string>
     <string name="pref_dict">Leksykon</string>
-    <string name="pref_dict_summary">Wybierz język gry</string>
-    <string name="pref_dict_dialog">Wybierz Leksykon</string>
     <string name="pref_dict_ca">Kataloński</string>
     <string name="pref_dict_de_DE">Niemiecki</string>
     <string name="pref_dict_es">Hiszpański</string>
@@ -19,13 +17,9 @@
     <string name="pref_dict_ru">Rosyjski</string>
     <string name="pref_dict_en_GB">Angielski (UK)</string>
     <string name="pref_dict_en_US">Angielski (USA)</string>
-    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
     <string name="pref_boardSize">Rozmiar planszy</string>
-    <string name="pref_boardSize_summary">Wybierz rozmiar planszy</string>
-    <string name="pref_boardSize_dialog">Wybierz Rozmiar Planszy</string>
     <string name="pref_timeLimit">Limit czasu</string>
-    <string name="pref_timeLimit_summary">Wybierz limit czasu</string>
-    <string name="pref_timeLimit_dialog">Wybierz limit czasu</string>
     <string name="pref_scoreType">Typ punktacji</string>
     <string name="word_length">Długość słowa</string>
     <string name="letter_points">Punty Liter</string>

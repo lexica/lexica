@@ -5,8 +5,6 @@
     <string name="restore_game">Palauta peli</string>
     <string name="prefs">Asetukset</string>
     <string name="pref_dict">Leksikko</string>
-    <string name="pref_dict_summary">Valitse pelin kieli</string>
-    <string name="pref_dict_dialog">Valitse leksikko</string>
     <string name="pref_dict_ca">katalaani</string>
     <string name="pref_dict_de_DE">saksa</string>
     <string name="pref_dict_es">espanja</string>
@@ -23,10 +21,8 @@
     <string name="menu_save_game">Tallenna peli</string>
     <string name="dialog_about_title">Tietoja Lexicasta</string>
     <string name="word_length">Sanojen pituus</string>
-    <string name="pref_timeLimit_dialog">Valitse aikaraja</string>
-    <string name="pref_timeLimit_summary">Valitse aikaraja</string>
     <string name="pref_timeLimit">Aikaraja</string>
-    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
     <string name="pref_dict_en_US">englanti (US)</string>
     <string name="pref_dict_uk">ukraina</string>
     <string name="pref_dict_en_GB">englanti (UK)</string>
@@ -70,8 +66,6 @@
     <string name="pref_hintMode">Vihjeiden tyyppi</string>
     <string name="letter_points">Kirjainpisteet</string>
     <string name="pref_scoreType">Pisteytystapa</string>
-    <string name="pref_boardSize_dialog">Valitse laudan koko</string>
-    <string name="pref_boardSize_summary">Valitse pelilaudan koko</string>
     <string name="pref_dict_pt_BR">portugali (Brasilia)</string>
     <string name="pref_boardSize">Laudan koko</string>
     <string name="sort">Lajittele</string>

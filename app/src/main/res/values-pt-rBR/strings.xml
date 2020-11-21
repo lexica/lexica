@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_dict_summary">Selecione o idioma do jogo</string>
     <string name="pref_dict_ca">Catalão</string>
-    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
     <string name="high_score">Recorde</string>
     <string name="words">Palavras</string>
     <string name="pref_definitionProvider_summary">Selecione o provedor de definições que será usado. Se o provedor selecionado não estiver instalado, uma fonte online como o Wikcionário será usada.</string>
@@ -13,17 +12,13 @@
     <string name="show_unique">Mostrar Palavras Únicas</string>
     <string name="tile_count">Número de palavras</string>
     <string name="pref_sounds_summary">Se os efeitos sonoros estão ou não ativados</string>
-    <string name="pref_boardSize_summary">Selecione um tamanho para o tabuleiro</string>
     <string name="menu_end_game">Finalizar Jogo</string>
     <string name="button_ok">OK</string>
     <string name="pref_dict_nl">Holandês</string>
     <string name="score">Pontuação</string>
     <string name="pref_boardSize">Tamanho do Tabuleiro</string>
     <string name="pref_dict_fa">Persa</string>
-    <string name="pref_boardSize_dialog">Selecione o Tamanho do Tabuleiro</string>
-    <string name="pref_dict_dialog">Selecione o léxico</string>
     <string name="pref_dict_uk">Ucraniano</string>
-    <string name="pref_timeLimit_dialog">Selecione o Tempo Limite</string>
     <string name="pref_breakdown">Mostrar Detalhamento do Tamanho da Palavra</string>
     <string name="missed_words">Palavras Não Encontradas</string>
     <string name="hide_missed">Ocultar Palavras que Faltam</string>
@@ -61,7 +56,6 @@
     <string name="pref_scoreType">Tipo de Pontuação</string>
     <string name="menu_rotate_board">Girar o Tabuleiro</string>
     <string name="pref_dict_de_DE">Alemão</string>
-    <string name="pref_timeLimit_summary">Selecione um tempo limite</string>
     <string name="dialog_about_title">Sobre o Lexica</string>
     <string name="prefs">Preferências</string>
     <string name="app_name">Lexica</string>

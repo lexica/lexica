@@ -5,8 +5,6 @@
     <string name="restore_game">Obnovit hru</string>
     <string name="prefs">Možnosti</string>
     <string name="pref_dict">Slovník</string>
-    <string name="pref_dict_summary">Vyberte jazyk hry</string>
-    <string name="pref_dict_dialog">Zvolte slovník</string>
     <string name="pref_dict_ca">Katalánština</string>
     <string name="pref_dict_de_DE">Němčina</string>
     <string name="pref_dict_es">Španělština</string>
@@ -19,13 +17,9 @@
     <string name="pref_dict_ru">Ruština</string>
     <string name="pref_dict_en_GB">Angličtina (UK)</string>
     <string name="pref_dict_en_US">Angličtina (US)</string>
-    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
     <string name="pref_boardSize">Velikost herní plochy</string>
-    <string name="pref_boardSize_summary">Zvolte velikost hrací plochy</string>
-    <string name="pref_boardSize_dialog">Zvolte velikost hrací plochy</string>
     <string name="pref_timeLimit">Časový limit</string>
-    <string name="pref_timeLimit_summary">Zvolte časový limit hry</string>
-    <string name="pref_timeLimit_dialog">Zvolit časový limit</string>
     <string name="pref_scoreType">Způsob bodování</string>
     <string name="about">O aplikaci</string>
     <string name="button_ok">OK</string>

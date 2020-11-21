@@ -5,16 +5,10 @@
     <string name="restore_game">Recupera la partida</string>
     <string name="prefs">Configuració</string>
     <string name="pref_dict">Lèxic</string>
-    <string name="pref_dict_summary">Seleccioneu la llengua de la partida</string>
-    <string name="pref_dict_dialog">Seleccioneu un lèxic</string>
     <string name="pref_dict_en_US">Anglès (Estats Units)</string>
     <string name="pref_dict_en_GB">Anglès (Regne Unit)</string>
     <string name="pref_boardSize">Mida del tauler</string>
-    <string name="pref_boardSize_summary">Seleccioneu la mida del tauler</string>
-    <string name="pref_boardSize_dialog">Seleccioneu la mida del tauler</string>
     <string name="pref_timeLimit">Límit de temps</string>
-    <string name="pref_timeLimit_summary">Seleccioneu el límit de temps</string>
-    <string name="pref_timeLimit_dialog">Seleccioneu el límit de temps</string>
     <string name="pref_sounds">Habilita el so</string>
     <string name="pref_sounds_summary">Si voleu els efectes de so</string>
     <string name="dialog_about_title">Quant al Lexica</string>
@@ -50,7 +44,7 @@
     <string name="pref_definitionProvider_dialog">Seleccioneu el proveïdor de definicions</string>
     <string name="pref_dict_de_DE">Alemany</string>
     <string name="pref_dict_nl">Neerlandès</string>
-    <string name="pref_dict_beta">%1$s (beta)</string>
+    <string name="lexicon_is_in_beta">beta</string>
     <string name="pref_dict_fr_FR">Francès</string>
     <string name="pref_dict_it">Italià</string>
     <string name="pref_dict_ca">Català</string>

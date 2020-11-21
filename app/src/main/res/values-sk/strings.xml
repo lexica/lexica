@@ -8,13 +8,9 @@
     <string name="pref_hintMode">Režim nápovedy</string>
     <string name="word_length">Dĺžka slova</string>
     <string name="pref_scoreType">Spôsob bodovania</string>
-    <string name="pref_timeLimit_dialog">Zvoľte časový limit</string>
-    <string name="pref_timeLimit_summary">Zvoľte časový limit</string>
     <string name="pref_timeLimit">Časový limit</string>
-    <string name="pref_boardSize_dialog">Zvoľte veľkosť hracej plochy</string>
-    <string name="pref_boardSize_summary">Zvoľte veľkosť hracej plochy</string>
     <string name="pref_boardSize">Veľkosť hracej plochy</string>
-    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
     <string name="pref_dict_en_US">Angličtina (US)</string>
     <string name="pref_dict_uk">Ukrajinčina</string>
     <string name="pref_dict_en_GB">Angličtina (UK)</string>
@@ -30,8 +26,6 @@
     <string name="pref_dict_es">Španielčina</string>
     <string name="pref_dict_de_DE">Nemčina</string>
     <string name="pref_dict_ca">Katalánčina</string>
-    <string name="pref_dict_dialog">Vyberte slovník</string>
-    <string name="pref_dict_summary">Vyberte jazyk hry</string>
     <string name="new_game">Nová hra</string>
     <string name="prefs">Nastavenia</string>
     <string name="restore_game">Obnoviť hru</string>

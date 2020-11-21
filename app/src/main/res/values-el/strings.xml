@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_dict_summary">Επιλογή λεξικού για χρήση</string>
     <string name="pref_dict_ca">Καταλανικά</string>
-    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
     <string name="high_score">Υψηλή βαθμολογία</string>
     <string name="words">ΛΈΞΕΙΣ</string>
     <string name="pref_definitionProvider_summary">Επιλέξτε μια υπηρεσία παροχής ορισμού για χρήση. Εάν η επιλεγμένη υπηρεσία παροχής δεν είναι εγκατεστημένη, θα χρησιμοποιηθεί το DuckDuckGo.</string>
@@ -14,16 +13,12 @@
     <string name="pref_sounds">Ήχος ενεργοποιημένος</string>
     <string name="show_unique">Εμφάνιση μοναδικών λέξεων</string>
     <string name="pref_sounds_summary">Εάν είναι ενεργοποιημένα τα ηχητικά εφέ ή όχι</string>
-    <string name="pref_boardSize_summary">Επιλογή μεγέθους πίνακα</string>
     <string name="menu_end_game">Τερματισμός παιχνιδιού</string>
     <string name="button_ok">ΟΚ</string>
     <string name="pref_dict_nl">Ολλανδικά</string>
     <string name="score">ΒΑΘΜΟΛΟΓΊΑ</string>
     <string name="pref_boardSize">Μέγεθος πίνακα</string>
     <string name="pref_dict_fa">Περσικά</string>
-    <string name="pref_boardSize_dialog">Επιλογή μεγέθους πίνακα</string>
-    <string name="pref_dict_dialog">Επιλογή λεξικού</string>
-    <string name="pref_timeLimit_dialog">Επιλογή χρονικού ορίου</string>
     <string name="pref_breakdown">Εμφάνιση ανάλυσης μήκους λέξεων</string>
     <string name="missed_words">Χαμένες λέξεις</string>
     <string name="hide_missed">Απόκρυψη χαμένων λέξεων</string>
@@ -61,7 +56,6 @@
     <string name="pref_scoreType">Τύπος βαθμολόγησης</string>
     <string name="menu_rotate_board">Περιστροφή πίνακα</string>
     <string name="pref_dict_de_DE">Γερμανικά</string>
-    <string name="pref_timeLimit_summary">Επιλογή χρονικού ορίου</string>
     <string name="dialog_about_title">Σχετικά με τη Lexica</string>
     <string name="prefs">Προτιμήσεις</string>
     <string name="app_name">Lexica</string>

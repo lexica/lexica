@@ -52,13 +52,9 @@
     <string name="letter_points">נקודות אות</string>
     <string name="word_length">אורך מילה</string>
     <string name="pref_scoreType">סוג ניקוד</string>
-    <string name="pref_timeLimit_dialog">בחר מגבלת זמן</string>
-    <string name="pref_timeLimit_summary">בחר מגבלת זמן</string>
     <string name="pref_timeLimit">מגבלת זמן</string>
-    <string name="pref_boardSize_summary">בחר את גודל הלוח</string>
-    <string name="pref_boardSize_dialog">בחר גודל לוח</string>
     <string name="pref_boardSize">גודל הלוח</string>
-    <string name="pref_dict_beta">%1$s (בטא)</string>
+    <string name="lexicon_is_in_beta">בטא</string>
     <string name="pref_dict_en_US">אנגלית (ארה\"ב)</string>
     <string name="pref_dict_uk">אוקראינית</string>
     <string name="pref_dict_en_GB">אנגלית (בריטניה)</string>
@@ -74,8 +70,6 @@
     <string name="pref_dict_es">ספרדית</string>
     <string name="pref_dict_de_DE">גרמנית</string>
     <string name="pref_dict_ca">קטלאנית</string>
-    <string name="pref_dict_dialog">בחר אוצר מלים</string>
-    <string name="pref_dict_summary">בחר שפה משחק</string>
     <string name="pref_dict">אוצר מלים</string>
     <string name="prefs">העדפות</string>
     <string name="restore_game">שחזר משחק</string>

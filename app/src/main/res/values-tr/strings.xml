@@ -5,8 +5,6 @@
     <string name="restore_game">Oyunu Geri Yükle</string>
     <string name="prefs">Tercihler</string>
     <string name="pref_dict">Sözlük</string>
-    <string name="pref_dict_summary">Oyun için bir dil seçin</string>
-    <string name="pref_dict_dialog">Bir sözlük seçin</string>
     <string name="pref_dict_en_US">İngilizce (US)</string>
     <string name="pref_dict_en_GB">İngilizce (UK)</string>
     <string name="pref_dict_de_DE">Almanca</string>
@@ -18,13 +16,9 @@
     <string name="pref_dict_es">İspanyolca</string>
     <string name="pref_dict_ja">Japonca</string>
     <string name="pref_dict_ru">Rusça</string>
-    <string name="pref_dict_beta">%1$s (Beta sürüm)</string>
+    <string name="lexicon_is_in_beta">Beta sürüm</string>
     <string name="pref_boardSize">Tahta Boyutu</string>
-    <string name="pref_boardSize_summary">Tahta boyutunu seçin</string>
-    <string name="pref_boardSize_dialog">Tahta Boyutu Seç</string>
     <string name="pref_timeLimit">Zaman Sınırı</string>
-    <string name="pref_timeLimit_summary">Zaman sınırını seçin</string>
-    <string name="pref_timeLimit_dialog">Zaman Sınırı Seç</string>
     <string name="pref_scoreType">Puanlama Türü</string>
     <string name="word_length">Kelime Uzunluğu</string>
     <string name="letter_points">Harf Puanları</string>

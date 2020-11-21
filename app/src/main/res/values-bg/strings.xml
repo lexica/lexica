@@ -13,20 +13,14 @@
     <string name="missed_words">Пропуснати Думи</string>
     <string name="new_game">Нова Игра</string>
     <string name="pref_boardSize">Размер на Таблото</string>
-    <string name="pref_boardSize_dialog">Избери Размер на Таблото</string>
-    <string name="pref_boardSize_summary">Избери размер на таблото</string>
     <string name="pref_dict">Речник</string>
-    <string name="pref_dict_dialog">Избери Речник</string>
     <string name="pref_dict_en_GB">Обединеното Кралство</string>
     <string name="pref_dict_en_US">Съединените Щати</string>
     <string name="pref_sounds">Звуците са разрешени</string>
 <string name="restore_game">Възстановяване на Игра</string>
 	<string name="prefs">Предпочитания</string>
 
-	<string name="pref_dict_summary">Избор на речник за употреба</string>
-	<string name="pref_timeLimit">Времеви Лимит</string>
-	<string name="pref_timeLimit_summary">Избери времеви лимит</string>
-	<string name="pref_timeLimit_dialog">Избери Времеви Лимит</string>
+    <string name="pref_timeLimit">Времеви Лимит</string>
 
     <string name="pref_scoreType">Вид на Точкуване</string>
     <string name="word_length">Дължина на Думата</string>

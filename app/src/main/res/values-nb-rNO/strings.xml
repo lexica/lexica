@@ -5,16 +5,10 @@
     <string name="restore_game">Gjenopprett spill</string>
     <string name="prefs">Innstillinger</string>
     <string name="pref_dict">Leksikon</string>
-    <string name="pref_dict_summary">Velg språk for spillet</string>
-    <string name="pref_dict_dialog">Velg et leksikon</string>
     <string name="pref_dict_en_US">Engelsk (USA)</string>
     <string name="pref_dict_en_GB">Engelsk (UK)</string>
     <string name="pref_boardSize">Brettstørrelse</string>
-    <string name="pref_boardSize_summary">Velg en brettstørrelse</string>
-    <string name="pref_boardSize_dialog">Velg brettstørrelse</string>
     <string name="pref_timeLimit">Tidsgrense</string>
-    <string name="pref_timeLimit_summary">Velg en tidsgrense</string>
-    <string name="pref_timeLimit_dialog">Velg tidsgrense</string>
     <string name="pref_scoreType">Poengivningstype</string>
     <string name="word_length">Ordlengde</string>
     <string name="letter_points">Bokstavpoeng</string>
@@ -61,7 +55,7 @@
     <string name="pref_dict_it">Italiensk</string>
     <string name="pref_dict_ca">Katalansk</string>
     <string name="pref_dict_es">Spansk</string>
-    <string name="pref_dict_beta">%1$s (beta)</string>
+    <string name="lexicon_is_in_beta">beta</string>
     <string name="pref_dict_fa">Farsi</string>
     <string name="pref_dict_ja">Japansk</string>
     <string name="pref_dict_ru">Russisk</string>

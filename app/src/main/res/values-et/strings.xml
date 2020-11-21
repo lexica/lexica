@@ -42,7 +42,6 @@
     <string name="pref_hintMode_summary">Näitab kui mitmes sõnas iga tähte saab kasutada</string>
     <string name="pref_hintMode">Vihje tüüp</string>
     <string name="letter_points">Tähepunktid</string>
-    <string name="pref_boardSize_dialog">Vali mängulaua suurus</string>
     <string name="hide_unique">Peida kordumatud sõnad</string>
     <string name="show_unique">Näita kordumatuid sõnu</string>
     <string name="hide_missed">Peida leidmata jäänud sõnad</string>
@@ -51,12 +50,9 @@
     <string name="button_ok">Sobib</string>
     <string name="word_length">Sõnade pikkus</string>
     <string name="pref_scoreType">Punktiarvestuse tüüp</string>
-    <string name="pref_timeLimit_dialog">Vali ajapiirang</string>
-    <string name="pref_timeLimit_summary">Vali ajapiirang</string>
     <string name="pref_timeLimit">Ajapiirang</string>
-    <string name="pref_boardSize_summary">Vali mängulaua suurus</string>
     <string name="pref_boardSize">Mängulaua suurus</string>
-    <string name="pref_dict_beta">% 1 $ s (beetaversioon)</string>
+    <string name="lexicon_is_in_beta">beetaversioon</string>
     <string name="pref_dict_en_US">inglise (US)</string>
     <string name="pref_dict_uk">ukraina</string>
     <string name="pref_dict_en_GB">inglise (UK)</string>
@@ -72,8 +68,6 @@
     <string name="pref_dict_es">hispaania</string>
     <string name="pref_dict_de_DE">saksa</string>
     <string name="pref_dict_ca">katalaani</string>
-    <string name="pref_dict_dialog">Vali leksikon</string>
-    <string name="pref_dict_summary">Vali mängu keel</string>
     <string name="pref_dict">Leksikon</string>
     <string name="prefs">Eelistused</string>
     <string name="restore_game">Taasta mäng</string>

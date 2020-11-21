@@ -5,8 +5,6 @@
     <string name="restore_game">Продолжить</string>
     <string name="prefs">Настройки</string>
     <string name="pref_dict">Словарь</string>
-    <string name="pref_dict_summary">Выберите язык для игры</string>
-    <string name="pref_dict_dialog">Выберите словарь</string>
     <string name="pref_dict_en_US">Английский (Соединëнные Штаты)</string>
     <string name="pref_dict_en_GB">Английский (Великобритания)</string>
     <string name="pref_dict_de_DE">Немецкий</string>
@@ -16,13 +14,9 @@
     <string name="pref_dict_it">Итальянский</string>
     <string name="pref_dict_ca">Каталанский</string>
     <string name="pref_dict_es">Испанский</string>
-    <string name="pref_dict_beta">%1$s (Бета)</string>
+    <string name="lexicon_is_in_beta">Бета</string>
     <string name="pref_boardSize">Размер поля</string>
-    <string name="pref_boardSize_summary">Выберите размер поля</string>
-    <string name="pref_boardSize_dialog">Выберите размер поля</string>
     <string name="pref_timeLimit">Игровое время</string>
-    <string name="pref_timeLimit_summary">Выберите время на игру</string>
-    <string name="pref_timeLimit_dialog">Выберите время на игру</string>
     <string name="pref_scoreType">Начисление очков</string>
     <string name="word_length">По длине слов</string>
     <string name="letter_points">По очкам букв</string>

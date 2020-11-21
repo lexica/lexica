@@ -5,8 +5,6 @@
     <string name="restore_game">Fortsätt spela</string>
     <string name="prefs">Inställningar</string>
     <string name="pref_dict">Lexikon</string>
-    <string name="pref_dict_summary">Välj ett språk för spelet</string>
-    <string name="pref_dict_dialog">Välj ett lexikon</string>
     <string name="pref_dict_ca">Katalanska</string>
     <string name="pref_dict_de_DE">Tyska</string>
     <string name="pref_dict_es">Spanska</string>
@@ -20,13 +18,9 @@
     <string name="pref_dict_en_GB">Engelska (UK)</string>
     <string name="pref_dict_uk">Ukrainska</string>
     <string name="pref_dict_en_US">Engelska (US)</string>
-    <string name="pref_dict_beta">%1$s (Beta)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
     <string name="pref_boardSize">Brädesstorlek</string>
-    <string name="pref_boardSize_summary">Välj en brädesstorlek</string>
-    <string name="pref_boardSize_dialog">Välj brädesstorlek</string>
     <string name="pref_timeLimit">Tidsbegränsning</string>
-    <string name="pref_timeLimit_summary">Välj en tidsbegränsning</string>
-    <string name="pref_timeLimit_dialog">Välj tidsbegränsning</string>
     <string name="pref_scoreType">Poängräkning</string>
     <string name="word_length">Ordlängd</string>
     <string name="letter_points">Bokstavspoäng</string>

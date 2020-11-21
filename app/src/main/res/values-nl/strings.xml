@@ -5,16 +5,10 @@
     <string name="restore_game">Spel voortzetten</string>
     <string name="prefs">Voorkeuren</string>
     <string name="pref_dict">Woordenschat</string>
-    <string name="pref_dict_summary">Kies een taal om in te spelen</string>
-    <string name="pref_dict_dialog">Kies een woordenschat</string>
     <string name="pref_dict_en_US">Engels (VS)</string>
     <string name="pref_dict_en_GB">Engels (VK)</string>
     <string name="pref_boardSize">Bordgrootte</string>
-    <string name="pref_boardSize_summary">Kies een bordgrootte</string>
-    <string name="pref_boardSize_dialog">Bordgrootte kiezen</string>
     <string name="pref_timeLimit">Tijdslimiet</string>
-    <string name="pref_timeLimit_summary">Kies een tijdslimiet</string>
-    <string name="pref_timeLimit_dialog">Tijdslimiet kiezen</string>
     <string name="pref_sounds">Geluiden ingeschakeld</string>
     <string name="pref_sounds_summary">Geluidseffecten in-/uitschakelen</string>
     <string name="dialog_about_title">Over Lexica</string>
@@ -57,7 +51,7 @@
     <string name="pref_definitionProvider_dialog">Betekenisdienst kiezen</string>
     <string name="pref_dict_de_DE">Duits</string>
     <string name="pref_dict_nl">Nederlands</string>
-    <string name="pref_dict_beta">%1$s (bèta)</string>
+    <string name="lexicon_is_in_beta">bèta</string>
     <string name="pref_dict_fr_FR">Frans</string>
     <string name="pref_dict_it">Italiaans</string>
     <string name="pref_dict_ca">Catalaans</string>

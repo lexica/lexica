@@ -3,8 +3,7 @@
     <string name="prefs">ตั้งค่า</string>
 
 	<string name="pref_dict">พจนาณุกรม</string>
-	<string name="pref_dict_summary">เลือกพจนาณุกรมที่จะใช้</string>
-	<string name="pref_dict_en_US">สหรัฐอเมริกา</string>
+    <string name="pref_dict_en_US">สหรัฐอเมริกา</string>
 	<string name="pref_dict_en_GB">สหราชอาณาจักร</string>
 
 	<string name="pref_boardSize">ขนาดกระดาน</string>
