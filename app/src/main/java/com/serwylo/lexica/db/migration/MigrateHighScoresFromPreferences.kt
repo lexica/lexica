@@ -2,11 +2,9 @@ package com.serwylo.lexica.db.migration
 
 import android.content.Context
 import android.util.Log
+import androidx.preference.PreferenceManager
 import com.serwylo.lexica.GameSaverPersistent
-import com.serwylo.lexica.db.GameMode
-import com.serwylo.lexica.db.GameModeDao
-import com.serwylo.lexica.db.Result
-import com.serwylo.lexica.db.ResultDao
+import com.serwylo.lexica.db.*
 import com.serwylo.lexica.lang.Language
 import java.util.*
 import java.util.regex.Pattern
@@ -56,6 +54,52 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
             resultDao.insert(result)
 
         }
+    }
+
+    // Used tos tress test how much space it takes to record many results.
+    @Suppress("unused")
+    private fun stressTestDB(context: Context, numResults: Int) {
+        val db = Database.get(context.applicationContext)
+        val resultDao = db.resultDao()
+        val selectedWordDao = db.selectedWordDao()
+        val gameModeRepository = GameModeRepository(db.gameModeDao(), PreferenceManager.getDefaultSharedPreferences(context))
+
+        val mode = gameModeRepository.loadCurrentGameMode()
+
+        for (i in 1 .. numResults) {
+            insertDummyResult(mode!!, resultDao, selectedWordDao)
+        }
+    }
+
+    private fun insertDummyResult(mode: GameMode, resultDao: ResultDao, selectedWordDao: SelectedWordDao) {
+
+        val result = Result(
+                gameModeId = mode!!.gameModeId,
+                langCode = "fr_FR",
+                maxNumWords = 150,
+                maxScore = 300,
+                numWords = 50,
+                score = 120,
+        )
+
+        resultDao.insert(result)
+
+        val words = (1 .. result.numWords).toList().map {
+            val wordLength = 5
+            val word = (1 until wordLength)
+                    .toList()
+                    .map { (Math.random() * 26 + 65).toInt().toChar() } // Get a random latin ASCII char
+                    .joinToString("")
+
+            SelectedWord(
+                    resultId = result.resultId,
+                    points = wordLength - 2,
+                    word = word,
+            )
+        }
+
+        selectedWordDao.insert(words)
+
     }
 
     private fun findMatchingGameModeId(gameMode: GameMode, gameModesToSearch: Map<Long, GameMode>): Long {
