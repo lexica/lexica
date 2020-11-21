@@ -34,6 +34,7 @@ class ChooseGameModeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.gameModeList.layoutManager = LinearLayoutManager(this)
+        binding.gameModeList.setHasFixedSize(false)
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -68,7 +69,7 @@ class ChooseGameModeActivity : AppCompatActivity() {
     inner class Adapter(selectedItem: GameMode) : RecyclerView.Adapter<ViewHolder>() {
 
         private var gameModes: List<GameMode> = ArrayList()
-        private val selectedItem: GameMode
+        private var selectedItem: GameMode
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val binding = GameModeItemBinding.inflate(this@ChooseGameModeActivity.layoutInflater, parent, false)
@@ -94,13 +95,13 @@ class ChooseGameModeActivity : AppCompatActivity() {
                     })
             this.selectedItem = selectedItem
         }
-    }
 
-    private fun selectGameMode(mode: GameMode) {
-        val repo = GameModeRepository(Database.get(applicationContext).gameModeDao(), PreferenceManager.getDefaultSharedPreferences(this))
-        repo.saveCurrentGameMode(mode)
-
-        NavUtils.navigateUpFromSameTask(this)
+        private fun selectGameMode(mode: GameMode) {
+            val repo = GameModeRepository(Database.get(applicationContext).gameModeDao(), PreferenceManager.getDefaultSharedPreferences(applicationContext))
+            repo.saveCurrentGameMode(mode)
+            this.selectedItem = mode
+            notifyDataSetChanged() // TODO: Just notify the previous and newly selected items.
+        }
     }
 
     inner class ViewHolder(private val binding: GameModeItemBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -115,17 +116,32 @@ class ChooseGameModeActivity : AppCompatActivity() {
             binding.root.isSelected = isSelected
             binding.label.text = gameMode.label(context)
             binding.description.text = gameMode.description(context)
-            binding.statusTime.setText(context.resources.getQuantityString(R.plurals.num_minutes, gameMode.timeLimitSeconds / 60, gameMode.timeLimitSeconds / 60))
-            binding.statusBoardSize.setText("${boardWidth}x${boardWidth}")
-            binding.statusScoreType.setText(if (gameMode.scoreType == "W") context.getString(R.string.word_length) else context.getString(R.string.letter_points))
-            binding.statusMinLength.setText("≥ " + gameMode.minWordLength) // TODO: RTL
 
-            if (gameMode.hintModeColor() || gameMode.hintModeCount()) {
-                binding.statusHintMode.visibility = View.VISIBLE
-                binding.statusHintMode.setText(context.getString(R.string.pref_hintMode))
+            if (isSelected) {
+                binding.statusTime.visibility = View.VISIBLE
+                binding.statusBoardSize.visibility = View.VISIBLE
+                binding.statusScoreType.visibility = View.VISIBLE
+                binding.statusMinLength.visibility = View.VISIBLE
+
+                binding.statusTime.setText(context.resources.getQuantityString(R.plurals.num_minutes, gameMode.timeLimitSeconds / 60, gameMode.timeLimitSeconds / 60))
+                binding.statusBoardSize.setText("${boardWidth}x${boardWidth}")
+                binding.statusScoreType.setText(if (gameMode.scoreType == "W") context.getString(R.string.word_length) else context.getString(R.string.letter_points))
+                binding.statusMinLength.setText("≥ " + gameMode.minWordLength) // TODO: RTL
+
+                if (gameMode.hintModeColor() || gameMode.hintModeCount()) {
+                    binding.statusHintMode.visibility = View.VISIBLE
+                    binding.statusHintMode.setText(context.getString(R.string.pref_hintMode))
+                } else {
+                    binding.statusHintMode.visibility = View.GONE
+                }
             } else {
+                binding.statusTime.visibility = View.GONE
+                binding.statusBoardSize.visibility = View.GONE
+                binding.statusScoreType.visibility = View.GONE
                 binding.statusHintMode.visibility = View.GONE
+                binding.statusMinLength.visibility = View.GONE
             }
+
 
         }
     }

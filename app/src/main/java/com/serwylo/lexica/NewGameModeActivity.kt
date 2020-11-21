@@ -40,7 +40,7 @@ class NewGameModeActivity : AppCompatActivity() {
             return true
         }
 
-        return onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item)
     }
 
     private fun createNewGameMode() {

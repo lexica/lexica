@@ -45,8 +45,9 @@
         <item name="game__score__text_colour">@android:color/black</item>
 
         <item name="list__selectable_item_background">@drawable/selectable_item_background_high_contrast</item>
+        <item name="list__selectable_item_divider">@drawable/selectable_item_divider_high_contrast</item>
+        <item name="list__selectable_item_text_colour">@color/selectable_item_text_colour_high_contrast</item>
         <item name="list__background_colour">@color/white</item>
-        <item name="list__text_colour">@color/grey_1</item>
 
         <item name="score__background_colour">@android:color/white</item>
         <item name="score__values_background_colour">@android:color/white</item>
@@ -127,8 +128,9 @@
         <item name="game__score__text_colour">@color/yellow_1</item>
 
         <item name="list__selectable_item_background">@drawable/selectable_item_background_dark</item>
+        <item name="list__selectable_item_divider">@drawable/selectable_item_divider_dark</item>
+        <item name="list__selectable_item_text_colour">@color/selectable_item_text_colour_dark</item>
         <item name="list__background_colour">@color/grey_1</item>
-        <item name="list__text_colour">@color/yellow_1</item>
 
         <item name="score__background_colour">@color/grey_2</item>
         <item name="score__values_background_colour">@color/orange_2</item>
@@ -210,8 +212,9 @@
         <item name="game__score__text_colour">@color/white</item>
 
         <item name="list__selectable_item_background">@drawable/selectable_item_background_light</item>
+        <item name="list__selectable_item_divider">@drawable/selectable_item_divider_light</item>
+        <item name="list__selectable_item_text_colour">@color/selectable_item_text_colour_light</item>
         <item name="list__background_colour">@color/orange_3</item>
-        <item name="list__text_colour">@color/white</item>
 
         <item name="score__background_colour">@color/orange_2</item>
         <item name="score__values_background_colour">@color/orange_2</item>

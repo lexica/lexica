@@ -22,16 +22,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="?attr/list__text_colour"
+            android:textColor="?attr/list__selectable_item_text_colour"
             tools:text="Elvish"
             android:textAppearance="?attr/textAppearanceListItem" />
 
         <TextView android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="?attr/list__text_colour"
+            android:textColor="?attr/list__selectable_item_text_colour"
             app:layout_constraintTop_toBottomOf="@+id/language"
-            tools:text="Beta"
+            android:text="@string/lexicon_is_in_beta"
             android:textAppearance="?attr/textAppearanceListItemSecondary" />
 
     </LinearLayout>
@@ -44,6 +44,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="8dp"
         android:alpha="0.3"
-        android:background="?attr/list__text_colour" />
+        android:background="?attr/list__selectable_item_divider" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
