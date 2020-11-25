@@ -21,6 +21,12 @@ interface GameModeDao {
     @Query("SELECT * FROM GameMode")
     fun getAllGameModes(): LiveData<List<GameMode>>
 
+    /**
+     * Used for testing as LiveData is tricky to use under test.
+     */
+    @Query("SELECT * FROM GameMode")
+    fun getAllGameModesSynchronous(): List<GameMode>
+
     @Query("SELECT * FROM GameMode ORDER BY gameModeId LIMIT 0, 1")
     fun getFirst(): GameMode?
 

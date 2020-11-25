@@ -20,4 +20,19 @@ object LanguageLabel {
         return context.getString(resId)
 
     }
+
+    @JvmStatic fun getAllLanguagesSorted(context: Context): List<Language> {
+
+        // This and teh expression below is used to provide a list of languages which is sorted
+        // by their internationalised name.
+        val languagesWithLabels = Language.allLanguages
+                .values
+                .associateBy { LanguageLabel.getLabel(context, it) }
+
+        return languagesWithLabels
+                .keys
+                .sorted()
+                .map { languagesWithLabels[it] ?: error("Could not get language from map we just created, which is weird.") }
+
+    }
 }

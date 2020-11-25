@@ -35,8 +35,8 @@ class ChooseLexiconActivity : AppCompatActivity() {
 
     inner class Adapter : RecyclerView.Adapter<ViewHolder>() {
 
-        private val languages: List<Language>
-        private val selectedLanguage: Language
+        private val languages: List<Language> = LanguageLabel.getAllLanguagesSorted(this@ChooseLexiconActivity)
+        private val selectedLanguage: Language?
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val binding = LexiconListItemBinding.inflate(this@ChooseLexiconActivity.layoutInflater, parent, false)
@@ -45,7 +45,7 @@ class ChooseLexiconActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val language = languages[position]
-            holder.bind(language, language.name == selectedLanguage.name) { selectLexicon(language) }
+            holder.bind(language, language.name == selectedLanguage?.name) { selectLexicon(language) }
         }
 
         override fun getItemCount(): Int {
@@ -53,16 +53,6 @@ class ChooseLexiconActivity : AppCompatActivity() {
         }
 
         init {
-            // This and teh expression below is used to provide a list of languages which is sorted
-            // by their internationalised name.
-            val languagesWithLabels = Language.getAllLanguages()
-                    .values
-                    .associateBy { LanguageLabel.getLabel(this@ChooseLexiconActivity, it) }
-
-            languages = languagesWithLabels
-                    .keys
-                    .sorted()
-                    .map { languagesWithLabels[it] ?: error("Could not get language from map we just created.") }
 
             val languageCode = Util().getLexiconString(this@ChooseLexiconActivity)
             selectedLanguage = Language.fromOrNull(languageCode)

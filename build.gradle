@@ -3,7 +3,7 @@ apply plugin: 'java'
 apply plugin: 'kotlin'
 
 buildscript {
-    ext.kotlin_version = '1.4.10'
+    ext.kotlin_version = '1.4.20'
     repositories {
         jcenter()
         google()
@@ -34,7 +34,7 @@ task buildLanguageAnalysis(type: GradleBuild) {
 
 task buildTrieBuilder(type: GradleBuild) {
     buildFile = file('libraries/trie-builder/build.gradle')
-    tasks = ['build']
+    tasks = ['shadowJar']
 }
 
 task buildTrieLib(type: GradleBuild) {
@@ -65,7 +65,7 @@ languages.each { lang ->
 
     def langTask = task "buildDictionary_${lang}"(dependsOn: buildTrieBuilder, type: JavaExec) {
         main = 'com.serwylo.lexica.trie.TrieBuilderApp'
-        classpath 'libraries/trie/build/libs/trie.jar', 'libraries/trie-builder/build/libs/trie-builder.jar'
+        classpath 'libraries/trie-builder/build/libs/trie-builder-all.jar'
         args = [
                 lang,
                 file('assets/dictionaries/'),

@@ -1,5 +1,7 @@
 apply plugin: 'java'
+apply plugin: 'kotlin'
 
 dependencies {
     implementation project(':libraries:trie')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

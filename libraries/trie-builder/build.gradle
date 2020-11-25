@@ -1,5 +1,18 @@
-apply plugin: 'java'
+plugins {
+    // Used to create a fat jar with all dependencies, so that it can be executed without having to assemble the relevant dependencies on the classpath.
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
+
+    id 'java'
+    id 'kotlin'
+}
 
 dependencies {
     implementation project(':libraries:trie')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+shadowJar {
+    manifest {
+        attributes "Main-Class": "com.serwylo.lexica.trie.TrieBuilderApp"
+    }
 }
