@@ -17,16 +17,14 @@
 
 package com.serwylo.lexica;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
-import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.databinding.SplashBinding;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
@@ -39,7 +37,10 @@ import com.serwylo.lexica.lang.LanguageLabel;
 
 import java.util.Locale;
 
-public class MainMenuActivity extends Activity {
+import io.github.tonnyl.whatsnew.WhatsNew;
+import io.github.tonnyl.whatsnew.item.WhatsNewItem;
+
+public class MainMenuActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")
     protected static final String TAG = "Lexica";
@@ -89,6 +90,8 @@ public class MainMenuActivity extends Activity {
         binding.highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
         long score = highScore == null ? 0 : highScore.getScore();
         binding.highScore.setText(String.format(Locale.getDefault(), "%d", score));
+
+        Changelog.show(this);
     }
 
     public void onResume() {

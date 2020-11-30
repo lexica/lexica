@@ -70,6 +70,8 @@ dependencies {
     // quite customizable without having to go into <selectors> and such.
     implementation 'com.github.medyo:fancybuttons:1.9.1'
 
+    implementation 'io.github.tonnyl:whatsnew:0.1.2'
+
     implementation 'androidx.room:room-runtime:2.2.5'
     annotationProcessor 'androidx.room:room-compiler:2.2.5'
 
