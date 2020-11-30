@@ -1,0 +1,14 @@
+Game Modes!
+
+These preferences are replaced with "Game Modes":
+ * Duration
+ * Board size
+ * Min word length
+ * Scoring type
+ * Hint modes
+
+You can change game mode from the main screen, or create your own. High scores are based on game mode and lexicon.
+
+Please provide any feedback or report any issues on the issue tracker at https://github.com/lexica/lexica/issues.
+
+Support Lexica development via Liberapay or GitHub Sponsors :)
