@@ -14,6 +14,7 @@ import androidx.test.rule.ActivityTestRule;
 
 import com.serwylo.lexica.lang.EnglishUS;
 import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.lang.LanguageLabel;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -23,6 +24,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.List;
 import java.util.Locale;
 
 import tools.fastlane.screengrab.Screengrab;
@@ -194,9 +196,9 @@ public class FastlaneScreengrabTest {
 
     private int getIndexForLanguage(Language language) {
         int langIndex = -1;
-        String[] languageValues = ApplicationProvider.getApplicationContext().getResources().getStringArray(R.array.dict_choices_entryvalues);
-        for (int i = 0; i < languageValues.length; i++) {
-            String lang = languageValues[i];
+        List<Language> languages = LanguageLabel.getAllLanguagesSorted(ApplicationProvider.getApplicationContext());
+        for (int i = 0; i < languages.size(); i++) {
+            String lang = languages.get(i).getName();
             if (lang.equals(language.getName()) || language.getName().equals("en_US") && lang.equals("US") || language.getName().equals("en_GB") && lang.equals("UK")) {
                 langIndex = i;
                 break;

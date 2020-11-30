@@ -1,7 +1,9 @@
 apply plugin: 'java'
+apply plugin: 'kotlin'
 
 dependencies {
     testImplementation "junit:junit:4.13"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 // See https://code.google.com/p/android/issues/detail?id=64887 for why we copy files in this manner for tests.

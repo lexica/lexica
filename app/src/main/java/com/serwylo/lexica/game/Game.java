@@ -31,6 +31,7 @@ import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
 import com.serwylo.lexica.Util;
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.EnglishUS;
 import com.serwylo.lexica.lang.Language;
@@ -51,11 +52,6 @@ import java.util.Map;
 
 public class Game implements Synchronizer.Counter {
 
-    public static final String HINT_MODE = "hintMode";
-    public static final String SCORE_TYPE = "scoreType";
-    public static final String SCORE_WORDS = "W";
-    public static final String SCORE_LETTERS = "L";
-
     private static final String TAG = "Game";
     private int timeRemaining;
     private int maxTime;
@@ -64,8 +60,6 @@ public class Game implements Synchronizer.Counter {
 
     private Board board;
     private int score;
-    private String scoreType;
-    private String hintMode;
 
     public enum GameStatus {GAME_STARTING, GAME_RUNNING, GAME_PAUSED, GAME_FINISHED}
 
@@ -104,13 +98,16 @@ public class Game implements Synchronizer.Counter {
     private SoundPool mSoundPool;
     private int[] soundIds;
 
+    private GameMode gameMode;
+
     public Game(Context c, GameSaver saver) {
 
+        gameMode = saver.readGameMode();
         status = GameStatus.GAME_STARTING;
         wordCount = 0;
 
         context = c;
-        loadPreferences(c);
+        loadPreferences(c, gameMode);
 
         try {
             switch (saver.readBoardSize()) {
@@ -125,12 +122,11 @@ public class Game implements Synchronizer.Counter {
                     break;
             }
 
-            maxTimeRemaining = saver.readMaxTimeRemaining();
+            maxTimeRemaining = saver.readGameMode().getTimeLimitSeconds();
             timeRemaining = saver.readTimeRemaining();
             maxTime = timeRemaining;
             start = saver.readStart();
 
-            scoreType = saver.readScoreType();
             String[] wordArray = saver.readWords();
             wordList = new LinkedList<>();
             wordsUsed = new LinkedHashSet<>();
@@ -154,13 +150,14 @@ public class Game implements Synchronizer.Counter {
         }
     }
 
-    public Game(Context c) {
+    public Game(Context c, GameMode gameMode) {
+        this.gameMode = gameMode;
         status = GameStatus.GAME_STARTING;
         wordCount = 0;
         wordList = new LinkedList<>();
 
         context = c;
-        loadPreferences(c);
+        loadPreferences(c, gameMode);
 
         String lettersFileName = language.getLetterDistributionFileName();
         int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
@@ -191,6 +188,10 @@ public class Game implements Synchronizer.Counter {
         score = 0;
         wordsUsed = new LinkedHashSet<>();
         initializeWeights();
+    }
+
+    public GameMode getGameMode() {
+        return gameMode;
     }
 
     public Language getLanguage() {
@@ -234,7 +235,7 @@ public class Game implements Synchronizer.Counter {
         initializeDictionary();
     }
 
-    private void loadPreferences(Context c) {
+    private void loadPreferences(Context c, GameMode gameMode) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
 
         String languageCode = new Util().getLexiconString(context);
@@ -249,28 +250,13 @@ public class Game implements Synchronizer.Counter {
         }
         Log.d(TAG, "Language (from preferences): " + language.getName());
 
-        switch (prefs.getString("boardSize", "16")) {
-            case "16":
-                boardSize = 16;
-                minWordLength = 3;
-                break;
-            case "25":
-                boardSize = 25;
-                minWordLength = 4;
-                break;
-            case "36":
-                boardSize = 36;
-                minWordLength = 5;
-                break;
-        }
-
-        maxTimeRemaining = 100 * Integer.parseInt(prefs.getString("maxTimeRemaining", "180"));
+        boardSize = gameMode.getBoardSize();
+        minWordLength = gameMode.getMinWordLength();
+        maxTimeRemaining = 100 * gameMode.getTimeLimitSeconds();
 
         if (prefs.getBoolean("soundsEnabled", false)) {
             initSoundPool(c);
         }
-        scoreType = prefs.getString(SCORE_TYPE, SCORE_WORDS);
-        hintMode = prefs.getString(HINT_MODE, "hint_none");
     }
 
     public void initializeDictionary() {
@@ -352,7 +338,7 @@ public class Game implements Synchronizer.Counter {
     }
 
     public void save(GameSaver saver) {
-        saver.save(board, timeRemaining, getMaxTimeRemaining(), wordListToString(), scoreType, wordCount, start, status);
+        saver.save(board, timeRemaining, gameMode, wordListToString(), wordCount, start, status);
     }
 
     public void start() {
@@ -410,7 +396,7 @@ public class Game implements Synchronizer.Counter {
     }
 
     public int getWordScore(String word) {
-        if (SCORE_WORDS.equals(scoreType)) {
+        if (GameMode.SCORE_WORDS.equals(gameMode.getScoreType())) {
             return WORD_POINTS[word.length()];
         } else {
             int score = 0;
@@ -436,7 +422,7 @@ public class Game implements Synchronizer.Counter {
     }
 
     public String getScoreType() {
-        return scoreType;
+        return gameMode.getScoreType();
     }
 
     public int getMaxWordCount() {
@@ -458,11 +444,11 @@ public class Game implements Synchronizer.Counter {
     }
 
     public boolean hintModeCount() {
-        return hintMode.equals("tile_count") || hintMode.equals("hint_both");
+        return gameMode.hintModeCount();
     }
 
     public boolean hintModeColor() {
-        return hintMode.equals("hint_colour") || hintMode.equals("hint_both");
+        return gameMode.hintModeColor();
     }
 
     public ListIterator<String> listIterator() {

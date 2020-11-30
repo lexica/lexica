@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.Game;
 
@@ -36,18 +38,18 @@ public class GameSaverPersistent extends GameSaver {
     }
 
     @Override
-    public String readScoreType() {
-        return getPrefs().getString(SCORE_TYPE, Game.SCORE_WORDS);
-    }
-
-    @Override
     public String[] readWords() {
         return safeSplit(getPrefs().getString(WORDS, null));
     }
 
     @Override
-    public int readMaxTimeRemaining() {
-        return getPrefs().getInt(MAX_TIME_REMAINING, DEFAULT_MAX_TIME_REMAINING);
+    public GameMode readGameMode() {
+        String gameModeString = getPrefs().getString(GAME_MODE, null);
+        if (gameModeString == null) {
+            throw new IllegalStateException("Could not deserialize game mode, as the saved value was null.");
+        }
+
+        return GameMode.deserialize(gameModeString);
     }
 
     @Override
@@ -76,16 +78,14 @@ public class GameSaverPersistent extends GameSaver {
     }
 
     @Override
-    public void save(Board board, int timeRemaining, int maxTimeRemaining, String wordListToString, String scoreType, int wordCount, Date start, Game.GameStatus status) {
+    public void save(Board board, int timeRemaining, GameMode gameMode, String wordListToString, int wordCount, Date start, Game.GameStatus status) {
 
         SharedPreferences.Editor prefs = getPrefs().edit();
+        prefs.putString(GAME_MODE, gameMode.serialize());
         prefs.putInt(BOARD_SIZE, board.getSize());
-
         prefs.putString(GAME_BOARD, board.toString());
         prefs.putInt(TIME_REMAINING, timeRemaining);
-        prefs.putInt(MAX_TIME_REMAINING, maxTimeRemaining);
         prefs.putString(WORDS, wordListToString);
-        prefs.putString(SCORE_TYPE, scoreType);
         prefs.putInt(WORD_COUNT, wordCount);
 
         prefs.putBoolean(ACTIVE_GAME, true);

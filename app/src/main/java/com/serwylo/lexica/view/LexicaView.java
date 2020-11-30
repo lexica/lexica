@@ -33,6 +33,7 @@ import androidx.core.view.ViewCompat;
 
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Game;
 
 import java.util.Arrays;
@@ -206,7 +207,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
                 p.setTextSize(textSize);
                 p.setTextAlign(Paint.Align.CENTER);
                 canvas.drawText(letterForDisplay, theme.padding + (x * boxsize) + (boxsize / 2), topOfGrid + (y * boxsize) + (boxsize / 2) - offset, p);
-                if (Game.SCORE_LETTERS.equals(game.getScoreType())) {
+                if (GameMode.SCORE_LETTERS.equals(game.getScoreType())) {
                     String score = String.valueOf(game.getLanguage().getPointsForLetter(letter));
                     p.setTextSize(textSize / 4);
                     p.setTextAlign(Paint.Align.RIGHT);

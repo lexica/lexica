@@ -25,9 +25,9 @@ public class ThemeManager {
 
     public static final String PREFERENCE_NAME = "theme";
 
-    private static final String THEME_LIGHT = "light";
-    private static final String THEME_DARK = "dark";
-    private static final String THEME_HIGH_CONTRAST = "high_contrast";
+    public static final String THEME_LIGHT = "light";
+    public static final String THEME_DARK = "dark";
+    public static final String THEME_HIGH_CONTRAST = "high_contrast";
 
     private String currentTheme = null;
 

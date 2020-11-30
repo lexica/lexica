@@ -5,13 +5,11 @@
     <string name="restore_game">Palauta peli</string>
     <string name="prefs">Asetukset</string>
     <string name="pref_dict">Leksikko</string>
-    <string name="pref_dict_summary">Valitse pelin kieli</string>
-    <string name="pref_dict_dialog">Valitse leksikko</string>
     <string name="pref_dict_ca">katalaani</string>
-    <string name="pref_dict_de_de">saksa</string>
+    <string name="pref_dict_de_DE">saksa</string>
     <string name="pref_dict_es">espanja</string>
     <string name="pref_dict_fa">persia</string>
-    <string name="pref_dict_fr_fr">ranska</string>
+    <string name="pref_dict_fr_FR">ranska</string>
     <string name="pref_dict_hu">unkari</string>
     <string name="found_words">Löydetyt sanat</string>
     <string name="score">Pisteet</string>
@@ -22,21 +20,12 @@
     <string name="menu_end_game">Lopeta peli</string>
     <string name="menu_save_game">Tallenna peli</string>
     <string name="dialog_about_title">Tietoja Lexicasta</string>
-    <string name="dialog_cancel">Peruuta</string>
-    <string name="dialog_ok">OK</string>
     <string name="word_length">Sanojen pituus</string>
-    <string name="time_30m">30 minuuttia</string>
-    <string name="time_20m">20 minuuttia</string>
-    <string name="time_10m">10 minuuttia</string>
-    <string name="time_5m">5 minuuttia</string>
-    <string name="time_3m">3 minuuttia</string>
-    <string name="pref_timeLimit_dialog">Valitse aikaraja</string>
-    <string name="pref_timeLimit_summary">Valitse aikaraja</string>
     <string name="pref_timeLimit">Aikaraja</string>
-    <string name="pref_dict_beta">%1$s (Beta)</string>
-    <string name="pref_dict_us">englanti (US)</string>
-    <string name="pref_dict_uk_ua">ukraina</string>
-    <string name="pref_dict_uk">englanti (UK)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
+    <string name="pref_dict_en_US">englanti (US)</string>
+    <string name="pref_dict_uk">ukraina</string>
+    <string name="pref_dict_en_GB">englanti (UK)</string>
     <string name="pref_dict_ru">venäjä</string>
     <string name="pref_dict_pl">puola</string>
     <string name="pref_dict_nl">hollanti</string>
@@ -69,22 +58,14 @@
 \n4x4-laudalla sanojen pitää olla vähintään kolmikirjaimisia. 5x5-laudalla sanojen pitää olla vähintään nelikirjaimisia. Kolmi- ja nelikirjaimet sanat ovat yhden pisteen arvoisia. Pidemmät sanat ovat useamman pisteen arvoisia. Erisnimiä ei lasketa.
 \n
 \n</string>
-    <string name="dialog_no_saved">Peliä ei ole tallennettu. Jos luet tätä viestiä, jokin on todennäköisesti mennyt rikki.</string>
     <string name="pref_sounds_summary">Käytetäänkö äänitehosteita vai ei</string>
     <string name="pref_sounds">Äänet käytössä</string>
-    <string name="hint_both">Molemmat</string>
     <string name="hint_colour">Laatan väri</string>
     <string name="tile_count">Sanojen määrä</string>
-    <string name="hint_none">Pois käytöstä</string>
-    <string name="pref_hintMode_dialog">Vihjeiden tyyppi</string>
     <string name="pref_hintMode_summary">Näyttää, kuinka monessa sanassa kutakin kirjainta voi käyttää</string>
     <string name="pref_hintMode">Vihjeiden tyyppi</string>
     <string name="letter_points">Kirjainpisteet</string>
-    <string name="pref_scoreType_dialog">Valitse pisteytystapa</string>
-    <string name="pref_scoreType_summary">Valitse pisteidenlaskutapa</string>
     <string name="pref_scoreType">Pisteytystapa</string>
-    <string name="pref_boardSize_dialog">Valitse laudan koko</string>
-    <string name="pref_boardSize_summary">Valitse pelilaudan koko</string>
     <string name="pref_dict_pt_BR">portugali (Brasilia)</string>
     <string name="pref_boardSize">Laudan koko</string>
     <string name="sort">Lajittele</string>

@@ -25,14 +25,23 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
+import com.serwylo.lexica.activities.score.ScoreCalculator;
+import com.serwylo.lexica.db.Database;
+import com.serwylo.lexica.db.GameMode;
+import com.serwylo.lexica.db.Result;
+import com.serwylo.lexica.db.SelectedWord;
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.LexicaView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameActivity extends AppCompatActivity implements Synchronizer.Finalizer {
 
@@ -79,7 +88,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                     restoreGame();
                     break;
                 case "com.serwylo.lexica.action.NEW_GAME":
-                    newGame();
+                    newGame(getIntent().getExtras().getParcelable("gameMode"));
                     break;
             }
         } catch (Exception e) {
@@ -111,12 +120,12 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         return game.getStatus() != Game.GameStatus.GAME_FINISHED;
     }
 
-    private void newGame() {
-        Game bestGame = new Game(this);
+    private void newGame(GameMode gameMode) {
+        Game bestGame = new Game(this, gameMode);
         int numAttempts = 0;
         while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
             Log.d(TAG, "Generating another board, because the previous one only had " + bestGame.getMaxWordCount() + " words, but we want at least 45. Will give up after 5 tries.");
-            Game nextAttempt = new Game(this);
+            Game nextAttempt = new Game(this, gameMode);
             if (nextAttempt.getMaxWordCount() > bestGame.getMaxWordCount()) {
                 bestGame = nextAttempt;
             }
@@ -189,8 +198,10 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
 
     public void onResume() {
         super.onResume();
-        if (game == null)
-            newGame();
+        if (game == null) {
+            Toast.makeText(this, R.string.error_restoring_game, Toast.LENGTH_SHORT).show();;
+            NavUtils.navigateUpFromSameTask(this);
+        }
 
         switch (game.getStatus()) {
             case GAME_STARTING:
@@ -223,11 +234,40 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         synch.abort();
         clearSavedGame();
 
-        Bundle bun = new Bundle();
+        final Bundle bun = new Bundle();
         game.save(new GameSaverTransient(bun));
 
+        Database.writeExecutor.execute(() -> {
+
+            ScoreCalculator score = new ScoreCalculator(game);
+
+            Result result = new Result(
+                    0, // Leaving blank because Room will create an ID for it after insert.
+                    game.getGameMode().getGameModeId(),
+                    game.getLanguage().getName(),
+                    score.getScore(),
+                    score.getMaxScore(),
+                    score.getNumWords(),
+                    score.getMaxWords()
+            );
+
+            Database.get(this).resultDao().insert(result);
+
+            List<SelectedWord> words = new ArrayList<>(score.getItems().size());
+            for (ScoreCalculator.Selected word : score.getItems()) {
+                // As above, don't specify an ID as Room will create it after inserting.
+                words.add(new SelectedWord(0, result.getResultId(), word.getWord(), word.getScore()));
+            }
+
+            Database.get(this).selectedWordDao().insert(words);
+
+            showScore(bun);
+        });
+    }
+
+    private void showScore(Bundle bundleWithSavedGame) {
         Intent scoreIntent = new Intent("com.serwylo.lexica.action.SCORE");
-        scoreIntent.putExtras(bun);
+        scoreIntent.putExtras(bundleWithSavedGame);
 
         startActivity(scoreIntent);
 

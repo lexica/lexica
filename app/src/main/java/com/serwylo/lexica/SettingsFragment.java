@@ -29,6 +29,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.serwylo.lexica.activities.score.ScoreActivity;
+import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.lang.Language;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
@@ -37,23 +38,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.preferences);
         getResetScoresPreference().setOnPreferenceClickListener(preference -> promptThenResetScores());
-        highlightBetaLanguages();
-        setUsedLexicon();
-    }
-
-    private void highlightBetaLanguages() {
-        ListPreference pref = getLexiconPreferences();
-        CharSequence[] entries = pref.getEntries();
-        CharSequence[] values = pref.getEntryValues();
-        for (int i = 0; i < entries.length; i++) {
-            Language language = Language.fromOrNull(values[i].toString());
-            if (language != null) {
-                if (language.isBeta()) {
-                    entries[i] = getString(R.string.pref_dict_beta, entries[i]);
-                }
-            }
-        }
-        pref.setEntries(entries);
     }
 
     @NonNull
@@ -65,21 +49,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         }
 
         return preference;
-    }
-
-    @NonNull
-    private ListPreference getLexiconPreferences() {
-        ListPreference pref = findPreference("dict");
-
-        if (pref == null) {
-            throw new IllegalArgumentException("Could not find lexicon/dictionary preference.");
-        }
-
-        return pref;
-    }
-
-    private void setUsedLexicon() {
-        getLexiconPreferences().setValue(new Util().getLexiconString(getContext()));
     }
 
     public boolean promptThenResetScores() {
@@ -95,7 +64,9 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     private void clearHighScores() {
-        getContext().getSharedPreferences(ScoreActivity.SCORE_PREF_FILE, Context.MODE_PRIVATE).edit().clear().apply();
-        Toast.makeText(getContext(), R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
+        Database.writeExecutor.execute(() -> {
+            Database.get(getContext()).resultDao().deleteAll();
+            Toast.makeText(getContext(), R.string.high_scores_reset, Toast.LENGTH_SHORT).show();
+        });
     }
 }

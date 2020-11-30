@@ -17,19 +17,30 @@
 
 package com.serwylo.lexica;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.widget.TextView;
 
-import com.serwylo.lexica.activities.score.ScoreActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
+
+import com.serwylo.lexica.databinding.SplashBinding;
+import com.serwylo.lexica.db.Database;
+import com.serwylo.lexica.db.GameMode;
+import com.serwylo.lexica.db.GameModeRepository;
+import com.serwylo.lexica.db.Result;
+import com.serwylo.lexica.db.ResultRepository;
+import com.serwylo.lexica.db.migration.MigrateHighScoresFromPreferences;
+import com.serwylo.lexica.lang.Language;
+import com.serwylo.lexica.lang.LanguageLabel;
 
 import java.util.Locale;
 
-import mehdi.sakout.fancybuttons.FancyButton;
+import io.github.tonnyl.whatsnew.WhatsNew;
+import io.github.tonnyl.whatsnew.item.WhatsNewItem;
 
-public class MainMenuActivity extends Activity {
+public class MainMenuActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")
     protected static final String TAG = "Lexica";
@@ -38,51 +49,85 @@ public class MainMenuActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemeManager.getInstance().applyTheme(this);
-        splashScreen();
+        load();
     }
 
-    private void splashScreen() {
-        setContentView(R.layout.splash);
+    private void splashScreen(GameMode gameMode, Result highScore) {
 
-        FancyButton newGame = findViewById(R.id.new_game);
-        newGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.NEW_GAME")));
+        SplashBinding binding = SplashBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.newGame.setOnClickListener(v -> {
+            Intent intent = new Intent("com.serwylo.lexica.action.NEW_GAME");
+            intent.putExtra("gameMode", gameMode);
+            startActivity(intent);
+        });
+
+        binding.gameModeButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseGameModeActivity.class)));
+        binding.gameModeButton.setText(gameMode.label(this));
+
+        String languageCode = new Util().getLexiconString(this);
+        Language language = Language.fromOrNull(languageCode);
+        binding.languageButton.setText(LanguageLabel.getLabel(this, language));
+        binding.languageButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseLexiconActivity.class)));
 
         if (savedGame()) {
-            FancyButton restoreGame = findViewById(R.id.restore_game);
-            restoreGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.RESTORE_GAME")));
-            restoreGame.setEnabled(true);
+            binding.restoreGame.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.RESTORE_GAME")));
+            binding.restoreGame.setEnabled(true);
         }
 
-        FancyButton about = findViewById(R.id.about);
-        about.setOnClickListener(v -> {
+        binding.about.setOnClickListener(v -> {
             Intent i = new Intent(Intent.ACTION_VIEW);
             Uri u = Uri.parse("https://github.com/lexica/lexica");
             i.setData(u);
             startActivity(i);
         });
 
-        FancyButton preferences = findViewById(R.id.preferences);
-        preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));
-
-        int highScoreValue = ScoreActivity.getHighScore(this);
-
-        TextView highScoreLabel = findViewById(R.id.high_score_label);
+        binding.preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));
 
         // TODO: Leaving format argument here for now, until all strings.xml have been replaced for each lang to no
         //       longer have this argument. Otherwise, they will likely crash at runtime.
-        highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
+        binding.highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
+        long score = highScore == null ? 0 : highScore.getScore();
+        binding.highScore.setText(String.format(Locale.getDefault(), "%d", score));
 
-        TextView highScore = findViewById(R.id.high_score);
-        highScore.setText(String.format(Locale.getDefault(), "%d", highScoreValue));
+        Changelog.show(this);
     }
 
     public void onResume() {
         super.onResume();
-        splashScreen();
+        load();
     }
 
     public boolean savedGame() {
         return new GameSaverPersistent(this).hasSavedGame();
+    }
+
+    private void load() {
+        AsyncTask.execute(() -> {
+
+            // Force migrations to run prior to querying the database.
+            // This is required because we populate default game modes, for which we need at least one to be present.
+            // https://stackoverflow.com/a/55067991
+            final Database db = Database.get(this);
+            db.getOpenHelper().getReadableDatabase();
+
+            String languageCode = new Util().getLexiconString(this);
+            Language language = Language.fromOrNull(languageCode);
+
+            final GameModeRepository gameModeRepository = new GameModeRepository(db.gameModeDao(), PreferenceManager.getDefaultSharedPreferences(this));
+            final ResultRepository resultRepository = new ResultRepository(db.resultDao());
+
+            if (!gameModeRepository.hasGameModes()) {
+                new MigrateHighScoresFromPreferences(this).initialiseDb(db.gameModeDao(), db.resultDao());
+            }
+
+            final GameMode gameMode = gameModeRepository.loadCurrentGameMode();
+            final Result highScore = resultRepository.findHighScore(gameMode, language);
+
+            runOnUiThread(() -> splashScreen(gameMode, highScore));
+
+        });
     }
 
 }

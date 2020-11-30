@@ -28,6 +28,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import com.serwylo.lexica.R;
+import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Game;
 
 import java.util.Arrays;
@@ -190,7 +191,7 @@ public class BoardView extends View {
                 p.setTextSize(textSize);
                 p.setTextAlign(Paint.Align.CENTER);
                 canvas.drawText(letterForDisplay, (x * boxsize) + (boxsize / 2), (y * boxsize) + (boxsize / 2) - offset, p);
-                if (Game.SCORE_LETTERS.equals(game.getScoreType())) {
+                if (GameMode.SCORE_LETTERS.equals(game.getScoreType())) {
                     String score = String.valueOf(game.getLanguage().getPointsForLetter(letter));
                     p.setTextSize(textSize / 4);
                     p.setTextAlign(Paint.Align.RIGHT);

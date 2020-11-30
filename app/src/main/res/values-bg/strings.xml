@@ -4,9 +4,6 @@
     <string name="about">Относно</string>
     <string name="button_ok">OK</string>
     <string name="dialog_about_title">Относно Lexica</string>
-    <string name="dialog_cancel">Отказ</string>
-    <string name="dialog_no_saved">Няма запазена игра. Ако четеш това съобщение, значи нещо се е счупило.</string>
-    <string name="dialog_ok">ОК</string>
     <string name="found_words">Намерени Думи</string>
     <string name="hide_missed">Скрий Пропуснатите Думи</string>
     <string name="hide_unique">Скрий Уникалните Думи</string>
@@ -16,30 +13,17 @@
     <string name="missed_words">Пропуснати Думи</string>
     <string name="new_game">Нова Игра</string>
     <string name="pref_boardSize">Размер на Таблото</string>
-    <string name="pref_boardSize_dialog">Избери Размер на Таблото</string>
-    <string name="pref_boardSize_summary">Избери размер на таблото</string>
     <string name="pref_dict">Речник</string>
-    <string name="pref_dict_dialog">Избери Речник</string>
-    <string name="pref_dict_uk">Обединеното Кралство</string>
-    <string name="pref_dict_us">Съединените Щати</string>
+    <string name="pref_dict_en_GB">Обединеното Кралство</string>
+    <string name="pref_dict_en_US">Съединените Щати</string>
     <string name="pref_sounds">Звуците са разрешени</string>
 <string name="restore_game">Възстановяване на Игра</string>
 	<string name="prefs">Предпочитания</string>
 
-	<string name="pref_dict_summary">Избор на речник за употреба</string>
-	<string name="pref_timeLimit">Времеви Лимит</string>
-	<string name="pref_timeLimit_summary">Избери времеви лимит</string>
-	<string name="pref_timeLimit_dialog">Избери Времеви Лимит</string>
-	<string name="time_3m">3 Минути</string>
-	<string name="time_5m">5 Минути</string>
-	<string name="time_10m">10 Минути</string>
-	<string name="time_20m">20 Минути</string>
-	<string name="time_30m">30 Минути</string>
+    <string name="pref_timeLimit">Времеви Лимит</string>
 
-	<string name="pref_scoreType">Вид на Точкуване</string>
-	<string name="pref_scoreType_summary">Избери вида на точкуване</string>
-	<string name="pref_scoreType_dialog">Избери Вида на Точкуване</string>
-	<string name="word_length">Дължина на Думата</string>
+    <string name="pref_scoreType">Вид на Точкуване</string>
+    <string name="word_length">Дължина на Думата</string>
 	<string name="letter_points">Точи за Букви</string>
 
 	<string name="pref_sounds_summary">Дали звуковите ефекти са разрешени или не</string>

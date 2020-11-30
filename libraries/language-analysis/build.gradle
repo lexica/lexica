@@ -3,12 +3,14 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '6.0.0'
 
     id 'java'
+    id 'kotlin'
 }
 
 dependencies {
     implementation project(':libraries:liblexica')
     implementation project(':libraries:trie')
     implementation "org.apache.commons:commons-math3:3.6.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 shadowJar {

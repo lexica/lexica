@@ -33,6 +33,11 @@
         <attr format="color" name="game__score__heading_text_colour" />
         <attr format="color" name="game__score__text_colour" />
 
+        <attr format="reference" name="list__selectable_item_background" />
+        <attr format="reference" name="list__selectable_item_divider" />
+        <attr format="color" name="list__selectable_item_text_colour" />
+        <attr format="color" name="list__background_colour" />
+
         <attr format="color" name="score__background_colour" />
         <attr format="color" name="score__values_background_colour" />
         <attr format="color" name="score__missed_board_background_colour" />
