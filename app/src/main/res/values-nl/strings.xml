@@ -3,8 +3,8 @@
     <string name="app_name">Lexica</string>
     <string name="new_game">Nieuw spel</string>
     <string name="restore_game">Spel voortzetten</string>
-    <string name="prefs">Voorkeuren</string>
-    <string name="pref_dict">Woordenschat</string>
+    <string name="prefs">Instellingen</string>
+    <string name="pref_dict">Woordenlijst</string>
     <string name="pref_dict_en_US">Engels (VS)</string>
     <string name="pref_dict_en_GB">Engels (VK)</string>
     <string name="pref_boardSize">Bordgrootte</string>
@@ -12,8 +12,8 @@
     <string name="pref_sounds">Geluiden ingeschakeld</string>
     <string name="pref_sounds_summary">Geluidseffecten in-/uitschakelen</string>
     <string name="dialog_about_title">Over Lexica</string>
-    <string name="dialog_about_content">Raak het scherm aan en verplaats je vinger naar aangrenzende vakjes om woorden te leggen. Je hebt 3 minuten de tijd om zoveel mogelijk woorden te maken.
-\n 
+    <string name="dialog_about_content">Raak het scherm aan en veeg met je vinger over aangrenzende vakjes om woorden samen te stellen. Je hebt 3 minuten de tijd om zo veel mogelijk woorden te vinden.
+\n
 \nScore:
 \nOp borden ter grootte van 4x4 moeten woorden minimaal drie letters lang zijn. Op borden ter grootte van 5x5 moeten woorden minimaal vier letters lang zijn. Drie- of vierletterwoorden zijn 1 punt waard; langere woorden zijn meer punten waard. Zelfstandige naamwoorden tellen niet mee.
 \n
@@ -42,12 +42,12 @@
     <string name="high_score">Topscore</string>
     <string name="pref_resetScores_summary">Topscores worden bijgehouden voor elke combinatie van bovenstaande instellingen. Druk om alle scores terug te zetten op nul.</string>
     <string name="pref_resetScores">Topscores terugzetten op nul</string>
-    <string name="high_scores_reset">Topscores zijn teruggezet op nul.</string>
+    <string name="high_scores_reset">De topscores zijn teruggezet op nul.</string>
     <string name="reset_scores_prompt">Weet je zeker dat je alle topscores van alle spelmodi wilt terugzetten op nul?</string>
     <string name="pref_breakdown">Woordlengte-uitleg tonen</string>
-    <string name="pref_breakdown_summary">Of de woordenteller wel of niet woorden moet tonen op woordlengte</string>
+    <string name="pref_breakdown_summary">Of de woordenteller wel of geen woorden moet tonen op woordlengte</string>
     <string name="pref_definitionProvider">Betekenisdienst</string>
-    <string name="pref_definitionProvider_summary">Kies de te gebruiken betekenisdienst. Als de geselecteerde dienst niet geïnstalleerd is, dan zal een online-bron als Wiktionary worden gebruikt.</string>
+    <string name="pref_definitionProvider_summary">Kies de te gebruiken betekenisdienst. Als de geselecteerde dienst niet geïnstalleerd is, zal een online-bron, zoals Wiktionary, worden gebruikt.</string>
     <string name="pref_definitionProvider_dialog">Betekenisdienst kiezen</string>
     <string name="pref_dict_de_DE">Duits</string>
     <string name="pref_dict_nl">Nederlands</string>
@@ -75,4 +75,37 @@
     <string name="time">Tijd</string>
     <string name="sort">Sorteren</string>
     <string name="theme_high_contrast">Hoog contrast</string>
+    <string name="whats_new_game_modes_description">De volgende instellingen zijn vervangen door spelmodi: duur, bordgrootte, minimale woordlengte, scorenotatie en tipmodi.
+\n
+\nJe kunt de spelmodus aanpassen vanop het hoofdscherm of je eigen modus samenstellen. Topscores zijn gebaseerd op spelmodi en woordenlijsten.</string>
+    <string name="error_restoring_game">Er is een fout opgetreden tijdens het voortzetten van het spel</string>
+    <string name="game_mode_marathon">Rondje om de kerk</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d min.</item>
+        <item quantity="other">%d min.</item>
+    </plurals>
+    <string name="whats_new_game_modes_why">Door bijdragen vanuit de gemeenschap is het aantal spelmodi uitgebreid. Hierdoor is het moeilijker uit te leggen hoe topscores tot stand komen - elke nieuwe functie voegt immers complexiteit toe.
+\n
+\nIn het wijzigingslog het makkelijker te zien wat er veranderd is en welke instelling tot een bepaalde topscore leidt.
+\n
+\nDaarbovenop is de kern van Lexica bijgewerkt waardoor de code makkelijker is geworden. In de toekomst volgt nog een lokale databank die elk gevonden woord en elke topscore bijhoudt.</string>
+    <string name="whats_new_why">Waarom\?</string>
+    <string name="whats_new_game_modes">Spelmodi</string>
+    <string name="whats_new_continue">Doorgaan</string>
+    <string name="whats_new_title">Wijzigingslog</string>
+    <string name="game_mode_legacy_description">De modus uit oudere Lexica-versies</string>
+    <string name="game_mode_legacy">Klassiek</string>
+    <string name="game_mode_custom_description">Aangepast</string>
+    <string name="game_mode_letter_points_description">Krijg meer punten voor het gebruik van minder voorkomende letters</string>
+    <string name="game_mode_letter_points">Letterpunten</string>
+    <string name="game_mode_beginner_description">Vind alle woorden met behulp van tips</string>
+    <string name="game_mode_beginner">Beginner</string>
+    <string name="game_mode_marathon_description">Vind alle woorden, zonder enige vorm van tijdsdruk</string>
+    <string name="game_mode_sprint_description">Vind zo veel mogelijk woorden in zo weinig mogelijk tijd</string>
+    <string name="game_mode_sprint">Race tegen de klok</string>
+    <string name="menu_save_game_mode">Opslaan</string>
+    <string name="menu_new_game_mode">Nieuw</string>
+    <string name="input_game_mode_minutes_description">Tijdslimiet, in minuten</string>
+    <string name="input_game_mode_name_description">Voor het kiezen van de spelmodus/noteren van topscores</string>
+    <string name="input_game_mode_name_hint">Naam</string>
 </resources>
