@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lexica - Kelime Oyunu</string>
+    <string name="app_name">Lexica - Sözcük Oyunu</string>
     <string name="new_game">Yeni Oyun</string>
     <string name="restore_game">Oyunu Geri Yükle</string>
     <string name="prefs">Tercihler</string>
@@ -20,15 +20,15 @@
     <string name="pref_boardSize">Tahta Boyutu</string>
     <string name="pref_timeLimit">Zaman Sınırı</string>
     <string name="pref_scoreType">Puanlama Türü</string>
-    <string name="word_length">Kelime Uzunluğu</string>
+    <string name="word_length">Sözcük Uzunluğu</string>
     <string name="letter_points">Harf Puanları</string>
     <string name="pref_sounds">Sesler Etkinleştirildi</string>
     <string name="pref_sounds_summary">Ses efektlerinin etkinleştirilip etkinleştirilmediği</string>
     <string name="dialog_about_title">Lexica Hakkında</string>
-    <string name="dialog_about_content">Ekrana dokunun ve kelimeleri hecelemek için parmağınızı bitişik karelere taşıyın. Mümkün olduğunca çok kelime bulmak için üç dakikanız var. 
-\n 
-\nPuanlama: 
-\n4x4 tahtalarda, kelimeler en az üç harf uzunluğunda olmalıdır. 5x5 tahtalarda, kelimeler en az dört harf uzunluğunda olmalıdır. Üç veya dört harfli kelimeler bir puandır. Daha uzun kelimeler daha çok puan kazandırır. Özel isimler sayılmaz.
+    <string name="dialog_about_content">Ekrana dokunun ve sözcükleri hecelemek için parmağınızı bitişik karelere taşıyın. Mümkün olduğunca çok sözcük bulmak için üç dakikanız var.
+\n
+\nPuanlama:
+\n4x4 tahtalarda, sözcükler en az üç harf uzunluğunda olmalıdır. 5x5 tahtalarda, sözcükler en az dört harf uzunluğunda olmalıdır. Üç veya dört harfli sözcükler bir puandır. Daha uzun sözcükler daha çok puan kazandırır. Özel isimler sayılmaz.
 \n
 \n</string>
     <string name="menu_rotate_board">Tahtayı Çevir</string>
@@ -36,17 +36,17 @@
     <string name="menu_end_game">Oyunu Bitir</string>
     <string name="button_ok">TAMAM</string>
     <string name="about">Hakkında</string>
-    <string name="show_missed">Bulunamayan Kelimeleri Göster</string>
-    <string name="hide_missed">Bulunamayan Kelimeleri Gizle</string>
-    <string name="show_unique">Eşsiz Kelimeleri Göster</string>
-    <string name="hide_unique">Eşsiz Kelimeleri Gizle</string>
+    <string name="show_missed">Bulunamayan Sözcükleri Göster</string>
+    <string name="hide_missed">Bulunamayan Sözcükleri Gizle</string>
+    <string name="show_unique">Eşsiz Sözcükleri Göster</string>
+    <string name="hide_unique">Eşsiz Sözcükleri Gizle</string>
     <string name="view_word"><u>Göster</u></string>
     <string name="define_word"><u>Tanımla</u></string>
-    <string name="words">Kelimeler</string>
+    <string name="words">Sözcükler</string>
     <string name="score">Puan</string>
-    <string name="found_words">Bulunan Kelimeler</string>
-    <string name="missed_words">Bulunamayan Kelimeler</string>
-    <string name="total_words">Toplam Kelimeler:</string>
+    <string name="found_words">Bulunan Sözcükler</string>
+    <string name="missed_words">Bulunamayan Sözcükler</string>
+    <string name="total_words">Toplam Sözcükler:</string>
     <string name="total_score">Toplam Puan:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">Yüksek Puan</string>
@@ -54,15 +54,15 @@
     <string name="pref_resetScores">Yüksek Puanları Sıfırla</string>
     <string name="high_scores_reset">Yüksek puanlar sıfırlandı.</string>
     <string name="reset_scores_prompt">Tüm oyun modları için yüksek puanları sıfırlamak istediğinizden emin misiniz\?</string>
-    <string name="pref_breakdown">Kelime Uzunluğu Dağılımını Göster</string>
-    <string name="pref_breakdown_summary">Kelime sayısının kelime uzunluğuna göre gösterilip gösterilmediği</string>
+    <string name="pref_breakdown">Sözcük Uzunluğu Dağılımını Göster</string>
+    <string name="pref_breakdown_summary">Sözcük sayısının sözcük uzunluğuna göre gösterilip gösterilmediği</string>
     <string name="pref_definitionProvider">Tanım Sağlayıcısı</string>
     <string name="pref_definitionProvider_summary">Kullanılacak bir tanım sağlayıcı seçin. Seçilen sağlayıcı yüklenmemişse, Wiktionary gibi çevrim içi bir kaynak kullanılacaktır.</string>
     <string name="pref_definitionProvider_dialog">Tanım Sağlayıcıyı Seç</string>
     <string name="pref_dict_hu">Macarca</string>
     <string name="pref_hintMode">İpucu modu</string>
-    <string name="pref_hintMode_summary">Her harfin kullanılabileceği kelime sayısını gösterir</string>
-    <string name="tile_count">Kelime sayısı</string>
+    <string name="pref_hintMode_summary">Her harfin kullanılabileceği sözcük sayısını gösterir</string>
+    <string name="tile_count">Sözcük sayısı</string>
     <string name="hint_colour">Döşeme rengi</string>
     <string name="pref_dict_uk">Ukraynaca</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Çevrim içi</string>
@@ -75,4 +75,37 @@
     <string name="pref_theme">Tema</string>
     <string name="sort">Sırala</string>
     <string name="theme_high_contrast">Yüksek Karşıtlık</string>
+    <string name="game_mode_beginner_description">Sözcükleri bulmaya yardımcı olması için ipuçlarını kullanın</string>
+    <string name="whats_new_game_modes_why">Topluluğun katkıları sayesinde Lexica\'yı oynamanın yolları arttırıldı. Bu, yüksek puanların nasıl kaydedildiğini açıklamayı zorlaştırmakta ve her yeni özellik karmaşıklık eklemektedir.
+\n
+\nBu değişiklikler, hangi tercih birleşiminin belirli bir yüksek puanla sonuçlandığını anlamayı kolaylaştırır.
+\n
+\nEk bir özellik olarak, bulunan her bir sözcüğü ve her yüksek puanı kaydetmek için yerel bir veri tabanı ekleyerek, Lexica\'nın iç bileşenleri gelecekte geliştirmeyi kolaylaştıracak şekilde güncellendi.</string>
+    <string name="whats_new_game_modes_description">Aşağıdaki tercihler Oyun Modları ile değiştirildi: Süre, tahta boyutu, en düşük sözcük uzunluğu, puanlama türü ve ipucu modları.
+\n
+\nOyun modunu ana ekrandan değiştirebilir veya kendi modunuzu oluşturabilirsiniz. Yüksek puanlar oyun moduna ve sözlüğe bağlıdır.</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d dak</item>
+        <item quantity="other">%d dak</item>
+    </plurals>
+    <string name="whats_new_why">Neden\?</string>
+    <string name="whats_new_game_modes">Oyun Modları</string>
+    <string name="whats_new_continue">Devam et</string>
+    <string name="whats_new_title">Yenilikler</string>
+    <string name="error_restoring_game">Oyununuzu geri yüklerken bir hata oluştu</string>
+    <string name="game_mode_legacy_description">Lexica\'nın önceki bir sürümünde kullanıldı</string>
+    <string name="game_mode_legacy">Eski</string>
+    <string name="game_mode_custom_description">Özel oyun modu</string>
+    <string name="game_mode_letter_points_description">Daha az yaygın harfler kullanarak daha fazla puan kazanın</string>
+    <string name="game_mode_letter_points">Harf Puanları</string>
+    <string name="game_mode_beginner">Acemi</string>
+    <string name="game_mode_marathon_description">Herhangi bir zaman baskısı olmadan tüm sözcükleri bulmaya çalışın</string>
+    <string name="game_mode_marathon">Maraton</string>
+    <string name="game_mode_sprint_description">Mümkün olduğunca çok sözcük bulmak için kısa oyun</string>
+    <string name="game_mode_sprint">Sprint</string>
+    <string name="menu_save_game_mode">Kaydet</string>
+    <string name="menu_new_game_mode">Yeni</string>
+    <string name="input_game_mode_minutes_description">Dakika cinsinden zaman sınırı</string>
+    <string name="input_game_mode_name_description">Oyun modunu seçmek / yüksek puanları kaydetmek için</string>
+    <string name="input_game_mode_name_hint">Ad</string>
 </resources>
