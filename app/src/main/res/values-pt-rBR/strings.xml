@@ -75,4 +75,37 @@
     <string name="time">Tempo</string>
     <string name="sort">Ordenar</string>
     <string name="theme_high_contrast">Alto Contraste</string>
+    <string name="game_mode_marathon_description">Tente encontrar todas as palavras, sem qualquer pressão de tempo</string>
+    <string name="whats_new_game_modes_why">Graças às contribuições da comunidade, as formas de jogar Lexica se expandiram. Isto torna mais difícil explicar como os recordes são registrados, e cada nova característica acrescenta complexidade.
+\n
+\nEsta mudança facilita a compreensão de qual combinação de preferências resulta em um recorde em particular.
+\n
+\nComo um bônus adicional, os internos do Lexica foram atualizados para facilitar a melhoria no futuro, adicionando um banco de dados local para registrar cada palavra encontrada e cada recorde.</string>
+    <string name="whats_new_why">Porque\?</string>
+    <string name="whats_new_game_modes_description">As seguintes preferências foram substituídas por Modos de Jogo: Duração, tamanho do tabuleiro, comprimento mínimo de palavra, tipo de pontuação e modos de dica.
+\n
+\nVocê pode mudar o modo de jogo a partir da tela principal, ou criar o seu próprio modo. Os recordes são baseados no modo de jogo e no léxico.</string>
+    <string name="input_game_mode_name_description">Para escolher o modo de jogo / registrar recordes</string>
+    <string name="whats_new_game_modes">Modos de Jogo</string>
+    <string name="whats_new_continue">Continuar</string>
+    <string name="whats_new_title">O que há de novo</string>
+    <string name="error_restoring_game">Ocorreu um erro restaurando seu jogo</string>
+    <string name="game_mode_legacy_description">Usado em uma versão anterior do Lexica</string>
+    <string name="game_mode_legacy">Legado</string>
+    <string name="game_mode_custom_description">Modo de jogo personalizado</string>
+    <string name="game_mode_letter_points_description">Marque mais pontos ao usar letras menos comuns</string>
+    <string name="game_mode_letter_points">Pontos de Letra</string>
+    <string name="game_mode_beginner_description">Use dicas para ajudar a encontrar palavras</string>
+    <string name="game_mode_beginner">Iniciante</string>
+    <string name="game_mode_marathon">Maratona</string>
+    <string name="game_mode_sprint">Corrida</string>
+    <string name="game_mode_sprint_description">Jogo curto para encontrar o máximo de palavras possível</string>
+    <string name="menu_save_game_mode">Salvar</string>
+    <string name="menu_new_game_mode">Novo</string>
+    <string name="input_game_mode_minutes_description">Limite de tempo em minutos</string>
+    <string name="input_game_mode_name_hint">Nome</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d mins</item>
+    </plurals>
 </resources>
