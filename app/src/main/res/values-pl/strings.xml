@@ -58,7 +58,7 @@
     <string name="pref_breakdown">Pokaż podział długości słowa</string>
     <string name="pref_breakdown_summary">Niezależnie od tego, czy słowo się liczy, liczy się według długości słowa</string>
     <string name="pref_definitionProvider">Dostawca definicji</string>
-    <string name="pref_definitionProvider_summary">Wybierz dostawcę definicji, którego chcesz użyć. Jeśli wybrany dostawca nie jest zainstalowany, zostanie użyty DuckDuckGo.</string>
+    <string name="pref_definitionProvider_summary">Wybierz dostawcę definicji, którego chcesz użyć. Jeśli wybrany dostawca nie jest zainstalowany, zostanie użyte źródło takie jak Wikisłownik.</string>
     <string name="pref_definitionProvider_dialog">Wybierz dostawcę definicji</string>
     <string name="pref_hintMode">Tryb podpowiedzi</string>
     <string name="pref_hintMode_summary">Pokazuje liczbę słów, w których można użyć każdej litery</string>
