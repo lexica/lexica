@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="time">Tempo</string>
+    <string name="about">Pri</string>
+    <string name="menu_end_game">Fini</string>
+    <string name="menu_save_game">Konservi</string>
+    <string name="dialog_about_title">Pri Lexica</string>
+    <string name="pref_dict_en_US" tools:keep="@string/pref_dict_en_US">La angla (US)</string>
+    <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">La krajna</string>
+    <string name="pref_dict_en_GB" tools:keep="@string/pref_dict_en_GB">La angla (UK)</string>
+    <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">La</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">La pola</string>
+    <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">La japana</string>
+    <string name="pref_dict_it" tools:keep="@string/pref_dict_it">La Itaka</string>
+    <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">La hungara</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">La france</string>
+    <string name="pref_dict_es" tools:keep="@string/pref_dict_es">ispana</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">La</string>
+    <string name="prefs">Agordoj</string>
+    <string name="app_name">Lexica</string>
+    <string name="new_game">Nova ludo</string>
+</resources>
