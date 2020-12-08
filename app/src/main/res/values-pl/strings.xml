@@ -75,4 +75,5 @@
     <string name="time">Czas</string>
     <string name="sort">Sortuj</string>
     <string name="theme_high_contrast">Wysoki Kontrast</string>
+    <string name="input_game_mode_minutes_description">Limit czasu w minutach</string>
 </resources>
