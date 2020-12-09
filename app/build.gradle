@@ -92,9 +92,11 @@ dependencies {
 }
 
 afterEvaluate {
-    assembleDebug.dependsOn rootProject.buildDictionaries
-    if (tasks.findByPath('assembleRelease')) {
-        assembleRelease.dependsOn rootProject.buildDictionaries
+    generateDebugResources.dependsOn rootProject.buildDictionaries
+    generateDebugResources.shouldRunAfter rootProject.buildDictionaries
+    if (tasks.findByPath('generateReleaseResources')) {
+        generateReleaseResources.dependsOn rootProject.buildDictionaries
+        generateReleaseResources.shouldRunAfter rootProject.buildDictionaries
     }
 }
 repositories {
