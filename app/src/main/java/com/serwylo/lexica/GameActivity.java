@@ -201,6 +201,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         if (game == null) {
             Toast.makeText(this, R.string.error_restoring_game, Toast.LENGTH_SHORT).show();;
             NavUtils.navigateUpFromSameTask(this);
+            return;
         }
 
         switch (game.getStatus()) {
