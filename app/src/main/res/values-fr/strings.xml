@@ -75,4 +75,37 @@
     <string name="pref_theme_dialog">Sélectionnez un thème</string>
     <string name="pref_theme">Thème</string>
     <string name="time">Temps</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d min</item>
+    </plurals>
+    <string name="whats_new_game_modes_why">Grâce aux contributions de la communauté, les manières dont vous pouvez jouer à Lexica se sont élargies. Ceci rend plus difficile d\'expliquer comment les scores élevés sont enregistrés, et chaque nouvelle fonctionnalité ajoute de la complexité.
+\n
+\nCes modifications permettent de comprendre plus facilement quelle combinaison de préférences aboutit à un score élevé particulier.
+\n
+\nEn prime, les composants internes de Lexica ont été mis à jour pour faciliter son amélioration à l\'avenir en ajoutant une base de données locale pour enregistrer chaque mot trouvé et chaque score élevé.</string>
+    <string name="whats_new_why">Pourquoi \?</string>
+    <string name="whats_new_game_modes_description">Les préférences suivantes ont été remplacées par les modes de jeu : durée, taille du plateau, longueur minimale des mots, type de score et modes d\'indication.
+\n
+\nVous pouvez changer de mode de jeu depuis l\'écran principal ou créer le vôtre. Les scores élevés sont basés sur le mode de jeu et le lexique.</string>
+    <string name="whats_new_game_modes">Modes de jeu</string>
+    <string name="whats_new_continue">Continuer</string>
+    <string name="whats_new_title">Quoi de neuf</string>
+    <string name="error_restoring_game">Une erreur s\'est produite lors de la restauration de votre jeu</string>
+    <string name="game_mode_legacy_description">Utilisé dans une version antérieure de Lexica</string>
+    <string name="game_mode_legacy">Legacy</string>
+    <string name="game_mode_custom_description">Mode de jeu personnalisé</string>
+    <string name="game_mode_letter_points_description">Marquez plus de points en utilisant des lettres moins courantes</string>
+    <string name="game_mode_letter_points">Points de lettre</string>
+    <string name="game_mode_beginner_description">Utilisez des astuces pour trouver des mots</string>
+    <string name="game_mode_beginner">Débutant·e</string>
+    <string name="game_mode_marathon_description">Essayez de trouver tous les mots, sans aucune pression de temps</string>
+    <string name="game_mode_marathon">Marathon</string>
+    <string name="game_mode_sprint_description">Jeu court pour trouver le plus de mots possible</string>
+    <string name="game_mode_sprint">Sprint</string>
+    <string name="menu_save_game_mode">Enregistrer</string>
+    <string name="menu_new_game_mode">Nouveau</string>
+    <string name="input_game_mode_minutes_description">Limite de temps en minutes</string>
+    <string name="input_game_mode_name_description">Pour choisir le mode de jeu / enregistrer des scores élevés</string>
+    <string name="input_game_mode_name_hint">Nom</string>
 </resources>
