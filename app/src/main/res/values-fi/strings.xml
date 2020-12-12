@@ -75,4 +75,13 @@
     <string name="pref_theme_dialog">Valitse teema</string>
     <string name="pref_theme">Teema</string>
     <string name="time">Aika</string>
+    <string name="whats_new_title">Mikä on uutta</string>
+    <string name="whats_new_why">Miksi\?</string>
+    <string name="whats_new_game_modes">Pelitilat</string>
+    <string name="whats_new_continue">Jatka</string>
+    <string name="game_mode_marathon">Maraton</string>
+    <string name="game_mode_sprint">Sprintti</string>
+    <string name="menu_save_game_mode">Tallenna</string>
+    <string name="menu_new_game_mode">Uusi</string>
+    <string name="input_game_mode_name_hint">Nimi</string>
 </resources>
