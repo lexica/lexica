@@ -100,4 +100,12 @@
     <string name="input_game_mode_minutes_description">Ajapiirang minutites</string>
     <string name="input_game_mode_name_description">Mänguviisi valimiseks ja tulemuste salvestamiseks</string>
     <string name="input_game_mode_name_hint">Nimi</string>
+    <string name="whats_new_game_modes_why">Tänu meie kogukonna poolt tehtud täiendustele on Lexical senisest rohkem mänguvõimalusi. Samas on nüüd vaevarikkam selgitada, kuidas me punktiarvestust peame ning iga uus võimalus on ka lisanud keerukust.
+\n
+\nNeed muudatused teevad lihtsamaks konkreetse mänguliigi seostamise vastavate tulemustega.
+\n
+\nOleme Lexica sisemise loogika tulevikukindlamaks - kasutame nüüd leitud sõnade ja jagatud punktide haldamiseks kohalikku andmebaasi.</string>
+    <string name="whats_new_game_modes_description">Järgnevad seadistused on asendatud mänguliikidega: kestus, mänguvälja suurus, väikseim sõnapikkus, punktide lugemise viis ning vihjete tüüp.
+\n
+\nMänguliike saad muuta põhivaatest ning samast saad ka uusi liike lisada. Punktiarvestust peame mänguliigi ja kasutatava sõnastiku alusel.</string>
 </resources>
