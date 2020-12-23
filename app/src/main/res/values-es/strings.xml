@@ -1,51 +1,111 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">Léxica</string>
-
-    <string name="new_game">Nueva Partida</string>
-    <string name="restore_game">Recupera la partida</string>
-	<string name="prefs">Preferencias</string>
-
-	<string name="pref_dict">Diccionario</string>
-	<string name="pref_dict_en_US">Estados Unidos</string>
-	<string name="pref_dict_en_GB">Reino Unido</string>
-
-	<string name="pref_boardSize">Tamaño del tablero</string>
-
-	<string name="pref_timeLimit">Límite de tiempo</string>
-
-	<string name="pref_sounds">Sonido Habilitado</string>
-	<string name="pref_sounds_summary">Si los efectos de sonidos están habilitados o no</string>
-
-	<string name="dialog_about_title">Sobre Léxica</string>
-	<string name="dialog_about_content">"
- Toca la pantalla y nueve tu dedo hacia las casillas adyacentes para deletrear la palabra. Tiene tres minutos para encontrar todas las palabras que puedas.
-
-Puntuacion:
-En los tableros de 4x4, las palabras tiene que ser como mínimo de tres letras. En los de 5x5, de cuatro letras. Las palabras que tienen tres o cuatro letras valen un punto. Cuanto más larga sea la palabra, más puntos vale. Los nombres propios no cuentan.
-
-
- "</string>
-
-	<string name="menu_rotate_board">Rotar Tablero</string>
-	<string name="menu_save_game">Guardar Partida</string>
-	<string name="menu_end_game">Finalizar Partida</string>
-	<string name="button_ok">Aceptar</string>
-
-	<string name="about">"Sobre la  aplicación"</string>
-
-	<string name="show_missed">Muestra las palabras restantes</string>
-	<string name="hide_missed">Oculta las palabras restantes</string>
-
-	<string name="show_unique">Muestra las palabras únicas</string>
-	<string name="hide_unique">Oculta las palabras únicas</string>
-
-	<string name="view_word"><u>Ver</u></string>
-	<string name="define_word"><u>Define</u>... </string>
-
-	<string name="words">PALABRAS</string>
-	<string name="found_words">Palabras encontradas</string>
-	<string name="missed_words">Palabras restantes</string>
-	<string name="total_words">Palabras en total:</string>
-	<string name="total_score">Puntuación total:</string>
-	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Léxica</string>
+    <string name="new_game">Nueva partida</string>
+    <string name="restore_game">Continuar partida</string>
+    <string name="prefs">Preferencias</string>
+    <string name="pref_dict">Léxico</string>
+    <string name="pref_dict_en_US">Inglés (US)</string>
+    <string name="pref_dict_en_GB">Inglés (GB)</string>
+    <string name="pref_boardSize">Tamaño del tablero</string>
+    <string name="pref_timeLimit">Límite de tiempo</string>
+    <string name="pref_sounds">Sonido habilitado</string>
+    <string name="pref_sounds_summary">Indica si los efectos de sonidos están habilitados o no</string>
+    <string name="dialog_about_title">Sobre Léxica</string>
+    <string name="dialog_about_content">Toca la pantalla y nueve tu dedo hacia las casillas adyacentes para deletrear la palabra. Tiene tres minutos para encontrar todas las palabras que puedas.
+\n
+\nPuntaje:
+\nEn los tableros 4x4, las palabras al menos son de tres letras. En los tableros 5x5, de cuatro letras. Las palabras con tres o cuatro letras valen un punto. Cuanto más larga es una palabra, más puntos vale. Los nombres propios no cuentan.
+\n
+\n</string>
+    <string name="menu_rotate_board">Rotar tablero</string>
+    <string name="menu_save_game">Guardar partida</string>
+    <string name="menu_end_game">Finalizar partida</string>
+    <string name="button_ok">Aceptar</string>
+    <string name="about">Acerca</string>
+    <string name="show_missed">Muestra palabras incompletas</string>
+    <string name="hide_missed">Oculta palabras incompletas</string>
+    <string name="show_unique">Muestra palabras únicas</string>
+    <string name="hide_unique">Oculta palabras únicas</string>
+    <string name="view_word"><u>Ver</u></string>
+    <string name="define_word">"&lt;u&gt;Define&lt;/u&gt; "</string>
+    <string name="words">Palabras</string>
+    <string name="found_words">Palabras completadas</string>
+    <string name="missed_words">Palabras incompletas</string>
+    <string name="total_words">Total de palabras:</string>
+    <string name="total_score">Total de puntos:</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="game_mode_beginner_description">Partida asistida para encontrar palabras más fácilmente</string>
+    <string name="input_game_mode_name_description">Para escoger una modalidad de partida / guardar los puntajes más altos</string>
+    <string name="reset_scores_prompt">¿Estás de acuerdo con resetear los puntajes más altos de todas las modalidades de partida a cero\?</string>
+    <string name="whats_new_game_modes_why">Gracias a los contribuidores de la comunidad, las maneras en las que puedes jugar Léxica se han expandido. Esto dificulta explicar cómo se guardan los puntajes más altos y cada nueva característica añade una mayor complejidad.
+\n
+\nEstos cambios facilitan entender cuáles combinaciones de preferencias resultan en un puntaje más alto en particular.
+\n
+\nComo un bono, las partes internas de Léxica se han actualizado para facilitar la futura adición de base de datos locales para guardar cada palabra encontrada y cada puntaje alto.</string>
+    <string name="high_scores_reset">Los puntajes más altos han sido reseteados.</string>
+    <string name="pref_resetScores">Resetea los puntajes más altos</string>
+    <string name="pref_resetScores_summary">Los puntajes más altos son guardados según la combinación de configuraciones para la partida. Toca para resetear las puntuaciones.</string>
+    <string name="high_score">Puntaje más alto</string>
+    <string name="score">Puntaje</string>
+    <string name="pref_scoreType">Tipo de puntaje</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d mins</item>
+    </plurals>
+    <string name="whats_new_why">¿Por qué\?</string>
+    <string name="whats_new_game_modes_description">Las siguientes preferencias han sido reemplazadas con modalidades de partida: duración, tamaño del tablero, longitud mínima de palabras, tipo de puntaje y modalidades asistidas.
+\n
+\nPuedes cambiar la modalidad de la partida desde la pantalla principal o puedes crear una propia. Los puntajes más altos son según su modalidad de partida y léxico.</string>
+    <string name="whats_new_game_modes">Modalidades de partida</string>
+    <string name="whats_new_continue">Continuar</string>
+    <string name="whats_new_title">Novedades</string>
+    <string name="error_restoring_game">Un error ha ocurrido al intentar restaurar tu partida</string>
+    <string name="game_mode_legacy_description">Usado en versiones anteriores de Léxica</string>
+    <string name="game_mode_legacy">Legado</string>
+    <string name="game_mode_custom_description">Modo de partida personalizada</string>
+    <string name="game_mode_letter_points_description">Partida para anotar más puntos por el uso de letras menos comunes</string>
+    <string name="game_mode_letter_points">Letras con puntaje</string>
+    <string name="game_mode_beginner">Principiante</string>
+    <string name="game_mode_marathon_description">Partida para encontrar todas las palabras sin presión de tiempo</string>
+    <string name="game_mode_marathon">Maratón</string>
+    <string name="game_mode_sprint_description">Partida breve para encontrar cuantas palabras sean posibles</string>
+    <string name="game_mode_sprint">Carrera</string>
+    <string name="menu_save_game_mode">Guardar</string>
+    <string name="menu_new_game_mode">Nuevo</string>
+    <string name="input_game_mode_minutes_description">Tiempo límite en minutos</string>
+    <string name="input_game_mode_name_hint">Nombre</string>
+    <string name="sort">Ordenar</string>
+    <string name="theme_high_contrast">Alto contraste</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="theme_light">Claro</string>
+    <string name="pref_theme_dialog">Selecciona un tema</string>
+    <string name="pref_theme">Tema</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">En línea</string>
+    <string name="pref_definitionProvider_dialog">Selecciona un proveedor de definiciones</string>
+    <string name="pref_definitionProvider_summary">Selecciona un proveedor de definiciones. Si el proveedor no está instalado, un recurso en línea como Wikcionario será usado.</string>
+    <string name="pref_definitionProvider">Proveedor de definiciones</string>
+    <string name="pref_breakdown_summary">Indica si el recuento de palabras muestra recuentos por longitud de palabra</string>
+    <string name="pref_breakdown">Muestra el desglose de la longitud de las palabras</string>
+    <string name="time">Tiempo</string>
+    <string name="hint_colour">Color de las lozetas</string>
+    <string name="tile_count">Número de palabras</string>
+    <string name="pref_hintMode_summary">Muestra el número de palabras que pueden hacerse con cada letra</string>
+    <string name="pref_hintMode">Modo asistido</string>
+    <string name="letter_points">Letras con puntaje</string>
+    <string name="word_length">Longitud de palabra</string>
+    <string name="lexicon_is_in_beta">Beta</string>
+    <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">Ucraniano</string>
+    <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">Ruso</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugués (BR)</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Polaco</string>
+    <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">Holandés</string>
+    <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">Japonés</string>
+    <string name="pref_dict_it" tools:keep="@string/pref_dict_it">Italiano</string>
+    <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">Húngaro</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">Francés</string>
+    <string name="pref_dict_fa" tools:keep="@string/pref_dict_fa">Persa</string>
+    <string name="pref_dict_es" tools:keep="@string/pref_dict_es">Español</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">Alemán</string>
+    <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Catalán</string>
 </resources>
