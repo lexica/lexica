@@ -219,19 +219,6 @@ public class Game implements Synchronizer.Counter {
     public void setBoard(Board b) {
         board = b;
         boardSize = b.getSize();
-
-        switch (boardSize) {
-            case 16:
-                minWordLength = 3;
-                break;
-            case 25:
-                minWordLength = 4;
-                break;
-            case 36:
-                minWordLength = 5;
-                break;
-        }
-
         initializeDictionary();
     }
 
