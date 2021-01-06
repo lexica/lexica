@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="pref_boardSize">বোর্ডের আকার</string>
+    <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">ইউক্রেনীয়</string>
+    <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">রাশিয়ান</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">পর্তুগীজ (ব্রাজিল)</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">পোলিশ</string>
+    <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">ডাচ</string>
+    <string name="pref_dict_it" tools:keep="@string/pref_dict_it">ইতালীয়</string>
+    <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">হাঙ্গেরিয়ান</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">ফরাসী</string>
+    <string name="pref_dict_es" tools:keep="@string/pref_dict_es">স্প্যানিশ</string>
+    <string name="pref_scoreType">স্কোরিং প্রকার</string>
+    <string name="pref_timeLimit">সময় সীমা</string>
+    <string name="lexicon_is_in_beta">বিটা</string>
+    <string name="pref_dict_en_US" tools:keep="@string/pref_dict_en_US">ইংরাজি (মার্কিন)</string>
+    <string name="pref_dict_en_GB" tools:keep="@string/pref_dict_en_GB">ইংরাজি (ইউকে)</string>
+    <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">জাপানি</string>
+    <string name="pref_dict_fa" tools:keep="@string/pref_dict_fa">ফার্সি</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">জার্মান</string>
+    <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">কাতালান</string>
+    <string name="pref_dict">অভিধান</string>
+    <string name="prefs">পছন্দসমূহ</string>
+    <string name="restore_game">খেলা রিস্টোর করুন</string>
+    <string name="new_game">নতুল খেলা</string>
+    <string name="app_name">লেক্সিকা</string>
+</resources>
