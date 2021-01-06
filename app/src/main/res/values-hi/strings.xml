@@ -57,7 +57,7 @@
     <string name="lexicon_is_in_beta">बीटा</string>
     <string name="pref_dict_en_US">अंग्रेज़ी (यू. एस.)</string>
     <string name="pref_dict_uk">यूक्रेनी</string>
-    <string name="pref_dict_en_GB">अंग्रेजी (यू.किं.)</string>
+    <string name="pref_dict_en_GB">अंग्रेजी (यूके)</string>
     <string name="pref_dict_ru">रूसी</string>
     <string name="pref_dict_pt_BR">पुर्तगाली (ब्राज़ील)</string>
     <string name="pref_dict_pl">पोलिश</string>
@@ -67,12 +67,45 @@
     <string name="pref_dict_hu">हंगेरियन</string>
     <string name="pref_dict_fr_FR">फ्रेंच</string>
     <string name="pref_dict_fa">फ़ारसी</string>
-    <string name="pref_dict_es">स्पेनिश</string>
+    <string name="pref_dict_es">स्पैनिश</string>
     <string name="pref_dict_de_DE">जर्मन</string>
-    <string name="pref_dict_ca">काटलान</string>
+    <string name="pref_dict_ca">कातालान</string>
     <string name="pref_dict">शब्दकोश</string>
     <string name="prefs">प्राथमिकताएँ</string>
-    <string name="restore_game">पुराना गेम पुनर्स्थापित करें</string>
-    <string name="new_game">नया गेम</string>
-    <string name="app_name">लेकसिका</string>
+    <string name="restore_game">खेल रीस्टोर करें</string>
+    <string name="new_game">नया खेल</string>
+    <string name="app_name">लेक्सिका</string>
+    <string name="whats_new_game_modes_why">"समुदाय के योगदान से लेक्सिका खेलने के तरीकें बढ़ गए हैं। इससे यह स्पष्ट करना कठिन हो गया है कि ऊँचे स्कोर कैसे रिकॉर्ड किए जाते हैं, और हर नया फ़ीचर  जटिलता पैदा करता है।
+\n
+\nइस बदलाव से यह समझना आसान हो जाता है कि किन प्राथमिकताओं के मेल से विशेष ऊँचे स्कोर बनते हैं।
+\n
+\n बोनस के तौर पर लेक्सिका के इंटर्नल्स को अपडेट किया गया है. इससे भविष्य में, हर शब्द और हर ऊँचे स्कोर को रिकॉर्ड करने के लिए लोकल डेटाबेस जोड़कर, इंटर्नल्स को बढ़ाना आसान हो गया है।"</string>
+    <string name="game_mode_beginner">शुरुआती</string>
+    <string name="game_mode_letter_points_description">कम उपयोग किए जाने वाले अक्षरों का उपयोग करके ज़्यादा पॉयंट स्कोर करें</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d मिनट</item>
+        <item quantity="other">%d मिनटें</item>
+    </plurals>
+    <string name="whats_new_why">क्यों\?</string>
+    <string name="whats_new_game_modes_description">निम्न प्राथमिकताओं को गेम मोड के साथ बदल दिया गया है: अवधि, बोर्ड का आकार, न्यूनतम शब्द लंबाई, स्कोरिंग प्रकार, और संकेत मोड।
+\n
+\nआप मुख्य स्क्रीन से गेम मोड को बदल सकते हैं, या अपना खुद का बना सकते हैं। ऊँचे स्कोर गेम मोड और शब्दकोश पर आधारित हैं।</string>
+    <string name="whats_new_game_modes">खेल मोड</string>
+    <string name="error_restoring_game">आपके खेल को रीस्टोर करते समय एक एरर हुआ</string>
+    <string name="game_mode_legacy">संपदा</string>
+    <string name="game_mode_letter_points">अक्षर अंक</string>
+    <string name="game_mode_marathon_description">बिना समय सीमा के सभी शब्द ढूँढ़ने की कोशिश करें</string>
+    <string name="whats_new_continue">जारी रखें</string>
+    <string name="whats_new_title">नया क्या है</string>
+    <string name="game_mode_legacy_description">लेक्सिका के पुराने संस्करण में इस्तेमाल किया गया</string>
+    <string name="game_mode_custom_description">कस्टम खेल मोड</string>
+    <string name="game_mode_beginner_description">संकेतों की मदद लेकर शब्द ढूँढ़े</string>
+    <string name="game_mode_marathon">मैरथन</string>
+    <string name="game_mode_sprint_description">ज़्यादा से ज़्यादा शब्द ढूंढ़ने के लिए छोटा सा खेल</string>
+    <string name="game_mode_sprint">स्प्रिंट</string>
+    <string name="menu_save_game_mode">सेव करें</string>
+    <string name="menu_new_game_mode">नया</string>
+    <string name="input_game_mode_minutes_description">मिनटों में समय सीमा</string>
+    <string name="input_game_mode_name_description">खेल मोड चुनने के लिए/ ऊँचे स्कोर रिकार्ड करने के लिए</string>
+    <string name="input_game_mode_name_hint">नाम</string>
 </resources>
