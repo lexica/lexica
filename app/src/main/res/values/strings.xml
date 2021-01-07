@@ -47,6 +47,8 @@
     <string name="menu_save_game">Save Game</string>
     <string name="menu_end_game">End Game</string>
     <string name="button_ok">OK</string>
+    <string name="button_delete">Delete</string>
+    <string name="button_cancel">Cancel</string>
     <string name="about">About</string>
     <string name="show_missed">Show Missed Words</string>
     <string name="hide_missed">Hide Missed Words</string>
@@ -79,6 +81,7 @@
     <string name="theme_dark">Dark</string>
     <string name="theme_high_contrast">High Contrast</string>
     <string name="sort">Sort</string>
+    <string name="delete_custom_game_mode">Delete custom game mode \"%1$s\"? Any high scores will be lost.</string>
     <string name="input_game_mode_name_hint">Name</string>
     <string name="input_game_mode_name_description">For choosing game mode / recording high scores</string>
     <string name="input_game_mode_minutes_description">Time limit in minutes</string>

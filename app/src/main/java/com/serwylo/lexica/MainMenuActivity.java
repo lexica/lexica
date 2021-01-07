@@ -113,7 +113,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
             Language language = new Util().getSelectedLanguageOrDefault(this);
 
-            final GameModeRepository gameModeRepository = new GameModeRepository(db.gameModeDao(), PreferenceManager.getDefaultSharedPreferences(this));
+            final GameModeRepository gameModeRepository = new GameModeRepository(getApplicationContext());
             final ResultRepository resultRepository = new ResultRepository(db.resultDao());
 
             if (!gameModeRepository.hasGameModes()) {

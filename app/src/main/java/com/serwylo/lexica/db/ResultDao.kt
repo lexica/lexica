@@ -9,12 +9,15 @@ import androidx.room.Query
 interface ResultDao {
 
     @Insert
-    fun insert(result: Result)
+    fun insert(result: Result): Long
 
     @Query("SELECT * FROM Result WHERE gameModeId = :gameModeId AND langCode = :langCode ORDER BY score DESC LIMIT 0, 1")
     fun findHighScore(gameModeId: Long, langCode: String): Result?
 
     @Query("DELETE FROM Result")
     fun deleteAll()
+
+    @Query("DELETE FROM Result WHERE gameModeId = :gameModeId")
+    fun deleteByGameMode(gameModeId: Long)
 
 }

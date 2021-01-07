@@ -1,12 +1,27 @@
 package com.serwylo.lexica.db
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import androidx.preference.PreferenceManager
 
 class GameModeRepository(
         private val gameModeDao: GameModeDao,
+        private val resultDao: ResultDao,
+        private val selectedWordDao: SelectedWordDao,
         private val preferences: SharedPreferences,
 ) {
+
+    /**
+     * Convenience constructor. The primary constructor is the one which allows for proper dependency
+     * injection and easier unit tests, etc.
+     */
+    constructor(context: Context): this(
+            Database.get(context).gameModeDao(),
+            Database.get(context).resultDao(),
+            Database.get(context).selectedWordDao(),
+            PreferenceManager.getDefaultSharedPreferences(context),
+    )
 
     fun saveCurrentGameMode(gameMode: GameMode) {
         preferences.edit().putLong(PREF_CURRENT_GAME_MODE_ID, gameMode.gameModeId).apply()
@@ -35,6 +50,12 @@ class GameModeRepository(
         }
 
         return gameModeDao.getById(id)
+    }
+
+    fun deleteGameMode(mode: GameMode) {
+        selectedWordDao.deleteByGameMode(mode.gameModeId)
+        resultDao.deleteByGameMode(mode.gameModeId)
+        gameModeDao.delete(mode)
     }
 
     companion object {
