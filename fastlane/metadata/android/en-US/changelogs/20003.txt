@@ -1,0 +1,16 @@
+Game Modes!
+
+These preferences are replaced with "Game Modes":
+ * Duration
+ * Board size
+ * Min word length
+ * Scoring type
+ * Hint modes
+
+You can change game mode from the main screen, or create your own. High scores are based on game mode and lexicon.
+
+Fixed critical bug in 2.0.0-alpha2 for French and German locales (thanks to all who reported the issue).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
+
+Support Lexica development via Liberapay or GitHub Sponsors :)

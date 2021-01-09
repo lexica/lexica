@@ -66,8 +66,7 @@ public class MainMenuActivity extends AppCompatActivity {
         binding.gameModeButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseGameModeActivity.class)));
         binding.gameModeButton.setText(gameMode.label(this));
 
-        String languageCode = new Util().getLexiconString(this);
-        Language language = Language.fromOrNull(languageCode);
+        Language language = new Util().getSelectedLanguageOrDefault(this);
         binding.languageButton.setText(LanguageLabel.getLabel(this, language));
         binding.languageButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseLexiconActivity.class)));
 
@@ -112,8 +111,7 @@ public class MainMenuActivity extends AppCompatActivity {
             final Database db = Database.get(this);
             db.getOpenHelper().getReadableDatabase();
 
-            String languageCode = new Util().getLexiconString(this);
-            Language language = Language.fromOrNull(languageCode);
+            Language language = new Util().getSelectedLanguageOrDefault(this);
 
             final GameModeRepository gameModeRepository = new GameModeRepository(db.gameModeDao(), PreferenceManager.getDefaultSharedPreferences(this));
             final ResultRepository resultRepository = new ResultRepository(db.resultDao());

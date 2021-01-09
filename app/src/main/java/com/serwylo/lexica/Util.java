@@ -6,6 +6,8 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
+import com.serwylo.lexica.lang.EnglishGB;
+import com.serwylo.lexica.lang.EnglishUS;
 import com.serwylo.lexica.lang.Language;
 
 import java.util.Collection;
@@ -14,28 +16,59 @@ import java.util.Locale;
 public class Util {
     private static final String TAG = "Util";
 
-    public String getLexiconString(Context context) {
+    /**
+     * Return the language that the user last chose to play with.
+     * Alternatively, if they have not explicitly chosen to do so, then ask the system
+     * what it's locale is and try to find the most appropriate language based on this.
+     */
+    public Language getSelectedLanguageOrDefault(Context context) {
         // Default to the language explicitly chosen by the user
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         String chosenLanguage = prefs.getString("dict", null);
 
         if (chosenLanguage != null) {
             Log.d(TAG, "User explicitly chose " + chosenLanguage);
-            return chosenLanguage;
+
+            // Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_GB")
+            if ("UK".equals(chosenLanguage)) {
+                Language language = new EnglishGB();
+                Log.i(TAG, "Detected legacy language preference GB, Updating to " + language.getName());
+                saveLanguagePref(prefs, language);
+                return language;
+            } else if ("US".equals(chosenLanguage)) {
+                Language language = new EnglishUS();
+                Log.i(TAG, "Detected legacy language preference US, Updating to " + language.getName());
+                saveLanguagePref(prefs, language);
+                return language;
+            }
+
+            try {
+                return Language.from(chosenLanguage);
+            } catch (Language.NotFound notFound) {
+                Log.e(TAG, "The previously chosen language " + chosenLanguage + " could not be found. Defaulting to US", notFound);
+                Language defaultLang = new EnglishUS();
+                saveLanguagePref(prefs, defaultLang);
+                return defaultLang;
+            }
         }
 
         Locale systemLocale = context.getResources().getConfiguration().locale;
 
         Language bestEffort = findBestMatchOrNull(systemLocale, Language.getAllLanguages().values());
         if (bestEffort != null) {
-            return bestEffort.getLocale().toString();
+            return bestEffort;
         }
 
         // Default
         Log.d(TAG, "Could not detect language for system language " + systemLocale + ", defaulting to US");
-        return "US";
+        Language defaultLang = new EnglishUS();
+        saveLanguagePref(prefs, defaultLang);
+        return defaultLang;
     }
 
+    private static void saveLanguagePref(SharedPreferences prefs, Language language) {
+        prefs.edit().putString("dict", language.getName()).apply();
+    }
     /**
      * If we don't find an exact match, then we will still try to give the user a lexicon
      * from the same language, even if not the same country. In order of precedence, prefer:

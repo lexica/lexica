@@ -36,7 +36,7 @@ class ChooseLexiconActivity : AppCompatActivity() {
     inner class Adapter : RecyclerView.Adapter<ViewHolder>() {
 
         private val languages: List<Language> = LanguageLabel.getAllLanguagesSorted(this@ChooseLexiconActivity)
-        private val selectedLanguage: Language?
+        private val selectedLanguage: Language = Util().getSelectedLanguageOrDefault(this@ChooseLexiconActivity)
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val binding = LexiconListItemBinding.inflate(this@ChooseLexiconActivity.layoutInflater, parent, false)
@@ -45,18 +45,13 @@ class ChooseLexiconActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val language = languages[position]
-            holder.bind(language, language.name == selectedLanguage?.name) { selectLexicon(language) }
+            holder.bind(language, language.name == selectedLanguage.name) { selectLexicon(language) }
         }
 
         override fun getItemCount(): Int {
             return languages.size
         }
 
-        init {
-
-            val languageCode = Util().getLexiconString(this@ChooseLexiconActivity)
-            selectedLanguage = Language.fromOrNull(languageCode)
-        }
     }
 
     private fun selectLexicon(language: Language) {
