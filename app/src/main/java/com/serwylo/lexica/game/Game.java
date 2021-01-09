@@ -238,16 +238,7 @@ public class Game implements Synchronizer.Counter {
     private void loadPreferences(Context c, GameMode gameMode) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
 
-        String languageCode = new Util().getLexiconString(context);
-        language = Language.fromOrNull(languageCode);
-        if (language == null) {
-            // Legacy preferences, which use either "US" or "UK" rather than the locale name (i.e. "en_US" or "en_GB")
-            if ("UK".equals(languageCode)) {
-                language = new EnglishGB();
-            } else {
-                language = new EnglishUS();
-            }
-        }
+        language = new Util().getSelectedLanguageOrDefault(context);
         Log.d(TAG, "Language (from preferences): " + language.getName());
 
         boardSize = gameMode.getBoardSize();
