@@ -109,4 +109,7 @@
     <string name="input_game_mode_minutes_description">Vremensko ograničenje u minutama</string>
     <string name="input_game_mode_name_description">Za biranje načina igre / zapisivanje najboljih rezultata</string>
     <string name="input_game_mode_name_hint">Ime</string>
+    <string name="delete_custom_game_mode">Izbrisati prilagođeni način igre „%1$s”\? Svi najviši rezultati će se izgubiti.</string>
+    <string name="button_cancel">Odustani</string>
+    <string name="button_delete">Izbriši</string>
 </resources>
