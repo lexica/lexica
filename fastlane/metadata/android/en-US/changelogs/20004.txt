@@ -1,0 +1,11 @@
+Game Modes!
+
+You can change game mode from the main screen, or create your own. High scores are based on game mode and lexicon.
+
+Fixed in this alpha:
+
+* Allow deleting of (custom) game modes via long press.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
+
+Support Lexica development via Liberapay or GitHub Sponsors :)
