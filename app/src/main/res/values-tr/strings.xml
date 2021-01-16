@@ -21,11 +21,11 @@
     <string name="pref_timeLimit">Zaman Sınırı</string>
     <string name="pref_scoreType">Puanlama Türü</string>
     <string name="word_length">Sözcük Uzunluğu</string>
-    <string name="letter_points">Harf Puanları</string>
-    <string name="pref_sounds">Sesler Etkinleştirildi</string>
+    <string name="letter_points">Harf Puanı</string>
+    <string name="pref_sounds">Sesleri Etkinleştir</string>
     <string name="pref_sounds_summary">Ses efektlerinin etkinleştirilip etkinleştirilmediği</string>
     <string name="dialog_about_title">Lexica Hakkında</string>
-    <string name="dialog_about_content">Ekrana dokunun ve sözcükleri hecelemek için parmağınızı bitişik karelere taşıyın. Mümkün olduğunca çok sözcük bulmak için üç dakikanız var.
+    <string name="dialog_about_content">Kelimeleri hecelemek için ekrana dokunun ve parmağınızı bitişik karelere doğru hareket ettirin. Mümkün olduğunca çok kelime bulmak için üç dakikanız var.
 \n
 \nPuanlama:
 \n4x4 tahtalarda, sözcükler en az üç harf uzunluğunda olmalıdır. 5x5 tahtalarda, sözcükler en az dört harf uzunluğunda olmalıdır. Üç veya dört harfli sözcükler bir puandır. Daha uzun sözcükler daha çok puan kazandırır. Özel isimler sayılmaz.
@@ -108,4 +108,7 @@
     <string name="input_game_mode_minutes_description">Dakika cinsinden zaman sınırı</string>
     <string name="input_game_mode_name_description">Oyun modunu seçmek / yüksek puanları kaydetmek için</string>
     <string name="input_game_mode_name_hint">Ad</string>
+    <string name="delete_custom_game_mode">\"%1$s\" özel oyun modu silinsin mi\? Tüm yüksek puanlar kaybedilecek.</string>
+    <string name="button_cancel">İptal</string>
+    <string name="button_delete">Sil</string>
 </resources>
