@@ -252,12 +252,12 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                     score.getMaxWords()
             );
 
-            Database.get(this).resultDao().insert(result);
+            long newResultId = Database.get(this).resultDao().insert(result);
 
             List<SelectedWord> words = new ArrayList<>(score.getItems().size());
             for (ScoreCalculator.Selected word : score.getItems()) {
                 // As above, don't specify an ID as Room will create it after inserting.
-                words.add(new SelectedWord(0, result.getResultId(), word.getWord(), word.getScore()));
+                words.add(new SelectedWord(0, newResultId, word.getWord(), word.getScore()));
             }
 
             Database.get(this).selectedWordDao().insert(words);

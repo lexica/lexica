@@ -2,7 +2,6 @@ package com.serwylo.lexica.db.migration
 
 import android.content.Context
 import android.util.Log
-import androidx.preference.PreferenceManager
 import com.serwylo.lexica.GameSaverPersistent
 import com.serwylo.lexica.db.*
 import com.serwylo.lexica.lang.Language
@@ -17,7 +16,7 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
         // Unfortunately the new way of persisting saved games depends on a game mode being present
         // in the database. Given existing versions did not have this, it is simplest to just clear
         // this for now. Apologies to anyone reading this who was frustrated at losing their game!
-        Log.i(TAG, "Sorry, we need to clear your current game. Apologies if you had a wonderful game going, it is just too difficult to migrate this to the new game mode system. Hopefully the improvements gained by this new structure make it worth it! Thanks.");
+        Log.i(TAG, "Sorry, we need to clear your current game. Apologies if you had a wonderful game going, it is just too difficult to migrate this to the new game mode system. Hopefully the improvements gained by this new structure make it worth it! Thanks.")
         GameSaverPersistent(context).clearSavedGame()
 
         Log.i(TAG, "Creating default game modes.")
@@ -62,7 +61,7 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
         val db = Database.get(context.applicationContext)
         val resultDao = db.resultDao()
         val selectedWordDao = db.selectedWordDao()
-        val gameModeRepository = GameModeRepository(db.gameModeDao(), PreferenceManager.getDefaultSharedPreferences(context))
+        val gameModeRepository = GameModeRepository(context.applicationContext)
 
         val mode = gameModeRepository.loadCurrentGameMode()
 
@@ -74,7 +73,7 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
     private fun insertDummyResult(mode: GameMode, resultDao: ResultDao, selectedWordDao: SelectedWordDao) {
 
         val result = Result(
-                gameModeId = mode!!.gameModeId,
+                gameModeId = mode.gameModeId,
                 langCode = "fr_FR",
                 maxNumWords = 150,
                 maxScore = 300,
@@ -171,7 +170,7 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
         val boardSize = Objects.requireNonNull(matcher.group(3)).toInt()
         val scoreType = matcher.group(4)
         val maxTimeRemaining = Objects.requireNonNull(matcher.group(5)).toInt()
-        val language = Language.fromOrNull(langCode)
+        val language = Language.fromOrNull(langCode!! /* Wont be null because we ensured the matcher found something */)
         if (language == null) {
             Log.e(TAG, "Found legacy high score for \"$key\": $value, but the languge code \"$langCode\" doesn't seem to match a language we know about, so skipping.")
             return null
@@ -204,9 +203,8 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
 
     companion object {
 
-
         private const val TAG = "MigrateScoresFromPrefs"
-        private val SCORE_PREF_FILE = "prefs_score_file"
+        private const val SCORE_PREF_FILE = "prefs_score_file"
 
         private val defaultGameModes:List<GameMode> =
                 listOf(

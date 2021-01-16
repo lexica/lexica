@@ -16,7 +16,7 @@ interface GameModeDao {
     fun insert(gameModes: List<GameMode>)
 
     @Delete
-    fun delete(gameMode: GameMode?)
+    fun delete(gameMode: GameMode)
 
     @Query("SELECT * FROM GameMode")
     fun getAllGameModes(): LiveData<List<GameMode>>
