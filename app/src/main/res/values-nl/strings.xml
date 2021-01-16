@@ -108,4 +108,7 @@
     <string name="input_game_mode_minutes_description">Tijdslimiet, in minuten</string>
     <string name="input_game_mode_name_description">Voor het kiezen van de spelmodus/noteren van topscores</string>
     <string name="input_game_mode_name_hint">Naam</string>
+    <string name="delete_custom_game_mode">Weet je zeker dat je de aangepaste spelmodus \'%1$s\' wilt verwijderen\? Alle topscores worden gewist.</string>
+    <string name="button_cancel">Annuleren</string>
+    <string name="button_delete">Verwijderen</string>
 </resources>
