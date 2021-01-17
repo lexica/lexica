@@ -108,4 +108,7 @@
         <item quantity="one">%d min</item>
         <item quantity="other">%d mins</item>
     </plurals>
+    <string name="delete_custom_game_mode">Excluir o modo de jogo personalizado \"%1$s\"\? Todos os recordes serão perdidos.</string>
+    <string name="button_cancel">Cancelar</string>
+    <string name="button_delete">Excluir</string>
 </resources>
