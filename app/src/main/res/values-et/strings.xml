@@ -108,4 +108,7 @@
     <string name="whats_new_game_modes_description">Järgnevad seadistused on asendatud mänguliikidega: kestus, mänguvälja suurus, väikseim sõnapikkus, punktide lugemise viis ning vihjete tüüp.
 \n
 \nMänguliike saad muuta põhivaatest ning samast saad ka uusi liike lisada. Punktiarvestust peame mänguliigi ja kasutatava sõnastiku alusel.</string>
+    <string name="delete_custom_game_mode">Kas kustutame kohandatud mänguviisi „%1$s“\? Samaga kustutame ka kõik salvestatud tulemused.</string>
+    <string name="button_cancel">Tühista</string>
+    <string name="button_delete">Kustuta</string>
 </resources>
