@@ -92,7 +92,7 @@
     <string name="whats_new_game_modes">Načini igre</string>
     <string name="whats_new_continue">Nastavi</string>
     <string name="whats_new_title">Što je novo</string>
-    <string name="error_restoring_game">Došlo je do greške prilikom vraćanja igre</string>
+    <string name="error_restoring_game">Neuspjelo obnavljanje igre</string>
     <string name="game_mode_legacy_description">Korišten u starijim verzijama Lexica</string>
     <string name="game_mode_custom_description">Prilagođeni način igre</string>
     <string name="game_mode_legacy">Stari način</string>
