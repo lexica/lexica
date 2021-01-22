@@ -58,7 +58,7 @@
     <string name="define_word"><u>Define</u> </string>
     <string name="words">Words</string>
     <string name="score">Score</string>
-	<string name="time">Time</string>
+    <string name="time">Time</string>
     <string name="found_words">Found Words</string>
     <string name="missed_words">Missed Words</string>
     <string name="total_words">Total Words:</string>
@@ -98,7 +98,7 @@
     <string name="game_mode_custom_description">Custom game mode</string>
     <string name="game_mode_legacy">Legacy</string>
     <string name="game_mode_legacy_description">Used in an earlier version of Lexica</string>
-    <string name="error_restoring_game">An error occurred restoring your game</string>
+    <string name="error_restoring_game">Could not restore your game</string>
     <string name="whats_new_title">What\'s New</string>
     <string name="whats_new_continue">Continue</string>
     <string name="whats_new_game_modes">Game Modes</string>
