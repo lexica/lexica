@@ -92,7 +92,7 @@
     <string name="whats_new_game_modes">Oyun Modları</string>
     <string name="whats_new_continue">Devam et</string>
     <string name="whats_new_title">Yenilikler</string>
-    <string name="error_restoring_game">Oyununuzu geri yüklerken bir hata oluştu</string>
+    <string name="error_restoring_game">Oyununuz geri yüklenemedi</string>
     <string name="game_mode_legacy_description">Lexica\'nın önceki bir sürümünde kullanıldı</string>
     <string name="game_mode_legacy">Eski</string>
     <string name="game_mode_custom_description">Özel oyun modu</string>
