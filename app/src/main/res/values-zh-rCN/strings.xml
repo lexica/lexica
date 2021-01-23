@@ -91,7 +91,7 @@
     <string name="whats_new_game_modes">游戏模式</string>
     <string name="whats_new_continue">继续</string>
     <string name="whats_new_title">变更日志</string>
-    <string name="error_restoring_game">恢复你的游戏时发生错误</string>
+    <string name="error_restoring_game">无法恢复你的游戏</string>
     <string name="game_mode_legacy_description">用于 Lexica 的较早版本</string>
     <string name="game_mode_legacy">旧式</string>
     <string name="game_mode_custom_description">自定义游戏模式</string>
