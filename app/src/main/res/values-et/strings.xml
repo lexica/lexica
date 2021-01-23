@@ -77,7 +77,7 @@
     <string name="theme_high_contrast">Väga kontrastne</string>
     <string name="whats_new_continue">Jätka</string>
     <string name="whats_new_title">Mida on meil uut</string>
-    <string name="error_restoring_game">Mängu taastamisel tekkis viga</string>
+    <string name="error_restoring_game">Sinu mängu ei õnnestunud taastada</string>
     <string name="game_mode_legacy_description">Mänguviis, mida kasutasime Lexica algsetes versioonides</string>
     <string name="game_mode_legacy">Algupärane</string>
     <string name="game_mode_custom_description">Kohandatud mänguviis</string>
