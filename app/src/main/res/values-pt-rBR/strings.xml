@@ -89,7 +89,7 @@
     <string name="whats_new_game_modes">Modos de Jogo</string>
     <string name="whats_new_continue">Continuar</string>
     <string name="whats_new_title">O que há de novo</string>
-    <string name="error_restoring_game">Ocorreu um erro restaurando seu jogo</string>
+    <string name="error_restoring_game">Não foi possível restaurar seu jogo</string>
     <string name="game_mode_legacy_description">Usado em uma versão anterior do Lexica</string>
     <string name="game_mode_legacy">Legado</string>
     <string name="game_mode_custom_description">Modo de jogo personalizado</string>
