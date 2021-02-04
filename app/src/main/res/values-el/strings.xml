@@ -14,7 +14,7 @@
     <string name="show_unique">Εμφάνιση μοναδικών λέξεων</string>
     <string name="pref_sounds_summary">Εάν είναι ενεργοποιημένα τα ηχητικά εφέ ή όχι</string>
     <string name="menu_end_game">Τερματισμός παιχνιδιού</string>
-    <string name="button_ok">ΟΚ</string>
+    <string name="button_ok">Εντάξει</string>
     <string name="pref_dict_nl">Ολλανδικά</string>
     <string name="score">ΒΑΘΜΟΛΟΓΊΑ</string>
     <string name="pref_boardSize">Μέγεθος πίνακα</string>
@@ -64,4 +64,6 @@
     <string name="reset_scores_prompt">Είστε βέβαιοι ότι θέλετε να επαναφέρετε όλες τις υψηλές βαθμολογίες για όλους τους τρόπους παιχνιδιού στο μηδέν;</string>
     <string name="pref_dict_fr_FR">Γαλλικά</string>
     <string name="pref_dict">Λεξικό</string>
+    <string name="button_cancel">Ακύρωση</string>
+    <string name="button_delete">Διαγραφή</string>
 </resources>
