@@ -64,6 +64,6 @@
     <string name="reset_scores_prompt">Είστε βέβαιοι ότι θέλετε να επαναφέρετε όλες τις υψηλές βαθμολογίες για όλους τους τρόπους παιχνιδιού στο μηδέν;</string>
     <string name="pref_dict_fr_FR">Γαλλικά</string>
     <string name="pref_dict">Λεξικό</string>
-    <string name="button_cancel">Ακύρωση</string>
+    <string name="button_cancel">Άκυρο</string>
     <string name="button_delete">Διαγραφή</string>
 </resources>
