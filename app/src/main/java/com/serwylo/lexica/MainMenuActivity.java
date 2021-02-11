@@ -25,6 +25,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
+import com.serwylo.lexica.activities.HighScoresActivity;
 import com.serwylo.lexica.databinding.SplashBinding;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
@@ -89,6 +90,11 @@ public class MainMenuActivity extends AppCompatActivity {
         binding.highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
         long score = highScore == null ? 0 : highScore.getScore();
         binding.highScore.setText(String.format(Locale.getDefault(), "%d", score));
+
+        // Think we can get away without yet-another button. It will lower the discoverability
+        // of the feature, but simplify the home screen a bit more.
+        binding.highScoreLabel.setOnClickListener(v -> startActivity(new Intent(this, HighScoresActivity.class)));
+        binding.highScore.setOnClickListener(v -> startActivity(new Intent(this, HighScoresActivity.class)));
 
         Changelog.show(this);
     }

@@ -3,6 +3,7 @@ package com.serwylo.lexica.db
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.preference.PreferenceManager
 
 class GameModeRepository(
@@ -29,6 +30,10 @@ class GameModeRepository(
 
     fun hasGameModes(): Boolean {
         return gameModeDao.getFirst() != null
+    }
+
+    fun all(): LiveData<List<GameMode>> {
+        return gameModeDao.getAllGameModes()
     }
 
     fun loadCurrentGameMode(): GameMode? {

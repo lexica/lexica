@@ -18,6 +18,13 @@
             </intent-filter>
         </activity>
 
+		<activity android:name=".activities.HighScoresActivity"
+			android:screenOrientation="portrait"
+			android:configChanges="orientation|keyboardHidden"
+			android:parentActivityName=".MainMenuActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
+		</activity>
+
 		<activity android:name=".ChooseGameModeActivity"
 			android:screenOrientation="portrait"
 			android:configChanges="orientation|keyboardHidden"
