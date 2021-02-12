@@ -93,7 +93,7 @@
     <string name="whats_new_game_modes">Spielmodi</string>
     <string name="whats_new_continue">Fortfahren</string>
     <string name="whats_new_title">Was gibt\'s Neues</string>
-    <string name="error_restoring_game">Beim Wiederherstellen Ihres Spiels ist ein Fehler aufgetreten</string>
+    <string name="error_restoring_game">Konnte das Spiel nicht wiederherstellen.</string>
     <string name="game_mode_legacy_description">In einer früheren Version von Lexica verwendet</string>
     <string name="game_mode_legacy">Legacy</string>
     <string name="game_mode_custom_description">Benutzerdefinierter Spielmodus</string>
