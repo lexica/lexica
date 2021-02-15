@@ -120,7 +120,7 @@ public class MainMenuActivity extends AppCompatActivity {
             Language language = new Util().getSelectedLanguageOrDefault(this);
 
             final GameModeRepository gameModeRepository = new GameModeRepository(getApplicationContext());
-            final ResultRepository resultRepository = new ResultRepository(db.resultDao());
+            final ResultRepository resultRepository = new ResultRepository(this);
 
             if (!gameModeRepository.hasGameModes()) {
                 new MigrateHighScoresFromPreferences(this).initialiseDb(db.gameModeDao(), db.resultDao());

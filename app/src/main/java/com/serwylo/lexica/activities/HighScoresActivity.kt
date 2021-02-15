@@ -1,15 +1,18 @@
 package com.serwylo.lexica.activities
 
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.serwylo.lexica.R
 import com.serwylo.lexica.ThemeManager
 import com.serwylo.lexica.Util
 import com.serwylo.lexica.databinding.HighScoreListItemBinding
@@ -17,6 +20,7 @@ import com.serwylo.lexica.databinding.HighScoresBinding
 import com.serwylo.lexica.db.*
 import com.serwylo.lexica.lang.Language
 import com.serwylo.lexica.lang.LanguageLabel
+import com.serwylo.lexica.view.CustomTextArrayAdapter
 
 class HighScoresActivity : AppCompatActivity() {
 
@@ -43,7 +47,7 @@ class HighScoresActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.language.adapter = CustomTextArrayAdapter(languages) { LanguageLabel.getLabel(this, it) }
+        binding.language.adapter = CustomTextArrayAdapter(this, languages) { LanguageLabel.getLabel(this, it) }
         binding.language.setSelection(languages.indexOf(selectedLanguage))
 
         binding.language.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -82,7 +86,7 @@ class HighScoresActivity : AppCompatActivity() {
 
         repo.all().observe(this) { modes ->
             binding.gameMode.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, modes)
-            binding.gameMode.adapter = CustomTextArrayAdapter(modes) { it.label(this@HighScoresActivity) }
+            binding.gameMode.adapter = CustomTextArrayAdapter(this, modes) { it.label(this@HighScoresActivity) }
             binding.gameMode.setSelection(modes.indexOfFirst { it.gameModeId == selected.gameModeId })
             binding.gameMode.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(av: AdapterView<*>?, view: View?, index: Int, id: Long) {
@@ -106,34 +110,22 @@ class HighScoresActivity : AppCompatActivity() {
 
     }
 
-    /**
-     * See [ArrayAdapter], except this allows you to decide how to generate labels based on the
-     * lambda passed in.
-     *
-     * Note this is hard coded to the [android.R.layout.simple_spinner_dropdown_item], but could
-     * be made mroe generic if required.
-     */
-    inner class CustomTextArrayAdapter<T>(val values: List<T>, val toLabel: (obj: T) -> String) : ArrayAdapter<T>(this@HighScoresActivity, android.R.layout.simple_spinner_dropdown_item, values) {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.high_scores_menu, binding.toolbar.menu)
+        return true
+    }
 
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-            val view = super.getView(position, convertView, parent)
-            val item = getItem(position)
-
-            val textView = view.findViewById<TextView>(android.R.id.text1)
-            textView.text = if (item == null) "" else toLabel(item)
-
-            return view
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.view_found_words) {
+            viewFoundWords()
+            return true
         }
+        return super.onOptionsItemSelected(item)
+    }
 
-        override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
-            val view = super.getView(position, convertView, parent)
-            val item = getItem(position)
-
-            val textView = view.findViewById<TextView>(android.R.id.text1)
-            textView.text = if (item == null) "" else toLabel(item)
-
-            return view
-        }
+    private fun viewFoundWords() {
+        startActivity(Intent(this, FoundWordsActivity::class.java))
     }
 
     inner class ResultsAdapter(val results: List<Result>) : RecyclerView.Adapter<ViewHolder>() {

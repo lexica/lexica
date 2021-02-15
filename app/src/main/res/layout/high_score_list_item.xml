@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="?attr/list__selectable_item_text_colour"
         android:textSize="42sp"
         android:paddingEnd="16dp"
         android:paddingStart="16dp"
@@ -28,8 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        tools:text="/ 120 points"
         android:textColor="?attr/list__selectable_item_text_colour"
-        android:text="/ 120 points"
         android:textAppearance="?attr/textAppearanceListItem"
         app:layout_constraintStart_toEndOf="@id/num_points"
         app:layout_constraintTop_toTopOf="@id/num_points"
@@ -40,11 +41,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="?attr/list__selectable_item_text_colour"
+        android:textAppearance="?attr/textAppearanceListItem"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="13 / 45 words"
-        android:textAppearance="?attr/textAppearanceListItemSecondary"
         />
 
     <View

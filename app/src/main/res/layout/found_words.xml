@@ -5,39 +5,26 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
 
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/halfway"
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:orientation="vertical"
-		app:layout_constraintGuide_percent="0.5" />
-
 	<androidx.appcompat.widget.AppCompatSpinner
 		android:id="@+id/language"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		app:layout_constraintTop_toBottomOf="@id/toolbar"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintEnd_toStartOf="@id/halfway" />
-
-	<androidx.appcompat.widget.AppCompatSpinner
-		android:id="@+id/game_mode"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		app:layout_constraintTop_toBottomOf="@id/toolbar"
-		app:layout_constraintStart_toEndOf="@id/halfway"
 		app:layout_constraintEnd_toEndOf="parent" />
 
 	<androidx.recyclerview.widget.RecyclerView
-		android:id="@+id/high_score_list"
+		android:id="@+id/found_words_list"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/language"
-		tools:itemCount="3"
-		tools:listitem="@layout/high_score_list_item" />
+		app:layout_constraintVertical_bias="0.0"
+		tools:itemCount="25"
+		tools:listitem="@layout/found_word" />
 
 	<androidx.appcompat.widget.Toolbar
 		android:id="@+id/toolbar"
@@ -50,6 +37,6 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		android:elevation="4dp"
-		app:title="High Scores" />
+		app:title="Found Words" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
