@@ -106,6 +106,14 @@
     <string name="whats_new_why">Why?</string>
     <string name="whats_new_game_modes_why">Thanks to contributions from the community, the ways you can play Lexica has expanded. This makes it harder to explain how high scores are recorded, and each new feature adds complexity.\n\nThis changes makes it easier to understand which combination of preferences result in a particular high score.\n\nAs an added bonus, the internals of Lexica have been updated to make it easier to enhance in the future by adding a local database to record every single word found and every high score.</string>
     <string name="menu_view_found_words">View found words</string>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d word</item>
+        <item quantity="other">%d / %d words</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d point</item>
+        <item quantity="other">/ %d points</item>
+    </plurals>
     <plurals name="num_minutes">
         <item quantity="one">%d min</item>
         <item quantity="other">%d mins</item>

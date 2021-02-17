@@ -152,8 +152,8 @@ class HighScoresActivity : AppCompatActivity() {
             val context = this@HighScoresActivity
 
             binding.numPoints.text = highScore.score.toString()
-            binding.maxPointsSuffix.text = "/ ${highScore.maxScore} points"
-            binding.maxWords.text = "${highScore.numWords} / ${highScore.maxNumWords} words"
+            binding.maxPointsSuffix.text = context.resources.getQuantityString(R.plurals.max_score_points_suffix, highScore.maxScore.toInt(), highScore.maxScore.toInt())
+            binding.maxWords.text = context.resources.getQuantityString(R.plurals.num_found_words_out_of_total, highScore.maxNumWords, highScore.numWords, highScore.maxNumWords)
 
         }
 
