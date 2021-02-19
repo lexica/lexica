@@ -94,6 +94,7 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
                     resultId = result.resultId,
                     points = wordLength - 2,
                     word = word,
+                    isWord = true,
             )
         }
 

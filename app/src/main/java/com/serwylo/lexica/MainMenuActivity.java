@@ -23,8 +23,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceManager;
 
+import com.serwylo.lexica.activities.HighScoresActivity;
 import com.serwylo.lexica.databinding.SplashBinding;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
@@ -36,9 +36,6 @@ import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.LanguageLabel;
 
 import java.util.Locale;
-
-import io.github.tonnyl.whatsnew.WhatsNew;
-import io.github.tonnyl.whatsnew.item.WhatsNewItem;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -84,11 +81,13 @@ public class MainMenuActivity extends AppCompatActivity {
 
         binding.preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));
 
-        // TODO: Leaving format argument here for now, until all strings.xml have been replaced for each lang to no
-        //       longer have this argument. Otherwise, they will likely crash at runtime.
-        binding.highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
         long score = highScore == null ? 0 : highScore.getScore();
         binding.highScore.setText(String.format(Locale.getDefault(), "%d", score));
+
+        // Think we can get away without yet-another button. It will lower the discoverability
+        // of the feature, but simplify the home screen a bit more.
+        binding.highScoreLabel.setOnClickListener(v -> startActivity(new Intent(this, HighScoresActivity.class)));
+        binding.highScore.setOnClickListener(v -> startActivity(new Intent(this, HighScoresActivity.class)));
 
         Changelog.show(this);
     }
@@ -114,7 +113,7 @@ public class MainMenuActivity extends AppCompatActivity {
             Language language = new Util().getSelectedLanguageOrDefault(this);
 
             final GameModeRepository gameModeRepository = new GameModeRepository(getApplicationContext());
-            final ResultRepository resultRepository = new ResultRepository(db.resultDao());
+            final ResultRepository resultRepository = new ResultRepository(this);
 
             if (!gameModeRepository.hasGameModes()) {
                 new MigrateHighScoresFromPreferences(this).initialiseDb(db.gameModeDao(), db.resultDao());

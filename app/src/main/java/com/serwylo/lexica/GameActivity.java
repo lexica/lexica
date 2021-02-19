@@ -32,16 +32,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
-import com.serwylo.lexica.activities.score.ScoreCalculator;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
-import com.serwylo.lexica.db.Result;
-import com.serwylo.lexica.db.SelectedWord;
+import com.serwylo.lexica.db.ResultRepository;
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.LexicaView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class GameActivity extends AppCompatActivity implements Synchronizer.Finalizer {
 
@@ -239,29 +234,8 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         game.save(new GameSaverTransient(bun));
 
         Database.writeExecutor.execute(() -> {
-
-            ScoreCalculator score = new ScoreCalculator(game);
-
-            Result result = new Result(
-                    0, // Leaving blank because Room will create an ID for it after insert.
-                    game.getGameMode().getGameModeId(),
-                    game.getLanguage().getName(),
-                    score.getScore(),
-                    score.getMaxScore(),
-                    score.getNumWords(),
-                    score.getMaxWords()
-            );
-
-            long newResultId = Database.get(this).resultDao().insert(result);
-
-            List<SelectedWord> words = new ArrayList<>(score.getItems().size());
-            for (ScoreCalculator.Selected word : score.getItems()) {
-                // As above, don't specify an ID as Room will create it after inserting.
-                words.add(new SelectedWord(0, newResultId, word.getWord(), word.getScore()));
-            }
-
-            Database.get(this).selectedWordDao().insert(words);
-
+            ResultRepository repo = new ResultRepository(this);
+            repo.recordGameResult(game);
             showScore(bun);
         });
     }
