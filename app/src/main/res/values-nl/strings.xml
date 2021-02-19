@@ -111,4 +111,14 @@
     <string name="delete_custom_game_mode">Weet je zeker dat je de aangepaste spelmodus \'%1$s\' wilt verwijderen\? Alle topscores worden gewist.</string>
     <string name="button_cancel">Annuleren</string>
     <string name="button_delete">Verwijderen</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d punt</item>
+        <item quantity="other">/ %d punten</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d woord</item>
+        <item quantity="other">%d / %d woorden</item>
+    </plurals>
+    <string name="menu_view_found_words">Gevonden woorden tonen</string>
+    <string name="high_scores">Topscores</string>
 </resources>
