@@ -117,4 +117,5 @@
         <item quantity="other">%d / %d 单词</item>
     </plurals>
     <string name="menu_view_found_words">查看找到的单词</string>
+    <string name="high_scores">高分</string>
 </resources>
