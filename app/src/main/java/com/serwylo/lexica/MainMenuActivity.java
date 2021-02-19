@@ -23,7 +23,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceManager;
 
 import com.serwylo.lexica.activities.HighScoresActivity;
 import com.serwylo.lexica.databinding.SplashBinding;
@@ -37,9 +36,6 @@ import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.LanguageLabel;
 
 import java.util.Locale;
-
-import io.github.tonnyl.whatsnew.WhatsNew;
-import io.github.tonnyl.whatsnew.item.WhatsNewItem;
 
 public class MainMenuActivity extends AppCompatActivity {
 

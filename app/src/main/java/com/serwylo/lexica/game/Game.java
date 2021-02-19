@@ -32,8 +32,6 @@ import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
 import com.serwylo.lexica.Util;
 import com.serwylo.lexica.db.GameMode;
-import com.serwylo.lexica.lang.EnglishGB;
-import com.serwylo.lexica.lang.EnglishUS;
 import com.serwylo.lexica.lang.Language;
 
 import net.healeys.trie.Solution;

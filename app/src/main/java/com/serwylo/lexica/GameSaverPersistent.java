@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Board;

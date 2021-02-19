@@ -17,20 +17,15 @@
 
 package com.serwylo.lexica;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.db.Database;
-import com.serwylo.lexica.lang.Language;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
 

@@ -32,17 +32,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
-import com.serwylo.lexica.activities.score.ScoreCalculator;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
-import com.serwylo.lexica.db.Result;
 import com.serwylo.lexica.db.ResultRepository;
-import com.serwylo.lexica.db.SelectedWord;
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.LexicaView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class GameActivity extends AppCompatActivity implements Synchronizer.Finalizer {
 
