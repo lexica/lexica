@@ -110,4 +110,11 @@
     <string name="delete_custom_game_mode">要删除自定义游戏模式 \"%1$s\"吗？你将失去任何高分。</string>
     <string name="button_cancel">取消</string>
     <string name="button_delete">删除</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="other">/ %d 点</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="other">%d / %d 单词</item>
+    </plurals>
+    <string name="menu_view_found_words">查看找到的单词</string>
 </resources>
