@@ -111,4 +111,14 @@
     <string name="delete_custom_game_mode">\"%1$s\" özel oyun modu silinsin mi\? Tüm yüksek puanlar kaybedilecek.</string>
     <string name="button_cancel">İptal</string>
     <string name="button_delete">Sil</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d puan</item>
+        <item quantity="other">/ %d puan</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d sözcük</item>
+        <item quantity="other">%d / %d sözcük</item>
+    </plurals>
+    <string name="menu_view_found_words">Bulunan sözcükleri görüntüle</string>
+    <string name="high_scores">Yüksek Puanlar</string>
 </resources>
