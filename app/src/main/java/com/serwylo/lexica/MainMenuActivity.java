@@ -81,9 +81,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
         binding.preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));
 
-        // TODO: Leaving format argument here for now, until all strings.xml have been replaced for each lang to no
-        //       longer have this argument. Otherwise, they will likely crash at runtime.
-        binding.highScoreLabel.setText(getResources().getString(R.string.high_score, 0));
         long score = highScore == null ? 0 : highScore.getScore();
         binding.highScore.setText(String.format(Locale.getDefault(), "%d", score));
 
