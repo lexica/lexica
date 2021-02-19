@@ -50,6 +50,6 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		android:elevation="4dp"
-		app:title="High Scores" />
+		app:title="@string/high_scores" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
