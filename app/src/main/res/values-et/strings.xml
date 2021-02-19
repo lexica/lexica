@@ -111,4 +111,14 @@
     <string name="delete_custom_game_mode">Kas kustutame kohandatud mänguviisi „%1$s“\? Samaga kustutame ka kõik salvestatud tulemused.</string>
     <string name="button_cancel">Tühista</string>
     <string name="button_delete">Kustuta</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d punkt</item>
+        <item quantity="other">/ %d punkti</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d sõna</item>
+        <item quantity="other">%d / %d sõna</item>
+    </plurals>
+    <string name="menu_view_found_words">Näita leitud sõnu</string>
+    <string name="high_scores">Parimad tulemused</string>
 </resources>
