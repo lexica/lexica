@@ -111,4 +111,14 @@
     <string name="input_game_mode_name_hint">Navn</string>
     <string name="button_cancel">Avbryt</string>
     <string name="button_delete">Slett</string>
+    <string name="menu_view_found_words">Vis oppdagede ord</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/%d poeng</item>
+        <item quantity="other">/%d poeng</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d/%d ord</item>
+        <item quantity="other">%d/%d ord</item>
+    </plurals>
+    <string name="high_scores">Topp-poengsummer</string>
 </resources>
