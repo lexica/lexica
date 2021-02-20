@@ -2,7 +2,7 @@
 
 [<img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg">](https://liberapay.com/Lexica/donate)
 
-[![Build Status](https://travis-ci.org/lexica/lexica.svg?branch=master)](https://travis-ci.org/lexica/lexica) <a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
+[![Build Status](https://img.shields.io/github/workflow/status/lexica/lexica/Android%20CI)](https://github.com/lexica/lexica/actions/workflows/android.yml?query=branch%3Amaster) <a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
   <img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
 </a>
 
