@@ -111,4 +111,14 @@
     <string name="delete_custom_game_mode">Excluir o modo de jogo personalizado \"%1$s\"\? Todos os recordes serão perdidos.</string>
     <string name="button_cancel">Cancelar</string>
     <string name="button_delete">Excluir</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d ponto</item>
+        <item quantity="other">/ %d pontos</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d palavra</item>
+        <item quantity="other">%d / %d palavras</item>
+    </plurals>
+    <string name="menu_view_found_words">Exibir palavras encontradas</string>
+    <string name="high_scores">Recorde</string>
 </resources>
