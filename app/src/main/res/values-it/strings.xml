@@ -91,7 +91,7 @@
     <string name="whats_new_game_modes">Modalità di gioco</string>
     <string name="whats_new_continue">Continua</string>
     <string name="whats_new_title">Cosa c\'è di nuovo</string>
-    <string name="error_restoring_game">Si è verificato un errore durante il ripristino del gioco</string>
+    <string name="error_restoring_game">Impossibile ripristinare il gioco</string>
     <string name="game_mode_legacy_description">Usato in una versione precedente di Lexica</string>
     <string name="game_mode_legacy">Legacy</string>
     <string name="game_mode_custom_description">Modalità di gioco personalizzata</string>
@@ -108,4 +108,17 @@
     <string name="input_game_mode_minutes_description">Limite di tempo in minuti</string>
     <string name="input_game_mode_name_description">Per scegliere la modalità di gioco / registrare i punteggi più alti</string>
     <string name="input_game_mode_name_hint">Nome</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d punto</item>
+        <item quantity="other">/ %d punti</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d parola</item>
+        <item quantity="other">%d / %d parole</item>
+    </plurals>
+    <string name="menu_view_found_words">Visualizza le parole trovate</string>
+    <string name="delete_custom_game_mode">Eliminare la modalità di gioco personalizzata «%1$s»\? Tutti i punteggi più alti verranno persi.</string>
+    <string name="high_scores">Punteggi più alti</string>
+    <string name="button_cancel">Annulla</string>
+    <string name="button_delete">Elimina</string>
 </resources>
