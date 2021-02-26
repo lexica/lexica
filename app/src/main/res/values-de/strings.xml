@@ -93,7 +93,7 @@
     <string name="whats_new_game_modes">Spielmodi</string>
     <string name="whats_new_continue">Fortfahren</string>
     <string name="whats_new_title">Was gibt\'s Neues</string>
-    <string name="error_restoring_game">Konnte das Spiel nicht wiederherstellen.</string>
+    <string name="error_restoring_game">Konnte das Spiel nicht wiederherstellen</string>
     <string name="game_mode_legacy_description">In einer früheren Version von Lexica verwendet</string>
     <string name="game_mode_legacy">Legacy</string>
     <string name="game_mode_custom_description">Benutzerdefinierter Spielmodus</string>
@@ -110,4 +110,15 @@
     <string name="input_game_mode_name_hint">Name</string>
     <string name="button_cancel">Abbrechen</string>
     <string name="button_delete">Löschen</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d Punkt</item>
+        <item quantity="other">/ %d Punkte</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d Wort</item>
+        <item quantity="other">%d / %d Wörter</item>
+    </plurals>
+    <string name="menu_view_found_words">Gefundene Wörter anzeigen</string>
+    <string name="delete_custom_game_mode">Benutzerdefinierten Spielmodus „%1$s“ löschen\? Alle höchste Punktzahlen gehen verloren.</string>
+    <string name="high_scores">Höchste Punktzahlen</string>
 </resources>
