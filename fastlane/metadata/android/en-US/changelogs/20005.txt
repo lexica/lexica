@@ -1,0 +1,11 @@
+High scores!
+
+* Previously, only the best score was remembered.
+* Now all your high scores are recorded, as are all the words you've ever found.
+* View your best scores by touching the high score on the main menu.
+
+Added Danish translation (thanks comradekingu), and updated many other translations (thanks to the wonderful community of translators).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
+
+Support Lexica development via Liberapay or GitHub Sponsors :)
