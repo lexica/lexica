@@ -151,6 +151,58 @@ class RegressionPlayThroughTest (val language: Language) {
         fromMissedWordsSelectWordViaRow()
         fromMissedWordsSelectWordViaButton()
         fromScoreSelectBack()
+
+        fromSplashViewHighScores()
+        fromHighScoresChangeLanguage()
+        fromHighScoresChangeGameMode()
+
+        fromHighScoresViewFoundWords()
+        fromViewFoundWordsChangeLanguage()
+
+        // First return from viewing found words, which takes us to the high scores, then return to the main menu.
+        navigateUpEmu27()
+        navigateUpEmu27()
+    }
+
+    private fun fromHighScoresViewFoundWords() {
+        clickId(R.id.view_found_words)
+    }
+
+    private fun fromSplashViewHighScores() {
+        clickId(R.id.high_score_label)
+    }
+
+    private fun fromViewFoundWordsChangeLanguage() {
+        clickId(R.id.language)
+
+        onData(anything())
+                .inAdapterView(childAtPosition(
+                        withClassName(`is`("android.widget.PopupWindow\$PopupBackgroundView")),
+                        0))
+                .atPosition(5)
+                .perform(click())
+    }
+
+    private fun fromHighScoresChangeGameMode() {
+        clickId(R.id.game_mode)
+
+        onData(anything())
+                .inAdapterView(childAtPosition(
+                        withClassName(`is`("android.widget.PopupWindow\$PopupBackgroundView")),
+                        0))
+                .atPosition(2)
+                .perform(click())
+    }
+
+    private fun fromHighScoresChangeLanguage() {
+        clickId(R.id.language)
+
+        onData(anything())
+                .inAdapterView(childAtPosition(
+                        withClassName(`is`("android.widget.PopupWindow\$PopupBackgroundView")),
+                        0))
+                .atPosition(5)
+                .perform(click())
     }
 
     private fun fromSettingsSelectTheme(theme: String) {
@@ -218,15 +270,7 @@ class RegressionPlayThroughTest (val language: Language) {
     }
 
     private fun navigateUpEmu27() {
-        val appCompatImageButton = onView(
-                allOf(withContentDescription("Navigate up"),
-                        childAtPosition(
-                                allOf(withId(R.id.toolbar),
-                                        childAtPosition(
-                                                withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
-                                                0)),
-                                1),
-                        isDisplayed()))
+        val appCompatImageButton = onView(allOf(withContentDescription("Navigate up"), isDisplayed()))
         appCompatImageButton.perform(click())
     }
 
