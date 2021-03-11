@@ -21,7 +21,7 @@
     <string name="app_name">Lexica</string>
     <string name="new_game">Nova ludo</string>
     <string name="game_mode_beginner_description">Uzu sugestojn por trovi vortojn</string>
-    <string name="game_mode_custom_description">Alia ludreĝimo</string>
+    <string name="game_mode_custom_description">Laŭmenda ludreĝimo</string>
     <string name="pref_scoreType">Tipo de Poentaro</string>
     <string name="game_mode_marathon_description">Provu trovi ĉiujn vortojn, sen tempolimo</string>
     <string name="game_mode_sprint_description">Mallonga ludo por trovi laŭeble multe da vortoj</string>
@@ -98,4 +98,27 @@
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">La portugala (brazila)</string>
     <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">La nederlanda</string>
     <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">La kataluna</string>
+    <string name="pref_resetScores_summary">Plej bonaj poentaroj registriĝas por ĉiu kombinaĵo de la ĉi-supraj agordoj. Tuŝetu por nuligi ĉiujn poentarojn.</string>
+    <string name="whats_new_game_modes_description">La jenaj preferoj estis anstataŭigitaj per Ludaj Reĝimoj: Daŭro, grando de tabulo, minimuma vortolongo, tipo de poentaro, kaj reĝimo de sugestoj.
+\n
+\nVi povas ŝanĝi ludreĝimon ĉe la ĉefekrano aŭ krei vian propran. Plej bonaj poentaroj registriĝas laŭ ludreĝimo kaj vortaro.</string>
+    <string name="whats_new_game_modes_why">Danke al kontribuoj de la komunumo, la ludreĝimoj de Lexica plimultiĝis. Ĉi tio malfaciligas klarigi la registradon de plej bonaj poentaroj, kaj ĉiu nova funkcio aldonas komplikecon.
+\n
+\nĈi tiuj ŝanĝoj klarigas pri kiuj kombinoj de preferoj rezultigas iun bonan poentaron.
+\n
+\nKrome, la internaĵoj de Lexica estis ĝisdatigitaj por okazonta plibonigo per aldono de loka datenbanko por registri ĉiujn trovitajn vortojn kaj ĉiujn bonajn poentarojn.</string>
+    <string name="dialog_about_content">Tuŝu la ekranon kaj movu vian fingron al apudaj kvadratoj por literumi vortojn. Vi havas tri minutojn por trovi kiel eble plej multajn vortojn.
+\n
+\nPoentoj:
+\nSur 4×4-tabuloj, vortoj devas havi almenaŭ tri literojn. Sur 5×5-tabuloj, vortoj devas havi almenaŭ kvar literojn. Vortoj, kiuj havas tri aŭ kvar literojn, valoras unu poenton. Pli longaj vortoj valoras pli da punktoj. Propraj nomoj ne havas valoron.
+\n
+\n</string>
+    <string name="pref_definitionProvider_summary">Elektu difinoprovizanton uzotan. Se la elektita provizanto ne estas instalita, interreta fonto kiel Vikivortaro estos uzata.</string>
+    <string name="delete_custom_game_mode">Ĉu forigi laŭmendan ludreĝimon \"%1$s\"\? Ĉiuj altaj poentaroj perdiĝos.</string>
+    <string name="pref_hintMode_summary">Montri la nombron de vortoj en kiuj literoj troviĝas</string>
+    <string name="pref_breakdown_summary">Ĉu montri nombrojn de vortoj laŭ vortolongoj</string>
+    <string name="pref_breakdown">Montri Distribuon de Vortolongoj</string>
+    <string name="game_mode_letter_points_description">Gajni pli da poentoj post uzo de malpli oftaj literoj</string>
+    <string name="input_game_mode_name_description">Por elekti ludreĝimon / registri plej bonajn poentarojn</string>
+    <string name="pref_sounds_summary">Ĉu ŝalti sonefektojn</string>
 </resources>
