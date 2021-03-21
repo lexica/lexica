@@ -101,12 +101,14 @@ abstract class Language {
         @JvmStatic
         val allLanguages = mapOf(
                 "ca" to Catalan(),
-                "de_DE" to DeGerman(),
+                "de_DE" to GermanDe(),
+                "de_DE_no_diacritics" to GermanDeNoDiacritics(),
                 "en_GB" to EnglishGB(),
                 "en_US" to EnglishUS(),
                 "es" to Spanish(),
                 "fa" to Persian(),
                 "fr_FR" to French(),
+                "fr_FR_no_diacritics" to FrenchNoDiacritics(),
                 "hu" to Hungarian(),
                 "it" to Italian(),
                 "ja" to Japanese(),
@@ -114,6 +116,7 @@ abstract class Language {
                 "pl" to Polish(),
                 "pt_BR" to PortugueseBR(),
                 "ru" to Russian(),
+                "ru_extended" to RussianExtended(),
                 "uk" to Ukrainian(),
         )
 

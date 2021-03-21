@@ -66,10 +66,19 @@ class ChooseLexiconActivity : AppCompatActivity() {
     class ViewHolder(private val context: Context, private val binding: LexiconListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(language: Language, isSelected: Boolean, listener: View.OnClickListener) {
+
             binding.root.isSelected = isSelected
             binding.language.text = LanguageLabel.getLabel(context, language)
-            binding.description.visibility = if (language.isBeta) View.VISIBLE else View.GONE
+
+            val description = LanguageLabel.getDescription(context, language)
+            binding.lexiconDescription.text = description
+
+            binding.lexiconDescription.visibility = if (description != null) View.VISIBLE else View.GONE
+            binding.lexiconIsInBetaSeparator.visibility = if (language.isBeta && description != null) View.VISIBLE else View.GONE
+            binding.lexiconIsInBeta.visibility = if (language.isBeta) View.VISIBLE else View.GONE
+
             binding.root.setOnClickListener(listener)
+
         }
 
     }

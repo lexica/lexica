@@ -1,0 +1,19 @@
+Improved dictionary options for German, French, and Russian
+
+German:
+* Current dictionary renamed to German (Extended) and includes äöü.
+* New German dictionary replaces these with ae, oe, and ue.
+
+French:
+* Current dictionary renamed to French (Extended) and includes àâçéèêëîïôöûü.
+* New French dictionary replaces these with a, c, e, i, o, and u.
+
+Russian:
+* Earlier dictionary reinstated as Russian (Extended) containing many more words.
+* The current (smaller) dictionary remains.
+
+Thanks to everyone who provided language specific input. This could not have been done without your help. A truly international effort.
+
+Suggestions for your favourite language? Feedback welcome.
+
+Support further development via Liberapay or GitHub Sponsors.
