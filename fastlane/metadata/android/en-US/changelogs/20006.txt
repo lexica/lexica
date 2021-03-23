@@ -1,0 +1,12 @@
+Game modes and high scores!
+
+* Greatly simplifies the high scores, preferences, and many other aspects of Lexica, while also laying the foundations for future improvements.
+* You can change game modes from the main screen, or create your own.
+* High scores are based on game mode and lexicon.
+* View your best scores by touching the high score on the main menu.
+
+Thanks to all who provided feedback on v2.0.0 via GitHub.
+
+Support further development via Liberapay or GitHub Sponsors.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
