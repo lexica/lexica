@@ -209,8 +209,10 @@ public class Game implements Synchronizer.Counter {
 
     private void playSound(int soundId) {
         if (mSoundPool != null) {
-            int streamVolume = mgr.getStreamVolume(AudioManager.STREAM_MUSIC);
-            mSoundPool.play(soundIds[soundId], streamVolume, streamVolume, 1, 0, 1f);
+            float actualVolume = (float) mgr.getStreamVolume(AudioManager.STREAM_MUSIC);
+            float maxVolume = (float) mgr.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+            float volume = actualVolume / maxVolume;
+            mSoundPool.play(soundIds[soundId], volume, volume, 1, 0, 1f);
         }
     }
 
