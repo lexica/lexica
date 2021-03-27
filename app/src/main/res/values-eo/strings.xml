@@ -14,9 +14,9 @@
     <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">La japana</string>
     <string name="pref_dict_it" tools:keep="@string/pref_dict_it">La itala</string>
     <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">La hungara</string>
-    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">La franca</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">La franca (etendita)</string>
     <string name="pref_dict_es" tools:keep="@string/pref_dict_es">La hispana</string>
-    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">La germana</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">La germana (etendita)</string>
     <string name="prefs">Agordoj</string>
     <string name="app_name">Lexica</string>
     <string name="new_game">Nova ludo</string>
@@ -121,4 +121,10 @@
     <string name="game_mode_letter_points_description">Gajni pli da poentoj post uzo de malpli oftaj literoj</string>
     <string name="input_game_mode_name_description">Por elekti ludreĝimon / registri plej bonajn poentarojn</string>
     <string name="pref_sounds_summary">Ĉu ŝalti sonefektojn</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Inkluzivas gramatikajn kazojn kaj mallongigojn</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">La rusa (etendita)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">La franca</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Inkluzivas diakritajn signojn: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">La germana</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Inkluzivas supersignojn: äöü</string>
 </resources>
