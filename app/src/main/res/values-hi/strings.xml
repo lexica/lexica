@@ -109,6 +109,6 @@
     <string name="input_game_mode_name_description">खेल मोड चुनने के लिए/ ऊँचे स्कोर रिकार्ड करने के लिए</string>
     <string name="input_game_mode_name_hint">नाम</string>
     <string name="button_delete">हटाये</string>
-    <string name="delete_custom_game_mode">कस्टम गेम मोड हटाएं \"%1$s“\? कोई भी उच्च स्कोर खो जाएगा।</string>
+    <string name="delete_custom_game_mode">कस्टम गेम मोड हटाएं “%1$s”\? कोई भी उच्च स्कोर खो जाएगा।</string>
     <string name="button_cancel">रद्द करें</string>
 </resources>
