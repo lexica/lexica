@@ -108,7 +108,7 @@
     <string name="input_game_mode_minutes_description">Dakika cinsinden zaman sınırı</string>
     <string name="input_game_mode_name_description">Oyun modunu seçmek / yüksek puanları kaydetmek için</string>
     <string name="input_game_mode_name_hint">Ad</string>
-    <string name="delete_custom_game_mode">\"%1$s\" özel oyun modu silinsin mi\? Tüm yüksek puanlar kaybedilecek.</string>
+    <string name="delete_custom_game_mode">“%1$s” özel oyun modu silinsin mi\? Tüm yüksek puanlar kaybedilecek.</string>
     <string name="button_cancel">İptal</string>
     <string name="button_delete">Sil</string>
     <plurals name="max_score_points_suffix">
