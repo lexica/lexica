@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="about">Über</string>
     <string name="button_ok">OK</string>
@@ -50,10 +50,10 @@
     <string name="pref_definitionProvider">Wörterbuch</string>
     <string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird eine Online-Quelle wie Wiktionary verwendet.</string>
     <string name="pref_definitionProvider_dialog">Wörterbuchauswahl</string>
-    <string name="pref_dict_de_DE">Deutsch</string>
+    <string name="pref_dict_de_DE">Deutsch (erweitert)</string>
     <string name="pref_dict_nl">Niederländisch</string>
     <string name="pref_dict_fa">Persisch</string>
-    <string name="pref_dict_fr_FR">Französisch</string>
+    <string name="pref_dict_fr_FR">Französisch (erweitert)</string>
     <string name="pref_dict_it">Italienisch</string>
     <string name="pref_dict_ca">Katalanisch</string>
     <string name="pref_dict_es">Spanisch</string>
@@ -121,4 +121,10 @@
     <string name="menu_view_found_words">Gefundene Wörter anzeigen</string>
     <string name="delete_custom_game_mode">Benutzerdefinierten Spielmodus „%1$s“ löschen\? Alle höchste Punktzahlen gehen verloren.</string>
     <string name="high_scores">Höchste Punktzahlen</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Enthält Grammatikfälle und Abkürzungen</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Russisch (erweitert)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Französisch</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Enthält die diakritischen Zeichen: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Enthält die diakritischen Zeichen: äöü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Allemand</string>
 </resources>
