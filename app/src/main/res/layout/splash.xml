@@ -95,12 +95,13 @@
 	<mehdi.sakout.fancybuttons.FancyButton
 		android:id="@+id/new_game"
 		android:layout_width="0dp"
-		android:layout_height="wrap_content"
+		android:layout_height="0dp"
 		android:paddingTop="?attr/home__button_padding"
 		android:paddingBottom="?attr/home__button_padding"
 		app:layout_constraintBottom_toTopOf="@+id/button_wrapper"
-		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/new_multiplayer_game"
 		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="@id/new_multiplayer_game"
 		fancy:fb_defaultColor="?attr/home__main_button_background"
 		fancy:fb_borderWidth="2dp"
 		fancy:fb_borderColor="?attr/home__main_button_border"
@@ -108,10 +109,29 @@
 		fancy:fb_fontIconResource="&#xf144;"
 		fancy:fb_fontIconSize="28sp"
 		fancy:fb_iconPosition="left"
+		app:layout_constraintHorizontal_weight="2"
 		fancy:fb_text="@string/new_game"
-		fancy:fb_textSize="28sp">
+		fancy:fb_textSize="28sp" />
 
-	</mehdi.sakout.fancybuttons.FancyButton>
+	<mehdi.sakout.fancybuttons.FancyButton
+		android:id="@+id/new_multiplayer_game"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:paddingTop="?attr/home__button_padding"
+		android:paddingBottom="?attr/home__button_padding"
+		app:layout_constraintBottom_toTopOf="@+id/button_wrapper"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/new_game"
+		fancy:fb_defaultColor="?attr/home__main_button_background"
+		fancy:fb_borderWidth="2dp"
+		fancy:fb_borderColor="?attr/home__main_button_border"
+		fancy:fb_focusColor="?attr/home__main_button_background__focused"
+		fancy:fb_fontIconResource="&#xf0c0;"
+		fancy:fb_fontIconSize="24sp"
+		fancy:fb_iconPosition="top"
+		fancy:fb_text="Multiplayer"
+		app:layout_constraintHorizontal_weight="1"
+		fancy:fb_textSize="18sp" />
 
 	<LinearLayout
 		android:id="@+id/button_wrapper"

@@ -102,15 +102,6 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
 
     }
 
-    private fun findMatchingGameModeId(gameMode: GameMode, gameModesToSearch: Map<Long, GameMode>): Long {
-        for ((key, existingGameMode) in gameModesToSearch) {
-            if (existingGameMode.minWordLength == gameMode.minWordLength && existingGameMode.scoreType == gameMode.scoreType && existingGameMode.timeLimitSeconds == gameMode.timeLimitSeconds && existingGameMode.hintMode == gameMode.hintMode && existingGameMode.boardSize == gameMode.boardSize) {
-                return key
-            }
-        }
-        return -1
-    }
-
     private fun migrateHighScoresFromPrefs(): List<LegacyHighScore> {
 
         val customGameModes: MutableList<LegacyHighScore> = ArrayList()
@@ -206,6 +197,15 @@ class MigrateHighScoresFromPreferences(private val context: Context) {
 
         private const val TAG = "MigrateScoresFromPrefs"
         private const val SCORE_PREF_FILE = "prefs_score_file"
+
+        fun findMatchingGameModeId(gameMode: GameMode, gameModesToSearch: Map<Long, GameMode>): Long {
+            for ((key, existingGameMode) in gameModesToSearch) {
+                if (existingGameMode.hasSameRules(gameMode)) {
+                    return key
+                }
+            }
+            return -1
+        }
 
         private val defaultGameModes:List<GameMode> =
                 listOf(

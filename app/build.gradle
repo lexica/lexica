@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'de.mobilej.unmock'
 
 android {
     compileSdkVersion 30
@@ -56,6 +57,13 @@ android {
     }
 }
 
+unMock {
+    // All three of these seem required to get Uri working in tests: https://stackoverflow.com/a/47529360
+    keep "android.net.Uri"
+    keepAndRename "java.nio.charset.Charsets" to "xjava.nio.charset.Charsets"
+    keepStartingWith "libcore."
+}
+
 dependencies {
     implementation project(':libraries:trie')
     implementation project(':libraries:liblexica')
@@ -71,6 +79,8 @@ dependencies {
     implementation 'com.github.medyo:fancybuttons:1.9.1'
 
     implementation 'io.github.tonnyl:whatsnew:0.1.2'
+
+    implementation 'com.google.zxing:core:3.3.0'
 
     implementation 'androidx.room:room-runtime:2.2.6'
     annotationProcessor 'androidx.room:room-compiler:2.2.6'
@@ -89,6 +99,9 @@ dependencies {
     }
     implementation "androidx.core:core-ktx:1.3.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // dependency to android-all to use
+    unmock 'org.robolectric:android-all:4.3_r2-robolectric-0'
 }
 
 afterEvaluate {

@@ -149,6 +149,11 @@ public class Game implements Synchronizer.Counter {
     }
 
     public Game(Context c, GameMode gameMode) {
+        this(c, gameMode, null);
+    }
+
+    public Game(Context c, GameMode gameMode, Language language) {
+        this.language = language;
         this.gameMode = gameMode;
         status = GameStatus.GAME_STARTING;
         wordCount = 0;
@@ -188,6 +193,30 @@ public class Game implements Synchronizer.Counter {
         initializeWeights();
     }
 
+    public static Game generateGame(Context context, GameMode gameMode) {
+        return generateGame(context, gameMode, null);
+    }
+
+    /**
+     * TODO: This is not a very pure function. The Game constructor loads preferences, reads sounds from disk, and probably does
+     *       many other things. This should be refactored so that it is more predictable what happens.
+     */
+    public static Game generateGame(Context context, GameMode gameMode, Language language) {
+        Game bestGame = new Game(context, gameMode, language);
+        int numAttempts = 0;
+        while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
+            Log.d(TAG, "Generating another board, because the previous one only had " + bestGame.getMaxWordCount() + " words, but we want at least 45. Will give up after 5 tries.");
+            Game nextAttempt = new Game(context, gameMode, language);
+            if (nextAttempt.getMaxWordCount() > bestGame.getMaxWordCount()) {
+                bestGame = nextAttempt;
+            }
+            numAttempts ++;
+        }
+
+        Log.d(TAG, "Generated new board with " + bestGame.getMaxWordCount() + " words");
+        return bestGame;
+    }
+
     public GameMode getGameMode() {
         return gameMode;
     }
@@ -223,8 +252,9 @@ public class Game implements Synchronizer.Counter {
     private void loadPreferences(Context c, GameMode gameMode) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
 
-        language = new Util().getSelectedLanguageOrDefault(context);
-        Log.d(TAG, "Language (from preferences): " + language.getName());
+        if (language == null) {
+            language = new Util().getSelectedLanguageOrDefault(context);
+        }
 
         boardSize = gameMode.getBoardSize();
         minWordLength = gameMode.getMinWordLength();

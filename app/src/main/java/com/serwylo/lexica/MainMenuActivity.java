@@ -25,6 +25,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.serwylo.lexica.activities.HighScoresActivity;
+import com.serwylo.lexica.activities.NewMultiplayerActivity;
 import com.serwylo.lexica.databinding.SplashBinding;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
@@ -77,6 +78,10 @@ public class MainMenuActivity extends AppCompatActivity {
             Uri u = Uri.parse("https://github.com/lexica/lexica");
             i.setData(u);
             startActivity(i);
+        });
+
+        binding.newMultiplayerGame.setOnClickListener(v -> {
+            startActivity(new Intent(this, NewMultiplayerActivity.class));
         });
 
         binding.preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));

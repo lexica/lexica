@@ -25,6 +25,31 @@
 			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
 		</activity>
 
+		<activity android:name=".activities.MultiplayerLobbyActivity"
+			android:screenOrientation="portrait"
+			android:configChanges="orientation|keyboardHidden"
+			android:parentActivityName=".MainMenuActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
+
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+
+				<data android:scheme="lexica"/>
+				<data android:host="multiplayer"/>
+			</intent-filter>
+
+		</activity>
+
+		<activity android:name=".activities.NewMultiplayerActivity"
+			android:screenOrientation="portrait"
+			android:configChanges="orientation|keyboardHidden"
+			android:parentActivityName=".MainMenuActivity">
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
+		</activity>
+
 		<activity android:name=".activities.FoundWordsActivity"
 			android:screenOrientation="portrait"
 			android:configChanges="orientation|keyboardHidden"

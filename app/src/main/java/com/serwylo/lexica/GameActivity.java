@@ -36,6 +36,7 @@ import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.db.ResultRepository;
 import com.serwylo.lexica.game.Game;
+import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.view.LexicaView;
 
 public class GameActivity extends AppCompatActivity implements Synchronizer.Finalizer {
@@ -83,7 +84,10 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                     restoreGame();
                     break;
                 case "com.serwylo.lexica.action.NEW_GAME":
-                    newGame(getIntent().getExtras().getParcelable("gameMode"));
+                    GameMode gameMode = getIntent().getExtras().getParcelable("gameMode");
+                    Language language = Language.from(getIntent().getExtras().getString("lang"));
+                    // TODO: Also get the Board from here and use that instead of generating a new game.
+                    Game.generateGame(this, gameMode, language);
                     break;
             }
         } catch (Exception e) {
@@ -113,23 +117,6 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         return game.getStatus() != Game.GameStatus.GAME_FINISHED;
-    }
-
-    private void newGame(GameMode gameMode) {
-        Game bestGame = new Game(this, gameMode);
-        int numAttempts = 0;
-        while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
-            Log.d(TAG, "Generating another board, because the previous one only had " + bestGame.getMaxWordCount() + " words, but we want at least 45. Will give up after 5 tries.");
-            Game nextAttempt = new Game(this, gameMode);
-            if (nextAttempt.getMaxWordCount() > bestGame.getMaxWordCount()) {
-                bestGame = nextAttempt;
-            }
-            numAttempts ++;
-        }
-
-        Log.d(TAG, "Generated new board with " + bestGame.getMaxWordCount() + " words");
-        this.game = bestGame;
-        setupGameView(game);
     }
 
     private void restoreGame() {

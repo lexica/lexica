@@ -150,8 +150,6 @@ class ChooseGameModeActivity : AppCompatActivity() {
 
             val context = this@ChooseGameModeActivity
 
-            val boardWidth = sqrt(gameMode.boardSize.toDouble()).toInt()
-
             binding.root.isLongClickable = true
             binding.root.setOnLongClickListener(longClickListener)
             binding.root.setOnClickListener(clickListener)
@@ -160,30 +158,11 @@ class ChooseGameModeActivity : AppCompatActivity() {
             binding.description.text = gameMode.description(context)
 
             if (isSelected) {
-                binding.statusTime.visibility = View.VISIBLE
-                binding.statusBoardSize.visibility = View.VISIBLE
-                binding.statusScoreType.visibility = View.VISIBLE
-                binding.statusMinLength.visibility = View.VISIBLE
-
-                binding.statusTime.setText(context.resources.getQuantityString(R.plurals.num_minutes, gameMode.timeLimitSeconds / 60, gameMode.timeLimitSeconds / 60))
-                binding.statusBoardSize.setText("${boardWidth}x${boardWidth}")
-                binding.statusScoreType.setText(if (gameMode.scoreType == "W") context.getString(R.string.word_length) else context.getString(R.string.letter_points))
-                binding.statusMinLength.setText("≥ " + gameMode.minWordLength) // TODO: RTL
-
-                if (gameMode.hintModeColor() || gameMode.hintModeCount()) {
-                    binding.statusHintMode.visibility = View.VISIBLE
-                    binding.statusHintMode.setText(context.getString(R.string.pref_hintMode))
-                } else {
-                    binding.statusHintMode.visibility = View.GONE
-                }
+                binding.gameDetails.visibility = View.VISIBLE
+                binding.gameDetails.setGameMode(gameMode)
             } else {
-                binding.statusTime.visibility = View.GONE
-                binding.statusBoardSize.visibility = View.GONE
-                binding.statusScoreType.visibility = View.GONE
-                binding.statusHintMode.visibility = View.GONE
-                binding.statusMinLength.visibility = View.GONE
+                binding.gameDetails.visibility = View.GONE
             }
-
 
         }
     }

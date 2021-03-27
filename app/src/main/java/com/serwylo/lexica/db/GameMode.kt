@@ -47,6 +47,21 @@ data class GameMode (
         LEGACY,
     }
 
+    /**
+     * Like [equals], but only checks the game-play specific parts of the game mode.
+     * That is to say, it doesn't care what the game mode is called or whether it is a custom mode
+     * or not, as long as the important bits are the same, we are happy.
+     */
+    fun hasSameRules(other: GameMode): Boolean {
+        return (
+            other.minWordLength == minWordLength &&
+            other.scoreType == scoreType &&
+            other.timeLimitSeconds == timeLimitSeconds &&
+            other.hintMode == hintMode &&
+            other.boardSize == boardSize
+        )
+    }
+
     fun label(context: Context): String {
         return when (type) {
             Type.SPRINT -> context.getString(R.string.game_mode_sprint)

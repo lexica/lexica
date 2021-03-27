@@ -33,4 +33,12 @@ interface GameModeDao {
     @Query("SELECT * FROM GameMode WHERE gameModeId = :id")
     fun getById(id: Long): GameMode?
 
+    @Query("SELECT * FROM GameMode WHERE minWordLength = :minWordLength and scoreType = :scoreType and timeLimitSeconds = :timeLimitSeconds and hintMode = :hintMode and boardSize = :boardSize")
+    fun getByRules(
+        minWordLength: Int,
+        scoreType: String,
+        timeLimitSeconds: Int,
+        hintMode: String,
+        boardSize: Int,
+    ): GameMode?
 }
