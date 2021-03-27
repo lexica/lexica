@@ -7,10 +7,10 @@
     <string name="pref_dict">Лексикон</string>
     <string name="pref_dict_en_US">Англійська (США)</string>
     <string name="pref_dict_en_GB">Англійська (Великобританія)</string>
-    <string name="pref_dict_de_DE">Німецька</string>
+    <string name="pref_dict_de_DE">Німецька (розширена)</string>
     <string name="pref_dict_nl">Нідерландська</string>
     <string name="pref_dict_fa">Перська</string>
-    <string name="pref_dict_fr_FR">Французька</string>
+    <string name="pref_dict_fr_FR">Французька (розширена)</string>
     <string name="pref_dict_it">Італійська</string>
     <string name="pref_dict_ca">Каталонська</string>
     <string name="pref_dict_es">Іспанська</string>
@@ -127,4 +127,10 @@
     <string name="pref_hintMode">Режим підказки</string>
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Португальська (Бразилія)</string>
     <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Польська</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Включає граматичні відмінки та скорочення</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Російська (розширена)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Французька</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Включає діакритичні: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Німецька</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Включає діакритичні: äöü</string>
 </resources>
