@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="new_game">Nuova partita</string>
     <string name="restore_game">Riprendi partita salvata</string>
@@ -52,10 +52,10 @@
     <string name="pref_dict_ja">Giapponese</string>
     <string name="pref_dict_it">Italiano</string>
     <string name="pref_dict_hu">Ungherese</string>
-    <string name="pref_dict_fr_FR">Francese</string>
+    <string name="pref_dict_fr_FR">Francese (esteso)</string>
     <string name="pref_dict_fa">Persiano</string>
     <string name="pref_dict_es">Spagnolo</string>
-    <string name="pref_dict_de_DE">Tedesco</string>
+    <string name="pref_dict_de_DE">Tedesco (esteso)</string>
     <string name="pref_dict_ca">Catalano</string>
     <string name="pref_breakdown">Mostra l\'interruzione della lunghezza delle parole</string>
     <string name="reset_scores_prompt">Sei sicuro di voler resettare tutti i punteggi migliori per tutte le modalità di gioco\?</string>
@@ -121,4 +121,10 @@
     <string name="high_scores">Punteggi più alti</string>
     <string name="button_cancel">Annulla</string>
     <string name="button_delete">Elimina</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Include ic asi grammaticali e le abbreviazioni</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Russo (esteso)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francese</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Include i diacritici: àâçéèêëîïôûü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Tedesco</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Include i diacritici: äöü</string>
 </resources>
