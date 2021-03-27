@@ -75,4 +75,6 @@
     <string name="pref_dict">Léxico</string>
     <string name="sort">Ordenar</string>
     <string name="theme_high_contrast">Alto contraste</string>
+    <string name="input_game_mode_name_hint">Nome</string>
+    <string name="delete_custom_game_mode">Excluir o modo de jogo personalizado «%1$s»\? Todos os recordes serão perdidos.</string>
 </resources>
