@@ -107,7 +107,7 @@
     <string name="input_game_mode_minutes_description">分钟为单位的时间限制</string>
     <string name="input_game_mode_name_description">用于选择游戏模式 / 记录高分</string>
     <string name="input_game_mode_name_hint">名称</string>
-    <string name="delete_custom_game_mode">要删除自定义游戏模式 \"%1$s\"吗？你将失去任何高分。</string>
+    <string name="delete_custom_game_mode">要删除自定义游戏模式 “%1$s”吗？你将失去任何高分。</string>
     <string name="button_cancel">取消</string>
     <string name="button_delete">删除</string>
     <plurals name="max_score_points_suffix">
