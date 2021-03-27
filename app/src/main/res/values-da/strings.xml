@@ -27,7 +27,7 @@
     <string name="game_mode_sprint_description">Kort spil om at finde så mange ord som muligt</string>
     <string name="input_game_mode_minutes_description">Tidsgrænse i minutter</string>
     <string name="input_game_mode_name_description">For valg af spilmodus / optagelse av højeste scorer</string>
-    <string name="delete_custom_game_mode">Slet brugerdefineret spilmodus \"%1$s\"\? Alle højeste scorer vil gå tabt.</string>
+    <string name="delete_custom_game_mode">Slet brugerdefineret spilmodus »%1$s«\? Alle højeste scorer vil gå tabt.</string>
     <string name="sort">Sorter</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_definitionProvider_dialog">Vælg definitionstilbyder</string>
