@@ -26,13 +26,33 @@
             tools:text="Elvish"
             android:textAppearance="?attr/textAppearanceListItem" />
 
-        <TextView android:id="@+id/description"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="?attr/list__selectable_item_text_colour"
-            app:layout_constraintTop_toBottomOf="@+id/language"
-            android:text="@string/lexicon_is_in_beta"
-            android:textAppearance="?attr/textAppearanceListItemSecondary" />
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/lexicon_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/list__selectable_item_text_colour"
+                tools:text="Without diacritics (...)"
+                android:textAppearance="?attr/textAppearanceListItemSecondary" />
+
+            <TextView android:id="@+id/lexicon_is_in_beta_separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/list__selectable_item_text_colour"
+                android:text=" - "
+                android:textAppearance="?attr/textAppearanceListItemSecondary" />
+
+            <TextView android:id="@+id/lexicon_is_in_beta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/list__selectable_item_text_colour"
+                android:text="@string/lexicon_is_in_beta"
+                android:textAppearance="?attr/textAppearanceListItemSecondary" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

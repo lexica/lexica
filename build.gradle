@@ -47,11 +47,13 @@ task buildDictionaries
 def languages = [
   "ca",
   "de_DE",
+  "de_DE_no_diacritics",
   "en_US",
   "en_GB",
   "es",
   "fa",
   "fr_FR",
+  "fr_FR_no_diacritics",
   "hu",
   "it",
   "ja",
@@ -59,6 +61,7 @@ def languages = [
   "pl",
   "pt_BR",
   "ru",
+  "ru_extended",
   "uk",
 ]
 languages.each { lang ->

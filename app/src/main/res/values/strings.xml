@@ -6,10 +6,14 @@
     <string name="prefs">Preferences</string>
     <string name="pref_dict">Lexicon</string>
     <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Catalan</string>
-    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">German</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">German (Extended)</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Includes diacritics: äöü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">German</string>
     <string name="pref_dict_es" tools:keep="@string/pref_dict_es">Spanish</string>
     <string name="pref_dict_fa" tools:keep="@string/pref_dict_fa">Persian</string>
-    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">French</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">French (Extended)</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Includes diacritics: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">French</string>
     <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">Hungarian</string>
     <string name="pref_dict_it" tools:keep="@string/pref_dict_it">Italian</string>
     <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">Japanese</string>
@@ -17,6 +21,8 @@
     <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Polish</string>
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portuguese (Brazil)</string>
     <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">Russian</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Russian (Extended)</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Includes grammar cases and abbreviations</string>
     <string name="pref_dict_en_GB" tools:keep="@string/pref_dict_en_GB">English (UK)</string>
     <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">Ukrainian</string>
     <string name="pref_dict_en_US" tools:keep="@string/pref_dict_en_US">English (US)</string>
