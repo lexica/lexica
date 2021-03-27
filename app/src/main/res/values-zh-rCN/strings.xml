@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="new_game">新游戏</string>
     <string name="restore_game">返回游戏</string>
@@ -49,10 +49,10 @@
     <string name="pref_definitionProvider">定义来源</string>
     <string name="pref_definitionProvider_summary">选择要使用的定义提供程序。如果未安装所选的提供程序，则将使用在线源，如Wiktionary。</string>
     <string name="pref_definitionProvider_dialog">选择定义來源</string>
-    <string name="pref_dict_de_DE">德语</string>
+    <string name="pref_dict_de_DE">德语 (扩展)</string>
     <string name="pref_dict_nl">荷兰语</string>
     <string name="pref_dict_fa">波斯语</string>
-    <string name="pref_dict_fr_FR">法语</string>
+    <string name="pref_dict_fr_FR">法语 (扩展)</string>
     <string name="pref_dict_it">意大利语</string>
     <string name="pref_dict_ca">加泰罗尼亚语</string>
     <string name="pref_dict_es">西班牙语</string>
@@ -118,4 +118,10 @@
     </plurals>
     <string name="menu_view_found_words">查看找到的单词</string>
     <string name="high_scores">高分</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">包括语法情况和缩写</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">俄语 (扩展)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">法语</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">包括变音符号：àâçéèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">德语</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">包括变音符号：äöü</string>
 </resources>
