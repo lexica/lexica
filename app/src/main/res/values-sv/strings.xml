@@ -78,7 +78,7 @@
     <string name="whats_new_game_modes">Spelläge</string>
     <string name="game_mode_custom_description">Tillpassad spelläge</string>
     <string name="input_game_mode_name_description">For välj av spelläge / inspelning av poängsummar</string>
-    <string name="delete_custom_game_mode">Slätt tillpassad spelläge \"%1$s\"\? Alla högsta poängsumma vill gå tappt.</string>
+    <string name="delete_custom_game_mode">Slätt tillpassad spelläge ”%1$s”\? Alla högsta poängsumma vill gå tappt.</string>
     <string name="whats_new_game_modes_why">Tack vare bidrag från samhället kan spela Lexica på nya sätt. Det gör det svårare att förklara hur höga poäng registreras, och varje ny funktion ger komplexitet.
 \n
 \nDessa ändringar gör det lättare att förstå vilken kombination av preferenser som resulterar i en högsta poängsumma.
