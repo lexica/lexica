@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica - Sözcük Oyunu</string>
     <string name="new_game">Yeni Oyun</string>
     <string name="restore_game">Oyunu Geri Yükle</string>
@@ -7,10 +7,10 @@
     <string name="pref_dict">Sözlük</string>
     <string name="pref_dict_en_US">İngilizce (US)</string>
     <string name="pref_dict_en_GB">İngilizce (UK)</string>
-    <string name="pref_dict_de_DE">Almanca</string>
+    <string name="pref_dict_de_DE">Almanca (Genişletilmiş)</string>
     <string name="pref_dict_nl">Flemenkçe</string>
     <string name="pref_dict_fa">Farsça</string>
-    <string name="pref_dict_fr_FR">Fransızca</string>
+    <string name="pref_dict_fr_FR">Fransızca (Genişletilmiş)</string>
     <string name="pref_dict_it">İtalyanca</string>
     <string name="pref_dict_ca">Katalanca</string>
     <string name="pref_dict_es">İspanyolca</string>
@@ -121,4 +121,10 @@
     </plurals>
     <string name="menu_view_found_words">Bulunan sözcükleri görüntüle</string>
     <string name="high_scores">Yüksek Puanlar</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Dil bilgisi durumlarını ve kısaltmaları içerir</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Rusça (Genişletilmiş)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Fransızca</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Aksanları içerir: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Almanca</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Aksanları içerir: äöü</string>
 </resources>
