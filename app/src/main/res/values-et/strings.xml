@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="dialog_about_content">Liiguta sõnaruute ekraanil nii, et neist moodustuksid sõnad. Otsi nii palju, kui jõuad ning aega on selleks kolm minutit.
 \n
 \nTulemuste arvutamine:
@@ -63,10 +63,10 @@
     <string name="pref_dict_ja">jaapani</string>
     <string name="pref_dict_it">itaalia</string>
     <string name="pref_dict_hu">ungari</string>
-    <string name="pref_dict_fr_FR">prantsuse</string>
+    <string name="pref_dict_fr_FR">prantsuse (laiendatud)</string>
     <string name="pref_dict_fa">pärsia</string>
     <string name="pref_dict_es">hispaania</string>
-    <string name="pref_dict_de_DE">saksa</string>
+    <string name="pref_dict_de_DE">saksa (laiendatud)</string>
     <string name="pref_dict_ca">katalaani</string>
     <string name="pref_dict">Leksikon</string>
     <string name="prefs">Eelistused</string>
@@ -121,4 +121,10 @@
     </plurals>
     <string name="menu_view_found_words">Näita leitud sõnu</string>
     <string name="high_scores">Parimad tulemused</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Sealhulgas käänded ja lühendid</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">vene (laiendatud)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">prantsuse</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Sealhulgas täpitähed: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">saksa</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Sealhulgas täpitähed: äöü</string>
 </resources>
