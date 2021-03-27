@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="new_game">Uusi peli</string>
     <string name="restore_game">Palauta peli</string>
     <string name="prefs">Asetukset</string>
     <string name="pref_dict">Leksikko</string>
     <string name="pref_dict_ca">katalaani</string>
-    <string name="pref_dict_de_DE">saksa</string>
+    <string name="pref_dict_de_DE">saksa (laajennettu)</string>
     <string name="pref_dict_es">espanja</string>
     <string name="pref_dict_fa">persia</string>
-    <string name="pref_dict_fr_FR">ranska</string>
+    <string name="pref_dict_fr_FR">ranska (laajennettu)</string>
     <string name="pref_dict_hu">unkari</string>
     <string name="found_words">Löydetyt sanat</string>
     <string name="score">Pisteet</string>
@@ -84,4 +84,39 @@
     <string name="menu_save_game_mode">Tallenna</string>
     <string name="menu_new_game_mode">Uusi</string>
     <string name="input_game_mode_name_hint">Nimi</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d min</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d piste</item>
+        <item quantity="other">/ %d pistettä</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d sana</item>
+        <item quantity="other">%d / %d sanaa</item>
+    </plurals>
+    <string name="menu_view_found_words">Näytä löydetyt kirjaimet</string>
+    <string name="error_restoring_game">Pelin palautus ei onnistunut</string>
+    <string name="game_mode_legacy_description">Aiemmassa Lexican versiossa käytetty</string>
+    <string name="game_mode_legacy">Perinteinen</string>
+    <string name="game_mode_custom_description">Muokattu pelitila</string>
+    <string name="game_mode_letter_points_description">Enemmän pisteitä harvinaisemmista kirjaimista</string>
+    <string name="game_mode_letter_points">Kirjainpisteet</string>
+    <string name="game_mode_beginner_description">Käytä vihjeitä apuna sanojen löytämiseksi</string>
+    <string name="game_mode_beginner">Aloittelija</string>
+    <string name="game_mode_marathon_description">Yritä löytää kaikki sanat ilman aikarajaa</string>
+    <string name="game_mode_sprint_description">Pikainen peli, missä etsitään mahdollisimman monta sanaa</string>
+    <string name="input_game_mode_minutes_description">Aikaraja minuutteina</string>
+    <string name="input_game_mode_name_description">Pelitilan valintaa ja ennätysten talletusta varten</string>
+    <string name="delete_custom_game_mode">Poisty muokattu pelitila ”%1$s”\? Ennätykset poistuvat samalla.</string>
+    <string name="high_scores">Ennätykset</string>
+    <string name="button_cancel">Peruuta</string>
+    <string name="button_delete">Poista</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Sisältää kielioppitapauksia ja lyhenteitä</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">venäjä (laajennettu)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">ranska</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Sisältää diakriittiset merkit: àâçéèèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">saksa</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Sisältää diakriittiset merkit: äöü</string>
 </resources>
