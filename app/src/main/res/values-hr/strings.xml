@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="pref_dict_ca">Katalonski</string>
     <string name="lexicon_is_in_beta">beta</string>
     <string name="high_score">Najviši rezultat</string>
@@ -55,14 +55,14 @@
 \n</string>
     <string name="pref_scoreType">Vrsta bodovanja</string>
     <string name="menu_rotate_board">Okreni ploču</string>
-    <string name="pref_dict_de_DE">Njemački</string>
+    <string name="pref_dict_de_DE">Njemački (prošireno)</string>
     <string name="dialog_about_title">O programu Lexica</string>
     <string name="prefs">Postavke</string>
     <string name="app_name">Lexica</string>
     <string name="high_scores_reset">Najviši rezultati su resetirani.</string>
     <string name="hide_unique">Sakrij jedinstvene riječi</string>
     <string name="reset_scores_prompt">Stvarno želiš resetirati sve najviše rezultate za sve moduse igre na nulu\?</string>
-    <string name="pref_dict_fr_FR">Francuski</string>
+    <string name="pref_dict_fr_FR">Francuski (prošireno)</string>
     <string name="pref_dict">Leksikon</string>
     <string name="hint_colour">Boja pločice</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Internet</string>
@@ -124,4 +124,10 @@
         <item quantity="other">/ %d bodova</item>
     </plurals>
     <string name="high_scores">Najviši rezultati</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Uključuje padeže i kratice</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Ruski (prošireno)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francuski</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Uključuje dijakritičke znakove: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Njemački</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Uključuje dijakritičke znakove: äöü</string>
 </resources>
