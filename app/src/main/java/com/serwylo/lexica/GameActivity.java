@@ -83,15 +83,24 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                 case "com.serwylo.lexica.action.RESTORE_GAME":
                     restoreGame();
                     break;
+
                 case "com.serwylo.lexica.action.NEW_GAME":
                     GameMode gameMode = getIntent().getExtras().getParcelable("gameMode");
-                    Language language = Language.from(getIntent().getExtras().getString("lang"));
-                    // TODO: Also get the Board from here and use that instead of generating a new game.
-                    Game.generateGame(this, gameMode, language);
+                    String[] board = getIntent().getExtras().getStringArray("board");
+
+                    String langName = getIntent().getExtras().getString("lang");
+                    Language language = langName == null ? null : Language.fromOrNull(langName);
+
+                    game = (language != null && board != null)
+                        ? new Game(this, gameMode, language, board)
+                        : Game.generateGame(this, gameMode);
+
+                    setupGameView(game);
                     break;
             }
         } catch (Exception e) {
-            Log.e(TAG, "top level", e);
+            Log.e(TAG, "Error creating new Lexica game. Will finish() the GameActivity in the hope it gracefully returns to the main menu.", e);
+            finish();
         }
     }
 

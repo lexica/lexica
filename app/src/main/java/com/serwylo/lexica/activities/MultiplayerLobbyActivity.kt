@@ -75,14 +75,15 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
     }
 
     private fun startGame(language: Language, gameMode: GameMode, board: List<String>) {
-        binding.startGame.setOnClickListener {
-            val intent = Intent("com.serwylo.lexica.action.NEW_GAME").apply {
-                putExtra("gameMode", gameMode)
-                putExtra("lang", language.name)
-                putExtra("board", board.joinToString())
-            }
-            startActivity(intent)
+        val intent = Intent("com.serwylo.lexica.action.NEW_GAME").apply {
+            putExtra("gameMode", gameMode)
+            putExtra("lang", language.name)
+            putExtra("board", board.toTypedArray())
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_TASK_ON_HOME
         }
+
+        startActivity(intent)
+        finish()
     }
 
     companion object {

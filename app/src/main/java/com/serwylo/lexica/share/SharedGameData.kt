@@ -45,9 +45,10 @@ data class SharedGameData(
         }
 
         val urlBuilder = Uri.Builder()
-            .scheme("lexica")
-            .authority("multiplayer")
-            .path("/$boardChars")
+            .scheme("https")
+            .authority("lexica.github.io")
+            .path("/m/")
+            .appendQueryParameter(Keys.board, boardChars)
             .appendQueryParameter(Keys.language, language.name)
             .appendQueryParameter(Keys.time, timeLimitInSeconds.toString())
             .appendQueryParameter(Keys.scoreType, scoreTypeSerialized)
@@ -63,6 +64,7 @@ data class SharedGameData(
     }
 
     object Keys {
+        const val board = "b"
         const val language = "l"
         const val time = "t"
         const val scoreType = "s"
@@ -97,11 +99,7 @@ data class SharedGameData(
         const val CURRENT_VERSION = BuildConfig.VERSION_CODE;
 
         fun parseGame(uri: Uri): SharedGameData {
-            val board = uri.path?.substring(1)
-            if (board == null || board.isEmpty()) {
-                throw IllegalArgumentException("Invalid path for shared game. Expected a game board but got: \"${board}\"")
-            }
-
+            val board = findKey(uri, Keys.board)
             val languageCode = findKey(uri, Keys.language)
             val time = findKey(uri, Keys.time)
             val scoreType = findKey(uri, Keys.scoreType)
@@ -129,7 +127,7 @@ data class SharedGameData(
         private fun findKey(uri: Uri, key: String): String {
             val value = uri.getQueryParameter(key)
             if (value == null || value.isEmpty()) {
-                throw IllegalArgumentException("Expected to find a $key in the shared game. Only found these: ${uri.queryParameterNames}.")
+                throw IllegalArgumentException("Expected to find a $key in $uri. Only found these: ${uri.queryParameterNames}.")
             }
 
             return value

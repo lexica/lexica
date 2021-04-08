@@ -41,6 +41,16 @@
 				<data android:host="multiplayer"/>
 			</intent-filter>
 
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+
+				<data android:scheme="https"/>
+				<data android:host="lexica.github.io"/>
+				<data android:path="/m/"/>
+			</intent-filter>
 		</activity>
 
 		<activity android:name=".activities.NewMultiplayerActivity"
