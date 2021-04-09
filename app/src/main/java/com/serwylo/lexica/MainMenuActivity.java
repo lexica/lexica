@@ -38,6 +38,8 @@ import com.serwylo.lexica.lang.LanguageLabel;
 
 import java.util.Locale;
 
+import com.serwylo.lexica.Changelog;
+
 public class MainMenuActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")

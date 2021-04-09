@@ -78,7 +78,7 @@ dependencies {
     // quite customizable without having to go into <selectors> and such.
     implementation 'com.github.medyo:fancybuttons:1.9.1'
 
-    implementation 'io.github.tonnyl:whatsnew:0.1.2'
+    implementation 'io.github.tonnyl:whatsnew:0.1.7'
 
     implementation 'com.google.zxing:core:3.3.0'
 
