@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="pref_dict_ca">Καταλανικά</string>
     <string name="lexicon_is_in_beta">Beta</string>
     <string name="high_score">Υψηλή βαθμολογία</string>
-    <string name="words">ΛΈΞΕΙΣ</string>
+    <string name="words">Λέξεις</string>
     <string name="pref_definitionProvider_summary">Επιλέξτε μια υπηρεσία παροχής ορισμού για χρήση. Εάν η επιλεγμένη υπηρεσία παροχής δεν είναι εγκατεστημένη, θα χρησιμοποιηθεί το DuckDuckGo.</string>
     <string name="pref_dict_ja">Ιαπωνικά</string>
     <string name="pref_dict_es">Ισπανικά</string>
-    <string name="define_word">
-        <u>Ορισμός</u>
-    </string>
+    <string name="define_word"><u>Ορισμός</u> </string>
     <string name="pref_sounds">Ήχος ενεργοποιημένος</string>
     <string name="show_unique">Εμφάνιση μοναδικών λέξεων</string>
     <string name="pref_sounds_summary">Εάν είναι ενεργοποιημένα τα ηχητικά εφέ ή όχι</string>
     <string name="menu_end_game">Τερματισμός παιχνιδιού</string>
     <string name="button_ok">Εντάξει</string>
     <string name="pref_dict_nl">Ολλανδικά</string>
-    <string name="score">ΒΑΘΜΟΛΟΓΊΑ</string>
+    <string name="score">Βαθμολογία</string>
     <string name="pref_boardSize">Μέγεθος πίνακα</string>
     <string name="pref_dict_fa">Περσικά</string>
     <string name="pref_breakdown">Εμφάνιση ανάλυσης μήκους λέξεων</string>
@@ -40,9 +38,7 @@
     <string name="pref_resetScores_summary">Οι υψηλές βαθμολογίες παρακολουθούνται για κάθε συνδυασμό των παραπάνω ρυθμίσεων. Πατήστε για να μηδενίσετε όλες τις βαθμολογίες.</string>
     <string name="pref_timeLimit">Χρονικό όριο</string>
     <string name="word_length">Μήκος λέξης</string>
-    <string name="view_word">
-        <u>Προβολή</u>
-    </string>
+    <string name="view_word"><u>Προβολή</u></string>
     <string name="total_words">Σύνολο λέξεων:</string>
     <string name="pref_definitionProvider_dialog">Επιλέξτε υπηρεσία παροχής ορισμού</string>
     <string name="found_words">Λέξεις Που Βρέθηκαν</string>
@@ -66,4 +62,27 @@
     <string name="pref_dict">Λεξικό</string>
     <string name="button_cancel">Άκυρο</string>
     <string name="button_delete">Διαγραφή</string>
+    <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">Ουκρανικά</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d λεπ</item>
+        <item quantity="other">%d λεπ</item>
+    </plurals>
+    <string name="whats_new_why">Γιατί;</string>
+    <string name="whats_new_continue">Συνέχεια</string>
+    <string name="game_mode_letter_points">Σημεία γραμμάτων</string>
+    <string name="menu_save_game_mode">Αποθήκευση</string>
+    <string name="menu_new_game_mode">Νέο</string>
+    <string name="input_game_mode_name_hint">Όνομα</string>
+    <string name="sort">Ταξινόμηση</string>
+    <string name="theme_dark">Σκούρο</string>
+    <string name="theme_light">LED ειδοποιήσεων</string>
+    <string name="pref_theme">Θέμα</string>
+    <string name="time">Χρόνος</string>
+    <string name="hint_colour">Χρώμα πλακιδίων</string>
+    <string name="tile_count">Αριθμός λέξεων</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Ρωσικά (Εκτεταμένα)</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Πορτογαλικά (Βραζιλία)</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Πολωνικά</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Γαλλικά</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Γερμανικά</string>
 </resources>
