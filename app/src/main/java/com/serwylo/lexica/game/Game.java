@@ -25,13 +25,12 @@ import android.media.SoundPool;
 import android.util.Log;
 import android.util.SparseIntArray;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.preference.PreferenceManager;
 
 import com.serwylo.lexica.GameSaver;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
-import com.serwylo.lexica.Util;
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.lang.Language;
 
@@ -52,10 +51,14 @@ import java.util.Map;
 public class Game implements Synchronizer.Counter {
 
     private static final String TAG = "Game";
-    private int timeRemaining;
-    private int maxTime;
+    private long timeRemainingInMillis;
 
-    private int maxTimeRemaining;
+    /**
+     * For a new game, the maxTime is always specified by the game mode. 30 second game? maxTime
+     * will be 30 seconds. However, when resuming a game, maxTime is the amount of time left in
+     * the game at the time it is resumed.
+     */
+    private long maxTimeSinceResumeInMillis;
 
     private Board board;
     private int score;
@@ -85,11 +88,6 @@ public class Game implements Synchronizer.Counter {
     private final SparseIntArray maxWordCountsByLength = new SparseIntArray();
 
     private Date start;
-    private final Context context;
-
-    private Language language;
-    private int boardSize; // using an int so I can use much larger boards later
-    private int minWordLength;
 
     private Map<String, List<Solution>> solutions;
 
@@ -97,33 +95,33 @@ public class Game implements Synchronizer.Counter {
     private SoundPool mSoundPool;
     private int[] soundIds;
 
-    private GameMode gameMode;
+    private final GameMode gameMode;
+    private final Language language;
 
-    public Game(Context c, GameSaver saver) {
+    public Game(Context context, GameSaver saver) {
 
         gameMode = saver.readGameMode();
         status = GameStatus.GAME_STARTING;
         wordCount = 0;
 
-        context = c;
-        loadPreferences(c, gameMode);
+        language = saver.readLanguage();
+        loadSounds(context);
 
         try {
-            switch (saver.readBoardSize()) {
+            switch (gameMode.getBoardSize()) {
                 case 16:
-                    setBoard(new FourByFourBoard(saver.readGameBoard()));
+                    setBoard(context, new FourByFourBoard(saver.readGameBoard()));
                     break;
                 case 25:
-                    setBoard(new FiveByFiveBoard(saver.readGameBoard()));
+                    setBoard(context, new FiveByFiveBoard(saver.readGameBoard()));
                     break;
                 case 36:
-                    setBoard(new SixBySixBoard(saver.readGameBoard()));
+                    setBoard(context, new SixBySixBoard(saver.readGameBoard()));
                     break;
             }
 
-            maxTimeRemaining = saver.readGameMode().getTimeLimitSeconds();
-            timeRemaining = saver.readTimeRemaining();
-            maxTime = timeRemaining;
+            timeRemainingInMillis = saver.readTimeRemainingInMillis();
+            maxTimeSinceResumeInMillis = timeRemainingInMillis;
             start = saver.readStart();
 
             String[] wordArray = saver.readWords();
@@ -149,26 +147,21 @@ public class Game implements Synchronizer.Counter {
         }
     }
 
-    public Game(Context c, GameMode gameMode) {
-        this(c, gameMode, null, null);
-    }
-
-    public Game(Context c, GameMode gameMode, Language language, String[] boardLetters) {
+    public Game(Context context, GameMode gameMode, Language language, String[] boardLetters) {
         this.language = language;
         this.gameMode = gameMode;
         status = GameStatus.GAME_STARTING;
         wordCount = 0;
         wordList = new LinkedList<>();
 
-        context = c;
-        loadPreferences(c, gameMode);
+        loadSounds(context);
 
         String lettersFileName = language.getLetterDistributionFileName();
         int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
-        CharProbGenerator charProbs = new CharProbGenerator(c.getResources().openRawResource(id), getLanguage());
+        CharProbGenerator charProbs = new CharProbGenerator(context.getResources().openRawResource(id), getLanguage());
         Board board;
 
-        switch (boardSize) {
+        switch (gameMode.getBoardSize()) {
             case 16:
                 board = boardLetters == null ? charProbs.generateFourByFourBoard() : new FourByFourBoard(boardLetters);
                 break;
@@ -185,24 +178,20 @@ public class Game implements Synchronizer.Counter {
                 throw new IllegalStateException("Board must be 16, 25, or 36 large");
         }
 
-        setBoard(board);
+        setBoard(context, board);
 
-        timeRemaining = getMaxTimeRemaining();
-        maxTime = getMaxTimeRemaining();
+        timeRemainingInMillis = gameMode.getTimeLimitSeconds() * 1000;
+        maxTimeSinceResumeInMillis = gameMode.getTimeLimitSeconds() * 1000;
         score = 0;
         wordsUsed = new LinkedHashSet<>();
         initializeWeights();
-    }
-
-    public static Game generateGame(Context context, GameMode gameMode) {
-        return generateGame(context, gameMode, null);
     }
 
     /**
      * TODO: This is not a very pure function. The Game constructor loads preferences, reads sounds from disk, and probably does
      *       many other things. This should be refactored so that it is more predictable what happens.
      */
-    public static Game generateGame(Context context, GameMode gameMode, @Nullable Language language) {
+    public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language) {
         Game bestGame = new Game(context, gameMode, language, null);
         int numAttempts = 0;
         while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
@@ -244,39 +233,30 @@ public class Game implements Synchronizer.Counter {
         }
     }
 
-    public void setBoard(Board b) {
+    private void setBoard(Context context, Board b) {
         board = b;
-        boardSize = b.getSize();
-        initializeDictionary();
+        initializeDictionary(context);
     }
 
-    private void loadPreferences(Context c, GameMode gameMode) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
-
-        if (language == null) {
-            language = new Util().getSelectedLanguageOrDefault(context);
-        }
-
-        boardSize = gameMode.getBoardSize();
-        minWordLength = gameMode.getMinWordLength();
-        maxTimeRemaining = 100 * gameMode.getTimeLimitSeconds();
+    private void loadSounds(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         if (prefs.getBoolean("soundsEnabled", false)) {
-            initSoundPool(c);
+            initSoundPool(context);
         }
     }
 
-    public void initializeDictionary() {
-        initializeDictionary(language);
+    public void initializeDictionary(Context context) {
+        initializeDictionary(context, language);
     }
 
-    private void initializeDictionary(Language language) {
+    private void initializeDictionary(Context context, Language language) {
         try {
             String trieFileName = language.getTrieFileName();
             int id = context.getResources().getIdentifier("raw/" + trieFileName.substring(0, trieFileName.lastIndexOf('.')), null, context.getPackageName());
             Trie dict = new StringTrie.Deserializer().deserialize(context.getResources().openRawResource(id), board, language);
 
-            solutions = dict.solver(board, w -> w.length() >= minWordLength);
+            solutions = dict.solver(board, w -> w.length() >= gameMode.getMinWordLength());
 
             Log.d(TAG, "Initializing " + language.getName() + " dictionary");
             for (String word : solutions.keySet()) {
@@ -302,7 +282,7 @@ public class Game implements Synchronizer.Counter {
      * For each tile, count how many words that tile can be used for.
      */
     private void initializeWeights() {
-        weights = new int[boardSize];
+        weights = new int[gameMode.getBoardSize()];
 
         for (Map.Entry<String, List<Solution>> entry : solutions.entrySet()) {
             // If we're restoring a game and the word was already used, don't include
@@ -345,7 +325,7 @@ public class Game implements Synchronizer.Counter {
     }
 
     public void save(GameSaver saver) {
-        saver.save(board, timeRemaining, gameMode, wordListToString(), wordCount, start, status);
+        saver.save(board, timeRemainingInMillis, gameMode, language, wordListToString(), wordCount, start, status);
     }
 
     public void start() {
@@ -474,16 +454,26 @@ public class Game implements Synchronizer.Counter {
         return board;
     }
 
-    public int tick() {
-        timeRemaining--;
-        if (timeRemaining <= 0) {
+    public long tick() {
+
+        // It isn't jsut the tick which lowers this, the endGame functionality does too, so check first.
+        if (timeRemainingInMillis <= 0) {
             status = GameStatus.GAME_FINISHED;
-            timeRemaining = 0;
-        } else {
-            Date now = new Date();
-            timeRemaining = Math.max(0, maxTime - (int) (now.getTime() - start.getTime()) / 10);
+            timeRemainingInMillis = 0;
+            return 0;
         }
-        return timeRemaining;
+
+        Date now = new Date();
+        int timeElapsedInMillis = (int) (now.getTime() - start.getTime());
+        timeRemainingInMillis = Math.max(0, maxTimeSinceResumeInMillis - timeElapsedInMillis);
+        Log.d(TAG, "Tick " + timeRemainingInMillis);
+
+        if (timeRemainingInMillis <= 0) {
+            status = GameStatus.GAME_FINISHED;
+            timeRemainingInMillis = 0;
+        }
+
+        return timeRemainingInMillis;
     }
 
     public GameStatus getStatus() {
@@ -497,13 +487,12 @@ public class Game implements Synchronizer.Counter {
 
     public void unpause() {
         status = GameStatus.GAME_RUNNING;
-        maxTime = timeRemaining;
+        maxTimeSinceResumeInMillis = timeRemainingInMillis;
         start = new Date();
     }
 
     public void endNow() {
-        // Log.d(TAG,"endNow");
-        timeRemaining = 0;
+        timeRemainingInMillis = 0;
     }
 
     public Map<String, List<Solution>> getSolutions() {
@@ -514,10 +503,6 @@ public class Game implements Synchronizer.Counter {
         board.rotate();
         if (mRotateHandler != null)
             mRotateHandler.onRotate();
-    }
-
-    public int getMaxTimeRemaining() {
-        return maxTimeRemaining;
     }
 
     public void setRotateHandler(RotateHandler rh) {

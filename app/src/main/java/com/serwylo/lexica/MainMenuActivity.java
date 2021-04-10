@@ -54,19 +54,21 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private void splashScreen(GameMode gameMode, Result highScore) {
 
+        Language language = new Util().getSelectedLanguageOrDefault(this);
+
         SplashBinding binding = SplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.newGame.setOnClickListener(v -> {
             Intent intent = new Intent("com.serwylo.lexica.action.NEW_GAME");
             intent.putExtra("gameMode", gameMode);
+            intent.putExtra("lang", language.getName());
             startActivity(intent);
         });
 
         binding.gameModeButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseGameModeActivity.class)));
         binding.gameModeButton.setText(gameMode.label(this));
 
-        Language language = new Util().getSelectedLanguageOrDefault(this);
         binding.languageButton.setText(LanguageLabel.getLabel(this, language));
         binding.languageButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseLexiconActivity.class)));
 

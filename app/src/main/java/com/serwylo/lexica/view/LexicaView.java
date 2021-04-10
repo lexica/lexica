@@ -49,12 +49,12 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
     @SuppressWarnings("unused")
     protected static final String TAG = "LexicaView";
 
-    public static final int REDRAW_FREQ = 10;
+    public static final int REDRAW_FREQ = 1;
 
     private FingerTracker mFingerTracker;
     private KeyboardTracker mKeyboardTracker;
     private Game game;
-    private int timeRemaining;
+    private long timeRemainingInMillis;
     private int redrawCount;
 
     private int width;
@@ -80,7 +80,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
         mFingerTracker = new FingerTracker(game);
         mKeyboardTracker = new KeyboardTracker();
-        timeRemaining = 0;
+        timeRemainingInMillis = 0;
         redrawCount = 1;
 
         p = new Paint();
@@ -223,15 +223,15 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         p.setColor(theme.game.timer.backgroundColour);
         canvas.drawRect(0, height - theme.game.timer.height - theme.game.timer.borderWidth - theme.game.timer.borderWidth, width, height, p);
 
-        if (timeRemaining < 1000) {
+        if (timeRemainingInMillis < 10000) {
             p.setColor(theme.game.timer.endForegroundColour);
-        } else if (timeRemaining < 3000) {
+        } else if (timeRemainingInMillis < 30000) {
             p.setColor(theme.game.timer.midForegroundColour);
         } else {
             p.setColor(theme.game.timer.startForegroundColour);
         }
 
-        int pixelWidth = width * timeRemaining / game.getMaxTimeRemaining();
+        long pixelWidth = width * timeRemainingInMillis / (game.getGameMode().getTimeLimitSeconds() * 1000);
 
         canvas.drawRect(isRtl ? width - pixelWidth : 0, height - theme.game.timer.height - theme.game.timer.borderWidth, isRtl ? width : pixelWidth, height, p);
     }
@@ -400,9 +400,9 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
         drawWordList(canvas, isRtl, boardWidth * boxsize, scoreStartY);
 
-        int secRemaining = timeRemaining / 100;
-        int mins = secRemaining / 60;
-        int secs = secRemaining % 60;
+        long secRemaining = timeRemainingInMillis / 1000;
+        long mins = secRemaining / 60;
+        long secs = secRemaining % 60;
         String displayTime = mins + ":" + (secs < 10 ? "0" : "") + secs;
         drawScorePanel(canvas, isRtl ? 2 : 0, panelWidth, scoreStartY, getContext().getString(R.string.time), displayTime);
 
@@ -491,10 +491,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         invalidate();
     }
 
-    public void tick(int time) {
+    public void tick(long timeRemainingInMillis) {
         boolean doRedraw = false;
 
-        timeRemaining = time;
+        this.timeRemainingInMillis = timeRemainingInMillis;
         if (--redrawCount <= 0) {
             doRedraw = true;
         }

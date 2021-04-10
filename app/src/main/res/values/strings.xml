@@ -109,7 +109,7 @@
     <string name="whats_new_title">What\'s New</string>
     <string name="whats_new_continue">Continue</string>
     <string name="whats_new_multiplayer">Multiplayer!</string>
-    <string name="whats_new_multiplayer_description">Start a new game from the main screen, then share invites using a QR Code, SMS, Email, etc.\n\nAfter receiving the invite, others can play the same randomly generated board as you, with the same rules.\n\nWhen finished, compare your scores to see who has the superior lexicon.\n\nNote: This is NOT an online / network version of multiplayer. That is a much bigger job to implement, but we hope you enjoy this as an alternative.</string>
+    <string name="whats_new_multiplayer_description">Start a new game from the main screen, then share invites using a QR Code, SMS, Email, etc.\n\nAfter receiving the invite, others can play the same randomly generated board as you, with the same rules.\n\nWhen finished, compare your scores to see who has the superior lexicon.\n\nAs always, feedback is welcome about how this feature can be improved.</string>
     <string name="whats_new_support">Support Lexica</string>
     <string name="whats_new_support_description">Lexica is and always will be free and open source.\n\nYou can show your support and contribute to its further development by donating via <a href="https://liberapay.com/Lexica">Liberapay</a> or <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="menu_view_found_words">View found words</string>

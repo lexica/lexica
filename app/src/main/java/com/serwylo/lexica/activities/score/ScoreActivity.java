@@ -69,20 +69,14 @@ public class ScoreActivity extends AppCompatActivity {
     @NonNull
     private Game initialiseGame(Bundle savedInstanceState) {
 
-        Game game;
-
         if (savedInstanceState != null) {
-            game = new Game(this, new GameSaverTransient(savedInstanceState));
+            return new Game(this, new GameSaverTransient(savedInstanceState));
 
         } else {
             Intent intent = getIntent();
             Bundle bun = intent.getExtras();
-            game = new Game(this, new GameSaverTransient(bun));
+            return new Game(this, new GameSaverTransient(bun));
         }
-
-        game.initializeDictionary();
-
-        return game;
 
     }
 

@@ -30,14 +30,14 @@ public class Synchronizer implements Runnable {
      * the game is in a continuous loop, rather than idling. There are "correct" ways to fix this
      * using IdlingResources, but changing it so it is at least 15 high is the simplest.
      */
-    public static final int TICK_FREQ = 15;
+    public static final int TICK_FREQ = 100;
 
     public interface Counter {
-        int tick();
+        long tick();
     }
 
     public interface Event {
-        void tick(int i);
+        void tick(long timeRemainingInMillis);
     }
 
     public interface Finalizer {
@@ -77,9 +77,11 @@ public class Synchronizer implements Runnable {
     }
 
     public void run() {
-        if (done)
+        if (done) {
             return;
-        int time = mainCounter.tick();
+        }
+
+        long time = mainCounter.tick();
 
         for (Event event : events) {
             event.tick(time);

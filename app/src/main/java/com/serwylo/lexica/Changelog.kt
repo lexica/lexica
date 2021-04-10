@@ -3,6 +3,7 @@ package com.serwylo.lexica
 import androidx.appcompat.app.AppCompatActivity
 import io.github.tonnyl.whatsnew.WhatsNew
 import io.github.tonnyl.whatsnew.item.WhatsNewItem
+import io.github.tonnyl.whatsnew.util.PresentationOption
 
 object Changelog {
 
