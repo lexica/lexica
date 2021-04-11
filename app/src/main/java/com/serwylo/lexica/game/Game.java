@@ -51,6 +51,7 @@ import java.util.Map;
 public class Game implements Synchronizer.Counter {
 
     private static final String TAG = "Game";
+
     private long timeRemainingInMillis;
 
     /**

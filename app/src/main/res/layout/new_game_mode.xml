@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="New game mode"
+        app:title="@string/new_game_mode"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -59,7 +59,7 @@
         app:layout_constraintBottom_toBottomOf="@id/status_time">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/time"
             android:inputType="number"/>

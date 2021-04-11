@@ -113,6 +113,15 @@
     <string name="whats_new_support">Support Lexica</string>
     <string name="whats_new_support_description">Lexica is and always will be free and open source.\n\nYou can show your support and contribute to its further development by donating via <a href="https://liberapay.com/Lexica">Liberapay</a> or <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="menu_view_found_words">View found words</string>
+    <string name="multiplayer_lobby__join_when_ready">When all players are ready, join the game.</string>
+    <string name="multiplayer_lobby__join_game">Join game</string>
+    <string name="multiplayer__share_invites">Share Invites</string>
+    <string name="multiplayer__start_when_ready">When all players are ready, you should all start the game at the same time.</string>
+    <string name="multiplayer__qr_code__accessible_description">QR code: Others can scan to join this game</string>
+    <string name="multiplayer__start_game">Start game</string>
+    <string name="multiplayer">Multiplayer</string>
+    <string name="game_mode">Game mode</string>
+    <string name="new_game_mode">New game mode</string>
     <plurals name="num_found_words_out_of_total">
         <item quantity="one">%d / %d word</item>
         <item quantity="other">%d / %d words</item>

@@ -44,7 +44,7 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		android:elevation="4dp"
-		app:title="Multiplayer" />
+		app:title="@string/multiplayer" />
 
 	<com.serwylo.lexica.view.GameDetailsView
 		android:id="@+id/game_mode_details"
@@ -72,7 +72,7 @@
 		fancy:fb_iconPaddingBottom="8dp"
 		android:paddingEnd="8dp"
 		android:paddingStart="8dp"
-		fancy:fb_text="Share Invites"
+		fancy:fb_text="@string/multiplayer__share_invites"
 		fancy:fb_defaultColor="?attr/home__secondary_button_background"
 		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
 		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
@@ -88,7 +88,7 @@
 		android:layout_marginTop="8dp"
 		android:layout_marginEnd="12dp"
 		android:layout_marginBottom="8dp"
-		android:contentDescription="QR code to scan in order to join this multiplayer game."
+		android:contentDescription="@string/multiplayer__qr_code__accessible_description"
 		app:layout_constraintBottom_toTopOf="@id/text_start"
 		app:layout_constraintDimensionRatio="1:1"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +102,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="8dp"
-		android:text="When all players are ready, you should all start the game at the same time."
+		android:text="@string/multiplayer__start_when_ready"
 		android:textAlignment="center"
 		android:textColor="?attr/game__score__heading_text_colour"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -126,7 +126,7 @@
 		fancy:fb_fontIconResource="&#xf144;"
 		fancy:fb_fontIconSize="28sp"
 		fancy:fb_iconPosition="left"
-		fancy:fb_text="Start game"
+		fancy:fb_text="@string/multiplayer__start_game"
 		fancy:fb_textSize="28sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@ class ShareQrTest {
     @Test
     fun parseHumanReadableQr() {
 
-        val uri = Uri.parse("https://lexica.github.io/m/?b=ABCDEFGHIJKLMNOPQRSTUVWXY&l=fr_FR&t=2700&s=l&m=4&mv=20007&v=20007&h=nc")
+        val uri = Uri.parse("https://lexica.github.io/m/?b=ABCDEFGHIJKLMNOPQRSTUVWXY&l=fr_FR&t=2700&s=l&m=4&mv=20007&v=${BuildConfig.VERSION_CODE}&h=nc")
 
         val sharedGameData = SharedGameData.parseGame(uri)
 
@@ -25,7 +25,6 @@ class ShareQrTest {
         assertEquals("hint_both", sharedGameData.hints)
 
         val serialized = sharedGameData.serialize()
-        println(serialized)
         assertEquals(uri, serialized)
 
     }

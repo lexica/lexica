@@ -37,6 +37,6 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		android:elevation="4dp"
-		app:title="Found Words" />
+		app:title="@string/found_words" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

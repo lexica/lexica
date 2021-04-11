@@ -129,7 +129,7 @@
 		fancy:fb_fontIconResource="&#xf0c0;"
 		fancy:fb_fontIconSize="24sp"
 		fancy:fb_iconPosition="top"
-		fancy:fb_text="Multiplayer"
+		fancy:fb_text="@string/multiplayer"
 		app:layout_constraintHorizontal_weight="1"
 		fancy:fb_textSize="18sp" />
 

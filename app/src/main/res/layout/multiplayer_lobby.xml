@@ -18,7 +18,7 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		android:elevation="4dp"
-		app:title="Multiplayer" />
+		app:title="@string/multiplayer" />
 
 	<com.serwylo.lexica.view.GameDetailsView
 		android:id="@+id/game_mode_details"
@@ -39,7 +39,7 @@
 		android:layout_margin="8dp"
 		android:textAlignment="center"
 		android:textColor="?attr/game__score__heading_text_colour"
-		android:text="When all players are ready, join the game." />
+		android:text="@string/multiplayer_lobby__join_when_ready" />
 
 	<mehdi.sakout.fancybuttons.FancyButton
 		android:id="@+id/start_game"
@@ -57,7 +57,7 @@
 		fancy:fb_fontIconResource="&#xf144;"
 		fancy:fb_fontIconSize="28sp"
 		fancy:fb_iconPosition="left"
-		fancy:fb_text="Join game"
+		fancy:fb_text="@string/multiplayer_lobby__join_game"
 		fancy:fb_textSize="28sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
