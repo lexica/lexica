@@ -25,6 +25,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.serwylo.lexica.activities.HighScoresActivity;
+import com.serwylo.lexica.activities.NewMultiplayerActivity;
 import com.serwylo.lexica.databinding.SplashBinding;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
@@ -36,6 +37,8 @@ import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.lang.LanguageLabel;
 
 import java.util.Locale;
+
+import com.serwylo.lexica.Changelog;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -51,19 +54,21 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private void splashScreen(GameMode gameMode, Result highScore) {
 
+        Language language = new Util().getSelectedLanguageOrDefault(this);
+
         SplashBinding binding = SplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.newGame.setOnClickListener(v -> {
             Intent intent = new Intent("com.serwylo.lexica.action.NEW_GAME");
             intent.putExtra("gameMode", gameMode);
+            intent.putExtra("lang", language.getName());
             startActivity(intent);
         });
 
         binding.gameModeButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseGameModeActivity.class)));
         binding.gameModeButton.setText(gameMode.label(this));
 
-        Language language = new Util().getSelectedLanguageOrDefault(this);
         binding.languageButton.setText(LanguageLabel.getLabel(this, language));
         binding.languageButton.setOnClickListener(v -> startActivity(new Intent(this, ChooseLexiconActivity.class)));
 
@@ -77,6 +82,10 @@ public class MainMenuActivity extends AppCompatActivity {
             Uri u = Uri.parse("https://github.com/lexica/lexica");
             i.setData(u);
             startActivity(i);
+        });
+
+        binding.newMultiplayerGame.setOnClickListener(v -> {
+            startActivity(new Intent(this, NewMultiplayerActivity.class));
         });
 
         binding.preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE")));

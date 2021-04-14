@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.Game;
+import com.serwylo.lexica.lang.Language;
 
 import java.util.Date;
 
@@ -45,25 +46,20 @@ public class GameSaverPersistent extends GameSaver {
     public GameMode readGameMode() {
         String gameModeString = getPrefs().getString(GAME_MODE, null);
         if (gameModeString == null) {
-            throw new IllegalStateException("Could not deserialize game mode, as the saved value was null.");
+            throw new IllegalStateException("Could not deserialize game mode for saved game, as the saved value was null.");
         }
 
         return GameMode.deserialize(gameModeString);
     }
 
     @Override
-    public int readTimeRemaining() {
-        return getPrefs().getInt(TIME_REMAINING, DEFAULT_TIME_REMAINING);
+    public long readTimeRemainingInMillis() {
+        return getPrefs().getLong(TIME_REMAINING_IN_MILLIS, DEFAULT_TIME_REMAINING);
     }
 
     @Override
     public String[] readGameBoard() {
         return safeSplit(getPrefs().getString(GAME_BOARD, null));
-    }
-
-    @Override
-    public int readBoardSize() {
-        return getPrefs().getInt(BOARD_SIZE, DEFAULT_BOARD_SIZE);
     }
 
     @Override
@@ -77,13 +73,27 @@ public class GameSaverPersistent extends GameSaver {
     }
 
     @Override
-    public void save(Board board, int timeRemaining, GameMode gameMode, String wordListToString, int wordCount, Date start, Game.GameStatus status) {
+    public Language readLanguage() {
+        String langName = getPrefs().getString(LANGUAGE, null);
+        if (langName == null) {
+            throw new IllegalStateException("Could not deserialize language for saved game, as the saved value was null.");
+        }
+
+        try {
+            return Language.from(langName);
+        } catch (Language.NotFound notFound) {
+            throw new IllegalStateException("Could not deserialize language for saved game, as \"" + langName + "\" is not a valid language.");
+        }
+    }
+
+    @Override
+    public void save(Board board, long timeRemainingInMillis, GameMode gameMode, Language language, String wordListToString, int wordCount, Date start, Game.GameStatus status) {
 
         SharedPreferences.Editor prefs = getPrefs().edit();
         prefs.putString(GAME_MODE, gameMode.serialize());
-        prefs.putInt(BOARD_SIZE, board.getSize());
+        prefs.putString(LANGUAGE, language.getName());
         prefs.putString(GAME_BOARD, board.toString());
-        prefs.putInt(TIME_REMAINING, timeRemaining);
+        prefs.putLong(TIME_REMAINING_IN_MILLIS, timeRemainingInMillis);
         prefs.putString(WORDS, wordListToString);
         prefs.putInt(WORD_COUNT, wordCount);
 

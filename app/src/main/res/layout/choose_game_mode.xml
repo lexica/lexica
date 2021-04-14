@@ -28,6 +28,6 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		android:elevation="4dp"
-		app:title="Game mode" />
+		app:title="@string/game_mode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	xmlns:fancy="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	android:background="?attr/list__selectable_item_background"
@@ -34,6 +33,13 @@
 		android:textAppearance="?attr/textAppearanceListItemSecondary"
 		tools:text="Unlimited time" />
 
+	<com.serwylo.lexica.view.GameDetailsView
+		android:id="@+id/game_details"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintTop_toBottomOf="@id/description"
+		/>
+<!--
 	<mehdi.sakout.fancybuttons.FancyButton
 		android:id="@+id/status_time"
 		app:layout_constraintStart_toStartOf="@id/label"
@@ -103,7 +109,7 @@
 		fancy:fb_defaultColor="@android:color/transparent"
 		fancy:fb_text="No hints"
 		fancy:fb_iconPosition="top" />
-
+-->
 	<View
 		android:layout_width="match_parent"
 		android:layout_height="1dp"

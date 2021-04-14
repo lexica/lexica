@@ -36,6 +36,7 @@ import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.db.ResultRepository;
 import com.serwylo.lexica.game.Game;
+import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.view.LexicaView;
 
 public class GameActivity extends AppCompatActivity implements Synchronizer.Finalizer {
@@ -71,7 +72,10 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                 // in order to restore our game (http://stackoverflow.com/a/28549669).
                 Log.e(TAG, "error restoring state from savedInstanceState, trying to look for saved game in preferences", e);
                 if (hasSavedGame()) {
-                    restoreGame();
+                    if (!restoreGame()) {
+                        finish();
+                        return;
+                    }
                 }
             }
             return;
@@ -80,14 +84,29 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
             String action = getIntent().getAction();
             switch (action) {
                 case "com.serwylo.lexica.action.RESTORE_GAME":
-                    restoreGame();
+                    if (!restoreGame()) {
+                        finish();
+                        return;
+                    }
                     break;
+
                 case "com.serwylo.lexica.action.NEW_GAME":
-                    newGame(getIntent().getExtras().getParcelable("gameMode"));
+                    GameMode gameMode = getIntent().getExtras().getParcelable("gameMode");
+                    String[] board = getIntent().getExtras().getStringArray("board");
+
+                    String langName = getIntent().getExtras().getString("lang");
+                    Language language = Language.from(langName);
+
+                    game = board != null
+                        ? new Game(this, gameMode, language, board)
+                        : Game.generateGame(this, gameMode, language);
+
+                    setupGameView(game);
                     break;
             }
         } catch (Exception e) {
-            Log.e(TAG, "top level", e);
+            Log.e(TAG, "Error creating new Lexica game. Will finish() the GameActivity in the hope it gracefully returns to the main menu.", e);
+            finish();
         }
     }
 
@@ -115,27 +134,21 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         return game.getStatus() != Game.GameStatus.GAME_FINISHED;
     }
 
-    private void newGame(GameMode gameMode) {
-        Game bestGame = new Game(this, gameMode);
-        int numAttempts = 0;
-        while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
-            Log.d(TAG, "Generating another board, because the previous one only had " + bestGame.getMaxWordCount() + " words, but we want at least 45. Will give up after 5 tries.");
-            Game nextAttempt = new Game(this, gameMode);
-            if (nextAttempt.getMaxWordCount() > bestGame.getMaxWordCount()) {
-                bestGame = nextAttempt;
-            }
-            numAttempts ++;
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
+    private boolean restoreGame() {
+        try {
+            clearSavedGame();
+            game = new Game(this, new GameSaverPersistent(this));
+            setupGameView(game);
+            return true;
+        } catch (Exception e) {
+            // Be forgiving here, because although it only happens infrequently, we need the flexibility
+            // to be able to change the format that game saves have on disk. Given Lexica is a very
+            // casual game, so it hopefully isn't the end of the world to throw away games infrequently
+            // upon updating Lexica.
+            Log.e(TAG, "Error restoring game.", e);
+            return false;
         }
-
-        Log.d(TAG, "Generated new board with " + bestGame.getMaxWordCount() + " words");
-        this.game = bestGame;
-        setupGameView(game);
-    }
-
-    private void restoreGame() {
-        clearSavedGame();
-        game = new Game(this, new GameSaverPersistent(this));
-        setupGameView(game);
     }
 
     private void restoreGame(Bundle bun) {
@@ -163,16 +176,14 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         gameWrapper.addView(lv, lp);
     }
 
-    private void saveGame() {
+    private void saveGamePersistent() {
         if (game.getStatus() == Game.GameStatus.GAME_RUNNING) {
             game.pause();
-
             game.save(new GameSaverPersistent(this));
-
         }
     }
 
-    private void saveGame(Bundle state) {
+    private void saveGameTransient(Bundle state) {
         if (game.getStatus() == Game.GameStatus.GAME_RUNNING) {
             game.pause();
             game.save(new GameSaverTransient(state));
@@ -181,14 +192,14 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
 
     private void navigateToHome() {
         synch.abort();
-        saveGame();
+        saveGamePersistent();
         NavUtils.navigateUpFromSameTask(this);
     }
 
     public void onPause() {
         super.onPause();
         synch.abort();
-        saveGame();
+        saveGamePersistent();
     }
 
     public void onResume() {
@@ -252,7 +263,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        saveGame(outState);
+        saveGameTransient(outState);
     }
 
 }

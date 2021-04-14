@@ -5,42 +5,56 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import io.github.tonnyl.whatsnew.WhatsNew
 import io.github.tonnyl.whatsnew.item.WhatsNewItem
+import io.github.tonnyl.whatsnew.util.PresentationOption
 
 object Changelog {
 
     @JvmStatic
     fun show(activity: AppCompatActivity) {
 
-        val whatsNew = WhatsNew.newInstance(
-                WhatsNewItem(
-                        activity.getString(R.string.whats_new_game_modes),
-                        activity.getString(R.string.whats_new_game_modes_description),
-                        WhatsNewItem.NO_IMAGE_RES_ID
-                ),
-                WhatsNewItem(
-                        activity.getString(R.string.whats_new_why),
-                        activity.getString(R.string.whats_new_game_modes_why),
-                        WhatsNewItem.NO_IMAGE_RES_ID
-                ),
-        )
+        val whatsNew = buildDialog(activity)
 
-        with(whatsNew) {
-            titleText = activity.getText(R.string.whats_new_title)
-            buttonText = activity.getText(R.string.whats_new_continue).toString()
-        }
+        // Only show when upgrading Lexica for the first time, not when we first open Lexica from
+        // a fresh install.
+        whatsNew.presentationOption = if (isFirstRun(activity)) PresentationOption.NEVER else PresentationOption.IF_NEEDED
+        whatsNew.presentAutomatically(activity)
 
-        // Don't show this for new installs. The best way to tell is to see if there has been any
-        // high scores saved (if so, it is probably an upgrade, and if not, then they likely haven't
-        // played enough to care about any changes).
-        //
-        // In the future, this check can change (e.g. handled by the WhatsNew library, see https://github.com/TonnyL/WhatsNew/issues/21).
-        // For all future changelogs, we can replace the code above with a different changelog, and
-        // change this check to look for "LAST_VERSION_CODE" in the default shared prefs (again,
-        // see issue linked above).
-        if (activity.getSharedPreferences("prefs_score_file", Context.MODE_PRIVATE).all.isNotEmpty()) {
-            whatsNew.presentAutomatically(activity)
+        rememberLexicaHasRun(activity)
+
+    }
+
+    private fun buildDialog(context: Context): WhatsNew {
+
+        return WhatsNew.newInstance(
+            WhatsNewItem(
+                context.getString(R.string.whats_new_multiplayer),
+                context.getString(R.string.whats_new_multiplayer_description),
+                R.drawable.ic_people,
+            ),
+            WhatsNewItem(
+                context.getString(R.string.whats_new_support),
+                context.getText(R.string.whats_new_support_description),
+                R.drawable.ic_support
+            ),
+        ).apply {
+            titleText = context.getText(R.string.whats_new_title)
+            buttonText = context.getText(R.string.whats_new_continue).toString()
         }
 
     }
+
+    private fun isFirstRun(context: Context): Boolean {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+        return !prefs.getBoolean(HAS_RUN, false)
+    }
+
+    private fun rememberLexicaHasRun(context: Context) {
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putBoolean(HAS_RUN, true)
+            .apply()
+    }
+
+    private const val HAS_RUN = "lexica-has-run-before"
 
 }

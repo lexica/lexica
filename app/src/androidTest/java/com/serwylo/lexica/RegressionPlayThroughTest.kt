@@ -4,10 +4,12 @@ package com.serwylo.lexica
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.IdRes
+import androidx.annotation.StringRes
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import androidx.test.InstrumentationRegistry
 import androidx.test.espresso.Espresso.*
+import androidx.test.espresso.NoMatchingViewException
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.replaceText
@@ -62,6 +64,7 @@ class RegressionPlayThroughTest (val language: Language) {
     @Test
     fun generateLanguageBoards2Test() {
 
+        fromSplashMaybeDismissChangelog()
         fromSplashSwitchTheme(ThemeManager.THEME_LIGHT)
         fromSplashChooseLeicon()
         selectLanguage(language)
@@ -162,6 +165,14 @@ class RegressionPlayThroughTest (val language: Language) {
         // First return from viewing found words, which takes us to the high scores, then return to the main menu.
         navigateUpEmu27()
         navigateUpEmu27()
+    }
+
+    private fun fromSplashMaybeDismissChangelog() {
+        try {
+            clickIdWithLabel(R.id.button, R.string.whats_new_continue);
+        } catch (_: NoMatchingViewException) {
+            // When running through multiple play through's, the first play should *not* have this view, but all others likely will.
+        }
     }
 
     private fun fromHighScoresViewFoundWords() {
@@ -309,6 +320,10 @@ class RegressionPlayThroughTest (val language: Language) {
     }
 
     private fun clickId(@IdRes id: Int) {
+        onView(allOf(withId(id), isDisplayed())).perform(click())
+    }
+
+    private fun clickIdWithLabel(@IdRes id: Int, @StringRes stringId: Int) {
         onView(allOf(withId(id), isDisplayed())).perform(click())
     }
 

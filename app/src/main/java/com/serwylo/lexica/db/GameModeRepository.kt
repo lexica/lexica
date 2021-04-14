@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.preference.PreferenceManager
+import com.serwylo.lexica.share.SharedGameData
 
 class GameModeRepository(
         private val gameModeDao: GameModeDao,
@@ -34,6 +35,20 @@ class GameModeRepository(
 
     fun all(): LiveData<List<GameMode>> {
         return gameModeDao.getAllGameModes()
+    }
+
+    fun ensureRulesExist(data: SharedGameData): GameMode {
+        Log.d(TAG, "Searching for game mode with the same rules as a shared game.")
+        val existing = gameModeDao.getByRules(data.minWordLength, data.scoreType, data.timeLimitInSeconds, data.hints, data.board.size)
+        if (existing != null) {
+            Log.d(TAG, "Using existing game mode: $existing")
+            return existing
+        }
+
+        Log.i(TAG, "No matching game mode with appropriate rules, will create a new one.")
+        val newGameMode = GameMode(0, GameMode.Type.CUSTOM, "Shared with you", data.board.size, data.timeLimitInSeconds, data.minWordLength, data.scoreType, data.hints)
+        val id = gameModeDao.insert(newGameMode)
+        return gameModeDao.getById(id) ?: error("Created new game mode $id but then failed to load it from the DB.")
     }
 
     fun loadCurrentGameMode(): GameMode? {

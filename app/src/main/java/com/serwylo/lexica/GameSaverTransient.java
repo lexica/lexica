@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.game.Board;
 import com.serwylo.lexica.game.Game;
+import com.serwylo.lexica.lang.Language;
 
 import java.util.Date;
 
@@ -37,18 +38,13 @@ public class GameSaverTransient extends GameSaver {
     }
 
     @Override
-    public int readTimeRemaining() {
-        return bundle.getInt(TIME_REMAINING, DEFAULT_TIME_REMAINING);
+    public long readTimeRemainingInMillis() {
+        return bundle.getLong(TIME_REMAINING_IN_MILLIS, DEFAULT_TIME_REMAINING);
     }
 
     @Override
     public String[] readGameBoard() {
         return safeSplit(bundle.getString(GAME_BOARD));
-    }
-
-    @Override
-    public int readBoardSize() {
-        return bundle.getInt(BOARD_SIZE, DEFAULT_BOARD_SIZE);
     }
 
     @Override
@@ -64,12 +60,25 @@ public class GameSaverTransient extends GameSaver {
     }
 
     @Override
-    public void save(Board board, int timeRemaining, GameMode gameMode, String wordListToString, int wordCount, Date start, Game.GameStatus status) {
-        bundle.putInt(GameSaver.BOARD_SIZE, board.getSize());
+    public Language readLanguage() {
+        String langName = bundle.getString(LANGUAGE);
+        if (langName == null) {
+            throw new IllegalStateException("Unable to resume game as language is not specified.");
+        }
 
+        try {
+            return Language.from(langName);
+        } catch (Language.NotFound e) {
+            throw new IllegalStateException("Unable to resume game as language \"" + langName + "\" not found.");
+        }
+    }
+
+    @Override
+    public void save(Board board, long timeRemainingInMillis, GameMode gameMode, Language language, String wordListToString, int wordCount, Date start, Game.GameStatus status) {
         bundle.putString(GameSaver.GAME_BOARD, board.toString());
-        bundle.putInt(GameSaver.TIME_REMAINING, timeRemaining);
+        bundle.putLong(GameSaver.TIME_REMAINING_IN_MILLIS, timeRemainingInMillis);
         bundle.putParcelable(GameSaver.GAME_MODE, gameMode);
+        bundle.putString(GameSaver.LANGUAGE, language.getName());
         bundle.putString(GameSaver.WORDS, wordListToString);
         bundle.putInt(GameSaver.WORD_COUNT, wordCount);
         bundle.putLong(GameSaver.START, start == null ? 0 : start.getTime());

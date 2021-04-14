@@ -1,0 +1,9 @@
+Initial support for multiplayer!
+
+* One player starts a new multiplayer game.
+* They share the details using their method of choice (e.g. QR Code, SMS, email, etc).
+* Each player can then play the same game on their own devices.
+
+This is all still quite new, so any feedback on the process is very welcome (though please note this is not intended to be a realtime / network multiplayer yet).
+
+Enjoy Lexica? Support further development via Liberapay or GitHub Sponsors.

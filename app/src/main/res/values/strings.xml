@@ -108,11 +108,20 @@
     <string name="error_restoring_game">Could not restore your game</string>
     <string name="whats_new_title">What\'s New</string>
     <string name="whats_new_continue">Continue</string>
-    <string name="whats_new_game_modes">Game Modes</string>
-    <string name="whats_new_game_modes_description">The following preferences have been replaced with "Game Modes": Duration, board size, minimum word length, scoring type, and hint modes.\n\nYou can change game mode from the main screen, or create your own. High scores are based on game mode and lexicon.</string>
-    <string name="whats_new_why">Why?</string>
-    <string name="whats_new_game_modes_why">Thanks to contributions from the community, the ways you can play Lexica has expanded. This makes it harder to explain how high scores are recorded, and each new feature adds complexity.\n\nThis changes makes it easier to understand which combination of preferences result in a particular high score.\n\nAs an added bonus, the internals of Lexica have been updated to make it easier to enhance in the future by adding a local database to record every single word found and every high score.</string>
+    <string name="whats_new_multiplayer">Multiplayer!</string>
+    <string name="whats_new_multiplayer_description">Start a new game from the main screen, then share invites using a QR Code, SMS, Email, etc.\n\nAfter receiving the invite, others can play the same randomly generated board as you, with the same rules.\n\nWhen finished, compare your scores to see who has the superior lexicon.\n\nAs always, feedback is welcome about how this feature can be improved. Although this is not intended to be a realtime/network multiplayer feature, we hope you enjoy it.</string>
+    <string name="whats_new_support">Support Lexica</string>
+    <string name="whats_new_support_description">Lexica is and always will be free and open source.\n\nYou can show your support and contribute to its further development by donating via <a href="https://liberapay.com/Lexica">Liberapay</a> or <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="menu_view_found_words">View found words</string>
+    <string name="multiplayer_lobby__join_when_ready">When all players are ready, join the game.</string>
+    <string name="multiplayer_lobby__join_game">Join game</string>
+    <string name="multiplayer__share_invites">Share Invites</string>
+    <string name="multiplayer__start_when_ready">When all players are ready, you should all start the game at the same time.</string>
+    <string name="multiplayer__qr_code__accessible_description">QR code: Others can scan to join this game</string>
+    <string name="multiplayer__start_game">Start game</string>
+    <string name="multiplayer">Multiplayer</string>
+    <string name="game_mode">Game mode</string>
+    <string name="new_game_mode">New game mode</string>
     <plurals name="num_found_words_out_of_total">
         <item quantity="one">%d / %d word</item>
         <item quantity="other">%d / %d words</item>
