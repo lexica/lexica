@@ -127,4 +127,25 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Inkluzivas diakritajn signojn: àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">La germana</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Inkluzivas supersignojn: äöü</string>
+    <string name="multiplayer__start_when_ready">Kiam ĉiuj ludantoj pretas, ĉiuj ekludu samtempe.</string>
+    <string name="multiplayer_lobby__join_when_ready">Kiam ĉiuj ludantoj pretas, aliĝu al la ludo.</string>
+    <string name="whats_new_multiplayer_description">Komencu novan ludon ĉe la ĉefekrano, kaj invitu aliulojn QR-kode, SMS-e, retpoŝte, ktp.
+\n
+\nPost ricevo de la invito, aliuloj povas ludi la saman hazarde generitan tabulon kiel vi, kun la samaj reguloj.
+\n
+\nFininte, komparu viajn poentojn por kroni la superulon lingvoscian.
+\n
+\nNi bonvenas sugestojn pri kiel plibonigi ĉi tiun funkcion. Kvankam tio ne celas esti realtempa / reta funkcio por pluraj ludantoj, ni esperas, ke vi ĝuos ĝin.</string>
+    <string name="whats_new_support_description">Lexica estas kaj ĉiam estos libera kaj malfermitfonta.
+\n
+\nVi povas subteni ĝin kaj kontribui al ĝia plua evoluo donacante per <a href="https://liberapay.com/Lexica">Liberapay</a> aŭ <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="multiplayer__share_invites">Sendi invitojn</string>
+    <string name="multiplayer_lobby__join_game">Aliĝi al ludo</string>
+    <string name="multiplayer__qr_code__accessible_description">QR-kodo skanebla de aliuloj por aliĝi al ĉi tiu ludo</string>
+    <string name="whats_new_multiplayer">Reĝimo por pluraj ludantoj!</string>
+    <string name="whats_new_support">Subteni la projekton Lexica</string>
+    <string name="new_game_mode">Nova ludreĝimo</string>
+    <string name="game_mode">Ludreĝimo</string>
+    <string name="multiplayer">Pluraj ludantoj</string>
+    <string name="multiplayer__start_game">Ekludi</string>
 </resources>
