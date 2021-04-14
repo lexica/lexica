@@ -127,4 +127,25 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Aksanları içerir: àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Almanca</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Aksanları içerir: äöü</string>
+    <string name="new_game_mode">Yeni oyun modu</string>
+    <string name="game_mode">Oyun modu</string>
+    <string name="multiplayer">Çok oyunculu</string>
+    <string name="multiplayer__start_game">Oyunu başlat</string>
+    <string name="multiplayer__qr_code__accessible_description">QR kodu: Başkaları bu oyuna katılmak için tarayabilir</string>
+    <string name="multiplayer__start_when_ready">Tüm oyuncular hazır olduğunda, hepiniz oyuna aynı anda başlamalısınız.</string>
+    <string name="multiplayer__share_invites">Davetleri Paylaş</string>
+    <string name="multiplayer_lobby__join_game">Oyuna katıl</string>
+    <string name="multiplayer_lobby__join_when_ready">Tüm oyuncular hazır olduğunda oyuna katılın.</string>
+    <string name="whats_new_support_description">Lexica her zaman özgür ve açık kaynaklı olacaktır.
+\n
+\n<a href="https://liberapay.com/Lexica">Liberapay</a> veya <a href="https://github.com/sponsors/pserwylo">GitHub Sponsorları</a> aracılığıyla bağış yaparak desteğinizi gösterebilir ve daha da geliştirilmesine katkıda bulunabilirsiniz.</string>
+    <string name="whats_new_support">Lexica\'yı destekleyin</string>
+    <string name="whats_new_multiplayer_description">Ana ekrandan yeni bir oyun başlatın, ardından QR kodu, SMS, e-posta vb. kullanarak davetleri paylaşın.
+\n
+\nDaveti aldıktan sonra, başkaları da sizinle aynı rastgele oluşturulmuş tahtayı aynı kurallarla oynayabilir.
+\n
+\nBitirdiğinizde, kimin daha iyi sözlüğe sahip olduğunu görmek için puanlarınızı karşılaştırın.
+\n
+\nHer zaman olduğu gibi, bu özelliğin nasıl iyileştirilebileceği konusunda geri bildirim almaktan memnuniyet duyarız. Bunun gerçek zamanlı/ağ üzerinden çok oyunculu bir özellik olması amaçlanmasa da, beğeneceğinizi umuyoruz.</string>
+    <string name="whats_new_multiplayer">Çok oyunculu!</string>
 </resources>
