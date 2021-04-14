@@ -127,4 +127,25 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Sealhulgas täpitähed: àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">saksa</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Sealhulgas täpitähed: äöü</string>
+    <string name="whats_new_multiplayer_description">Alusta põhivaatest uut mängu ning jaga kutseid teistele mängijatele QR-koodi, tekstisõnumi või e-kirja teel.
+\n
+\nPeale kutse saamist mängivad kõik osalised samasugust juhuslikult loodud mängu samade reeglite alusel.
+\n
+\nKui olete lõpetanud, siis võrrelge tulemusi ja saate teada üksteise teadmisi sõnavara osas.
+\n
+\nNagu alati, siis ootame hea meelega kommentaare kuidas saame mitmikmängu paremaks teha. Kuigi me pole seda plaaninud toimima reaalajas toimuva võrgumänguna, siis loodame, et meie mitmikmängu lahendus meeldib ka sulle praeguses versioonis.</string>
+    <string name="new_game_mode">Uus mängimise viis</string>
+    <string name="game_mode">Mängimise viis</string>
+    <string name="multiplayer">Mitmikmäng</string>
+    <string name="multiplayer__start_game">Alusta mängu</string>
+    <string name="multiplayer__qr_code__accessible_description">QR-kood: seda skaneerides saavad teised kasutajad mänguga liituda</string>
+    <string name="multiplayer__start_when_ready">Kui kõik mängijad on valmis, siis palun alustage mängimist ühe korraga.</string>
+    <string name="multiplayer__share_invites">Jaga kutseid</string>
+    <string name="multiplayer_lobby__join_game">Liitu mänguga</string>
+    <string name="multiplayer_lobby__join_when_ready">Liitu mänguga, kui kõik mängijad on valmis.</string>
+    <string name="whats_new_support_description">Lexica on ja saab olema ka alati tulevikus vaba ja avatud lähtekoodiga tarkvara.
+\n
+\nSa saad meie tegevusele kaasa aidata ning toetada uusi arendusi kas <a href="https://liberapay.com/Lexica">Liberapay</a> või <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors\'i</a> vahendusel.</string>
+    <string name="whats_new_support">Toeta Lexicat</string>
+    <string name="whats_new_multiplayer">Mitmikmäng!</string>
 </resources>
