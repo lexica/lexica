@@ -133,4 +133,25 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Включає діакритичні: àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Німецька</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Включає діакритичні: äöü</string>
+    <string name="new_game_mode">Новий ігровий режим</string>
+    <string name="game_mode">Режим гри</string>
+    <string name="multiplayer">Багатокористувацька гра</string>
+    <string name="multiplayer__start_game">Почати гру</string>
+    <string name="multiplayer__qr_code__accessible_description">QR-код: інші можуть сканувати, щоб приєднатися до цієї гри</string>
+    <string name="multiplayer__start_when_ready">Коли всі гравці готові, вам слід розпочати гру одночасно.</string>
+    <string name="multiplayer__share_invites">Поділитися запрошеннями</string>
+    <string name="multiplayer_lobby__join_game">Приєднатись до гри</string>
+    <string name="multiplayer_lobby__join_when_ready">Коли всі гравці будуть готові, приєднуйтесь до гри.</string>
+    <string name="whats_new_support_description">Lexica є і завжди буде вільною і з відкритим програмним кодом.
+\n
+\nВи можете висловити свою підтримку та зробити свій внесок у її подальший розвиток допомогою через <a href="https://liberapay.com/Lexica">Liberapay</a> або <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="whats_new_support">Підтримати Lexica</string>
+    <string name="whats_new_multiplayer_description">Почніть нову гру з головного екрана, а потім поділіться запрошеннями за допомогою QR-коду, SMS, електронної пошти тощо.
+\n
+\nОтримавши запрошення, інші можуть грати на тій же випадково згенерованій дошці, що й ви, за тими ж правилами.
+\n
+\nПісля завершення порівняйте свої результати, щоб побачити, хто має чудовий лексикон.
+\n
+\nЯк завжди, відгуки вітаються про те, як цю функцію можна вдосконалити. Хоча це й не функція багатокористувацької гри в реальному часі/мережі, ми сподіваємося, вам сподобається.</string>
+    <string name="whats_new_multiplayer">Багатокористувацька гра!</string>
 </resources>
