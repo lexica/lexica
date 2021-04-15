@@ -127,4 +127,25 @@
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Frans</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Duits</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Inclusief trema\'s: äöü</string>
+    <string name="new_game_mode">Nieuwe spelmodus</string>
+    <string name="game_mode">Spelmodus</string>
+    <string name="multiplayer">Meerdere spelers</string>
+    <string name="multiplayer__start_game">Spel starten</string>
+    <string name="multiplayer__qr_code__accessible_description">QR-code: anderen kunnen deze scannen om deel te nemen aan het spel</string>
+    <string name="multiplayer__start_when_ready">Als alle spelers klaarzitten, kunnen ze het spel tegelijkertijd starten.</string>
+    <string name="multiplayer__share_invites">Uitnodigingen versturen</string>
+    <string name="multiplayer_lobby__join_game">Deelnemen aan spel</string>
+    <string name="multiplayer_lobby__join_when_ready">Als alle spelers klaarzitten, kun je deelnemen aan het spel.</string>
+    <string name="whats_new_support_description">Lexica is en zal altijd vrij en open source blijven.
+\n
+\nJe kunt je waardering tonen door te doneren via <a href="https://liberapay.com/Lexica">Liberapay</a> of <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="whats_new_support">Lexica-ondersteuning</string>
+    <string name="whats_new_multiplayer_description">Start een nieuw spel via het hoofdscherm en deel uitnodigingen middels een qr-code, sms\'je, e-mail, etc.
+\n
+\nNa het ontvangen kunnen spelers op hetzelfde willekeurige bord met dezelfde regels als jij spelen.
+\n
+\nNa afloop kunnen jullie elkaars scores vergelijken om te zien wie de rijkste woordenschat heeft.
+\n
+\nFeedback is altijd fijn, dus laat ons weten hoe we deze functie kunnen verbeteren.</string>
+    <string name="whats_new_multiplayer">Meerdere spelers!</string>
 </resources>
