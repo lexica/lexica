@@ -100,7 +100,7 @@
     <string name="game_mode_letter_points_description">Erzielen Sie mehr Punkte, wenn Sie weniger gebräuchliche Buchstaben verwenden</string>
     <string name="game_mode_letter_points">Buchstabenpunkte</string>
     <string name="game_mode_beginner_description">Verwenden Sie Hinweise, um Wörter zu finden</string>
-    <string name="game_mode_beginner">Anfängerein</string>
+    <string name="game_mode_beginner">Anfänger</string>
     <string name="game_mode_marathon_description">Versuchen Sie, alle Wörter ohne Zeitdruck zu finden</string>
     <string name="game_mode_marathon">Marathon</string>
     <string name="game_mode_sprint_description">Kurzes Spiel, um so viele Wörter wie möglich zu finden</string>
@@ -127,4 +127,25 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Enthält die diakritischen Zeichen: àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Enthält die diakritischen Zeichen: äöü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Allemand</string>
+    <string name="new_game_mode">Neuer Spielmodus</string>
+    <string name="game_mode">Spielmodus</string>
+    <string name="multiplayer">Mehrspieler</string>
+    <string name="multiplayer__start_game">Spiel starten</string>
+    <string name="multiplayer__qr_code__accessible_description">QR-Code: Andere können dies scannen, um an diesem Spiel teilzunehmen</string>
+    <string name="multiplayer__start_when_ready">Wenn alle Spieler bereit sind, sollten Sie alle gleichzeitig mit dem Spiel beginnen.</string>
+    <string name="multiplayer__share_invites">Einladungen freigeben</string>
+    <string name="multiplayer_lobby__join_game">Spiel beitreten</string>
+    <string name="multiplayer_lobby__join_when_ready">Wenn alle Spieler bereit sind, treten Sie dem Spiel bei.</string>
+    <string name="whats_new_support_description">Lexica ist und wird immer frei, kostenlos und quelloffen sein.
+\n
+\nSie können Ihre Unterstützung zeigen und zu seiner weiteren Entwicklung beitragen, indem Sie über <a href="https://liberapay.com/Lexica">Liberapay</a> oder <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a> spenden.</string>
+    <string name="whats_new_support">Lexica unterstützen</string>
+    <string name="whats_new_multiplayer_description">Starten Sie ein neues Spiel vom Hauptbildschirm aus und teilen Sie dann Einladungen über einen QR-Code, SMS, E-Mail usw.
+\n
+\nNachdem Sie die Einladung erhalten haben, können andere das gleiche zufällig generierte Brett wie Sie spielen, mit den gleichen Regeln.
+\n
+\nWenn Sie fertig sind, vergleichen Sie Ihre Punktzahlen, um zu sehen, wer das bessere Lexikon hat.
+\n
+\nWie immer sind Rückmeldung und Kommentare willkommen, um diese Funktion zu verbessern. Obwohl dies nicht als Echtzeit-/Netzwerk-Mehrspieler-Funktion gedacht ist, hoffen wir, dass es Ihnen gefällt.</string>
+    <string name="whats_new_multiplayer">Mehrspieler!</string>
 </resources>
