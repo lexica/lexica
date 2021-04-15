@@ -58,7 +58,7 @@
     <string name="pref_dict_de_DE">Tedesco (esteso)</string>
     <string name="pref_dict_ca">Catalano</string>
     <string name="pref_breakdown">Mostra l\'interruzione della lunghezza delle parole</string>
-    <string name="reset_scores_prompt">Sei sicuro di voler resettare tutti i punteggi migliori per tutte le modalità di gioco\?</string>
+    <string name="reset_scores_prompt">Sei sicuro/a di voler resettare tutti i punteggi migliori per tutte le modalità di gioco\?</string>
     <string name="high_scores_reset">I punteggi migliori sono stati resettati.</string>
     <string name="pref_resetScores">Resetta i punteggi migliori</string>
     <string name="pref_resetScores_summary">I punteggi migliori vengono tracciati per ogni combinazione delle impostazioni di cui sopra. Tocca per ripristinare tutti i punteggi a zero.</string>
@@ -127,4 +127,25 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Include i diacritici: àâçéèêëîïôûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Tedesco</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Include i diacritici: äöü</string>
+    <string name="new_game_mode">Nuova modalità di gioco</string>
+    <string name="game_mode">Modalità di gioco</string>
+    <string name="multiplayer">Multigiocatore</string>
+    <string name="multiplayer__start_game">Inizia la partita</string>
+    <string name="multiplayer__qr_code__accessible_description">Codice QR: Altri possono eseguire la scansione per unirsi a questa partita</string>
+    <string name="multiplayer__start_when_ready">Quando tutti i giocatori sono pronti, dovreste iniziare la partita tutti insieme.</string>
+    <string name="multiplayer__share_invites">Condividi inviti</string>
+    <string name="multiplayer_lobby__join_game">Unisciti alla partita</string>
+    <string name="multiplayer_lobby__join_when_ready">Quando tutti i giocatori sono pronti, unitevi alla partita.</string>
+    <string name="whats_new_support_description">Lexica è e sarà sempre libero, gratuito e con un codice aperto.
+\n
+\nPuoi mostrare il tuo sostegno e contribuire al suo ulteriore sviluppo donando tramite <a href="https://liberapay.com/Lexica">Liberapay</a> o <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="whats_new_support">Sostieni Lexica</string>
+    <string name="whats_new_multiplayer_description">Inizia una nuova partita dalla schermata principale, poi condividi gli inviti utilizzando un codice QR, SMS, e-mail, ecc.
+\n
+\nDopo aver ricevuto l’invito, gli altri possono giocare con la stessa tavola generata casualmente, con le stesse regole.
+\n
+\nQuando hai finito, confronta i tuoi punteggi per vedere chi ha il miglior lessico.
+\n
+\nCome sempre, i commenti sono benvenuti su come questa funzione può essere migliorata. Anche se questa non è stata pensata per essere una funzione multigiocatore in tempo reale/rete, speriamo che vi piaccia.</string>
+    <string name="whats_new_multiplayer">Multigiocatore!</string>
 </resources>
