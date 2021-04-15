@@ -85,4 +85,21 @@
     <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Πολωνικά</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Γαλλικά</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Γερμανικά</string>
+    <string name="game_mode_custom_description">Προσαρμοσμένη λειτουργία παιχνιδιού</string>
+    <string name="game_mode_letter_points_description">Κερδίστε περισσότερους βαθμούς για τη χρήση λιγότερο κοινών γραμμάτων</string>
+    <string name="game_mode_beginner_description">Χρήση υποδείξεων για εύρεση λέξεων</string>
+    <string name="game_mode_beginner">Αρχάριος</string>
+    <string name="game_mode_marathon_description">Προσπαθήστε να βρείτε όλες τις λέξεις, χωρίς καμία πίεση χρόνου</string>
+    <string name="game_mode_marathon">Μαραθώνιος</string>
+    <string name="game_mode_sprint_description">Σύντομο παιχνίδι για να βρείτε όσο το δυνατόν περισσότερες λέξεις</string>
+    <string name="input_game_mode_minutes_description">Χρονικό όριο σε λεπτά</string>
+    <string name="input_game_mode_name_description">Για επιλογή τρόπου παιχνιδιού / καταγραφή υψηλών βαθμολογιών</string>
+    <string name="theme_high_contrast">Υψηλή αντίθεση</string>
+    <string name="pref_theme_dialog">Επιλέξτε θέμα</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Συνδεδεμένος/η</string>
+    <string name="high_scores">Υψηλή βαθμολογία</string>
+    <string name="pref_hintMode_summary">Εμφανίζει τον αριθμό των λέξεων στις οποίες μπορεί να χρησιμοποιηθεί κάθε γράμμα</string>
+    <string name="pref_hintMode">Λειτουργία υποδείξεων</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Περιλαμβάνει περιπτώσεις γραμματικής και συντομογραφίες</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Περιλαμβάνει διακριτικά: äöü</string>
 </resources>
