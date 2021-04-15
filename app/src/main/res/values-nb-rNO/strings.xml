@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="new_game">Nytt spill</string>
     <string name="restore_game">Gjenopprett spill</string>
@@ -121,4 +121,31 @@
         <item quantity="other">%d/%d ord</item>
     </plurals>
     <string name="high_scores">Topp-poengsummer</string>
+    <string name="whats_new_multiplayer_description">Start et nytt spill fra hovedskjermen, og del så invitasjoner ved bruk av QR-kode, SMS, e-post, osv.
+\n
+\nEtter å ha mottatt en invitasjon, kan andre spillere ta del i samme tilfeldig genererte brett som deg, med samme regler.
+\n
+\nNår dere er ferdige, sammenlignes poengsummene for å se hvem som har best leksikon.
+\n
+\nSom alltid ønskes tilbakemeldinger varmt velkomne, og du må gjerne dele idéer om forbedringer. Selv om dette ikke er tiltenkt å være et sanntidsspill for flere spillere, håper vi du setter pris på det.</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Inkluderer grammatikkformer og forkortelser</string>
+    <string name="whats_new_support">Støtte Lexica</string>
+    <string name="whats_new_support_description">Lexica vil alltid være fri programvare.
+\n
+\nDu kan vise din støtte og bidra til utviklingen gjennom å donere via <a href="https://liberapay.com/Lexica">Liberapay</a> eller <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="multiplayer_lobby__join_when_ready">Når alle spillere er klare, kan spillet begynne.</string>
+    <string name="multiplayer__start_when_ready">Når alle spillere er klare, bør alle starte spillet samtidig.</string>
+    <string name="multiplayer__qr_code__accessible_description">QR-kode: Andre kan skanne denne for å ta del i spillet</string>
+    <string name="new_game_mode">Nytt spillmodus</string>
+    <string name="game_mode">Spillmodus</string>
+    <string name="multiplayer">Flerspiller</string>
+    <string name="multiplayer__start_game">Start spill</string>
+    <string name="multiplayer__share_invites">Del invitasjoner</string>
+    <string name="multiplayer_lobby__join_game">Ta del i spill</string>
+    <string name="whats_new_multiplayer">Flerspiller.</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Russisk (utvidet)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Fransk</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Inneholder tegnene: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Inneholder tegnene: äöü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Tysk</string>
 </resources>
