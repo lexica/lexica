@@ -9,7 +9,7 @@
     <string name="pref_dict_en_GB">Anglais (Royaume-Uni)</string>
     <string name="pref_boardSize">Taille de la grille</string>
     <string name="pref_timeLimit">Durée d\'une partie</string>
-    <string name="pref_sounds">Effets sonores</string>
+    <string name="pref_sounds">Sons activés</string>
     <string name="pref_sounds_summary">Activer ou désactiver les effets sonores</string>
     <string name="dialog_about_title">À propos de Lexica</string>
     <string name="dialog_about_content">Toucher l\'écran et déplacer son doigt horizontalement, verticalement et en diagonale pour épeler des mots. Vous avez de 3 à 30 minutes pour trouver un maximum de mots.
@@ -43,7 +43,7 @@
     <string name="pref_resetScores_summary">Le logiciel garde en mémoire les meilleurs scores. Appuyez ici pour remettre à zéro la mémoire.</string>
     <string name="pref_resetScores">Remettre à zéro les meilleurs scores</string>
     <string name="high_scores_reset">Les scores ont été remis à zéro.</string>
-    <string name="reset_scores_prompt">Êtes-vous sûr(e) de vouloir effacer les meilleurs scores ?</string>
+    <string name="reset_scores_prompt">Êtes-vous sûr(e) de vouloir effacer les meilleurs scores \?</string>
     <string name="pref_breakdown">Montrer le détail des longueurs de mots</string>
     <string name="pref_breakdown_summary">Pour choisir d\'organiser le décompte des points en fonction de la longueur des mots</string>
     <string name="pref_definitionProvider">Fournisseur de dictionnaire</string>
@@ -99,7 +99,7 @@
     <string name="game_mode_letter_points">Points de lettre</string>
     <string name="game_mode_beginner_description">Utilisez des astuces pour trouver des mots</string>
     <string name="game_mode_beginner">Débutant·e</string>
-    <string name="game_mode_marathon_description">Essayez de trouver tous les mots, sans aucune pression de temps</string>
+    <string name="game_mode_marathon_description">Essayez de trouver tous les mots, sans aucune limite de temps</string>
     <string name="game_mode_marathon">Marathon</string>
     <string name="game_mode_sprint_description">Jeu court pour trouver le plus de mots possible</string>
     <string name="game_mode_sprint">Sprint</string>
@@ -127,4 +127,25 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Inclut les diacritiques : àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Allemand</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Inclut les diacritiques : äöü</string>
+    <string name="new_game_mode">Nouveau mode de jeu</string>
+    <string name="game_mode">Mode de jeu</string>
+    <string name="multiplayer">Multijoueur</string>
+    <string name="multiplayer__start_game">Commencer la partie</string>
+    <string name="multiplayer__qr_code__accessible_description">Code QR : les autres peuvent le scanner pour rejoindre cette partie</string>
+    <string name="multiplayer__start_when_ready">Lorsque tous les joueurs sont prêts, vous devez tous commencer la partie en même temps.</string>
+    <string name="multiplayer__share_invites">Partager les invitations</string>
+    <string name="multiplayer_lobby__join_when_ready">Lorsque tous les joueurs sont prêts, rejoignez la partie.</string>
+    <string name="multiplayer_lobby__join_game">Rejoindre la partie</string>
+    <string name="whats_new_support_description">Lexica est et sera toujours libre et gratuit.
+\n
+\nVous pouvez montrer votre soutien et contribuer à son développement futur en faisant un don via <a href="https://liberapay.com/Lexica">Liberapay</a> ou <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="whats_new_support">Soutenir Lexica</string>
+    <string name="whats_new_multiplayer_description">Lancez une nouvelle partie depuis l’écran principal, puis partagez des invitations à l’aide d’un code QR, d’un SMS, d’un courriel, etc.
+\n
+\nAprès avoir reçu l’invitation, les autres peuvent jouer sur le même plateau généré aléatoirement que vous, avec les mêmes règles.
+\n
+\nUne fois la partie terminée, comparez vos scores pour voir qui possède le meilleur lexique.
+\n
+\nComme toujours, vos remarques sont les bienvenus pour améliorer cette fonctionnalité. Bien qu’il ne s’agisse pas d\'une fonction multijoueur en temps réel/réseau, nous espérons que vous l’apprécierez.</string>
+    <string name="whats_new_multiplayer">Multijoueur !</string>
 </resources>
