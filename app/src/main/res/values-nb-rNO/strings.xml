@@ -49,9 +49,9 @@
     <string name="pref_definitionProvider">Definisjonstilbyder</string>
     <string name="pref_definitionProvider_summary">Velg en definisjonstilbyder å bruke. Hvis valgt definisjonstilbyder ikke er installert, vil en nettbasert kilde som Wiktionary bli brukt.</string>
     <string name="pref_definitionProvider_dialog">Velg definisjonstilbyder</string>
-    <string name="pref_dict_de_DE">Tysk</string>
+    <string name="pref_dict_de_DE">Tysk (utvidet)</string>
     <string name="pref_dict_nl">Nederlandsk</string>
-    <string name="pref_dict_fr_FR">Fransk</string>
+    <string name="pref_dict_fr_FR">Fransk (utvidet)</string>
     <string name="pref_dict_it">Italiensk</string>
     <string name="pref_dict_ca">Katalansk</string>
     <string name="pref_dict_es">Spansk</string>
