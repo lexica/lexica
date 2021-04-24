@@ -130,4 +130,15 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Uključuje dijakritičke znakove: àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Njemački</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Uključuje dijakritičke znakove: äöü</string>
+    <string name="multiplayer_lobby__join_when_ready">Kad su svi igrači spremni, pridruži se igri.</string>
+    <string name="whats_new_support">Podrži program Lexica</string>
+    <string name="whats_new_multiplayer">Više igrača!</string>
+    <string name="new_game_mode">Novi modus igre</string>
+    <string name="game_mode">Modus igre</string>
+    <string name="multiplayer">Više igrača</string>
+    <string name="multiplayer__start_game">Počni igru</string>
+    <string name="multiplayer__qr_code__accessible_description">QR kod: Drugi ga mogu skenirati kako bi se pridružili ovoj igri</string>
+    <string name="multiplayer__start_when_ready">Kad su svi igrači spremni, svi biste trebali započeti igru u isto vrijeme.</string>
+    <string name="multiplayer__share_invites">Dijeli pozivnice</string>
+    <string name="multiplayer_lobby__join_game">Pridruži se igri</string>
 </resources>
