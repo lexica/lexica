@@ -4,7 +4,7 @@
     <string name="lexicon_is_in_beta">Beta</string>
     <string name="high_score">Υψηλή βαθμολογία</string>
     <string name="words">Λέξεις</string>
-    <string name="pref_definitionProvider_summary">Επιλέξτε μια υπηρεσία παροχής ορισμού για χρήση. Εάν η επιλεγμένη υπηρεσία παροχής δεν είναι εγκατεστημένη, θα χρησιμοποιηθεί το DuckDuckGo.</string>
+    <string name="pref_definitionProvider_summary">Επιλέξτε μια υπηρεσία παροχής ορισμών που θα χρησιμοποιηθεί. Εάν η επιλεγμένη υπηρεσία παροχής δεν είναι εγκατεστημένη, θα χρησιμοποιηθεί μια ηλεκτρονική πηγή όπως το Wiktionary.</string>
     <string name="pref_dict_ja">Ιαπωνικά</string>
     <string name="pref_dict_es">Ισπανικά</string>
     <string name="define_word"><u>Ορισμός</u> </string>
@@ -51,14 +51,14 @@
 \n</string>
     <string name="pref_scoreType">Τύπος βαθμολόγησης</string>
     <string name="menu_rotate_board">Περιστροφή πίνακα</string>
-    <string name="pref_dict_de_DE">Γερμανικά</string>
+    <string name="pref_dict_de_DE">Γερμανικά (Εκτεταμένα)</string>
     <string name="dialog_about_title">Σχετικά με τη Lexica</string>
     <string name="prefs">Προτιμήσεις</string>
     <string name="app_name">Lexica</string>
     <string name="high_scores_reset">Οι υψηλοί βαθμοί έχουν μηδενιστεί.</string>
     <string name="hide_unique">Απόκρυψη μοναδικών λέξεων</string>
     <string name="reset_scores_prompt">Είστε βέβαιοι ότι θέλετε να επαναφέρετε όλες τις υψηλές βαθμολογίες για όλους τους τρόπους παιχνιδιού στο μηδέν;</string>
-    <string name="pref_dict_fr_FR">Γαλλικά</string>
+    <string name="pref_dict_fr_FR">Γαλλικά (εκτεταμένα)</string>
     <string name="pref_dict">Λεξικό</string>
     <string name="button_cancel">Άκυρο</string>
     <string name="button_delete">Διαγραφή</string>
@@ -102,4 +102,6 @@
     <string name="pref_hintMode">Λειτουργία υποδείξεων</string>
     <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Περιλαμβάνει περιπτώσεις γραμματικής και συντομογραφίες</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Περιλαμβάνει διακριτικά: äöü</string>
+    <string name="new_game_mode">Νέα λειτουργία παιχνιδιού</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Περιλαμβάνει διακριτικά: àâçéèêëîïôöûü</string>
 </resources>
