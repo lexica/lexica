@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="pref_dict_ca">Katalonski</string>
     <string name="lexicon_is_in_beta">beta</string>
-    <string name="high_score">Najviši rezultat</string>
+    <string name="high_score">Najbolji rezultat</string>
     <string name="words">Riječi</string>
     <string name="pref_definitionProvider_summary">Odaberi pružatelja definicija koji će se koristiti. Ako odabrani pružatelj nije instaliran, koristit će se internetski izvor kao što je „Vječnik”.</string>
     <string name="pref_dict_ja">Japanski</string>
@@ -19,7 +19,7 @@
     <string name="pref_boardSize">Veličina ploče</string>
     <string name="pref_dict_fa">Persijski</string>
     <string name="pref_dict_uk">Ukrajinski</string>
-    <string name="pref_breakdown">Pokaži razgradnju duljine riječi</string>
+    <string name="pref_breakdown">Prikaži po duljini riječi</string>
     <string name="missed_words">Propuštene riječi</string>
     <string name="hide_missed">Sakrij propuštene riječi</string>
     <string name="pref_dict_hu">Mađarski</string>
@@ -38,8 +38,8 @@
     <string name="pref_hintMode">Modus savjeta</string>
     <string name="pref_dict_en_GB">Engleski (UK)</string>
     <string name="total_score">Ukupni rezultat:</string>
-    <string name="pref_resetScores">Resetiraj najviše rezultate</string>
-    <string name="pref_resetScores_summary">Za svaku kombinaciju gore navedenih postavki prate se najviši rezultati. Dodirni za poništavanje svih rezultata na nulu.</string>
+    <string name="pref_resetScores">Poništi najbolje rezultate</string>
+    <string name="pref_resetScores_summary">Za svaku kombinaciju gore navedenih postavki prate se najbolji rezultati. Dodirni za poništavanje svih rezultata na nulu.</string>
     <string name="pref_timeLimit">Vremensko ograničenje</string>
     <string name="word_length">Duljina riječi</string>
     <string name="view_word"><u>Prikaži</u></string>
@@ -59,9 +59,9 @@
     <string name="dialog_about_title">O programu Lexica</string>
     <string name="prefs">Postavke</string>
     <string name="app_name">Lexica</string>
-    <string name="high_scores_reset">Najviši rezultati su resetirani.</string>
+    <string name="high_scores_reset">Najbolji rezultati su poništeni.</string>
     <string name="hide_unique">Sakrij jedinstvene riječi</string>
-    <string name="reset_scores_prompt">Stvarno želiš resetirati sve najviše rezultate za sve moduse igre na nulu\?</string>
+    <string name="reset_scores_prompt">Stvarno želiš poništiti sve najbolje rezultate za sve moduse igre na nulu\?</string>
     <string name="pref_dict_fr_FR">Francuski (prošireno)</string>
     <string name="pref_dict">Leksikon</string>
     <string name="hint_colour">Boja pločice</string>
@@ -100,7 +100,7 @@
     <string name="game_mode_letter_points">Bodovi za slova</string>
     <string name="game_mode_beginner_description">Koristi savjete za pronalaženje riječi</string>
     <string name="game_mode_beginner">Početnik</string>
-    <string name="game_mode_marathon_description">Pokušaj pronaći sve riječi, bez vremenskog pritiska</string>
+    <string name="game_mode_marathon_description">Pokušaj pronaći sve riječi bez vremenskog ograničenja</string>
     <string name="game_mode_marathon">Maraton</string>
     <string name="game_mode_sprint_description">Kratka igra za pronalaženje što više riječi</string>
     <string name="game_mode_sprint">Sprint</string>
@@ -123,7 +123,7 @@
         <item quantity="few">/ %d boda</item>
         <item quantity="other">/ %d bodova</item>
     </plurals>
-    <string name="high_scores">Najviši rezultati</string>
+    <string name="high_scores">Najbolji rezultati</string>
     <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Uključuje padeže i kratice</string>
     <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Ruski (prošireno)</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francuski</string>
@@ -141,4 +141,14 @@
     <string name="multiplayer__start_when_ready">Kad su svi igrači spremni, svi biste trebali započeti igru u isto vrijeme.</string>
     <string name="multiplayer__share_invites">Dijeli pozivnice</string>
     <string name="multiplayer_lobby__join_game">Pridruži se igri</string>
+    <string name="whats_new_support_description">Lexica je i uvijek će biti slobodan program otvorenog koda.
+\n
+\nSvoju podršku i doprinos njegovom daljnjem razvoju možeš pokazati donacijom na stranicama <a href="https://liberapay.com/Lexica">Liberapay</a> ili <a href="https://github.com/sponsors/pserwylo">GitHub sponzori</a>.</string>
+    <string name="whats_new_multiplayer_description">Započni novu igru s glavnog ekrana, a zatim podijeli pozivnice pomoću QR koda, SMS-a, emaila itd.
+\n
+\nNakon primitka pozivnice, drugi mogu igrati istu nasumično generiranu ploču kao i ti, s istim pravilima.
+\n
+\nKad završite, usporedite vaše rezultate kako biste vidjeli tko ima superiorniji rječnik.
+\n
+\nKao i uvijek, radujemo se povratnim informacijama o tome kako poboljšati ovu funkciju. Iako ovo nije funkcija za igru s više igrača u stvarnom vremenu / mreži, nadamo se da ćeš uživati.</string>
 </resources>
