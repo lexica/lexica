@@ -104,4 +104,8 @@
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Περιλαμβάνει διακριτικά: äöü</string>
     <string name="new_game_mode">Νέα λειτουργία παιχνιδιού</string>
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Περιλαμβάνει διακριτικά: àâçéèêëîïôöûü</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d βαθμός</item>
+        <item quantity="other">/ %d βαθμοί</item>
+    </plurals>
 </resources>
