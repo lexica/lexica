@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="new_game">Novo Jogo</string>
     <string name="restore_game">Restaurar Jogo</string>
@@ -76,5 +76,41 @@
     <string name="sort">Ordenar</string>
     <string name="theme_high_contrast">Alto contraste</string>
     <string name="input_game_mode_name_hint">Nome</string>
-    <string name="delete_custom_game_mode">Excluir o modo de jogo personalizado «%1$s»\? Todos os recordes serão perdidos.</string>
+    <string name="delete_custom_game_mode">Excluir o modo de jogo personalizado “%1$s”\? Todos os recordes serão perdidos.</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d mins</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d ponto</item>
+        <item quantity="other">/ %d pontos</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d palavra</item>
+        <item quantity="other">%d / %d palavras</item>
+    </plurals>
+    <string name="menu_view_found_words">Exibir palavras encontradas</string>
+    <string name="whats_new_continue">Continuar</string>
+    <string name="whats_new_title">O que há de novo</string>
+    <string name="error_restoring_game">Não foi possível restaurar o seu jogo</string>
+    <string name="game_mode_legacy_description">Usado numa versão anterior do Lexica</string>
+    <string name="game_mode_legacy">Legado</string>
+    <string name="game_mode_custom_description">Modo de jogo personalizado</string>
+    <string name="game_mode_letter_points_description">Marque mais pontos ao usar letras menos comuns</string>
+    <string name="game_mode_letter_points">Pontos de Letra</string>
+    <string name="game_mode_beginner_description">Use dicas para ajudar a encontrar palavras</string>
+    <string name="game_mode_beginner">Iniciante</string>
+    <string name="game_mode_marathon_description">Tente encontrar todas as palavras, sem qualquer pressão de tempo</string>
+    <string name="game_mode_marathon">Maratona</string>
+    <string name="game_mode_sprint_description">Jogo curto para encontrar o máximo de palavras possível</string>
+    <string name="game_mode_sprint">Corrida</string>
+    <string name="menu_save_game_mode">Gravar</string>
+    <string name="menu_new_game_mode">Novo</string>
+    <string name="input_game_mode_minutes_description">Limite de tempo em minutos</string>
+    <string name="input_game_mode_name_description">Para escolher o modo de jogo / registar recordes</string>
+    <string name="high_scores">Recorde</string>
+    <string name="button_cancel">Cancelar</string>
+    <string name="button_delete">Apagar</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francês</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Alemão</string>
 </resources>
