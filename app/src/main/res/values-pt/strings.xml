@@ -107,7 +107,7 @@
     <string name="input_game_mode_minutes_description">Limite de tempo em minutos</string>
     <string name="input_game_mode_name_description">Para escolher o modo de jogo / registar recordes</string>
     <string name="input_game_mode_name_hint">Nome</string>
-    <string name="delete_custom_game_mode">Excluir o modo de jogo personalizado “%1$s”\? Todos os recordes serão perdidos.</string>
+    <string name="delete_custom_game_mode">Apagar o modo de jogo personalizado “%1$s”\? Todos os recordes serão perdidos.</string>
     <string name="high_scores">Recorde</string>
     <string name="button_cancel">Cancelar</string>
     <string name="button_delete">Apagar</string>
