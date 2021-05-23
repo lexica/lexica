@@ -145,4 +145,15 @@
 \n你可以捐款表达自己的支持并为它的进一步发展作出贡献，详见<a href="https://liberapay.com/Lexica">Liberapay</a>或<a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>。</string>
     <string name="whats_new_support">支持 Lexica</string>
     <string name="whats_new_multiplayer">多人游戏！</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="other">%1$d 单词</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="other">%1$d 单词 (轻按刷新）</item>
+    </plurals>
+    <string name="invalid_multiplayer_link">收到不正确的多人游戏链接，无法加入游戏。 确保你们俩都在使用最新版本的Lexica。</string>
+    <string name="dialog_refresh_confirmation_message">已刷新游戏板</string>
+    <string name="dialog_refresh_button">刷新</string>
+    <string name="dialog_refresh_content">为确保你与对手玩的游戏板相同，请确保刷新后重新发送所有邀请。</string>
+    <string name="dialog_refresh_title">刷新游戏板</string>
 </resources>
