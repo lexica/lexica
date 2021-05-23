@@ -4,6 +4,7 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	xmlns:fancy="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:background="?attr/home__background_colour"
 	android:orientation="vertical">
 
@@ -28,6 +29,18 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		/>
+
+	<TextView
+		android:id="@+id/multiplayer_game_num_available_words"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		tools:text="265 words"
+		android:textAlignment="center"
+		android:textColor="?attr/game__score__heading_text_colour"
+		android:padding="?attr/game__score__padding"
+		app:layout_constraintTop_toBottomOf="@id/game_mode_details"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
 
 	<TextView
 		android:id="@+id/text_to_join"

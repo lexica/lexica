@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.serwylo.lexica.R
 import com.serwylo.lexica.ThemeManager
 import com.serwylo.lexica.databinding.MultiplayerLobbyBinding
 import com.serwylo.lexica.db.GameMode
 import com.serwylo.lexica.db.GameModeRepository
+import com.serwylo.lexica.game.Game
 import com.serwylo.lexica.lang.Language
 import com.serwylo.lexica.share.SharedGameData
 
@@ -35,7 +37,7 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
         val uri = intent.data
         if (uri == null) {
             Log.e(TAG, "Expected a URI containing the information required to start a multiplayer game, but received null.")
-            Toast.makeText(this, "Received incorrect multiplayer link, cannot join game.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.invalid_multiplayer_link, Toast.LENGTH_LONG).show()
             finish()
             return
         }
@@ -45,11 +47,7 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
             setup(sharedGameData)
         } catch (e: IllegalArgumentException) {
             Log.e(TAG, "Error while parsing incoming game mode: $uri", e)
-            Toast.makeText(
-                this,
-                "Received incorrect multiplayer link, cannot join game.",
-                Toast.LENGTH_LONG
-            ).show()
+            Toast.makeText(this, R.string.invalid_multiplayer_link, Toast.LENGTH_LONG).show()
             finish()
             return
         }
@@ -68,6 +66,9 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
                 binding.gameModeDetails.setLanguage(data.language)
                 binding.gameModeDetails.setGameMode(gameMode)
                 binding.startGame.isEnabled = true
+
+                val game = Game(this, gameMode, data.language, data.board.toTypedArray())
+                binding.multiplayerGameNumAvailableWords.text = resources.getQuantityString(R.plurals.num_available_words_in_game, game.maxWordCount, game.maxWordCount)
 
                 binding.startGame.setOnClickListener { startGame(data.language, gameMode, data.board) }
             }
