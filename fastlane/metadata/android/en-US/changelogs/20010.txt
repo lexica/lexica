@@ -1,0 +1,8 @@
+Multiplayer improvement:
+ * Show how many words in the board prior to inviting others or joining a game.
+ * If you prefer more or less words for your multiplayer game, you can now refresh the board prior to playing.
+
+Bug fix:
+ * Consecutive sound effects now play as expected (One of the oldest reported bugs, from 2017, thanks for the report PakoPakoJr!)
+
+Enjoy Lexica? Support further development via Liberapay or GitHub Sponsors.
