@@ -38,6 +38,10 @@
     <string name="hint_colour">Tile colour</string>
     <string name="pref_sounds">Sounds Enabled</string>
     <string name="pref_sounds_summary">Whether or not sound effects are enabled</string>
+    <string name="dialog_refresh_title">Refresh board</string>
+    <string name="dialog_refresh_content">To ensure you play the same board as your opponents, make sure to resend any invites after refreshing.</string>
+    <string name="dialog_refresh_button">Refresh</string>
+    <string name="dialog_refresh_confirmation_message">Board refreshed</string>
     <string name="dialog_about_title">About Lexica</string>
     <string name="dialog_about_content">
 	Touch the screen and move your finger to adjacent squares to spell words.
@@ -128,6 +132,15 @@
     <string name="multiplayer">Multiplayer</string>
     <string name="game_mode">Game mode</string>
     <string name="new_game_mode">New game mode</string>
+    <string name="invalid_multiplayer_link">Received incorrect multiplayer link, cannot join game. Make sure both of you are using the latest version of Lexica.</string>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d word (tap to refresh)</item>
+        <item quantity="other">%1$d words (tap to refresh)</item>
+    </plurals>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d word</item>
+        <item quantity="other">%1$d words</item>
+    </plurals>
     <plurals name="num_found_words_out_of_total">
         <item quantity="one">%d / %d word</item>
         <item quantity="other">%d / %d words</item>

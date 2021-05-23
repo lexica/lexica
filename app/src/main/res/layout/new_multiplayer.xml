@@ -56,11 +56,24 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		/>
 
+	<TextView
+		android:id="@+id/multiplayer_game_num_available_words"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		tools:text="265 words (tap to refresh)"
+		android:textAlignment="center"
+		android:textColor="?attr/game__score__heading_text_colour"
+		android:padding="?attr/game__score__padding"
+		app:layout_constraintTop_toBottomOf="@id/game_mode_details"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+
 	<mehdi.sakout.fancybuttons.FancyButton
 		android:id="@+id/send_invite"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
-		app:layout_constraintTop_toBottomOf="@id/game_mode_details"
+		app:layout_constraintTop_toBottomOf="@id/multiplayer_game_num_available_words"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		fancy:fb_fontIconResource="&#xf1e0;"

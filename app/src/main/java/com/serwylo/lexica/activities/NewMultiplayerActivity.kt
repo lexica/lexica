@@ -4,8 +4,11 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.client.android.encode.QRCodeEncoder
+import com.serwylo.lexica.R
 import com.serwylo.lexica.ThemeManager
 import com.serwylo.lexica.Util
 import com.serwylo.lexica.databinding.NewMultiplayerBinding
@@ -78,6 +81,20 @@ class NewMultiplayerActivity : AppCompatActivity() {
         binding.qr.setImageBitmap(bitmap)
         binding.gameModeDetails.setGameMode(gameMode)
         binding.gameModeDetails.setLanguage(language)
+
+        binding.multiplayerGameNumAvailableWords.text = resources.getQuantityString(R.plurals.num_available_words_in_game__tap_to_refresh, game.maxWordCount, game.maxWordCount)
+        binding.multiplayerGameNumAvailableWords.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle(R.string.dialog_refresh_title)
+                .setMessage(R.string.dialog_refresh_content)
+                .setPositiveButton(R.string.dialog_refresh_button) { _, _ ->
+                    setup(gameMode)
+                    Toast.makeText(this, R.string.dialog_refresh_confirmation_message, Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton(R.string.button_cancel, null)
+                .create()
+                .show()
+        }
 
         binding.sendInvite.isEnabled = true
         binding.sendInvite.setOnClickListener {
