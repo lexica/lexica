@@ -31,6 +31,6 @@
     <string name="tile_count">Počet slov</string>
     <string name="word_length">Délka slova</string>
     <string name="pref_dict_uk">Ukrajinština</string>
-    <string name="pref_dict_pt_BR">Portugalština (Brazílie)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Portugalština (Brazílie)</string>
     <string name="pref_dict_pl">Polština</string>
 </resources>

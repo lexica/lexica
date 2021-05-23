@@ -71,7 +71,7 @@
     <string name="tile_count">Количество слов</string>
     <string name="pref_dict_uk">Украинский</string>
     <string name="pref_dict_ru">Русский</string>
-    <string name="pref_dict_pt_BR">Португальский (Бразилия)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Португальский (Бразилия)</string>
     <string name="pref_dict_pl">Польский</string>
     <string name="pref_dict_ja">Японский</string>
     <string name="pref_dict_hu">Венгерский</string>

@@ -67,7 +67,7 @@
     <string name="pref_definitionProvider_dialog">Seleziona il fornitore di definizioni</string>
     <string name="pref_definitionProvider_summary">Seleziona un fornitore di definizioni per usarlo. Se il fornitore selezionato non è installato, una fonte in linea come il Wikizionario verrà utilizzata.</string>
     <string name="pref_definitionProvider">Fornitore di definizioni</string>
-    <string name="pref_dict_pt_BR">Portoghese (Brasile)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Portoghese (Brasile)</string>
     <string name="sort">Ordina</string>
     <string name="theme_high_contrast">Contrasto elevato</string>
     <string name="theme_dark">Scuro</string>

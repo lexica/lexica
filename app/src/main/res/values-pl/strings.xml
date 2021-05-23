@@ -66,7 +66,7 @@
     <string name="hint_colour">Kolor kafelka</string>
     <string name="pref_dict_uk">Ukraiński</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
-    <string name="pref_dict_pt_BR">Portugalski (Brazylia)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Portugalski (Brazylia)</string>
     <string name="pref_dict_pl">Polski</string>
     <string name="theme_dark">Ciemna</string>
     <string name="theme_light">Jasny</string>

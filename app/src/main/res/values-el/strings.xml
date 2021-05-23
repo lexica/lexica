@@ -81,7 +81,7 @@
     <string name="hint_colour">Χρώμα πλακιδίων</string>
     <string name="tile_count">Αριθμός λέξεων</string>
     <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Ρωσικά (Εκτεταμένα)</string>
-    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Πορτογαλικά (Βραζιλία)</string>
+    <string name="pref_dict_pt_BR_no_diacritics" tools:keep="@string/pref_dict_pt_BR">Πορτογαλικά (Βραζιλία)</string>
     <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Πολωνικά</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Γαλλικά</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Γερμανικά</string>

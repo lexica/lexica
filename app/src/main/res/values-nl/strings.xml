@@ -67,7 +67,7 @@
     <string name="pref_dict_uk">Oekraïens</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pl">Pools</string>
-    <string name="pref_dict_pt_BR">Portugees (Brazilië)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Portugees (Brazilië)</string>
     <string name="theme_dark">Donker</string>
     <string name="theme_light">Licht</string>
     <string name="pref_theme_dialog">Thema kiezen</string>

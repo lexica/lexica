@@ -59,7 +59,7 @@
     <string name="pref_dict_uk">यूक्रेनी</string>
     <string name="pref_dict_en_GB">अंग्रेजी (यूके)</string>
     <string name="pref_dict_ru">रूसी</string>
-    <string name="pref_dict_pt_BR">पुर्तगाली (ब्राज़ील)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">पुर्तगाली (ब्राज़ील)</string>
     <string name="pref_dict_pl">पोलिश</string>
     <string name="pref_dict_nl">डच</string>
     <string name="pref_dict_ja">जापानी</string>

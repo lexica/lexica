@@ -9,7 +9,7 @@
     <string name="pref_theme">Tema</string>
     <string name="time">Tempo</string>
     <string name="pref_dict_ja">Japonês</string>
-    <string name="pref_dict_pt_BR">Português (Brasil)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Português (Brasil)</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pl">Polonês</string>
     <string name="pref_definitionProvider_dialog">Selecione o provedor de definições</string>
