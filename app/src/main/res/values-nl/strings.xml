@@ -148,4 +148,17 @@
 \n
 \nFeedback is altijd fijn, dus laat ons weten hoe we deze functie kunnen verbeteren.</string>
     <string name="whats_new_multiplayer">Meerdere spelers!</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d woord</item>
+        <item quantity="other">%1$d woorden</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d woord (druk om te vernieuwen)</item>
+        <item quantity="other">%1$d woorden (druk om te vernieuwen)</item>
+    </plurals>
+    <string name="invalid_multiplayer_link">Het spel kan niet worden gestart omdat er onjuiste link gevolgd is. Zorg er voor dat jullie allemaal de nieuwste Lexica-versie hebben.</string>
+    <string name="dialog_refresh_confirmation_message">Het bord is vernieuwd</string>
+    <string name="dialog_refresh_content">Om er zeker van te zijn dat je op hetzelfde bord speelt als je tegenstanders, moet je na het vernieuwen de uitnodigingen opnieuw versturen.</string>
+    <string name="dialog_refresh_title">Bord vernieuwen</string>
+    <string name="dialog_refresh_button">Vernieuwen</string>
 </resources>
