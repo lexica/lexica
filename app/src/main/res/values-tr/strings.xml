@@ -148,4 +148,17 @@
 \n
 \nHer zaman olduğu gibi, bu özelliğin nasıl iyileştirilebileceği konusunda geri bildirim almaktan memnuniyet duyarız. Bunun gerçek zamanlı/ağ üzerinden çok oyunculu bir özellik olması amaçlanmasa da, beğeneceğinizi umuyoruz.</string>
     <string name="whats_new_multiplayer">Çok oyunculu!</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d sözcük</item>
+        <item quantity="other">%1$d sözcük</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d sözcük (yenilemek için dokunun)</item>
+        <item quantity="other">%1$d sözcük (yenilemek için dokunun)</item>
+    </plurals>
+    <string name="invalid_multiplayer_link">Yanlış çok oyunculu bağlantı alındı, oyuna katılınamıyor. Her ikinizin de Lexica\'nın en son sürümünü kullandığından emin olun.</string>
+    <string name="dialog_refresh_confirmation_message">Tahta yenilendi</string>
+    <string name="dialog_refresh_button">Yenile</string>
+    <string name="dialog_refresh_content">Rakiplerinizle aynı tahtayı oynadığınızdan emin olmak için, yeniledikten sonra tüm davetleri tekrar gönderdiğinizden emin olun.</string>
+    <string name="dialog_refresh_title">Tahtayı yenile</string>
 </resources>
