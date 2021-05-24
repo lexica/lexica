@@ -148,4 +148,17 @@
     <string name="game_mode">Ludreĝimo</string>
     <string name="multiplayer">Pluraj ludantoj</string>
     <string name="multiplayer__start_game">Ekludi</string>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d vorto (frapetu por reŝargi)</item>
+        <item quantity="other">%1$d vortoj (frapetu por reŝargi)</item>
+    </plurals>
+    <string name="dialog_refresh_content">Por certigi, ke vi ludos la saman tabulon kiel viaj kontraŭuloj, nepre resendu ajnajn invitojn post reŝargo.</string>
+    <string name="dialog_refresh_title">Reŝargi tabulon</string>
+    <string name="dialog_refresh_confirmation_message">Tabulo reŝargiĝis</string>
+    <string name="dialog_refresh_button">Reŝargi</string>
+    <string name="invalid_multiplayer_link">Ricevis malĝustan ligon por reĝimo de pluraj ludantoj; tial, ne eblas aliĝi al ludo. Certigu, ke vi ĉiuj uzas la plej novan version de Lexica.</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d vorto</item>
+        <item quantity="other">%1$d vortoj</item>
+    </plurals>
 </resources>
