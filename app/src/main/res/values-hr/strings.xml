@@ -151,4 +151,19 @@
 \nKad završite, usporedite vaše rezultate kako biste vidjeli tko ima superiorniji rječnik.
 \n
 \nKao i uvijek, radujemo se povratnim informacijama o tome kako poboljšati ovu funkciju. Iako ovo nije funkcija za igru s više igrača u stvarnom vremenu / mreži, nadamo se da ćeš uživati.</string>
+    <string name="invalid_multiplayer_link">Primljena je neispravna veza za više igrača. Pridruživanje igri nije moguće. Pazi da oboje koristite najnoviju verziju programa Lexica.</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d riječ</item>
+        <item quantity="few">%1$d riječi</item>
+        <item quantity="other">%1$d riječi</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d riječ (dodirni za aktualiziranje)</item>
+        <item quantity="few">%1$d riječi (dodirni za aktualiziranje)</item>
+        <item quantity="other">%1$d riječi (dodirni za aktualiziranje)</item>
+    </plurals>
+    <string name="dialog_refresh_confirmation_message">Ploča je aktualizirana</string>
+    <string name="dialog_refresh_button">Aktualiziraj</string>
+    <string name="dialog_refresh_content">Za osiguravanje igranja iste ploče kao tvoji protivnici, ponovo pošalji pozivnice nakon aktualiziranja.</string>
+    <string name="dialog_refresh_title">Aktualiziraj ploču</string>
 </resources>
