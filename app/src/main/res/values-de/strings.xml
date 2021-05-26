@@ -148,4 +148,17 @@
 \n
 \nWie immer sind Rückmeldung und Kommentare willkommen, um diese Funktion zu verbessern. Obwohl dies nicht als Echtzeit-/Netzwerk-Mehrspieler-Funktion gedacht ist, hoffen wir, dass es Ihnen gefällt.</string>
     <string name="whats_new_multiplayer">Mehrspieler!</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d Wort</item>
+        <item quantity="other">%1$d Wörter</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d Wort (zum Aktualisieren antippen)</item>
+        <item quantity="other">%1$d Wörter (zum Aktualisieren antippen)</item>
+    </plurals>
+    <string name="invalid_multiplayer_link">Falscher Mehrspielerlink erhalten; du kannst dem Spiel nicht beitreten. Stelle sicher, dass ihr beide die neueste Version von Lexica verwendet.</string>
+    <string name="dialog_refresh_confirmation_message">Spielfeld aktualisiert</string>
+    <string name="dialog_refresh_button">Aktualisieren</string>
+    <string name="dialog_refresh_content">Um sicherzustellen, dass du auf dasselbem Spielfed wie deine Gegner spielst, stelle sicher, dass du alle Einladungen nach dem Aktualisieren erneut sendest.</string>
+    <string name="dialog_refresh_title">Spielfeld aktualisieren</string>
 </resources>
