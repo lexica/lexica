@@ -1,2 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <plurals name="num_minutes">
+        <item quantity="other">%d phút</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="other">/ %d điểm</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="other">%d / %d từ</item>
+    </plurals>
+    <plurals name="num_available_words_in_game">
+        <item quantity="other">%1$d từ</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="other">%1$d từ (nhấn để làm mới)</item>
+    </plurals>
+    <string name="invalid_multiplayer_link">Đã nhận liên kết nhiều người chơi không chính xác, không thể tham gia trò chơi. Hãy chắc chắn là cả hai người đang sử dụng phiên bản Lexica mới nhất.</string>
+    <string name="new_game_mode">Chế độ chơi mới</string>
+    <string name="game_mode">Chế độ chơi</string>
+    <string name="multiplayer">Nhiều người chơi</string>
+    <string name="multiplayer__start_game">Bắt đầu chơi</string>
+    <string name="multiplayer__qr_code__accessible_description">Mã QR: Những người khác có thể quét để tham gia trò chơi này</string>
+    <string name="multiplayer__start_when_ready">Khi tất cả người chơi đã sẵn sàng, tất cả các bạn nên bắt đầu trò chơi cùng một lúc.</string>
+    <string name="multiplayer__share_invites">Chia sẻ lời mời</string>
+    <string name="multiplayer_lobby__join_game">Tham gia trò chơi</string>
+    <string name="multiplayer_lobby__join_when_ready">Khi tất cả người chơi đã sẵn sàng, hãy tham gia trò chơi.</string>
+    <string name="menu_view_found_words">Hiện các từ đã tìm thấy</string>
+    <string name="whats_new_support_description">Lexica là và sẽ luôn là tự do và mã nguồn mở.
+\n
+\nBạn có thể thể hiện sự hỗ trợ của bạn và đóng góp vào sự phát triển trong tương lai bằng cách quyên góp qua <a href="https://liberapay.com/Lexica">Liberapay</a> hoặc <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="whats_new_support">Hỗ trợ Lexica</string>
+    <string name="whats_new_multiplayer_description">Bắt đầu trò chơi mới từ màn hình chính, rồi chia sẻ các lời mời bằng mã QR, SMS, e-mail, v.v.
+\n
+\nSau khi nhận lời mời, những người khác có thể chơi trên bảng được tạo ngẫu nhiên như của bạn, với các quy tắc giống của bạn.
+\n
+\nKhi xong, hãy so sánh số điểm của các bạn để xem ai tìm từ tốt hơn.
+\n
+\nNhư mọi khi, chúng tôi luôn chào đón phản hồi về cách mà tính năng này có thể được cải thiện. Mặc dù tính năng này không có ý là một tính năng nhiều người chơi theo thời gian thực/mạng, nhưng chúng tôi hy vọng là bạn tận hưởng nó.</string>
+    <string name="whats_new_multiplayer">Nhiều người chơi!</string>
+    <string name="whats_new_continue">Tiếp tục</string>
+    <string name="whats_new_title">Có gì mới</string>
+    <string name="error_restoring_game">Không thể khôi phục trò chơi</string>
+    <string name="game_mode_legacy_description">Được sử dụng trong một phiên bản Lexica cũ hơn</string>
+    <string name="game_mode_legacy">Cũ</string>
+    <string name="game_mode_custom_description">Chế độ chơi tuỳ chỉnh</string>
+    <string name="game_mode_letter_points_description">Nhận nhiều điểm hơn cho việc sử dụng các chữ cái ít phổ biến hơn</string>
+    <string name="game_mode_letter_points">Điểm cho từng chữ cái</string>
+    <string name="game_mode_beginner_description">Sử dụng gợi ý để giúp tìm các từ</string>
+    <string name="game_mode_beginner">Người mới bắt đầu</string>
+    <string name="game_mode_marathon_description">Cố gắng tìm tất cả các từ mà không có áp lực thời gian</string>
+    <string name="game_mode_marathon">Ma ra tông</string>
+    <string name="game_mode_sprint_description">Trò chơi ngắn để tìm nhiều từ nhất có thể</string>
+    <string name="game_mode_sprint">Chạy nước rút</string>
+    <string name="menu_save_game_mode">Lưu</string>
+    <string name="menu_new_game_mode">Mới</string>
+    <string name="input_game_mode_minutes_description">Giới hạn thời gian tính bằng phút</string>
+    <string name="input_game_mode_name_description">Để chọn chế độ chơi / ghi lại điểm cao</string>
+    <string name="input_game_mode_name_hint">Tên</string>
+    <string name="delete_custom_game_mode">Xoá chế độ chơi tuỳ chỉnh \"%1$s\"\? Các điểm cao sẽ bị mất.</string>
+    <string name="sort">Sắp xếp</string>
+    <string name="theme_high_contrast">Độ tương phản cao</string>
+    <string name="theme_dark">Tối</string>
+    <string name="theme_light">Sáng</string>
+    <string name="pref_theme_dialog">Chọn chủ đề</string>
+    <string name="pref_theme">Chủ đề</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Trực tuyến</string>
+    <string name="pref_definitionProvider_dialog">Chọn nhà cung cấp định nghĩa</string>
+    <string name="pref_definitionProvider_summary">Chọn một nhà cung cấp định nghĩa để sử dụng. Nếu nhà cung cấp được chọn không được cài đặt, một nguồn trực tuyến như Wiktionary sẽ được sử dụng.</string>
+    <string name="pref_definitionProvider">Nhà cung cấp định nghĩa</string>
+    <string name="pref_breakdown_summary">Mục số từ có hiện số từ theo độ dài từ không</string>
+    <string name="pref_breakdown">Hiện chi tiết độ dài từ</string>
+    <string name="reset_scores_prompt">Bạn có chắc bạn muốn đặt lại tất cả điểm cao của tất cả chế độ chơi về không không\?</string>
+    <string name="high_scores_reset">Điểm cao đã được đặt lại.</string>
+    <string name="pref_resetScores">Đặt lại điểm cao</string>
+    <string name="pref_resetScores_summary">Điểm cao được theo dõi cho mỗi sự kết hợp các cài đặt ở trên. Nhấn để đặt lại tất cả số điểm về không.</string>
+    <string name="high_scores">Điểm cao</string>
+    <string name="high_score">Điểm cao</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="total_score">Tổng số điểm:</string>
+    <string name="total_words">Tổng số từ:</string>
+    <string name="missed_words">Từ bị bỏ lỡ</string>
+    <string name="found_words">Từ đã tìm thấy</string>
+    <string name="time">Thời gian</string>
+    <string name="score">Điểm</string>
+    <string name="words">Từ</string>
+    <string name="define_word"><u>Định nghĩa</u> </string>
+    <string name="view_word"><u>Xem</u></string>
+    <string name="hide_unique">Ẩn các từ độc nhất</string>
+    <string name="show_unique">Hiện các từ độc nhất</string>
+    <string name="hide_missed">Ẩn các từ bị bỏ lỡ</string>
+    <string name="show_missed">Hiện các từ bị bỏ lỡ</string>
+    <string name="about">Giới thiệu</string>
+    <string name="button_cancel">Huỷ</string>
+    <string name="button_delete">Xoá</string>
+    <string name="button_ok">OK</string>
+    <string name="menu_end_game">Kết thúc trò chơi</string>
+    <string name="menu_save_game">Lưu trò chơi</string>
+    <string name="menu_rotate_board">Xoay bảng</string>
+    <string name="dialog_about_content">Chạm vào màn hình và di chuyển ngón tay đến các ô vuông liền kề để đánh vần các từ. Bạn có ba phút để tìm nhiều từ nhất có thể.
+\n
+\nTính điểm:
+\nTrên các bảng 4x4, các từ phải dài ít nhất ba chữ cái. Trên các bảng 5x5, các từ phải dài ít nhất bốn chữ cái. Các từ có ba hoặc bốn chữ cái được tính một điểm. Các từ dài hơn được tính nhiều điểm hơn. Các danh từ riêng không được tính.
+\n
+\n</string>
+    <string name="dialog_about_title">Giới thiệu về Lexica</string>
+    <string name="dialog_refresh_confirmation_message">Đã làm mới bảng</string>
+    <string name="dialog_refresh_button">Làm mới</string>
+    <string name="dialog_refresh_content">Để chắc chắn là bạn chơi trên cùng một bảng với đối phương, hãy đảm bảo là bạn gửi lại các lời mời sau khi làm mới.</string>
+    <string name="dialog_refresh_title">Làm mới bảng</string>
+    <string name="pref_sounds_summary">Hiệu ứng âm thanh có được bật hay không</string>
+    <string name="pref_sounds">Bật âm thanh</string>
+    <string name="hint_colour">Màu ô</string>
+    <string name="tile_count">Số lượng các từ</string>
+    <string name="pref_hintMode_summary">Hiện số lượng các từ mà mỗi chữ cái có thể được sử dụng trong đó</string>
+    <string name="pref_hintMode">Chế độ gợi ý</string>
+    <string name="letter_points">Điểm cho từng chữ cái</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Bao gồm ngữ pháp và chữ viết tắt</string>
+    <string name="word_length">Độ dài của từ</string>
+    <string name="pref_scoreType">Kiểu tính điểm</string>
+    <string name="pref_timeLimit">Giới hạn thời gian</string>
+    <string name="pref_boardSize">Kích thước bảng</string>
+    <string name="lexicon_is_in_beta">Beta</string>
+    <string name="pref_dict_en_US" tools:keep="@string/pref_dict_en_US">Tiếng Anh (US)</string>
+    <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">Tiếng Ukraina</string>
+    <string name="pref_dict_en_GB" tools:keep="@string/pref_dict_en_GB">Tiếng Anh (UK)</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Tiếng Nga (Mở rộng)</string>
+    <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">Tiếng Nga</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Tiếng Bồ Đào Nha (Brazil)</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Tiếng Ba Lan</string>
+    <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">Tiếng Hà Lan</string>
+    <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">Tiếng Nhật</string>
+    <string name="pref_dict_it" tools:keep="@string/pref_dict_it">Tiếng Italy</string>
+    <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">Tiếng Hungary</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Tiếng Pháp</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Bao gồm các dấu phụ: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">Tiếng Pháp (Mở rộng)</string>
+    <string name="pref_dict_fa" tools:keep="@string/pref_dict_fa">Tiếng Persia</string>
+    <string name="pref_dict_es" tools:keep="@string/pref_dict_es">Tiếng Tây Ban Nha</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Tiếng Đức</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Bao gồm các dấu phụ: äöü</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">Tiếng Đức (Mở rộng)</string>
+    <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Tiếng Catalan</string>
+    <string name="pref_dict">Lexicon</string>
+    <string name="prefs">Cài đặt</string>
+    <string name="restore_game">Khôi phục trò chơi</string>
+    <string name="new_game">Trò chơi mới</string>
+    <string name="app_name">Lexica</string>
+</resources>
