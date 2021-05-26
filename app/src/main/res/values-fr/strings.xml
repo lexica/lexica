@@ -148,4 +148,17 @@
 \n
 \nComme toujours, vos remarques sont les bienvenus pour améliorer cette fonctionnalité. Bien qu’il ne s’agisse pas d\'une fonction multijoueur en temps réel/réseau, nous espérons que vous l’apprécierez.</string>
     <string name="whats_new_multiplayer">Multijoueur !</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d mot</item>
+        <item quantity="other">%1$d mots</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d mot (touchez pour actualiser)</item>
+        <item quantity="other">%1$d mots (touchez pour actualiser)</item>
+    </plurals>
+    <string name="invalid_multiplayer_link">Lien multijoueur reçu incorrect, impossible de rejoindre la partie. Assurez-vous que vous utilisez tous les deux la dernière version de Lexica.</string>
+    <string name="dialog_refresh_confirmation_message">Plateau actualisé</string>
+    <string name="dialog_refresh_button">Actualiser</string>
+    <string name="dialog_refresh_content">Pour vous assurer que vous jouez sur le même plateau que vos adversaires, veillez à renvoyer les invitations après actualisation.</string>
+    <string name="dialog_refresh_title">Actualiser le plateau</string>
 </resources>
