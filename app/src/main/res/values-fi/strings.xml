@@ -119,4 +119,20 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Sisältää diakriittiset merkit: àâçéèèêëîïôöûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">saksa</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Sisältää diakriittiset merkit: äöü</string>
+    <string name="new_game_mode">Uusi pelitila</string>
+    <string name="game_mode">Pelitila</string>
+    <string name="multiplayer">Moninpeli</string>
+    <string name="multiplayer__start_game">Aloita peli</string>
+    <string name="multiplayer__qr_code__accessible_description">QR-koodi: Muut voivat skannata liittyäkseen tähän peliin</string>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d sana (napauta päivittääksesi)</item>
+        <item quantity="other">%1$d sanaa (napauta päivittääksesi)</item>
+    </plurals>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d sana</item>
+        <item quantity="other">%1$d sanaa</item>
+    </plurals>
+    <string name="dialog_refresh_button">Päivitä</string>
+    <string name="dialog_refresh_title">Päivitä lauta</string>
+    <string name="whats_new_multiplayer">Moninpeli!</string>
 </resources>
