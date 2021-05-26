@@ -148,4 +148,17 @@
 \n
 \nCome sempre, i commenti sono benvenuti su come questa funzione può essere migliorata. Anche se questa non è stata pensata per essere una funzione multigiocatore in tempo reale/rete, speriamo che vi piaccia.</string>
     <string name="whats_new_multiplayer">Multigiocatore!</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d parola</item>
+        <item quantity="other">%1$d parole</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d parola (tocca per aggiornare)</item>
+        <item quantity="other">%1$d parole (tocca per aggiornare)</item>
+    </plurals>
+    <string name="invalid_multiplayer_link">Collegamento multigiocatore ricevuto errato, non è possibile unirsi al gioco. Assicurati che entrambi stiate usando l’ultima versione di Lexica.</string>
+    <string name="dialog_refresh_confirmation_message">Campo aggiornato</string>
+    <string name="dialog_refresh_button">Aggiorna</string>
+    <string name="dialog_refresh_content">Per assicurarti di giocare lo stesso campo di gioco dei tuoi avversari, assicurati di inviare nuovamente gli inviti dopo averlo aggiornato.</string>
+    <string name="dialog_refresh_title">Aggiorna il campo</string>
 </resources>
