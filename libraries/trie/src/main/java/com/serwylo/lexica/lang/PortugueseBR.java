@@ -69,6 +69,8 @@ public class PortugueseBR extends Language {
 
     }
 
+    private static final Locale locale = new Locale("pt", "BR");
+
     @Override
     public boolean isBeta() {
         return true;
@@ -76,7 +78,7 @@ public class PortugueseBR extends Language {
 
     @Override
     public Locale getLocale() {
-        return new Locale("pt", "BR");
+        return locale;
     }
 
     @Override
