@@ -67,5 +67,5 @@
     <string name="letter_points">Valor de les lletres</string>
     <string name="pref_dict_uk">Ucraïnès</string>
     <string name="pref_dict_pl">Polonès</string>
-    <string name="pref_dict_pt_BR">Portuguès (Brasil)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Portuguès (Brasil)</string>
 </resources>

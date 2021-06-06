@@ -66,7 +66,7 @@
     <string name="pref_hintMode">Vihjeiden tyyppi</string>
     <string name="letter_points">Kirjainpisteet</string>
     <string name="pref_scoreType">Pisteytystapa</string>
-    <string name="pref_dict_pt_BR">portugali (Brasilia)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">portugali (Brasilia)</string>
     <string name="pref_boardSize">Laudan koko</string>
     <string name="sort">Lajittele</string>
     <string name="theme_high_contrast">Korkea kontrasti</string>

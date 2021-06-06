@@ -60,14 +60,18 @@ public class PortugueseBR extends Language {
         letterPoints.put("x", 8);
         letterPoints.put("z", 8);
 
-        // TODO: These are not included in Scrabble.
+        // These are not included in Scrabble.
         // Indeed, they are only used for loanwords.
-        // Should probably look at the CrossWords app and see how they deal with these tiles.
+        // See https://github.com/lexica/lexica/issues/243#issuecomment-846953175 and subsequent comments for a
+        // discussion, which results in these staying put for the main pt_BR dictionary but removed from the
+        // no-diacritics version.
         letterPoints.put("k", 2);
         letterPoints.put("w", 2);
         letterPoints.put("y", 2);
 
     }
+
+    private static final Locale locale = new Locale("pt", "BR");
 
     @Override
     public boolean isBeta() {
@@ -76,7 +80,7 @@ public class PortugueseBR extends Language {
 
     @Override
     public Locale getLocale() {
-        return new Locale("pt", "BR");
+        return locale;
     }
 
     @Override

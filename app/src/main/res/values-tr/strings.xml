@@ -67,7 +67,7 @@
     <string name="pref_dict_uk">Ukraynaca</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Çevrim içi</string>
     <string name="pref_dict_pl">Lehçe</string>
-    <string name="pref_dict_pt_BR">Portekizce (Brezilya)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Portekizce (Brezilya)</string>
     <string name="time">Süre</string>
     <string name="theme_dark">Karanlık</string>
     <string name="theme_light">Aydınlık</string>

@@ -61,6 +61,7 @@ def languages = [
   "nl",
   "pl",
   "pt_BR",
+  "pt_BR_no_diacritics",
   "ru",
   "ru_extended",
   "uk",

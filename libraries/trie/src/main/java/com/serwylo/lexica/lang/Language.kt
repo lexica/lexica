@@ -115,6 +115,7 @@ abstract class Language {
                 "nl" to Dutch(),
                 "pl" to Polish(),
                 "pt_BR" to PortugueseBR(),
+                "pt_BR_no_diacritics" to PortugueseBRNoDiacritics(),
                 "ru" to Russian(),
                 "ru_extended" to RussianExtended(),
                 "uk" to Ukrainian(),

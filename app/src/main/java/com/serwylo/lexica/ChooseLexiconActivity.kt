@@ -74,7 +74,6 @@ class ChooseLexiconActivity : AppCompatActivity() {
             binding.lexiconDescription.text = description
 
             binding.lexiconDescription.visibility = if (description != null) View.VISIBLE else View.GONE
-            binding.lexiconIsInBetaSeparator.visibility = if (language.isBeta && description != null) View.VISIBLE else View.GONE
             binding.lexiconIsInBeta.visibility = if (language.isBeta) View.VISIBLE else View.GONE
 
             binding.root.setOnClickListener(listener)

@@ -67,7 +67,7 @@
     <string name="pref_dict_uk">Ukrainisch</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_dict_pl">Polnisch</string>
-    <string name="pref_dict_pt_BR">Portugiesisch (Brasilien)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Portugiesisch (Brasilien)</string>
     <string name="theme_dark">Dunkel</string>
     <string name="theme_light">Hell</string>
     <string name="pref_theme_dialog">Thema auswählen</string>

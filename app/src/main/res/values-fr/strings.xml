@@ -67,7 +67,7 @@
     <string name="pref_dict_uk">Ukrainien</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">En ligne</string>
     <string name="pref_dict_pl">Polonais</string>
-    <string name="pref_dict_pt_BR">Portugais (Brésil)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">Portugais (Brésil)</string>
     <string name="sort">Trier</string>
     <string name="theme_high_contrast">Contraste élevé</string>
     <string name="theme_dark">Sombre</string>

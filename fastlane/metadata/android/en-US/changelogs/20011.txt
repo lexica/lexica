@@ -1,0 +1,9 @@
+Improved dictionary options for Portuguese (Brasil) thanks to assistance from gjeuken!
+
+* Current dictionary renamed to portuguese (Brasil) (Extended) and includes letters with diacritics çáéíóúâêôãõà and the letters kwy.
+* New dictionary replaces these with a, c, e, i, o, and u, and removes k, w, and y.
+* Removed words containing unused diacritics: åèîïö.
+
+Suggestions for your favourite language? Feedback welcome.
+
+Support further development via Liberapay or GitHub Sponsors.
