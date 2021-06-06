@@ -171,4 +171,6 @@
     <string name="dialog_refresh_button">Оновити</string>
     <string name="dialog_refresh_content">Щоб грати на тій же дошці, що і ваші супротивники, не забудьте повторно надіслати будь-які запрошення після оновлення.</string>
     <string name="dialog_refresh_title">Оновити дошку</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Включає букви з діакритичними знаками: çáéíóúâêôãõà і букви: kwy</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Португальська (Бразилія) (розширена)</string>
 </resources>
