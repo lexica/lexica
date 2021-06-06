@@ -124,9 +124,9 @@
     <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Dil bilgisi durumlarını ve kısaltmaları içerir</string>
     <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Rusça (Genişletilmiş)</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Fransızca</string>
-    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Aksanları içerir: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">àâçéèêëîïôöûü aksan işaretlerini içerir</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Almanca</string>
-    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Aksanları içerir: äöü</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">äöü aksan işaretlerini içerir</string>
     <string name="new_game_mode">Yeni oyun modu</string>
     <string name="game_mode">Oyun modu</string>
     <string name="multiplayer">Çok oyunculu</string>
@@ -161,4 +161,6 @@
     <string name="dialog_refresh_button">Yenile</string>
     <string name="dialog_refresh_content">Rakiplerinizle aynı tahtayı oynadığınızdan emin olmak için, yeniledikten sonra tüm davetleri tekrar gönderdiğinizden emin olun.</string>
     <string name="dialog_refresh_title">Tahtayı yenile</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">çáéíóúâêôãõà aksan işaretlerini ve kwy harflerini içerir</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portekizce (Brezilya) (Genişletilmiş)</string>
 </resources>
