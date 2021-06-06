@@ -161,4 +161,6 @@
     <string name="dialog_refresh_content">Om er zeker van te zijn dat je op hetzelfde bord speelt als je tegenstanders, moet je na het vernieuwen de uitnodigingen opnieuw versturen.</string>
     <string name="dialog_refresh_title">Bord vernieuwen</string>
     <string name="dialog_refresh_button">Vernieuwen</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Bevat schrifttekens: çáéíóúâêôãõà en letters: kwy</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugees (Brazilië) (Uitgebreid)</string>
 </resources>
