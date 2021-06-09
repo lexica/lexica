@@ -166,4 +166,6 @@
     <string name="dialog_refresh_button">Aktualiziraj</string>
     <string name="dialog_refresh_content">Za osiguravanje igranja iste ploče kao tvoji protivnici, ponovo pošalji pozivnice nakon aktualiziranja.</string>
     <string name="dialog_refresh_title">Aktualiziraj ploču</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Sadrži dijakritičke znakove: çáéíóúâêôãõà i slova: kwy</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugalski (Brazil) (prošireno)</string>
 </resources>
