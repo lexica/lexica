@@ -161,4 +161,6 @@
     <string name="dialog_refresh_button">Aggiorna</string>
     <string name="dialog_refresh_content">Per assicurarti di giocare lo stesso campo di gioco dei tuoi avversari, assicurati di inviare nuovamente gli inviti dopo averlo aggiornato.</string>
     <string name="dialog_refresh_title">Aggiorna il campo</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Include diacritici: çáéíóúâêôãõà e lettere: kwy</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portoghese (Brasile) (esteso)</string>
 </resources>
