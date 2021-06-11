@@ -126,7 +126,7 @@
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Französisch</string>
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Enthält die diakritischen Zeichen: àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Enthält die diakritischen Zeichen: äöü</string>
-    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Allemand</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Deutsch</string>
     <string name="new_game_mode">Neuer Spielmodus</string>
     <string name="game_mode">Spielmodus</string>
     <string name="multiplayer">Mehrspieler</string>
@@ -161,4 +161,6 @@
     <string name="dialog_refresh_button">Aktualisieren</string>
     <string name="dialog_refresh_content">Um sicherzustellen, dass du auf dasselbem Spielfed wie deine Gegner spielst, stelle sicher, dass du alle Einladungen nach dem Aktualisieren erneut sendest.</string>
     <string name="dialog_refresh_title">Spielfeld aktualisieren</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Enthält diakritische Zeichen: çáéíóúâêôãõà und Buchstaben: kwy</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugiesisch (Brasilien) (erweitert)</string>
 </resources>
