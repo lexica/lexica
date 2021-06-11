@@ -161,4 +161,6 @@
     <string name="dialog_refresh_button">Actualiser</string>
     <string name="dialog_refresh_content">Pour vous assurer que vous jouez sur le même plateau que vos adversaires, veillez à renvoyer les invitations après actualisation.</string>
     <string name="dialog_refresh_title">Actualiser le plateau</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Inclut les diacritiques : çáéíóúâêôãõà et les lettres : kwy</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugais (Brésil) (étendu)</string>
 </resources>
