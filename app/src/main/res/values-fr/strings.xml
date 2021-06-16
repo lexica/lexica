@@ -98,7 +98,7 @@
     <string name="game_mode_letter_points_description">Marquez plus de points en utilisant des lettres moins courantes</string>
     <string name="game_mode_letter_points">Points de lettre</string>
     <string name="game_mode_beginner_description">Utilisez des astuces pour trouver des mots</string>
-    <string name="game_mode_beginner">Débutant·e</string>
+    <string name="game_mode_beginner">Débutant</string>
     <string name="game_mode_marathon_description">Essayez de trouver tous les mots, sans aucune limite de temps</string>
     <string name="game_mode_marathon">Marathon</string>
     <string name="game_mode_sprint_description">Jeu court pour trouver le plus de mots possible</string>
