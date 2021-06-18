@@ -50,8 +50,9 @@ public class ThemeManager {
         currentTheme = PreferenceManager.getDefaultSharedPreferences(context).getString(PREFERENCE_NAME, THEME_LIGHT);
     }
 
-    public void applyTheme(Activity activity) {
+    public String applyTheme(Activity activity) {
         activity.setTheme(getCurThemeResId(activity));
+        return currentTheme;
     }
 
     private int getCurThemeResId(Context context) {
@@ -68,4 +69,7 @@ public class ThemeManager {
         }
     }
 
+    public String getCurrentTheme() {
+        return currentTheme;
+    }
 }
