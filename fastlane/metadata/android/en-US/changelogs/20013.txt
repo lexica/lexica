@@ -1,0 +1,7 @@
+Improvements:
+
+* Prompt for confirmation prior to ending game, reducing the likelihood that you accidentally end a game in error.
+
+Thanks to all who provided their input on this issue on GitHub.
+
+Support further development via Liberapay or GitHub Sponsors.
