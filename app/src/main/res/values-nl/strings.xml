@@ -163,4 +163,6 @@
     <string name="dialog_refresh_button">Vernieuwen</string>
     <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Bevat schrifttekens: çáéíóúâêôãõà en letters: kwy</string>
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugees (Brazilië) (Uitgebreid)</string>
+    <string name="dialog_end_game_confirm_message">Weet je zeker dat je dit spel wilt beëindigen\?</string>
+    <string name="dialog_end_game_confirm_title">Spel beëindigen\?</string>
 </resources>
