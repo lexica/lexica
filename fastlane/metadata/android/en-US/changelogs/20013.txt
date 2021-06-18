@@ -1,7 +1,10 @@
 Improvements:
 
-* Prompt for confirmation prior to ending game, reducing the likelihood that you accidentally end a game in error.
+* Prompt for confirmation prior to ending game, reducing the likelihood that you accidentally end a game in error (Thanks to all who provided their input on this issue on GitHub).
+* Black navigation bar on dark and high contrast themes.
 
-Thanks to all who provided their input on this issue on GitHub.
+Bugfix:
+
+* Refresh the theme of the main menu after changing themes (all other screens updated as expected).
 
 Support further development via Liberapay or GitHub Sponsors.
