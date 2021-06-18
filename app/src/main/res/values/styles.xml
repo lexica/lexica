@@ -16,6 +16,7 @@
         <item name="colorPrimary">@android:color/black</item>
         <item name="colorPrimaryDark">@android:color/black</item>
         <item name="actionBarStyle">@style/Widget.AppCompat.ActionBar.Solid</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
 
         <item name="board__tile__foreground_colour">@android:color/black</item>
         <item name="board__tile__background_colour">@android:color/white</item>
@@ -99,6 +100,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="actionBarStyle">@style/Widget.AppCompat.ActionBar.Solid</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
 
         <item name="board__tile__foreground_colour">@color/yellow_1</item>
         <item name="board__tile__background_colour">@color/grey_2</item>
@@ -182,6 +184,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
 
         <item name="board__tile__foreground_colour">@color/grey_1</item>
         <item name="board__tile__background_colour">@color/yellow_1</item>
