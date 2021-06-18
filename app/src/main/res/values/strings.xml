@@ -135,6 +135,8 @@
     <string name="game_mode">Game mode</string>
     <string name="new_game_mode">New game mode</string>
     <string name="invalid_multiplayer_link">Received incorrect multiplayer link, cannot join game. Make sure both of you are using the latest version of Lexica.</string>
+    <string name="dialog_end_game_confirm_title">End Game?</string>
+    <string name="dialog_end_game_confirm_message">Are you sure you want to end this game?</string>
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d word (tap to refresh)</item>
         <item quantity="other">%1$d words (tap to refresh)</item>

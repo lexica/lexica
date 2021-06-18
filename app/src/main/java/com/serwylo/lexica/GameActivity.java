@@ -28,6 +28,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
@@ -124,7 +125,8 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                 game.rotateBoard();
                 break;
             case R.id.end_game:
-                game.endNow();
+                promptToEndGame();
+                break;
         }
         return true;
     }
@@ -132,6 +134,15 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         return game.getStatus() != Game.GameStatus.GAME_FINISHED;
+    }
+
+    private void promptToEndGame() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.dialog_end_game_confirm_title)
+                .setMessage(R.string.dialog_end_game_confirm_message)
+                .setPositiveButton(R.string.menu_end_game, (dialog, which) -> game.endNow())
+                .setNegativeButton(R.string.button_cancel, null)
+                .show();
     }
 
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")

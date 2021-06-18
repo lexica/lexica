@@ -5,8 +5,9 @@
 		android:title="@string/menu_rotate_board"
 		android:icon="@drawable/ic_rotate_right_white"
 		app:showAsAction="always"/>
-	<item android:id="@+id/end_game"
-		android:title="@string/menu_end_game"
+	<item
+		android:id="@+id/end_game"
 		android:icon="@drawable/ic_close_white"
-		app:showAsAction="always"/>
+		android:title="@string/menu_end_game"
+		app:showAsAction="never" />
 </menu>
