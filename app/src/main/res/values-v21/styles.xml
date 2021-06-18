@@ -4,4 +4,23 @@
         <item name="android:colorPrimary">@color/colorPrimary</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>-->
+
+    <style name="AppTheme.Light" parent="AppTheme.Light.Base">
+        <item name="lexicaViewStyle">@style/AppTheme.Light.Base</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="AppTheme.Dark.Base">
+        <item name="lexicaViewStyle">@style/AppTheme.Dark.Base</item>
+
+        <!-- https://stackoverflow.com/questions/51187710/android-navigationbarcolor-doesnt-change-to-black-only-to-black -->
+        <item name="android:navigationBarColor">#010101</item>
+    </style>
+
+    <style name="AppTheme.HighContrast" parent="AppTheme.HighContrast.Base">
+        <item name="lexicaViewStyle">@style/AppTheme.HighContrast.Base</item>
+
+        <!-- https://stackoverflow.com/questions/51187710/android-navigationbarcolor-doesnt-change-to-black-only-to-black -->
+        <item name="android:navigationBarColor">#010101</item>
+    </style>
+
 </resources>
