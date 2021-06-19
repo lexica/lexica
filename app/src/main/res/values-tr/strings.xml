@@ -164,5 +164,5 @@
     <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">çáéíóúâêôãõà aksan işaretlerini ve kwy harflerini içerir</string>
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portekizce (Brezilya) (Genişletilmiş)</string>
     <string name="dialog_end_game_confirm_message">Bu oyunu bitirmek istediğinizden emin misiniz\?</string>
-    <string name="dialog_end_game_confirm_title">Oyunu Bitir\?</string>
+    <string name="dialog_end_game_confirm_title">Oyunu Bitir</string>
 </resources>
