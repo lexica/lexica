@@ -163,4 +163,6 @@
     </plurals>
     <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Inkluzivas diakritajn signojn: çáéíóúâêôãõà kaj literojn: kwy</string>
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">La portugala (brazila) (etendita)</string>
+    <string name="dialog_end_game_confirm_message">Ĉu vi certe volas fini ĉi tiun ludon\?</string>
+    <string name="dialog_end_game_confirm_title">Fini ludon</string>
 </resources>
