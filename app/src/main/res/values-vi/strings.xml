@@ -126,7 +126,7 @@
     <string name="pref_dict_en_GB" tools:keep="@string/pref_dict_en_GB">Tiếng Anh (UK)</string>
     <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Tiếng Nga (Mở rộng)</string>
     <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">Tiếng Nga</string>
-    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Tiếng Bồ Đào Nha (Brazil)</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Tiếng Bồ Đào Nha (Brazil) (Mở rộng)</string>
     <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Tiếng Ba Lan</string>
     <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">Tiếng Hà Lan</string>
     <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">Tiếng Nhật</string>
@@ -146,4 +146,8 @@
     <string name="restore_game">Khôi phục trò chơi</string>
     <string name="new_game">Trò chơi mới</string>
     <string name="app_name">Lexica</string>
+    <string name="dialog_end_game_confirm_message">Bạn có chắc bạn muốn kết thúc trò chơi này không\?</string>
+    <string name="dialog_end_game_confirm_title">Kết thúc trò chơi</string>
+    <string name="pref_dict_pt_BR_no_diacritics" tools:keep="@string/pref_dict_pt_BR_no_diacritics">Tiếng Bồ Đào Nha (Brazil)</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Bao gồm các dấu phụ: çáéíóúâêôãõà và các chữ cái: kwy</string>
 </resources>
