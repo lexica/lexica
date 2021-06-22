@@ -1,2 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="game_mode_letter_points">Pûanên Tîpan</string>
+    <string name="game_mode_beginner_description">Bo peydakirina peyvan, alîkariyê ji serristeyan bixwaze</string>
+    <string name="game_mode_beginner">Destpêker</string>
+    <string name="game_mode_marathon_description">Bêyî zehmetiya demê bo peydakirina hemû peyvan xîret bike</string>
+    <string name="game_mode_marathon">Maraton</string>
+    <string name="game_mode_sprint_description">Lîstika kurt. Heya ji destê bê bo peydakirina herî zêde peyv</string>
+    <string name="game_mode_sprint">Bez</string>
+    <string name="menu_save_game_mode">Tomar bike</string>
+    <string name="menu_new_game_mode">Nû</string>
+    <string name="input_game_mode_minutes_description">Bi cureya xulekê, lîmîta demê</string>
+    <string name="input_game_mode_name_description">Bo hilbijartina moda lîstikê/tomarkirina pûanên bilind</string>
+    <string name="dialog_about_content">Li dîmenderê bitepîne û tiliya xwe bilivîne çargoşeyên cîran da ku peyvan kîte bikî. Sê xulekên te hene bo ku heta ji destên te tê gelek peyvan peyda bikî.
+\n
+\nPûandan:
+\nLi ser hûnanên 4x4an de divê peyv herî kêm bi dirêjahiya 3 tîpan bin. li ser hûnanên 5x5an de, divê peyv herî kêm bi dirêjahiya 5 tîpan bin. Peyvên 3 an 4 tîpî pûanek in. Peyvên dirêjtir pûanên zêde bi dest dixin. Navên taybet nayên hesibandin.
+\n
+\n</string>
+    <string name="input_game_mode_name_hint">Nav</string>
+    <string name="delete_custom_game_mode">Bila “%1$s” a lîstika taybet a kesane bê jêbirin\? Dê hemû pûanên bilind winda bibin.</string>
+    <string name="sort">Rêz bike</string>
+    <string name="theme_high_contrast">Dijberahiya Bilind</string>
+    <string name="theme_dark">Tarî</string>
+    <string name="theme_light">Ronî</string>
+    <string name="pref_theme_dialog">Rûkarê Hilbijêre</string>
+    <string name="pref_theme">Rûkar</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Serhêl</string>
+    <string name="pref_definitionProvider_dialog">Pêşkêşkera Pênasê Hilbijêre</string>
+    <string name="pref_definitionProvider_summary">Bo bikaranînê pêşkêşkerekê penasê hilbijêre. Heke pêşkêşkera hilbijartî ne sazkirî be, dê mîna Wiktonary-yê çavkaniyekê serhêl were bikaranîn.</string>
+    <string name="view_word"><u>Rê bide</u></string>
+    <string name="hide_unique">Peyvên Bêhempa Veşêre</string>
+    <string name="show_unique">Peyvên Bêhempa Rê bide</string>
+    <string name="hide_missed">Peyvên Peydanekirî Veşêre</string>
+    <string name="show_missed">Peyvên Peydanekirî Rê bide</string>
+    <string name="about">Derheq</string>
+    <string name="button_cancel">Dev jê berde</string>
+    <string name="button_delete">Jê bibe</string>
+    <string name="button_ok">BAŞ E</string>
+    <string name="menu_end_game">Lîstikê Biqedîne</string>
+    <string name="menu_save_game">Lîstikê tomar bike</string>
+    <string name="menu_rotate_board">Hûnanê Bizivirîne</string>
+    <string name="pref_definitionProvider">Pêşkêşkera Pênasê</string>
+    <string name="pref_breakdown_summary">Hejmara peyvan bi ya dirêjahiya peyvan têne rêdan an na</string>
+    <string name="pref_breakdown">Analîza Dirêjahiya Peyvan Rê bide</string>
+    <string name="reset_scores_prompt">Tu pê bawer î ku dixwazî hemû pûanên bilind ên hemû modên lîstikê jê bibî\?</string>
+    <string name="high_scores_reset">Pûanên bilind hat jêbirin.</string>
+    <string name="pref_resetScores">Pûanên Bilind Jê bibe</string>
+    <string name="pref_resetScores_summary">Bo her kombînasyona sazkariyên jor pûanên bilind tê şopandin. Bo hemû pûanan jê bibî, lê bitepîne.</string>
+    <string name="high_scores">Pûanên Herî Bilind</string>
+    <string name="high_score">Pûana Herî Bilind</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="total_score">Tevahî Pûan:</string>
+    <string name="total_words">Tevahiya Peyvan:</string>
+    <string name="missed_words">Peyvên Peydanekirî</string>
+    <string name="found_words">Peyvên peydakirî</string>
+    <string name="time">Mawe</string>
+    <string name="score">Pûan</string>
+    <string name="words">Peyv</string>
+    <string name="define_word"><u>Pênas bike</u> </string>
+    <string name="dialog_about_title">Li ser Lexica-yê</string>
+    <string name="dialog_refresh_confirmation_message">Hûnan hat nûkirin</string>
+    <string name="dialog_refresh_button">Nû bike</string>
+    <string name="dialog_refresh_content">Hay lê hebe ku tu bi hevrikên xwe re li ser heman hûnanê dilîzî, ji ber wê piştî nûkirinê, baş zanibe ku te hemû vexwendinên xwe dîsa şandine.</string>
+    <string name="dialog_refresh_title">Hûnanê nû bike</string>
+    <string name="pref_sounds_summary">Efektên dengan çalak e yan na</string>
+    <string name="pref_sounds">Dengan bike çalak</string>
+    <string name="hint_colour">Rengê xiştê</string>
+    <string name="tile_count">Hejmara peyvan</string>
+    <string name="pref_hintMode_summary">Hejmara peyvan rê dide yên ku tîp tê de derbas dibin î</string>
+    <string name="pref_hintMode">Moda serristeyê</string>
+    <string name="letter_points">Pûana tîpê</string>
+    <string name="word_length">Dirêjahiya Peyvê</string>
+    <string name="pref_scoreType">Cureya Puandanê</string>
+    <string name="pref_timeLimit">Lîmîta demê</string>
+    <string name="pref_boardSize">Mezinahiya Hûnanê</string>
+    <string name="lexicon_is_in_beta">Beta</string>
+    <string name="pref_dict_en_US" tools:keep="@string/pref_dict_en_US">Îngilîzî (DYA)</string>
+    <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">Ukraynî</string>
+    <string name="pref_dict_en_GB" tools:keep="@string/pref_dict_en_GB">Îngilîzî (KY)</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Rewşên rêzimanî û kurtenavan dihewîne</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Rûsî (Berfireh)</string>
+    <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">Rûsî</string>
+    <string name="pref_dict_pt_BR_no_diacritics" tools:keep="@string/pref_dict_pt_BR_no_diacritics">Portûgalî (Brezîlya)</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Tîpên aksan dihewîne: çáéíóúâêôãõà û van tîpan: kwy</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portûgalî (Brezîlya) (Berfireh)</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Polonî</string>
+    <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">Holendî</string>
+    <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">Japonî</string>
+    <string name="pref_dict_it" tools:keep="@string/pref_dict_it">Îtalî</string>
+    <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">Macarî</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Fransî</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Tîpên aksan dihewîne: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">Fransî (Berfireh)</string>
+    <string name="pref_dict_fa" tools:keep="@string/pref_dict_fa">Farsî</string>
+    <string name="pref_dict_es" tools:keep="@string/pref_dict_es">Spanyolî</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Almanî</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Tîpên aksan dihewîne: äöü</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">Almanî (Berfireh)</string>
+    <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Katalanî</string>
+    <string name="pref_dict">Ferheng</string>
+    <string name="prefs">Çêtirî</string>
+    <string name="restore_game">Lîstikê Vegerîne</string>
+    <string name="new_game">Lîstika Nû</string>
+    <string name="app_name">Lexica</string>
+</resources>
