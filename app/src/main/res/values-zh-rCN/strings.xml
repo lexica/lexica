@@ -75,7 +75,7 @@
     <string name="time">时间</string>
     <string name="sort">排序</string>
     <string name="theme_high_contrast">高对比度</string>
-    <string name="game_mode_letter_points">Letter Points</string>
+    <string name="game_mode_letter_points">字母得分</string>
     <plurals name="num_minutes">
         <item quantity="other">%d 分钟</item>
     </plurals>
@@ -159,5 +159,5 @@
     <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">包含变音符号：çáéíóúâêôãõà 及字母：kwy</string>
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">葡萄牙语 (巴西) (扩展)</string>
     <string name="dialog_end_game_confirm_message">你确定想结束这场游戏吗？</string>
-    <string name="dialog_end_game_confirm_title">结束游戏？</string>
+    <string name="dialog_end_game_confirm_title">结束游戏</string>
 </resources>
