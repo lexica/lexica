@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="new_game">Новая игра</string>
     <string name="restore_game">Продолжить</string>
     <string name="prefs">Настройки</string>
     <string name="pref_dict">Словарь</string>
-    <string name="pref_dict_en_US">Английский (Соединëнные Штаты)</string>
+    <string name="pref_dict_en_US">Английский (США)</string>
     <string name="pref_dict_en_GB">Английский (Великобритания)</string>
-    <string name="pref_dict_de_DE">Немецкий</string>
+    <string name="pref_dict_de_DE">Немецкий (расширенный)</string>
     <string name="pref_dict_nl">Нидерландский</string>
     <string name="pref_dict_fa">Фарси</string>
-    <string name="pref_dict_fr_FR">Французский</string>
+    <string name="pref_dict_fr_FR">Французский (расширенный)</string>
     <string name="pref_dict_it">Итальянский</string>
     <string name="pref_dict_ca">Каталанский</string>
     <string name="pref_dict_es">Испанский</string>
     <string name="lexicon_is_in_beta">Бета</string>
     <string name="pref_boardSize">Размер поля</string>
-    <string name="pref_timeLimit">Игровое время</string>
+    <string name="pref_timeLimit">Временной лимит</string>
     <string name="pref_scoreType">Начисление очков</string>
     <string name="word_length">По длине слов</string>
     <string name="letter_points">По очкам букв</string>
@@ -57,7 +57,7 @@
     <string name="pref_breakdown">Показывать количество слов одной длины</string>
     <string name="pref_breakdown_summary">Показывать количество слов каждой длины во время игры</string>
     <string name="pref_definitionProvider">Провайдер значений слов</string>
-    <string name="pref_definitionProvider_summary">Выберите желаемый провайдер значений слов. По умолчанию используется DuckDuckGo.</string>
+    <string name="pref_definitionProvider_summary">Выберите провайдера значений слов. Если выбранный провайдер не установлен, будет использован интернет-источник типа Викисловаря.</string>
     <string name="pref_definitionProvider_dialog">Выберите провайдер значений слов</string>
     <string name="hint_colour">Цвет плитки</string>
     <string name="pref_hintMode_summary">Показывает количество слов, в которых можно использовать каждую букву</string>
@@ -75,4 +75,96 @@
     <string name="pref_dict_pl">Польский</string>
     <string name="pref_dict_ja">Японский</string>
     <string name="pref_dict_hu">Венгерский</string>
+    <string name="game_mode_marathon_description">Попробуй найти все слова как можно быстрее</string>
+    <plurals name="num_minutes">
+        <item quantity="one">%d минута</item>
+        <item quantity="few">%d минуты</item>
+        <item quantity="many">%d минут</item>
+        <item quantity="other">%d минут</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d балл</item>
+        <item quantity="few">/ %d балла</item>
+        <item quantity="many">/ %d баллов</item>
+        <item quantity="other">/ %d баллов</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d слово</item>
+        <item quantity="few">%d / %d слова</item>
+        <item quantity="many">%d / %d слов</item>
+        <item quantity="other">%d / %d слов</item>
+    </plurals>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d слово</item>
+        <item quantity="few">%1$d слова</item>
+        <item quantity="many">%1$d слов</item>
+        <item quantity="other">%1$d слов</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d слово (нажми, чтобы обновить)</item>
+        <item quantity="few">%1$d слова (нажми, чтобы обновить)</item>
+        <item quantity="many">%1$d слов (нажми, чтобы обновить)</item>
+        <item quantity="other">%1$d слов (нажми, чтобы обновить)</item>
+    </plurals>
+    <string name="dialog_end_game_confirm_message">Вы уверены, что хотите закончить эту игру\?</string>
+    <string name="dialog_end_game_confirm_title">Закончить игру</string>
+    <string name="invalid_multiplayer_link">Получена неверная ссылка на мультиплеер, не удается присоединиться к игре. Убедитесь, что вы оба используете последнюю версию Lexica.</string>
+    <string name="new_game_mode">Новый игровой режим</string>
+    <string name="game_mode">Игровой режим</string>
+    <string name="multiplayer">Мультиплеер</string>
+    <string name="multiplayer__start_game">Начать игру</string>
+    <string name="multiplayer__qr_code__accessible_description">QR-код: Другие могут отсканировать, чтобы присоединиться к игре</string>
+    <string name="multiplayer__start_when_ready">Когда все игроки будут готовы, вы должны начать игру одновременно.</string>
+    <string name="multiplayer__share_invites">Поделиться приглашениями</string>
+    <string name="multiplayer_lobby__join_game">Присоединиться к игре</string>
+    <string name="multiplayer_lobby__join_when_ready">Когда все игроки будут готовы, присоединяйтесь к игре.</string>
+    <string name="menu_view_found_words">Посмотреть найденные слова</string>
+    <string name="whats_new_support_description">Lexica является и всегда будет бесплатной и с открытым исходным кодом.
+\n
+\nВы можете поддержать разработку материально через <a href="https://liberapay.com/Lexica">Liberapay</a> или <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="whats_new_support">Поддержать Lexica</string>
+    <string name="whats_new_multiplayer_description">Начните игру с главного экрана, затем отправьте приглашение через QR код, SMS, e-mail и т.д.
+\n
+\nПосле получения приглашения, другие могут играть на той же доске, как у тебя, с теми же правилами.
+\n
+\nКогда закончите, сравните ваши результаты, чтобы узнать, у кого лучше лексикон.
+\n
+\nКак всегда, приветствуются предложения, как можно улучшить эту функцию. Хотя эта функция не предназначена для мультиплеера в реальном времени/по сети, мы надеемся, что она вам понравится.</string>
+    <string name="whats_new_multiplayer">Мультиплеер!</string>
+    <string name="whats_new_continue">Продолжить</string>
+    <string name="whats_new_title">Что нового</string>
+    <string name="error_restoring_game">Не удалось восстановить Вашу игру</string>
+    <string name="game_mode_legacy_description">Использовался в ранней версии Lexica</string>
+    <string name="game_mode_legacy">Классика</string>
+    <string name="game_mode_custom_description">Пользовательский режим игры</string>
+    <string name="game_mode_letter_points">Очки за буквы</string>
+    <string name="game_mode_letter_points_description">Набери больше очков за использование нераспространённых букв</string>
+    <string name="game_mode_beginner_description">Используйте подсказки для поиска слов</string>
+    <string name="game_mode_beginner">Новичок</string>
+    <string name="game_mode_marathon">Марафон</string>
+    <string name="game_mode_sprint_description">Короткая игра, чтобы найти как можно больше слов</string>
+    <string name="game_mode_sprint">Спринт</string>
+    <string name="menu_save_game_mode">Сохранить</string>
+    <string name="menu_new_game_mode">Новый</string>
+    <string name="input_game_mode_minutes_description">Ограничение по времени в минутах</string>
+    <string name="input_game_mode_name_description">Для выбора режима / записи рекордов</string>
+    <string name="input_game_mode_name_hint">Имя</string>
+    <string name="high_scores">Рекорды</string>
+    <string name="delete_custom_game_mode">Удалить пользовательский режим \"%1$s\"\? Все рекорды будут утеряны.</string>
+    <string name="sort">Сортировать</string>
+    <string name="theme_high_contrast">Высококонтрастная</string>
+    <string name="button_cancel">Отменить</string>
+    <string name="button_delete">Удалить</string>
+    <string name="dialog_refresh_confirmation_message">Доска обновлена</string>
+    <string name="dialog_refresh_button">Обновить</string>
+    <string name="dialog_refresh_content">Чтобы убедиться, что вы играете на той же доске, что и ваши соперники, убедитесь, что вы повторно отправили все приглашения после обновления.</string>
+    <string name="dialog_refresh_title">Обновить доску</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Включает грамматику и аббревиатуры</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Русский (расширенный)</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Включает диакритические знаки: çáéíóúâêôãõà и буквы: kwy</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Португальский (Бразилия) (расширенный)</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Французский</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Включает диакритические знаки: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Немецкий</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Включает диакритические знаки: äöü</string>
 </resources>
