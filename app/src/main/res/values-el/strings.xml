@@ -110,4 +110,5 @@
     </plurals>
     <string name="whats_new_multiplayer">Για πολλούς παίκτες!</string>
     <string name="whats_new_title">Τι νέο υπάρχει</string>
+    <string name="dialog_refresh_button">Ανανέωση</string>
 </resources>
