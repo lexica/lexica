@@ -100,8 +100,7 @@ ${Keys.minWordLength}: $minWordLength"""
         private fun extractBoard(lines: List<String>): List<String> =
             lines
                 .filter { !it.contains(":") }
-                .map { it.replace(" ", "") }
-                .map { it.toCharArray().toList().map { character -> character.toString() } }
+                .map { it.split(" ") }
                 .flatten()
 
         private fun extractMetadata(lines: List<String>): Map<String, String> =
