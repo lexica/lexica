@@ -30,7 +30,7 @@ data class SharedGameData(
     )
 
     fun serialize(): Uri {
-        val boardChars = board.joinToString("")
+        val boardChars = board.joinToString("_")
         val scoreTypeSerialized = when (scoreType) {
             GameMode.SCORE_WORDS -> "w"
             GameMode.SCORE_LETTERS -> "l"
@@ -95,7 +95,8 @@ data class SharedGameData(
 
     companion object {
 
-        const val MIN_SUPPORTED_VERSION = 20007
+        private const val VERSION_COMMAS_INTRODUCED = 20015
+        const val MIN_SUPPORTED_VERSION = 20015
         const val CURRENT_VERSION = BuildConfig.VERSION_CODE;
 
         fun parseGame(uri: Uri): SharedGameData {
@@ -104,7 +105,11 @@ data class SharedGameData(
             val time = findKey(uri, Keys.time)
             val scoreType = findKey(uri, Keys.scoreType)
             val minWordLength = findKey(uri, Keys.minWordLength)
-            val minSupportedLexicaVersion = findKey(uri, Keys.minSupportedLexicaVersion)
+            val minSupportedLexicaVersion = findKey(uri, Keys.minSupportedLexicaVersion).toInt()
+
+            if (minSupportedLexicaVersion > CURRENT_VERSION) {
+                throw IllegalArgumentException("This version of Lexica ($CURRENT_VERSION) is too old, version $minSupportedLexicaVersion is required.")
+            }
 
             val hintMode = if (uri.queryParameterNames.contains(Keys.hintMode)) {
                 findKey(uri, Keys.hintMode)
@@ -112,14 +117,23 @@ data class SharedGameData(
                 ""
             }
 
+            val decodedBoard = if (minSupportedLexicaVersion < VERSION_COMMAS_INTRODUCED) {
+                /* Old versions didn't place underscores between letters, so multi-letter cells were
+                 * ambiguous and can't be reliably parsed
+                 */
+                board.toCharArray().map { it.toString() }
+            } else {
+                board.split("_")
+            }
+
             return SharedGameData(
-                board.toCharArray().map { it.toString() },
+                decodedBoard,
                 Language.from(languageCode),
                 parseScoreType(scoreType),
                 time.toInt(),
                 minWordLength.toInt(),
                 parseHintMode(hintMode),
-                minSupportedLexicaVersion.toInt(),
+                minSupportedLexicaVersion,
             )
 
         }
