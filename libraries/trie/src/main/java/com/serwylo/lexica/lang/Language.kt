@@ -106,6 +106,7 @@ abstract class Language {
                 "en_GB" to EnglishGB(),
                 "en_US" to EnglishUS(),
                 "es" to Spanish(),
+		"es_solo_enne" to SpanishSoloEnne(),
                 "fa" to Persian(),
                 "fr_FR" to French(),
                 "fr_FR_no_diacritics" to FrenchNoDiacritics(),
