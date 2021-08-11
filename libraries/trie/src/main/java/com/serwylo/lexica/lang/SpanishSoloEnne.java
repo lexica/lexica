@@ -11,8 +11,7 @@ public class SpanishSoloEnne extends Language {
     // These letter values are drawn from the Scrabble point values:
     // https://en.wikipedia.org/wiki/Scrabble_letter_distributions#Spanish
     static {
-        letterPoints.put("a", 1);
-        
+        letterPoints.put("a", 1);     
         letterPoints.put("e", 1);
         letterPoints.put("o", 1);
         letterPoints.put("i", 1);
@@ -37,8 +36,8 @@ public class SpanishSoloEnne extends Language {
         letterPoints.put("qu", 5);
         letterPoints.put("j", 8);
         letterPoints.put("ñ", 8);
-        letterPoints.put("x", 1);
-        letterPoints.put("z", 1);
+        letterPoints.put("x", 8); /* This score was wrong*/
+        letterPoints.put("z", 10); /* This score was wrong */
 
         // TODO: These are not included in Scrabble.
         // Indeed, they are only used for loanwords.
