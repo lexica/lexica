@@ -1,0 +1,5 @@
+Translations:
+* Added Lithuanian translation (thanks to g)
+* Updated translations.
+
+A big and heartfelt thank you to all the translators, who have now collectively translated Lexica into *over 40 different languages*!
