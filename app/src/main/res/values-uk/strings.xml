@@ -175,4 +175,7 @@
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Португальська (Бразилія) (розширена)</string>
     <string name="dialog_end_game_confirm_message">Ви впевнені, що хочете завершити цю гру\?</string>
     <string name="dialog_end_game_confirm_title">Завершити гру</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Включає ñ, але без акцентів</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Лише іспанська Ñ</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Включає діакритику: áéíóúüñ</string>
 </resources>
