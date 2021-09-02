@@ -106,6 +106,7 @@
     <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">Francés</string>
     <string name="pref_dict_fa" tools:keep="@string/pref_dict_fa">Persa</string>
     <string name="pref_dict_es" tools:keep="@string/pref_dict_es">Español</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es">Español sin acentos</string>
     <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">Alemán</string>
     <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Catalán</string>
     <string name="delete_custom_game_mode">¿Eliminar el modo de juego «%1$s»\? Las puntuaciones asolidas se perderán.</string>
