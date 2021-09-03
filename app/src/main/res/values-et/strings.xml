@@ -165,4 +165,7 @@
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">portugali (Brasiilia) (laiendatud)</string>
     <string name="dialog_end_game_confirm_message">Kas sa oled sa kindel, et soovid selle mängu lõpetada\?</string>
     <string name="dialog_end_game_confirm_title">Lõpeta mäng</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Sealhulgas ñ, kuid ilma rõhumärkideta</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Hispaania keele puhul Ñ</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Sealhulgas diakriitilised märgid: áéíóúüñ</string>
 </resources>
