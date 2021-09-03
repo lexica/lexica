@@ -165,4 +165,7 @@
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portekizce (Brezilya) (Genişletilmiş)</string>
     <string name="dialog_end_game_confirm_message">Bu oyunu bitirmek istediğinizden emin misiniz\?</string>
     <string name="dialog_end_game_confirm_title">Oyunu Bitir</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">ñ içerir ancak aksan işaretlerini içermez</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Yalnızca İspanyolca Ñ</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">áéíóúüñ aksan işaretlerini içerir</string>
 </resources>
