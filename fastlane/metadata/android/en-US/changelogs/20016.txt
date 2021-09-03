@@ -1,0 +1,5 @@
+Additional Spanish dictionary with Ñ but not other diacritics.
+
+Thank you very much to @jgmy for contributing this change.
+
+If you would like to add additional dictionaries for your favourite language, come join the community at http://github.com/lexica/lexica. Pull requests will be warmly received, as will issues recommending new dictionaries. 
