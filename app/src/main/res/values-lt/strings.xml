@@ -160,4 +160,7 @@
     <string name="restore_game">Atkurti žaidimą</string>
     <string name="new_game">Naujas žaidimas</string>
     <string name="app_name">Lexica</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Apima ñ, bet be kirčių</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Ispanų tik su Ñ</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Su diakritiniais ženklais: áéíóúüñ</string>
 </resources>
