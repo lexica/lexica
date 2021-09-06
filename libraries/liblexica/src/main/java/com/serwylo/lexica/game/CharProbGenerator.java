@@ -24,8 +24,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class CharProbGenerator {
@@ -58,6 +60,14 @@ public class CharProbGenerator {
             // Checked exceptions considered harmful.
         }
 
+    }
+
+    public Map<String, List<Integer>> getDistribution() {
+        Map<String, List<Integer>> dist = new HashMap<>();
+        for (ProbabilityQueue p : charProbs) {
+            dist.put(p.letter, new ArrayList<>(p.probQueue));
+        }
+        return dist;
     }
 
     public List<String> getAlphabet() {
@@ -117,7 +127,7 @@ public class CharProbGenerator {
         return board;
     }
 
-    private static class ProbabilityQueue {
+    public static class ProbabilityQueue {
 
         private final String letter;
         private final LinkedList<Integer> probQueue;
