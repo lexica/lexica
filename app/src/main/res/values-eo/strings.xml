@@ -165,4 +165,7 @@
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">La portugala (brazila) (etendita)</string>
     <string name="dialog_end_game_confirm_message">Ĉu vi certe volas fini ĉi tiun ludon\?</string>
     <string name="dialog_end_game_confirm_title">Fini ludon</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Inkluzivas Ñ, sed sen vokalaj supersignoj</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">La hispana kun nur Ñ</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Inkluzive de supersignoj: áéíóúüñ</string>
 </resources>
