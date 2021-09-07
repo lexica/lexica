@@ -150,4 +150,7 @@
     <string name="dialog_end_game_confirm_title">Kết thúc trò chơi</string>
     <string name="pref_dict_pt_BR_no_diacritics" tools:keep="@string/pref_dict_pt_BR_no_diacritics">Tiếng Bồ Đào Nha (Brazil)</string>
     <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Bao gồm các dấu phụ: çáéíóúâêôãõà và các chữ cái: kwy</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Bao gồm ñ nhưng không có điểm nhấn</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Tiếng Tây Ban Nha chỉ Ñ</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Bao gồm các dấu phụ: áéíóúüñ</string>
 </resources>
