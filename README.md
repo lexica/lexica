@@ -50,3 +50,11 @@ Some differences include:
  * Multiple international dictionaries and an internationalised UI.
  * New scoring modes, hint modes, and other options.
  * New user interface, including multiple themes.
+
+## Lexica API
+
+A lot of work from many people in the community has gone into producing localised dictionaries
+for Lexica. To share this so that you can make your own word games, or your own Lexica versions,
+this information is published at:
+
+https://lexica.github.io/lexica/
