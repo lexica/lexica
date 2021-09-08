@@ -33,7 +33,7 @@ abstract class Language {
      * Although not always the case, it happens so frequently that for the benefit of a game,
      * it doesn't make sense to ever have a "q" by itself.
      */
-    abstract fun applyMandatorySuffix(value: String?): String?
+    abstract fun applyMandatorySuffix(value: String?): String
 
     /**
      * Each "letter" tile has a score. This score distribution is unique amoung different languages,

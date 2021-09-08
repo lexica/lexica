@@ -1,0 +1,21 @@
+plugins {
+    id 'kotlin'
+    id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlin_version"
+}
+
+dependencies {
+    implementation project(path: ':libraries:trie')
+    implementation project(path: ':libraries:liblexica')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2'
+}
+
+task generateApi(dependsOn: ":api-generator:classes", type: JavaExec) {
+    main = "com.serwylo.lexica.api.ApiGeneratorKt"
+    classpath = sourceSets.main.runtimeClasspath
+    args = [
+        "../assets/dictionaries/",
+        "../app/src/main/res/raw/",
+        "../build/api-generator/",
+    ]
+}

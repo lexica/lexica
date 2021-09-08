@@ -1,0 +1,41 @@
+name: Generate and publish the Lexica API
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+
+  generate-and-publish:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 8
+
+      - name: Build API files
+        run: ./gradlew :api-generator:generateApi
+
+      # This and the following step is based on https://kaizendorks.github.io/2020/04/16/vuepress-github-actions/
+      - name: Init new repo in ./build/api and commit generated API files
+        run: |
+          cd ./build/api-generator/
+          git init
+          git add -A
+          git config --local user.email "peter.serwylo+lexica-api@gmail.com"
+          git config --local user.name "Lexica API GitHub Action"
+          git commit -m "[GitHub Actions] Deploy Lexica API for $GITHUB_SHA"
+
+      - name: Force push to gh-pages branch
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          force: true
+          directory: ./build/api-generator/
