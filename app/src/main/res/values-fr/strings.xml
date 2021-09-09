@@ -165,4 +165,7 @@
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugais (Brésil) (étendu)</string>
     <string name="dialog_end_game_confirm_message">Êtes-vous sûr(e) de vouloir terminer cette partie \?</string>
     <string name="dialog_end_game_confirm_title">Terminer la partie</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Inclut ñ mais aucun accent</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Espagnol uniquement Ñ</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Inclut les diacritiques : áéíóúüñ</string>
 </resources>
