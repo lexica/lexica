@@ -165,4 +165,6 @@
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugiesisch (Brasilien) (erweitert)</string>
     <string name="dialog_end_game_confirm_message">Sind Sie sicher, dass Sie dieses Spiel beenden wollen\?</string>
     <string name="dialog_end_game_confirm_title">Spiel beenden</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Spanisch, nur Ñ</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Enthält diakritische Zeichen: áéíóúüñ</string>
 </resources>
