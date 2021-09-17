@@ -1,0 +1,7 @@
+Better multiplayer support (thanks to ecrips):
+
+* Fixes boards containing "Qu".
+* Hides contents of the board to eager eyes when sharing via SMS.
+* WARNING: Multiplayer games from v3+ will cause older versions to crash. Upgrade to play against newer versions. Future enhancements will ask players to upgrade instead of crashing.
+
+Translations updated.
