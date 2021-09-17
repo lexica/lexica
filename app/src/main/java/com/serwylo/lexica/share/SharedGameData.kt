@@ -1,10 +1,10 @@
 package com.serwylo.lexica.share
 
 import android.net.Uri
+import android.util.Base64
 import com.serwylo.lexica.BuildConfig
 import com.serwylo.lexica.db.GameMode
 import com.serwylo.lexica.lang.Language
-import java.lang.IllegalArgumentException
 
 /**
  * Encode a URI for sharing o Lexica game with other players.
@@ -30,7 +30,8 @@ data class SharedGameData(
     )
 
     fun serialize(): Uri {
-        val boardChars = board.joinToString("")
+        val boardChars = Base64.encodeToString(board.joinToString(",").encodeToByteArray(),
+                Base64.NO_PADDING + Base64.NO_WRAP + Base64.URL_SAFE)
         val scoreTypeSerialized = when (scoreType) {
             GameMode.SCORE_WORDS -> "w"
             GameMode.SCORE_LETTERS -> "l"
@@ -95,8 +96,9 @@ data class SharedGameData(
 
     companion object {
 
-        const val MIN_SUPPORTED_VERSION = 20007
-        const val CURRENT_VERSION = BuildConfig.VERSION_CODE;
+        private const val VERSION_COMMAS_INTRODUCED = 20017
+        const val MIN_SUPPORTED_VERSION = 20017
+        const val CURRENT_VERSION = BuildConfig.VERSION_CODE
 
         fun parseGame(uri: Uri): SharedGameData {
             val board = findKey(uri, Keys.board)
@@ -104,7 +106,11 @@ data class SharedGameData(
             val time = findKey(uri, Keys.time)
             val scoreType = findKey(uri, Keys.scoreType)
             val minWordLength = findKey(uri, Keys.minWordLength)
-            val minSupportedLexicaVersion = findKey(uri, Keys.minSupportedLexicaVersion)
+            val minSupportedLexicaVersion = findKey(uri, Keys.minSupportedLexicaVersion).toInt()
+
+            if (minSupportedLexicaVersion > CURRENT_VERSION) {
+                throw IllegalArgumentException("This version of Lexica ($CURRENT_VERSION) is too old, version $minSupportedLexicaVersion is required.")
+            }
 
             val hintMode = if (uri.queryParameterNames.contains(Keys.hintMode)) {
                 findKey(uri, Keys.hintMode)
@@ -112,14 +118,37 @@ data class SharedGameData(
                 ""
             }
 
+            val language = Language.from(languageCode)
+
+            val decodedBoard = if (minSupportedLexicaVersion < VERSION_COMMAS_INTRODUCED) {
+                // Old versions didn't place underscores between letters, so multi-letter cells were
+                // ambiguous and can't be reliably parsed. To attempt to deal with this decode
+                // each letter in turn and check applyMandatorySuffix to identify how many
+                // characters should be present
+                var inArray = board.toCharArray().toList()
+                val outArray = ArrayList<String>()
+                while (inArray.isNotEmpty()) {
+                    val firstChar = inArray[0]
+                    val withSuffix = language.applyMandatorySuffix(firstChar.toString())
+                    outArray.add(withSuffix)
+                    inArray = inArray.drop(withSuffix.length)
+                }
+                outArray
+            } else {
+                // Board is base64 encoded and has letters split by commas
+                val boardString = Base64.decode(board,
+                            Base64.NO_PADDING + Base64.NO_WRAP + Base64.URL_SAFE)
+                String(boardString).split(",")
+            }
+
             return SharedGameData(
-                board.toCharArray().map { it.toString() },
-                Language.from(languageCode),
+                decodedBoard,
+                language,
                 parseScoreType(scoreType),
                 time.toInt(),
                 minWordLength.toInt(),
                 parseHintMode(hintMode),
-                minSupportedLexicaVersion.toInt(),
+                minSupportedLexicaVersion,
             )
 
         }
