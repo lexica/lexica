@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="new_game">Nytt spel</string>
     <string name="restore_game">Fortsätt spela</string>
     <string name="prefs">Inställningar</string>
     <string name="pref_dict">Lexikon</string>
     <string name="pref_dict_ca">Katalanska</string>
-    <string name="pref_dict_de_DE">Tyska</string>
+    <string name="pref_dict_de_DE">Tyska (Utökad)</string>
     <string name="pref_dict_es">Spanska</string>
     <string name="pref_dict_fa">Persiska</string>
-    <string name="pref_dict_fr_FR">Franska</string>
+    <string name="pref_dict_fr_FR">Franska (Utökad)</string>
     <string name="pref_dict_hu">Ungerska</string>
     <string name="pref_dict_it">Italienska</string>
     <string name="pref_dict_ja">Japanska</string>
@@ -103,12 +103,18 @@
         <item quantity="other">%d min</item>
     </plurals>
     <string name="whats_new_why">Varför\?</string>
-    <string name="whats_new_continue">Fortsätta</string>
+    <string name="whats_new_continue">Fortsätt</string>
     <string name="error_restoring_game">Kunna inte återställa ditt spel</string>
     <string name="game_mode_legacy_description">Användt i tidigare version av Lexica</string>
     <string name="game_mode_letter_points_description">Få flera poäng for att använda mer seldon spelade bokstavar</string>
-    <string name="game_mode_beginner">Begynner</string>
+    <string name="game_mode_beginner">Nybörjare</string>
     <string name="button_cancel">Avbryta</string>
-    <string name="button_delete">Slätt</string>
-    <string name="game_mode_sprint_description">Kort spel om att finna så manga ord som mögligt</string>
+    <string name="button_delete">Radera</string>
+    <string name="game_mode_sprint_description">Kort spel för att hitta så många ord som möjligt</string>
+    <string name="dialog_refresh_button">Uppdatera</string>
+    <string name="multiplayer_lobby__join_game">Gå med i spel</string>
+    <string name="menu_view_found_words">Visa hittade ord</string>
+    <string name="multiplayer__share_invites">Dela inbjudningar</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Spanska endast Ñ</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Ryska (Utökad)</string>
 </resources>
