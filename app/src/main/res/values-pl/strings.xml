@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="new_game">Nowa gra</string>
     <string name="restore_game">Przywrócić grę</string>
@@ -76,4 +76,9 @@
     <string name="sort">Sortuj</string>
     <string name="theme_high_contrast">Wysoki Kontrast</string>
     <string name="input_game_mode_minutes_description">Limit czasu w minutach</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Zawiera znaki diakrytyczne: äöü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Niemiecki</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Zawiera znaki diakrytyczne: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francuski</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Zawiera znaki diakrytyczne: áéíóúüñ</string>
 </resources>
