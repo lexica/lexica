@@ -1,6 +1,6 @@
 # v0.10.0 onwards
 
-See `metadata/android/en-US/changelogs/` for individual changelogs for each version.
+See `fastlane/metadata/android/en-US/changelogs/` for individual changelogs for each version.
 
 # v0.9.6
 
