@@ -1,0 +1,8 @@
+Improvements:
+ * Fix for missing words in German dictionaries (thanks to db2222 and Morphior)
+
+Updated translations.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
+
+Support Lexica development via Liberapay or GitHub Sponsors :)
