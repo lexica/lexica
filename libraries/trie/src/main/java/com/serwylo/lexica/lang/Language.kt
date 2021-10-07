@@ -145,7 +145,7 @@ abstract class Language {
 
         @JvmStatic
         fun getWiktionaryDefinitionUrl(langCode: String): String {
-            return "https://$langCode.wiktionary.org/wiki/%s"
+            return "https://$langCode.wiktionary.org/w/index.php?search=%s"
         }
 
     }
