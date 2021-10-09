@@ -231,13 +231,17 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                 synch.start();
                 break;
             case GAME_FINISHED:
-                score();
+                score(true);
                 break;
         }
     }
 
     public void doFinalEvent() {
-        score();
+        score(true);
+    }
+
+    public void showCurrentlyFoundWords() {
+        score(false);
     }
 
     private boolean hasSavedGame() {
@@ -248,9 +252,13 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         new GameSaverPersistent(this).clearSavedGame();
     }
 
-    private void score() {
+    private void score(boolean gameFinished) {
         synch.abort();
-        clearSavedGame();
+        if (gameFinished) {
+            clearSavedGame();
+        } else {
+            saveGamePersistent();
+        }
 
         final Bundle bun = new Bundle();
         game.save(new GameSaverTransient(bun));
@@ -258,17 +266,19 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         Database.writeExecutor.execute(() -> {
             ResultRepository repo = new ResultRepository(this);
             repo.recordGameResult(game);
-            showScore(bun);
+            showScore(bun, gameFinished);
         });
     }
 
-    private void showScore(Bundle bundleWithSavedGame) {
+    private void showScore(Bundle bundleWithSavedGame, boolean gameFinished) {
         Intent scoreIntent = new Intent("com.serwylo.lexica.action.SCORE");
         scoreIntent.putExtras(bundleWithSavedGame);
 
         startActivity(scoreIntent);
 
-        finish();
+        if (gameFinished) {
+            finish();
+        }
     }
 
     @Override

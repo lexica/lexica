@@ -31,6 +31,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 
+import com.serwylo.lexica.GameActivity;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.Synchronizer;
 import com.serwylo.lexica.db.GameMode;
@@ -70,6 +71,10 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
     private Paint p;
     private Set<Integer> highlighted = new HashSet<>();
     private int maxWeight;
+
+    private float wordCountPosXLeft;
+    private float wordCountPosXRight;
+    private float wordCountPosYTop;
 
     public LexicaView(Context context, Game g) {
         this(context);
@@ -431,6 +436,12 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         p.setTextSize(theme.game.score.textSize);
         p.setTypeface(Fonts.get().getSansSerifBold());
         canvas.drawText(value, x + panelWidth / 2, y + theme.game.score.padding + headingHeight + theme.game.score.padding / 2f + valueHeight, p);
+
+        if (panelNum == 1 && wordCountPosXLeft == 0) {
+            wordCountPosXLeft = x;
+            wordCountPosXRight = x + panelWidth;
+            wordCountPosYTop = y;
+        }
     }
 
     private void clearScreen(Canvas canvas) {
@@ -467,11 +478,20 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
                 break;
             case MotionEvent.ACTION_UP:
                 mFingerTracker.release();
+                checkWordCountTap(event);
                 break;
         }
 
         redraw();
         return true;
+    }
+
+    private void checkWordCountTap(MotionEvent event) {
+        if (event.getX() >= wordCountPosXLeft
+         && event.getX() <= wordCountPosXRight
+         && event.getY() >= wordCountPosYTop) {
+            ((GameActivity)getContext()).showCurrentlyFoundWords();
+        }
     }
 
     @Override

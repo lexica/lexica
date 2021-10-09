@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -97,6 +98,8 @@ public class ScoreActivity extends AppCompatActivity {
             found.setBackgroundColor(buttonBackgroundColorSelected);
             missed.setBackgroundColor(buttonBackgroundColor);
         });
+
+        missed.setVisibility(game.getStatus() == Game.GameStatus.GAME_PAUSED ? View.GONE : View.VISIBLE);
 
         missed.setOnClickListener(view -> {
             recycler.scrollToPosition(1);
