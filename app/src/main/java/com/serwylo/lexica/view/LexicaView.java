@@ -490,7 +490,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         if (event.getX() >= wordCountPosXLeft
          && event.getX() <= wordCountPosXRight
          && event.getY() >= wordCountPosYTop) {
-            ((GameActivity)getContext()).showCurrentlyFoundWords();
+            ((GameActivity)getContext()).showFoundWords();
         }
     }
 

@@ -33,6 +33,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
+import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.db.ResultRepository;
@@ -231,17 +232,13 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                 synch.start();
                 break;
             case GAME_FINISHED:
-                score(true);
+                finishGame();
                 break;
         }
     }
 
     public void doFinalEvent() {
-        score(true);
-    }
-
-    public void showCurrentlyFoundWords() {
-        score(false);
+        finishGame();
     }
 
     private boolean hasSavedGame() {
@@ -252,33 +249,36 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         new GameSaverPersistent(this).clearSavedGame();
     }
 
-    private void score(boolean gameFinished) {
+    private void finishGame() {
         synch.abort();
-        if (gameFinished) {
-            clearSavedGame();
-        } else {
-            saveGamePersistent();
-        }
-
-        final Bundle bun = new Bundle();
-        game.save(new GameSaverTransient(bun));
+        clearSavedGame();
 
         Database.writeExecutor.execute(() -> {
             ResultRepository repo = new ResultRepository(this);
             repo.recordGameResult(game);
-            showScore(bun, gameFinished);
         });
+
+        Intent scoreIntent = createScoreIntent();
+        startActivity(scoreIntent);
+        finish();
     }
 
-    private void showScore(Bundle bundleWithSavedGame, boolean gameFinished) {
+    public void showFoundWords() {
+        synch.abort();
+        saveGamePersistent();
+
+        Intent scoreIntent = createScoreIntent();
+        scoreIntent.addFlags(ScoreActivity.ONLY_FOUND_WORDS);
+        startActivity(scoreIntent);
+    }
+
+    private Intent createScoreIntent() {
+        final Bundle bundleWithSavedGame = new Bundle();
+        game.save(new GameSaverTransient(bundleWithSavedGame));
+
         Intent scoreIntent = new Intent("com.serwylo.lexica.action.SCORE");
         scoreIntent.putExtras(bundleWithSavedGame);
-
-        startActivity(scoreIntent);
-
-        if (gameFinished) {
-            finish();
-        }
+        return scoreIntent;
     }
 
     @Override

@@ -38,6 +38,7 @@ public class ScoreActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")
     private static final String TAG = "ScoreActivity";
+    public static final int ONLY_FOUND_WORDS = 1;
 
     private Game game;
 
@@ -99,7 +100,8 @@ public class ScoreActivity extends AppCompatActivity {
             missed.setBackgroundColor(buttonBackgroundColor);
         });
 
-        missed.setVisibility(game.getStatus() == Game.GameStatus.GAME_PAUSED ? View.GONE : View.VISIBLE);
+        boolean onlyFoundWords = (getIntent().getFlags() & ONLY_FOUND_WORDS) != 0;
+        missed.setVisibility(onlyFoundWords ? View.GONE : View.VISIBLE);
 
         missed.setOnClickListener(view -> {
             recycler.scrollToPosition(1);
