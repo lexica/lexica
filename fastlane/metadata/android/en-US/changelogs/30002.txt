@@ -1,0 +1,4 @@
+New feature:
+ * To see all words found so far in a game, tap the number of words at the bottom of the screen (thanks to @db2222).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
