@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +38,7 @@ public class ScoreActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")
     private static final String TAG = "ScoreActivity";
+    public static final String ONLY_FOUND_WORDS = "ONLY_FOUND_WORDS";
 
     private Game game;
 
@@ -97,6 +99,9 @@ public class ScoreActivity extends AppCompatActivity {
             found.setBackgroundColor(buttonBackgroundColorSelected);
             missed.setBackgroundColor(buttonBackgroundColor);
         });
+
+        boolean onlyFoundWords = getIntent().getBooleanExtra(ONLY_FOUND_WORDS, false);
+        missed.setVisibility(onlyFoundWords ? View.GONE : View.VISIBLE);
 
         missed.setOnClickListener(view -> {
             recycler.scrollToPosition(1);

@@ -49,7 +49,9 @@ class ScoreCalculator(game: Game) {
 
             }
 
-            possible.remove(w)
+            if (game.status == Game.GameStatus.GAME_FINISHED) {
+                possible.remove(w)
+            }
 
         }
 
