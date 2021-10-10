@@ -38,7 +38,7 @@ public class ScoreActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")
     private static final String TAG = "ScoreActivity";
-    public static final int ONLY_FOUND_WORDS = 1;
+    public static final String ONLY_FOUND_WORDS = "ONLY_FOUND_WORDS";
 
     private Game game;
 
@@ -100,7 +100,7 @@ public class ScoreActivity extends AppCompatActivity {
             missed.setBackgroundColor(buttonBackgroundColor);
         });
 
-        boolean onlyFoundWords = (getIntent().getFlags() & ONLY_FOUND_WORDS) != 0;
+        boolean onlyFoundWords = getIntent().getBooleanExtra(ONLY_FOUND_WORDS, false);
         missed.setVisibility(onlyFoundWords ? View.GONE : View.VISIBLE);
 
         missed.setOnClickListener(view -> {

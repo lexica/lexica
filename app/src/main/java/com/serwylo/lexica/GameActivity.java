@@ -268,7 +268,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
         saveGamePersistent();
 
         Intent scoreIntent = createScoreIntent();
-        scoreIntent.addFlags(ScoreActivity.ONLY_FOUND_WORDS);
+        scoreIntent.putExtra(ScoreActivity.ONLY_FOUND_WORDS, true);
         startActivity(scoreIntent);
     }
 
