@@ -8,16 +8,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.serwylo.lexica.R
 import com.serwylo.lexica.ThemeManager
-import com.serwylo.lexica.databinding.MultiplayerLobbyBinding
+import com.serwylo.lexica.databinding.ShareGameLobbyBinding
 import com.serwylo.lexica.db.GameMode
 import com.serwylo.lexica.db.GameModeRepository
 import com.serwylo.lexica.game.Game
 import com.serwylo.lexica.lang.Language
 import com.serwylo.lexica.share.SharedGameData
 
-class MultiplayerLobbyActivity : AppCompatActivity() {
+class ShareGameLobbyActivity : AppCompatActivity() {
 
-    private lateinit var binding: MultiplayerLobbyBinding
+    private lateinit var binding: ShareGameLobbyBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -25,7 +25,7 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
 
         ThemeManager.getInstance().applyTheme(this)
 
-        binding = MultiplayerLobbyBinding.inflate(layoutInflater)
+        binding = ShareGameLobbyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
@@ -36,7 +36,7 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
 
         val uri = intent.data
         if (uri == null) {
-            Log.e(TAG, "Expected a URI containing the information required to start a multiplayer game, but received null.")
+            Log.e(TAG, "Expected a URI containing the information required to start a multiplayer/shared game, but received null.")
             Toast.makeText(this, R.string.invalid_multiplayer_link, Toast.LENGTH_LONG).show()
             finish()
             return
@@ -88,7 +88,7 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
     }
 
     companion object {
-        val TAG = MultiplayerLobbyActivity::class.simpleName
+        val TAG = ShareGameLobbyActivity::class.simpleName
     }
 
 }

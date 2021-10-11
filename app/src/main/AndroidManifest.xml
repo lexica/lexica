@@ -25,7 +25,7 @@
 			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
 		</activity>
 
-		<activity android:name=".activities.MultiplayerLobbyActivity"
+		<activity android:name=".activities.ShareGameLobbyActivity"
 			android:screenOrientation="portrait"
 			android:configChanges="orientation|keyboardHidden"
 			android:parentActivityName=".MainMenuActivity">
