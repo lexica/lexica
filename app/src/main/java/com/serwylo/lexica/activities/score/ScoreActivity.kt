@@ -16,18 +16,17 @@
  */
 package com.serwylo.lexica.activities.score
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import com.serwylo.lexica.GameSaverTransient
 import com.serwylo.lexica.R
 import com.serwylo.lexica.ThemeManager
 import com.serwylo.lexica.databinding.ScoreBinding
 import com.serwylo.lexica.game.Game
-import kotlinx.android.synthetic.main.score_view.view.*
-import mehdi.sakout.fancybuttons.FancyButton
+import com.serwylo.lexica.share.SharedGameData
 
 class ScoreActivity : AppCompatActivity() {
 
@@ -86,12 +85,12 @@ class ScoreActivity : AppCompatActivity() {
 
         val onlyFoundWords = intent.getBooleanExtra(ONLY_FOUND_WORDS, false)
         if (onlyFoundWords) {
+            binding.foundWordsButton.visibility = View.GONE
             binding.missedWordsButton.visibility = View.GONE
+            binding.shareButton.visibility = View.GONE
         }
 
         binding.foundWordsButton.setBackgroundColor(buttonBackgroundColorSelected)
-        binding.missedWordsButton.setBackgroundColor(buttonBackgroundColorSelected)
-        binding.backButton.setBackgroundColor(buttonBackgroundColorSelected)
 
         binding.foundWordsButton.setOnClickListener {
             binding.recyclerView.scrollToPosition(0)
@@ -106,6 +105,26 @@ class ScoreActivity : AppCompatActivity() {
         }
 
         binding.backButton.setOnClickListener { finish() }
+        binding.shareButton.setOnClickListener { share() }
+    }
+
+    private fun share() {
+        val sendIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            type = "text/plain"
+
+            val uri = SharedGameData(game.board.letters.toList(), game.language, game.gameMode, SharedGameData.Type.SHARE, game.wordCount, game.score).serialize()
+            val text = """
+                ${getString(R.string.invite__challenge__description, game.wordCount, game.score)}
+                
+                $uri
+                
+                ${getString(R.string.invite__dont_have_lexica_installed)}
+            """.trimIndent()
+            putExtra(Intent.EXTRA_TEXT, text)
+        }
+
+        startActivity(Intent.createChooser(sendIntent, getString(R.string.send_challenge_invite_to)))
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

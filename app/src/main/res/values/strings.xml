@@ -137,9 +137,17 @@
     <string name="multiplayer">Multiplayer</string>
     <string name="game_mode">Game mode</string>
     <string name="new_game_mode">New game mode</string>
-    <string name="invalid_multiplayer_link">Received incorrect multiplayer link, cannot join game. Make sure both of you are using the latest version of Lexica.</string>
+    <string name="invalid_multiplayer_link">Received incorrect multiplayer/share link, cannot join game. Make sure both of you are using the latest version of Lexica.</string>
     <string name="dialog_end_game_confirm_title">End Game</string>
     <string name="dialog_end_game_confirm_message">Are you sure you want to end this game?</string>
+    <string name="share">Share</string>
+    <string name="back">Back</string>
+    <string name="invite__multiplayer__description">You\'ve been invited to a multiplayer Lexica game:</string>
+    <string name="invite__multiplayer__game_offline">Want to play offline? Try playing via pen and paper:</string>
+    <string name="invite__challenge__description">I found %1$d words and scored %2$d points on this Lexica board, can you beat me?</string>
+    <string name="invite__dont_have_lexica_installed">Don\'t have Lexica installed? Get it from https://play.google.com/store/apps/details?id=com.serwylo.lexica</string>
+    <string name="send_challenge_invite_to">Send challenge to…</string>
+    <string name="send_multiplayer_invite_to">Send invite to…</string>
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d word (tap to refresh)</item>
         <item quantity="other">%1$d words (tap to refresh)</item>

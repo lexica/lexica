@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.serwylo.lexica.R
@@ -18,6 +19,8 @@ import com.serwylo.lexica.share.SharedGameData
 class ShareGameLobbyActivity : AppCompatActivity() {
 
     private lateinit var binding: ShareGameLobbyBinding
+
+    private var isMultiplayer = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -42,6 +45,10 @@ class ShareGameLobbyActivity : AppCompatActivity() {
             return
         }
 
+        isMultiplayer =
+            uri.scheme == "lexica" && uri.host == "multiplayer" ||
+            uri.host == "lexica.github.io" && uri.pathSegments.firstOrNull() == "m"
+
         try {
             val sharedGameData = SharedGameData.parseGame(uri)
             setup(sharedGameData)
@@ -63,6 +70,13 @@ class ShareGameLobbyActivity : AppCompatActivity() {
         AsyncTask.execute {
             val gameMode = repo.ensureRulesExist(data)
             runOnUiThread {
+
+                if (!isMultiplayer) {
+                    binding.textToJoin.text = getString(R.string.invite__challenge__description, data.numWordsToBeat, data.scoreToBeat)
+                    binding.startGame.setText(getString(R.string.multiplayer__start_game))
+                    binding.toolbar.title = "Social Challenge"
+                }
+
                 binding.gameModeDetails.setLanguage(data.language)
                 binding.gameModeDetails.setGameMode(gameMode)
                 binding.startGame.isEnabled = true
