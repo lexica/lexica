@@ -1,0 +1,7 @@
+Share a challenge!
+
+After finishing a game, you can now share that board with your friends and challenge them to beat your score.
+
+Similar to multiplayer, but for that time when you've just played a particularly interesting or challenging board layout that you think your friends will enjoy.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.

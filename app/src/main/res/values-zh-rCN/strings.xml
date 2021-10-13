@@ -124,13 +124,6 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">包括变音符号：àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">德语</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">包括变音符号：äöü</string>
-    <string name="whats_new_multiplayer_description">从主界面开始一个新游戏，然后用二维码，短信，电子邮件等分享邀请。
-\n
-\n收到邀请后，其他人在同样的规则下可以玩与你相同的随机生成的游戏板。
-\n
-\n完成后，比较你们的分数，看看谁的词汇量更大。
-\n
-\n和往常一样，欢迎关于如何改进这个功能的反馈。虽然这不是一个实时/网络多人游戏功能，我们希望你会喜欢它。</string>
     <string name="new_game_mode">新游戏模式</string>
     <string name="game_mode">游戏模式</string>
     <string name="multiplayer">多人游戏</string>
@@ -144,7 +137,6 @@
 \n
 \n你可以捐款表达自己的支持并为它的进一步发展作出贡献，详见<a href="https://liberapay.com/Lexica">Liberapay</a>或<a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>。</string>
     <string name="whats_new_support">支持 Lexica</string>
-    <string name="whats_new_multiplayer">多人游戏！</string>
     <plurals name="num_available_words_in_game">
         <item quantity="other">%1$d 单词</item>
     </plurals>

@@ -117,14 +117,8 @@
     <string name="error_restoring_game">Could not restore your game</string>
     <string name="whats_new_title">What\'s New</string>
     <string name="whats_new_continue">Continue</string>
-    <string name="whats_new_multiplayer">Multiplayer!</string>
-    <string name="whats_new_multiplayer_description">Start a new game from the main screen, then share invites using a QR code, SMS, e-mail, etc.
-\n
-\nAfter receiving the invite, others can play the same randomly generated board as you, with the same rules.
-\n
-\nWhen finished, compare your scores to see who has the superior lexicon.
-\n
-\nAs always, feedback is welcome about how this feature can be improved. Although this is not intended to be a realtime/network multiplayer feature, we hope you enjoy it.</string>
+    <string name="whats_new_sharing">Share a challenge!</string>
+    <string name="whats_new_sharing_description">After finishing a game, you can now share that board with your friends and challenge them to beat your score.\n\nSimilar to multiplayer, but for that time when you\'ve just played a particularly interesting or challenging board layout that you think your friends will enjoy.\n\nAs always, <a href="https://github.com/lexica/lexica/issues">feedback is welcome</a> about how this feature can be improved.</string>
     <string name="whats_new_support">Support Lexica</string>
     <string name="whats_new_support_description">Lexica is and always will be free and open source.\n\nYou can show your support and contribute to its further development by donating via <a href="https://liberapay.com/Lexica">Liberapay</a> or <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="menu_view_found_words">View found words</string>

@@ -132,7 +132,6 @@
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Uključuje dijakritičke znakove: äöü</string>
     <string name="multiplayer_lobby__join_when_ready">Kad su svi igrači spremni, pridruži se igri.</string>
     <string name="whats_new_support">Podrži program Lexica</string>
-    <string name="whats_new_multiplayer">Više igrača!</string>
     <string name="new_game_mode">Novi modus igre</string>
     <string name="game_mode">Modus igre</string>
     <string name="multiplayer">Više igrača</string>
@@ -144,13 +143,6 @@
     <string name="whats_new_support_description">Lexica je i uvijek će biti slobodan program otvorenog koda.
 \n
 \nSvoju podršku i doprinos njegovom daljnjem razvoju možeš pokazati donacijom na stranicama <a href="https://liberapay.com/Lexica">Liberapay</a> ili <a href="https://github.com/sponsors/pserwylo">GitHub sponzori</a>.</string>
-    <string name="whats_new_multiplayer_description">Započni novu igru s glavnog ekrana, a zatim podijeli pozivnice pomoću QR koda, SMS-a, emaila itd.
-\n
-\nNakon primitka pozivnice, drugi mogu igrati istu nasumično generiranu ploču kao i ti, s istim pravilima.
-\n
-\nKad završite, usporedite vaše rezultate kako biste vidjeli tko ima superiorniji rječnik.
-\n
-\nKao i uvijek, radujemo se povratnim informacijama o tome kako poboljšati ovu funkciju. Iako ovo nije funkcija za igru s više igrača u stvarnom vremenu / mreži, nadamo se da ćeš uživati.</string>
     <string name="invalid_multiplayer_link">Primljena je neispravna veza za više igrača. Pridruživanje igri nije moguće. Pazi da oboje koristite najnoviju verziju programa Lexica.</string>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d riječ</item>

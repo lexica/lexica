@@ -140,14 +140,6 @@
 \n
 \nPuoi mostrare il tuo sostegno e contribuire al suo ulteriore sviluppo donando tramite <a href="https://liberapay.com/Lexica">Liberapay</a> o <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="whats_new_support">Sostieni Lexica</string>
-    <string name="whats_new_multiplayer_description">Inizia una nuova partita dalla schermata principale, poi condividi gli inviti utilizzando un codice QR, SMS, e-mail, ecc.
-\n
-\nDopo aver ricevuto l’invito, gli altri possono giocare con la stessa tavola generata casualmente, con le stesse regole.
-\n
-\nQuando hai finito, confronta i tuoi punteggi per vedere chi ha il miglior lessico.
-\n
-\nCome sempre, i commenti sono benvenuti su come questa funzione può essere migliorata. Anche se questa non è stata pensata per essere una funzione multigiocatore in tempo reale/rete, speriamo che vi piaccia.</string>
-    <string name="whats_new_multiplayer">Multigiocatore!</string>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d parola</item>
         <item quantity="other">%1$d parole</item>
