@@ -143,7 +143,7 @@
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="other">%1$d 单词 (轻按刷新）</item>
     </plurals>
-    <string name="invalid_multiplayer_link">收到不正确的多人游戏链接，无法加入游戏。 确保你们俩都在使用最新版本的Lexica。</string>
+    <string name="invalid_multiplayer_link">收到不正确的多人游戏/分享链接，无法加入游戏。 确保你们俩都在使用最新版本的Lexica。</string>
     <string name="dialog_refresh_confirmation_message">已刷新游戏板</string>
     <string name="dialog_refresh_button">刷新</string>
     <string name="dialog_refresh_content">为确保你与对手玩的游戏板相同，请确保刷新后重新发送所有邀请。</string>
@@ -155,4 +155,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">包括 ñ 但没有重音</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">仅西班牙语 Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">包括变音符号：áéíóúüñ</string>
+    <string name="send_multiplayer_invite_to">发送邀请至…</string>
+    <string name="whats_new_sharing">分享一个挑战！</string>
+    <string name="share">分享</string>
+    <string name="back">返回</string>
+    <string name="invite__multiplayer__description">您已受邀参加多人 Lexica 游戏：</string>
+    <string name="invite__multiplayer__game_offline">想离线玩？ 尝试用笔和纸玩：</string>
+    <string name="invite__challenge__description">我在这块 Lexica 游戏板上找到了 %1$d 个单词，得了 %2$d 分。你能打败我吗？</string>
+    <string name="invite__dont_have_lexica_installed">还没安装 Lexica？从 https://play.google.com/store/apps/details\?id=com.serwylo.lexica 获取</string>
+    <string name="whats_new_sharing_description">完成游戏后，您现在可以与朋友分享游戏板并邀请好友向您的分数发起挑战。
+\n
+\n类似于多人游戏，您可以分享您认为好友会喜欢的游戏板布局，它们特别有趣或具有挑战性。
+\n
+\n我们一如既往地欢迎您提供如何改进此功能的<a href="https://github.com/lexica/lexica/issues">反馈</a>。</string>
+    <string name="send_challenge_invite_to">发送挑战至…</string>
 </resources>
