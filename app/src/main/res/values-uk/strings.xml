@@ -158,7 +158,7 @@
         <item quantity="many">%1$d слів (торкніться, щоб оновити)</item>
         <item quantity="other">%1$d слів (торкніться, щоб оновити)</item>
     </plurals>
-    <string name="invalid_multiplayer_link">Отримано неправильне багатокористувацьке посилання, не вдалося приєднатися до гри. Переконайтесь, що ви обоє користуєтеся найновішою версією Lexica.</string>
+    <string name="invalid_multiplayer_link">Не вдалося приєднатися до гри, отримано неправильне багатокористувацьке/спільне посилання. Переконайтесь, що ви обоє користуєтеся найновішою версією Lexica.</string>
     <string name="dialog_refresh_confirmation_message">Дошку оновлено</string>
     <string name="dialog_refresh_button">Оновити</string>
     <string name="dialog_refresh_content">Щоб грати на тій же дошці, що і ваші супротивники, не забудьте повторно надіслати будь-які запрошення після оновлення.</string>
@@ -170,4 +170,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Включає ñ, але без акцентів</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Лише іспанська Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Включає діакритику: áéíóúüñ</string>
+    <string name="whats_new_sharing">Поділіться викликом!</string>
+    <string name="whats_new_sharing_description">Після завершення гри, тепер ви можете поділитися, результатами з друзями й кинути їм виклик перевершити ваш рахунок.
+\n
+\nЦе схоже на багатокористувацьку гру. Якщо ви щойно зіграли в особливо цікаву або складну дошку, ви можете запропонувати зіграти на ній своїм друзям.
+\n
+\nЯк завжди, <a href="https://github.com/lexica/lexica/issues">вітається відгук</a> як можна покращити цю функцію.</string>
+    <string name="share">Поділитися</string>
+    <string name="back">Назад</string>
+    <string name="invite__multiplayer__description">Вас запросили до багатокористувацької гри Lexica:</string>
+    <string name="invite__multiplayer__game_offline">Хочете грати в режимі офлайн\? Спробуйте грати ручкою та папером:</string>
+    <string name="send_multiplayer_invite_to">Надіслати запрошення для…</string>
+    <string name="invite__dont_have_lexica_installed">Не встановлено Lexica\? Завантажте з https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="invite__challenge__description">Мною знайдено %1$d слова і набрано %2$d балів на цій дошці Lexica, чи зможете мене обіграти\?</string>
+    <string name="send_challenge_invite_to">Надіслати виклик…</string>
 </resources>
