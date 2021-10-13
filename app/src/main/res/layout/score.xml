@@ -7,6 +7,20 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:fancy="http://schemas.android.com/apk/res-auto">
 
+	<androidx.appcompat.widget.Toolbar
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="?attr/colorPrimary"
+		android:minHeight="?attr/actionBarSize"
+		android:theme="?attr/actionBarTheme"
+		app:popupTheme="?attr/actionBarPopupTheme"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:id="@+id/toolbar"
+		app:title="@string/score"
+		/>
+
 	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/recycler_view"
 		android:layout_width="0dp"
@@ -14,7 +28,7 @@
 		app:layout_constraintBottom_toTopOf="@+id/button_wrapper_top"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/toolbar"
 		tools:listitem="@layout/score_found_words" />
 
 	<LinearLayout
@@ -22,7 +36,7 @@
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintBottom_toTopOf="@id/button_wrapper_bottom"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent">
 
@@ -61,55 +75,6 @@
 			fancy:fb_fontIconSize="24sp"
 			fancy:fb_iconPosition="top"
 			fancy:fb_text="@string/missed_words"
-			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
-			fancy:fb_textSize="18sp" />
-
-	</LinearLayout>
-
-	<LinearLayout
-		android:id="@+id/button_wrapper_bottom"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent">
-
-		<mehdi.sakout.fancybuttons.FancyButton
-			android:id="@+id/back_button"
-			android:layout_width="0dp"
-			android:layout_height="match_parent"
-			android:layout_weight="1"
-			android:paddingTop="?attr/home__button_padding"
-			android:paddingBottom="?attr/home__button_padding"
-			app:layout_constraintWidth_percent="0.5"
-			fancy:fb_borderWidth="2dp"
-			fancy:fb_borderColor="?attr/home__secondary_button_border"
-			fancy:fb_defaultColor="?attr/home__secondary_button_background"
-			fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-			fancy:fb_fontIconResource="&#xf0a8;"
-			fancy:fb_fontIconSize="24sp"
-			fancy:fb_iconPosition="top"
-			fancy:fb_text="@string/back"
-			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
-			fancy:fb_textSize="18sp" />
-
-		<mehdi.sakout.fancybuttons.FancyButton
-			android:id="@+id/share_button"
-			android:layout_width="0dp"
-			android:layout_height="match_parent"
-			android:layout_weight="1"
-			android:paddingTop="?attr/home__button_padding"
-			android:paddingBottom="?attr/home__button_padding"
-			app:layout_constraintWidth_percent="0.5"
-			fancy:fb_borderWidth="2dp"
-			fancy:fb_borderColor="?attr/home__secondary_button_border"
-			fancy:fb_defaultColor="?attr/home__secondary_button_background"
-			fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-			fancy:fb_fontIconResource="&#xf1e0;"
-			fancy:fb_fontIconSize="24sp"
-			fancy:fb_iconPosition="top"
-			fancy:fb_text="@string/share"
 			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
 			fancy:fb_textSize="18sp" />
 

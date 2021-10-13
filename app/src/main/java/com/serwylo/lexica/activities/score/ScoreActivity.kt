@@ -19,6 +19,8 @@ package com.serwylo.lexica.activities.score
 import android.content.Intent
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.serwylo.lexica.GameSaverTransient
@@ -35,6 +37,8 @@ class ScoreActivity : AppCompatActivity() {
 
     private var buttonBackgroundColorSelected = 0
     private var buttonBackgroundColor = 0
+
+    private var isOnlyFoundWords = false
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +63,8 @@ class ScoreActivity : AppCompatActivity() {
 
         buttonBackgroundColor = themeValues.data
 
+        isOnlyFoundWords = intent.getBooleanExtra(ONLY_FOUND_WORDS, false)
+
         binding = ScoreBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -66,6 +72,12 @@ class ScoreActivity : AppCompatActivity() {
         this.game = game
 
         initialiseView(game)
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.toolbar.setNavigationOnClickListener {
+            finish()
+        }
     }
 
     private fun initialiseGame(savedInstanceState: Bundle?): Game {
@@ -83,11 +95,10 @@ class ScoreActivity : AppCompatActivity() {
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.adapter = ScoreTabAdapter(this, game)
 
-        val onlyFoundWords = intent.getBooleanExtra(ONLY_FOUND_WORDS, false)
-        if (onlyFoundWords) {
+        if (isOnlyFoundWords) {
             binding.foundWordsButton.visibility = View.GONE
             binding.missedWordsButton.visibility = View.GONE
-            binding.shareButton.visibility = View.GONE
+            binding.toolbar.title = getString(R.string.found_words)
         }
 
         binding.foundWordsButton.setBackgroundColor(buttonBackgroundColorSelected)
@@ -103,9 +114,6 @@ class ScoreActivity : AppCompatActivity() {
             binding.foundWordsButton.setBackgroundColor(buttonBackgroundColor)
             binding.missedWordsButton.setBackgroundColor(buttonBackgroundColorSelected)
         }
-
-        binding.backButton.setOnClickListener { finish() }
-        binding.shareButton.setOnClickListener { share() }
     }
 
     private fun share() {
@@ -125,6 +133,22 @@ class ScoreActivity : AppCompatActivity() {
         }
 
         startActivity(Intent.createChooser(sendIntent, getString(R.string.send_challenge_invite_to)))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        if (!isOnlyFoundWords) {
+            menuInflater.inflate(R.menu.score_menu, binding.toolbar.menu);
+            return true
+        }
+
+        return false;
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.share -> share()
+        }
+        return true
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
