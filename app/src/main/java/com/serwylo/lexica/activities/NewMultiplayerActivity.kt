@@ -71,7 +71,7 @@ class NewMultiplayerActivity : AppCompatActivity() {
             board.add(game.board.elementAt(i))
         }
 
-        val uri = SharedGameData(board, language, gameMode).serialize()
+        val uri = SharedGameData(board, language, gameMode, SharedGameData.Type.MULTIPLAYER).serialize()
         val metrics = resources.displayMetrics
         val size = min(metrics.widthPixels, metrics.heightPixels)
         val bitmap = QRCodeEncoder.encodeAsBitmap(uri.toString(), size)
@@ -99,26 +99,25 @@ class NewMultiplayerActivity : AppCompatActivity() {
         binding.sendInvite.isEnabled = true
         binding.sendInvite.setOnClickListener {
             val sendIntent = Intent().apply {
-
                 action = Intent.ACTION_SEND
-
-                putExtra(Intent.EXTRA_TEXT,
-"""You've been invited to a multiplayer Lexica game:
-$uri
-
-Don't have Lexica installed? Get it from:
-https://play.google.com/store/apps/details?id=com.serwylo.lexica
-
-Want to play offline? Try playing via pen and paper:
-
-${SharedGameDataHumanReadable(board, gameMode, language).serialize(applicationContext)}
-""".trimIndent())
-
                 type = "text/plain"
 
+                val humanReadable = SharedGameDataHumanReadable(board, gameMode, language).serialize(applicationContext)
+                val text = """
+${getString(R.string.invite__multiplayer__description)}
+
+$uri
+
+${getString(R.string.invite__dont_have_lexica_installed)}
+
+${getString(R.string.invite__multiplayer__game_offline)}
+
+$humanReadable
+""".trim() // trimIndent() doesn't work because the humanReadable board has line breaks at the start of lines.
+                putExtra(Intent.EXTRA_TEXT, text)
             }
 
-            startActivity(Intent.createChooser(sendIntent, "Send invite to..."))
+            startActivity(Intent.createChooser(sendIntent, getString(R.string.send_multiplayer_invite_to)))
         }
 
         binding.startGame.isEnabled = true

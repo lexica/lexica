@@ -140,14 +140,6 @@
 \n
 \nJe kunt je waardering tonen door te doneren via <a href="https://liberapay.com/Lexica">Liberapay</a> of <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="whats_new_support">Lexica-ondersteuning</string>
-    <string name="whats_new_multiplayer_description">Start een nieuw spel via het hoofdscherm en deel uitnodigingen middels een qr-code, sms\'je, e-mail, etc.
-\n
-\nNa het ontvangen kunnen spelers op hetzelfde willekeurige bord met dezelfde regels als jij spelen.
-\n
-\nNa afloop kunnen jullie elkaars scores vergelijken om te zien wie de rijkste woordenschat heeft.
-\n
-\nFeedback is altijd fijn, dus laat ons weten hoe we deze functie kunnen verbeteren.</string>
-    <string name="whats_new_multiplayer">Meerdere spelers!</string>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d woord</item>
         <item quantity="other">%1$d woorden</item>

@@ -121,13 +121,6 @@
         <item quantity="other">%d/%d ord</item>
     </plurals>
     <string name="high_scores">Topp-poengsummer</string>
-    <string name="whats_new_multiplayer_description">Start et nytt spill fra hovedskjermen, og del så invitasjoner ved bruk av QR-kode, SMS, e-post, osv.
-\n
-\nEtter å ha mottatt en invitasjon, kan andre spillere ta del i samme tilfeldig genererte brett som deg, med samme regler.
-\n
-\nNår dere er ferdige, sammenlignes poengsummene for å se hvem som har best leksikon.
-\n
-\nSom alltid ønskes tilbakemeldinger varmt velkomne, og du må gjerne dele idéer om forbedringer. Selv om dette ikke er tiltenkt å være et sanntidsspill for flere spillere, håper vi du setter pris på det.</string>
     <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Inkluderer grammatikkformer og forkortelser</string>
     <string name="whats_new_support">Støtte Lexica</string>
     <string name="whats_new_support_description">Lexica vil alltid være fri programvare.
@@ -142,7 +135,6 @@
     <string name="multiplayer__start_game">Start spill</string>
     <string name="multiplayer__share_invites">Del invitasjoner</string>
     <string name="multiplayer_lobby__join_game">Ta del i spill</string>
-    <string name="whats_new_multiplayer">Flerspiller.</string>
     <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Russisk (utvidet)</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Fransk</string>
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Inneholder tegnene: àâçéèêëîïôöûü</string>

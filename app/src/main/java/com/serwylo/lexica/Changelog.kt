@@ -27,8 +27,8 @@ object Changelog {
 
         return WhatsNew.newInstance(
             WhatsNewItem(
-                context.getString(R.string.whats_new_multiplayer),
-                context.getString(R.string.whats_new_multiplayer_description),
+                context.getString(R.string.whats_new_sharing),
+                context.getText(R.string.whats_new_sharing_description),
                 R.drawable.ic_people,
             ),
             WhatsNewItem(

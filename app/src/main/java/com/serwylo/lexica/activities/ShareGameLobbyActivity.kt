@@ -4,20 +4,23 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.serwylo.lexica.R
 import com.serwylo.lexica.ThemeManager
-import com.serwylo.lexica.databinding.MultiplayerLobbyBinding
+import com.serwylo.lexica.databinding.ShareGameLobbyBinding
 import com.serwylo.lexica.db.GameMode
 import com.serwylo.lexica.db.GameModeRepository
 import com.serwylo.lexica.game.Game
 import com.serwylo.lexica.lang.Language
 import com.serwylo.lexica.share.SharedGameData
 
-class MultiplayerLobbyActivity : AppCompatActivity() {
+class ShareGameLobbyActivity : AppCompatActivity() {
 
-    private lateinit var binding: MultiplayerLobbyBinding
+    private lateinit var binding: ShareGameLobbyBinding
+
+    private var isMultiplayer = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -25,7 +28,7 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
 
         ThemeManager.getInstance().applyTheme(this)
 
-        binding = MultiplayerLobbyBinding.inflate(layoutInflater)
+        binding = ShareGameLobbyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
@@ -36,11 +39,15 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
 
         val uri = intent.data
         if (uri == null) {
-            Log.e(TAG, "Expected a URI containing the information required to start a multiplayer game, but received null.")
+            Log.e(TAG, "Expected a URI containing the information required to start a multiplayer/shared game, but received null.")
             Toast.makeText(this, R.string.invalid_multiplayer_link, Toast.LENGTH_LONG).show()
             finish()
             return
         }
+
+        isMultiplayer =
+            uri.scheme == "lexica" && uri.host == "multiplayer" ||
+            uri.host == "lexica.github.io" && uri.pathSegments.firstOrNull() == "m"
 
         try {
             val sharedGameData = SharedGameData.parseGame(uri)
@@ -63,6 +70,13 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
         AsyncTask.execute {
             val gameMode = repo.ensureRulesExist(data)
             runOnUiThread {
+
+                if (!isMultiplayer) {
+                    binding.textToJoin.text = getString(R.string.invite__challenge__description, data.numWordsToBeat, data.scoreToBeat)
+                    binding.startGame.setText(getString(R.string.multiplayer__start_game))
+                    binding.toolbar.title = "Social Challenge"
+                }
+
                 binding.gameModeDetails.setLanguage(data.language)
                 binding.gameModeDetails.setGameMode(gameMode)
                 binding.startGame.isEnabled = true
@@ -88,7 +102,7 @@ class MultiplayerLobbyActivity : AppCompatActivity() {
     }
 
     companion object {
-        val TAG = MultiplayerLobbyActivity::class.simpleName
+        val TAG = ShareGameLobbyActivity::class.simpleName
     }
 
 }

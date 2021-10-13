@@ -123,14 +123,6 @@
 \n
 \nВы можете поддержать разработку материально через <a href="https://liberapay.com/Lexica">Liberapay</a> или <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="whats_new_support">Поддержать Lexica</string>
-    <string name="whats_new_multiplayer_description">Начните игру с главного экрана, затем отправьте приглашение через QR код, SMS, e-mail и т.д.
-\n
-\nПосле получения приглашения, другие могут играть на той же доске, как у тебя, с теми же правилами.
-\n
-\nКогда закончите, сравните ваши результаты, чтобы узнать, у кого лучше лексикон.
-\n
-\nКак всегда, приветствуются предложения, как можно улучшить эту функцию. Хотя эта функция не предназначена для мультиплеера в реальном времени/по сети, мы надеемся, что она вам понравится.</string>
-    <string name="whats_new_multiplayer">Мультиплеер!</string>
     <string name="whats_new_continue">Продолжить</string>
     <string name="whats_new_title">Что нового</string>
     <string name="error_restoring_game">Не удалось восстановить Вашу игру</string>

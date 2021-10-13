@@ -36,7 +36,6 @@
     <string name="invalid_multiplayer_link">Gavote neteisingą daugelio žaidėjų rėžimo nuorodą, negalite prisijungti prie žaidimo. Įsitikinkite, kad abu naudojate naujausią Lexica versiją.</string>
     <string name="new_game_mode">Naujas žaidimo režimas</string>
     <string name="game_mode">Žaidimo režimas</string>
-    <string name="whats_new_multiplayer">Daugelio žaidėjų rėžimas!</string>
     <string name="multiplayer">Daugelio žaidėjų rėžimas</string>
     <string name="multiplayer__start_game">Pradėti žaidimą</string>
     <string name="multiplayer__qr_code__accessible_description">QR kodas: kiti gali nuskaityti jį ir prisijungti prie šio žaidimo</string>
@@ -49,13 +48,6 @@
 \n
 \nGalite parodyti savo paramą ir prisidėti prie tolesnio jos vystymo aukodami per <a href="https://liberapay.com/Lexica">Liberapay</a> arba kaip<a href="https://github.com/sponsors/pserwylo">GitHub rėmėjas</a>.</string>
     <string name="whats_new_support">Palaikykite Lexica</string>
-    <string name="whats_new_multiplayer_description">Pradėkite naują žaidimą pagrindiniame ekrane, tada bendrinkite pakvietimus naudodami QR kodą, SMS žinutę, el. paštą ir t. t.
-\n
-\nGavę kvietimą, kiti gali žaisti tą pačią atsitiktinai sugeneruotą lentą, kaip ir jūs, su tomis pačiomis taisyklėmis.
-\n
-\nBaigę palyginkite savo rezultatus ir sužinokite, kas turi geresnį leksikoną.
-\n
-\nKaip visada, laukiame atsiliepimų apie tai, kaip šią funkciją galima patobulinti. Nors tai nėra skirta realaus laiko ar tinklo daugelio žaidėjų funkcijai, tikimės, kad ji jums patiks.</string>
     <string name="whats_new_continue">Tęsti</string>
     <string name="whats_new_title">Kas naujo</string>
     <string name="error_restoring_game">Nepavyko atkurti žaidimo</string>

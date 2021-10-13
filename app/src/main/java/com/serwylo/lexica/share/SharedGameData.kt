@@ -17,9 +17,23 @@ data class SharedGameData(
     val minWordLength: Int,
     val hints: String,
     val minSupportedLexicaVersion: Int,
+    val type: Type,
+
+    /**
+     * If sharing a challenge, include the score to beat and the number of words to beat in the URI
+     * so that we can show it to the challenger when they are about to start.
+     * Not used for multiplayer.
+     */
+    val numWordsToBeat: Int = -1,
+    val scoreToBeat: Int = -1,
 ) {
 
-    constructor(board: List<String>, language: Language, gameMode: GameMode) : this(
+    enum class Type {
+        MULTIPLAYER,
+        SHARE,
+    }
+
+    constructor(board: List<String>, language: Language, gameMode: GameMode, type: Type, numWordsToBeat: Int = -1, scoreToBeat: Int = -1) : this(
         board,
         language,
         gameMode.scoreType,
@@ -27,6 +41,9 @@ data class SharedGameData(
         gameMode.minWordLength,
         gameMode.hintMode,
         MIN_SUPPORTED_VERSION,
+        type,
+        numWordsToBeat,
+        scoreToBeat,
     )
 
     fun serialize(): Uri {
@@ -45,17 +62,33 @@ data class SharedGameData(
             else -> ""
         }
 
+        val path = when (type) {
+            Type.MULTIPLAYER -> "m"
+            Type.SHARE -> "share"
+        }
+
         val urlBuilder = Uri.Builder()
             .scheme("https")
             .authority("lexica.github.io")
-            .path("/m/")
+            .path("/$path/")
             .appendQueryParameter(Keys.board, boardChars)
             .appendQueryParameter(Keys.language, language.name)
             .appendQueryParameter(Keys.time, timeLimitInSeconds.toString())
-            .appendQueryParameter(Keys.scoreType, scoreTypeSerialized)
+
+        // Put these in here in the vain hope that people wont immediately see them in between all
+        // the other parameters and change them to make themselves look better before challenging.
+        // But really, it isn't a big issue if someone wants to be a silly cheater...
+        if (scoreToBeat >= 0 && numWordsToBeat >= 0) {
+            urlBuilder
+                .appendQueryParameter(Keys.scoreToBeat, scoreToBeat.toString())
+                .appendQueryParameter(Keys.numWordsToBeat, numWordsToBeat.toString())
+        }
+
+        urlBuilder
             .appendQueryParameter(Keys.minWordLength, minWordLength.toString())
             .appendQueryParameter(Keys.minSupportedLexicaVersion, minSupportedLexicaVersion.toString())
             .appendQueryParameter(Keys.currentLexicaVersion, CURRENT_VERSION.toString())
+            .appendQueryParameter(Keys.scoreType, scoreTypeSerialized)
 
         if (hintModeSerialized.isNotEmpty()) {
             urlBuilder.appendQueryParameter(Keys.hintMode, hintModeSerialized)
@@ -73,25 +106,8 @@ data class SharedGameData(
         const val hintMode = "h"
         const val currentLexicaVersion = "v"
         const val minSupportedLexicaVersion = "mv"
-    }
-
-    enum class ShareType(value: String) {
-        /**
-         * Take a player to the lobby, explaining the game mode which has been shared, but also
-         * recommending that they wait for all players to be ready before beginning.
-         */
-        MULTIPLAYER("multiplayer"),
-
-        /**
-         *
-         */
-        SHARE("share"),
-
-        /**
-         * Directly starts a game without any intermediate screen. Useful, for example, to
-         * replay games from the score screen (or perhaps the high score list in the future).
-         */
-        PLAY("play"),
+        const val numWordsToBeat = "w"
+        const val scoreToBeat = "sc"
     }
 
     companion object {
@@ -107,6 +123,12 @@ data class SharedGameData(
             val scoreType = findKey(uri, Keys.scoreType)
             val minWordLength = findKey(uri, Keys.minWordLength)
             val minSupportedLexicaVersion = findKey(uri, Keys.minSupportedLexicaVersion).toInt()
+            val numWordsToBeat = findKey(uri, Keys.numWordsToBeat, "-1").toInt()
+            val scoreToBeat = findKey(uri, Keys.scoreToBeat, "-1").toInt()
+            val type = when(uri.pathSegments.firstOrNull()) {
+                "m" -> Type.MULTIPLAYER
+                else -> Type.SHARE
+            }
 
             if (minSupportedLexicaVersion > CURRENT_VERSION) {
                 throw IllegalArgumentException("This version of Lexica ($CURRENT_VERSION) is too old, version $minSupportedLexicaVersion is required.")
@@ -149,14 +171,21 @@ data class SharedGameData(
                 minWordLength.toInt(),
                 parseHintMode(hintMode),
                 minSupportedLexicaVersion,
+                type,
+                numWordsToBeat,
+                scoreToBeat,
             )
 
         }
 
-        private fun findKey(uri: Uri, key: String): String {
+        private fun findKey(uri: Uri, key: String, default: String? = null): String {
             val value = uri.getQueryParameter(key)
             if (value == null || value.isEmpty()) {
-                throw IllegalArgumentException("Expected to find a $key in $uri. Only found these: ${uri.queryParameterNames}.")
+                if (default != null) {
+                    return default;
+                } else {
+                    throw IllegalArgumentException("Expected to find a $key in $uri. Only found these: ${uri.queryParameterNames}.")
+                }
             }
 
             return value

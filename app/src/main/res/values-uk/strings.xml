@@ -146,14 +146,6 @@
 \n
 \nВи можете висловити свою підтримку та зробити свій внесок у її подальший розвиток допомогою через <a href="https://liberapay.com/Lexica">Liberapay</a> або <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="whats_new_support">Підтримати Lexica</string>
-    <string name="whats_new_multiplayer_description">Почніть нову гру з головного екрана, а потім поділіться запрошеннями за допомогою QR-коду, SMS, електронної пошти тощо.
-\n
-\nОтримавши запрошення, інші можуть грати на тій же випадково згенерованій дошці, що й ви, за тими ж правилами.
-\n
-\nПісля завершення порівняйте свої результати, щоб побачити, хто має чудовий лексикон.
-\n
-\nЯк завжди, відгуки вітаються про те, як цю функцію можна вдосконалити. Хоча це й не функція багатокористувацької гри в реальному часі/мережі, ми сподіваємося, вам сподобається.</string>
-    <string name="whats_new_multiplayer">Багатокористувацька гра!</string>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d слово</item>
         <item quantity="few">%1$d слова</item>
