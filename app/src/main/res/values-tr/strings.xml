@@ -148,7 +148,7 @@
         <item quantity="one">%1$d sözcük (yenilemek için dokunun)</item>
         <item quantity="other">%1$d sözcük (yenilemek için dokunun)</item>
     </plurals>
-    <string name="invalid_multiplayer_link">Yanlış çok oyunculu bağlantı alındı, oyuna katılınamıyor. Her ikinizin de Lexica\'nın en son sürümünü kullandığından emin olun.</string>
+    <string name="invalid_multiplayer_link">Yanlış çok oyuncu/paylaşım bağlantısı alındı, oyuna katılınamıyor. Her ikinizin de Lexica\'nın en son sürümünü kullandığından emin olun.</string>
     <string name="dialog_refresh_confirmation_message">Tahta yenilendi</string>
     <string name="dialog_refresh_button">Yenile</string>
     <string name="dialog_refresh_content">Rakiplerinizle aynı tahtayı oynadığınızdan emin olmak için, yeniledikten sonra tüm davetleri tekrar gönderdiğinizden emin olun.</string>
@@ -160,4 +160,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">ñ içerir ancak aksan işaretlerini içermez</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Yalnızca İspanyolca Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">áéíóúüñ aksan işaretlerini içerir</string>
+    <string name="whats_new_sharing">Meydan okumayı paylaş!</string>
+    <string name="share">Paylaş</string>
+    <string name="whats_new_sharing_description">Bir oyunu bitirdikten sonra, artık o tahtayı arkadaşlarınızla paylaşabilir ve puanınızı geçmeleri için onlara meydan okuyabilirsiniz.
+\n
+\nÇok oyunculu gibi, ancak arkadaşlarınızın hoşuna gideceğini düşündüğünüz özellikle ilginç veya zorlu bir tahta düzeni oynadığınız zaman için.
+\n
+\nHer zaman olduğu gibi, bu özelliğin nasıl iyileştirilebileceği hakkında <a href="https://github.com/lexica/lexica/issues">geri bildirime açığız</a>.</string>
+    <string name="invite__multiplayer__game_offline">Çevrim dışı oynamak ister misiniz\? Kalem ve kağıt ile oynamayı deneyin:</string>
+    <string name="invite__dont_have_lexica_installed">Lexica kurulu değil mi\? https://play.google.com/store/apps/details\?id=com.serwylo.lexica adresinden edinin</string>
+    <string name="send_challenge_invite_to">Meydan okuma gönder…</string>
+    <string name="send_multiplayer_invite_to">Davet gönder…</string>
+    <string name="invite__multiplayer__description">Çok oyunculu bir Lexica oyununa davet edildiniz:</string>
+    <string name="back">Geri</string>
+    <string name="invite__challenge__description">Bu Lexica tahtasında %1$d sözcük buldum ve %2$d puan aldım, beni yenebilir misin\?</string>
 </resources>
