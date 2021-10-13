@@ -148,7 +148,7 @@
         <item quantity="one">%1$d sõna (värskendamiseks klõpsi)</item>
         <item quantity="other">%1$d sõna (värskendamiseks klõpsi)</item>
     </plurals>
-    <string name="invalid_multiplayer_link">Sain vigase mitmikmängu kutse ega saa mänguga liituda. Palun kontrolli, kas mõlemal mängijal on kasutusel viimane Lexica versioon.</string>
+    <string name="invalid_multiplayer_link">Sain vigase mitmikmängu või tulemuste jagamise kutse ega saa mänguga liituda või andmeid vaadata. Palun kontrolli, kas mõlemal mängijal on kasutusel viimane Lexica versioon.</string>
     <string name="dialog_refresh_confirmation_message">Mänguväli on loodud uuesti</string>
     <string name="dialog_refresh_button">Värskenda</string>
     <string name="dialog_refresh_content">Peale mänguvälja uuesti laadimist saada vastasmängijale uuesti mängukutse.</string>
@@ -160,4 +160,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Sealhulgas ñ, kuid ilma rõhumärkideta</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Hispaania keele puhul Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Sealhulgas diakriitilised märgid: áéíóúüñ</string>
+    <string name="whats_new_sharing">Jaga tulemusi ja kutsu teisi sama mängu mängima!</string>
+    <string name="share">Jaga</string>
+    <string name="back">Tagasi</string>
+    <string name="invite__multiplayer__description">Kutse Lexica mitmikmängule:</string>
+    <string name="send_multiplayer_invite_to">Saada kutse…</string>
+    <string name="invite__multiplayer__game_offline">Kas soovid mängida vana kooli moodi ilma võrguta\? Proovi pliiatsi ja paberiga:</string>
+    <string name="whats_new_sharing_description">Pärast mängu lõppu saad oma tulemusi sõpradega jagada ning esitada neile väljakutse parema tulemuse saamiseks.
+\n
+\nLoogika on sarnane mitmikmängule, aga sobilik selles kontekstis, kui mängisid just ühe põneva mängu ja sa arvade, et ka sõpradel oleks seda huvitav mängida.
+\n
+\nNagu ikka, <a href="https://github.com/lexica/lexica/issues">me ootame kommentaare</a> selle kohta, kuidas seda funktsionaalsust veelgi paremaks teha.</string>
+    <string name="invite__dont_have_lexica_installed">Sul pole nutiseadmes Lexicat\? Laadi ta kas Get it from https://play.google.com/store/apps/details\?id=com.serwylo.lexica või https://f-droid.org/en/packages/com.serwylo.lexica repositooriumidest</string>
+    <string name="send_challenge_invite_to">Saada väljakutse…</string>
+    <string name="invite__challenge__description">Ma leidsin selles Lexica mängus %1$d sõna ja kogusid %2$d punkti. Aga kas sina saaksid parema tulemuse\?</string>
 </resources>
