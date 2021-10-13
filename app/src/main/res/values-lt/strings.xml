@@ -33,7 +33,7 @@
     </plurals>
     <string name="dialog_end_game_confirm_message">Ar tikrai norite baigti šį žaidimą\?</string>
     <string name="dialog_end_game_confirm_title">Baigti žaidimą</string>
-    <string name="invalid_multiplayer_link">Gavote neteisingą daugelio žaidėjų rėžimo nuorodą, negalite prisijungti prie žaidimo. Įsitikinkite, kad abu naudojate naujausią Lexica versiją.</string>
+    <string name="invalid_multiplayer_link">Gavote neteisingą daugelio žaidėjų rėžimo / bendrinimo nuorodą, negalite prisijungti prie žaidimo. Įsitikinkite, kad abu naudojate naujausią Lexica versiją.</string>
     <string name="new_game_mode">Naujas žaidimo režimas</string>
     <string name="game_mode">Žaidimo režimas</string>
     <string name="multiplayer">Daugelio žaidėjų rėžimas</string>
@@ -155,4 +155,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Apima ñ, bet be kirčių</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Ispanų tik su Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Su diakritiniais ženklais: áéíóúüñ</string>
+    <string name="back">Atgal</string>
+    <string name="share">Dalintis</string>
+    <string name="invite__multiplayer__game_offline">Norite žaisti neprisijungę\? Pabandykite žaisti naudodami rašiklį ir popierių:</string>
+    <string name="send_challenge_invite_to">Siųsti iššūkį…</string>
+    <string name="invite__multiplayer__description">Jūs buvote pakviestas į Lexica žaisti su draugais:</string>
+    <string name="invite__challenge__description">Aš radau %1$d žodžius ir surinkau %2$d taškų šioje Lexica žaidimo lentoje, ar gali mane įveikti\?</string>
+    <string name="invite__dont_have_lexica_installed">Neturite įdiegę Lexica\? Gaukite ją iš https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="whats_new_sharing">Pasidalinkite iššūkiu!</string>
+    <string name="send_multiplayer_invite_to">Siųsti kvietimą…</string>
+    <string name="whats_new_sharing_description">Baigę žaidimą, dabar galite bendrinti žaidimo lentą su draugais ir mesti jiems iššūkį pagerinti savo rezultatą.
+\n
+\nPanašiai kaip ir daugelio režime, bet tuo metu, kai ką tik sužaidėte itin įdomų ar sudėtingą lentos išdėstymą, kuris, jūsų manymu, patiks jūsų draugams.
+\n
+\nKaip visada, laukiame <a href="https://github.com/lexica/lexica/issues">atsiliepimų</a> apie tai, kaip šią funkciją galima patobulinti.</string>
 </resources>
