@@ -148,7 +148,7 @@
         <item quantity="one">%1$d woord (druk om te vernieuwen)</item>
         <item quantity="other">%1$d woorden (druk om te vernieuwen)</item>
     </plurals>
-    <string name="invalid_multiplayer_link">Het spel kan niet worden gestart omdat er onjuiste link gevolgd is. Zorg er voor dat jullie allemaal de nieuwste Lexica-versie hebben.</string>
+    <string name="invalid_multiplayer_link">Het spel kan niet worden gestart/gedeeld omdat er onjuiste link gevolgd is. Zorg er voor dat jullie allemaal de nieuwste Lexica-versie hebben.</string>
     <string name="dialog_refresh_confirmation_message">Het bord is vernieuwd</string>
     <string name="dialog_refresh_content">Om er zeker van te zijn dat je op hetzelfde bord speelt als je tegenstanders, moet je na het vernieuwen de uitnodigingen opnieuw versturen.</string>
     <string name="dialog_refresh_title">Bord vernieuwen</string>
@@ -161,4 +161,17 @@
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Spaanse Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Bevat diakritische tekens: áéíóúüñ</string>
     <string name="whats_new_sharing">Deel een uitdaging!</string>
+    <string name="invite__dont_have_lexica_installed">Heb je Lexica nog niet\? Installeer het dan via https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="whats_new_sharing_description">Als een spel is afgelopen, dan kun je voortaan dat bord delen met je vrienden en ze uitdagen je score te verbeteren.
+\n
+\nNet zoals in de meerderespelersmodus, maar dan met een interessant of uitdagend bord waarvan je denkt dat je vrienden er net zo over denken als jij.
+\n
+\nZoals altijd wordt <a href="https://github.com/lexica/lexica/issues">feedback</a> omtrent deze functie gewaardeerd.</string>
+    <string name="send_challenge_invite_to">Uitdaging versturen aan…</string>
+    <string name="send_multiplayer_invite_to">Uitnodiging versturen aan…</string>
+    <string name="share">Delen</string>
+    <string name="back">Terug</string>
+    <string name="invite__multiplayer__description">Je bent uitgenodigd voor een Lexica-spel:</string>
+    <string name="invite__multiplayer__game_offline">Wil je offline spelen\? Gebruik dan pen en papier:</string>
+    <string name="invite__challenge__description">Ik heb %1$d woorden gevonden en %2$d puinten gescoord op dit Lexica-bord. Kun jij mijn score verbeteren\?</string>
 </resources>
