@@ -148,7 +148,7 @@
     <string name="dialog_refresh_title">Reŝargi tabulon</string>
     <string name="dialog_refresh_confirmation_message">Tabulo reŝargiĝis</string>
     <string name="dialog_refresh_button">Reŝargi</string>
-    <string name="invalid_multiplayer_link">Ricevis malĝustan ligon por reĝimo de pluraj ludantoj; tial, ne eblas aliĝi al ludo. Certigu, ke vi ĉiuj uzas la plej novan version de Lexica.</string>
+    <string name="invalid_multiplayer_link">Ricevis malĝustan ligon por kunhavigo aŭ reĝimo de pluraj ludantoj; tial, ne eblas aliĝi al ludo. Certigu, ke vi ĉiuj uzas la plej novan version de Lexica.</string>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d vorto</item>
         <item quantity="other">%1$d vortoj</item>
@@ -160,4 +160,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Inkluzivas Ñ, sed sen vokalaj supersignoj</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">La hispana kun nur Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Inkluzive de supersignoj: áéíóúüñ</string>
+    <string name="back">Reen</string>
+    <string name="invite__multiplayer__description">Vi estis invitita al Lexica-ludo de pluraj ludantoj:</string>
+    <string name="whats_new_sharing_description">Fininte ludon, vi nun povas kunhavigi tiun tabulon kun viaj amikoj kaj defii ilin superi vian poentaron.
+\n
+\nSimile al reĝimo de pluraj ludantoj, sed por tiam, kiam vi ĵus ludis aparte interesan aŭ malfacilan tabulon, kiun laŭ via opinio viaj amikoj ĝuos.
+\n
+\nSame kiel ĉiam, <a href="https://github.com/lexica/lexica/issues">sugestoj estas bonvenaj</a> pri eblaj plibonigoj de ĉi tiu funkcio.</string>
+    <string name="share">Kunhavigi</string>
+    <string name="invite__multiplayer__game_offline">Ĉu vi volas ludi senkonekte\? Provu ludi per plumo kaj papero:</string>
+    <string name="whats_new_sharing">Kunhavigu defion!</string>
+    <string name="send_multiplayer_invite_to">Sendi inviton al…</string>
+    <string name="send_challenge_invite_to">Sendi defion al…</string>
+    <string name="invite__dont_have_lexica_installed">Ĉu Lexica ne estas instalita\? Akiru ĝin ĉe https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="invite__challenge__description">Mi trovis %1$d vortojn kaj gajnis %2$d poentojn sur ĉi tiu Lexica-tabulo. Ĉu vi povas superi min\?</string>
 </resources>
