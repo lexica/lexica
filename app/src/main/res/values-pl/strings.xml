@@ -6,10 +6,10 @@
     <string name="prefs">Preferencje</string>
     <string name="pref_dict">Leksykon</string>
     <string name="pref_dict_ca">Kataloński</string>
-    <string name="pref_dict_de_DE">Niemiecki</string>
+    <string name="pref_dict_de_DE">Niemiecki (rozszerzony)</string>
     <string name="pref_dict_es">Hiszpański</string>
     <string name="pref_dict_fa">Perski</string>
-    <string name="pref_dict_fr_FR">Francuski</string>
+    <string name="pref_dict_fr_FR">Francuski (rozszerzony)</string>
     <string name="pref_dict_hu">ęgierski</string>
     <string name="pref_dict_it">Włoski</string>
     <string name="pref_dict_ja">Japoński</string>
@@ -81,4 +81,27 @@
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Zawiera znaki diakrytyczne: àâçéèêëîïôöûü</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francuski</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Zawiera znaki diakrytyczne: áéíóúüñ</string>
+    <string name="game_mode_beginner">Początkujący</string>
+    <string name="button_delete">Usuń</string>
+    <string name="button_cancel">Anuluj</string>
+    <string name="input_game_mode_name_hint">Nazwa</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugalski (Brazylia) (rozszerzony)</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Rosyjski (rozszerzony)</string>
+    <string name="error_restoring_game">Nie udało się przywrócić gry</string>
+    <string name="whats_new_title">Co nowego</string>
+    <string name="dialog_refresh_title">Odśwież diagram</string>
+    <string name="dialog_refresh_button">Odśwież</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Wyłącznie hiszpański</string>
+    <string name="dialog_refresh_confirmation_message">Diagram odświeżono</string>
+    <string name="game_mode_letter_points">Punktowane litery</string>
+    <string name="game_mode_letter_points_description">Zdobądź więcej punktów za użycie mniej popularnych liter</string>
+    <string name="menu_new_game_mode">Nowy</string>
+    <string name="game_mode_sprint">Sprint</string>
+    <string name="menu_save_game_mode">Zapisz</string>
+    <string name="game_mode_marathon">Maraton</string>
+    <string name="game_mode_beginner_description">Użyj wskazówek, aby znaleźć słowa</string>
+    <string name="game_mode_sprint_description">Krótka gra polegająca na znalezieniu jak największej liczby słów</string>
+    <string name="game_mode_marathon_description">Spróbuj znaleźć wszystkie słowa, bez presji czasu</string>
+    <string name="game_mode_custom_description">Niestandardowy tryb gry</string>
+    <string name="game_mode_legacy_description">Używany we wcześniejszej wersji Lexica</string>
 </resources>
