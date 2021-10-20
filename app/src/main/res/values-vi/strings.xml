@@ -15,7 +15,7 @@
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="other">%1$d từ (nhấn để làm mới)</item>
     </plurals>
-    <string name="invalid_multiplayer_link">Đã nhận liên kết nhiều người chơi không chính xác, không thể tham gia trò chơi. Hãy chắc chắn là cả hai người đang sử dụng phiên bản Lexica mới nhất.</string>
+    <string name="invalid_multiplayer_link">Đã nhận liên kết nhiều người chơi/chia sẻ không chính xác, không thể tham gia trò chơi. Hãy chắc chắn là cả hai người đang sử dụng phiên bản Lexica mới nhất.</string>
     <string name="new_game_mode">Chế độ chơi mới</string>
     <string name="game_mode">Chế độ chơi</string>
     <string name="multiplayer">Nhiều người chơi</string>
@@ -145,4 +145,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Bao gồm ñ nhưng không có điểm nhấn</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Tiếng Tây Ban Nha chỉ Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Bao gồm các dấu phụ: áéíóúüñ</string>
+    <string name="whats_new_sharing">Chia sẻ thử thách!</string>
+    <string name="share">Chia sẻ</string>
+    <string name="back">Quay lại</string>
+    <string name="invite__multiplayer__description">Bạn đã được mời vào một ván Lexica nhiều người chơi:</string>
+    <string name="invite__multiplayer__game_offline">Muốn chơi mà không có mạng\? Hãy thử chơi bằng bút và giấy:</string>
+    <string name="invite__challenge__description">Tôi đã tìm thấy %1$d từ và đạt %2$d điểm trên bảng Lexica này, bạn có thể đánh bại tôi không\?</string>
+    <string name="invite__dont_have_lexica_installed">Chưa cài đặt Lexica\? Hãy tải từ https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="send_challenge_invite_to">Gửi thử thách đến…</string>
+    <string name="send_multiplayer_invite_to">Gửi lời mời đến…</string>
+    <string name="whats_new_sharing_description">Sau khi chơi xong một ván, bây giờ bạn có thể chia sẻ bảng đó với các bạn của bạn và thách thức họ vượt lên điểm của bạn.
+\n
+\nTương tự nhiều người chơi, nhưng dành cho lúc bạn vừa chơi với một bảng có bố cục thú vị hoặc đầy thử thách mà bạn nghĩ là các bạn của bạn sẽ tận hưởng.
+\n
+\nNhư mọi khi, <a href="https://github.com/lexica/lexica/issues">phản hồi luôn được chào đón</a> về cách mà tính năng này có thể được cải thiện.</string>
 </resources>
