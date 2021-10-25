@@ -148,7 +148,7 @@
         <item quantity="one">%1$d parola (tocca per aggiornare)</item>
         <item quantity="other">%1$d parole (tocca per aggiornare)</item>
     </plurals>
-    <string name="invalid_multiplayer_link">Collegamento multigiocatore ricevuto errato, non è possibile unirsi al gioco. Assicurati che entrambi stiate usando l’ultima versione di Lexica.</string>
+    <string name="invalid_multiplayer_link">Collegamento multigiocatore/condivisione ricevuto errato, non è possibile unirsi al gioco. Assicurati che entrambi stiate usando l’ultima versione di Lexica.</string>
     <string name="dialog_refresh_confirmation_message">Campo aggiornato</string>
     <string name="dialog_refresh_button">Aggiorna</string>
     <string name="dialog_refresh_content">Per assicurarti di giocare lo stesso campo di gioco dei tuoi avversari, assicurati di inviare nuovamente gli inviti dopo averlo aggiornato.</string>
@@ -160,4 +160,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Include ñ ma senza accenti</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Spagnolo, solo Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Include i diacritici: áéíóúüñ</string>
+    <string name="whats_new_sharing">Condividi una sfida!</string>
+    <string name="whats_new_sharing_description">Dopo aver terminato una partita, ora puoi condividere il tabellone con i tuoi amici e sfidarli a battere il tuo punteggio.
+\n
+\nSimile al multigiocatore, ma per quella volta in cui hai appena giocato una tavola particolarmente interessante o impegnativa che pensi che i tuoi amici apprezzeranno.
+\n
+\nCome sempre, i <a href="https://github.com/lexica/lexica/issues">comenti sono benvenuti</a> su come questa funzione può essere migliorata.</string>
+    <string name="share">Condividi</string>
+    <string name="invite__multiplayer__game_offline">Vuoi giocare fuori linea\? Prova a giocare con carta e penna:</string>
+    <string name="back">Indietro</string>
+    <string name="send_multiplayer_invite_to">Invia un invito a…</string>
+    <string name="invite__multiplayer__description">Sei stato/a invitato/a a una partita multigiocatore di Lexica:</string>
+    <string name="invite__challenge__description">Ho trovato %1$d parole e totalizzato %2$d punti su questo tabellone Lexica, puoi battermi\?</string>
+    <string name="invite__dont_have_lexica_installed">Non hai installato Lexica\? Prendilo da https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="send_challenge_invite_to">Invia la sfida a…</string>
 </resources>
