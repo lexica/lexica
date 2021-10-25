@@ -151,4 +151,19 @@
 \nVoit osoittaa tukesi ja osallistua sen jatkokehitykseen lahjoittamalla <a href="https://liberapay.com/Lexica">Liberapay</a> tai <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a> kautta.</string>
     <string name="whats_new_sharing">Jaa haaste!</string>
     <string name="back">Takaisin</string>
+    <string name="dialog_end_game_confirm_message">Oletko varma, että haluat lopettaa tämän pelin\?</string>
+    <string name="whats_new_sharing_description">Kun olet pelannut pelin loppuun, voit nyt jakaa pelilaudan ystäviesi kanssa ja haastaa heidät voittamaan tuloksesi.
+\n
+\nSamanlainen kuin moninpeli, mutta silloin, kun olet juuri pelannut erityisen mielenkiintoisen tai haastavan laudan, josta ystäväsi varmasti nauttisivat.
+\n
+\nKuten aina, <a href="https://github.com/lexica/lexica/issues">palaute on tervetullutta</a> siitä, miten tätä ominaisuutta voidaan parantaa.</string>
+    <string name="dialog_end_game_confirm_title">Lopeta peli</string>
+    <string name="invite__dont_have_lexica_installed">Eikö Lexicaa ole asennettu\? Asenna se osoitteesta https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="invite__multiplayer__game_offline">Haluatko pelata offline-tilassa\? Kokeile pelaamista kynällä ja paperilla:</string>
+    <string name="share">Jaa</string>
+    <string name="invalid_multiplayer_link">Vastaanotettu väärä moninpeli-/jakolinkki, et voi liittyä peliin. Varmista, että te molemmat käytätte Lexican uusinta versiota.</string>
+    <string name="invite__multiplayer__description">Sinut on kutsuttu moninpelattavaan Lexica-peliin:</string>
+    <string name="invite__challenge__description">Löysin %1$d sanaa ja sain %2$d pistettä tällä Lexica-taululla, voitko voittaa minut\?</string>
+    <string name="send_challenge_invite_to">Lähetä haaste…</string>
+    <string name="send_multiplayer_invite_to">Lähetä kutsu…</string>
 </resources>
