@@ -134,4 +134,21 @@
     </plurals>
     <string name="dialog_refresh_button">Päivitä</string>
     <string name="dialog_refresh_title">Päivitä lauta</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Sisältää diakriittiset merkit: çáéíóúúâêôãõà ja kirjaimet: kwy</string>
+    <string name="dialog_refresh_confirmation_message">Pelilauta päivitetty</string>
+    <string name="whats_new_support">Tue Lexicaa</string>
+    <string name="multiplayer_lobby__join_game">Liity peliin</string>
+    <string name="multiplayer__share_invites">Jaa kutsuja</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Espanja, vain Ñ</string>
+    <string name="multiplayer__start_when_ready">Kun kaikki pelaajat ovat valmiina, aloittakaa peli samaan aikaan.</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Sisältää diakriittiset merkit: áéíóúüüñ</string>
+    <string name="multiplayer_lobby__join_when_ready">Kun kaikki pelaajat ovat valmiina, liity peliin.</string>
+    <string name="dialog_refresh_content">Varmistaaksesi pelaamisen samalla laudalla kuin vastustajasi, lähetä kutsut uudelleen päivittämisen jälkeen.</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Sisältää ñ mutta ei aksentteja</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugali (Brasilia) (laajennettu)</string>
+    <string name="whats_new_support_description">Lexica on ja tulee aina olemaan vapaa ja ilmainen.
+\n
+\nVoit osoittaa tukesi ja osallistua sen jatkokehitykseen lahjoittamalla <a href="https://liberapay.com/Lexica">Liberapay</a> tai <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a> kautta.</string>
+    <string name="whats_new_sharing">Jaa haaste!</string>
+    <string name="back">Takaisin</string>
 </resources>
