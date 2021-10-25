@@ -28,7 +28,7 @@
     <string name="total_words">Wörter insgesamt:</string>
     <string name="view_word"><u>Ansicht</u></string>
     <string name="words">Wörter</string>
-    <string name="dialog_about_content">Berühren Sie den Bildschirm und bewegen Sie Ihren Finger über benachbarte Felder, um Wörter zu buchstabieren. Sie haben drei Minuten, um so viele Wörter wie möglich zu finden.
+    <string name="dialog_about_content">Berühre den Bildschirm und bewege deinen Finger über benachbarte Felder, um Wörter zu buchstabieren. Du hast drei Minuten, um so viele Wörter wie möglich zu finden.
 \n
 \nPunktevergabe:
 \nAuf 4×4 großen Spielfeldern müssen Wörter mindestens drei Buchstaben lang sein, auf 5×5 großen Spielfeldern mindestens vier Buchstaben lang. Wörter, die drei oder vier Buchstaben lang sind, zählen einen Punkt. Längere Wörter zählen mehr Punkte. Eigennamen zählen nicht.
@@ -48,7 +48,7 @@
     <string name="pref_hintMode_summary">Zeigt die Anzahl Wörter in der jeder Buchstabe verwendet werden kann</string>
     <string name="score">Punkte</string>
     <string name="pref_definitionProvider">Wörterbuch</string>
-    <string name="pref_definitionProvider_summary">Wählen Sie ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird eine Online-Quelle wie Wiktionary verwendet.</string>
+    <string name="pref_definitionProvider_summary">Wähle ein Wörterbuch aus. Ist die ausgewählte Quelle nicht installiert, wird eine Online-Quelle wie Wiktionary verwendet.</string>
     <string name="pref_definitionProvider_dialog">Wörterbuchauswahl</string>
     <string name="pref_dict_de_DE">Deutsch (erweitert)</string>
     <string name="pref_dict_nl">Niederländisch</string>
@@ -99,9 +99,9 @@
     <string name="game_mode_custom_description">Benutzerdefinierter Spielmodus</string>
     <string name="game_mode_letter_points_description">Erzielen Sie mehr Punkte, wenn Sie weniger gebräuchliche Buchstaben verwenden</string>
     <string name="game_mode_letter_points">Buchstabenpunkte</string>
-    <string name="game_mode_beginner_description">Verwenden Sie Hinweise, um Wörter zu finden</string>
+    <string name="game_mode_beginner_description">Verwende Hinweise, um Wörter zu finden</string>
     <string name="game_mode_beginner">Anfänger</string>
-    <string name="game_mode_marathon_description">Versuchen Sie, alle Wörter ohne Zeitdruck zu finden</string>
+    <string name="game_mode_marathon_description">Versuche, alle Wörter ohne Zeitdruck zu finden</string>
     <string name="game_mode_marathon">Marathon</string>
     <string name="game_mode_sprint_description">Kurzes Spiel, um so viele Wörter wie möglich zu finden</string>
     <string name="menu_save_game_mode">Speichern</string>
@@ -132,13 +132,13 @@
     <string name="multiplayer">Mehrspieler</string>
     <string name="multiplayer__start_game">Spiel starten</string>
     <string name="multiplayer__qr_code__accessible_description">QR-Code: Andere können dies scannen, um an diesem Spiel teilzunehmen</string>
-    <string name="multiplayer__start_when_ready">Wenn alle Spieler bereit sind, sollten Sie alle gleichzeitig mit dem Spiel beginnen.</string>
+    <string name="multiplayer__start_when_ready">Wenn alle Spieler bereit sind, solltet ihr alle gleichzeitig mit dem Spiel beginnen.</string>
     <string name="multiplayer__share_invites">Einladungen freigeben</string>
     <string name="multiplayer_lobby__join_game">Spiel beitreten</string>
-    <string name="multiplayer_lobby__join_when_ready">Wenn alle Spieler bereit sind, treten Sie dem Spiel bei.</string>
+    <string name="multiplayer_lobby__join_when_ready">Wenn alle Spieler bereit sind, tretet dem Spiel bei.</string>
     <string name="whats_new_support_description">Lexica ist und wird immer frei, kostenlos und quelloffen sein.
 \n
-\nSie können Ihre Unterstützung zeigen und zu seiner weiteren Entwicklung beitragen, indem Sie über <a href="https://liberapay.com/Lexica">Liberapay</a> oder <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a> spenden.</string>
+\nDu kannst deine Unterstützung zeigen und zu seiner weiteren Entwicklung beitragen, indem du über <a href="https://liberapay.com/Lexica">Liberapay</a> oder <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a> spendest.</string>
     <string name="whats_new_support">Lexica unterstützen</string>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d Wort</item>
@@ -148,16 +148,30 @@
         <item quantity="one">%1$d Wort (zum Aktualisieren antippen)</item>
         <item quantity="other">%1$d Wörter (zum Aktualisieren antippen)</item>
     </plurals>
-    <string name="invalid_multiplayer_link">Falscher Mehrspielerlink erhalten; du kannst dem Spiel nicht beitreten. Stelle sicher, dass ihr beide die neueste Version von Lexica verwendet.</string>
+    <string name="invalid_multiplayer_link">Falscher Mehrspieler-/Teilungslink erhalten; du kannst dem Spiel nicht beitreten. Stelle sicher, dass ihr beide die neueste Version von Lexica verwendet.</string>
     <string name="dialog_refresh_confirmation_message">Spielfeld aktualisiert</string>
     <string name="dialog_refresh_button">Aktualisieren</string>
     <string name="dialog_refresh_content">Um sicherzustellen, dass du auf dasselbem Spielfed wie deine Gegner spielst, stelle sicher, dass du alle Einladungen nach dem Aktualisieren erneut sendest.</string>
     <string name="dialog_refresh_title">Spielfeld aktualisieren</string>
     <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Enthält diakritische Zeichen: çáéíóúâêôãõà und Buchstaben: kwy</string>
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugiesisch (Brasilien) (erweitert)</string>
-    <string name="dialog_end_game_confirm_message">Sind Sie sicher, dass Sie dieses Spiel beenden wollen\?</string>
+    <string name="dialog_end_game_confirm_message">Bist du sicher, dass du dieses Spiel beenden willst\?</string>
     <string name="dialog_end_game_confirm_title">Spiel beenden</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Spanisch, nur Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Enthält diakritische Zeichen: áéíóúüñ</string>
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Enthält ñ, aber keine Akzente</string>
+    <string name="invite__dont_have_lexica_installed">Du hast Lexica noch nicht installiert\? Hol es dir von https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="back">Zurück</string>
+    <string name="send_challenge_invite_to">Herausforderung senden an …</string>
+    <string name="invite__multiplayer__description">Du wurdest zu einem Lexica-Mehrspielerspiel eingeladen:</string>
+    <string name="invite__multiplayer__game_offline">Möchtest du offline spielen\? Versuche, mit Stift und Papier zu spielen:</string>
+    <string name="invite__challenge__description">Ich habe %1$d Wörter gefunden und %2$d Punkte auf diesem Lexica-Brett erzielt. Könntest du mich schlagen\?</string>
+    <string name="send_multiplayer_invite_to">Einladung senden an …</string>
+    <string name="whats_new_sharing">Teilen Sie eine Herausforderung!</string>
+    <string name="share">Teilen</string>
+    <string name="whats_new_sharing_description">Wenn du ein Spiel beendet hast, kannst du das Spielbrett mit deinen Freunden teilen und sie herausfordern, deinen Punktestand zu übertreffen.
+\n
+\nÄhnlich wie im Mehrspielermodus, aber für den Fall, dass du gerade ein besonders interessantes oder herausforderndes Brettlayout gespielt hast, von dem du glaubst, dass es deinen Freunden gefallen wird.
+\n
+\nWie immer ist <a href="https://github.com/lexica/lexica/issues">Rückmeldung willkommen</a>, wie diese Funktion verbessert werden kann.</string>
 </resources>
