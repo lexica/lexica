@@ -148,7 +148,7 @@
         <item quantity="one">%1$d mot (touchez pour actualiser)</item>
         <item quantity="other">%1$d mots (touchez pour actualiser)</item>
     </plurals>
-    <string name="invalid_multiplayer_link">Lien multijoueur reçu incorrect, impossible de rejoindre la partie. Assurez-vous que vous utilisez tous les deux la dernière version de Lexica.</string>
+    <string name="invalid_multiplayer_link">Réception d\'un lien multijoueur/partage incorrect, impossible de rejoindre la partie. Assurez-vous que vous utilisez tous les deux la dernière version de Lexica.</string>
     <string name="dialog_refresh_confirmation_message">Plateau actualisé</string>
     <string name="dialog_refresh_button">Actualiser</string>
     <string name="dialog_refresh_content">Pour vous assurer que vous jouez sur le même plateau que vos adversaires, veillez à renvoyer les invitations après actualisation.</string>
@@ -160,4 +160,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Inclut ñ mais aucun accent</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Espagnol uniquement Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Inclut les diacritiques : áéíóúüñ</string>
+    <string name="whats_new_sharing_description">Après avoir terminé une partie, vous pouvez désormais partager ce tableau avec vos amis et les mettre au défi de battre votre score.
+\n
+\nC\'est un peu comme le mode multijoueur, mais pour les moments où vous venez de jouer à un tableau particulièrement intéressant ou stimulant et que vous pensez que vos amis vont apprécier.
+\n
+\nComme toujours, <a href="https://github.com/lexica/lexica/issues">les commentaires sont les bienvenus</a> sur la manière dont cette fonctionnalité peut être améliorée.</string>
+    <string name="invite__dont_have_lexica_installed">Vous n\'avez pas installé Lexica \? Téléchargez-le sur https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="whats_new_sharing">Partagez un défi !</string>
+    <string name="share">Partager</string>
+    <string name="back">Retour</string>
+    <string name="invite__multiplayer__game_offline">Vous voulez jouer hors ligne \? Essayez de jouer avec un stylo et du papier :</string>
+    <string name="invite__challenge__description">J\'ai trouvé %1$d mots et obtenu %2$d points sur ce tableau Lexica, peux-tu me battre \?</string>
+    <string name="send_multiplayer_invite_to">Envoyer une invitation à…</string>
+    <string name="invite__multiplayer__description">Vous avez été invité(e) à une partie multijoueur de Lexica :</string>
+    <string name="send_challenge_invite_to">Envoyer le défi à…</string>
 </resources>
