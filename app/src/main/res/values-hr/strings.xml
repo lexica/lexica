@@ -143,7 +143,7 @@
     <string name="whats_new_support_description">Lexica je i uvijek će biti slobodan program otvorenog koda.
 \n
 \nSvoju podršku i doprinos njegovom daljnjem razvoju možeš pokazati donacijom na stranicama <a href="https://liberapay.com/Lexica">Liberapay</a> ili <a href="https://github.com/sponsors/pserwylo">GitHub sponzori</a>.</string>
-    <string name="invalid_multiplayer_link">Primljena je neispravna veza za više igrača. Pridruživanje igri nije moguće. Pazi da oboje koristite najnoviju verziju programa Lexica.</string>
+    <string name="invalid_multiplayer_link">Primljena je neispravna veza za više igrača/dijeljenje. Pridruživanje igri nije moguće. Pazi da oboje koristite najnoviju verziju programa Lexica.</string>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d riječ</item>
         <item quantity="few">%1$d riječi</item>
@@ -165,4 +165,18 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Uključuje ñ, ali bez naglasaka</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Španjolski samo Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Uključuje dijakritičke znakove: áéíóúüñ</string>
+    <string name="back">Natrag</string>
+    <string name="invite__multiplayer__description">Pozvan/a si u igru Lexica za više igrača:</string>
+    <string name="invite__multiplayer__game_offline">Želiš igrati izvanmrežno\? Pokušaj igrati olovkom i papirom:</string>
+    <string name="whats_new_sharing_description">Nakon završetka igre, podijeli tu ploču sa svojim prijateljima i izazvati ih da nadmaše tvoj rezultat.
+\n
+\nSlično modusu s više igrača, ali za to vrijeme kad odigraš posebno zanimljiv ili izazovan izgled ploče za koji misliš da će tvoji prijatelji uživati.
+\n
+\nKao i uvijek, <a href="https://github.com/lexica/lexica/issues">povratne informacije su dobrodošle</a> o tome kako se ova funkcija može poboljšati.</string>
+    <string name="whats_new_sharing">Dijeli izazov!</string>
+    <string name="share">Dijeli</string>
+    <string name="invite__challenge__description">Pronašao sam %1$d riječi i postigao %2$d bodova na ovoj Lexica ploči, možeš li me pobijediti\?</string>
+    <string name="invite__dont_have_lexica_installed">Lexica još nije instaliran\? Preuzmi program s https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="send_challenge_invite_to">Pošalji izazov za …</string>
+    <string name="send_multiplayer_invite_to">Pošalji pozivnicu za …</string>
 </resources>
