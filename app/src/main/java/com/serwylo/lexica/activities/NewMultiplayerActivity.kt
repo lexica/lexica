@@ -87,6 +87,8 @@ class NewMultiplayerActivity : AppCompatActivity() {
         Log.d(TAG, "Preparing multiplayer game: $uri")
 
         binding.qr.setImageBitmap(appBitmap)
+        binding.gameModeDetails.setGameMode(gameMode)
+        binding.gameModeDetails.setLanguage(language)
 
         binding.toggleQr.isEnabled = true
         binding.toggleQr.isChecked = false
