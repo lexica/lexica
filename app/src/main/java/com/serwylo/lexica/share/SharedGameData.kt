@@ -38,14 +38,7 @@ data class SharedGameData(
         WEB
     }
 
-    constructor(
-            board: List<String>,
-            language: Language,
-            gameMode: GameMode,
-            type: Type,
-            numWordsToBeat: Int = -1,
-            scoreToBeat: Int = -1
-    ) : this(
+    constructor(board: List<String>, language: Language, gameMode: GameMode, type: Type, numWordsToBeat: Int = -1, scoreToBeat: Int = -1) : this(
         board,
         language,
         gameMode.scoreType,
