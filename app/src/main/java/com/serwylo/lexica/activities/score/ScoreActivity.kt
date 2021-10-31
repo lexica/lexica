@@ -121,13 +121,19 @@ class ScoreActivity : AppCompatActivity() {
             action = Intent.ACTION_SEND
             type = "text/plain"
 
-            val uri = SharedGameData(game.board.letters.toList(), game.language, game.gameMode, SharedGameData.Type.SHARE, game.wordCount, game.score).serialize()
+            val sharedGameData = SharedGameData(game.board.letters.toList(), game.language, game.gameMode, SharedGameData.Type.SHARE, game.wordCount, game.score)
+            val uri = sharedGameData.serialize(SharedGameData.Platform.ANDROID)
+            val webUri = sharedGameData.serialize(SharedGameData.Platform.WEB)
             val text = """
                 ${getString(R.string.invite__challenge__description, game.wordCount, game.score)}
                 
                 $uri
                 
                 ${getString(R.string.invite__dont_have_lexica_installed)}
+                
+                ${getString(R.string.invite__dont_have_lexica_installed_web)}
+                
+                $webUri
             """.trimIndent()
             putExtra(Intent.EXTRA_TEXT, text)
         }
