@@ -174,4 +174,9 @@
     <string name="invite__dont_have_lexica_installed">Sul pole nutiseadmes Lexicat\? Laadi ta kas Get it from https://play.google.com/store/apps/details\?id=com.serwylo.lexica või https://f-droid.org/en/packages/com.serwylo.lexica repositooriumidest</string>
     <string name="send_challenge_invite_to">Saada väljakutse…</string>
     <string name="invite__challenge__description">Ma leidsin selles Lexica mängus %1$d sõna ja kogusid %2$d punkti. Aga kas sina saaksid parema tulemuse\?</string>
+    <string name="multiplayer__toggle_qr_app">Näita Androidi
+\nQR-koodi</string>
+    <string name="multiplayer__toggle_qr_web">Näita veebirakenduse
+\nQR-koodi</string>
+    <string name="invite__dont_have_lexica_installed_web">Proovi Lexicat veebibrauseris (esialgu katseliselt):</string>
 </resources>
