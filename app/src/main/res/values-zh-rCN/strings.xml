@@ -169,4 +169,9 @@
 \n
 \n我们一如既往地欢迎您提供如何改进此功能的<a href="https://github.com/lexica/lexica/issues">反馈</a>。</string>
     <string name="send_challenge_invite_to">发送挑战至…</string>
+    <string name="multiplayer__toggle_qr_app">显示安卓
+\n二维码</string>
+    <string name="multiplayer__toggle_qr_web">显示网页
+\n二维码</string>
+    <string name="invite__dont_have_lexica_installed_web">或者在浏览器中试用 Lexica (beta)：</string>
 </resources>
