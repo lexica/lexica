@@ -174,4 +174,9 @@
     <string name="invite__multiplayer__description">Je bent uitgenodigd voor een Lexica-spel:</string>
     <string name="invite__multiplayer__game_offline">Wil je offline spelen\? Gebruik dan pen en papier:</string>
     <string name="invite__challenge__description">Ik heb %1$d woorden gevonden en %2$d puinten gescoord op dit Lexica-bord. Kun jij mijn score verbeteren\?</string>
+    <string name="multiplayer__toggle_qr_app">QR-code voor
+\nAndroid tonen</string>
+    <string name="multiplayer__toggle_qr_web">QR-code voor
+\nwebversie tonen</string>
+    <string name="invite__dont_have_lexica_installed_web">Of speel Lexica in je browser (bèta):</string>
 </resources>
