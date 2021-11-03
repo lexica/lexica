@@ -174,4 +174,9 @@
     <string name="invite__multiplayer__description">Çok oyunculu bir Lexica oyununa davet edildiniz:</string>
     <string name="back">Geri</string>
     <string name="invite__challenge__description">Bu Lexica tahtasında %1$d sözcük buldum ve %2$d puan aldım, beni yenebilir misin\?</string>
+    <string name="invite__dont_have_lexica_installed_web">Veya Lexica\'yı tarayıcıda deneyin (beta):</string>
+    <string name="multiplayer__toggle_qr_app">Android QR
+\nKodunu Göster</string>
+    <string name="multiplayer__toggle_qr_web">Web QR
+\nKodunu Göster</string>
 </resources>
