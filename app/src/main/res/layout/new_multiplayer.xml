@@ -93,6 +93,37 @@
 		android:layout_marginEnd="?attr/game__score__padding"
 		android:layout_marginStart="?attr/game__score__padding" />
 
+	<TextView
+		android:id="@+id/android_app_tag"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/multiplayer__toggle_qr_app"
+		android:textAlignment="center"
+		android:textColor="?attr/game__score__heading_text_colour"
+		app:layout_constraintTop_toBottomOf="@id/send_invite"
+		app:layout_constraintBottom_toBottomOf="@id/toggle_qr"
+		app:layout_constraintEnd_toStartOf="@id/toggle_qr" />
+
+	<androidx.appcompat.widget.SwitchCompat
+		android:id="@+id/toggle_qr"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintTop_toBottomOf="@id/send_invite"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintHorizontal_bias="0.5"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<TextView
+		android:id="@+id/web_app_tag"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/multiplayer__toggle_qr_web"
+		android:textAlignment="center"
+		android:textColor="?attr/game__score__heading_text_colour"
+		app:layout_constraintTop_toBottomOf="@id/send_invite"
+		app:layout_constraintBottom_toBottomOf="@id/toggle_qr"
+		app:layout_constraintStart_toEndOf="@id/toggle_qr" />
+
 	<ImageView
 		android:id="@+id/qr"
 		android:layout_width="0dp"
@@ -106,7 +137,7 @@
 		app:layout_constraintDimensionRatio="1:1"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/send_invite"
+		app:layout_constraintTop_toBottomOf="@id/toggle_qr"
 		app:layout_constraintVertical_bias="0.0"
 		tools:src="@tools:sample/avatars" />
 

@@ -33,6 +33,11 @@ data class SharedGameData(
         SHARE,
     }
 
+    enum class Platform {
+        ANDROID,
+        WEB
+    }
+
     constructor(board: List<String>, language: Language, gameMode: GameMode, type: Type, numWordsToBeat: Int = -1, scoreToBeat: Int = -1) : this(
         board,
         language,
@@ -46,7 +51,7 @@ data class SharedGameData(
         scoreToBeat,
     )
 
-    fun serialize(): Uri {
+    fun serialize(platform: Platform = Platform.ANDROID): Uri {
         val boardChars = Base64.encodeToString(board.joinToString(",").encodeToByteArray(),
                 Base64.NO_PADDING + Base64.NO_WRAP + Base64.URL_SAFE)
         val scoreTypeSerialized = when (scoreType) {
@@ -62,15 +67,7 @@ data class SharedGameData(
             else -> ""
         }
 
-        val path = when (type) {
-            Type.MULTIPLAYER -> "m"
-            Type.SHARE -> "share"
-        }
-
-        val urlBuilder = Uri.Builder()
-            .scheme("https")
-            .authority("lexica.github.io")
-            .path("/$path/")
+        val urlBuilder = getBaseUrl(platform)
             .appendQueryParameter(Keys.board, boardChars)
             .appendQueryParameter(Keys.language, language.name)
             .appendQueryParameter(Keys.time, timeLimitInSeconds.toString())
@@ -97,6 +94,24 @@ data class SharedGameData(
         return urlBuilder.build()
     }
 
+    private fun getBaseUrl(platform: Platform): Uri.Builder {
+        val androidPath = when (type) {
+            Type.MULTIPLAYER -> "m"
+            Type.SHARE -> "share"
+        }
+
+        val webPath = "web-lexica/multiplayer"
+
+        val path = when (platform) {
+            Platform.WEB -> webPath
+            Platform.ANDROID -> androidPath
+        }
+
+        return Uri.Builder()
+                .scheme("https")
+                .authority("lexica.github.io")
+                .path("/$path/")
+    }
     object Keys {
         const val board = "b"
         const val language = "l"
