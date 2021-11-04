@@ -174,4 +174,9 @@
     <string name="send_challenge_invite_to">Sendi defion al…</string>
     <string name="invite__dont_have_lexica_installed">Ĉu Lexica ne estas instalita\? Akiru ĝin ĉe https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
     <string name="invite__challenge__description">Mi trovis %1$d vortojn kaj gajnis %2$d poentojn sur ĉi tiu Lexica-tabulo. Ĉu vi povas superi min\?</string>
+    <string name="invite__dont_have_lexica_installed_web">Aŭ provu Lexica per via TTT-legilo (beta-teste):</string>
+    <string name="multiplayer__toggle_qr_web">Montri QR-Kodon
+\npor reto</string>
+    <string name="multiplayer__toggle_qr_app">Montri QR-Kodon
+\npor Android</string>
 </resources>
