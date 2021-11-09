@@ -174,4 +174,9 @@
     <string name="invite__challenge__description">Ho trovato %1$d parole e totalizzato %2$d punti su questo tabellone Lexica, puoi battermi\?</string>
     <string name="invite__dont_have_lexica_installed">Non hai installato Lexica\? Prendilo da https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
     <string name="send_challenge_invite_to">Invia la sfida a…</string>
+    <string name="invite__dont_have_lexica_installed_web">Oppure prova Lexica nel browser (beta):</string>
+    <string name="multiplayer__toggle_qr_app">Mostra
+\nil codice QR Android</string>
+    <string name="multiplayer__toggle_qr_web">Mostra
+\nil codice QR web</string>
 </resources>
