@@ -174,4 +174,9 @@
 \nÄhnlich wie im Mehrspielermodus, aber für den Fall, dass du gerade ein besonders interessantes oder herausforderndes Brettlayout gespielt hast, von dem du glaubst, dass es deinen Freunden gefallen wird.
 \n
 \nWie immer ist <a href="https://github.com/lexica/lexica/issues">Rückmeldung willkommen</a>, wie diese Funktion verbessert werden kann.</string>
+    <string name="multiplayer__toggle_qr_web">Web-QR-Code
+\nanzeigen</string>
+    <string name="invite__dont_have_lexica_installed_web">Oder probieren Sie Lexica im Browser (Beta) aus:</string>
+    <string name="multiplayer__toggle_qr_app">Android-QR-Code
+\nanzeigen</string>
 </resources>
