@@ -174,4 +174,9 @@
     <string name="send_multiplayer_invite_to">Envoyer une invitation à…</string>
     <string name="invite__multiplayer__description">Vous avez été invité(e) à une partie multijoueur de Lexica :</string>
     <string name="send_challenge_invite_to">Envoyer le défi à…</string>
+    <string name="invite__dont_have_lexica_installed_web">Ou essayez Lexica dans le navigateur (bêta) :</string>
+    <string name="multiplayer__toggle_qr_app">Afficher
+\nle code QR Android</string>
+    <string name="multiplayer__toggle_qr_web">Afficher
+\nle code QR web</string>
 </resources>
