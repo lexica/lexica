@@ -179,4 +179,9 @@
     <string name="invite__dont_have_lexica_installed">Lexica još nije instaliran\? Preuzmi program s https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
     <string name="send_challenge_invite_to">Pošalji izazov za …</string>
     <string name="send_multiplayer_invite_to">Pošalji pozivnicu za …</string>
+    <string name="invite__dont_have_lexica_installed_web">Ili isprobaj program Lexica u pregledniku (beta):</string>
+    <string name="multiplayer__toggle_qr_app">Prikaži Android
+\nQR kod</string>
+    <string name="multiplayer__toggle_qr_web">Prikaži web
+\nQR kod</string>
 </resources>
