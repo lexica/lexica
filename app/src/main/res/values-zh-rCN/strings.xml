@@ -174,4 +174,8 @@
     <string name="multiplayer__toggle_qr_web">显示网页
 \n二维码</string>
     <string name="invite__dont_have_lexica_installed_web">或者在浏览器中试用 Lexica (beta)：</string>
+    <string name="whats_new_web_lexica">介绍 web Lexica！</string>
+    <string name="whats_new_web_lexica_description">特别感谢 @MattRCole 帮忙实现此功能！
+\n
+\n多人游戏邀请现在包括为那些没有 Android 设备的玩家提供的到新的(测试)网页版的链接。开启一个新的多人游戏时显示的二维码还可以显示网页版本的 URL。</string>
 </resources>
