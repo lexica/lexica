@@ -1,0 +1,7 @@
+Introducing the web version of Lexica!
+
+Special thanks to @MattRCole for such a huge effort bringing this to life!
+
+Multiplayer invites now include links to the new (beta) web version for those without Android devices. The QR code shown when starting a new multiplayer game can also show a URL to the web version.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
