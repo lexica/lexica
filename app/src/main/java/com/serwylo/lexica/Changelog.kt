@@ -27,6 +27,11 @@ object Changelog {
 
         return WhatsNew.newInstance(
             WhatsNewItem(
+                context.getString(R.string.whats_new_web_lexica),
+                context.getText(R.string.whats_new_web_lexica_description),
+                R.drawable.ic_people,
+            ),
+            WhatsNewItem(
                 context.getString(R.string.whats_new_sharing),
                 context.getText(R.string.whats_new_sharing_description),
                 R.drawable.ic_people,

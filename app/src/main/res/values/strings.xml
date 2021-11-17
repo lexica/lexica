@@ -119,6 +119,8 @@
     <string name="whats_new_continue">Continue</string>
     <string name="whats_new_sharing">Share a challenge!</string>
     <string name="whats_new_sharing_description">After finishing a game, you can now share that board with your friends and challenge them to beat your score.\n\nSimilar to multiplayer, but for that time when you\'ve just played a particularly interesting or challenging board layout that you think your friends will enjoy.\n\nAs always, <a href="https://github.com/lexica/lexica/issues">feedback is welcome</a> about how this feature can be improved.</string>
+    <string name="whats_new_web_lexica">Introducing web Lexica!</string>
+    <string name="whats_new_web_lexica_description">Special thanks to @MattRCole for such a huge effort bringing this to life!\n\nMultiplayer invites now include links to the new (beta) web version for those without Android devices. The QR code shown when starting a new multiplayer game can also show a URL to the web version.</string>
     <string name="whats_new_support">Support Lexica</string>
     <string name="whats_new_support_description">Lexica is and always will be free and open source.\n\nYou can show your support and contribute to its further development by donating via <a href="https://liberapay.com/Lexica">Liberapay</a> or <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="menu_view_found_words">View found words</string>
