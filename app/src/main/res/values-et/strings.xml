@@ -179,4 +179,8 @@
     <string name="multiplayer__toggle_qr_web">Näita veebirakenduse
 \nQR-koodi</string>
     <string name="invite__dont_have_lexica_installed_web">Proovi Lexicat veebibrauseris (esialgu katseliselt):</string>
+    <string name="whats_new_web_lexica">Võtame kasutusele veebipõhise Lexica!</string>
+    <string name="whats_new_web_lexica_description">Suur tänu meie kaasautorile @MattRCole, kes selle uuenduse on teoks teinud!
+\n
+\nMitmikmängu kutsetes on nüüd link katselisele veebipõhisele mängule, mida saavad need, kellel pole Androidi-põhist mängu käepärast. Uue mitmikmängi alustamiseks vajalik QR-kood võib näidata ka veebipõhise mängu aadressi.</string>
 </resources>
