@@ -179,4 +179,8 @@
 \nKodunu Göster</string>
     <string name="multiplayer__toggle_qr_web">Web QR
 \nKodunu Göster</string>
+    <string name="whats_new_web_lexica">Web Lexica ile tanışın!</string>
+    <string name="whats_new_web_lexica_description">Bunu hayata geçirmek için böylesine büyük bir çaba için @MattRCole\'a özel teşekkürler!
+\n
+\nÇok oyunculu davetler artık Android sygıtı olmayanlar için yeni (beta) web sürümüne bağlantılar içeriyor. Yeni bir çok oyunculu oyun başlatılırken gösterilen QR kodu, web sürümünün URL\'sini de gösterebilir.</string>
 </resources>
