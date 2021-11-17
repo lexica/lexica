@@ -179,4 +179,8 @@
 \npor reto</string>
     <string name="multiplayer__toggle_qr_app">Montri QR-Kodon
 \npor Android</string>
+    <string name="whats_new_web_lexica">Prezentante la retan version de Lexica!</string>
+    <string name="whats_new_web_lexica_description">Specialan dankon al @MattRCole pro tia grandega klopodo vivigi ĉi tion!
+\n
+\nInvitoj al pluraj ludantoj nun inkluzivas ligilojn al la nova (beta-testata) TTT-versio por tiuj sen Android-aparatoj. La QR-kodo montrata ĉe komenco de nova ludo por pluraj ludantoj ankaŭ povas montri URL al la TTT-versio.</string>
 </resources>
