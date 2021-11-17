@@ -189,4 +189,8 @@
     <string name="multiplayer__toggle_qr_web">Покажіть QR-код
 \nвеб</string>
     <string name="invite__dont_have_lexica_installed_web">Або спробуйте Lexica у переглядачі (бета-версія):</string>
+    <string name="whats_new_web_lexica">Представляємо вебверсію Lexica!</string>
+    <string name="whats_new_web_lexica_description">Особлива подяка @MattRCole за такі величезні зусилля для втілення задуму в життя!
+\n
+\nЗапрошення до багатокористувацької гри відтепер включають посилання на нову (бета-версію) для тих, хто не має пристроїв Android. QR-код, показаний під час запуску нової багатокористувацької гри, також може показувати URL-адресу вебверсії.</string>
 </resources>
