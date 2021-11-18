@@ -174,4 +174,8 @@
 \nQR kodą</string>
     <string name="multiplayer__toggle_qr_web">Rodyti žiniatinklio
 \nQR kodą</string>
+    <string name="whats_new_web_lexica_description">Ypatinga padėka @MattRCole už tokias didžiules pastangas tai įgyvendinti!
+\n
+\nĮ kvietimus žaisti keliems žaidėjams dabar įtrauktos nuorodos į naują (beta) interneto versiją tiems, kurie neturi Android įrenginių. QR kodas, rodomas pradedant naują daugelio žaidėjų žaidimą, taip pat gali rodyti interneto versijos URL adresą.</string>
+    <string name="whats_new_web_lexica">Pristatome Lexica žiniatinklyje!</string>
 </resources>
