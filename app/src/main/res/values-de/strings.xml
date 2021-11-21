@@ -179,4 +179,8 @@
     <string name="invite__dont_have_lexica_installed_web">Oder probieren Sie Lexica im Browser (Beta) aus:</string>
     <string name="multiplayer__toggle_qr_app">Android-QR-Code
 \nanzeigen</string>
+    <string name="whats_new_web_lexica_description">Besonderer Dank geht an @MattRCole, der sich so viel Mühe gegeben hat, dies zum Leben zu erwecken!
+\n
+\nMehrspieler-Einladungen enthalten jetzt Links zur neuen (Beta-)Webversion für alle, die kein Android-Gerät haben. Der QR-Code, der beim Start eines neuen Mehrspieler-Spiels angezeigt wird, kann auch eine URL zur Webversion anzeigen.</string>
+    <string name="whats_new_web_lexica">Wir stellen vor: Web-Lexica!</string>
 </resources>
