@@ -179,4 +179,8 @@
 \nle code QR Android</string>
     <string name="multiplayer__toggle_qr_web">Afficher
 \nle code QR web</string>
+    <string name="whats_new_web_lexica">Présentation de Lexica web !</string>
+    <string name="whats_new_web_lexica_description">Un grand merci à @MattRCole pour l\'effort considérable qu\'il a fourni pour donner vie à ce projet !
+\n
+\nLes invitations multijoueurs incluent désormais des liens vers la nouvelle version web (bêta) pour ceux qui n\'ont pas d\'appareil Android. Le code QR affiché au début d\'une nouvelle partie multijoueur peut également afficher une URL vers la version Web.</string>
 </resources>
