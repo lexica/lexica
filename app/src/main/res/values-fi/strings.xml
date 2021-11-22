@@ -166,4 +166,10 @@
     <string name="invite__challenge__description">Löysin %1$d sanaa ja sain %2$d pistettä tällä Lexica-taululla, voitko voittaa minut\?</string>
     <string name="send_challenge_invite_to">Lähetä haaste…</string>
     <string name="send_multiplayer_invite_to">Lähetä kutsu…</string>
+    <string name="whats_new_web_lexica">Esittelyssä Lexican web-versio!</string>
+    <string name="invite__dont_have_lexica_installed_web">Tai kokeile Lexicaa selaimessa (beta):</string>
+    <string name="multiplayer__toggle_qr_app">Näytä Androidin
+\nQR-koodi</string>
+    <string name="multiplayer__toggle_qr_web">Näytä web-version
+\nQR-koodi</string>
 </resources>
