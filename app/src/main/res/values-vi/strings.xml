@@ -159,4 +159,13 @@
 \nTương tự nhiều người chơi, nhưng dành cho lúc bạn vừa chơi với một bảng có bố cục thú vị hoặc đầy thử thách mà bạn nghĩ là các bạn của bạn sẽ tận hưởng.
 \n
 \nNhư mọi khi, <a href="https://github.com/lexica/lexica/issues">phản hồi luôn được chào đón</a> về cách mà tính năng này có thể được cải thiện.</string>
+    <string name="whats_new_web_lexica">Giới thiệu Lexica bản web!</string>
+    <string name="whats_new_web_lexica_description">Cảm ơn @MattRCole nhiều vì đã nỗ lực biến tính năng này thành hiện thực!
+\n
+\nCác lời mời nhiều người chơi bây giờ đã có liên kết đến phiên bản web mới (beta) cho những người không có thiết bị Android. Mã QR được hiện khi bắt đầu màn chơi nhiều người chơi mới cũng có thể hiện URL đến phiên bản web.</string>
+    <string name="invite__dont_have_lexica_installed_web">Hoặc thử Lexica trong trình duyệt (beta):</string>
+    <string name="multiplayer__toggle_qr_app">Hiện mã QR
+\ncho Android</string>
+    <string name="multiplayer__toggle_qr_web">Hiện mã QR
+\ncho Web</string>
 </resources>
