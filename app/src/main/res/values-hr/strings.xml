@@ -184,4 +184,8 @@
 \nQR kod</string>
     <string name="multiplayer__toggle_qr_web">Prikaži web
 \nQR kod</string>
+    <string name="whats_new_web_lexica">Predstavljamo web verziju za Lexica!</string>
+    <string name="whats_new_web_lexica_description">Veliko hvala @MattRCole na izradi ove mogućnosti!
+\n
+\nPozivnice za više igrača sada uključuju povezince na novu (beta) web verziju za one bez Android uređaja. QR kod koji se prikazuje prilikom pokretanja nove igre za više igrača također može prikazati URL adresu web verzije.</string>
 </resources>
