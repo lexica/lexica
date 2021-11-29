@@ -66,6 +66,19 @@ public class Game implements Synchronizer.Counter {
 
     public enum GameStatus {GAME_STARTING, GAME_RUNNING, GAME_PAUSED, GAME_FINISHED}
 
+    public static final int SOUND_WORD_GOOD = 0;
+    public static final int SOUND_WORD_ALREADYFOUND = 1;
+    public static final int SOUND_WORD_BAD = 2;
+    public static final int SOUND_1TILE = 3;
+    public static final int SOUND_2TILES = 4;
+    public static final int SOUND_3TILES = 5;
+    public static final int SOUND_4TILES = 6;
+    public static final int SOUND_5TILES = 7;
+    public static final int SOUND_6TILES = 8;
+    public static final int SOUND_7TILES = 9;
+    public static final int SOUNDS_COUNTOF = 10;
+    public static final int SOUNDS_TILES_COUNTOF = SOUND_7TILES - SOUND_1TILE + 1;
+
     private static int[] weights;
 
     private static final int[] WORD_POINTS = {0, 0, 0, // 0,1,2
@@ -94,7 +107,7 @@ public class Game implements Synchronizer.Counter {
 
     private AudioManager mgr;
     private SoundPool mSoundPool;
-    private int[] soundIds;
+    private int[] sysSoundIds;
 
     private final GameMode gameMode;
     private final Language language;
@@ -218,11 +231,18 @@ public class Game implements Synchronizer.Counter {
 
     private void initSoundPool(Context c) {
         mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 100);
-        soundIds = new int[3];
+        sysSoundIds = new int[SOUNDS_COUNTOF];
 
-        soundIds[0] = mSoundPool.load(c, R.raw.sound1, 1);
-        soundIds[1] = mSoundPool.load(c, R.raw.sound2, 1);
-        soundIds[2] = mSoundPool.load(c, R.raw.sound3, 1);
+        sysSoundIds[SOUND_WORD_GOOD]         = mSoundPool.load(c, R.raw.word_good, 1);
+        sysSoundIds[SOUND_WORD_ALREADYFOUND] = mSoundPool.load(c, R.raw.word_alreadyfound, 1);
+        sysSoundIds[SOUND_WORD_BAD]          = mSoundPool.load(c, R.raw.word_bad, 1);
+        sysSoundIds[SOUND_1TILE]             = mSoundPool.load(c, R.raw.tiles_1, 1);
+        sysSoundIds[SOUND_2TILES]            = mSoundPool.load(c, R.raw.tiles_2, 1);
+        sysSoundIds[SOUND_3TILES]            = mSoundPool.load(c, R.raw.tiles_3, 1);
+        sysSoundIds[SOUND_4TILES]            = mSoundPool.load(c, R.raw.tiles_4, 1);
+        sysSoundIds[SOUND_5TILES]            = mSoundPool.load(c, R.raw.tiles_5, 1);
+        sysSoundIds[SOUND_6TILES]            = mSoundPool.load(c, R.raw.tiles_6, 1);
+        sysSoundIds[SOUND_7TILES]            = mSoundPool.load(c, R.raw.tiles_7, 1);
 
         mgr = (AudioManager) c.getSystemService(Context.AUDIO_SERVICE);
     }
@@ -232,7 +252,7 @@ public class Game implements Synchronizer.Counter {
             float actualVolume = (float) mgr.getStreamVolume(AudioManager.STREAM_MUSIC);
             float maxVolume = (float) mgr.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
             float volume = actualVolume / maxVolume;
-            mSoundPool.play(soundIds[soundId], volume, volume, 1, 0, 1f);
+            mSoundPool.play(sysSoundIds[soundId], volume, volume, 1, 0, 1f);
         }
     }
 
@@ -353,6 +373,15 @@ public class Game implements Synchronizer.Counter {
         return sb.toString();
     }
 
+    public void playTileSound(int numTiles) {
+        if (numTiles < 1)
+            numTiles = 1;
+        else if (numTiles > SOUNDS_TILES_COUNTOF)
+            numTiles = SOUNDS_TILES_COUNTOF;
+
+        playSound(SOUND_1TILE + numTiles - 1);
+    }
+
     public void addWord(String word) {
         if (status != GameStatus.GAME_RUNNING) {
             return;
@@ -363,14 +392,14 @@ public class Game implements Synchronizer.Counter {
             if (wordsUsed.contains(cap)) {
                 // Word has been found before
                 wordList.addFirst("+" + word);
-                playSound(1);
+                playSound(SOUND_WORD_ALREADYFOUND);
             } else {
                 // Word has not been found before
                 wordCount++;
                 score += getWordScore(cap);
                 wordCountsByLength.put(cap.length(), wordCountsByLength.get(cap.length()) + 1);
                 wordList.addFirst(word);
-                playSound(0);
+                playSound(SOUND_WORD_GOOD);
                 removeWeight(cap);
 
                 if (wordCount == solutions.size()) {
@@ -380,7 +409,7 @@ public class Game implements Synchronizer.Counter {
         } else {
             // Word is not really a word
             wordList.addFirst(word);
-            playSound(2);
+            playSound(SOUND_WORD_BAD);
         }
         wordsUsed.add(cap);
     }
