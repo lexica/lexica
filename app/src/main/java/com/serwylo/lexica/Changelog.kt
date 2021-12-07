@@ -16,7 +16,10 @@ object Changelog {
 
         // Only show when upgrading Lexica for the first time, not when we first open Lexica from
         // a fresh install.
-        whatsNew.presentationOption = if (isFirstRun(activity)) PresentationOption.NEVER else PresentationOption.IF_NEEDED
+        whatsNew.presentationOption = PresentationOption.NEVER
+
+        // v3.5.0 is minor fixes, no changelog required.
+        // whatsNew.presentationOption = if (isFirstRun(activity)) PresentationOption.NEVER else PresentationOption.IF_NEEDED
         whatsNew.presentAutomatically(activity)
 
         rememberLexicaHasRun(activity)
