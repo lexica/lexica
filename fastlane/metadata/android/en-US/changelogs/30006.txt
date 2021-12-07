@@ -1,0 +1,5 @@
+Better use of sounds (thanks to @splisp).
+
+Improved Dutch dictionary - no more diacritics (thanks to @verinatanck and @Sjord for the language specific input).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
