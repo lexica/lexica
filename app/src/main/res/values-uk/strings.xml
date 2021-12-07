@@ -55,7 +55,7 @@
     <string name="pref_breakdown">Показати кількість слів однієї довжини</string>
     <string name="pref_breakdown_summary">Показати кількість слів кожної довжини під час гри</string>
     <string name="pref_definitionProvider">Постачальник визначень</string>
-    <string name="pref_definitionProvider_summary">Виберіть постачальника визначень для використання. Якщо вибраного постачальника не встановлено, буде застосовано мережне джерело, таке як Вікісловник.</string>
+    <string name="pref_definitionProvider_summary">Виберіть постачальника визначень для використання. Якщо вибраного постачальника не встановлено, буде застосовано онлайн-джерело, як от Вікісловник.</string>
     <string name="pref_definitionProvider_dialog">Виберіть постачальника визначень</string>
     <string name="pref_dict_ja">Японська</string>
     <string name="pref_dict_ru">Російська</string>
@@ -179,7 +179,7 @@
     <string name="share">Поділитися</string>
     <string name="back">Назад</string>
     <string name="invite__multiplayer__description">Вас запросили до багатокористувацької гри Lexica:</string>
-    <string name="invite__multiplayer__game_offline">Хочете грати в режимі офлайн\? Спробуйте грати ручкою та папером:</string>
+    <string name="invite__multiplayer__game_offline">Хочете грати в офлайн\? Спробуйте грати ручкою та папером:</string>
     <string name="send_multiplayer_invite_to">Надіслати запрошення для…</string>
     <string name="invite__dont_have_lexica_installed">Не встановлено Lexica\? Завантажте з https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
     <string name="invite__challenge__description">Мною знайдено %1$d слова і набрано %2$d балів на цій дошці Lexica, чи зможете мене обіграти\?</string>
