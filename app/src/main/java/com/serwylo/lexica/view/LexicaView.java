@@ -574,6 +574,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
             touchedCells.add(touching);
             highlighted = touchedCells;
             numTouched++;
+            game.playTileSound(numTouched);
             redraw();
         }
 
