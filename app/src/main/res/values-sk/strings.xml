@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="dialog_about_title">O Lexica</string>
     <string name="pref_sounds">Zvuky povolené</string>
-    <string name="hint_colour">Farebné dlaždice</string>
+    <string name="hint_colour">Farba dlaždíc</string>
     <string name="tile_count">Počet slov</string>
     <string name="pref_dict">Slovník</string>
     <string name="pref_hintMode">Režim nápovedy</string>
-    <string name="word_length">Dĺžka slova</string>
-    <string name="pref_scoreType">Spôsob bodovania</string>
+    <string name="word_length">Dĺžka Slov</string>
+    <string name="pref_scoreType">Typ bodovania</string>
     <string name="pref_timeLimit">Časový limit</string>
     <string name="pref_boardSize">Veľkosť hracej plochy</string>
     <string name="lexicon_is_in_beta">Beta</string>
-    <string name="pref_dict_en_US">Angličtina (US)</string>
+    <string name="pref_dict_en_US">Angličtina (USA)</string>
     <string name="pref_dict_uk">Ukrajinčina</string>
-    <string name="pref_dict_en_GB">Angličtina (UK)</string>
+    <string name="pref_dict_en_GB">Angličtina (Spojené kráľovstvo)</string>
     <string name="pref_dict_ru">Ruština</string>
     <string name="pref_dict_pt_BR_no_diacritics">Portugalčina (Brazília)</string>
     <string name="pref_dict_pl">Poľština</string>
@@ -21,10 +21,10 @@
     <string name="pref_dict_ja">Japončina</string>
     <string name="pref_dict_it">Taliančina</string>
     <string name="pref_dict_hu">Maďarčina</string>
-    <string name="pref_dict_fr_FR">Francúzština</string>
+    <string name="pref_dict_fr_FR">Francúzština (rozšírená)</string>
     <string name="pref_dict_fa">Perzština</string>
     <string name="pref_dict_es">Španielčina</string>
-    <string name="pref_dict_de_DE">Nemčina</string>
+    <string name="pref_dict_de_DE">Nemčina (Rozšírená)</string>
     <string name="pref_dict_ca">Katalánčina</string>
     <string name="new_game">Nová hra</string>
     <string name="prefs">Nastavenia</string>
@@ -33,33 +33,33 @@
     <string name="dialog_about_content">Dotknite sa obrazovky a posúvaním prsta do susedných štvorcov hláskujte slová. Máte tri minúty na to, aby ste našli čo najviac slov.
 \n
 \nBodovanie:
-\nNa doskách 4x4 musia byť slová dlhé najmenej tri písmená. Na doskách 5x5 musia byť slová dlhé najmenej štyri písmená. Za slová, ktoré majú tri alebo štyri písmená, dostanete jeden bod. Za dlhšie slová viac bodov. Vlastné mená sa nezapočítavajú.
+\nNa doskách 4x4 musia byť slová dlhé najmenej tri písmená. Na doskách 5x5 musia byť slová dlhé najmenej štyri písmená. Za slová, ktoré majú tri alebo štyri písmená, dostanete jeden bod. Za dlhšie slová dostávate viac bodov. Vlastné mená sa nezapočítavajú.
 \n
 \n</string>
-    <string name="pref_breakdown_summary">Či sa dĺžky slov majú zobraziť v rozpise slov</string>
-    <string name="pref_resetScores_summary">Skóre je sledované pre každú kombináciu vyššie uvedených nastavení. Ťuknutím na položku vynulujete skóre u všetkých nastavení.</string>
+    <string name="pref_breakdown_summary">Či sa dĺžky slov majú zobraziť v rozpise slov alebo nie</string>
+    <string name="pref_resetScores_summary">Najvyššie skóre je sledované pre každú kombináciu vyššie uvedených nastavení. Ťuknutím na položku vynulujete skóre u všetkých nastavení.</string>
     <string name="hide_unique">Skryť jedinečné slová</string>
     <string name="show_unique">Zobraziť jedinečné slová</string>
     <string name="pref_hintMode_summary">Ukáže počet slov, v ktorých sa dané písmeno vyskytuje</string>
     <string name="letter_points">Body za písmená</string>
     <string name="theme_dark">Tmavý</string>
     <string name="theme_light">Svetlý</string>
-    <string name="pref_theme_dialog">Vyberte motív</string>
+    <string name="pref_theme_dialog">Vyberte Motív</string>
     <string name="pref_theme">Motív</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
-    <string name="pref_definitionProvider_dialog">Vyberte poskytovateľa definícií</string>
-    <string name="pref_definitionProvider_summary">Vyberte poskytovateľa definícií, ktorý chcete použiť. Ak nie je nainštalovaný vybraný poskytovateľ, použije sa DuckDuckGo.</string>
-    <string name="pref_definitionProvider">Poskytovateľ definícií</string>
-    <string name="pref_breakdown">Zobraziť rozpis podľa dĺžky slova</string>
-    <string name="reset_scores_prompt">Ste si istý, že chcete vynulovať skóre pre všetky herné režimy\?</string>
-    <string name="high_scores_reset">Skóre vynulované.</string>
-    <string name="pref_resetScores">Vynulovať Skóre</string>
-    <string name="high_score">Najvyššie skóre</string>
+    <string name="pref_definitionProvider_dialog">Vyberte Poskytovateľa Definícií</string>
+    <string name="pref_definitionProvider_summary">Vyberte poskytovateľa definície, ktorý sa má použiť. Ak vybraný poskytovateľ nie je nainštalovaný, použije sa online zdroj, ako napríklad Wiktionary.</string>
+    <string name="pref_definitionProvider">Poskytovateľ Definícií</string>
+    <string name="pref_breakdown">Zobraziť rozdelenie dĺžky slova</string>
+    <string name="reset_scores_prompt">Ste si istý, že chcete vynulovať najvyššie skóre pre všetky herné režimy\?</string>
+    <string name="high_scores_reset">Najvyššie Skóre bolo vynulované.</string>
+    <string name="pref_resetScores">Vynulovať Najvyššie Skóre</string>
+    <string name="high_score">Najvyššie Skóre</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="total_score">Celkové skóre:</string>
-    <string name="total_words">Celkový počet slov:</string>
-    <string name="missed_words">Nenájdené slová</string>
-    <string name="found_words">Nájdené slová</string>
+    <string name="total_score">Celkové Skóre:</string>
+    <string name="total_words">Celkový Počet Slov:</string>
+    <string name="missed_words">Nenájdené Slová</string>
+    <string name="found_words">Nájdené Slová</string>
     <string name="time">Čas</string>
     <string name="score">Skóre</string>
     <string name="words">Slová</string>
@@ -72,7 +72,110 @@
     <string name="menu_end_game">Ukončiť hru</string>
     <string name="menu_save_game">Uložiť hru</string>
     <string name="menu_rotate_board">Otočiť dosku</string>
-    <string name="pref_sounds_summary">Či sú zvukové efekty povolené</string>
+    <string name="pref_sounds_summary">Či sú alebo nie sú povolené zvukové efekty</string>
     <string name="sort">Zoradiť</string>
-    <string name="theme_high_contrast">Vysoký kontrast</string>
+    <string name="theme_high_contrast">Vysoký Kontrast</string>
+    <string name="menu_new_game_mode">Nový</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Obsahuje diakritiku: çáéíóúâêôãõà a písmená: kwy</string>
+    <string name="game_mode_marathon_description">Pokúste sa nájsť všetky slová bez akéhokoľvek časového tlaku</string>
+    <string name="dialog_refresh_title">Obnoviť dosku</string>
+    <string name="dialog_refresh_button">Obnoviť</string>
+    <string name="game_mode_beginner">Začiatočník</string>
+    <string name="game_mode">Herný režim</string>
+    <string name="delete_custom_game_mode">Odstrániť vlastný herný režim \"%1$s\"\? Všetky najvyššie skóre sa stratia.</string>
+    <string name="game_mode_legacy_description">Použité sa v staršej verzii Lexica</string>
+    <string name="whats_new_web_lexica">Predstavujeme webovú verziu Lexica!</string>
+    <string name="back">Späť</string>
+    <string name="invite__multiplayer__description">Boli ste pozvaní do multiplayer hry Lexica:</string>
+    <string name="whats_new_sharing_description">Po dokončení hry môžete zdieľať túto dosku s priateľmi a vyzvať ich, aby prekonali vaše skóre.
+\n
+\nPodobne ako pri hre viacerých hráčov, ale pre prípad, že ste práve hrali obzvlášť zaujímavú alebo náročnú hru, o ktorej si myslíte, že sa vašim priateľom bude páčiť.
+\n
+\nAko vždy, <a href="https://github.com/lexica/lexica/issues">uvítame spätnú väzbu</a> o tom, ako možno túto funkciu vylepšiť.</string>
+    <string name="whats_new_web_lexica_description">Špeciálne poďakovanie patrí @MattRCole za takú obrovskú námahu pri uvádzaní tohto projektu do života!
+\n
+\nPozvánky pre multiplayer teraz obsahujú odkazy na novú (beta) webovú verziu pre tých, ktorí nemajú zariadenia so systémom Android. QR kód, ktorý sa zobrazí pri spustení novej hry pre viacerých hráčov, môže tiež zobraziť URL adresu na webovú verziu.</string>
+    <string name="whats_new_support_description">Lexica je a vždy bude bezplatná a s otvoreným zdrojovým kódom.
+\n
+\nSvoju podporu a príspevok k jej ďalšiemu rozvoju môžete vyjadriť prostredníctvom <a href="https://liberapay.com/Lexica">Liberapay</a> alebo <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="multiplayer_lobby__join_when_ready">Keď sú všetci hráči pripravení, pripojte sa k hre.</string>
+    <string name="multiplayer_lobby__join_game">Pripojiť sa k hre</string>
+    <string name="multiplayer__share_invites">Zdieľať pozvánky</string>
+    <string name="share">Zdieľať</string>
+    <string name="invite__dont_have_lexica_installed_web">Alebo vyskúšajte Lexicu v prehliadači (beta):</string>
+    <string name="send_challenge_invite_to">Pošlite výzvu …</string>
+    <string name="button_delete">Odstrániť</string>
+    <string name="button_cancel">Zrušiť</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Nemčina</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Obsahuje diakritiku: äöü</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Obsahuje diakritiku: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francúzština</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugalčina (Brazília) (Rozšírená)</string>
+    <string name="menu_view_found_words">Zobraziť nájdené slová</string>
+    <string name="dialog_end_game_confirm_title">Ukončiť hru</string>
+    <string name="dialog_end_game_confirm_message">Naozaj chcete ukončiť túto hru\?</string>
+    <string name="invite__multiplayer__game_offline">Chcete hrať offline\? Skúste hrať pomocou pera a papiera:</string>
+    <string name="invite__challenge__description">Našiel som %1$d slov a získal %2$d bodov na tejto Lexica doske, môžeš ma poraziť\?</string>
+    <string name="invite__dont_have_lexica_installed">Nemáte nainštalovanú aplikáciu Lexica\? Získajte ju z https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="send_multiplayer_invite_to">Pošlite pozvánku…</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Ñ iba v Španielčine</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Obsahuje diakritiku: áéíóúüñ</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">accents</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Ruština (rozšírená)</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Obsahuje gramatické prípady a skratky</string>
+    <string name="dialog_refresh_content">Ak chcete mať istotu, že budete hrať na rovnakej hracej ploche ako vaši súperi, nezabudnite po obnovení znovu odoslať všetky pozvánky.</string>
+    <string name="dialog_refresh_confirmation_message">Obnovená doska</string>
+    <string name="high_scores">Najvyššie Skóre</string>
+    <string name="input_game_mode_name_hint">Názov</string>
+    <string name="input_game_mode_name_description">Pre výber herného režimu / nahrávanie najvyšších skór</string>
+    <string name="input_game_mode_minutes_description">Časový limit v minútach</string>
+    <string name="menu_save_game_mode">Uložiť</string>
+    <string name="game_mode_sprint">Šprint</string>
+    <string name="game_mode_sprint_description">Krátka hra na nájdenie čo najväčšieho počtu slov</string>
+    <string name="game_mode_marathon">Maratón</string>
+    <string name="game_mode_beginner_description">Použite nápovedy, ktoré vám pomôžu nájsť slová</string>
+    <string name="game_mode_letter_points">Písmenkové Body</string>
+    <string name="game_mode_letter_points_description">Získajte viac bodov za použitie menej bežných písmen</string>
+    <string name="game_mode_custom_description">Vlastný herný režim</string>
+    <string name="game_mode_legacy">Odkaz</string>
+    <string name="error_restoring_game">Vašu hru sa nepodarilo obnoviť</string>
+    <string name="whats_new_title">Čo je nové</string>
+    <string name="whats_new_continue">Pokračovať</string>
+    <string name="whats_new_support">Podporte Lexicu</string>
+    <string name="whats_new_sharing">Zdieľajte výzvu!</string>
+    <string name="multiplayer__toggle_qr_app">Zobraziť Android
+\nQR Kód</string>
+    <string name="multiplayer__toggle_qr_web">Zobraziť web
+\nQR Kód</string>
+    <string name="multiplayer__start_when_ready">Keď sú všetci hráči pripravení, mali by ste začať hru naraz.</string>
+    <string name="multiplayer__qr_code__accessible_description">QR kód: Ostatní sa môžu pripojiť k tejto hre naskenovaním</string>
+    <string name="multiplayer__start_game">Začať hru</string>
+    <string name="multiplayer">Multiplayer</string>
+    <string name="new_game_mode">Nový herný režim</string>
+    <string name="invalid_multiplayer_link">Prijatý nesprávny odkaz pre multiplayer/zdieľanie, nemožno sa pripojiť k hre. Uistite sa, že obaja používate najnovšiu verziu Lexica.</string>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d slovo (klepnutím obnovíte)</item>
+        <item quantity="few">%1$d slov (klepnutím obnovíte)</item>
+        <item quantity="other">%1$d slov (klepnutím obnovíte)</item>
+    </plurals>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d slovo</item>
+        <item quantity="few">%1$d slov</item>
+        <item quantity="other">%1$d slov</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d slovo</item>
+        <item quantity="few">%d / %d slov</item>
+        <item quantity="other">%d / %d slov</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d bod</item>
+        <item quantity="few">/ %d bodov</item>
+        <item quantity="other">/ %d bodov</item>
+    </plurals>
+    <plurals name="num_minutes">
+        <item quantity="one">%d minúta</item>
+        <item quantity="few">%d minút</item>
+        <item quantity="other">%d minút</item>
+    </plurals>
 </resources>
