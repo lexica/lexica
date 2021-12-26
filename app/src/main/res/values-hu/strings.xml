@@ -59,7 +59,7 @@
     <string name="pref_definitionProvider">Meghatározás-szolgáltató</string>
     <string name="pref_definitionProvider_summary">Egy használandó meghatározás-szolgáltató kiválasztása. Ha a kiválasztott szolgáltató nincs telepítve, akkor a DuckDuckGo lesz használva.</string>
     <string name="pref_definitionProvider_dialog">Meghatározás-szolgáltató kiválasztása</string>
-    <string name="pref_dict_hu">Magyar</string>
+    <string name="pref_dict_hu">magyar</string>
     <string name="pref_hintMode">Tipp mód</string>
     <string name="pref_hintMode_summary">Megjeleníti a szavak számát, amelyekben az egyes betűket használni lehet</string>
     <string name="tile_count">Szavak száma</string>
