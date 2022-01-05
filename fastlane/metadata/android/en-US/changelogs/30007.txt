@@ -1,0 +1,7 @@
+Improvements:
+ * Cautiously improve Dutch word list, making it more conforming to the Scrabble word list (SWL), OpenTaal list, and Wiktionary (thanks to @Sjord)
+
+Bug fix:
+ * During end game scoring, only show scores and the word definition button for actual words.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
