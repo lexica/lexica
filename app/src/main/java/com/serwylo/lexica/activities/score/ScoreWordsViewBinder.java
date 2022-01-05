@@ -1,6 +1,8 @@
 package com.serwylo.lexica.activities.score;
 
+import android.content.res.TypedArray;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -114,8 +116,22 @@ abstract class ScoreWordsViewBinder {
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
+        private int validWordColour;
+        private int invalidWordColour;
+
         ViewHolder(@NonNull View itemView) {
+
             super(itemView);
+
+            int[] attrs = new int[] {
+                    R.attr.game__selected_word_colour,
+                    R.attr.game__not_a_word_colour,
+            };
+            TypedArray attrValues = itemView.getContext().obtainStyledAttributes(attrs);
+            validWordColour = attrValues.getColor(0, 0xffffff);
+            invalidWordColour = attrValues.getColor(1, 0xffffff);
+            attrValues.recycle();
+
         }
 
         void bind(final Item item) {
@@ -130,6 +146,8 @@ abstract class ScoreWordsViewBinder {
             if (item.valid) {
 
                 word.setPaintFlags(word.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
+                word.setTypeface(null, Typeface.BOLD);
+                word.setTextColor(validWordColour);
                 score.setVisibility(View.VISIBLE);
                 define.setVisibility(View.VISIBLE);
                 define.setOnClickListener(v -> definer.define(item.word));
@@ -137,6 +155,8 @@ abstract class ScoreWordsViewBinder {
             } else {
 
                 word.setPaintFlags(word.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                word.setTypeface(null, Typeface.NORMAL);
+                word.setTextColor(invalidWordColour);
                 score.setVisibility(View.GONE);
                 define.setVisibility(View.GONE);
                 define.setOnClickListener(null);
