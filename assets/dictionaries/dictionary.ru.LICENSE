@@ -1,7 +1,19 @@
-Source: http://scon155.phys.msu.su/~swan/orthography.html
+The dictionary is a manual compilation of Russian nouns with national currencies, some antiquated and emotionally charged word excluded from the list.
 
-As per https://github.com/lexica/lexica/pull/161, the list was filtered out with another (noun) dictionary:
+I used ./gradlew analyseLanguage_ru command to create a distribution from this dictionary. If we are to distinct between the lettres "ё" and "е"
+then the best distributions generated are:
 
-$ cut -d/ -f1 < ru_RU-lebedev-ie.dic | sort -u > 1.txt
-$ sed s/[ёЁ]/е/ < russian_nouns.txt | sort -u >> 1.txt
-$ sort 1.txt | uniq -d > dictionary.ru.txt
+ru Min: 5 Mean: 31 Max: 79 SD: 14 Score: 549
+ru Min: 7 Mean: 27 Max: 64 SD: 12 Score: 449
+ru Min: 4 Mean: 31 Max: 70 SD: 15 Score: 550
+
+And when I changed all instances of the letter "ё" to the letter "е" the best three generated distributions were
+
+ru Min: 9 Mean: 35 Max: 73 SD: 14 Score: 843
+ru Min: 7 Mean: 32 Max: 66 SD: 12 Score: 781
+ru Min: 4 Mean: 32 Max: 72 SD: 13 Score: 652
+
+I am keeping words with the letter "ё" for now. This is a good option to those who prefer the score by the letters. To those who prefers the score by the length
+of the word the omittance of "ё" may be a better option.
+
+This dictionary is supplied by me under creative commons license.
