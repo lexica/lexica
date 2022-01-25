@@ -12,7 +12,7 @@ class ShareQrTest {
     @Test
     fun parseLegacyHumanReadableQr() {
 
-        val uri = Uri.parse("https://lexica.github.io/m/?b=ABCDEFGHIJKLMNOPQRSTUVWXY&l=fr_FR&t=2700&s=l&m=4&mv=20007&v=${BuildConfig.VERSION_CODE}&h=nc")
+        val uri = Uri.parse("lexica://multiplayer?b=ABCDEFGHIJKLMNOPQRSTUVWXY&l=fr_FR&t=2700&s=l&m=4&mv=20007&v=${BuildConfig.VERSION_CODE}&h=nc")
 
         val sharedGameData = SharedGameData.parseGame(uri)
 
@@ -52,7 +52,7 @@ class ShareQrTest {
 
     @Test
     fun parseHumanReadableQr() {
-        val uri = Uri.parse("https://lexica.github.io/m/?b=QSxCLEMsRCxFLEYsRyxILEksSixLLEwsTSxOLE8sUCxRdSxSLFMsVCxVLFYsVyxYLFk&l=fr_FR&t=2700&m=4&mv=20017&v=${BuildConfig.VERSION_CODE}&s=l&h=nc")
+        val uri = Uri.parse("lexica://multiplayer?b=QSxCLEMsRCxFLEYsRyxILEksSixLLEwsTSxOLE8sUCxRdSxSLFMsVCxVLFYsVyxYLFk&l=fr_FR&t=2700&m=4&mv=20017&v=${BuildConfig.VERSION_CODE}&s=l&h=nc")
 
         val sharedGameData = SharedGameData.parseGame(uri)
 
