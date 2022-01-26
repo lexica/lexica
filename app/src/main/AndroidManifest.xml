@@ -49,7 +49,7 @@
 
 				<data android:scheme="https"/>
 				<data android:host="lexica.github.io"/>
-				<data android:path="/m/"/>
+				<data android:pathPrefix="/m/"/>
 			</intent-filter>
 
 			<intent-filter>
@@ -60,7 +60,7 @@
 
 				<data android:scheme="https"/>
 				<data android:host="lexica.github.io"/>
-				<data android:path="/share/"/>
+				<data android:pathPrefix="/share/"/>
 			</intent-filter>
 
 			<intent-filter>
