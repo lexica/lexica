@@ -1,0 +1,8 @@
+Improvements (thanks to Sjord):
+ * English (GB) wordlist: Remove words that are not present in Collins, NASPA, Tournament, or Wiktionary.
+ * Dutch dictionary: Better letter distributions for more fun games.
+
+Bug fix (thanks to OpenWarp):
+ * Multiplayer correctly opens on Android 6.0.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
