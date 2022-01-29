@@ -110,4 +110,9 @@
     </plurals>
     <string name="whats_new_title">Τι νέο υπάρχει</string>
     <string name="dialog_refresh_button">Ανανέωση</string>
+    <string name="dialog_refresh_title">Ανανέωση πίνακα</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Περιλαμβάνει διακριτικά: çáéíóúâêôãõà και γράμματα: kwy</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Περιλαμβάνει διακριτικά: áéíóúüñ</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Περιλαμβάνει ñ αλλά όχι τόνους</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Πορτογαλικά (Βραζιλία) (Εκτεταμένα)</string>
 </resources>
