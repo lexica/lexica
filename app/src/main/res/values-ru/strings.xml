@@ -101,10 +101,10 @@
         <item quantity="other">%1$d слов</item>
     </plurals>
     <plurals name="num_available_words_in_game__tap_to_refresh">
-        <item quantity="one">%1$d слово (нажми, чтобы обновить)</item>
-        <item quantity="few">%1$d слова (нажми, чтобы обновить)</item>
-        <item quantity="many">%1$d слов (нажми, чтобы обновить)</item>
-        <item quantity="other">%1$d слов (нажми, чтобы обновить)</item>
+        <item quantity="one">%1$d слово (нажмите, чтобы обновить)</item>
+        <item quantity="few">%1$d слова (нажмите, чтобы обновить)</item>
+        <item quantity="many">%1$d слов (нажмите, чтобы обновить)</item>
+        <item quantity="other">%1$d слов (нажмите, чтобы обновить)</item>
     </plurals>
     <string name="dialog_end_game_confirm_message">Вы уверены, что хотите закончить эту игру\?</string>
     <string name="dialog_end_game_confirm_title">Закончить игру</string>
@@ -121,7 +121,7 @@
     <string name="menu_view_found_words">Посмотреть найденные слова</string>
     <string name="whats_new_support_description">Lexica является и всегда будет бесплатной и с открытым исходным кодом.
 \n
-\nВы можете поддержать разработку материально через <a href="https://liberapay.com/Lexica">Liberapay</a> или <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+\nВы можете выразить благодарность и поддержать разработку, сделав пожертвование на <a href="https://liberapay.com/Lexica">Liberapay</a> или <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
     <string name="whats_new_support">Поддержать Lexica</string>
     <string name="whats_new_continue">Продолжить</string>
     <string name="whats_new_title">Что нового</string>
@@ -162,4 +162,23 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Включает Ñ но без акцентов</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Только испанские Ñ</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Включает диакритические знаки: áéíóúüñ</string>
+    <string name="multiplayer__toggle_qr_web">Показать QR код
+\nИнтернет</string>
+    <string name="back">Назад</string>
+    <string name="share">Отправить</string>
+    <string name="multiplayer__toggle_qr_app">Показать QR код
+\nАндроид</string>
+    <string name="invite__multiplayer__description">Вы приглашены в совместную игру Lexica:</string>
+    <string name="invite__multiplayer__game_offline">Хотите играть в оффлайне\? Приготовьте бумагу и ручку:</string>
+    <string name="whats_new_sharing_description">Теперь по окончании игры вы можете поделиться ей с друзьями и предложить им побить ваш рекорд.
+\n
+\nПохоже на мультиплеер, но для случая, когда вам попалась особенно интересная или сложная игра, и вы думаете, чот она понравится вашим друзьям.
+\n
+\nКак обычно, мы ждем отзыв о том, как можно улучшить эту функцию, на &lt;a href=\"https://github.com/lexica/lexica/issues\"&gt;.</string>
+    <string name="invite__dont_have_lexica_installed">Не установлена Lexica\? Установите с https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="whats_new_web_lexica">Представляем веб версию Lexica!</string>
+    <string name="invite__challenge__description">В этой раскладке Lexica мне удалось найти %1$d слов и набрать %2$d очков, а вы сможете побить мой рекорд\?</string>
+    <string name="invite__dont_have_lexica_installed_web">Или попробуйте Lexica для браузера (бета):</string>
+    <string name="send_challenge_invite_to">Сохранить игру в…</string>
+    <string name="send_multiplayer_invite_to">Отправить приглашение…</string>
 </resources>
