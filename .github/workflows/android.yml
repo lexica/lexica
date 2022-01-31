@@ -30,3 +30,9 @@ jobs:
     - name: Gradle check
       run: ./gradlew check
 
+    - name: Archive build artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: outputs
+        path: app/build/outputs
+
