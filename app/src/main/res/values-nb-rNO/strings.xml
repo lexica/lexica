@@ -179,4 +179,8 @@
     <string name="invite__multiplayer__game_offline">Spille frakoblet\? Prøv å spille med penn og papir:</string>
     <string name="invite__dont_have_lexica_installed_web">Eller prøv Lexica i nettleseren (beta):</string>
     <string name="invite__dont_have_lexica_installed">Har du ikke Lexica installert\? Hent det fra https://f-droid.org/en/packages/com.serwylo.lexica/</string>
+    <string name="whats_new_web_lexica">Her er vev-Lexica.</string>
+    <string name="whats_new_web_lexica_description">Spesiell takk til @MattRCole for storverket i å bringe dette til live.
+\n
+\nFlerspiller-invitasjoner har nå lenker til den nye (beta-) versjonen for dem som ikke har Android-enheter. QR-koden som vises når et nytt flerspiller-spill startes kan også dele en nettadresse til vev-versjonen.</string>
 </resources>
