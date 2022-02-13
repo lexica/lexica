@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">لکسیکا</string>
     <string name="new_game">بازی جدید</string>
-    <string name="restore_game">واگردانی بازی</string>
+    <string name="restore_game">بازگردانی بازی</string>
     <string name="prefs">تنظیمات</string>
     <string name="pref_dict">واژه‌نامه</string>
     <string name="pref_dict_en_US">انگلیسی آمریکایی</string>
@@ -50,4 +50,10 @@
     <string name="pref_definitionProvider_summary">یک ارائه‌دهندهٔ تعریف برای استفاده انتخاب کنید. اگر ارائه‌دهندهٔ انتخابی نصب نبود، گوگل استفاده خواهد شد.</string>
     <string name="pref_definitionProvider_dialog">انتخاب ارائه‌دهندهٔ تعریف</string>
     <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">اوکراینی</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">آلمانی</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">شامل نشانه ها: äöü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">آلمانی</string>
+    <string name="pref_dict_es" tools:keep="@string/pref_dict_es">اسپانیایی</string>
+    <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">کاتالان</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">شامل نشانه‌ها: áéíóúüñ</string>
 </resources>
