@@ -95,6 +95,11 @@ public class FindLanguageMatchingLocale {
         }
 
         @Override
+        public String toRepresentation(String value) {
+            return null;
+        }
+
+        @Override
         public String applyMandatorySuffix(String value) {
             return null;
         }

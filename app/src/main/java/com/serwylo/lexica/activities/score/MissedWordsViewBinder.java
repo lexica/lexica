@@ -49,7 +49,7 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
 
         items = new ArrayList<>(possible.size());
         for (String word : possible) {
-            items.add(new Item(word, game.getWordScore(word), true, this::onViewWord));
+            items.add(new Item(game.getLanguage().toRepresentation(word), game.getWordScore(word), true, this::onViewWord));
         }
 
         adapter = new Adapter(items);
