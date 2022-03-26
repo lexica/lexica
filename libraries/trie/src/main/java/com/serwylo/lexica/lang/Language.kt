@@ -100,6 +100,7 @@ abstract class Language {
 
         @JvmStatic
         val allLanguages = mapOf(
+                "br_no_diacritics" to BretonNoDiacritics(),
                 "ca" to Catalan(),
                 "de_DE" to GermanDe(),
                 "de_DE_no_diacritics" to GermanDeNoDiacritics(),
