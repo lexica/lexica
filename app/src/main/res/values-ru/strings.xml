@@ -181,4 +181,5 @@
     <string name="invite__dont_have_lexica_installed_web">Или попробуйте Lexica для браузера (бета):</string>
     <string name="send_challenge_invite_to">Сохранить игру в…</string>
     <string name="send_multiplayer_invite_to">Отправить приглашение…</string>
+    <string name="whats_new_sharing">Поделись челленджом!</string>
 </resources>
