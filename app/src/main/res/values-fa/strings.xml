@@ -47,7 +47,7 @@
     <string name="pref_breakdown">نمایش تفکیک طول واژه</string>
     <string name="pref_breakdown_summary">که آیا شمارندهٔ واژه شماره‌ها را بر اساس طول واژه نمایش دهد یا خیر</string>
     <string name="pref_definitionProvider">ارائه‌دهندهٔ تعریف</string>
-    <string name="pref_definitionProvider_summary">یک ارائه‌دهندهٔ تعریف برای استفاده انتخاب کنید. اگر ارائه‌دهندهٔ انتخابی نصب نبود، گوگل استفاده خواهد شد.</string>
+    <string name="pref_definitionProvider_summary">یک ارائه‌دهندهٔ تعریف برای استفاده انتخاب کنید. اگر ارائه‌دهندهٔ انتخابی نصب نبود، یک منبع آنلاین مانند ویکیشنری استفاده خواهد شد.</string>
     <string name="pref_definitionProvider_dialog">انتخاب ارائه‌دهندهٔ تعریف</string>
     <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">اوکراینی</string>
     <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">آلمانی</string>
@@ -56,4 +56,39 @@
     <string name="pref_dict_es" tools:keep="@string/pref_dict_es">اسپانیایی</string>
     <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">کاتالان</string>
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">شامل نشانه‌ها: áéíóúüñ</string>
+    <string name="time">زمان</string>
+    <string name="pref_dict_pt_BR_no_diacritics" tools:keep="@string/pref_dict_pt_BR_no_diacritics">پرتغالی (برزیل)</string>
+    <string name="hint_colour">رنگ کاشی</string>
+    <string name="theme_high_contrast">کنتراست بالا</string>
+    <string name="sort">مرتب‌سازی</string>
+    <string name="theme_dark">تاریک</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">روسی (بسط داده شده)</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">فرانسوی (بسط داده شده)</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">شامل موارد گرامری و مخفف‌ها</string>
+    <string name="dialog_refresh_content">برای اطمینان از اینکه شما و رقبایتان روی یک تخته بازی می‌کنید از ارسال مجدد دعوت پس از تازه کردن اطمینان حاصل کنید</string>
+    <string name="button_cancel">انصراف</string>
+    <string name="button_delete">پاک کردن</string>
+    <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">ژاپنی</string>
+    <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">روسی</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">شامل نشان‌های تشخیص زیر:
+\nàâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">فرانسوی</string>
+    <string name="lexicon_is_in_beta">نسخه آزمایشی (بتا)</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">لهستانی</string>
+    <string name="theme_light">روشن</string>
+    <string name="pref_theme">تم</string>
+    <string name="pref_theme_dialog">انتخاب تم</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">آنلاین</string>
+    <string name="tile_count">تعداد کلمات</string>
+    <string name="pref_hintMode">حالت راهنما</string>
+    <string name="pref_hintMode_summary">نمایش تعداد کلماتی که از هر حرف در آن‌ها می‌توان استفاده کرد</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">پرتغالی (برزیل) (بسط داده شده)</string>
+    <string name="pref_dict_fa" tools:keep="@string/pref_dict_fa">فارسی</string>
+    <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">مجارستانی</string>
+    <string name="pref_dict_it" tools:keep="@string/pref_dict_it">ایتالیایی</string>
+    <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">آلمانی</string>
+    <string name="dialog_refresh_title">تازه کردن تخته</string>
+    <string name="dialog_refresh_button">تازه کردن</string>
+    <string name="dialog_refresh_confirmation_message">تخته تازه شد</string>
+    <string name="high_scores">رکوردها</string>
 </resources>
