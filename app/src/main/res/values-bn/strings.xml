@@ -24,4 +24,37 @@
     <string name="restore_game">খেলা রিস্টোর করুন</string>
     <string name="new_game">নতুল খেলা</string>
     <string name="app_name">লেক্সিকা</string>
+    <string name="view_word"><u>দেখো</u></string>
+    <string name="theme_dark">কালো</string>
+    <string name="input_game_mode_name_hint">নাম</string>
+    <string name="button_ok">আচ্ছা</string>
+    <string name="multiplayer">একাধিক খেলোয়াড়</string>
+    <string name="back">পিছনে</string>
+    <string name="button_delete">মুছো</string>
+    <string name="about">বিস্তারিত</string>
+    <string name="button_cancel">বাতিল</string>
+    <string name="define_word"><u>বর্ণনা কর</u> </string>
+    <string name="words">শব্দ</string>
+    <string name="score">সংখ্যা</string>
+    <string name="time">সময়</string>
+    <string name="sort">সাজাও</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">বৈশিষ্ট্যসূচক চিহ্ন যোগ কর: äöü</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">বৈশিষ্ট্যসূচক চিহ্ন যোগ কর: áéíóúüñ</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">স্পেনিয় শুধু Ñ</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">ফরাসি</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">জর্মন</string>
+    <string name="word_length">শব্দ দৈর্ঘ্য</string>
+    <string name="letter_points">অক্ষর সংখ্যা</string>
+    <string name="game_mode_legacy">পুরোনো</string>
+    <string name="share">ভাগ করো</string>
+    <string name="dialog_refresh_button">পুনঃশুরু</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">তারযোগে</string>
+    <string name="pref_theme">রঙ</string>
+    <string name="theme_light">সাদা</string>
+    <string name="menu_new_game_mode">নতুন</string>
+    <string name="menu_save_game_mode">সংরক্ষণ</string>
+    <string name="game_mode_sprint">দ্রুত</string>
+    <string name="game_mode_marathon">লম্বা</string>
+    <string name="game_mode_beginner">নব্য</string>
+    <string name="whats_new_continue">চালিয়ে যাও</string>
 </resources>
