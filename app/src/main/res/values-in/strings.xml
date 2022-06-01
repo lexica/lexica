@@ -1,2 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="restore_game">Pulihkan Permainan</string>
+    <string name="pref_dict">Lexicon</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Jerman</string>
+    <string name="pref_dict_fa" tools:keep="@string/pref_dict_fa">Persia</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Prancis</string>
+    <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">Hongaria</string>
+    <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">Belanda</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">Polandia</string>
+    <string name="pref_dict_pt_BR_no_diacritics" tools:keep="@string/pref_dict_pt_BR_no_diacritics">Portugis (Brazil)</string>
+    <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">Ukraina</string>
+    <string name="pref_boardSize">Ukuran Papan</string>
+    <string name="pref_timeLimit">Batas Waktu</string>
+    <string name="tile_count">Jumlah kata</string>
+    <string name="pref_sounds">Suara Aktif</string>
+    <string name="pref_sounds_summary">Apa efek suara diaktifkan</string>
+    <string name="dialog_refresh_title">Muat ulang papan</string>
+    <string name="dialog_refresh_button">Muat ulang</string>
+    <string name="dialog_about_title">Tentang Lexica</string>
+    <string name="menu_end_game">Akhiri Permainan</string>
+    <string name="button_ok">OK</string>
+    <string name="button_delete">Hapus</string>
+    <string name="view_word"><u>Lihat</u></string>
+    <string name="words">Kata</string>
+    <string name="score">Nilai</string>
+    <string name="sort">Sortir</string>
+    <string name="input_game_mode_name_hint">Nama</string>
+    <string name="input_game_mode_minutes_description">Batas waktu dalam menit</string>
+    <string name="error_restoring_game">Tidak dapat memulihkan permainanmu</string>
+    <string name="pref_dict_es" tools:keep="@string/pref_dict_es">Spanyol</string>
+    <string name="pref_dict_it" tools:keep="@string/pref_dict_it">Italia</string>
+    <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">Jepang</string>
+    <string name="prefs">Preferensi</string>
+    <string name="app_name">Lexica</string>
+    <string name="new_game">Permainan Baru</string>
+    <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">Rusia</string>
+    <string name="pref_dict_en_GB" tools:keep="@string/pref_dict_en_GB">Inggris (Inggris Raya)</string>
+    <string name="pref_dict_en_US" tools:keep="@string/pref_dict_en_US">Inggris (Amerika Serikat)</string>
+    <string name="lexicon_is_in_beta">Beta</string>
+    <string name="hide_unique">Sembunyikan Kata Unik</string>
+    <string name="total_words">Jumlah Kata:</string>
+    <string name="total_score">Jumlah Nilai:</string>
+    <string name="word_length">Panjang Kata</string>
+    <string name="hint_colour">Warna ubin</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+    <string name="dialog_refresh_content">Untuk memastikan kamu bermain pada papan yang sama dengan lawanmu, jangan lupa untuk mengirim ulang undangan setelah memuat ulang.</string>
+    <string name="dialog_refresh_confirmation_message">Papan dimuat ulang</string>
+    <string name="menu_save_game">Simpan Permainan</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">Daring</string>
+    <string name="theme_light">Cerah</string>
+    <string name="high_scores">Nilai Tertinggi</string>
+    <string name="menu_rotate_board">Putar Papan</string>
+    <string name="hide_missed">Sembunyikan Kata Yang Terlewat</string>
+    <string name="button_cancel">Batal</string>
+    <string name="about">Tentang</string>
+    <string name="show_missed">Tampilkan Kata Yang Terlewat</string>
+    <string name="show_unique">Tampilkan Kata Unik</string>
+    <string name="time">Waktu</string>
+    <string name="found_words">Kata Yang Ditemukan</string>
+    <string name="missed_words">Kata Yang Terlewat</string>
+    <string name="high_score">Nilai Tertinggi</string>
+    <string name="pref_definitionProvider">Penyedia Definisi</string>
+    <string name="pref_theme_dialog">Pilih Tema</string>
+    <string name="game_mode_beginner">Pemula</string>
+    <string name="game_mode_beginner_description">Gunakan bantuan untuk mencari kata</string>
+    <string name="whats_new_title">Apa yang Baru</string>
+    <string name="pref_theme">Tema</string>
+    <string name="pref_definitionProvider_summary">Pilih penyedia definisi yang digunakan. Jika penyedia yang dipilih tidak terpasang, sumber daring seperti Wiktionary akan digunakan.</string>
+    <string name="theme_dark">Gelap</string>
+    <string name="theme_high_contrast">Kontras Tinggi</string>
+    <string name="menu_new_game_mode">Buat</string>
+    <string name="menu_save_game_mode">Simpan</string>
+    <string name="pref_definitionProvider_dialog">Pilih Penyedia Definisi</string>
+    <string name="game_mode_sprint_description">Permainan singkat untuk mencari kata sebanyak mungkin</string>
+    <string name="game_mode_marathon_description">Coba cari semua kata, tanpa tekanan waktu</string>
+    <string name="game_mode_legacy_description">Digunakan di versi Lexica yang lebih lama</string>
+    <string name="game_mode_marathon">Maraton</string>
+    <string name="whats_new_continue">Lanjut</string>
+    <string name="whats_new_sharing">Bagikan sebuah tantangan!</string>
+</resources>
