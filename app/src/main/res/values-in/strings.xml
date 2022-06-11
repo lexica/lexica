@@ -78,4 +78,63 @@
     <string name="game_mode_marathon">Maraton</string>
     <string name="whats_new_continue">Lanjut</string>
     <string name="whats_new_sharing">Bagikan sebuah tantangan!</string>
+    <string name="dialog_end_game_confirm_title">Akhiri Permainan</string>
+    <string name="whats_new_web_lexica_description">Terima kasih yang istimewa kepada @MattRCole atas usaha yang besar untuk membuatnya nyata!
+\n
+\nUndangan multi-pemain sekarang mengandung tautan ke versi web (beta) yang baru untuk yang tidak memiliki perangkat Android. Kode QR yang ditunjukkan saat memulai permainan multi-pemain baru juga dapat menunjukkan URL ke versi web.</string>
+    <string name="whats_new_support_description">Lexica itu dan akan selalu gratis dan sumber terbuka.
+\n
+\nKamu dapat menunjukkan dukunganmu dan berkontribusi ke pengembangan lebih lanjutnya melalui <a href="https://liberapay.com/Lexica">Liberapay</a> atau <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="multiplayer__toggle_qr_web">Tampilkan
+\nKode QR Web</string>
+    <string name="multiplayer__qr_code__accessible_description">Kode QR: Yang lain dapat memindainya untuk bergabung ke permainan ini</string>
+    <string name="invalid_multiplayer_link">Menerima tautan multi-pemain/berbagi yang salah, tidak dapat bergabung ke permainan. Pastikan kalian menggunakan versi Lexica terbaru.</string>
+    <string name="invite__multiplayer__description">Kamu telah diundang ke permainan multi-pemain Lexica:</string>
+    <string name="game_mode">Mode permainan</string>
+    <string name="new_game_mode">Mode permainan baru</string>
+    <string name="invite__dont_have_lexica_installed">Lexica tidak terpasang\? Dapatkan dari https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="send_multiplayer_invite_to">Kirim undangan ke…</string>
+    <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Katalan</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">Jerman (Diperlengkap)</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Mengandung diakritik: äöü</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Mengandung diakritik: áéíóúüñ</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">Prancis (Diperlengkap)</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Mengandung diakritik: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugis (Brazil) (Diperlengkap)</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Mengandung diakritik: çáéíóúâêôãõà dan huruf: kwy</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Rusia (Diperlengkap)</string>
+    <string name="pref_scoreType">Jenis Penilaian</string>
+    <string name="whats_new_web_lexica">Memperkenalkan web Lexica!</string>
+    <string name="whats_new_support">Dukung Lexica</string>
+    <string name="menu_view_found_words">Lihat kata yang ditemukan</string>
+    <string name="multiplayer_lobby__join_when_ready">Ketika semua pemain sudah siap, bergabung ke permainan.</string>
+    <string name="multiplayer_lobby__join_game">Gabung ke permainan</string>
+    <string name="multiplayer__share_invites">Bagikan Undangan</string>
+    <string name="multiplayer__toggle_qr_app">Tampilkan
+\nKode QR Android</string>
+    <string name="multiplayer__start_when_ready">Ketika semua pemain sudah siap, kalian harus memulai permainan pada waktu yang sama.</string>
+    <string name="multiplayer__start_game">Mulai permainan</string>
+    <string name="multiplayer">Multi-pemain</string>
+    <string name="dialog_end_game_confirm_message">Apa kamu yakin ingin mengakhiri permainan ini\?</string>
+    <string name="share">Bagikan</string>
+    <string name="back">Kembali</string>
+    <string name="invite__multiplayer__game_offline">Ingin bermain secara luring\? Coba bermain melalui pena dan kertas:</string>
+    <string name="invite__challenge__description">Aku menemukan %1$d kata dan mendapat nilai %2$d poin pada papan Lexica ini, apa kamu bisa mengalahkanku\?</string>
+    <string name="invite__dont_have_lexica_installed_web">Atau coba Lexica di Peramban (beta):</string>
+    <string name="send_challenge_invite_to">Kirim tantangan ke…</string>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="other">%1$d kata (ketuk untuk memuat ulang)</item>
+    </plurals>
+    <plurals name="num_available_words_in_game">
+        <item quantity="other">%1$d kata</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="other">%d / %d kata</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="other">/ %d poin</item>
+    </plurals>
+    <plurals name="num_minutes">
+        <item quantity="other">%d menit</item>
+    </plurals>
 </resources>
