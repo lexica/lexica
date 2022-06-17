@@ -10,32 +10,31 @@
 # but the standard deviation is low (some languages tend to result in boards with hundreds of words, which is also not particularly great).
 #
 # Fitness for this probability:
-#   Min: 19, mean: 100, max: 187, stddev: 35, score: 7702
+#   Min: 37, mean: 122, max: 201, stddev: 37, score: 12158
 # 
 
-a 98 71 10 1
-b 5 1
-c 9 1
-d 33 19 1
-e 85 67 16 1
-f 7 1
-g 1 1 1
-h 10 1
-i 29 8 1 1
-j 2 1
-k 53 14
-l 63 10 1
-- 7 1
-m 8 1 1 1
-n 77 53 10 1
-o 57 25 1
-p 12 1 1
-q 3 1
-r 84 60 5
-s 27 2 1
-t 48 4 1
-u 3 1 1
+a 87 47 5 1
+b 24 3
+c 1 1
+d 2 1 1
+e 93 75 26 1
+f 1 1
+g 7 1 1
+h 1 1
+i 2 1 1 1
+j 1 1
+k 97 16
+l 41 1 1
+m 8 1 1
+n 99 47 2 1
+o 92 7 1
+p 4 1 1
+q 4 1
+r 59 38 4
+s 14 1 1
+t 58 2 1
+u 5 1 1
 v 2 1
 w 1 1
-y 5 1
-z 1 1 1
+y 2
+z 3 1 1

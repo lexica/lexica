@@ -9,8 +9,6 @@ public class BretonNoDiacritics extends Language {
     private static Map<String, Integer> letterPoints = new HashMap<>();
 
     static {
-        letterPoints.put("-", 0);
-
         letterPoints.put("a", 1);
         letterPoints.put("e", 1);
         letterPoints.put("i", 1);
