@@ -1,10 +1,9 @@
 # Lexica: The Android Word Game
 
-[<img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg">](https://liberapay.com/Lexica/donate)
-
-[![Build Status](https://img.shields.io/github/workflow/status/lexica/lexica/Android%20CI)](https://github.com/lexica/lexica/actions/workflows/android.yml?query=branch%3Amaster) <a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
-  <img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
-</a>
+[![Liberapay receiving](https://img.shields.io/liberapay/receives/Lexica)](https://liberapay.com/Lexica/donate)
+[![Translation status](https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg)](https://hosted.weblate.org/engage/lexica/)
+[![F-Droid version](https://img.shields.io/f-droid/v/com.serwylo.lexica)](https://f-droid.org/packages/com.serwylo.lexica/)
+[![Build Status](https://img.shields.io/github/workflow/status/lexica/lexica/Android%20CI)](https://github.com/lexica/lexica/actions/workflows/android.yml?query=branch%3Amaster)
 
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80px">](https://f-droid.org/app/com.serwylo.lexica) [<img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height='80px'/>](https://play.google.com/store/apps/details?id=com.serwylo.lexica)
 
@@ -12,10 +11,27 @@ Lexica is a word game that is available on the Android platform. Players are
 given 3 to 30 minutes to find as many words as possible on a grid of random letters.
 
 Features:
- * 4x4, 5x5, and 6x6 game boards
  * Several international dictionaries, with a combined total of millions of words
+ * Multiplayer mode (send challenges to friends via SMS/Email/etc)
+ * Customisable game modes:
+   * 4x4, 5x5, and 6x6 sized boards
+   * Different durations
+   * Various scoring modes
+
+## Screenshots
+
+<img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/01_main_menu_light.png" alt="Lexica game main menu" width="200"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/02_game_light.png" alt="In game screenshot (light theme)" width="200"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/03_missed_words_light.png" alt="End game screen (showing missed words)" width="200"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/06_game_dark.png" alt="In game screenshot (dark theme)" width="200">
 
 ## Contributing
+
+### Support
+
+Lexica is an open source, GPLv3 game. It will always be freely available via F-Droid, or for anyone to build, fork, or improve via the source code.
+
+If you wish to support further development, you can do so via:
+
+* [Liberapay](https://liberapay.com/Lexica/donate)
+* [GitHub sponsors](https://github.com/sponsors/pserwylo)
 
 ### Reporting Issues
 
