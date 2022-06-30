@@ -14,6 +14,10 @@ Features:
  * 4x4, 5x5, and 6x6 game boards
  * Several international dictionaries, with a combined total of millions of words
 
+## Screenshots
+
+<img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/01_main_menu_light.png" alt="Lexica game main menu" width="200"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/02_game_light.png" alt="In game screenshot (light theme)" width="200"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/03_missed_words_light.png" alt="End game screen (showing missed words)" width="200"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/06_game_dark.png" alt="In game screenshot (dark theme)" width="200">
+
 ## Contributing
 
 ### Support
