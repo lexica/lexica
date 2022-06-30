@@ -1,10 +1,9 @@
 # Lexica: The Android Word Game
 
-[<img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg">](https://liberapay.com/Lexica/donate)
-
-[![Build Status](https://img.shields.io/github/workflow/status/lexica/lexica/Android%20CI)](https://github.com/lexica/lexica/actions/workflows/android.yml?query=branch%3Amaster) <a href="https://hosted.weblate.org/engage/lexica/?utm_source=widget">
-  <img src="https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg" alt="Translation status" />
-</a>
+[![Liberapay receiving](https://img.shields.io/liberapay/receives/Lexica)](https://liberapay.com/Lexica/donate)
+[![Translation status](https://hosted.weblate.org/widgets/lexica/-/svg-badge.svg)](https://hosted.weblate.org/engage/lexica/)
+[![F-Droid version](https://img.shields.io/f-droid/v/com.serwylo.lexica)](https://f-droid.org/packages/com.serwylo.lexica/)
+[![Build Status](https://img.shields.io/github/workflow/status/lexica/lexica/Android%20CI)](https://github.com/lexica/lexica/actions/workflows/android.yml?query=branch%3Amaster)
 
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80px">](https://f-droid.org/app/com.serwylo.lexica) [<img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height='80px'/>](https://play.google.com/store/apps/details?id=com.serwylo.lexica)
 
@@ -16,6 +15,15 @@ Features:
  * Several international dictionaries, with a combined total of millions of words
 
 ## Contributing
+
+### Support
+
+Lexica is an open source, GPLv3 game. It will always be freely available via F-Droid, or for anyone to build, fork, or improve via the source code.
+
+If you wish to support further development, you can do so via:
+
+* [Liberapay](https://liberapay.com/Lexica/donate)
+* [GitHub sponsors](https://github.com/sponsors/pserwylo)
 
 ### Reporting Issues
 
