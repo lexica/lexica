@@ -11,8 +11,12 @@ Lexica is a word game that is available on the Android platform. Players are
 given 3 to 30 minutes to find as many words as possible on a grid of random letters.
 
 Features:
- * 4x4, 5x5, and 6x6 game boards
  * Several international dictionaries, with a combined total of millions of words
+ * Multiplayer mode (send challenges to friends via SMS/Email/etc)
+ * Customisable game modes:
+   * 4x4, 5x5, and 6x6 sized boards
+   * Different durations
+   * Various scoring modes
 
 ## Screenshots
 
