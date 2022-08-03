@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Lexica</string>
     <string name="new_game">Nová hra</string>
     <string name="restore_game">Obnovit hru</string>
@@ -9,7 +9,7 @@
     <string name="pref_dict_de_DE">Němčina (rozšířená)</string>
     <string name="pref_dict_es">Španělština</string>
     <string name="pref_dict_fa">Perština</string>
-    <string name="pref_dict_fr_FR">Francouzština</string>
+    <string name="pref_dict_fr_FR">Francouzština (rozšířená)</string>
     <string name="pref_dict_hu">Maďarština</string>
     <string name="pref_dict_it">Italština</string>
     <string name="pref_dict_ja">Japonština</string>
@@ -33,4 +33,19 @@
     <string name="pref_dict_uk">Ukrajinština</string>
     <string name="pref_dict_pt_BR_no_diacritics">Portugalština (Brazílie)</string>
     <string name="pref_dict_pl">Polština</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Včetně diakritiky: äöü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Němčina</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Včetně diakritiky: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francouzština</string>
+    <string name="pref_sounds">Zvuky povoleny</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Pouze španělské Ñ</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugalština (Brazílie) (rozšířená)</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Ruština (rozšířená)</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Včetně diakritiky: áéíóúüñ</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Obsahuje gramatické případy a zkratky</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Obsahuje ñ, ale bez diakritiky</string>
+    <string name="pref_hintMode">Režim nápovědy</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Včetně diakritiky: çáéíóúâêôãõà a písmen: kwy</string>
+    <string name="letter_points">Písmenné body</string>
+    <string name="pref_hintMode_summary">Zobrazí počet slov, ve kterých lze použít jednotlivá písmena</string>
 </resources>
