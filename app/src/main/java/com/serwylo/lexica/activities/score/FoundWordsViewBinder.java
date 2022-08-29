@@ -30,7 +30,7 @@ class FoundWordsViewBinder extends ScoreWordsViewBinder {
         ScoreCalculator score = new ScoreCalculator(game);
         items = new ArrayList<>(score.getItems().size());
         for (ScoreCalculator.Selected selected : score.getItems()) {
-            items.add(new Item(game.getLanguage().toRepresentation(selected.getWord()), selected.getScore(), selected.isWord(), null));
+            items.add(new Item(selected.getWord(), selected.getScore(), selected.isWord(), null));
         }
 
         adapter = new Adapter(items);
