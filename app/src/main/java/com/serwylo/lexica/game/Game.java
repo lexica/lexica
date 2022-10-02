@@ -170,9 +170,7 @@ public class Game implements Synchronizer.Counter {
 
         loadSounds(context);
 
-        String lettersFileName = language.getLetterDistributionFileName();
-        int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
-        CharProbGenerator charProbs = new CharProbGenerator(context.getResources().openRawResource(id), getLanguage());
+        CharProbGenerator charProbs = getCharProbGenerator(context);
         Board board;
 
         switch (gameMode.getBoardSize()) {
@@ -199,6 +197,14 @@ public class Game implements Synchronizer.Counter {
         score = 0;
         wordsUsed = new LinkedHashSet<>();
         initializeWeights();
+    }
+
+    @NonNull
+    private CharProbGenerator getCharProbGenerator(Context context) {
+        String lettersFileName = language.getLetterDistributionFileName();
+        int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
+        CharProbGenerator charProbs = new CharProbGenerator(context.getResources().openRawResource(id), getLanguage());
+        return charProbs;
     }
 
     /**

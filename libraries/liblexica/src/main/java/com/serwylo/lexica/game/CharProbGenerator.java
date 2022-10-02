@@ -85,21 +85,45 @@ public class CharProbGenerator {
         return Collections.unmodifiableList(letters);
     }
 
-    public FiveByFiveBoard generateFiveByFiveBoard() {
-        return new FiveByFiveBoard(generateBoard(25));
+    public FourByFourBoard generateFourByFourBoard() {
+        return generateFourByFourBoard(new Random().nextLong());
     }
 
-    public FourByFourBoard generateFourByFourBoard() {
-        return new FourByFourBoard(generateBoard(16));
+    public FourByFourBoard generateFourByFourBoard(Board prevBoard) {
+        return generateFourByFourBoard(prevBoard.toString().hashCode());
+    }
+
+    public FourByFourBoard generateFourByFourBoard(long seed) {
+        return new FourByFourBoard(generateBoard(16, seed));
+    }
+
+    public FiveByFiveBoard generateFiveByFiveBoard() {
+        return generateFiveByFiveBoard(new Random().nextLong());
+    }
+
+    public FiveByFiveBoard generateFiveByFiveBoard(Board prevBoard) {
+        return generateFiveByFiveBoard(prevBoard.toString().hashCode());
+    }
+
+    public FiveByFiveBoard generateFiveByFiveBoard(long seed) {
+        return new FiveByFiveBoard(generateBoard(25, seed));
     }
 
     public SixBySixBoard generateSixBySixBoard() {
-        return new SixBySixBoard(generateBoard(36));
+        return generateSixBySixBoard(new Random().nextLong());
     }
 
-    private String[] generateBoard(int size) {
+    public SixBySixBoard generateSixBySixBoard(Board prevBoard) {
+        return generateSixBySixBoard(prevBoard.toString().hashCode());
+    }
+
+    public SixBySixBoard generateSixBySixBoard(long seed) {
+        return new SixBySixBoard(generateBoard(36, seed));
+    }
+
+    private String[] generateBoard(int size, long seed) {
         int total = 0;
-        Random rng = new Random();
+        Random rng = new Random(seed);
 
         String[] board = new String[size];
 
