@@ -92,6 +92,26 @@
 			android:textColor="?attr/home__secondary_button_text_colour"
 			android:textSize="14sp" />
 
+		<mehdi.sakout.fancybuttons.FancyButton
+			android:id="@+id/multiplayer_next_round"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:paddingTop="?attr/home__button_padding"
+			android:paddingBottom="?attr/home__button_padding"
+			android:visibility="visible"
+			app:layout_constraintWidth_percent="0.5"
+			fancy:fb_borderColor="?attr/home__secondary_button_border"
+			fancy:fb_borderWidth="2dp"
+			fancy:fb_defaultColor="?attr/home__secondary_button_background"
+			fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
+			fancy:fb_fontIconResource="&#xf057;"
+			fancy:fb_fontIconSize="24sp"
+			fancy:fb_iconPosition="top"
+			fancy:fb_text="@string/multiplayer__next_round"
+			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+			fancy:fb_textSize="18sp" />
+
 	</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

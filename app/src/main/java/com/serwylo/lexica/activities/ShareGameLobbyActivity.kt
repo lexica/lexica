@@ -12,6 +12,7 @@ import com.serwylo.lexica.ThemeManager
 import com.serwylo.lexica.databinding.ShareGameLobbyBinding
 import com.serwylo.lexica.db.GameMode
 import com.serwylo.lexica.db.GameModeRepository
+import com.serwylo.lexica.game.CharProbGenerator
 import com.serwylo.lexica.game.Game
 import com.serwylo.lexica.lang.Language
 import com.serwylo.lexica.share.SharedGameData
@@ -81,7 +82,7 @@ class ShareGameLobbyActivity : AppCompatActivity() {
                 binding.gameModeDetails.setGameMode(gameMode)
                 binding.startGame.isEnabled = true
 
-                val game = Game(this, gameMode, data.language, data.board.toTypedArray())
+                val game = Game(this, gameMode, data.language, CharProbGenerator.BoardSeed(data.board.toTypedArray()))
                 binding.multiplayerGameNumAvailableWords.text = resources.getQuantityString(R.plurals.num_available_words_in_game, game.maxWordCount, game.maxWordCount)
 
                 binding.startGame.setOnClickListener { startGame(data.language, gameMode, data.board) }

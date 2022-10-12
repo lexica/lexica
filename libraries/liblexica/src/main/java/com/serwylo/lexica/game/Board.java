@@ -19,11 +19,11 @@ package com.serwylo.lexica.game;
 
 import net.healeys.trie.TransitionMap;
 
-import java.util.List;
 
 public abstract class Board implements TransitionMap {
     private String[] board;
     private Integer[] positions;
+    private final long rotationInvariantHash;
 
     public Board(String[] b) {
         board = b;
@@ -31,6 +31,8 @@ public abstract class Board implements TransitionMap {
         for (int i = 0; i < getSize(); i++) {
             positions[i] = i;
         }
+
+        rotationInvariantHash = calcRotationInvariantHash();
     }
 
     /**
@@ -63,6 +65,10 @@ public abstract class Board implements TransitionMap {
             }
         }
         return sb.toString();
+    }
+
+    public synchronized long getRotationInvariantHash() {
+        return rotationInvariantHash;
     }
 
     public synchronized void rotate() {
@@ -106,5 +112,19 @@ public abstract class Board implements TransitionMap {
 
     public String[] getLetters() {
         return board;
+    }
+
+    private long calcRotationInvariantHash() {
+        /*
+           This function calculates an rotation invariant hash by XOR-ring the hashes of getString()
+           output of all four rotations. Since the order of XOR-ing bits doesn't matter, this is invariant.
+         */
+
+        long res = 0;
+        for (int i = 0; i < 4; i++) {
+            res = res ^ this.toString().hashCode(); // ^ is the XOR operation
+            rotate();
+        }
+        return res;
     }
 }

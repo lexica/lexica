@@ -37,6 +37,7 @@ import com.serwylo.lexica.activities.score.ScoreActivity;
 import com.serwylo.lexica.db.Database;
 import com.serwylo.lexica.db.GameMode;
 import com.serwylo.lexica.db.ResultRepository;
+import com.serwylo.lexica.game.CharProbGenerator;
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.lang.Language;
 import com.serwylo.lexica.view.LexicaView;
@@ -100,7 +101,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                     Language language = Language.from(langName);
 
                     game = board != null
-                        ? new Game(this, gameMode, language, board)
+                        ? new Game(this, gameMode, language, new CharProbGenerator.BoardSeed(board))
                         : Game.generateGame(this, gameMode, language);
 
                     setupGameView(game);

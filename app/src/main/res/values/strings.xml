@@ -153,6 +153,8 @@
     <string name="time_limit_must_be_set">Time limit must be set</string>
     <string name="max_time_limit">Max time limit is 30 days (43200 minutes)</string>
     <string name="time_limit_too_short">Time limit too short</string>
+    <string name="multiplayer__next_round">Next Round</string>
+    <string name="multiplayer__start_next_round">Start Next Round</string>
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d word (tap to refresh)</item>
         <item quantity="other">%1$d words (tap to refresh)</item>

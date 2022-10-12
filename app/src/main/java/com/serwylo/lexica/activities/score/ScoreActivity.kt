@@ -106,13 +106,25 @@ class ScoreActivity : AppCompatActivity() {
         binding.foundWordsButton.setOnClickListener {
             binding.recyclerView.scrollToPosition(0)
             binding.foundWordsButton.setBackgroundColor(buttonBackgroundColorSelected)
+
             binding.missedWordsButton.setBackgroundColor(buttonBackgroundColor)
+            binding.multiplayerNextRound.setBackgroundColor(buttonBackgroundColor)
         }
 
         binding.missedWordsButton.setOnClickListener {
             binding.recyclerView.scrollToPosition(1)
-            binding.foundWordsButton.setBackgroundColor(buttonBackgroundColor)
             binding.missedWordsButton.setBackgroundColor(buttonBackgroundColorSelected)
+
+            binding.foundWordsButton.setBackgroundColor(buttonBackgroundColor)
+            binding.multiplayerNextRound.setBackgroundColor(buttonBackgroundColor)
+        }
+
+        binding.multiplayerNextRound.setOnClickListener {
+            binding.recyclerView.scrollToPosition(2)
+            binding.multiplayerNextRound.setBackgroundColor(buttonBackgroundColorSelected)
+
+            binding.foundWordsButton.setBackgroundColor(buttonBackgroundColor)
+            binding.missedWordsButton.setBackgroundColor(buttonBackgroundColor)
         }
     }
 

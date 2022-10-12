@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:fancy="http://schemas.android.com/apk/res-auto"
+	android:background="?attr/home__background_colour"
+	android:orientation="vertical">
+
+	<androidx.appcompat.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:background="?attr/colorPrimary"
+		android:minHeight="?attr/actionBarSize"
+		android:theme="?attr/actionBarTheme"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:elevation="4dp"
+		app:title="@string/multiplayer__next_round" />
+
+<!--	-->
+<!--	<TextView-->
+<!--		android:id="@+id/multiplayer_game_num_available_words"-->
+<!--		android:layout_width="0dp"-->
+<!--		android:layout_height="wrap_content"-->
+<!--		tools:text="265 words (tap to refresh)"-->
+<!--		android:textAlignment="center"-->
+<!--		android:textColor="?attr/game__score__heading_text_colour"-->
+<!--		android:padding="?attr/game__score__padding"-->
+<!--		app:layout_constraintTop_toBottomOf="@id/game_mode_details"-->
+<!--		app:layout_constraintStart_toStartOf="parent"-->
+<!--		app:layout_constraintEnd_toEndOf="parent" />-->
+
+
+<!--	<mehdi.sakout.fancybuttons.FancyButton-->
+<!--		android:id="@+id/send_invite"-->
+<!--		android:layout_width="0dp"-->
+<!--		android:layout_height="wrap_content"-->
+<!--		app:layout_constraintTop_toBottomOf="@id/multiplayer_game_num_available_words"-->
+<!--		app:layout_constraintStart_toStartOf="parent"-->
+<!--		app:layout_constraintEnd_toEndOf="parent"-->
+<!--		fancy:fb_fontIconResource="&#xf1e0;"-->
+<!--		fancy:fb_fontIconSize="?attr/game__score__heading_text_size"-->
+<!--		fancy:fb_radius="12dp"-->
+<!--		fancy:fb_iconPaddingLeft="8dp"-->
+<!--		fancy:fb_iconPaddingRight="8dp"-->
+<!--		fancy:fb_iconPaddingTop="8dp"-->
+<!--		fancy:fb_iconPaddingBottom="8dp"-->
+<!--		android:paddingEnd="8dp"-->
+<!--		android:paddingStart="8dp"-->
+<!--		fancy:fb_text="@string/multiplayer__share_invites"-->
+<!--		fancy:fb_defaultColor="?attr/home__secondary_button_background"-->
+<!--		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"-->
+<!--		fancy:fb_textColor="?attr/home__secondary_button_text_colour"-->
+<!--		android:layout_marginTop="?attr/game__score__padding"-->
+<!--		android:layout_marginEnd="?attr/game__score__padding"-->
+<!--		android:layout_marginStart="?attr/game__score__padding" />-->
+
+	<TextView
+		android:id="@+id/android_app_tag"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/multiplayer__toggle_qr_app"
+		android:textAlignment="center"
+		android:textColor="?attr/game__score__heading_text_colour"
+		app:layout_constraintBottom_toBottomOf="@id/toggle_qr"
+		app:layout_constraintEnd_toStartOf="@id/toggle_qr" />
+
+	<androidx.appcompat.widget.SwitchCompat
+		android:id="@+id/toggle_qr"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toTopOf="@+id/qr"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintHorizontal_bias="0.5"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<TextView
+		android:id="@+id/web_app_tag"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/multiplayer__toggle_qr_web"
+		android:textAlignment="center"
+		android:textColor="?attr/game__score__heading_text_colour"
+		app:layout_constraintBottom_toBottomOf="@id/toggle_qr"
+		app:layout_constraintStart_toEndOf="@id/toggle_qr" />
+
+	<ImageView
+		android:id="@+id/qr"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginStart="12dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="12dp"
+		android:layout_marginBottom="8dp"
+		android:contentDescription="@string/multiplayer__qr_code__accessible_description"
+		app:layout_constraintBottom_toTopOf="@id/text_start"
+		app:layout_constraintDimensionRatio="1:1"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintVertical_bias="0.0"
+		tools:src="@tools:sample/avatars" />
+
+	<TextView
+		android:id="@+id/text_start"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:text="@string/multiplayer__start_when_ready"
+		android:textAlignment="center"
+		android:textColor="?attr/game__score__heading_text_colour"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/start_next_round"
+		tools:layout_editor_absoluteY="558dp" />
+
+	<mehdi.sakout.fancybuttons.FancyButton
+		android:id="@+id/start_next_round"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		android:paddingTop="?attr/home__button_padding"
+		android:paddingBottom="?attr/home__button_padding"
+		fancy:fb_defaultColor="?attr/home__secondary_button_background"
+		fancy:fb_borderWidth="2dp"
+		fancy:fb_borderColor="?attr/home__secondary_button_border"
+		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
+		fancy:fb_fontIconResource="&#xf144;"
+		fancy:fb_fontIconSize="28sp"
+		fancy:fb_iconPosition="left"
+		fancy:fb_text="@string/multiplayer__start_next_round"
+		fancy:fb_textSize="28sp" >
+	</mehdi.sakout.fancybuttons.FancyButton>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

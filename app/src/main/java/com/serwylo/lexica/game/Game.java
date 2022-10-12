@@ -47,6 +47,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
+import java.util.Random;
 
 public class Game implements Synchronizer.Counter {
 
@@ -161,7 +162,9 @@ public class Game implements Synchronizer.Counter {
         }
     }
 
-    public Game(Context context, GameMode gameMode, Language language, String[] boardLetters) {
+
+
+    public Game(Context context, GameMode gameMode, Language language, CharProbGenerator.BoardSeed boardSeed) {
         this.language = language;
         this.gameMode = gameMode;
         status = GameStatus.GAME_STARTING;
@@ -175,15 +178,15 @@ public class Game implements Synchronizer.Counter {
 
         switch (gameMode.getBoardSize()) {
             case 16:
-                board = boardLetters == null ? charProbs.generateFourByFourBoard() : new FourByFourBoard(boardLetters);
+                board = charProbs.generateFourByFourBoard(boardSeed);
                 break;
 
             case 25:
-                board = boardLetters == null ? charProbs.generateFiveByFiveBoard() : new FiveByFiveBoard(boardLetters);
+                board = charProbs.generateFiveByFiveBoard(boardSeed);
                 break;
 
             case 36:
-                board = boardLetters == null ? charProbs.generateSixBySixBoard() : new SixBySixBoard(boardLetters);
+                board = charProbs.generateSixBySixBoard(boardSeed);
                 break;
 
             default:
@@ -212,11 +215,20 @@ public class Game implements Synchronizer.Counter {
      *       many other things. This should be refactored so that it is more predictable what happens.
      */
     public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language) {
-        Game bestGame = new Game(context, gameMode, language, null);
+        return generateGame(context, gameMode, language, null);
+    }
+
+    public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language, Long seed) {
+        Game bestGame = new Game(context, gameMode, language, new CharProbGenerator.BoardSeed(seed));
+        Board lastBoard = bestGame.board; // needed so we still receive deterministic boards, even when skipping tries
+
         int numAttempts = 0;
         while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
             Log.d(TAG, "Generating another board, because the previous one only had " + bestGame.getMaxWordCount() + " words, but we want at least 45. Will give up after 5 tries.");
-            Game nextAttempt = new Game(context, gameMode, language, null);
+
+            Game nextAttempt = new Game(context, gameMode, language, CharProbGenerator.BoardSeed.fromPreviousBoard(lastBoard));
+            lastBoard = nextAttempt.getBoard();
+
             if (nextAttempt.getMaxWordCount() > bestGame.getMaxWordCount()) {
                 bestGame = nextAttempt;
             }

@@ -18,14 +18,13 @@ import com.serwylo.lexica.db.GameModeRepository
 import com.serwylo.lexica.game.Game
 import com.serwylo.lexica.share.SharedGameData
 import com.serwylo.lexica.share.SharedGameDataHumanReadable
+import com.serwylo.lexica.view.QrCodeBinder
 import kotlin.math.min
 
 
 class NewMultiplayerActivity : AppCompatActivity() {
 
     private lateinit var binding: NewMultiplayerBinding
-    private lateinit var appBitmap: Bitmap
-    private lateinit var webBitmap: Bitmap
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -75,28 +74,8 @@ class NewMultiplayerActivity : AppCompatActivity() {
             board.add(game.board.elementAt(i))
         }
 
-        val sharedGameData = SharedGameData(board, language, gameMode, SharedGameData.Type.MULTIPLAYER)
-        val uri = sharedGameData.serialize(SharedGameData.Platform.ANDROID)
-        val metrics = resources.displayMetrics
-        val size = min(metrics.widthPixels, metrics.heightPixels)
-        appBitmap = QRCodeEncoder.encodeAsBitmap(uri.toString(), size)
-
-        val webUri = sharedGameData.serialize(SharedGameData.Platform.WEB)
-        webBitmap = QRCodeEncoder.encodeAsBitmap(webUri.toString(), size)
-
-        Log.d(TAG, "Preparing multiplayer game: $uri")
-
-        binding.qr.setImageBitmap(appBitmap)
-        binding.gameModeDetails.setGameMode(gameMode)
-        binding.gameModeDetails.setLanguage(language)
-
-        binding.toggleQr.isEnabled = true
-        binding.toggleQr.isChecked = false
-
-        binding.toggleQr.setOnCheckedChangeListener { _, isChecked -> when (isChecked) {
-            true -> binding.qr.setImageBitmap(webBitmap)
-            false -> binding.qr.setImageBitmap(appBitmap)
-        } }
+        val qrCodeBinder = QrCodeBinder(this, resources, game)
+        qrCodeBinder.bindUI(binding.qr, binding.toggleQr)
 
         binding.multiplayerGameNumAvailableWords.text = resources.getQuantityString(R.plurals.num_available_words_in_game__tap_to_refresh, game.maxWordCount, game.maxWordCount)
         binding.multiplayerGameNumAvailableWords.setOnClickListener {
@@ -122,13 +101,13 @@ class NewMultiplayerActivity : AppCompatActivity() {
                 val text = """
 ${getString(R.string.invite__multiplayer__description)}
 
-$uri
+$qrCodeBinder.uri
 
 ${getString(R.string.invite__dont_have_lexica_installed)}
 
 ${getString(R.string.invite__dont_have_lexica_installed_web)}
 
-$webUri
+$qrCodeBinder.webUri
 
 ${getString(R.string.invite__multiplayer__game_offline)}
 
