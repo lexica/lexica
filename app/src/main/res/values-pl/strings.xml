@@ -10,7 +10,7 @@
     <string name="pref_dict_es">Hiszpański</string>
     <string name="pref_dict_fa">Perski</string>
     <string name="pref_dict_fr_FR">Francuski (rozszerzony)</string>
-    <string name="pref_dict_hu">ęgierski</string>
+    <string name="pref_dict_hu">Węgierski</string>
     <string name="pref_dict_it">Włoski</string>
     <string name="pref_dict_ja">Japoński</string>
     <string name="pref_dict_nl">Holenderski</string>
@@ -104,4 +104,11 @@
     <string name="game_mode_marathon_description">Spróbuj znaleźć wszystkie słowa, bez presji czasu</string>
     <string name="game_mode_custom_description">Niestandardowy tryb gry</string>
     <string name="game_mode_legacy_description">Używany we wcześniejszej wersji Lexica</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Zawiera znaki diakrytyczne: çáéíóúâêêãõà i litery: kwy</string>
+    <string name="multiplayer__start_when_ready">Kiedy wszyscy gracze będą gotowi, wszyscy powinni rozpocząć grę w tym samym czasie.</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Zawiera przypadki gramatyczne i skróty</string>
+    <string name="high_scores">Najlepsze wyniki</string>
+    <string name="delete_custom_game_mode">Usunąć niestandardowy tryb gry \"%1$s\"\? Wszystkie najlepsze wyniki zostaną utracone.</string>
+    <string name="dialog_refresh_content">Aby mieć pewność, że grasz na tej samej planszy co twoi przeciwnicy, pamiętaj, aby ponownie wysłać zaproszenia po odświeżeniu.</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Zawiera ñ, ale bez akcentów</string>
 </resources>
