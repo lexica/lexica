@@ -35,7 +35,7 @@ public class GermanDeNoDiacritics extends Language {
         letterPoints.put("p", 4);
 
         letterPoints.put("j", 6);
-        letterPoints.put("v", 1);
+        letterPoints.put("v", 6);
 
         letterPoints.put("x", 8);
 
