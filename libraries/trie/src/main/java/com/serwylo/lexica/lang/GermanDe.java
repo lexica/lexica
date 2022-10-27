@@ -39,7 +39,7 @@ public class GermanDe extends Language {
         letterPoints.put("ä", 6);
         letterPoints.put("j", 6);
         letterPoints.put("ü", 6);
-        letterPoints.put("v", 1);
+        letterPoints.put("v", 6);
 
         letterPoints.put("ö", 8);
         letterPoints.put("x", 8);
