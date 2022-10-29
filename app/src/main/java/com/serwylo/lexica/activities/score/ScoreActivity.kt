@@ -98,6 +98,7 @@ class ScoreActivity : AppCompatActivity() {
         if (isOnlyFoundWords) {
             binding.foundWordsButton.visibility = View.GONE
             binding.missedWordsButton.visibility = View.GONE
+            binding.multiplayerNextRound.visibility = View.GONE
             binding.toolbar.title = getString(R.string.found_words)
         }
 
