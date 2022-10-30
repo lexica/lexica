@@ -1,0 +1,7 @@
+Added Indonesia translation (thanks to liimee) and updated others:
+ * Thanks as always to the wonderful community of translators.
+
+Fix (thanks to hhpmmd):
+ * German scores 6 points for letter "v" (previously was accidentally scoring 1).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
