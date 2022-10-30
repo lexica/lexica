@@ -5,7 +5,7 @@ apply plugin: 'kotlin'
 buildscript {
     ext.kotlin_version = '1.4.30'
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
     dependencies {
@@ -17,7 +17,7 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
 }
