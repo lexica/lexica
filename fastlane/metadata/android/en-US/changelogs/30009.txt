@@ -1,0 +1,9 @@
+Added Indonesia translation (thanks to liimee) and updated others (thanks as always to the community of translators).
+
+Fix (thanks to hhpmmd):
+ * German scores 6 points for letter "v" (previously was accidentally scoring 1).
+
+Minor UI changes:
+ * Due to a no-longer supported library used to render buttons. Required more changes than expected, hence the minor bump to 3.7.x.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
