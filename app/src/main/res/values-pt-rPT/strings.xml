@@ -5,10 +5,10 @@
     <string name="restore_game">Restaurar Jogo</string>
     <string name="prefs">Preferências</string>
     <string name="pref_dict_ca">Catalão</string>
-    <string name="pref_dict_de_DE">Alemão</string>
+    <string name="pref_dict_de_DE">Alemão (Estendido)</string>
     <string name="pref_dict_es">Espanhol</string>
     <string name="pref_dict_fa">Persa</string>
-    <string name="pref_dict_fr_FR">Francês</string>
+    <string name="pref_dict_fr_FR">Francês (Estendido)</string>
     <string name="pref_dict_hu">Húngaro</string>
     <string name="pref_dict_it">Italiano</string>
     <string name="pref_dict_ja">Japonês</string>
@@ -113,4 +113,66 @@
     <string name="button_delete">Apagar</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francês</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Alemão</string>
+    <string name="multiplayer_lobby__join_game">Entrar no jogo</string>
+    <string name="multiplayer__qr_code__accessible_description">QR code: Outros podem escanear para participar deste jogo</string>
+    <string name="new_game_mode">Novo modo de jogo</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Inclui diacríticos: äöü</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Inclui diacríticos: àâçéèêëîïôöûü</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Português (Brasil) (Estendido)</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Russo (Estendido)</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Inclui casos de gramática e abreviações</string>
+    <string name="whats_new_web_lexica">Apresentando web Lexica!</string>
+    <string name="whats_new_web_lexica_description">Agradecimentos especiais a @MattRCole por um esforço tão grande para dar vida a isso!
+\n
+\nOs convites multijogador agora incluem ligações para a nova versão web (beta) para aqueles sem aparelhos Android. O QR code mostrado ao iniciar um novo jogo multijogador também pode mostrar um URL para a versão da web.</string>
+    <string name="multiplayer_lobby__join_when_ready">Quando todos os jogadores estiverem prontos, entre no jogo.</string>
+    <string name="multiplayer__share_invites">Compartilhar convites</string>
+    <string name="multiplayer__start_game">Iniciar jogo</string>
+    <string name="invite__challenge__description">Encontrei %1$d palavras e marquei %2$d pontos nesse tabuleiro Lexica, Consegue vencer-me\?</string>
+    <string name="invite__dont_have_lexica_installed">Não tem o Lexica instalado\? Obtenha em https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="send_challenge_invite_to">Enviar desafio para…</string>
+    <string name="send_multiplayer_invite_to">Enviar convite para…</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Inclui diacríticos: áéíóúüñ</string>
+    <string name="whats_new_support">Apoie Lexica</string>
+    <string name="whats_new_support_description">Lexica é e sempre será livre e de código aberto.
+\n
+\nPode mostrar o seu apoio e contribuir para o desenvolvimento dele, a doar via <a href="https://liberapay.com/Lexica">Liberapay</a> ou <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
+    <string name="whats_new_sharing">Compartilhe um desafio!</string>
+    <string name="multiplayer__toggle_qr_app">Mostrar QR Code
+\ndo Android</string>
+    <string name="multiplayer__toggle_qr_web">Mostrar QR Code
+\nda Web</string>
+    <string name="multiplayer__start_when_ready">Quando todos os jogadores estiverem prontos, todos devem iniciar o jogo ao mesmo tempo.</string>
+    <string name="multiplayer">Multijogador</string>
+    <string name="game_mode">Modo de jogo</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Espanhol sem acentos</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Inclui ñ mas sem acentos</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Inclui diacríticos: çáéíóúâêôãõà e letras: kwy</string>
+    <string name="dialog_refresh_title">Atualizar tabuleiro</string>
+    <string name="dialog_refresh_content">Para garantir que jogue no mesmo tabuleiro que os seus oponentes, certifique-se de reenviar todos os convites após atualizar.</string>
+    <string name="dialog_refresh_button">Atualizar</string>
+    <string name="dialog_refresh_confirmation_message">Tabuleiro atualizado</string>
+    <string name="whats_new_sharing_description">Depois de terminar um jogo, agora pode compartilhar esse tabuleiro com os seus amigos e desafiá-los a bater a sua pontuação.
+\n
+\nSimilar ao multiplayer, mas para aquele momento em que acabou de jogar um layout de tabuleiro particularmente interessante ou desafiador que acha que os seus amigos vão gostar.
+\n
+\nComo sempre, o seu <a href="https://github.com/lexica/lexica/issues">feedback é bem-vindo</a> sobre como esse recurso pode ser melhorado.</string>
+    <string name="invalid_multiplayer_link">Ligação multijogador/de compartilhamento recebido incorreto, não foi possível entrar no jogo. Certifique-se de que ambos estejam usando a versão mais recente do Lexica.</string>
+    <string name="dialog_end_game_confirm_title">Finalizar Jogo</string>
+    <string name="dialog_end_game_confirm_message">Tem certeza que quer finalizar esse jogo\?</string>
+    <string name="share">Compartilhar</string>
+    <string name="back">Voltar</string>
+    <string name="invite__multiplayer__description">Foi convidado para um jogo multijogador Lexica:</string>
+    <string name="invite__multiplayer__game_offline">Quer jogar offline\? Tente jogar com papel e caneta:</string>
+    <string name="invite__dont_have_lexica_installed_web">Ou experimente o Lexica no navegador (beta):</string>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d palavra (toque para atualizar)</item>
+        <item quantity="many">%1$d palavras (toque para atualizar)</item>
+        <item quantity="other"></item>
+    </plurals>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d palavra</item>
+        <item quantity="many">%1$d palavras</item>
+        <item quantity="other"></item>
+    </plurals>
 </resources>
