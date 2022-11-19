@@ -74,6 +74,9 @@ class NewMultiplayerActivity : AppCompatActivity() {
             board.add(game.board.elementAt(i))
         }
 
+        binding.gameModeDetails.setGameMode(gameMode)
+        binding.gameModeDetails.setLanguage(language)
+
         val qrCodeBinder = QrCodeBinder(this, resources, game)
         qrCodeBinder.bindUI(binding.qr, binding.toggleQr)
 
