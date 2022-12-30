@@ -28,7 +28,7 @@
     <string name="show_unique">Muestra palabras únicas</string>
     <string name="hide_unique">Oculta palabras únicas</string>
     <string name="view_word"><u>Ver</u></string>
-    <string name="define_word">"&lt;u&gt;Define&lt;/u&gt; "</string>
+    <string name="define_word"><u>Definir</u> </string>
     <string name="words">Palabras</string>
     <string name="found_words">Palabras completadas</string>
     <string name="missed_words">Palabras incompletas</string>
@@ -50,8 +50,9 @@
     <string name="score">Puntaje</string>
     <string name="pref_scoreType">Tipo de puntaje</string>
     <plurals name="num_minutes">
-        <item quantity="one">%d min</item>
-        <item quantity="other">%d mins</item>
+        <item quantity="one">%d minuto</item>
+        <item quantity="many">%d minutos</item>
+        <item quantity="other"></item>
     </plurals>
     <string name="whats_new_why">¿Por qué\?</string>
     <string name="whats_new_game_modes_description">Las siguientes preferencias han sido reemplazadas con modalidades de partida: duración, tamaño del tablero, longitud mínima de palabras, tipo de puntaje y modalidades asistidas.
@@ -109,7 +110,7 @@
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es">Español sin acentos</string>
     <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">Alemán (Extendido)</string>
     <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Catalán</string>
-    <string name="delete_custom_game_mode">¿Eliminar el modo de juego «%1$s»\? Las puntuaciones asolidas se perderán.</string>
+    <string name="delete_custom_game_mode">¿Eliminar el modo de juego personalizado \"%1$s\"\? Todas las puntuaciones más altas se pierden.</string>
     <string name="button_cancel">Cancelar</string>
     <string name="button_delete">Eliminar</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francés</string>
@@ -120,7 +121,7 @@
     <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Incluye diacríticos: áéíóúüñ</string>
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Incluye ñ pero no acentos</string>
     <string name="menu_view_found_words">Ver las palabras encontradas</string>
-    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Incluye casos gramaticales y abreviaciones.</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Incluye casos gramaticales y abreviaturas</string>
     <string name="dialog_refresh_content">Para asegurarte de que juegas con el mismo tablero que tus oponentes, asegúrate de que reenvías las invitaciones después de refrescar.</string>
     <string name="whats_new_support">Apoya a Lexica</string>
     <string name="dialog_refresh_confirmation_message">Tablero refrescado</string>
@@ -166,22 +167,22 @@
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d palabra (toca para refrescar)</item>
         <item quantity="many">%1$d palabras (toca para refrescar)</item>
-        <item quantity="other"></item>
+        <item quantity="other"/>
     </plurals>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d palabra</item>
         <item quantity="many">%1$d palabras</item>
-        <item quantity="other"></item>
+        <item quantity="other"/>
     </plurals>
     <plurals name="num_found_words_out_of_total">
         <item quantity="one">%d /%d palabra</item>
         <item quantity="many">%d / %d palabras</item>
-        <item quantity="other"></item>
+        <item quantity="other"/>
     </plurals>
     <plurals name="max_score_points_suffix">
         <item quantity="one">/ %d punto</item>
         <item quantity="many">/ %d puntos</item>
-        <item quantity="other"></item>
+        <item quantity="other"/>
     </plurals>
     <string name="invite__multiplayer__description">Has sido invitado a una partida multijugador de Lexica:</string>
     <string name="invite__multiplayer__game_offline">¿Quieres jugar offline\? Prueba a jugar con un papel y un bolígrafo:</string>
