@@ -22,6 +22,37 @@ Features:
 
 <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/01_main_menu_light.png" alt="Lexica game main menu" width="200"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/02_game_light.png" alt="In game screenshot (light theme)" width="200"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/03_missed_words_light.png" alt="End game screen (showing missed words)" width="200"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/06_game_dark.png" alt="In game screenshot (dark theme)" width="200">
 
+## How to play the game
+
+The user can click on the any letter in the grid.
+The user can slide his finger to choose the next letter of the word that the user wants to find.
+The user may move to all 8 neighboring letters from the original letter; 2 horizontally neighboring letters, 2 vertically neighboring letters, 4 diagnoally neighboring letters.
+The user can complete the sequence of letters by moving his finger off the screen after selecting the letters.
+In the given time, the user can find as many words as possible. 
+Each word found will have a different point in relation to the length of that word.
+For example, a letter with the length of 3 or 4 will be 1 point. A letter with the length of 5 will be 2 points.
+There are different game modes including Sprint, Marathon, Beginner and Letter Points.
+In Sprint mode, the player is given alloted time.
+In Marathon mode, the player does not have time pressure.
+In Beginner mode, the player can use hints to find words.
+In Letter Points mode, the player can score more points for using less common words.
+Before beginning any game, the player can switch game mode on clicking trophy logo on the left top.
+After the alloted time expires, the game will display how many words you found out of how many words there were in the grid.
+Besides the words you have found, it will display how many points you have earned out of how many points were possible to be gained.
+The user can end the game earlier in the middle of the game if the user wishes to by clicking the three dots. After clicking the three dots, the user will be prompted with "end game" button. 
+There will be two modes after completion of the game: Found words and Missed words.
+The "Found Words" mode will be the default mode after completion of the game.
+It will display the words you have found in the list.
+It will also display the combination of letters that aren't any words that you have tried during the game.
+The each word you found will have points earend beside the word.
+The each word found will have an external link next to the point that will direct the players to web page of the definition of each word.
+In the Missed Words mode, it will display the original grid.
+It will also list each word that weren't found during the game, along with their alloted points and link to the web page of the definition of each word.
+When the player click on the each word missed, the grid will display the path of the word.
+The player can sort the missed word alphabetically.
+The player can click on three dots connected in a line to share his game result.
+The player can share the game result to text message, via whatsapp or via email.
+
 ## Contributing
 
 ### Support
