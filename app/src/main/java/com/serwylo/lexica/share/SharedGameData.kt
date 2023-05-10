@@ -102,16 +102,34 @@ data class SharedGameData(
 
         val webPath = "web-lexica/multiplayer"
 
-        val path = when (platform) {
-            Platform.WEB -> webPath
-            Platform.ANDROID -> androidPath
+        return when (platform) {
+            Platform.WEB -> {
+                val path = when (type) {
+                    Type.MULTIPLAYER, Type.SHARE -> webPath
+                }
+                Uri.Builder()
+                    .scheme("https")
+                    .authority("lexica.github.io")
+                    .path("/$path/")
+            }
+            Platform.ANDROID -> {
+                when (type) {
+                    Type.MULTIPLAYER -> {
+                        Uri.Builder()
+                            .scheme("lexica")
+                            .authority("multiplayer")
+                    }
+                    Type.SHARE -> {
+                        Uri.Builder()
+                            .scheme("https")
+                            .authority("lexica.github.io")
+                            .path("/$androidPath/")
+                    }
+                }
+            }
         }
-
-        return Uri.Builder()
-                .scheme("https")
-                .authority("lexica.github.io")
-                .path("/$path/")
     }
+
     object Keys {
         const val board = "b"
         const val language = "l"
