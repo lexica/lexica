@@ -137,4 +137,8 @@
     <plurals name="num_minutes">
         <item quantity="other">%d menit</item>
     </plurals>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Hanya bahasa Spanyol Ñ</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Termasuk ñ tetapi tanpa aksen</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Termasuk kasus tata bahasa dan singkatan</string>
+    <string name="letter_points">Poin Huruf</string>
 </resources>
