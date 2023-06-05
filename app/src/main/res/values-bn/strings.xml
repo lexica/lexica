@@ -22,7 +22,7 @@
     <string name="pref_dict">অভিধান</string>
     <string name="prefs">পছন্দসমূহ</string>
     <string name="restore_game">খেলা রিস্টোর করুন</string>
-    <string name="new_game">নতুল খেলা</string>
+    <string name="new_game">নতুন খেলা</string>
     <string name="app_name">লেক্সিকা</string>
     <string name="view_word"><u>দেখো</u></string>
     <string name="theme_dark">কালো</string>
@@ -57,4 +57,13 @@
     <string name="game_mode_marathon">লম্বা</string>
     <string name="game_mode_beginner">নব্য</string>
     <string name="whats_new_continue">চালিয়ে যাও</string>
+    <string name="pref_hintMode">সহায়তা মোড</string>
+    <string name="dialog_refresh_confirmation_message">বোর্ড সতেজকৃত</string>
+    <string name="hint_colour">টাইল রঙ</string>
+    <string name="pref_sounds">শব্দ সক্রিয়</string>
+    <string name="tile_count">শব্দ সংখ্যা</string>
+    <string name="dialog_about_title">লেক্সিকা সম্পর্কে</string>
+    <string name="menu_rotate_board">বোর্ড ঘুরাও</string>
+    <string name="menu_save_game">খেলা সংরক্ষণ করো</string>
+    <string name="dialog_refresh_title">রিফ্রেশ বোর্ড</string>
 </resources>
