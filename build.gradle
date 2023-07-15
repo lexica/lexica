@@ -3,7 +3,7 @@ apply plugin: 'java'
 apply plugin: 'kotlin'
 
 buildscript {
-    ext.kotlin_version = '1.6.21'
+    ext.kotlin_version = '1.8.22'
     repositories {
         mavenCentral()
         google()
@@ -117,4 +117,9 @@ compileTestKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }

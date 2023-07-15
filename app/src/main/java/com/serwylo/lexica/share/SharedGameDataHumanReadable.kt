@@ -46,7 +46,7 @@ data class SharedGameDataHumanReadable(
             .map { it.joinToString(" ") }
             .joinToString("\n")
 
-        return """${board.toUpperCase(language.locale)}
+        return """${board.uppercase(language.locale)}
 
 ${Keys.language}: ${LanguageLabel.getLabel(context, language)}
 ${Keys.time}: ${timeLimitInSeconds / 60} mins

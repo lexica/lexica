@@ -10,7 +10,8 @@
 
         <activity android:name=".MainMenuActivity"
 			android:screenOrientation="portrait"
-			android:configChanges="orientation|keyboardHidden">
+			android:configChanges="orientation|keyboardHidden"
+			android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,7 +28,8 @@
 		<activity android:name=".activities.ShareGameLobbyActivity"
 			android:screenOrientation="portrait"
 			android:configChanges="orientation|keyboardHidden"
-			android:parentActivityName=".MainMenuActivity">
+			android:parentActivityName=".MainMenuActivity"
+			android:exported="true">
 			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
 
 			<intent-filter>
@@ -111,7 +113,8 @@
 		<activity android:name=".GameActivity"
 			android:screenOrientation="portrait"
 			android:configChanges="orientation|keyboardHidden"
-			android:parentActivityName=".MainMenuActivity">
+			android:parentActivityName=".MainMenuActivity"
+			android:exported="true">
 			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainMenuActivity" />
 			<intent-filter>
 				<action android:name="com.serwylo.lexica.action.NEW_GAME" />
@@ -125,7 +128,8 @@
 
         <activity android:name=".activities.score.ScoreActivity"
 			android:screenOrientation="portrait"
-			android:configChanges="orientation|keyboardHidden">
+			android:configChanges="orientation|keyboardHidden"
+			android:exported="true">
 			<intent-filter>
 				<action android:name="com.serwylo.lexica.action.SCORE" />
 				<category android:name="android.intent.category.DEFAULT" />
