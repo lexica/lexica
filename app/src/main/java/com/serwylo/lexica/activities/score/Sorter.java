@@ -3,7 +3,10 @@ package com.serwylo.lexica.activities.score;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import androidx.annotation.DrawableRes;
 import androidx.preference.PreferenceManager;
+
+import com.serwylo.lexica.R;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -33,18 +36,13 @@ class Sorter implements Comparator<ScoreWordsViewBinder.Item> {
     public static final String SORT_DESC = "desc";
     private static final String DEFAULT_SORT_ORDER = SORT_DESC;
 
-    private static final String SORT_ICON_ALPHA_ASC = "\uf15d";
-    private static final String SORT_ICON_ALPHA_DESC = "\uf15e";
-    private static final String SORT_ICON_NUMERIC_ASC = "\uf162";
-    private static final String SORT_ICON_NUMERIC_DESC = "\uf163";
-
-    private static final Map<String, String> SORT_ICONS = new HashMap<>();
+    private static final Map<String, Integer> SORT_ICONS = new HashMap<>();
 
     static {
-        SORT_ICONS.put(Sorter.SORT_BY_ALPHA + Sorter.SORT_ASC, SORT_ICON_ALPHA_ASC);
-        SORT_ICONS.put(Sorter.SORT_BY_ALPHA + Sorter.SORT_DESC, SORT_ICON_ALPHA_DESC);
-        SORT_ICONS.put(Sorter.SORT_BY_POINTS + Sorter.SORT_ASC, SORT_ICON_NUMERIC_ASC);
-        SORT_ICONS.put(Sorter.SORT_BY_POINTS + Sorter.SORT_DESC, SORT_ICON_NUMERIC_DESC);
+        SORT_ICONS.put(Sorter.SORT_BY_ALPHA + Sorter.SORT_ASC, R.drawable.arrow_down_a_z_solid);
+        SORT_ICONS.put(Sorter.SORT_BY_ALPHA + Sorter.SORT_DESC, R.drawable.arrow_down_z_a_solid);
+        SORT_ICONS.put(Sorter.SORT_BY_POINTS + Sorter.SORT_ASC, R.drawable.arrow_down_1_9_solid);
+        SORT_ICONS.put(Sorter.SORT_BY_POINTS + Sorter.SORT_DESC, R.drawable.arrow_down_9_1_solid);
     }
 
     private final SharedPreferences preferences;
@@ -60,7 +58,7 @@ class Sorter implements Comparator<ScoreWordsViewBinder.Item> {
         this.sortOrder = this.preferences.getString(SCORE_SCREEN_SORT_ORDER, DEFAULT_SORT_ORDER);
     }
 
-    public String getIconResource() {
+    public @DrawableRes Integer getIconResource() {
         return SORT_ICONS.get(sortBy + sortOrder);
     }
 

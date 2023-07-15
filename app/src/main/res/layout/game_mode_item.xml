@@ -39,77 +39,7 @@
 		android:layout_height="wrap_content"
 		app:layout_constraintTop_toBottomOf="@id/description"
 		/>
-<!--
-	<mehdi.sakout.fancybuttons.FancyButton
-		android:id="@+id/status_time"
-		app:layout_constraintStart_toStartOf="@id/label"
-		app:layout_constraintTop_toBottomOf="@id/description"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="8dp"
-		android:paddingBottom="8dp"
-		fancy:fb_fontIconResource="&#xf017;"
-		fancy:fb_textColor="?attr/list__selectable_item_text_colour"
-		fancy:fb_defaultColor="@android:color/transparent"
-		fancy:fb_text="3 mins"
-		fancy:fb_iconPosition="top" />
 
-	<mehdi.sakout.fancybuttons.FancyButton
-		android:id="@+id/status_board_size"
-		app:layout_constraintStart_toEndOf="@id/status_time"
-		app:layout_constraintTop_toBottomOf="@id/description"
-		android:layout_marginStart="8dp"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="8dp"
-		fancy:fb_fontIconResource="&#xf009;"
-		fancy:fb_textColor="?attr/list__selectable_item_text_colour"
-		fancy:fb_defaultColor="@android:color/transparent"
-		fancy:fb_text="3x3"
-		fancy:fb_iconPosition="top" />
-
-	<mehdi.sakout.fancybuttons.FancyButton
-		android:id="@+id/status_score_type"
-		app:layout_constraintStart_toEndOf="@id/status_board_size"
-		app:layout_constraintTop_toBottomOf="@id/description"
-		android:layout_marginStart="8dp"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="8dp"
-		fancy:fb_fontIconResource="&#xf091;"
-		fancy:fb_textColor="?attr/list__selectable_item_text_colour"
-		fancy:fb_defaultColor="@android:color/transparent"
-		fancy:fb_text="Letter"
-		fancy:fb_iconPosition="top" />
-
-	<mehdi.sakout.fancybuttons.FancyButton
-		android:id="@+id/status_min_length"
-		app:layout_constraintStart_toEndOf="@id/status_score_type"
-		app:layout_constraintTop_toBottomOf="@id/description"
-		android:layout_marginStart="8dp"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="8dp"
-		fancy:fb_fontIconResource="&#xf160;"
-		fancy:fb_textColor="?attr/list__selectable_item_text_colour"
-		fancy:fb_defaultColor="@android:color/transparent"
-		fancy:fb_text="≥ 3"
-		fancy:fb_iconPosition="top" />
-
-	<mehdi.sakout.fancybuttons.FancyButton
-		android:id="@+id/status_hint_mode"
-		app:layout_constraintStart_toEndOf="@id/status_min_length"
-		app:layout_constraintTop_toBottomOf="@id/description"
-		android:layout_marginStart="8dp"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="8dp"
-		fancy:fb_fontIconResource="&#xf0fa;"
-		fancy:fb_textColor="?attr/list__selectable_item_text_colour"
-		fancy:fb_defaultColor="@android:color/transparent"
-		fancy:fb_text="No hints"
-		fancy:fb_iconPosition="top" />
--->
 	<View
 		android:layout_width="match_parent"
 		android:layout_height="1dp"

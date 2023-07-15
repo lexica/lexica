@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mehdi.sakout.fancybuttons.FancyButton
+<com.google.android.material.button.MaterialButton
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:fancy="http://schemas.android.com/apk/res-auto"
-
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/btn_sort"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:text="@string/sort"
 	android:layout_margin="?attr/game__score__padding"
-	fancy:fb_fontIconSize="14sp"
-	fancy:fb_radius="12dp"
-	fancy:fb_iconPaddingLeft="8dp"
-	fancy:fb_iconPaddingRight="8dp"
-	fancy:fb_iconPaddingTop="8dp"
-	fancy:fb_iconPaddingBottom="8dp"
+	app:icon="@drawable/arrow_down_1_9_solid"
+	app:iconGravity="textStart"
+	app:iconTint="?attr/home__secondary_button_text_colour"
+	app:iconSize="24dp"
+	android:textAllCaps="false"
+	app:cornerRadius="12dp"
+	app:iconPadding="8dp"
 	android:paddingEnd="8dp"
-	fancy:fb_defaultColor="?attr/home__secondary_button_background"
-	fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-	fancy:fb_textColor="?attr/home__secondary_button_text_colour" />
+	app:backgroundTint="?attr/home__secondary_button_background"
+	android:textColor="?attr/home__secondary_button_text_colour" />

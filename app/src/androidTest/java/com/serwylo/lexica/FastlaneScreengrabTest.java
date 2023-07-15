@@ -88,13 +88,13 @@ public class FastlaneScreengrabTest {
     }
 
     private void showPreferences() {
-        ViewInteraction fancyButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
-        fancyButton.perform(click());
+        ViewInteraction materialButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
+        materialButton.perform(click());
     }
 
     private void setupDarkTheme() {
-        ViewInteraction fancyButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
-        fancyButton.perform(click());
+        ViewInteraction materialButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
+        materialButton.perform(click());
 
         // Dark mode
         ViewInteraction recyclerView = onView(allOf(withId(R.id.recycler_view), childAtPosition(withId(android.R.id.list_container), 0)));
@@ -114,8 +114,8 @@ public class FastlaneScreengrabTest {
     }
 
     private void back() {
-        ViewInteraction fancyButton4 = onView(allOf(withId(R.id.back_button), isDisplayed()));
-        fancyButton4.perform(click());
+        ViewInteraction materialButton = onView(allOf(withId(R.id.back_button), isDisplayed()));
+        materialButton.perform(click());
     }
 
     private void up() {
@@ -129,8 +129,8 @@ public class FastlaneScreengrabTest {
     }
 
     private void showMissedWords() {
-        ViewInteraction fancyButton3 = onView(allOf(withId(R.id.missed_words_button), isDisplayed()));
-        fancyButton3.perform(click());
+        ViewInteraction materialButton = onView(allOf(withId(R.id.missed_words_button), isDisplayed()));
+        materialButton.perform(click());
     }
 
     private void endGame() {
@@ -139,8 +139,8 @@ public class FastlaneScreengrabTest {
     }
 
     private void startGame() {
-        ViewInteraction fancyButton2 = onView(allOf(withId(R.id.new_game), isDisplayed()));
-        fancyButton2.perform(click());
+        ViewInteraction materialButton = onView(allOf(withId(R.id.new_game), isDisplayed()));
+        materialButton.perform(click());
     }
 
     /**
@@ -148,8 +148,8 @@ public class FastlaneScreengrabTest {
      */
     private void initialSetup() {
 
-        ViewInteraction fancyButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
-        fancyButton.perform(click());
+        ViewInteraction materialButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
+        materialButton.perform(click());
 
         ViewInteraction recyclerView = onView(allOf(withId(R.id.recycler_view), childAtPosition(withClassName(is("android.widget.FrameLayout")), 0)));
         recyclerView.perform(actionOnItemAtPosition(5, click()));
@@ -182,8 +182,8 @@ public class FastlaneScreengrabTest {
         Language language = Util.findBestMatchOrNull(locale, Language.getAllLanguages().values());
         int languageIndex = getIndexForLanguage(language == null ? new EnglishUS() : language);
 
-        ViewInteraction fancyButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
-        fancyButton.perform(click());
+        ViewInteraction materialButton = onView(allOf(withId(R.id.preferences), isDisplayed()));
+        materialButton.perform(click());
 
         ViewInteraction recyclerView = onView(allOf(withId(R.id.recycler_view), childAtPosition(withClassName(is("android.widget.FrameLayout")), 0)));
         recyclerView.perform(actionOnItemAtPosition(0, click()));

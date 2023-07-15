@@ -244,7 +244,7 @@ class RegressionPlayThroughTest (val language: Language) {
     }
 
     private fun fromMissedWordsSelectWordViaButton() {
-        val fancyButton9 = onView(
+        val materialButton = onView(
                 allOf(withId(R.id.view_word),
                         childAtPosition(
                                 childAtPosition(
@@ -252,7 +252,7 @@ class RegressionPlayThroughTest (val language: Language) {
                                         1),
                                 2),
                         isDisplayed()))
-        fancyButton9.perform(click())
+        materialButton.perform(click())
     }
 
     private fun fromMissedWordsSelectWordViaRow() {
