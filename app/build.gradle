@@ -5,7 +5,6 @@ apply plugin: 'de.mobilej.unmock'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion '29.0.3'
 
     defaultConfig {
         applicationId "com.serwylo.lexica"
@@ -17,18 +16,6 @@ android {
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
-    lintOptions {
-        // The translations are crowd-sourced, and so will likely never be 100% complete for all locales.
-        disable 'MissingTranslation', 'GoogleAppIndexingWarning'
-
-        // Due to getting the following error with Travis CI:
-        //   /home/travis/build/lexica/lexica/app: Error: The SDK platform-tools version ((21)) is too old  to check APIs compiled with API 23; please update [NewApi]
-        // Until the newer version of platform-tools is installed on their CI server, lets not consider it a failure.
-        abortOnError false
-
-        // Ouptuts report during build, so that it can be seen in the CI log.
-        textReport true
-    }
 
     buildTypes {
         all {
@@ -51,9 +38,28 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     packagingOptions {
-        exclude 'META-INF/*'
+        jniLibs {
+            excludes += ['META-INF/*']
+        }
+        resources {
+            excludes += ['META-INF/*']
+        }
+    }
+
+    namespace 'com.serwylo.lexica'
+
+    lint {
+        // Due to getting the following error with Travis CI:
+        //   /home/travis/build/lexica/lexica/app: Error: The SDK platform-tools version ((21)) is too old  to check APIs compiled with API 23; please update [NewApi]
+        // Until the newer version of platform-tools is installed on their CI server, lets not consider it a failure.
+        abortOnError false
+
+        // The translations are crowd-sourced, and so will likely never be 100% complete for all locales.
+        disable 'MissingTranslation', 'GoogleAppIndexingWarning'
+
+        // Ouptuts report during build, so that it can be seen in the CI log.
+        textReport true
     }
 }
 
