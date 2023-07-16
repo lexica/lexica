@@ -54,6 +54,8 @@
 			app:cornerRadius="0dp"
 			android:insetTop="0dp"
 			android:insetBottom="0dp"
+			android:paddingStart="2dp"
+			android:paddingEnd="2dp"
 			app:strokeWidth="2dp"
 			app:strokeColor="?attr/home__secondary_button_border"
 			app:icon="@drawable/circle_check_solid"
@@ -62,7 +64,7 @@
 			app:iconGravity="top"
 			android:text="@string/found_words"
 			android:textColor="?attr/home__secondary_button_text_colour"
-			android:textSize="16sp" />
+			android:textSize="14sp" />
 
 		<com.google.android.material.button.MaterialButton
 			android:id="@+id/missed_words_button"
@@ -78,6 +80,8 @@
 			app:cornerRadius="0dp"
 			android:insetTop="0dp"
 			android:insetBottom="0dp"
+			android:paddingStart="2dp"
+			android:paddingEnd="2dp"
 			app:strokeWidth="2dp"
 			app:strokeColor="?attr/home__secondary_button_border"
 			app:icon="@drawable/circle_xmark_solid"
@@ -86,7 +90,7 @@
 			app:iconGravity="top"
 			android:text="@string/missed_words"
 			android:textColor="?attr/home__secondary_button_text_colour"
-			android:textSize="16sp" />
+			android:textSize="14sp" />
 
 	</LinearLayout>
 

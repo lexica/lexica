@@ -18,4 +18,9 @@
 	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION"
 		tools:ignore="ProtectedPermissions" />
 
+	<!-- For enabling a clean status bar -->
+	<!-- Suppressed lint error because it is just for debug / Fastlane purposes -->
+	<uses-permission android:name="android.permission.DUMP"
+		tools:ignore="ProtectedPermissions" />
+
 </manifest>

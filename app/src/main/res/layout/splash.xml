@@ -150,11 +150,13 @@ The "android:stateListAnimator="@null"" found on buttons is to remove shadows as
 		android:textColor="@color/white"
 		app:iconTint="@color/white"
 		android:text="@string/multiplayer"
-		android:textSize="16sp"
+		android:textSize="14sp"
 		android:textAllCaps="false"
 		app:cornerRadius="0dp"
 		android:insetTop="0dp"
 		android:insetBottom="0dp"
+		android:paddingStart="2dp"
+		android:paddingEnd="2dp"
 		app:strokeWidth="2dp"
 		app:strokeColor="?attr/home__main_button_border"
 		app:layout_constraintHorizontal_weight="1"
@@ -183,6 +185,8 @@ The "android:stateListAnimator="@null"" found on buttons is to remove shadows as
 			app:cornerRadius="0dp"
 			android:insetTop="0dp"
 			android:insetBottom="0dp"
+			android:paddingStart="2dp"
+			android:paddingEnd="2dp"
 			app:strokeWidth="2dp"
 			app:strokeColor="?attr/home__secondary_button_border"
 			app:icon="@drawable/circle_question_solid"
@@ -191,7 +195,7 @@ The "android:stateListAnimator="@null"" found on buttons is to remove shadows as
 			app:iconGravity="top"
 			android:text="@string/about"
 			android:textColor="@color/white"
-			android:textSize="16sp" />
+			android:textSize="14sp" />
 
 		<com.google.android.material.button.MaterialButton
 			android:id="@+id/restore_game"
@@ -212,9 +216,11 @@ The "android:stateListAnimator="@null"" found on buttons is to remove shadows as
 			android:textColor="@color/white"
 			app:iconTint="@color/white"
 			android:text="@string/restore_game"
-			android:textSize="16sp"
+			android:textSize="14sp"
 			android:textAllCaps="false"
 			app:cornerRadius="0dp"
+			android:paddingStart="2dp"
+			android:paddingEnd="2dp"
 			android:insetTop="0dp"
 			android:insetBottom="0dp"
 			/>
@@ -238,10 +244,12 @@ The "android:stateListAnimator="@null"" found on buttons is to remove shadows as
 			app:cornerRadius="0dp"
 			android:insetTop="0dp"
 			android:insetBottom="0dp"
+			android:paddingStart="2dp"
+			android:paddingEnd="2dp"
 			app:iconGravity="top"
 			android:text="@string/prefs"
 			android:textColor="@color/white"
-			android:textSize="16sp" />
+			android:textSize="14sp" />
 
 	</LinearLayout>
 
