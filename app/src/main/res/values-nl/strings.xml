@@ -183,4 +183,5 @@
     <string name="whats_new_web_lexica_description">Heel veel dank aan @MattRCole voor alle inspanningen om dit op te zetten!
 \n
 \nUitnodigingen aan meerdere spelers bevatten voortaan links naar de nieuwe webversie (bèta) voor personen zonder Android-apparaten. Ook de QR-code die wordt getoond bij het starten van een nieuw spel kan de url naar de webversie tonen.</string>
+    <string name="pref_minWordLength">Minimale woordlengte</string>
 </resources>
