@@ -3,7 +3,7 @@ package com.serwylo.lexica.db
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * Each game that is played ends up recording a score in the database.

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+The "android:stateListAnimator="@null"" found on buttons is to remove shadows as per https://stackoverflow.com/a/39122825.
+-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
@@ -8,51 +11,61 @@
 	android:background="?attr/home__background_colour"
 	android:orientation="vertical">
 
-	<mehdi.sakout.fancybuttons.FancyButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/language_button"
 		app:layout_constraintEnd_toStartOf="@id/game_mode_button"
 		app:layout_constraintTop_toTopOf="parent"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		fancy:fb_fontIconResource="&#xf0ac;"
-		fancy:fb_fontIconSize="?attr/game__score__heading_text_size"
-		fancy:fb_radius="12dp"
-		fancy:fb_iconPaddingLeft="8dp"
-		fancy:fb_iconPaddingRight="8dp"
-		fancy:fb_iconPaddingTop="8dp"
-		fancy:fb_iconPaddingBottom="8dp"
+		app:icon="@drawable/earth_americas_solid"
+		app:iconSize="?attr/game__score__heading_text_size"
+		app:cornerRadius="12dp"
 		android:paddingEnd="8dp"
 		android:paddingStart="8dp"
-		fancy:fb_text="Portuguese (Brazil) (Extended)"
-		fancy:fb_defaultColor="?attr/home__secondary_button_background"
-		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+		app:layout_constraintWidth_percent="0.34"
+		app:iconGravity="start"
+		app:backgroundTint="?attr/home__secondary_button_background"
+		android:textColor="?attr/home__secondary_button_text_colour"
+		app:iconTint="@color/white"
+		android:text="Portuguese (Brazil) (Extended)"
+		android:textSize="12sp"
+		android:textAllCaps="false"
+		android:insetTop="0dp"
+		android:insetBottom="0dp"
+		app:strokeWidth="2dp"
+		app:strokeColor="?attr/home__secondary_button_border"
 		android:layout_marginTop="?attr/game__score__padding"
 		android:layout_marginEnd="?attr/game__score__padding"
 		android:layout_marginStart="?attr/game__score__padding" />
 
-	<mehdi.sakout.fancybuttons.FancyButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/game_mode_button"
 		app:layout_constraintEnd_toEndOf="@id/lexicaLogo"
 		app:layout_constraintTop_toTopOf="parent"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		fancy:fb_fontIconResource="&#xf091;"
-		fancy:fb_fontIconSize="?attr/game__score__heading_text_size"
-		fancy:fb_radius="12dp"
-		fancy:fb_iconPaddingLeft="8dp"
-		fancy:fb_iconPaddingRight="8dp"
-		fancy:fb_iconPaddingTop="8dp"
-		fancy:fb_iconPaddingBottom="8dp"
+		android:layout_weight="1"
 		android:paddingEnd="8dp"
 		android:paddingStart="8dp"
-		fancy:fb_text="Letter points"
-		fancy:fb_defaultColor="?attr/home__secondary_button_background"
-		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-		fancy:fb_textColor="?attr/home__secondary_button_text_colour"
+		app:layout_constraintWidth_percent="0.34"
+		app:iconGravity="start"
+		app:icon="@drawable/trophy_solid"
+		app:iconSize="?attr/game__score__heading_text_size"
+		app:backgroundTint="?attr/home__secondary_button_background"
+		android:textColor="?attr/home__secondary_button_text_colour"
+		app:iconTint="@color/white"
+		android:text="Letter points"
+		android:textSize="12sp"
+		android:textAllCaps="false"
+		app:cornerRadius="12dp"
+		android:insetTop="0dp"
+		android:insetBottom="0dp"
+		app:strokeWidth="2dp"
+		app:strokeColor="?attr/home__secondary_button_border"
 		android:layout_marginTop="?attr/game__score__padding"
 		android:layout_marginEnd="?attr/game__score__padding"
-		android:layout_marginStart="?attr/game__score__padding" />
+		android:layout_marginStart="?attr/game__score__padding"
+		/>
 
 	<TextView
 		android:id="@+id/high_score_label"
@@ -92,7 +105,7 @@
 		app:layout_constraintTop_toBottomOf="@id/high_score"
 		app:layout_constraintBottom_toTopOf="@id/new_game" />
 
-	<mehdi.sakout.fancybuttons.FancyButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/new_game"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
@@ -102,18 +115,25 @@
 		app:layout_constraintEnd_toStartOf="@id/new_multiplayer_game"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="@id/new_multiplayer_game"
-		fancy:fb_defaultColor="?attr/home__main_button_background"
-		fancy:fb_borderWidth="2dp"
-		fancy:fb_borderColor="?attr/home__main_button_border"
-		fancy:fb_focusColor="?attr/home__main_button_background__focused"
-		fancy:fb_fontIconResource="&#xf144;"
-		fancy:fb_fontIconSize="28sp"
-		fancy:fb_iconPosition="left"
+		android:stateListAnimator="@null"
+		app:iconGravity="textStart"
+		app:icon="@drawable/circle_play_solid"
+		app:iconSize="28dp"
+		android:text="@string/new_game"
+		android:textSize="24sp"
+		android:textAllCaps="false"
+		app:cornerRadius="0dp"
+		android:insetTop="0dp"
+		android:insetBottom="0dp"
+		app:strokeWidth="2dp"
+		app:backgroundTint="?attr/home__main_button_background"
+		android:textColor="@color/white"
+		app:iconTint="@color/white"
+		app:strokeColor="?attr/home__main_button_border"
 		app:layout_constraintHorizontal_weight="2"
-		fancy:fb_text="@string/new_game"
-		fancy:fb_textSize="28sp" />
+		/>
 
-	<mehdi.sakout.fancybuttons.FancyButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/new_multiplayer_game"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
@@ -122,16 +142,25 @@
 		app:layout_constraintBottom_toTopOf="@+id/button_wrapper"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toEndOf="@id/new_game"
-		fancy:fb_defaultColor="?attr/home__main_button_background"
-		fancy:fb_borderWidth="2dp"
-		fancy:fb_borderColor="?attr/home__main_button_border"
-		fancy:fb_focusColor="?attr/home__main_button_background__focused"
-		fancy:fb_fontIconResource="&#xf0c0;"
-		fancy:fb_fontIconSize="24sp"
-		fancy:fb_iconPosition="top"
-		fancy:fb_text="@string/multiplayer"
+		android:stateListAnimator="@null"
+		app:iconGravity="top"
+		app:icon="@drawable/users_solid"
+		app:iconSize="28dp"
+		app:backgroundTint="?attr/home__main_button_background"
+		android:textColor="@color/white"
+		app:iconTint="@color/white"
+		android:text="@string/multiplayer"
+		android:textSize="14sp"
+		android:textAllCaps="false"
+		app:cornerRadius="0dp"
+		android:insetTop="0dp"
+		android:insetBottom="0dp"
+		android:paddingStart="2dp"
+		android:paddingEnd="2dp"
+		app:strokeWidth="2dp"
+		app:strokeColor="?attr/home__main_button_border"
 		app:layout_constraintHorizontal_weight="1"
-		fancy:fb_textSize="18sp" />
+		/>
 
 	<LinearLayout
 		android:id="@+id/button_wrapper"
@@ -142,7 +171,7 @@
 		app:layout_constraintEnd_toEndOf="@+id/lexicaLogo"
 		app:layout_constraintStart_toStartOf="@+id/lexicaLogo">
 
-		<mehdi.sakout.fancybuttons.FancyButton
+		<com.google.android.material.button.MaterialButton
 			android:id="@+id/about"
 			android:layout_width="0dp"
 			android:layout_height="match_parent"
@@ -150,18 +179,25 @@
 			android:paddingTop="?attr/home__button_padding"
 			android:paddingBottom="?attr/home__button_padding"
 			app:layout_constraintWidth_percent="0.34"
-			fancy:fb_borderWidth="2dp"
-			fancy:fb_borderColor="?attr/home__secondary_button_border"
-			fancy:fb_defaultColor="?attr/home__secondary_button_background"
-			fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-			fancy:fb_fontIconResource="&#xf059;"
-			fancy:fb_fontIconSize="24sp"
-			fancy:fb_iconPosition="top"
-			fancy:fb_text="@string/about"
-			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
-			fancy:fb_textSize="18sp" />
+			android:stateListAnimator="@null"
+			app:backgroundTint="?attr/home__secondary_button_background"
+			android:textAllCaps="false"
+			app:cornerRadius="0dp"
+			android:insetTop="0dp"
+			android:insetBottom="0dp"
+			android:paddingStart="2dp"
+			android:paddingEnd="2dp"
+			app:strokeWidth="2dp"
+			app:strokeColor="?attr/home__secondary_button_border"
+			app:icon="@drawable/circle_question_solid"
+			app:iconTint="@color/white"
+			app:iconSize="28dp"
+			app:iconGravity="top"
+			android:text="@string/about"
+			android:textColor="@color/white"
+			android:textSize="14sp" />
 
-		<mehdi.sakout.fancybuttons.FancyButton
+		<com.google.android.material.button.MaterialButton
 			android:id="@+id/restore_game"
 			android:layout_width="0dp"
 			android:layout_height="match_parent"
@@ -170,20 +206,26 @@
 			android:paddingTop="?attr/home__button_padding"
 			android:paddingBottom="?attr/home__button_padding"
 			app:layout_constraintWidth_percent="0.34"
-			fancy:fb_borderWidth="2dp"
-			fancy:fb_borderColor="?attr/home__secondary_button_border"
-			fancy:fb_defaultColor="?attr/home__secondary_button_background"
-			fancy:fb_disabledColor="?attr/home__secondary_button_background"
-			fancy:fb_disabledTextColor="?attr/home__secondary_button_text_colour_disabled"
-			fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-			fancy:fb_fontIconResource="&#xf021;"
-			fancy:fb_fontIconSize="24sp"
-			fancy:fb_iconPosition="top"
-			fancy:fb_text="@string/restore_game"
-			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
-			fancy:fb_textSize="18sp" />
+			android:stateListAnimator="@null"
+			app:strokeWidth="2dp"
+			app:strokeColor="?attr/home__secondary_button_border"
+			app:iconGravity="top"
+			app:icon="@drawable/rotate_solid"
+			app:iconSize="28dp"
+			app:backgroundTint="?attr/home__secondary_button_background"
+			android:textColor="@color/white"
+			app:iconTint="@color/white"
+			android:text="@string/restore_game"
+			android:textSize="14sp"
+			android:textAllCaps="false"
+			app:cornerRadius="0dp"
+			android:paddingStart="2dp"
+			android:paddingEnd="2dp"
+			android:insetTop="0dp"
+			android:insetBottom="0dp"
+			/>
 
-		<mehdi.sakout.fancybuttons.FancyButton
+		<com.google.android.material.button.MaterialButton
 			android:id="@+id/preferences"
 			android:layout_width="0dp"
 			android:layout_height="match_parent"
@@ -191,18 +233,24 @@
 			android:paddingTop="?attr/home__button_padding"
 			android:paddingBottom="?attr/home__button_padding"
 			app:layout_constraintWidth_percent="0.34"
-			fancy:fb_borderWidth="2dp"
-			fancy:fb_borderColor="?attr/home__secondary_button_border"
-			fancy:fb_defaultColor="?attr/home__secondary_button_background"
-			fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-			fancy:fb_fontIconResource="&#xf013;"
-			fancy:fb_fontIconSize="24sp"
-			fancy:fb_iconPosition="top"
-			fancy:fb_text="@string/prefs"
-			fancy:fb_textColor="?attr/home__secondary_button_text_colour"
-			fancy:fb_textSize="18sp">
+			android:stateListAnimator="@null"
+			app:strokeWidth="2dp"
+			app:strokeColor="?attr/home__secondary_button_border"
+			app:backgroundTint="?attr/home__secondary_button_background"
+			app:icon="@drawable/gear_solid"
+			app:iconSize="28dp"
+			app:iconTint="@color/white"
+			android:textAllCaps="false"
+			app:cornerRadius="0dp"
+			android:insetTop="0dp"
+			android:insetBottom="0dp"
+			android:paddingStart="2dp"
+			android:paddingEnd="2dp"
+			app:iconGravity="top"
+			android:text="@string/prefs"
+			android:textColor="@color/white"
+			android:textSize="14sp" />
 
-		</mehdi.sakout.fancybuttons.FancyButton>
 	</LinearLayout>
 
 

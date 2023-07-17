@@ -12,13 +12,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.button.MaterialButton;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Game;
 
 import java.util.Collections;
 import java.util.List;
-
-import mehdi.sakout.fancybuttons.FancyButton;
 
 abstract class ScoreWordsViewBinder {
 
@@ -42,7 +41,7 @@ abstract class ScoreWordsViewBinder {
         getAdapter().notifyDataSetChanged();
     }
 
-    abstract protected FancyButton getSortButton();
+    abstract protected MaterialButton getSortButton();
 
     abstract protected List<Item> getItems();
 
@@ -141,7 +140,7 @@ abstract class ScoreWordsViewBinder {
             TextView score = itemView.findViewById(R.id.score);
             score.setText("+" + item.points);
 
-            FancyButton define = itemView.findViewById(R.id.define);
+            MaterialButton define = itemView.findViewById(R.id.define);
 
             if (item.valid) {
 
@@ -163,7 +162,7 @@ abstract class ScoreWordsViewBinder {
 
             }
 
-            FancyButton viewWord = itemView.findViewById(R.id.view_word);
+            MaterialButton viewWord = itemView.findViewById(R.id.view_word);
             if (item.viewWordListener == null) {
                 viewWord.setVisibility(View.GONE);
                 viewWord.setOnClickListener(null);

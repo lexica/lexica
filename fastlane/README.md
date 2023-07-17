@@ -13,9 +13,9 @@ It is *not* used to build the app, because we let F-Droid do that in order to ma
 ./gradlew clean installDebugAndroidTest
 ```
 
-Androi 27 is required because the way the test navigates the preferences menu and presses the "Up" button
+Android 27 is required because the way the test navigates the preferences menu and presses the "Up" button
 depends quite heavily on the specific API being used unfortunately. Furthermore, at the time of writing
-the latest version of Android (29) did not work well with Fastlane Screengrab, hence Androi 27.
+the latest version of Android (29) did not work well with Fastlane Screengrab, hence Android 27.
 
 **Take screenshots**
 

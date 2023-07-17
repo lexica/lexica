@@ -5,7 +5,7 @@ import android.os.Parcelable
 import androidx.room.PrimaryKey
 import androidx.room.Entity
 import com.serwylo.lexica.R
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import kotlin.math.sqrt
 
 

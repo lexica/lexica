@@ -54,7 +54,7 @@
 		android:textColor="?attr/game__score__heading_text_colour"
 		android:text="@string/multiplayer_lobby__join_when_ready" />
 
-	<mehdi.sakout.fancybuttons.FancyButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/start_game"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
@@ -63,14 +63,22 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		android:paddingTop="?attr/home__button_padding"
 		android:paddingBottom="?attr/home__button_padding"
-		fancy:fb_defaultColor="?attr/home__secondary_button_background"
-		fancy:fb_borderWidth="2dp"
-		fancy:fb_borderColor="?attr/home__secondary_button_border"
-		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-		fancy:fb_fontIconResource="&#xf144;"
-		fancy:fb_fontIconSize="28sp"
-		fancy:fb_iconPosition="left"
-		fancy:fb_text="@string/multiplayer_lobby__join_game"
-		fancy:fb_textSize="28sp" />
+		android:stateListAnimator="@null"
+		app:iconGravity="textStart"
+		app:icon="@drawable/circle_play_solid"
+		app:iconSize="28dp"
+		android:text="@string/multiplayer_lobby__join_game"
+		android:textSize="24sp"
+		android:textAllCaps="false"
+		app:cornerRadius="0dp"
+		android:insetTop="0dp"
+		android:insetBottom="0dp"
+		app:strokeWidth="2dp"
+		app:backgroundTint="?attr/home__secondary_button_background"
+		android:textColor="@color/white"
+		app:iconTint="@color/white"
+		app:strokeColor="?attr/home__secondary_button_border"
+		app:layout_constraintHorizontal_weight="2"
+		/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

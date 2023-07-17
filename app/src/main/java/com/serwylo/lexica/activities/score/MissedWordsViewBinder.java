@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.button.MaterialButton;
 import com.serwylo.lexica.R;
 import com.serwylo.lexica.game.Game;
 import com.serwylo.lexica.view.BoardView;
@@ -17,14 +18,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import mehdi.sakout.fancybuttons.FancyButton;
-
 class MissedWordsViewBinder extends ScoreWordsViewBinder {
 
     private final Adapter adapter;
     private final BoardView boardView;
     private final List<Item> items;
-    private final FancyButton sortButton;
+    private final MaterialButton sortButton;
 
     MissedWordsViewBinder(@NonNull AppCompatActivity activity, FrameLayout parent, final @NonNull Game game, @NonNull Sorter sorter) {
 
@@ -62,7 +61,7 @@ class MissedWordsViewBinder extends ScoreWordsViewBinder {
         sortItems();
     }
 
-    protected FancyButton getSortButton() {
+    protected MaterialButton getSortButton() {
         return sortButton;
     }
 
