@@ -52,7 +52,7 @@
     <plurals name="num_minutes">
         <item quantity="one">%d minuto</item>
         <item quantity="many">%d minutos</item>
-        <item quantity="other"></item>
+        <item quantity="other"/>
     </plurals>
     <string name="whats_new_why">¿Por qué\?</string>
     <string name="whats_new_game_modes_description">Las siguientes preferencias han sido reemplazadas con modalidades de partida: duración, tamaño del tablero, longitud mínima de palabras, tipo de puntaje y modalidades asistidas.
@@ -188,4 +188,5 @@
     <string name="invite__multiplayer__game_offline">¿Quieres jugar offline\? Prueba a jugar con un papel y un bolígrafo:</string>
     <string name="invite__challenge__description">He encontrado %1$d palabras y conseguido %2$d puntos en este tablero de Lexica, ¿Puedes superarme\?</string>
     <string name="send_multiplayer_invite_to">Enviar invitación a…</string>
+    <string name="pref_minWordLength">Longitud mínima de palabras</string>
 </resources>
