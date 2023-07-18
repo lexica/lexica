@@ -183,4 +183,5 @@
     <string name="whats_new_web_lexica_description">Suur tänu meie kaasautorile @MattRCole, kes selle uuenduse on teoks teinud!
 \n
 \nMitmikmängu kutsetes on nüüd link katselisele veebipõhisele mängule, mida saavad need, kellel pole Androidi-põhist mängu käepärast. Uue mitmikmängi alustamiseks vajalik QR-kood võib näidata ka veebipõhise mängu aadressi.</string>
+    <string name="pref_minWordLength">Sõna väikseim pikkus</string>
 </resources>
