@@ -188,4 +188,5 @@
     <string name="whats_new_web_lexica_description">Veliko hvala @MattRCole na izradi ove mogućnosti!
 \n
 \nPozivnice za više igrača sada uključuju povezince na novu (beta) web verziju za one bez Android uređaja. QR kod koji se prikazuje prilikom pokretanja nove igre za više igrača također može prikazati URL adresu web verzije.</string>
+    <string name="pref_minWordLength">Najkraća duljina riječi</string>
 </resources>
