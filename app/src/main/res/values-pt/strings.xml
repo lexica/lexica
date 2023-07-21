@@ -142,7 +142,7 @@
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d palavra (toque para atualizar)</item>
         <item quantity="many">%1$d palavras (toque para atualizar)</item>
-        <item quantity="other"></item>
+        <item quantity="other"/>
     </plurals>
     <string name="whats_new_sharing_description">Depois de terminar um jogo, agora pode compartilhar esse tabuleiro com os seus amigos e desafiá-los a bater a sua pontuação.
 \n
@@ -173,6 +173,7 @@
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d palavra</item>
         <item quantity="many">%1$d palavras</item>
-        <item quantity="other"></item>
+        <item quantity="other"/>
     </plurals>
+    <string name="pref_minWordLength">Tamanho mínimo das palavras</string>
 </resources>
