@@ -178,4 +178,5 @@
 \nQR kód</string>
     <string name="multiplayer__start_when_ready">Až budou všichni hráči připraveni, zahajte všichni najednou hru.</string>
     <string name="send_multiplayer_invite_to">Poslat pozvánku…</string>
+    <string name="pref_minWordLength">Minimální délka slov</string>
 </resources>
