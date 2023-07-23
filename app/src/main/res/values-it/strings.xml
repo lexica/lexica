@@ -84,7 +84,8 @@
 \n
 \nPuoi cambiare la modalità di gioco dalla schermata principale o crearne una tua. I punteggi più alti si basano sulla modalità di gioco e sul lessico.</string>
     <plurals name="num_minutes">
-        <item quantity="one">%d min</item>
+        <item quantity="one">%d min</item>
+        <item quantity="many">%d min</item>
         <item quantity="other">%d min</item>
     </plurals>
     <string name="whats_new_why">Perché\?</string>
@@ -110,10 +111,12 @@
     <string name="input_game_mode_name_hint">Nome</string>
     <plurals name="max_score_points_suffix">
         <item quantity="one">/ %d punto</item>
+        <item quantity="many">/ %d punti</item>
         <item quantity="other">/ %d punti</item>
     </plurals>
     <plurals name="num_found_words_out_of_total">
         <item quantity="one">%d / %d parola</item>
+        <item quantity="many">%d / %d parole</item>
         <item quantity="other">%d / %d parole</item>
     </plurals>
     <string name="menu_view_found_words">Visualizza le parole trovate</string>
@@ -142,10 +145,12 @@
     <string name="whats_new_support">Sostieni Lexica</string>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d parola</item>
+        <item quantity="many">%1$d parole</item>
         <item quantity="other">%1$d parole</item>
     </plurals>
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d parola (tocca per aggiornare)</item>
+        <item quantity="many">%1$d parole (tocca per aggiornare)</item>
         <item quantity="other">%1$d parole (tocca per aggiornare)</item>
     </plurals>
     <string name="invalid_multiplayer_link">Collegamento multigiocatore/condivisione ricevuto errato, non è possibile unirsi al gioco. Assicurati che entrambi stiate usando l’ultima versione di Lexica.</string>
@@ -183,4 +188,5 @@
     <string name="whats_new_web_lexica_description">Un ringraziamento speciale a @MattRCole per l\'enorme sforzo di dare vita a tutto questo!
 \n
 \nGli inviti multiplayer ora includono collegamenti alla nuova versione web (beta) per coloro che non hanno dispositivi Android. Il codice QR mostrato quando si inizia una nuova partita multigiocatore può anche mostrare un URL alla versione web.</string>
+    <string name="pref_minWordLength">Lunghezza minima delle parole</string>
 </resources>
