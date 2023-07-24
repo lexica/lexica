@@ -5,12 +5,12 @@ apply plugin: 'kotlin-parcelize'
 apply plugin: 'de.mobilej.unmock'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.serwylo.lexica"
         minSdkVersion 18
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 30009
         versionName "3.7.0"
 
