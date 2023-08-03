@@ -141,4 +141,9 @@
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Termasuk ñ tetapi tanpa aksen</string>
     <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Termasuk kasus tata bahasa dan singkatan</string>
     <string name="letter_points">Poin Huruf</string>
+    <string name="pref_minWordLength">Panjang kata min</string>
+    <string name="pref_hintMode">Modus</string>
+    <string name="pref_hintMode_summary">Tampilkan jumlah kata masing-masing huruf dapat digunakan dalam</string>
+    <string name="define_word"><u>Definisi</u> </string>
+    <string name="pref_resetScores_summary">Skor tinggi dilacak untuk setiap kombinasi dari pengaturan di atas. Ketuk untuk mengatur ulang semua skor ke nol.</string>
 </resources>
