@@ -110,7 +110,7 @@
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es">Español sin acentos</string>
     <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">Alemán (Extendido)</string>
     <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Catalán</string>
-    <string name="delete_custom_game_mode">¿Eliminar el modo de juego personalizado \"%1$s\"\? Todas las puntuaciones más altas se pierden.</string>
+    <string name="delete_custom_game_mode">¿Borrar el modo de juego personalizado \"%1$s\"\? Se perderán las puntuaciones más altas.</string>
     <string name="button_cancel">Cancelar</string>
     <string name="button_delete">Eliminar</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francés</string>
@@ -189,4 +189,5 @@
     <string name="invite__challenge__description">He encontrado %1$d palabras y conseguido %2$d puntos en este tablero de Lexica, ¿Puedes superarme\?</string>
     <string name="send_multiplayer_invite_to">Enviar invitación a…</string>
     <string name="pref_minWordLength">Longitud mínima de palabras</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretón</string>
 </resources>
