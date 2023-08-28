@@ -184,4 +184,5 @@
 \n
 \nMitmikmängu kutsetes on nüüd link katselisele veebipõhisele mängule, mida saavad need, kellel pole Androidi-põhist mängu käepärast. Uue mitmikmängi alustamiseks vajalik QR-kood võib näidata ka veebipõhise mängu aadressi.</string>
     <string name="pref_minWordLength">Sõna väikseim pikkus</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">bretooni</string>
 </resources>
