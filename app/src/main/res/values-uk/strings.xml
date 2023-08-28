@@ -194,4 +194,5 @@
 \n
 \nЗапрошення до багатокористувацької гри відтепер включають посилання на нову (бета-версію) для тих, хто не має пристроїв Android. QR-код, показаний під час запуску нової багатокористувацької гри, також може показувати URL-адресу вебверсії.</string>
     <string name="pref_minWordLength">Мінімальна довжина слова</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Бретонська</string>
 </resources>
