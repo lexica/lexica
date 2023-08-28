@@ -5,6 +5,7 @@
     <string name="restore_game">Restore Game</string>
     <string name="prefs">Preferences</string>
     <string name="pref_dict">Lexicon</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Breton</string>
     <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Catalan</string>
     <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">German (Extended)</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Includes diacritics: äöü</string>

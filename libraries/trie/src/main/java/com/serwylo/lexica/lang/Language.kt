@@ -28,6 +28,15 @@ abstract class Language {
     abstract fun toDisplay(value: String?): String?
 
     /**
+     * Same as toDisplay, but for the tried word list.
+     * Used in breton to change some letters which are not available as single
+     * unicode characters into their representation in two or three characters.
+     *
+     * @param value The word, as it is stored in the serialized trie.
+     */
+    abstract fun toRepresentation(value: String?): String?
+
+    /**
      * If some letters just don't make sense without suffixes, then this is where it should be
      * defined. The classic example is in English how "q" is almost always followed by a "u".
      * Although not always the case, it happens so frequently that for the benefit of a game,
@@ -100,6 +109,7 @@ abstract class Language {
 
         @JvmStatic
         val allLanguages = mapOf(
+                "br_no_diacritics" to BretonNoDiacritics(),
                 "ca" to Catalan(),
                 "de_DE" to GermanDe(),
                 "de_DE_no_diacritics" to GermanDeNoDiacritics(),

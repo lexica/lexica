@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class FrenchNoDiacritics extends Language {
+public class BretonNoDiacritics extends Language {
 
     private static Map<String, Integer> letterPoints = new HashMap<>();
 
@@ -12,34 +12,33 @@ public class FrenchNoDiacritics extends Language {
         letterPoints.put("a", 1);
         letterPoints.put("e", 1);
         letterPoints.put("i", 1);
+        letterPoints.put("l", 1);
         letterPoints.put("n", 1);
         letterPoints.put("o", 1);
         letterPoints.put("r", 1);
-        letterPoints.put("s", 1);
-        letterPoints.put("l", 1);
         letterPoints.put("t", 1);
         letterPoints.put("u", 1);
 
         letterPoints.put("d", 2);
-        letterPoints.put("g", 2);
-        letterPoints.put("m", 2);
 
-        letterPoints.put("b", 3);
-        letterPoints.put("c", 3);
-        letterPoints.put("p", 3);
+        letterPoints.put("g", 3);
+        letterPoints.put("h", 3);
+        letterPoints.put("s", 3);
+        letterPoints.put("v", 3);
 
-        letterPoints.put("h", 4);
-        letterPoints.put("f", 4);
-        letterPoints.put("v", 4);
+        letterPoints.put("b", 4);
+        letterPoints.put("c", 4);
+        letterPoints.put("k", 4);
+        letterPoints.put("m", 4);
+        letterPoints.put("q", 4);
+        letterPoints.put("z", 4);
 
-        letterPoints.put("j", 8);
-        letterPoints.put("q", 8);
+        letterPoints.put("p", 5);
 
-        letterPoints.put("k", 10);
+        letterPoints.put("f", 10);
+        letterPoints.put("j", 10);
         letterPoints.put("w", 10);
-        letterPoints.put("x", 10);
         letterPoints.put("y", 10);
-        letterPoints.put("z", 10);
     }
 
     @Override
@@ -49,22 +48,22 @@ public class FrenchNoDiacritics extends Language {
 
     @Override
     public Locale getLocale() {
-        return Locale.FRENCH;
+        return new Locale("br");
     }
 
     @Override
     public String getName() {
-        return "fr_FR_no_diacritics";
+        return "br_no_diacritics";
     }
 
     @Override
     public String toDisplay(String value) {
-        return value.toUpperCase(getLocale());
+        return toRepresentation(value).toUpperCase(getLocale());
     }
 
     @Override
     public String toRepresentation(String value) {
-        return value;
+        return value.replace("c", "ch").replace("q", "c'h").replace("C", "CH").replace("Q", "C'H");
     }
 
     @Override
@@ -79,6 +78,6 @@ public class FrenchNoDiacritics extends Language {
 
     @Override
     public String getDefinitionUrl() {
-        return getWiktionaryDefinitionUrl("fr");
+        return getWiktionaryDefinitionUrl("br");
     }
 }

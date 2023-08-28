@@ -279,6 +279,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
      * position will be to the let of the starting point, rather than the right.
      */
     private float drawPastWord(@NonNull Canvas canvas, boolean isRtl, String word, float x, float y, boolean isWord, boolean hasBeenUsedBefore) {
+        word = game.getLanguage().toRepresentation(word);
         word = word.toUpperCase(game.getLanguage().getLocale());
 
         p.setTextSize(theme.game.pastWordTextSize);
@@ -357,7 +358,7 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
             if (scoreForBigWord > 0) {
                 bigWordToShow = isLayoutRtl() ? "+" + scoreForBigWord + " " + bigWordToShow : bigWordToShow + " +" + scoreForBigWord;
             }
-            canvas.drawText(bigWordToShow.toUpperCase(game.getLanguage().getLocale()), width / 2f, pos, p);
+            canvas.drawText(game.getLanguage().toRepresentation(bigWordToShow).toUpperCase(game.getLanguage().getLocale()), width / 2f, pos, p);
         }
 
 

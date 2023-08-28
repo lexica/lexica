@@ -46,6 +46,7 @@ task buildTrieLib(type: GradleBuild) {
 task buildDictionaries
 
 def languages = [
+  "br_no_diacritics",
   "ca",
   "de_DE",
   "de_DE_no_diacritics",

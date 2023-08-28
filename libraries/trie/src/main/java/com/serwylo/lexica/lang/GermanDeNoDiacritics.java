@@ -64,6 +64,11 @@ public class GermanDeNoDiacritics extends Language {
     }
 
     @Override
+    public String toRepresentation(String value) {
+        return value;
+    }
+
+    @Override
     public String applyMandatorySuffix(String value) {
         return value;
     }
