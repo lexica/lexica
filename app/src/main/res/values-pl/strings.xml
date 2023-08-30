@@ -111,4 +111,61 @@
     <string name="delete_custom_game_mode">Usunąć niestandardowy tryb gry \"%1$s\"\? Wszystkie najlepsze wyniki zostaną utracone.</string>
     <string name="dialog_refresh_content">Aby mieć pewność, że grasz na tej samej planszy co twoi przeciwnicy, pamiętaj, aby ponownie wysłać zaproszenia po odświeżeniu.</string>
     <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Zawiera ñ, ale bez akcentów</string>
+    <string name="dialog_end_game_confirm_message">Czy na pewno chcesz zakończyć tę grę\?</string>
+    <string name="dialog_end_game_confirm_title">Zakończ grę</string>
+    <string name="invite__dont_have_lexica_installed">Nie masz zainstalowanej Lexici\? Pobierz ją z https://play.google.com/store/apps/details\?id=com.serwylo.lexica</string>
+    <string name="invite__dont_have_lexica_installed_web">Lub wypróbuj Lexicę w przeglądarce (beta):</string>
+    <string name="pref_minWordLength">Min. długość słowa</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretoński</string>
+    <string name="input_game_mode_name_description">Do wybierania trybu gry / zapisywania najlepszych wyników</string>
+    <string name="game_mode_legacy">Klasyczny</string>
+    <string name="whats_new_continue">Kontynuuj</string>
+    <string name="whats_new_support">Wspomóż projekt Lexica</string>
+    <string name="whats_new_web_lexica">Wprowadzenie wersji przeglądarkowej Lexici!</string>
+    <string name="menu_view_found_words">Zobacz znalezione słowa</string>
+    <string name="multiplayer_lobby__join_game">Dołącz do gry</string>
+    <string name="multiplayer__share_invites">Udostępnij zaproszenia</string>
+    <string name="multiplayer__toggle_qr_app">Pokaż Android
+\nKod QR</string>
+    <string name="multiplayer_lobby__join_when_ready">Kiedy wszyscy gracze są gotowi, dołącz do gry.</string>
+    <string name="multiplayer">Wielu graczy</string>
+    <string name="multiplayer__start_game">Rozpocznij grę</string>
+    <string name="game_mode">Tryb gry</string>
+    <string name="multiplayer__qr_code__accessible_description">Kod QR: Inni mogą zeskanować ten kod, aby dołączyć do gry</string>
+    <string name="new_game_mode">Nowy tryb gry</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d słowo</item>
+        <item quantity="few">%1$d słowa</item>
+        <item quantity="many">%1$d słów</item>
+        <item quantity="other">%1$d słów</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d słowo</item>
+        <item quantity="few">%d / %d słowa</item>
+        <item quantity="many">%d / %d słów</item>
+        <item quantity="other">%d / %d słów</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d słowo (kliknij, aby odświeżyć)</item>
+        <item quantity="few">%1$d słowa (kliknij, aby odświeżyć)</item>
+        <item quantity="many">%1$d słów (kliknij, aby odświeżyć)</item>
+        <item quantity="other">%1$d słów (kliknij, aby odświeżyć)</item>
+    </plurals>
+    <plurals name="num_minutes">
+        <item quantity="one">%d min</item>
+        <item quantity="few">%d min</item>
+        <item quantity="many">%d min</item>
+        <item quantity="other">%d min</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d punkt</item>
+        <item quantity="few">/ %d punkty</item>
+        <item quantity="many">/ %d punktów</item>
+        <item quantity="other">/ %d punktów</item>
+    </plurals>
+    <string name="share">Udostępnij</string>
+    <string name="back">Wstecz</string>
+    <string name="whats_new_sharing">Udostępnij wyzwanie!</string>
+    <string name="send_challenge_invite_to">Wyślij wyzwanie do…</string>
+    <string name="send_multiplayer_invite_to">Wyślij zaproszenie do…</string>
 </resources>
