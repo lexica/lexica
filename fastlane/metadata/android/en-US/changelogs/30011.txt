@@ -1,0 +1,7 @@
+Dictionaries:
+ * Added Brenton dictionary (thanks to ewenak).
+
+Fixes:
+ * Fix crash when choosing game modes on Android 4.4 (thanks to adam-poteralowicz and Elarnon for continuing to keep Lexica running on older devices).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
