@@ -194,8 +194,8 @@ public class Game implements Synchronizer.Counter {
 
         setBoard(context, board);
 
-        timeRemainingInMillis = gameMode.getTimeLimitSeconds() * 1000;
-        maxTimeSinceResumeInMillis = gameMode.getTimeLimitSeconds() * 1000;
+        timeRemainingInMillis = gameMode.getTimeLimitSeconds() * 1000L;
+        maxTimeSinceResumeInMillis = gameMode.getTimeLimitSeconds() * 1000L;
         score = 0;
         wordsUsed = new LinkedHashSet<>();
         initializeWeights();
