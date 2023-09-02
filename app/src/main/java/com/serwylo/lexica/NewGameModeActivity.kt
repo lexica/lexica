@@ -103,19 +103,7 @@ class NewGameModeActivity : AppCompatActivity() {
         return binding.label.text?.toString() ?: ""
     }
 
-    private fun selectedTimeLimitInSeconds(): Int {
-        val timeString = binding.time.text ?: return -1
-        return try {
-            val value = timeString.toString().toInt()
-            if (value > 0) {
-                value * 60
-            } else -1
-        } catch (e: NullPointerException) {
-            -1
-        } catch (e: NumberFormatException) {
-            -1
-        }
-    }
+    private fun selectedTimeLimitInSeconds(): Int = binding.time.text.toString().toInt() * 60
 
     private fun selectedBoardSize(): Int {
         return when {
