@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 import com.serwylo.lexica.databinding.NewGameModeBinding
 import com.serwylo.lexica.db.Database
 import com.serwylo.lexica.db.GameMode
@@ -35,12 +36,16 @@ class NewGameModeActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.save) {
+        if (item.itemId == R.id.save && binding.time.isValid()) {
             createNewGameMode()
             return true
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun TextInputEditText.isValid() = with(this.text) {
+        isNullOrBlank().not() && Integer.parseInt(toString()) > 0
     }
 
     private fun createNewGameMode() {
@@ -69,14 +74,14 @@ class NewGameModeActivity : AppCompatActivity() {
         }
 
         val gameMode = GameMode(
-                gameModeId = 0,
-                type = GameMode.Type.CUSTOM,
-                customLabel = selectedLabel(),
-                boardSize = boardSize,
-                timeLimitSeconds = selectedTimeLimitInSeconds(),
-                minWordLength = minWordLength,
-                scoreType = scoreType,
-                hintMode = selectedHintMode(),
+            gameModeId = 0,
+            type = GameMode.Type.CUSTOM,
+            customLabel = selectedLabel(),
+            boardSize = boardSize,
+            timeLimitSeconds = selectedTimeLimitInSeconds(),
+            minWordLength = minWordLength,
+            scoreType = scoreType,
+            hintMode = selectedHintMode(),
         )
 
         Database.writeExecutor.execute {
