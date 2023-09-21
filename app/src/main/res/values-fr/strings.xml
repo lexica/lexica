@@ -7,18 +7,18 @@
     <string name="pref_dict">Lexique</string>
     <string name="pref_dict_en_US">Anglais (États-Unis)</string>
     <string name="pref_dict_en_GB">Anglais (Royaume-Uni)</string>
-    <string name="pref_boardSize">Taille de la grille</string>
-    <string name="pref_timeLimit">Durée d\'une partie</string>
+    <string name="pref_boardSize">Taille du plateau</string>
+    <string name="pref_timeLimit">Limite de Temps</string>
     <string name="pref_sounds">Sons activés</string>
     <string name="pref_sounds_summary">Activer ou désactiver les effets sonores</string>
     <string name="dialog_about_title">À propos de Lexica</string>
-    <string name="dialog_about_content">Toucher l\'écran et déplacer son doigt horizontalement, verticalement et en diagonale pour épeler des mots. Vous avez de 3 à 30 minutes pour trouver un maximum de mots.
+    <string name="dialog_about_content">Touchez l\'écran et déplacez votre doigt vers un carré adjacent pour épeler les mots. Vous avez trois minutes pour trouver le plus de mots possible.
 \n
-\nNombre de points :
-\nPour les grilles 4x4, les mots doivent être comporter 3 caractères au moins. Pour les grilles 5x5, les mots doivent être comporter 4 caractères au moins. Les mots de 3-4 lettres rapportent 1 point. Les mots plus longs rapportent plus de points. Les noms propres ne sont pas comptabilisés.
+\nComptage des points :
+\nPour les grilles de 4x4, les mots doivent comporter au moins trois lettres. Pour les grilles de 5x5, les mots doivent comporter au moins quatre lettres. Les mots de trois ou quatre lettres valent un point. Plus les mots sont longs, plus ils valent de points. Les noms propres ne sont pas comptabilisés.
 \n
 \n</string>
-    <string name="menu_rotate_board">Tourner la grille</string>
+    <string name="menu_rotate_board">Tourner le plateau</string>
     <string name="menu_save_game">Enregistrer la partie</string>
     <string name="menu_end_game">Terminer la partie</string>
     <string name="button_ok">OK</string>
@@ -33,22 +33,22 @@
     <string name="found_words">Mots trouvés</string>
     <string name="missed_words">Mots manqués</string>
     <string name="total_words">Total des mots :</string>
-    <string name="total_score">Score total :</string>
+    <string name="total_score">Score total :</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
-    <string name="pref_scoreType">Mode de décompte des points</string>
-    <string name="word_length">Longueur des mots</string>
+    <string name="pref_scoreType">Type de Score</string>
+    <string name="word_length">Longueur de Mot</string>
     <string name="letter_points">Valeur des lettres</string>
     <string name="score">Score</string>
     <string name="high_score">Meilleur score </string>
-    <string name="pref_resetScores_summary">Le logiciel garde en mémoire les meilleurs scores. Appuyez ici pour remettre à zéro la mémoire.</string>
-    <string name="pref_resetScores">Remettre à zéro les meilleurs scores</string>
-    <string name="high_scores_reset">Les scores ont été remis à zéro.</string>
-    <string name="reset_scores_prompt">Êtes-vous sûr(e) de vouloir effacer les meilleurs scores \?</string>
-    <string name="pref_breakdown">Montrer le détail des longueurs de mots</string>
+    <string name="pref_resetScores_summary">Les meilleurs scores sont enregistrés pour chaque paramètrage ci-dessus. Appuyez ici pour effacer la mémoire.</string>
+    <string name="pref_resetScores">Réinitialiser les meilleurs scores</string>
+    <string name="high_scores_reset">Les meileurs résultats ont été réinitialisés.</string>
+    <string name="reset_scores_prompt">Êtes-vous sûr(e) de vouloir réinitialiser tous les meilleurs résultats, et ce pour chaque mode de jeu \?</string>
+    <string name="pref_breakdown">Montrer le détail de la longueur de mot</string>
     <string name="pref_breakdown_summary">Pour choisir d\'organiser le décompte des points en fonction de la longueur des mots</string>
-    <string name="pref_definitionProvider">Fournisseur de dictionnaire</string>
-    <string name="pref_definitionProvider_summary">Sélectionnez un fournisseur de définition à utiliser. Si le fournisseur sélectionné n\'est pas installé, une source en ligne comme le Wiktionnaire sera utilisée.</string>
-    <string name="pref_definitionProvider_dialog">Sélectionnez un fournisseur de définitions</string>
+    <string name="pref_definitionProvider">Fournisseur de définition</string>
+    <string name="pref_definitionProvider_summary">Sélectionnez un dictionnaire à utiliser. Si le dictionnaire sélectionné n\'est pas installé, une source en ligne comme le Wiktionnaire sera utilisée.</string>
+    <string name="pref_definitionProvider_dialog">Sélectionnez un dictionnaire</string>
     <string name="pref_dict_de_DE">Allemand (étendu)</string>
     <string name="pref_dict_nl">Néerlandais</string>
     <string name="pref_dict_it">Italien</string>
@@ -56,12 +56,12 @@
     <string name="pref_dict_es">Espagnol</string>
     <string name="lexicon_is_in_beta">Bêta</string>
     <string name="pref_dict_fa">Persan</string>
-    <string name="pref_dict_fr_FR">Français (étendu)</string>
+    <string name="pref_dict_fr_FR">Français (Étendu)</string>
     <string name="pref_dict_ja">Japonais</string>
     <string name="pref_dict_ru">Russe</string>
     <string name="pref_dict_hu">Hongrois</string>
     <string name="pref_hintMode">Mode astuce</string>
-    <string name="pref_hintMode_summary">Afficher le nombre de mots dans lesquels chaque lettre peut être utilisée</string>
+    <string name="pref_hintMode_summary">Affiche le nombre de mots dans lesquels chaque lettre peut être utilisée</string>
     <string name="tile_count">Nombre de mots</string>
     <string name="hint_colour">Couleur de tuile</string>
     <string name="pref_dict_uk">Ukrainien</string>
@@ -106,7 +106,7 @@
     <string name="menu_save_game_mode">Enregistrer</string>
     <string name="menu_new_game_mode">Nouveau</string>
     <string name="input_game_mode_minutes_description">Limite de temps en minutes</string>
-    <string name="input_game_mode_name_description">Pour choisir le mode de jeu / enregistrer des scores élevés</string>
+    <string name="input_game_mode_name_description">Pour choisir le mode de jeu / enregistrer les meilleurs résultats</string>
     <string name="input_game_mode_name_hint">Nom</string>
     <plurals name="max_score_points_suffix">
         <item quantity="one">/ %d point</item>
@@ -117,14 +117,14 @@
         <item quantity="other">%d / %d mots</item>
     </plurals>
     <string name="menu_view_found_words">Voir les mots trouvés</string>
-    <string name="delete_custom_game_mode">Supprimer le mode de jeu personnalisé « %1$s » \? Tous les meilleurs scores seront perdus.</string>
+    <string name="delete_custom_game_mode">Effacer le mode de jeu personnalisé «%1$s» \? Les meilleurs résultats seront réninitialisés.</string>
     <string name="high_scores">Meilleurs scores</string>
     <string name="button_cancel">Annuler</string>
     <string name="button_delete">Supprimer</string>
-    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Inclut les cas grammaticaux et les abréviations</string>
-    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Russe (étendu)</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Inclut les variantes grammaticales et les abréviations</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Russe (Étendu)</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Français</string>
-    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Inclut les diacritiques : àâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Inclut les diacritiques : àâçéèêëîïôöûü</string>
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Allemand</string>
     <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">Inclut les diacritiques : äöü</string>
     <string name="new_game_mode">Nouveau mode de jeu</string>
@@ -152,14 +152,14 @@
     <string name="dialog_refresh_confirmation_message">Plateau actualisé</string>
     <string name="dialog_refresh_button">Actualiser</string>
     <string name="dialog_refresh_content">Pour vous assurer que vous jouez sur le même plateau que vos adversaires, veillez à renvoyer les invitations après actualisation.</string>
-    <string name="dialog_refresh_title">Actualiser le plateau</string>
-    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Inclut les diacritiques : çáéíóúâêôãõà et les lettres : kwy</string>
-    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugais (Brésil) (étendu)</string>
+    <string name="dialog_refresh_title">Actualiser la partie</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">Inclut les diacritiques : çáéíóúâêôãõà et les lettres : kwy</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugais (Brésil) (Étendu)</string>
     <string name="dialog_end_game_confirm_message">Êtes-vous sûr(e) de vouloir terminer cette partie \?</string>
     <string name="dialog_end_game_confirm_title">Terminer la partie</string>
-    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Inclut ñ mais aucun accent</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">Inclut ñ mais sans accent</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Espagnol uniquement Ñ</string>
-    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Inclut les diacritiques : áéíóúüñ</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">Inclut les diacritiques : áéíóúüñ</string>
     <string name="whats_new_sharing_description">Après avoir terminé une partie, vous pouvez désormais partager ce tableau avec vos amis et les mettre au défi de battre votre score.
 \n
 \nC\'est un peu comme le mode multijoueur, mais pour les moments où vous venez de jouer à un tableau particulièrement intéressant ou stimulant et que vous pensez que vos amis vont apprécier.
@@ -183,4 +183,6 @@
     <string name="whats_new_web_lexica_description">Un grand merci à @MattRCole pour l\'effort considérable qu\'il a fourni pour donner vie à ce projet !
 \n
 \nLes invitations multijoueurs incluent désormais des liens vers la nouvelle version web (bêta) pour ceux qui n\'ont pas d\'appareil Android. Le code QR affiché au début d\'une nouvelle partie multijoueur peut également afficher une URL vers la version Web.</string>
+    <string name="pref_minWordLength">Longueur de mot mini</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Breton</string>
 </resources>
