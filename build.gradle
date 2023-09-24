@@ -55,6 +55,7 @@ def languages = [
   "es",
   "es_solo_enne",
   "fa",
+  "fi",
   "fr_FR",
   "fr_FR_no_diacritics",
   "hu",
