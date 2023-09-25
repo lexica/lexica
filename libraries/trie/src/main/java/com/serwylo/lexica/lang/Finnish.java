@@ -37,14 +37,6 @@ public class Finnish extends Language {
         letterPoints.put("b", 8);
         letterPoints.put("f", 8);
         letterPoints.put("g", 8);
-        letterPoints.put("w", 8);
-
-        letterPoints.put("c", 10);
-    }
-
-    @Override
-    public boolean isBeta() {
-        return true;
     }
 
     @Override

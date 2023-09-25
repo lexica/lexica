@@ -22,7 +22,7 @@ curl -L -o "$BUILD_DIR/words.csv" https://kaino.kotus.fi/lataa/nykysuomensanalis
 echo "Lowercasing and filtering words and dumping dictionary to $DICT_FILE..."
 cat "$BUILD_DIR/words.csv" | tail -n +2 | cut -f1 \
   | tr '[:upper:]' '[:lower:]' | sort | uniq \
-  | grep -P "^[abcdefghijklmnoprstuvwyäö]{3,9}$" \
+  | grep -P '^[abdefghijklmnoprstuvyäö]{3,9}$' \
   > "$DICT_FILE"
 
 echo "Removing build directory '$BUILD_DIR'..."
