@@ -11,8 +11,8 @@ android {
         applicationId "com.serwylo.lexica"
         minSdkVersion 18
         targetSdkVersion 33
-        versionCode 30011
-        versionName "3.8.0"
+        versionCode 30012
+        versionName "3.8.1"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
