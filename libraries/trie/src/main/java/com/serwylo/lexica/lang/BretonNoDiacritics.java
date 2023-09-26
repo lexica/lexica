@@ -58,12 +58,12 @@ public class BretonNoDiacritics extends Language {
 
     @Override
     public String toDisplay(String value) {
-        return toRepresentation(value).toUpperCase(getLocale());
+        return toRepresentation(value.toUpperCase(getLocale()));
     }
 
     @Override
     public String toRepresentation(String value) {
-        return value.replace("c", "ch").replace("q", "c'h").replace("C", "CH").replace("Q", "C'H");
+        return value.replace("c", "ch").replace("q", "c'h").replace("C", "Ch").replace("Q", "C'h");
     }
 
     @Override
