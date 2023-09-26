@@ -1,0 +1,5 @@
+Fixes:
+ * Brenton dictionary C'h now fits tiles (thanks to @ewenak).
+ * Prevent overflowing time limit or time limits of zero (thanks to @adam-poteralowicz).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
