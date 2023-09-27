@@ -41,6 +41,11 @@ Please report any issues or suggest features on the [issue tracker](https://gith
 
 We use [Weblate](https://hosted.weblate.org/engage/lexica/) to manage translations. Please see [these instructions for using Weblate](https://hosted.weblate.org/engage/lexica/) to translate Lexica.
 
+| Game strings                                                                                                                           | F-Droid metadata                                                                                                                            |
+|----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| [![Translation status](https://hosted.weblate.org/widgets/lexica/-/strings/multi-auto.svg)](https://hosted.weblate.org/engage/lexica/) | [![Translation status](https://hosted.weblate.org/widgets/lexica/-/app-metadata/multi-auto.svg)](https://hosted.weblate.org/engage/lexica/) |
+
+
 ### Submitting changes
 
 Pull requests will be warmly received at [https://github.com/lexica/lexica](https://github.com/lexica/lexica).
