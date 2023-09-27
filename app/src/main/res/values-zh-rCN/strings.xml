@@ -180,4 +180,5 @@
 \n多人游戏邀请现在包括为那些没有 Android 设备的玩家提供的到新的(测试)网页版的链接。开启一个新的多人游戏时显示的二维码还可以显示网页版本的 URL。</string>
     <string name="pref_minWordLength">单词最短长度</string>
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">布列塔尼语</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">芬兰语</string>
 </resources>
