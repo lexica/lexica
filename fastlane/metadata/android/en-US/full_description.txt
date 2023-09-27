@@ -1,9 +1,14 @@
-A word game where you have to find as many words as possible on a grid of random letters, in a limited time.
+A word game where players find as many words as possible on a grid of random letters with a time limit.
 
-This is a fork of the unmaintained <a href="https://play.google.com/store/apps/details?id=net.healeys.lexic">Lexic</a> which:
+Select from several international dictionaries, with a combined total of millions of words.
 
- * Supports multiple different languages
- * Adds newer scoring options
- * Adds minor improvements to the UI
- * Has better support for high resolution screens
- * Removes the unsupported multiplayer options
+Play against friends in multiplayer mode, by sending them offline challenges via SMS/Email/QR code/etc.
+
+Build your own rules with customisable game modes:
+ * 4x4, 5x5, and 6x6 sized boards
+ * Different durations
+ * Various scoring and hint modes
+
+Fully open source. No ads. No in-app purchases. No tracking. Ever.
+
+Please support further development at GitHub sponsors or Liberapay.
