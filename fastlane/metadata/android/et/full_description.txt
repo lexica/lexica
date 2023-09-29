@@ -1,0 +1,14 @@
+Sõnamäng, mille mängijad peavad juhuslike tähtede ruudustikust leidma etteantud aja jooksul võimalikult palju sõnu.
+
+Kasutada võid mitmete keelte sõnastikke, kus leidub miljoneid sõnu.
+
+Mängida saad ka mitmikmängu teiste osalejate vastu. Kutset mängule saad saata SMS'i või e-kirja teel ning QR-koodi abil.
+
+Võid luua ka oma mängureegleid kasutades:
+ * 4x4, 5x5, ja 6x6 ruudustikke
+ * erinevaid kestusi
+ * mitmeid punktiarvestuse ja vihjamise reegleid
+
+Lexica on avatud lähtekoodiga tarkvara, kus puuduvad reklaamid, rakendusesisesed ostud ja kasutajate jälgimine. Ja neid ei lisandu ka tulevikus.
+
+Palun toeta meie arendustegevust GitHub Sponsors või Liberapay vahendusel.
