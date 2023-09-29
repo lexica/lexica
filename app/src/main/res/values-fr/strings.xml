@@ -77,6 +77,7 @@
     <string name="time">Temps</string>
     <plurals name="num_minutes">
         <item quantity="one">%d min</item>
+        <item quantity="many">%d min</item>
         <item quantity="other">%d min</item>
     </plurals>
     <string name="whats_new_game_modes_why">Grâce aux contributions de la communauté, les manières dont vous pouvez jouer à Lexica se sont élargies. Ceci rend plus difficile d\'expliquer comment les scores élevés sont enregistrés, et chaque nouvelle fonctionnalité ajoute de la complexité.
@@ -110,10 +111,12 @@
     <string name="input_game_mode_name_hint">Nom</string>
     <plurals name="max_score_points_suffix">
         <item quantity="one">/ %d point</item>
+        <item quantity="many">/ %d points</item>
         <item quantity="other">/ %d points</item>
     </plurals>
     <plurals name="num_found_words_out_of_total">
         <item quantity="one">%d / %d mot</item>
+        <item quantity="many">%d / %d mots</item>
         <item quantity="other">%d / %d mots</item>
     </plurals>
     <string name="menu_view_found_words">Voir les mots trouvés</string>
@@ -142,10 +145,12 @@
     <string name="whats_new_support">Soutenir Lexica</string>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d mot</item>
+        <item quantity="many">%1$d mot</item>
         <item quantity="other">%1$d mots</item>
     </plurals>
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d mot (touchez pour actualiser)</item>
+        <item quantity="many">%1$d mots (touchez pour actualiser)</item>
         <item quantity="other">%1$d mots (touchez pour actualiser)</item>
     </plurals>
     <string name="invalid_multiplayer_link">Réception d\'un lien multijoueur/partage incorrect, impossible de rejoindre la partie. Assurez-vous que vous utilisez tous les deux la dernière version de Lexica.</string>
@@ -185,4 +190,5 @@
 \nLes invitations multijoueurs incluent désormais des liens vers la nouvelle version web (bêta) pour ceux qui n\'ont pas d\'appareil Android. Le code QR affiché au début d\'une nouvelle partie multijoueur peut également afficher une URL vers la version Web.</string>
     <string name="pref_minWordLength">Longueur de mot mini</string>
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Breton</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Finnois</string>
 </resources>
