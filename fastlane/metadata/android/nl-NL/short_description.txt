@@ -1,1 +1,1 @@
-Find as many words as possible on a grid of random letters within a time limit
+Zoek zoveel mogelijk woorden op een rooster, binnen het gestelde tijdslimiet
