@@ -1,0 +1,4 @@
+Dictionaries:
+ * Added Finnish dictionary (thanks to @dancek).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
