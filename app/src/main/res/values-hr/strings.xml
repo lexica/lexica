@@ -190,4 +190,5 @@
 \nPozivnice za više igrača sada uključuju povezince na novu (beta) web verziju za one bez Android uređaja. QR kod koji se prikazuje prilikom pokretanja nove igre za više igrača također može prikazati URL adresu web verzije.</string>
     <string name="pref_minWordLength">Najkraća duljina riječi</string>
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretonski</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Finski</string>
 </resources>
