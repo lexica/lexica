@@ -1,1 +1,1 @@
-Find as many words as possible on a grid of random letters within a time limit
+Pronađi što više riječi u određenom vremenu
