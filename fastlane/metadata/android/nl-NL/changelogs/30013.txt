@@ -1,0 +1,4 @@
+Woordenboeken:
+ * Nieuw: Fins woordenboek (met dank aan @dancek!).
+
+Deel je feedback en/of meld problemen op https://github.com/lexica/lexica/issues.
