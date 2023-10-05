@@ -85,7 +85,7 @@
 			android:insetBottom="0dp"
 			android:textColor="?attr/game__score__text_colour"
 			android:background="@android:color/transparent"
-			tools:text="Letter"
+			tools:text="Word Length"
 			android:textAllCaps="false"
 			app:icon="@drawable/trophy_solid"
 			app:iconSize="18dp"
@@ -131,7 +131,7 @@
 			android:textAllCaps="false"
 			app:icon="@drawable/suitcase_medical_solid"
 			app:iconSize="18dp"
-			app:iconTint="?attr/list__selectable_item_text_colour"
+			app:iconTint="?attr/game__score__text_colour"
 			app:iconGravity="textTop"
 			/>
 

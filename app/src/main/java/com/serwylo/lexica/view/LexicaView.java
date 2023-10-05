@@ -121,6 +121,12 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
         } else {
             gridsize = height - (2 * theme.padding) - theme.game.timer.height;
         }
+
+        // A bit of a hack to shrink the board on smaller devices. The goal isn't perfect
+        // responsive design for the smallest of all screens. Rather, lets make it at least
+        // playable and worry about perfection another day.
+        gridsize = Math.min(gridsize, height - theme.game.timer.height * 12);
+
         boxsize = ((float) gridsize) / boardWidth;
 
         if (mFingerTracker != null) {

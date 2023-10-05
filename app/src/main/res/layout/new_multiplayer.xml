@@ -46,113 +46,130 @@
 		android:elevation="4dp"
 		app:title="@string/multiplayer" />
 
-	<com.serwylo.lexica.view.GameDetailsView
-		android:id="@+id/game_mode_details"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="8dp"
-		app:layout_constraintTop_toBottomOf="@id/toolbar"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		/>
-
-	<TextView
-		android:id="@+id/multiplayer_game_num_available_words"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		tools:text="265 words (tap to refresh)"
-		android:textAlignment="center"
-		android:textColor="?attr/game__score__heading_text_colour"
-		android:padding="?attr/game__score__padding"
-		app:layout_constraintTop_toBottomOf="@id/game_mode_details"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintEnd_toEndOf="parent" />
-
-	<com.google.android.material.button.MaterialButton
-		android:id="@+id/send_invite"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		app:layout_constraintTop_toBottomOf="@id/multiplayer_game_num_available_words"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		android:layout_marginTop="?attr/game__score__padding"
-		android:layout_marginEnd="?attr/game__score__padding"
-		android:layout_marginStart="?attr/game__score__padding"
-
-		android:text="@string/multiplayer__share_invites"
-
-		app:icon="@drawable/ic_share"
-		app:iconGravity="textStart"
-		app:iconTint="?attr/home__secondary_button_text_colour"
-		app:iconSize="24dp"
-		android:textAllCaps="false"
-		app:cornerRadius="12dp"
-		app:iconPadding="8dp"
-		android:paddingStart="8dp"
-		android:paddingEnd="8dp"
-		app:backgroundTint="?attr/home__secondary_button_background"
-		android:textColor="?attr/home__secondary_button_text_colour" />
-
-	<TextView
-		android:id="@+id/android_app_tag"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/multiplayer__toggle_qr_app"
-		android:textAlignment="center"
-		android:textColor="?attr/game__score__heading_text_colour"
-		app:layout_constraintTop_toBottomOf="@id/send_invite"
-		app:layout_constraintBottom_toBottomOf="@id/toggle_qr"
-		app:layout_constraintEnd_toStartOf="@id/toggle_qr" />
-
-	<androidx.appcompat.widget.SwitchCompat
-		android:id="@+id/toggle_qr"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:layout_constraintTop_toBottomOf="@id/send_invite"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintHorizontal_bias="0.5"
-		app:layout_constraintEnd_toEndOf="parent" />
-
-	<TextView
-		android:id="@+id/web_app_tag"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/multiplayer__toggle_qr_web"
-		android:textAlignment="center"
-		android:textColor="?attr/game__score__heading_text_colour"
-		app:layout_constraintTop_toBottomOf="@id/send_invite"
-		app:layout_constraintBottom_toBottomOf="@id/toggle_qr"
-		app:layout_constraintStart_toEndOf="@id/toggle_qr" />
-
-	<ImageView
-		android:id="@+id/qr"
+	<ScrollView
+		android:id="@+id/scroll_view"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
-		android:layout_marginStart="12dp"
-		android:layout_marginTop="8dp"
-		android:layout_marginEnd="12dp"
-		android:layout_marginBottom="8dp"
-		android:contentDescription="@string/multiplayer__qr_code__accessible_description"
 		app:layout_constraintBottom_toTopOf="@id/text_start"
-		app:layout_constraintDimensionRatio="1:1"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/toggle_qr"
-		app:layout_constraintVertical_bias="0.0"
-		tools:src="@tools:sample/avatars" />
+		app:layout_constraintTop_toBottomOf="@id/toolbar"
+		app:layout_constraintVertical_bias="0.0">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<com.serwylo.lexica.view.GameDetailsView
+				android:id="@+id/game_mode_details"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<TextView
+				android:id="@+id/multiplayer_game_num_available_words"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:padding="?attr/game__score__padding"
+				android:textAlignment="center"
+				android:textColor="?attr/game__score__heading_text_colour"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/game_mode_details"
+				tools:text="265 words (tap to refresh)" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/send_invite"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="?attr/game__score__padding"
+				android:layout_marginTop="?attr/game__score__padding"
+				android:layout_marginEnd="?attr/game__score__padding"
+				android:paddingStart="8dp"
+				android:paddingEnd="8dp"
+				android:text="@string/multiplayer__share_invites"
+
+				android:textAllCaps="false"
+
+				android:textColor="?attr/home__secondary_button_text_colour"
+				app:backgroundTint="?attr/home__secondary_button_background"
+				app:cornerRadius="12dp"
+				app:icon="@drawable/ic_share"
+				app:iconGravity="textStart"
+				app:iconPadding="8dp"
+				app:iconSize="24dp"
+				app:iconTint="?attr/home__secondary_button_text_colour"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/multiplayer_game_num_available_words" />
+
+			<TextView
+				android:id="@+id/android_app_tag"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/multiplayer__toggle_qr_app"
+				android:textAlignment="center"
+				android:textColor="?attr/game__score__heading_text_colour"
+				app:layout_constraintBottom_toBottomOf="@id/toggle_qr"
+				app:layout_constraintEnd_toStartOf="@id/toggle_qr"
+				app:layout_constraintTop_toBottomOf="@id/send_invite" />
+
+			<androidx.appcompat.widget.SwitchCompat
+				android:id="@+id/toggle_qr"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/send_invite" />
+
+			<TextView
+				android:id="@+id/web_app_tag"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/multiplayer__toggle_qr_web"
+				android:textAlignment="center"
+				android:textColor="?attr/game__score__heading_text_colour"
+				app:layout_constraintBottom_toBottomOf="@id/toggle_qr"
+				app:layout_constraintStart_toEndOf="@id/toggle_qr"
+				app:layout_constraintTop_toBottomOf="@id/send_invite" />
+
+			<ImageView
+				android:id="@+id/qr"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:layout_marginStart="12dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginEnd="12dp"
+				android:layout_marginBottom="8dp"
+				android:contentDescription="@string/multiplayer__qr_code__accessible_description"
+				app:layout_constraintDimensionRatio="1:1"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/toggle_qr"
+				app:layout_constraintVertical_bias="0.0"
+				tools:src="@tools:sample/avatars" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</ScrollView>
 
 	<TextView
 		android:id="@+id/text_start"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="8dp"
+		android:paddingTop="?attr/game__score__padding"
 		android:text="@string/multiplayer__start_when_ready"
 		android:textAlignment="center"
 		android:textColor="?attr/game__score__heading_text_colour"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintBottom_toTopOf="@id/start_game"
-		tools:layout_editor_absoluteY="558dp" />
+		app:layout_constraintBottom_toTopOf="@id/start_game" />
 
 	<com.google.android.material.button.MaterialButton
 		android:id="@+id/start_game"
