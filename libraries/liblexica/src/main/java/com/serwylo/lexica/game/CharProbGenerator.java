@@ -116,8 +116,10 @@ public class CharProbGenerator {
             total += pq.peekProb();
         }
 
-        // shuffle the letters
-        for (int to = 15; to > 0; to--) {
+        // Although strictly not necessary because they were randomly chosen above, it is not
+        // uniformly random above - those with higher probabilities are probably selected first.
+        // Hence, we shuffle again.
+        for (int to = board.length - 1; to > 0; to--) {
             int from = rng.nextInt(to);
             String tmp = board[to];
             board[to] = board[from];
