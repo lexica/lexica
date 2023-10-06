@@ -10,7 +10,6 @@
     <string name="define_word"><u>Ορισμός</u> </string>
     <string name="pref_sounds">Ήχος ενεργοποιημένος</string>
     <string name="show_unique">Εμφάνιση μοναδικών λέξεων</string>
-    <string name="pref_sounds_summary">Εάν είναι ενεργοποιημένα τα ηχητικά εφέ ή όχι</string>
     <string name="menu_end_game">Τερματισμός παιχνιδιού</string>
     <string name="button_ok">Εντάξει</string>
     <string name="pref_dict_nl">Ολλανδικά</string>
@@ -35,7 +34,6 @@
     <string name="pref_dict_en_GB">Αγγλικά (ΗΒ)</string>
     <string name="total_score">Συνολική βαθμολογία:</string>
     <string name="pref_resetScores">Μηδενισμός υψηλών βαθμολογιών</string>
-    <string name="pref_resetScores_summary">Οι υψηλές βαθμολογίες παρακολουθούνται για κάθε συνδυασμό των παραπάνω ρυθμίσεων. Πατήστε για να μηδενίσετε όλες τις βαθμολογίες.</string>
     <string name="pref_timeLimit">Χρονικό όριο</string>
     <string name="word_length">Μήκος λέξης</string>
     <string name="view_word"><u>Προβολή</u></string>

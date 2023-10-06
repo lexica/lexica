@@ -112,7 +112,6 @@
     <string name="multiplayer_lobby__join_when_ready">Až budou všichni hráči připraveni, připojte se ke hře.</string>
     <string name="multiplayer_lobby__join_game">Připojit se ke hře</string>
     <string name="multiplayer__share_invites">Sdílet pozvánky</string>
-    <string name="pref_sounds_summary">Zda mají být povoleny zvukové efekty</string>
     <string name="dialog_about_content">Dotýkejte se obrazovky a přesouvejte prst na sousední čtverce, abyste hláskovali slova. Máte tři minuty na to, abyste našli co nejvíce slov.
 \n
 \nBodování:
@@ -124,7 +123,6 @@
     <string name="pref_definitionProvider_summary">Vyberte poskytovatele definic, kterého chcete použít. Pokud vybraný poskytovatel není nainstalován, použije se online zdroj, například Wikislovník.</string>
     <string name="game_mode_sprint">Sprint</string>
     <string name="high_scores">Nejvyšší skóre</string>
-    <string name="pref_resetScores_summary">Nejvyšší skóre se sleduje pro každou kombinaci výše uvedených nastavení. Klepnutím na položku vynulujete všechna skóre.</string>
     <string name="pref_breakdown">Zobrazit rozdělení délky slova</string>
     <string name="pref_theme">Téma</string>
     <string name="pref_theme_dialog">Vyberte téma</string>

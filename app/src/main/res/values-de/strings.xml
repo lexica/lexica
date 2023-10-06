@@ -18,7 +18,6 @@
     <string name="pref_dict_en_GB">Englisch (UK)</string>
     <string name="pref_dict_en_US">Englisch (US)</string>
     <string name="pref_sounds">Klänge aktiviert</string>
-    <string name="pref_sounds_summary">Ob Soundeffekte aktiviert sind oder nicht</string>
     <string name="pref_timeLimit">Zeitbegrenzung</string>
     <string name="prefs">Einstellungen</string>
     <string name="restore_game">Spiel wiederherstellen</string>
@@ -38,7 +37,6 @@
     <string name="word_length">Wortlänge</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">Höchste Punktzahl</string>
-    <string name="pref_resetScores_summary">Die höchste Punktzahl wird für jede Kombination der oben genannten Einstellungen aufgezeichnet. Antippen, um alle Ergebnisse auf Null zurückzusetzen.</string>
     <string name="pref_resetScores">Höchste Punktzahlen zurücksetzen</string>
     <string name="high_scores_reset">Höchste Punktzahl wurde zurückgesetzt</string>
     <string name="reset_scores_prompt">Bist du dir sicher, dass du alle höchste Punktzahlen in allen Spielmodi zurücksetzen möchtest\?</string>

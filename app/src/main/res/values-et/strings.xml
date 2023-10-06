@@ -20,7 +20,6 @@
     <string name="reset_scores_prompt">Kas sa oled kindel, et soovid kõikide mänguvariantide kõik senised rekordid kustutada\?</string>
     <string name="high_scores_reset">Kõik senised rekordid on kustutatud.</string>
     <string name="pref_resetScores">Nulli parimad tulemused</string>
-    <string name="pref_resetScores_summary">Parimate tulemuste osas peetakse arvet ülalpool toodud seadistuste iga kombinatsiooni kohta. Kõikide rekordite nullimiseks vajuta siia.</string>
     <string name="high_score">Parim tulemus</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="total_score">Tulemus kokku:</string>
@@ -35,7 +34,6 @@
     <string name="menu_end_game">Lõpeta mäng</string>
     <string name="menu_save_game">Salvesta mäng</string>
     <string name="menu_rotate_board">Pööra mängulauda</string>
-    <string name="pref_sounds_summary">Kas heliefektid on lubatud või mitte</string>
     <string name="pref_sounds">Helid on sisse lülitatud</string>
     <string name="hint_colour">Paani värv</string>
     <string name="tile_count">Sõnade arv</string>

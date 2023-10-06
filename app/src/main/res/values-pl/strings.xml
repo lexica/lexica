@@ -24,7 +24,6 @@
     <string name="word_length">Długość słowa</string>
     <string name="letter_points">Punty Liter</string>
     <string name="pref_sounds">Włącz Dźwięki</string>
-    <string name="pref_sounds_summary">Czy efekty dźwiękowe są włączone</string>
     <string name="dialog_about_title">O Lexica</string>
     <string name="dialog_about_content">Dotknij ekranu i przesuń palec do sąsiednich kwadratów, aby przeliterować słowa. Masz trzy minuty na znalezienie jak największej liczby słów. 
 \n
@@ -51,7 +50,6 @@
     <string name="total_score">Łączny wynik:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">Najlepszy wynik</string>
-    <string name="pref_resetScores_summary">Najlepsze wyniki są śledzone dla każdej kombinacji powyższych ustawień. Stuknij, aby zresetować wszystkie wyniki do zera.</string>
     <string name="pref_resetScores">Zresetuj najlepsze wyniki</string>
     <string name="high_scores_reset">Najlepsze wyniki zostały zresetowane.</string>
     <string name="reset_scores_prompt">Czy na pewno chcesz zresetować wszystkie najlepsze wyniki dla wszystkich trybów gry do zera\?</string>

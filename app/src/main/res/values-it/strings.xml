@@ -9,7 +9,6 @@
     <string name="pref_boardSize">Dimensioni della tavola</string>
     <string name="pref_timeLimit">Limite di tempo</string>
     <string name="pref_sounds">Suoni abilitati</string>
-    <string name="pref_sounds_summary">Se i suoni sono abilitati oppure no</string>
     <string name="dialog_about_title">Informazioni su Lexica</string>
     <string name="pref_dict">Lessico</string>
     <string name="dialog_about_content">Tocca lo schermo e traccia col dito per scrivere le parole. Puoi passare da una casella ad un\'altra adiacente in verticale, orizzontale o diagonale. Hai tre minuti per trovare più parole che puoi.
@@ -61,7 +60,6 @@
     <string name="reset_scores_prompt">Sei sicuro/a di voler resettare tutti i punteggi migliori per tutte le modalità di gioco\?</string>
     <string name="high_scores_reset">I punteggi migliori sono stati resettati.</string>
     <string name="pref_resetScores">Resetta i punteggi migliori</string>
-    <string name="pref_resetScores_summary">I punteggi migliori vengono tracciati per ogni combinazione delle impostazioni di cui sopra. Tocca per ripristinare tutti i punteggi a zero.</string>
     <string name="pref_breakdown_summary">Se il contatore di parole mostri i conteggi per lunghezza di parola</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">In linea</string>
     <string name="pref_definitionProvider_dialog">Seleziona il fornitore di definizioni</string>

@@ -37,7 +37,6 @@
 \n
 \n</string>
     <string name="pref_breakdown_summary">Či sa dĺžky slov majú zobraziť v rozpise slov alebo nie</string>
-    <string name="pref_resetScores_summary">Najvyššie skóre je sledované pre každú kombináciu vyššie uvedených nastavení. Ťuknutím na položku vynulujete skóre u všetkých nastavení.</string>
     <string name="hide_unique">Skryť jedinečné slová</string>
     <string name="show_unique">Zobraziť jedinečné slová</string>
     <string name="pref_hintMode_summary">Ukáže počet slov, v ktorých sa dané písmeno vyskytuje</string>
@@ -72,7 +71,6 @@
     <string name="menu_end_game">Ukončiť hru</string>
     <string name="menu_save_game">Uložiť hru</string>
     <string name="menu_rotate_board">Otočiť dosku</string>
-    <string name="pref_sounds_summary">Či sú alebo nie sú povolené zvukové efekty</string>
     <string name="sort">Zoradiť</string>
     <string name="theme_high_contrast">Vysoký Kontrast</string>
     <string name="menu_new_game_mode">Nový</string>

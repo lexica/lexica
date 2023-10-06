@@ -14,7 +14,6 @@
     <string name="pref_timeLimit">Batas Waktu</string>
     <string name="tile_count">Jumlah kata</string>
     <string name="pref_sounds">Suara Aktif</string>
-    <string name="pref_sounds_summary">Apa efek suara diaktifkan</string>
     <string name="dialog_refresh_title">Muat ulang papan</string>
     <string name="dialog_refresh_button">Muat ulang</string>
     <string name="dialog_about_title">Tentang Lexica</string>
@@ -145,5 +144,4 @@
     <string name="pref_hintMode">Modus</string>
     <string name="pref_hintMode_summary">Tampilkan jumlah kata masing-masing huruf dapat digunakan dalam</string>
     <string name="define_word"><u>Definisi</u> </string>
-    <string name="pref_resetScores_summary">Skor tinggi dilacak untuk setiap kombinasi dari pengaturan di atas. Ketuk untuk mengatur ulang semua skor ke nol.</string>
 </resources>

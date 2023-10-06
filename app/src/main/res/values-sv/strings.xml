@@ -29,7 +29,6 @@
     <string name="tile_count">Antalet ord</string>
     <string name="hint_colour">Panelfärg</string>
     <string name="pref_sounds">Ljud aktiverat</string>
-    <string name="pref_sounds_summary">Huravida ljud är på eller inte</string>
     <string name="dialog_about_title">Om Lexica</string>
     <string name="dialog_about_content">Sätt fingret på skärmen på första bokstaven, dra till intilliggande bokstäver för att bilda ett ord. Du har tre minuter på dig att hitta så många ord som möjligt.
 \n
@@ -56,7 +55,6 @@
     <string name="total_score">Sammanlagda poäng:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">Rekord</string>
-    <string name="pref_resetScores_summary">Rekord är sparade för varje kombination av inställningarna ovan. Tryck för att återställa alla rekord till noll.</string>
     <string name="pref_resetScores">Återställ rekord</string>
     <string name="high_scores_reset">Rekord har blivit återställda.</string>
     <string name="reset_scores_prompt">Är du säker på att du vill återställa alla rekord för alla spellägen till noll\?</string>

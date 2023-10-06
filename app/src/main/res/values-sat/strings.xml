@@ -16,7 +16,6 @@
     <string name="reset_scores_prompt">ᱟᱢ ᱡᱷᱚᱛᱚ ᱞᱮᱠᱷᱟ ᱛᱮ ᱡᱷᱚᱛᱚ ᱠᱷᱮᱞ ᱠᱚ ᱨᱮᱭᱟᱜ ᱢᱚᱰ ᱠᱚ ᱡᱷᱚᱛᱚ ᱦᱟᱭ ᱥᱠᱚᱨ ᱠᱚ ᱐ ᱥᱟᱱᱟᱢ ᱠᱟᱱᱟ ᱥᱮ\?</string>
     <string name="high_scores_reset">ᱦᱟᱭ ᱥᱠᱚᱨ ᱫᱚ ᱨᱤᱥᱮᱴ ᱟᱠᱟᱱᱟ ᱾</string>
     <string name="pref_resetScores">ᱦᱟᱭ ᱥᱠᱚᱨ ᱠᱚ ᱨᱤᱥᱚᱴ ᱢᱮ</string>
-    <string name="pref_resetScores_summary">"ᱪᱮᱛᱟᱱ ᱥᱟᱡᱟᱣ ᱠᱷᱚᱱ ᱨᱮᱭᱟᱜ ᱢᱮᱞ ᱛᱮ ᱦᱟᱭ ᱥᱠᱚᱨ ᱴᱨᱟᱠ ᱚᱜᱼᱟ ᱾ ᱡᱷᱚᱛᱚ ᱥᱠᱚᱨ ᱠᱚ ᱐ ᱛᱮ ᱨᱤᱥᱮᱴ ᱞᱟᱹᱜᱤᱫ  ᱚᱛᱟᱭ ᱢᱮ ᱾"</string>
     <string name="high_score">ᱡᱟᱭ ᱥᱠᱚᱨ</string>
     <string name="total_score">ᱢᱩᱴ ᱥᱠᱚᱨ:</string>
     <string name="total_words">ᱢᱩᱴ ᱟᱲᱟ ᱠᱚ:</string>
@@ -43,7 +42,6 @@
     <string name="menu_save_game">ᱠᱷᱮᱞ ᱥᱟᱸᱪᱟᱣ</string>
     <string name="menu_rotate_board">ᱵᱚᱰ ᱟᱹᱪᱩᱨ ᱢᱮ</string>
     <string name="dialog_about_title">ᱞᱮᱠᱥᱤᱠᱟ ᱵᱟᱵᱚᱛ</string>
-    <string name="pref_sounds_summary">ᱥᱟᱲᱮ ᱤᱯᱷᱮᱠᱼᱴ ᱮᱢ ᱮᱱᱟ ᱥᱮ ᱵᱟᱝᱟ</string>
     <string name="pref_sounds">ᱥᱟᱲᱮ ᱮᱢᱮᱱᱟ</string>
     <string name="hint_colour">ᱴᱟᱭᱤᱞ ᱨᱚᱸᱝ</string>
     <string name="tile_count">ᱟᱲᱟ ᱟᱮᱭᱟᱜ ᱮᱞ</string>

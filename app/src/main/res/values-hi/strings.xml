@@ -15,7 +15,6 @@
     <string name="reset_scores_prompt">क्या आप वाकई सभी गेम मोड के लिए सभी उच्च स्कोर को शून्य पर रीसेट करना चाहते हैं\?</string>
     <string name="high_scores_reset">उच्च स्कोर रीसेट कर दिया गया है।</string>
     <string name="pref_resetScores">उच्च स्कोर रीसेट करें</string>
-    <string name="pref_resetScores_summary">उपरोक्त सेटिंग्स के प्रत्येक संयोजन के लिए उच्च स्कोर ट्रैक किए जाते हैं। सभी स्कोर शून्य पर रीसेट करने के लिए टैप करें।</string>
     <string name="high_score">उच्च स्कोर</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="total_score">कुल स्कोर:</string>
@@ -43,7 +42,6 @@
 \n
 \n</string>
     <string name="dialog_about_title">लेक्सिका के बारे में</string>
-    <string name="pref_sounds_summary">ध्वनि प्रभाव सक्षम हैं या नहीं</string>
     <string name="pref_sounds">आवाज़ सक्षम</string>
     <string name="hint_colour">टाइल के रंग</string>
     <string name="tile_count">शब्दों की संख्या</string>

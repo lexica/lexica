@@ -13,7 +13,6 @@
     <string name="reset_scores_prompt">आपल्याला खात्री आहे की आपण सर्व गेम मोडसाठी सर्व उच्च गुणांक शून्यावर रीसेट करू इच्छिता\?</string>
     <string name="high_scores_reset">उच्च गुणांक रीसेट केले गेले आहेत.</string>
     <string name="pref_resetScores">उच्च गुणांक रीसेट करा</string>
-    <string name="pref_resetScores_summary">वरील सेटिंग्जच्या प्रत्येक संयोजनासाठी उच्च गुणांक ट्रॅक केले जातात. सर्व गुणांक शून्यावर रीसेट करण्यासाठी टॅप करा.</string>
     <string name="high_score">उच्च गुणांक</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="total_score">एकूण गुणांक:</string>
@@ -41,7 +40,6 @@
 \n
 \n</string>
     <string name="dialog_about_title">लेक्सिका बद्दल</string>
-    <string name="pref_sounds_summary">ध्वनी प्रभाव सक्षम आहेत की नाही</string>
     <string name="pref_sounds">ध्वनी सक्षम केला</string>
     <string name="hint_colour">टाइल रंग</string>
     <string name="tile_count">शब्दसंख्या</string>

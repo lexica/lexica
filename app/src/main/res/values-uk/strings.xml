@@ -21,7 +21,6 @@
     <string name="word_length">За довжиною слів</string>
     <string name="letter_points">За балами букв</string>
     <string name="pref_sounds">Звуки увімкнено</string>
-    <string name="pref_sounds_summary">Чи ввімкнено звукові ефекти</string>
     <string name="dialog_about_title">Про Lexica</string>
     <string name="dialog_about_content">Торкніться екрана і проведіть пальцем по сусідніх квадратах для складання слів. Спробуйте знайти якнайбільше слів за вказаний час.
 \n
@@ -48,7 +47,6 @@
     <string name="total_score">Загальний рахунок:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">Рекорд</string>
-    <string name="pref_resetScores_summary">Рекорди зберігаються для кожної комбінації налаштувань. Натисніть, щоб обнулити всі рекорди.</string>
     <string name="pref_resetScores">Обнулити рекорди</string>
     <string name="high_scores_reset">Рекорди обнулено.</string>
     <string name="reset_scores_prompt">Ви впевнені, що хочете видалити рекорди для всіх режимів гри\?</string>

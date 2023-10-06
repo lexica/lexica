@@ -15,7 +15,6 @@
     <string name="reset_scores_prompt">האם אתה בטוח שברצונך לאפס את כל הנקודים הגבוהים עבור כל מצבי המשחק לאפס\?</string>
     <string name="high_scores_reset">ניקודים אופסו.</string>
     <string name="pref_resetScores">אפס ניקודים</string>
-    <string name="pref_resetScores_summary">מעקב אחר ניקודים גבוהים לכל שילוב של ההגדרות שלמעלה. הקש כדי לאפס את כל הציונים לאפס.</string>
     <string name="high_score">ניקוד גבוה</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="total_score">סך הניקוד:</string>
@@ -43,7 +42,6 @@
 \n
 \n</string>
     <string name="dialog_about_title">על Lexica</string>
-    <string name="pref_sounds_summary">בין אם אפקטים קוליים מופעלים ובין אם לא</string>
     <string name="pref_sounds">צלילים מופעלים</string>
     <string name="hint_colour">צבע אריח</string>
     <string name="tile_count">מספר מילים</string>

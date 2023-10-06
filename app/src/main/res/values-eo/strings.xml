@@ -98,7 +98,6 @@
     <string name="pref_dict_pt_BR_no_diacritics" tools:keep="@string/pref_dict_pt_BR">La portugala (brazila)</string>
     <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">La nederlanda</string>
     <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">La kataluna</string>
-    <string name="pref_resetScores_summary">Plej bonaj poentaroj registriĝas por ĉiu kombinaĵo de la ĉi-supraj agordoj. Tuŝetu por nuligi ĉiujn poentarojn.</string>
     <string name="whats_new_game_modes_description">La jenaj preferoj estis anstataŭigitaj per Ludaj Reĝimoj: Daŭro, grando de tabulo, minimuma vortolongo, tipo de poentaro, kaj reĝimo de sugestoj.
 \n
 \nVi povas ŝanĝi ludreĝimon ĉe la ĉefekrano aŭ krei vian propran. Plej bonaj poentaroj registriĝas laŭ ludreĝimo kaj vortaro.</string>
@@ -120,7 +119,6 @@
     <string name="pref_breakdown">Montri Distribuon de Vortolongoj</string>
     <string name="game_mode_letter_points_description">Gajni pli da poentoj post uzo de malpli oftaj literoj</string>
     <string name="input_game_mode_name_description">Por elekti ludreĝimon / registri plej bonajn poentarojn</string>
-    <string name="pref_sounds_summary">Ĉu ŝalti sonefektojn</string>
     <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Inkluzivas gramatikajn kazojn kaj mallongigojn</string>
     <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">La rusa (etendita)</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">La franca</string>
