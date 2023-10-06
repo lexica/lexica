@@ -49,16 +49,8 @@ class ScoreCalculator(game: Game) {
 
             }
 
-            if (game.status == Game.GameStatus.GAME_FINISHED) {
-                possible.remove(w)
-            }
-
         }
 
-        maxScore = score
-
-        for (w in possible) {
-            maxScore += game.getWordScore(w)
-        }
+        maxScore = game.solutions.keys.sumOf { game.getWordScore(it) }
     }
 }
