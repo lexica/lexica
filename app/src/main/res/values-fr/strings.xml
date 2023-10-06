@@ -10,7 +10,6 @@
     <string name="pref_boardSize">Taille du plateau</string>
     <string name="pref_timeLimit">Limite de Temps</string>
     <string name="pref_sounds">Sons activés</string>
-    <string name="pref_sounds_summary">Activer ou désactiver les effets sonores</string>
     <string name="dialog_about_title">À propos de Lexica</string>
     <string name="dialog_about_content">Touchez l\'écran et déplacez votre doigt vers un carré adjacent pour épeler les mots. Vous avez trois minutes pour trouver le plus de mots possible.
 \n
@@ -40,7 +39,6 @@
     <string name="letter_points">Valeur des lettres</string>
     <string name="score">Score</string>
     <string name="high_score">Meilleur score </string>
-    <string name="pref_resetScores_summary">Les meilleurs scores sont enregistrés pour chaque paramètrage ci-dessus. Appuyez ici pour effacer la mémoire.</string>
     <string name="pref_resetScores">Réinitialiser les meilleurs scores</string>
     <string name="high_scores_reset">Les meileurs résultats ont été réinitialisés.</string>
     <string name="reset_scores_prompt">Êtes-vous sûr(e) de vouloir réinitialiser tous les meilleurs résultats, et ce pour chaque mode de jeu \?</string>

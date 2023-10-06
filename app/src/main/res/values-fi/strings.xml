@@ -37,7 +37,6 @@
     <string name="pref_definitionProvider">Määritelmien tarjoaja</string>
     <string name="pref_breakdown_summary">Näytetäänkö sanojen määrä eripituisille sanoille erikseen</string>
     <string name="pref_breakdown">Näytä sanojen pituuksien erittely</string>
-    <string name="pref_resetScores_summary">Ennätykset tallennetaan erikseen jokaiselle yhdistelmälle yllä olevia asetuksia. Paina nollataksesi kaikki pisteet.</string>
     <string name="reset_scores_prompt">Oletko varma, että halueat nollata kaikkien pelitilojen ennätykset\?</string>
     <string name="high_scores_reset">Ennätykset on nollattu.</string>
     <string name="pref_resetScores">Nollaa ennätykset</string>
@@ -58,7 +57,6 @@
 \n4x4-laudalla sanojen pitää olla vähintään kolmikirjaimisia. 5x5-laudalla sanojen pitää olla vähintään nelikirjaimisia. Kolmi- ja nelikirjaimet sanat ovat yhden pisteen arvoisia. Pidemmät sanat ovat useamman pisteen arvoisia. Erisnimiä ei lasketa.
 \n
 \n</string>
-    <string name="pref_sounds_summary">Käytetäänkö äänitehosteita vai ei</string>
     <string name="pref_sounds">Äänet käytössä</string>
     <string name="hint_colour">Laatan väri</string>
     <string name="tile_count">Sanojen määrä</string>

@@ -23,7 +23,6 @@
     <string name="word_length">Szóhossz</string>
     <string name="letter_points">Betűpontok</string>
     <string name="pref_sounds">Hangok engedélyezve</string>
-    <string name="pref_sounds_summary">A hangok legyenek-e engedélyezve vagy sem</string>
     <string name="dialog_about_title">A Lexica névjegye</string>
     <string name="dialog_about_content">Érintse meg a kijelzőt, és mozgassa az ujját a szomszédos négyzetekre a szavak betűzéséhez. Három perce van arra, hogy a lehető legtöbb szót megtalálja. 
 \n
@@ -50,7 +49,6 @@
     <string name="total_score">Összes pontszám:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">Legjobb pontszám</string>
-    <string name="pref_resetScores_summary">A legjobb pontszámok a fenti beállítások minden egyes kombinációjánál követésre kerülnek. Koppintson az összes pontszám nullára történő visszaállításához.</string>
     <string name="pref_resetScores">Legjobb pontszámok visszaállítása</string>
     <string name="high_scores_reset">A legjobb pontszámok vissza lettek állítva.</string>
     <string name="reset_scores_prompt">Biztosan vissza szeretné állítani az összes legjobb pontszámot nullára az összes játéknál?</string>

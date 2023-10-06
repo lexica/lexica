@@ -23,7 +23,6 @@
     <string name="word_length">Sözcük Uzunluğu</string>
     <string name="letter_points">Harf Puanı</string>
     <string name="pref_sounds">Sesleri Etkinleştir</string>
-    <string name="pref_sounds_summary">Ses efektlerinin etkinleştirilip etkinleştirilmediği</string>
     <string name="dialog_about_title">Lexica Hakkında</string>
     <string name="dialog_about_content">Kelimeleri hecelemek için ekrana dokunun ve parmağınızı bitişik karelere doğru hareket ettirin. Mümkün olduğunca çok kelime bulmak için üç dakikanız var.
 \n
@@ -50,7 +49,6 @@
     <string name="total_score">Toplam Puan:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">Yüksek Puan</string>
-    <string name="pref_resetScores_summary">Yukarıdaki ayarların her bir kombinasyonu için yüksek puanlar izlenir. Tüm puanları sıfırlamak için dokunun.</string>
     <string name="pref_resetScores">Yüksek Puanları Sıfırla</string>
     <string name="high_scores_reset">Yüksek puanlar sıfırlandı.</string>
     <string name="reset_scores_prompt">Tüm oyun modları için yüksek puanları sıfırlamak istediğinizden emin misiniz\?</string>

@@ -13,7 +13,6 @@
     <string name="word_length">Ordlengde</string>
     <string name="letter_points">Bokstavpoeng</string>
     <string name="pref_sounds">Lyder</string>
-    <string name="pref_sounds_summary">Hvorvidt lydeffekter er påskrudd</string>
     <string name="dialog_about_title">Om Lexica</string>
     <string name="dialog_about_content">Trykk på skjermen og flytt fingeren til hosliggende firkanter for å stave ord. Du har tre minutter på å finne så mange ord som mulig.
 \n
@@ -40,7 +39,6 @@
     <string name="total_score">Total poengsum:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">Bestenotering</string>
-    <string name="pref_resetScores_summary">Høyeste poengsum spores for hver kombinasjon av ovennevnte innstillinger. Trykk for å tilbakestille alle poengsummer til null.</string>
     <string name="pref_resetScores">Tilbakestill bestenoteringer</string>
     <string name="high_scores_reset">Bestenoteringslisten har blitt tilbakestilt.</string>
     <string name="reset_scores_prompt">Tilbakestill alle bestenoteringer\?</string>

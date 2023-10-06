@@ -21,7 +21,6 @@
     <string name="word_length">По длине слов</string>
     <string name="letter_points">По очкам букв</string>
     <string name="pref_sounds">Звуки</string>
-    <string name="pref_sounds_summary">Использовать звуковые эффекты или нет</string>
     <string name="dialog_about_title">О Lexica</string>
     <string name="dialog_about_content">
 	Коснитесь экрана и водите пальцем по примыкающим друг к другу квадратам для составления слов. 
@@ -50,7 +49,6 @@
     <string name="total_score">Очки:</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">Лучший результат</string>
-    <string name="pref_resetScores_summary">Рекорды записываются для каждой комбинации настроек. Нажмите, чтобы сбросить все рекорды.</string>
     <string name="pref_resetScores">Сбросить рекорды</string>
     <string name="high_scores_reset">Рекорды были удалены.</string>
     <string name="reset_scores_prompt">Вы уверены в том, что хотите удалить рекорды для всех режимов игры?</string>

@@ -19,7 +19,6 @@
     <string name="reset_scores_prompt">Deseja realmente zerar os recordes de todos os modos de jogo\?</string>
     <string name="high_scores_reset">Os recordes foram zerados.</string>
     <string name="pref_resetScores">Zerar recordes</string>
-    <string name="pref_resetScores_summary">Os recordes são registados para cada combinação das configurações acima. Toque para zerar todas as pontuações.</string>
     <string name="high_score">Recorde</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="total_score">Pontuação total:</string>
@@ -46,7 +45,6 @@
 \n
 \n</string>
     <string name="dialog_about_title">Sobre o Lexica</string>
-    <string name="pref_sounds_summary">Se os efeitos sonoros estão ou não ativados</string>
     <string name="pref_sounds">Sons ativados</string>
     <string name="hint_colour">Cor do título</string>
     <string name="tile_count">Quantidade de palavras</string>

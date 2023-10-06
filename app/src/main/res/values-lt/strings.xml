@@ -80,7 +80,6 @@
     <string name="pref_breakdown">Rodyti žodžių ilgio suskirstymą</string>
     <string name="reset_scores_prompt">Ar tikrai norite iš naujo nustatyti nulinius visų žaidimo režimų rekordus\?</string>
     <string name="high_scores_reset">Rekordai bus nustatyti iš naujo.</string>
-    <string name="pref_resetScores_summary">Aukšti rekordai stebimi pagal kiekvieną pirmiau nurodytų nustatymų derinį. Bakstelėkite , jei norite iš naujo nustatyti visus rekordus į nulį.</string>
     <string name="pref_resetScores">Iš naujo nustatyti rekordus</string>
     <string name="high_scores">Rekordai</string>
     <string name="high_score">Rekordas</string>
@@ -115,7 +114,6 @@
     <string name="dialog_refresh_button">Atnaujinti</string>
     <string name="dialog_refresh_content">Norėdami užtikrinti, kad žaidžiate prie tos pačios lentos kaip ir jūsų varžovai, po atnaujinimo būtinai iš naujo išsiųskite visus kvietimus.</string>
     <string name="dialog_refresh_title">Atnaujinti lentą</string>
-    <string name="pref_sounds_summary">Ar įjungti garso efektai</string>
     <string name="pref_sounds">Įjungti garsai</string>
     <string name="hint_colour">Plytelių spalva</string>
     <string name="tile_count">Žodžių skaičius</string>

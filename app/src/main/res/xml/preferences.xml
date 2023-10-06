@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen
-	xmlns:android="http://schemas.android.com/apk/res/android">
-
-	<PreferenceScreen
-		android:key="resetScores"
-		android:title="@string/pref_resetScores"
-		android:summary="@string/pref_resetScores_summary"
-		android:iconSpaceReserved="false"
-	/>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
 
 	<ListPreference
 		android:key="theme"
 		android:title="@string/pref_theme"
+		app:useSimpleSummaryProvider="true"
 		android:entries="@array/theme_choices_entries"
 		android:entryValues="@array/theme_choices_entryvalues"
 		android:defaultValue="light"
@@ -21,11 +15,9 @@
 	/>
 
 	<CheckBoxPreference
-		android:key="soundsEnabled"
-		android:title="@string/pref_sounds"
-		android:summary="@string/pref_sounds_summary"
 		android:iconSpaceReserved="false"
-	/>
+		android:key="soundsEnabled"
+		android:title="@string/pref_sounds" />
 
 	<!-- The default value of "duckduckgo" is a legacy option which means "Online source" -->
 	<ListPreference
@@ -38,5 +30,9 @@
 		android:dialogTitle="@string/pref_definitionProvider_dialog"
 		android:iconSpaceReserved="false"
 	/>
+	<PreferenceScreen
+		android:iconSpaceReserved="false"
+		android:key="resetScores"
+		android:title="@string/pref_resetScores" />
 
 </PreferenceScreen>

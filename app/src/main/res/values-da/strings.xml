@@ -38,7 +38,6 @@
     <string name="reset_scores_prompt">Er du sikker på at du vil nulstille alle de højeste scorer for alle spilmodus til nul\?</string>
     <string name="high_scores_reset">De højeste scorer blev nulstillet.</string>
     <string name="pref_resetScores">Nulstil højeste scorer</string>
-    <string name="pref_resetScores_summary">De højeste scorer spores for hver kombination af ovenstående indstillinger. Tryk for at nulstille alle scorer til nul.</string>
     <string name="high_score">Højeste score</string>
     <string name="total_score">Total score:</string>
     <string name="total_words">Totalt antal ord:</string>
@@ -81,7 +80,6 @@
     <string name="menu_save_game">Spar spilet</string>
     <string name="menu_rotate_board">Roter brættet</string>
     <string name="dialog_about_title">Om Lexica</string>
-    <string name="pref_sounds_summary">Hvorvidt lydeffekter skal påskrues</string>
     <string name="pref_sounds">Lyder påskruet</string>
     <string name="hint_colour">Flisfarve</string>
     <string name="tile_count">Antal ord</string>

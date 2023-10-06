@@ -14,9 +14,8 @@
 	<string name="pref_timeLimit">時限</string>
 
 	<string name="pref_sounds">音效</string>
-	<string name="pref_sounds_summary">選擇遊戲會否發出音效</string>
 
-	<string name="dialog_about_title">關於Lexica</string>
+    <string name="dialog_about_title">關於Lexica</string>
 	<string name="menu_rotate_board">旋轉圖版</string>
 	<string name="menu_save_game">儲存遊戲</string>
 	<string name="menu_end_game">結束遊戲</string>
@@ -52,8 +51,7 @@
 
 	<string name="score">分數</string>
 	<string name="high_score">高分紀錄</string>
-	<string name="pref_resetScores_summary">遊戲為每個遊戲模式紀錄最高分，按此以重設所有分數紀錄至零分。</string>
-	<string name="pref_resetScores">重設高分紀錄</string>
+    <string name="pref_resetScores">重設高分紀錄</string>
     <string name="high_scores_reset">您已重設高分紀錄。</string>
 	<string name="reset_scores_prompt">您確定要重設所有分數至零分？</string>
 

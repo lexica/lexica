@@ -65,7 +65,6 @@
     <string name="reset_scores_prompt">Bạn có chắc bạn muốn đặt lại tất cả điểm cao của tất cả chế độ chơi về không không\?</string>
     <string name="high_scores_reset">Điểm cao đã được đặt lại.</string>
     <string name="pref_resetScores">Đặt lại điểm cao</string>
-    <string name="pref_resetScores_summary">Điểm cao được theo dõi cho mỗi sự kết hợp các cài đặt ở trên. Nhấn để đặt lại tất cả số điểm về không.</string>
     <string name="high_scores">Điểm cao</string>
     <string name="high_score">Điểm cao</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
@@ -100,7 +99,6 @@
     <string name="dialog_refresh_button">Làm mới</string>
     <string name="dialog_refresh_content">Để chắc chắn là bạn chơi trên cùng một bảng với đối phương, hãy đảm bảo là bạn gửi lại các lời mời sau khi làm mới.</string>
     <string name="dialog_refresh_title">Làm mới bảng</string>
-    <string name="pref_sounds_summary">Hiệu ứng âm thanh có được bật hay không</string>
     <string name="pref_sounds">Bật âm thanh</string>
     <string name="hint_colour">Màu ô</string>
     <string name="tile_count">Số lượng các từ</string>

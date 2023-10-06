@@ -44,8 +44,7 @@
     <string name="pref_hintMode_summary">Shows the number of words each letter can be used in</string>
     <string name="tile_count">Number of words</string>
     <string name="hint_colour">Tile colour</string>
-    <string name="pref_sounds">Sounds Enabled</string>
-    <string name="pref_sounds_summary">Whether or not sound effects are enabled</string>
+    <string name="pref_sounds">Sound Effects</string>
     <string name="dialog_refresh_title">Refresh board</string>
     <string name="dialog_refresh_content">To ensure you play the same board as your opponents, make sure to resend any invites after refreshing.</string>
     <string name="dialog_refresh_button">Refresh</string>
@@ -84,14 +83,13 @@
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="high_score">High Score</string>
     <string name="high_scores">High Scores</string>
-    <string name="pref_resetScores_summary">High scores are tracked for each combination of the above settings. Tap to reset all scores to zero.</string>
     <string name="pref_resetScores">Reset High Scores</string>
     <string name="high_scores_reset">High scores have been reset.</string>
-    <string name="reset_scores_prompt">Are you sure you want to reset all high scores for all game modes to zero?</string>
+    <string name="reset_scores_prompt">Are you sure you want to reset all high scores for all game modes to zero? This cannot be undone.</string>
     <string name="pref_breakdown">Show Word Length Breakdown</string>
     <string name="pref_breakdown_summary">Whether or not the word count shows counts by word length</string>
     <string name="pref_definitionProvider">Definition Provider</string>
-    <string name="pref_definitionProvider_summary">Select a definition provider to use. If the selected provider is not installed, an online source such as Wiktionary will be used.</string>
+    <string name="pref_definitionProvider_summary">If the selected provider is not installed, an online source such as Wiktionary will be used.</string>
     <string name="pref_definitionProvider_dialog">Select Definition Provider</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Online</string>
     <string name="pref_theme">Theme</string>

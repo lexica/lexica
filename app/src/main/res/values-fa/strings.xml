@@ -10,7 +10,6 @@
     <string name="pref_boardSize">اندازهٔ صفحه</string>
     <string name="pref_timeLimit">محدودیت زمان</string>
     <string name="pref_sounds">با صدا</string>
-    <string name="pref_sounds_summary">صدای بازی فعال است یا خیر</string>
     <string name="dialog_about_title">دربارهٔ لکسیکا</string>
     <string name="dialog_about_content">صفحه را لمس کرده و انگشت خود را برای املای کلمات به مربع های مجاور ببرید. سه دقیقه فرصت دارید تا حد ممکن کلمات را بیابید.
 \n
@@ -40,7 +39,6 @@
     <string name="letter_points">امتیاز هر حرف</string>
     <string name="score">امتیاز</string>
     <string name="high_score">امتیاز بالا</string>
-    <string name="pref_resetScores_summary">امتیازات برتر برای هر ترکیبی از تنظیمات بالا دنبال می‌شوند. برای بازنشانی همهٔ امتیازات به صفر، ضربه بزنید.</string>
     <string name="pref_resetScores">بازنشانی امتیازهای برتر</string>
     <string name="high_scores_reset">امتیازهای برتر بازنشانی شده است.</string>
     <string name="reset_scores_prompt">آیا مطمئن هستید که می‌خواهید همهٔ امتیازهای برتر را برای همهٔ حالت‌های بازی صفر کنید؟</string>

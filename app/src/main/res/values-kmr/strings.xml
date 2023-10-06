@@ -46,7 +46,6 @@
     <string name="reset_scores_prompt">Tu pê bawer î ku dixwazî hemû pûanên bilind ên hemû modên lîstikê jê bibî\?</string>
     <string name="high_scores_reset">Pûanên bilind hat jêbirin.</string>
     <string name="pref_resetScores">Pûanên Bilind Jê bibe</string>
-    <string name="pref_resetScores_summary">Bo her kombînasyona sazkariyên jor pûanên bilind tê şopandin. Bo hemû pûanan jê bibî, lê bitepîne.</string>
     <string name="high_scores">Pûanên Herî Bilind</string>
     <string name="high_score">Pûana Herî Bilind</string>
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
@@ -63,7 +62,6 @@
     <string name="dialog_refresh_button">Nû bike</string>
     <string name="dialog_refresh_content">Hay lê hebe ku tu bi hevrikên xwe re li ser heman hûnanê dilîzî, ji ber wê piştî nûkirinê, baş zanibe ku te hemû vexwendinên xwe dîsa şandine.</string>
     <string name="dialog_refresh_title">Hûnanê nû bike</string>
-    <string name="pref_sounds_summary">Efektên dengan çalak e yan na</string>
     <string name="pref_sounds">Dengan bike çalak</string>
     <string name="hint_colour">Rengê xiştê</string>
     <string name="tile_count">Hejmara peyvan</string>

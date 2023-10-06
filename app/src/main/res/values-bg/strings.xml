@@ -26,6 +26,4 @@
     <string name="word_length">Дължина на Думата</string>
 	<string name="letter_points">Точи за Букви</string>
 
-	<string name="pref_sounds_summary">Дали звуковите ефекти са разрешени или не</string>
-
-	</resources>
+</resources>

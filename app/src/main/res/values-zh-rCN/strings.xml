@@ -10,7 +10,6 @@
     <string name="pref_boardSize">版面</string>
     <string name="pref_timeLimit">时限</string>
     <string name="pref_sounds">音效</string>
-    <string name="pref_sounds_summary">选择游戏会否发出音效</string>
     <string name="dialog_about_title">关于Lexica</string>
     <string name="dialog_about_content">您要在3分钟内拼出版面上所有单词。要拼出单词，请先触碰屏幕后滑动至相邻的方块。 
 \n 
@@ -40,7 +39,6 @@
     <string name="letter_points">字母分数</string>
     <string name="score">分数</string>
     <string name="high_score">高分纪录</string>
-    <string name="pref_resetScores_summary">游戏为每个游戏模式纪录最高分，按此以重设所有分数纪录至零分。</string>
     <string name="pref_resetScores">重设高分纪录</string>
     <string name="high_scores_reset">您已重设高分纪录。</string>
     <string name="reset_scores_prompt">您确定要重设所有分数至零分？</string>
