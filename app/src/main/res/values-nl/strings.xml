@@ -9,7 +9,7 @@
     <string name="pref_dict_en_GB">Engels (VK)</string>
     <string name="pref_boardSize">Bordgrootte</string>
     <string name="pref_timeLimit">Tijdslimiet</string>
-    <string name="pref_sounds">Geluiden ingeschakeld</string>
+    <string name="pref_sounds">Geluidseffecten</string>
     <string name="dialog_about_title">Over Lexica</string>
     <string name="dialog_about_content">Raak het scherm aan en veeg met je vinger over aangrenzende vakjes om woorden samen te stellen. Je hebt 3 minuten de tijd om zo veel mogelijk woorden te vinden.
 \n
@@ -41,11 +41,11 @@
     <string name="high_score">Topscore</string>
     <string name="pref_resetScores">Topscores terugzetten op nul</string>
     <string name="high_scores_reset">De topscores zijn teruggezet op nul.</string>
-    <string name="reset_scores_prompt">Weet je zeker dat je alle topscores van alle spelmodi wilt terugzetten op nul?</string>
+    <string name="reset_scores_prompt">Weet je zeker dat je alle topscores van alle spelmodi wilt terugzetten op nul\? Deze actie is onomkeerbaar.</string>
     <string name="pref_breakdown">Woordlengte-uitleg tonen</string>
     <string name="pref_breakdown_summary">Of de woordenteller wel of geen woorden moet tonen op woordlengte</string>
     <string name="pref_definitionProvider">Betekenisdienst</string>
-    <string name="pref_definitionProvider_summary">Kies de te gebruiken betekenisdienst. Als de geselecteerde dienst niet geïnstalleerd is, zal een online-bron, zoals Wiktionary, worden gebruikt.</string>
+    <string name="pref_definitionProvider_summary">Als de geselecteerde dienst niet geïnstalleerd is, zal een online-bron, zoals Wiktionary, worden gebruikt.</string>
     <string name="pref_definitionProvider_dialog">Betekenisdienst kiezen</string>
     <string name="pref_dict_de_DE">Duits (uitgebreid)</string>
     <string name="pref_dict_nl">Nederlands</string>
