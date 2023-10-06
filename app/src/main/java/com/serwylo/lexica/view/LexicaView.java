@@ -282,7 +282,11 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
      * when rendering. This can be used to decide where to start the following word.
      * <p>
      * Note that this method is RTL aware. If the view should be drawn as RTL then the returned
-     * position will be to the let of the starting point, rather than the right.
+     * position will be to the left of the starting point, rather than the right.
+     * <p>
+     * Note that this relies heavily on https://stackoverflow.com/a/27631737
+     * about {@link android.graphics.Paint.FontMetrics} to position the words in line.
+     * See https://github.com/lexica/lexica/issues/194 for further discussion about misaligned Q's.
      */
     private float drawPastWord(@NonNull Canvas canvas, boolean isRtl, String word, float x, float y, boolean isWord, boolean hasBeenUsedBefore) {
         word = game.getLanguage().toRepresentation(word);
@@ -298,12 +302,18 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
 
         p.setTextSize(theme.game.pastWordTextSize);
         p.setTextAlign(Paint.Align.LEFT);
-        canvas.drawText(word, isRtl ? x - width : x, y + height, p);
+
+        Paint.FontMetrics metrics = p.getFontMetrics();
+        float wordBaseline = y - metrics.ascent;
+        float wordTop = wordBaseline + metrics.top;
+        float wordBottom = wordBaseline + metrics.bottom;
+        canvas.drawText(word, isRtl ? x - width : x, wordBaseline, p);
 
         if (!isWord) {
             // Strike-through
             p.setStrokeWidth(6);
-            canvas.drawLine(isRtl ? x - width : x, y + height / 2, isRtl ? x : x + width, y + height / 2, p);
+            float strikeThroughHeight = wordBaseline + (metrics.bottom + metrics.top) / 2;
+            canvas.drawLine(isRtl ? x - width : x, strikeThroughHeight, isRtl ? x : x + width, strikeThroughHeight, p);
         }
 
         // Fade out the word as it approaches the end of the screen.
@@ -311,14 +321,14 @@ public class LexicaView extends View implements Synchronizer.Event, Game.RotateH
             if (x - width < theme.game.score.padding) {
                 Shader shaderA = new LinearGradient(theme.game.score.padding * 5, y, theme.game.score.padding * 2, y, 0x00ffffff, theme.game.backgroundColor, Shader.TileMode.CLAMP);
                 p.setShader(shaderA);
-                canvas.drawRect(0, y - 2, theme.game.score.padding * 5, y + height + 2, p);
+                canvas.drawRect(0, wordTop, theme.game.score.padding * 5, wordBottom, p);
                 p.setShader(null);
             }
         } else {
             if (x + width > getWidth() - theme.game.score.padding) {
                 Shader shaderA = new LinearGradient(getWidth() - theme.game.score.padding * 5, y, getWidth() - theme.game.score.padding * 2, y, 0x00ffffff, theme.game.backgroundColor, Shader.TileMode.CLAMP);
                 p.setShader(shaderA);
-                canvas.drawRect(getWidth() - theme.game.score.padding * 5, y - 2, getWidth(), y + height + 2, p);
+                canvas.drawRect(getWidth() - theme.game.score.padding * 5, wordTop, getWidth(), wordBottom, p);
                 p.setShader(null);
             }
         }
