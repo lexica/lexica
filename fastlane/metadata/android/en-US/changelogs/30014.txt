@@ -1,0 +1,11 @@
+Bugfixes:
+ * Increase probability of letter N in German (no diacritics)
+ * Small screen support
+ * Remove j, k, w, x, y from Italian dictionary
+ * Ensure all letters are shuffled correctly
+ * Correctly show max score when viewing in-game found words
+ * Align past words correctly
+ * Tidy preference screen
+
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
