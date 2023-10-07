@@ -1,9 +1,14 @@
-A word game where you have to find as many words as possible on a grid of random letters, in a limited time.
+一款单词游戏，你必须在有限时间内，尝试在随机字母组成的网格中找出尽可能多的单词。
 
-This is a fork of the unmaintained <a href="https://play.google.com/store/apps/details?id=net.healeys.lexic">Lexic</a> which:
+单词来自于数本国际词典，总数达数百万之多。
 
- * Supports multiple different languages
- * Adds newer scoring options
- * Adds minor improvements to the UI
- * Has better support for high resolution screens
- * Removes the unsupported multiplayer options
+在多人模式下，你可以给好友发送短信息、电子邮件、二维码等，邀请其加入游戏。
+
+你还可以自定义游戏规则：
+ * 4x4、5x5 和 6x6 尺寸的游戏板
+ * 不同的持续时间
+ * 多种打分和提示模式
+
+本应用完全开源。无广告。无内购。无跟踪。永远如此。
+
+请考虑通过 GitHub Sponsor 或 Liberapay 支持进一步的开发。
