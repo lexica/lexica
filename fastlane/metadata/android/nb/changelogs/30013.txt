@@ -1,0 +1,4 @@
+Ordbøker:
+ * Finsk ordbok lagt til. (takk til @dancek).
+
+Gi tilbakemelding/rapporter feil på https://github.com/lexica/lexica/issues.
