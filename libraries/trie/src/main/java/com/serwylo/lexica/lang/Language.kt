@@ -116,7 +116,7 @@ abstract class Language {
                 "en_GB" to EnglishGB(),
                 "en_US" to EnglishUS(),
                 "es" to Spanish(),
-		"es_solo_enne" to SpanishSoloEnne(),
+		        "es_solo_enne" to SpanishSoloEnne(),
                 "fa" to Persian(),
                 "fi" to Finnish(),
                 "fr_FR" to French(),
@@ -130,6 +130,7 @@ abstract class Language {
                 "pt_BR_no_diacritics" to PortugueseBRNoDiacritics(),
                 "ru" to Russian(),
                 "ru_extended" to RussianExtended(),
+                "tr" to Turkish(),
                 "uk" to Ukrainian(),
         )
 
