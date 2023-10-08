@@ -181,4 +181,8 @@
     <string name="whats_new_web_lexica_description">Spesiell takk til @MattRCole for storverket i å bringe dette til live.
 \n
 \nFlerspiller-invitasjoner har nå lenker til den nye (beta-) versjonen for dem som ikke har Android-enheter. QR-koden som vises når et nytt flerspiller-spill startes kan også dele en nettadresse til vev-versjonen.</string>
+    <string name="pref_minWordLength">Minste ordlengde</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Finsk</string>
+    <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Tyrkisk</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretonsk</string>
 </resources>
