@@ -67,6 +67,7 @@ def languages = [
   "pt_BR_no_diacritics",
   "ru",
   "ru_extended",
+  "tr",
   "uk",
 ]
 languages.each { lang ->

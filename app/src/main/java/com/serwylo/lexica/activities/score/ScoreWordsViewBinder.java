@@ -136,7 +136,7 @@ abstract class ScoreWordsViewBinder {
         void bind(final Item item) {
 
             TextView word = itemView.findViewById(R.id.word);
-            word.setText(game.getLanguage().toRepresentation(item.word).toUpperCase());
+            word.setText(game.getLanguage().toRepresentation(item.word).toUpperCase(game.getLanguage().getLocale()));
             TextView score = itemView.findViewById(R.id.score);
             score.setText("+" + item.points);
 
