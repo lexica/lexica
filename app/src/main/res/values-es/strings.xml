@@ -189,4 +189,5 @@
     <string name="pref_minWordLength">Longitud mínima de palabras</string>
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretón</string>
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">En finés</string>
+    <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turco</string>
 </resources>
