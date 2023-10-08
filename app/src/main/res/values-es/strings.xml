@@ -9,7 +9,7 @@
     <string name="pref_dict_en_GB">Inglés (GB)</string>
     <string name="pref_boardSize">Tamaño del tablero</string>
     <string name="pref_timeLimit">Límite de tiempo</string>
-    <string name="pref_sounds">Sonido habilitado</string>
+    <string name="pref_sounds">Efectos de sonido</string>
     <string name="dialog_about_title">Sobre Léxica</string>
     <string name="dialog_about_content">Toca la pantalla y nueve tu dedo hacia las casillas adyacentes para deletrear la palabra. Tiene tres minutos para encontrar todas las palabras que puedas.
 \n
@@ -36,7 +36,7 @@
     <string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
     <string name="game_mode_beginner_description">Partida asistida para encontrar palabras más fácilmente</string>
     <string name="input_game_mode_name_description">Para escoger una modalidad de partida / guardar los puntajes más altos</string>
-    <string name="reset_scores_prompt">¿Estás de acuerdo con resetear los puntajes más altos de todas las modalidades de partida a cero\?</string>
+    <string name="reset_scores_prompt">¿Estás seguro de que quieres restablecer a cero todas las puntuaciones máximas de todos los modos de juego\? Esto no se puede deshacer.</string>
     <string name="whats_new_game_modes_why">Gracias a los contribuidores de la comunidad, las maneras en las que puedes jugar Léxica se han expandido. Esto dificulta explicar cómo se guardan los puntajes más altos y cada nueva característica añade una mayor complejidad.
 \n
 \nEstos cambios facilitan entender cuáles combinaciones de preferencias resultan en un puntaje más alto en particular.
@@ -50,7 +50,7 @@
     <plurals name="num_minutes">
         <item quantity="one">%d minuto</item>
         <item quantity="many">%d minutos</item>
-        <item quantity="other"/>
+        <item quantity="other">%d minutos</item>
     </plurals>
     <string name="whats_new_why">¿Por qué\?</string>
     <string name="whats_new_game_modes_description">Las siguientes preferencias han sido reemplazadas con modalidades de partida: duración, tamaño del tablero, longitud mínima de palabras, tipo de puntaje y modalidades asistidas.
@@ -82,7 +82,7 @@
     <string name="pref_theme">Tema</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">En línea</string>
     <string name="pref_definitionProvider_dialog">Selecciona un proveedor de definiciones</string>
-    <string name="pref_definitionProvider_summary">Selecciona un proveedor de definiciones. Si el proveedor no está instalado, un recurso en línea como Wikcionario será usado.</string>
+    <string name="pref_definitionProvider_summary">Si el proveedor seleccionado no está instalado, se utilizará una fuente en línea como Wikcionario.</string>
     <string name="pref_definitionProvider">Proveedor de definiciones</string>
     <string name="pref_breakdown_summary">Indica si el recuento de palabras muestra recuentos por longitud de palabra</string>
     <string name="pref_breakdown">Muestra el desglose de la longitud de las palabras</string>
@@ -163,24 +163,24 @@
     <string name="invite__dont_have_lexica_installed_web">O prueba Lexica en el navegador (beta):</string>
     <string name="send_challenge_invite_to">Enviar reto a…</string>
     <plurals name="num_available_words_in_game__tap_to_refresh">
-        <item quantity="one">%1$d palabra (toca para refrescar)</item>
-        <item quantity="many">%1$d palabras (toca para refrescar)</item>
-        <item quantity="other"/>
+        <item quantity="one">%1$d palabra (pulsa para actualizar)</item>
+        <item quantity="many">%1$d palabras (pulsa para actualizar)</item>
+        <item quantity="other">%1$d palabras (pulsa para actualizar)</item>
     </plurals>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d palabra</item>
         <item quantity="many">%1$d palabras</item>
-        <item quantity="other"/>
+        <item quantity="other">%1$d palabras</item>
     </plurals>
     <plurals name="num_found_words_out_of_total">
         <item quantity="one">%d /%d palabra</item>
         <item quantity="many">%d / %d palabras</item>
-        <item quantity="other"/>
+        <item quantity="other">%d / %d palabras</item>
     </plurals>
     <plurals name="max_score_points_suffix">
         <item quantity="one">/ %d punto</item>
         <item quantity="many">/ %d puntos</item>
-        <item quantity="other"/>
+        <item quantity="other">/ %d puntos</item>
     </plurals>
     <string name="invite__multiplayer__description">Has sido invitado a una partida multijugador de Lexica:</string>
     <string name="invite__multiplayer__game_offline">¿Quieres jugar offline\? Prueba a jugar con un papel y un bolígrafo:</string>

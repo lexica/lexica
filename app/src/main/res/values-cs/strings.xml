@@ -37,7 +37,7 @@
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">Němčina</string>
     <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">Včetně diakritiky: àâçéèêëîïôöûü</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francouzština</string>
-    <string name="pref_sounds">Zvuky povoleny</string>
+    <string name="pref_sounds">Zvukové efekty</string>
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Pouze španělské Ñ</string>
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Portugalština (Brazílie) (rozšířená)</string>
     <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Ruština (rozšířená)</string>
@@ -57,7 +57,7 @@
     <string name="theme_high_contrast">Vysoký kontrast</string>
     <string name="sort">Seřadit</string>
     <string name="game_mode_marathon">Maraton</string>
-    <string name="reset_scores_prompt">Opravdu chcete obnovit všechna nejvyšší skóre pro všechny herní režimy\?</string>
+    <string name="reset_scores_prompt">Opravdu chcete obnovit všechna nejvyšší skóre pro všechny herní režimy\? Tato akce je nevratná.</string>
     <string name="button_delete">Odstranit</string>
     <string name="whats_new_continue">Pokračovat</string>
     <string name="game_mode_legacy_description">Používáno ve starší verzi hry Lexica</string>
@@ -120,7 +120,7 @@
 \n</string>
     <string name="total_words">Celkem slov:</string>
     <string name="total_score">Celkové skóre:</string>
-    <string name="pref_definitionProvider_summary">Vyberte poskytovatele definic, kterého chcete použít. Pokud vybraný poskytovatel není nainstalován, použije se online zdroj, například Wikislovník.</string>
+    <string name="pref_definitionProvider_summary">Pokud vybraný poskytovatel není nainstalován, použije se online zdroj, například Wikislovník.</string>
     <string name="game_mode_sprint">Sprint</string>
     <string name="high_scores">Nejvyšší skóre</string>
     <string name="pref_breakdown">Zobrazit rozdělení délky slova</string>

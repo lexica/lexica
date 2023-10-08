@@ -1,1 +1,1 @@
-Find as many words as possible on a grid of random letters within a time limit
+在有限时间内，尝试在随机字母组成的网格中找出尽可能多的单词
