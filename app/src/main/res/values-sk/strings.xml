@@ -50,7 +50,7 @@
     <string name="pref_definitionProvider_summary">Vyberte poskytovateľa definície, ktorý sa má použiť. Ak vybraný poskytovateľ nie je nainštalovaný, použije sa online zdroj, ako napríklad Wiktionary.</string>
     <string name="pref_definitionProvider">Poskytovateľ Definícií</string>
     <string name="pref_breakdown">Zobraziť rozdelenie dĺžky slova</string>
-    <string name="reset_scores_prompt">Ste si istý, že chcete vynulovať najvyššie skóre pre všetky herné režimy\?</string>
+    <string name="reset_scores_prompt">Ste si istí, že chcete obnoviť všetky vysoké skóre pre všetky herné režimy na nulu\? To nemôže byť neporušené.</string>
     <string name="high_scores_reset">Najvyššie Skóre bolo vynulované.</string>
     <string name="pref_resetScores">Vynulovať Najvyššie Skóre</string>
     <string name="high_score">Najvyššie Skóre</string>
