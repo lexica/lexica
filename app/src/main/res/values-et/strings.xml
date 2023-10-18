@@ -13,11 +13,11 @@
     <string name="pref_theme">Teema</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Veebiotsing</string>
     <string name="pref_definitionProvider_dialog">Valige sõnaselgituse pakkuja</string>
-    <string name="pref_definitionProvider_summary">Vali allikas, mille põhjal kuvame sõnade selgitusi. Kui vastavat rakendust pole paigaldatud, siis kasutame veebipõhist Wiktionary andmekogu.</string>
+    <string name="pref_definitionProvider_summary">Kui vastavat rakendust pole paigaldatud, siis kasutame veebipõhist Wiktionary andmekogu.</string>
     <string name="pref_definitionProvider">Sõnade selgituse allikas</string>
     <string name="define_word">"&lt;u&gt;Näita selgitust&lt;/u&gt; "<u>Define</u> </string>
     <string name="pref_breakdown">Näita sõnapikkuste jaotust</string>
-    <string name="reset_scores_prompt">Kas sa oled kindel, et soovid kõikide mänguvariantide kõik senised rekordid kustutada\?</string>
+    <string name="reset_scores_prompt">Kas sa oled kindel, et soovid kõikide mänguvariantide kõik senised rekordid kustutada\? Seda toimingut ei saa hiljem tagasi pöörata.</string>
     <string name="high_scores_reset">Kõik senised rekordid on kustutatud.</string>
     <string name="pref_resetScores">Nulli parimad tulemused</string>
     <string name="high_score">Parim tulemus</string>
@@ -34,7 +34,7 @@
     <string name="menu_end_game">Lõpeta mäng</string>
     <string name="menu_save_game">Salvesta mäng</string>
     <string name="menu_rotate_board">Pööra mängulauda</string>
-    <string name="pref_sounds">Helid on sisse lülitatud</string>
+    <string name="pref_sounds">Helieffektid</string>
     <string name="hint_colour">Paani värv</string>
     <string name="tile_count">Sõnade arv</string>
     <string name="pref_hintMode_summary">Näitab kui mitmes sõnas iga tähte saab kasutada</string>
@@ -184,4 +184,5 @@
     <string name="pref_minWordLength">Sõna väikseim pikkus</string>
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">bretooni</string>
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">soome</string>
+    <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">türgi</string>
 </resources>
