@@ -1,9 +1,14 @@
-A word game where you have to find as many words as possible on a grid of random letters, in a limited time.
+Igra riječi u kojoj igrači moraju pronači što više riječi u mreži nasumičnih slova u određenom vremenu.
 
-This is a fork of the unmaintained <a href="https://play.google.com/store/apps/details?id=net.healeys.lexic">Lexic</a> which:
+ Odaberi između nekoliko međunarodnih rječnika, s ukupnim brojem od milijuna riječi.
 
- * Supports multiple different languages
- * Adds newer scoring options
- * Adds minor improvements to the UI
- * Has better support for high resolution screens
- * Removes the unsupported multiplayer options
+ Igraj protiv prijatelja u modusu za više igrača, šaljući im izazove putem SMS-a/e-maila/QR koda/itd.
+
+ Izgradi vlastita pravila pomoću prilagodljivih modusa igre:
+ * Daske veličine 4 × 4, 5 × 5 i 6 × 6
+ * Različita trajanja
+ * Razni modusi bodovanja i savjeta
+
+ Potpuno otvoreni kod. Bez reklama. Bez kupnje putem aplikacije. Bez praćenja. Ikada.
+
+ Podrži daljnji razvoj putem GitHub sponzora ili Liberapaya.
