@@ -4,11 +4,11 @@
     <string name="lexicon_is_in_beta">beta</string>
     <string name="high_score">Najbolji rezultat</string>
     <string name="words">Riječi</string>
-    <string name="pref_definitionProvider_summary">Odaberi pružatelja definicija koji će se koristiti. Ako odabrani pružatelj nije instaliran, koristit će se internetski izvor kao što je „Vječnik”.</string>
+    <string name="pref_definitionProvider_summary">Ako odabrani pružatelj nije instaliran, koristit će se internetski izvor kao što je „Wiktionary”.</string>
     <string name="pref_dict_ja">Japanski</string>
     <string name="pref_dict_es">Španjolski</string>
     <string name="define_word"><u>Definiraj</u> </string>
-    <string name="pref_sounds">Zvukovi aktivirani</string>
+    <string name="pref_sounds">Zvučni efekti</string>
     <string name="show_unique">Prikaži jedinstvene riječi</string>
     <string name="tile_count">Broj riječi</string>
     <string name="menu_end_game">Završi igru</string>
@@ -59,7 +59,7 @@
     <string name="app_name">Lexica</string>
     <string name="high_scores_reset">Najbolji rezultati su poništeni.</string>
     <string name="hide_unique">Sakrij jedinstvene riječi</string>
-    <string name="reset_scores_prompt">Stvarno želiš poništiti sve najbolje rezultate za sve moduse igre na nulu\?</string>
+    <string name="reset_scores_prompt">Stvarno želiš poništiti sve najbolje rezultate za sve moduse igre na nulu\? To je nepovratna radnja.</string>
     <string name="pref_dict_fr_FR">Francuski (prošireno)</string>
     <string name="pref_dict">Leksikon</string>
     <string name="hint_colour">Boja pločice</string>
@@ -189,4 +189,5 @@
     <string name="pref_minWordLength">Najkraća duljina riječi</string>
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretonski</string>
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Finski</string>
+    <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turski</string>
 </resources>
