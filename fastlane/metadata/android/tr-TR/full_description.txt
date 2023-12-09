@@ -1,9 +1,14 @@
-A word game where you have to find as many words as possible on a grid of random letters, in a limited time.
+Oyuncuların zaman sınırı olan rastgele harflerden oluşan bir ızgarada mümkün olduğunca çok sözcük bulduğu bir sözcük oyunu.
 
-This is a fork of the unmaintained <a href="https://play.google.com/store/apps/details?id=net.healeys.lexic">Lexic</a> which:
+Toplamda milyonlarca sözcük içeren çeşitli uluslararası sözlüklerden seçim yapın.
 
- * Supports multiple different languages
- * Adds newer scoring options
- * Adds minor improvements to the UI
- * Has better support for high resolution screens
- * Removes the unsupported multiplayer options
+SMS/E-posta/QR kodu/vb. yoluyla çevrim dışı görevler göndererek çok oyunculu modda arkadaşlarınıza karşı oynayın.
+
+Özelleştirilebilir oyun modları ile kendi kurallarınızı oluşturun:
+ * 4x4, 5x5 ve 6x6 boyutlu tahtalar
+ * Farklı süreler
+ * Çeşitli puanlama ve ipucu modları
+
+Tamamen açık kaynaklı. Reklam yok. Uygulama içi satın alma yok. İzleme yok. Asla.
+
+Lütfen GitHub sponsorları veya Liberapay aracılığıyla daha fazla geliştirilmesini destekleyin.
