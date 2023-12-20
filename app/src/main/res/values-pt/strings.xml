@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="sort">Ordenar</string>
     <string name="theme_high_contrast">Alto contraste</string>
-    <string name="pref_definitionProvider_summary">Selecione um provedor de definição para usar. Se o provedor selecionado não estiver instalado, uma fonte online como o Wiktionary será usada.</string>
+    <string name="pref_definitionProvider_summary">Se o provedor selecionado não estiver instalado, uma fonte online como o Wiktionary será usada.</string>
     <string name="theme_dark">Escuro</string>
     <string name="theme_light">Claro</string>
     <string name="pref_theme_dialog">Selecionar tema</string>
@@ -16,7 +16,7 @@
     <string name="pref_definitionProvider">Provedor de definições</string>
     <string name="pref_breakdown_summary">Se a contagem de palavras mostra ou não as contagens por tamanho da palavra</string>
     <string name="pref_breakdown">Mostrar detalhamento do tamanho da palavra</string>
-    <string name="reset_scores_prompt">Deseja realmente zerar os recordes de todos os modos de jogo\?</string>
+    <string name="reset_scores_prompt">Deseja reiniciar realmente os recordes de todos os modos de jogo a zero? Isto não pode ser desfeito.</string>
     <string name="high_scores_reset">Os recordes foram zerados.</string>
     <string name="pref_resetScores">Zerar recordes</string>
     <string name="high_score">Recorde</string>
@@ -45,7 +45,7 @@
 \n
 \n</string>
     <string name="dialog_about_title">Sobre o Lexica</string>
-    <string name="pref_sounds">Sons ativados</string>
+    <string name="pref_sounds">Efeitos Sonoros</string>
     <string name="hint_colour">Cor do título</string>
     <string name="tile_count">Quantidade de palavras</string>
     <string name="pref_hintMode_summary">Mostra a quantidade de palavras em que cada letra pode ser usada</string>
@@ -174,4 +174,7 @@
         <item quantity="other"/>
     </plurals>
     <string name="pref_minWordLength">Tamanho mínimo das palavras</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Finlandês</string>
+    <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turco</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretão</string>
 </resources>
