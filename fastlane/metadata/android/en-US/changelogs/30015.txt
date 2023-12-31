@@ -1,0 +1,4 @@
+Dictionaries:
+ * Added Turkish dictionary (thanks to feedback from @bmusalli).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
