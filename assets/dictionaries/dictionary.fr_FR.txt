@@ -3893,8 +3893,6 @@ aigrit
 aigrît
 aigrîtes
 aigu
-aiguë
-aiguës
 aiguière
 aiguières
 aiguilla
@@ -5380,8 +5378,6 @@ ambiante
 ambiantes
 ambiants
 ambigu
-ambiguë
-ambiguës
 ambiguïté
 ambigus
 ambisexué
@@ -13331,7 +13327,6 @@ bégonia
 bégonias
 bégu
 bègue
-béguë
 bègues
 bégueta
 béguetai
@@ -13726,8 +13721,6 @@ béryllium
 béryls
 besace
 besaces
-besaiguë
-besaiguës
 besant
 besants
 bésef
@@ -15642,10 +15635,6 @@ boche
 boches
 bock
 bocks
-boësse
-boësses
-boëte
-boëtes
 boetta
 boettai
 boettais
@@ -20755,9 +20744,7 @@ cannions
 cannisse
 cannisses
 cannons
-canoë
 canoéiste
-canoës
 canon
 canonial
 canoniale
@@ -25133,8 +25120,6 @@ cigarillo
 cigogne
 cigogneau
 cigognes
-ciguë
-ciguës
 cil
 ciliaire
 ciliaires
@@ -29018,8 +29003,6 @@ contiens
 contient
 contiez
 contigu
-contiguë
-contiguës
 contigus
 continent
 contînmes
@@ -31137,17 +31120,6 @@ crapahute
 crapahuté
 crapaud
 crapauds
-crapaüta
-crapaütai
-crapaütas
-crapaütât
-crapaüte
-crapaüté
-crapaütée
-crapaüter
-crapaütes
-crapaütés
-crapaütez
 crapula
 crapulai
 crapulais
@@ -34337,7 +34309,6 @@ débutons
 débuts
 déc
 déca
-deçà
 décacheta
 décacheté
 décadaire
@@ -37498,7 +37469,6 @@ déiste
 déistes
 déité
 déités
-déjà
 déjanta
 déjantai
 déjantais
@@ -37650,7 +37620,6 @@ déjugés
 déjugez
 déjugiez
 déjugions
-delà
 délabra
 délabrai
 délabrais
@@ -59509,8 +59478,6 @@ exigibles
 exigiez
 exigions
 exigu
-exiguë
-exiguës
 exiguïté
 exiguïtés
 exigus
@@ -66326,8 +66293,6 @@ fuguez
 fuguiez
 fuguions
 fuguons
-führer
-führers
 fui
 fuie
 fuient
@@ -73959,7 +73924,6 @@ hoir
 hoirie
 hoiries
 hoirs
-holà
 holding
 holdings
 hollande
@@ -85354,7 +85318,6 @@ madriers
 madrigal
 madrigaux
 madrilène
-maelström
 maestoso
 maestria
 maestro
@@ -94058,7 +94021,6 @@ nodule
 nodules
 noduleuse
 noduleux
-noël
 noétique
 noétiques
 noeud
@@ -102847,7 +102809,6 @@ pierrot
 pierrots
 pies
 piéta
-pietà
 piétai
 piétaient
 piétaille
@@ -102856,7 +102817,6 @@ piétait
 piétâmes
 piétant
 piétas
-pietàs
 piétasse
 piétasses
 piétât
@@ -104966,7 +104926,6 @@ poêlasses
 poêlât
 poêlâtes
 poêle
-poële
 poêlé
 poêlée
 poêlées
@@ -104983,7 +104942,6 @@ poêleriez
 poêlerons
 poêleront
 poêles
-poëles
 poêlés
 poêlez
 poêliez
@@ -120405,7 +120363,6 @@ revoici
 revoie
 revoient
 revoies
-revoilà
 revoir
 revoirs
 revois
@@ -131193,8 +131150,6 @@ suractivé
 surah
 surahs
 suraigu
-suraiguë
-suraiguës
 suraigus
 surajouta
 surajoute
@@ -143153,7 +143108,6 @@ voie
 voient
 voies
 voila
-voilà
 voilage
 voilages
 voilai
@@ -143274,7 +143228,6 @@ volant
 volante
 volantes
 volants
-volapük
 volas
 volasse
 volassent
@@ -144580,3 +144533,55 @@ zython
 zythons
 zythum
 zythums
+
+#
+# Removed the following words due to the characters àöüë each appearing in less than 50 words.
+# See https://github.com/lexica/lexica/issues/372.
+#
+# aiguë
+# aiguës
+# ambiguë
+# ambiguës
+# béguë
+# besaiguë
+# besaiguës
+# boësse
+# boësses
+# boëte
+# boëtes
+# canoë
+# canoës
+# ciguë
+# ciguës
+# contiguë
+# contiguës
+# crapaüta
+# crapaütai
+# crapaütas
+# crapaütât
+# crapaüte
+# crapaüté
+# crapaütée
+# crapaüter
+# crapaütes
+# crapaütés
+# crapaütez
+# deçà
+# déjà
+# delà
+# exiguë
+# exiguës
+# führer
+# führers
+# holà
+# maelström
+# noël
+# pietà
+# pietàs
+# poële
+# poëles
+# revoilà
+# suraiguë
+# suraiguës
+# voilà
+# volapük
