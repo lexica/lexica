@@ -41,7 +41,7 @@ public class GeneticAlgorithm {
     private static final int SEPARATE_RUNS = 5;
     private static final int ITERATIONS = 1000;
     private static final int NUM_OF_GENOMES = 20;
-    private static final int FITNESS_CALC_BOARDS_TO_GENERATE = 100;
+    public static final int FITNESS_CALC_BOARDS_TO_GENERATE = 100;
     private static final double RATE_OF_MUTATION = 0.05;
     private static final double RATE_OF_NEW_RANDOM_GENOMES = 0.05;
     private static final int MAX_BEST_TO_KEEP = NUM_OF_GENOMES / 4;
@@ -197,16 +197,16 @@ public class GeneticAlgorithm {
 
     }
 
-    static class Fitness {
+    public static class Fitness {
 
         private final SummaryStatistics stats;
 
-        public static Fitness calc(File trieDir, Genome genome, Language language) throws IOException {
-            return calc(trieDir, genome, language, FITNESS_CALC_BOARDS_TO_GENERATE);
+        public static Fitness calc(File trieDir, CharProbGenerator charProbGenerator, Language language) throws IOException {
+            return calc(trieDir, charProbGenerator, language, FITNESS_CALC_BOARDS_TO_GENERATE);
         }
 
-        public static Fitness calc(File trieDir, Genome genome, Language language, int work) throws IOException {
-            return new Fitness(generateStats(trieDir, genome, language, work));
+        public static Fitness calc(File trieDir, CharProbGenerator charProbGenerator, Language language, int work) throws IOException {
+            return new Fitness(generateStats(trieDir, charProbGenerator, language, work));
         }
 
         private static Map<Language, byte[]> cachedTries = new HashMap<>();
@@ -226,10 +226,10 @@ public class GeneticAlgorithm {
             return new ByteArrayInputStream(cachedTries.get(language));
         }
 
-        private static SummaryStatistics generateStats(File trieDir, Genome genome, Language language, int iterations) throws IOException {
+        private static SummaryStatistics generateStats(File trieDir, CharProbGenerator charProbGenerator, Language language, int iterations) throws IOException {
             SummaryStatistics stats = new SummaryStatistics();
             for (int i = 0; i < iterations; i++) {
-                Board board = genome.toCharProbGenerator().generateFourByFourBoard();
+                Board board = new CharProbGenerator(charProbGenerator).generateFourByFourBoard();
                 InputStream stream = trieReader(trieDir, language);
                 Trie dict = new StringTrie.Deserializer().deserialize(stream, board, language);
                 int numWords = dict.solver(board, new WordFilter.MinLength(3)).size();
@@ -375,7 +375,7 @@ public class GeneticAlgorithm {
 
         Fitness getFitness() throws IOException {
             if (cachedFitness == null) {
-                cachedFitness = Fitness.calc(trieDir, this, language);
+                cachedFitness = Fitness.calc(trieDir, toCharProbGenerator(), language);
             }
 
             return cachedFitness;

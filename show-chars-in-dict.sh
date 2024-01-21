@@ -22,6 +22,6 @@ if [[ ! -f "$DICT_FILE" ]]; then
 fi 
 
 # Adapted from https://stackoverflow.com/a/387704
-sed -e "s/./\0\n/g" "$DICT_FILE" | sort | uniq -c
+grep -Pv '^(\s*|#.*)$' < "$DICT_FILE" | sed -e "s/./\0\n/g" | sort | uniq -c
 echo ""
 
