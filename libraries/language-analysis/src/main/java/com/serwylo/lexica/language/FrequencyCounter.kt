@@ -32,12 +32,9 @@ object FrequencyCounter {
         println("")
     }
 
-    fun countCharsInDict(words: List<String>): Map<Char, MutableList<Int>> {
+    fun countCharsInDict(words: List<String>): Map<Char, List<Int>> {
 
-        val charsInDict = mutableMapOf<Char, MutableList<Int>>()
-
-        words.forEach { word ->
-
+        return words.foldRight(mutableMapOf<Char, MutableList<Int>>()) { word, charsInDict ->
             val charCountsInWord = countCharsInWord(word)
 
             charCountsInWord.onEach { (c, charCountInWord) ->
@@ -51,9 +48,9 @@ object FrequencyCounter {
                 }
                 charsInDict[c] = charCountInDict
             }
-        }
 
-        return charsInDict.toMap()
+            charsInDict
+        }.toMap()
 
     }
 
