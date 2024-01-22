@@ -9,36 +9,13 @@ object FrequencyCounter {
 
     fun run(trieDir: File, dictDir: File, outputDir: File, language: Language) {
 
-        val charsInDict = mutableMapOf<Char, MutableList<Int>>()
-
         val dictionaryFile = File(dictDir, language.dictionaryFileName)
         val words = dictionaryFile.readLines().filterNot { it.matches("^(\\s*|#.*)$".toRegex()) }
 
-        words.forEach { word ->
-
-            val charsInWord = word.toCharArray()
-            val charCountsInWord = mutableMapOf<Char, Int>()
-            charsInWord.onEach {  c ->
-                val countForCharInWord = charCountsInWord[c] ?: 0
-                charCountsInWord[c] = countForCharInWord + 1
-            }
-
-            charCountsInWord.onEach { (c, charCountInWord) ->
-                val charCountInDict = charsInDict[c] ?: mutableListOf()
-                for (i in 0 until charCountInWord) {
-                    if (charCountInDict.size <= i) {
-                        charCountInDict.add(1)
-                    } else {
-                        charCountInDict[i] ++
-                    }
-                }
-                charsInDict[c] = charCountInDict
-            }
-        }
-
+        val charsInDict = countCharsInDict(words)
         val probsString = renderProbs(charsInDict)
         val charProbGenerator = createCharProbGenerator(probsString, language)
-        val fitness = GeneticAlgorithm.Fitness.calc(trieDir, charProbGenerator, language)
+        val fitness = Fitness.calc(trieDir, charProbGenerator, language)
 
         println("#")
         println("# These numbers represent the frequency of each character in the dictionary.")
@@ -55,7 +32,42 @@ object FrequencyCounter {
         println("")
     }
 
-    private fun renderProbs(charsInDict: Map<Char, List<Int>>): String {
+    fun countCharsInDict(words: List<String>): Map<Char, MutableList<Int>> {
+
+        val charsInDict = mutableMapOf<Char, MutableList<Int>>()
+
+        words.forEach { word ->
+
+            val charCountsInWord = countCharsInWord(word)
+
+            charCountsInWord.onEach { (c, charCountInWord) ->
+                val charCountInDict = charsInDict[c] ?: mutableListOf()
+                for (i in 0 until charCountInWord) {
+                    if (charCountInDict.size <= i) {
+                        charCountInDict.add(1)
+                    } else {
+                        charCountInDict[i] ++
+                    }
+                }
+                charsInDict[c] = charCountInDict
+            }
+        }
+
+        return charsInDict.toMap()
+
+    }
+
+    fun countCharsInWord(word: String): Map<Char, Int> {
+        val charsInWord = word.toCharArray()
+        val charCountsInWord = mutableMapOf<Char, Int>()
+        charsInWord.onEach {  c ->
+            val countForCharInWord = charCountsInWord[c] ?: 0
+            charCountsInWord[c] = countForCharInWord + 1
+        }
+        return charCountsInWord
+    }
+
+    fun renderProbs(charsInDict: Map<Char, List<Int>>): String {
         return charsInDict
             .toSortedMap(Comparator { a, b -> a - b })
             .map { (letter, counts) -> "$letter ${counts.joinToString(" ")}" }
