@@ -63,30 +63,10 @@ of a subsequent letter being chosen again is less than the original choice of th
 Once a letters has had all of its numbers exhausted, that letter will not appear on the board any more.
 Thus, in the example above, `c 3 1` means that the letter `c` can be chosen at most twice per board.
 
-
 ### Generating random board generators
 
 The original source code of Lexic included hard coded versions of these letter frequencies,
 without a way to generate them.
-This version of Lexica includes a genetic algorithm which will attempt to produce these probability
-distributions with the best properties, namely:
-
-> Random boards generated from them tend to have lots of words, but not too many
+This version of Lexica includes a script to count the number of times each letter occurs.
 
 To run the algorithm: `./gradlew analyseLanguage_LANG`.
-
-The genetic algorithm will start by seeding some random genomes, where a gene is represented by a single line
-(e.g. `e 24 12 3 1 1`).
-The way it is seeded is by looking at all words in the dictionary, and the distribution of letters in these words.
-If the dictionary doesn't have a word with more than 5 `e`'s, then it will not start with a genome of `e 24 12 3 1 1 1 1 1`,
-because that has the potential to come up with some nonsense boards, e.g. those which have too many `z`'s or other
-weird characteristics.
-
-Breeding the genomes together is based on randomly chosing a row of distributions from one of two parents.
-
-Fitness is determined by generating hundreds (or thousands) of boards from a distribution, and looking at
-the min, mean, and max number of words that are possible with each of the boards.
-The fitness function cares a lot about mean, and quite a lot about the minimum (e.g. boards with zero words
-are useless), and only slightly about the max.
-
-The GA can be run several times, and will output the fittest genome at the end of each run, saving it to disk.

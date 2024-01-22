@@ -6,7 +6,7 @@
 #  - If twice, the 1st probability is incremented by 2, and the 2nd probability by 1, etc.
 #
 # When generating 100 4x4 boards, the following number of words were observed:
-#   Min: 27, mean: 133, max: 369, stddev: 75, score: 6391
+#   Min: 15, mean: 111, max: 282, stddev: 61
 #
 
 a 85714 23802 1745 27

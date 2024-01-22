@@ -2,7 +2,6 @@ package com.serwylo.lexica.language
 
 import com.serwylo.lexica.game.CharProbGenerator
 import com.serwylo.lexica.lang.Language
-import com.serwylo.lexica.language.GeneticAlgorithm.Fitness
 import java.io.File
 
 object FrequencyCounter {
@@ -25,7 +24,7 @@ object FrequencyCounter {
 #  - If once, the 1st probability is incremented by 1.
 #  - If twice, the 1st probability is incremented by 2, and the 2nd probability by 1, etc.
 #
-# When generating ${GeneticAlgorithm.FITNESS_CALC_BOARDS_TO_GENERATE} 4x4 boards, the following number of words were observed:
+# When generating ${Fitness.FITNESS_CALC_BOARDS_TO_GENERATE} 4x4 boards, the following number of words were observed:
 #   $fitness
 #
 
