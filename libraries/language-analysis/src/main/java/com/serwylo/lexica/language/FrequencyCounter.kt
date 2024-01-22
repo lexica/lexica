@@ -17,19 +17,32 @@ object FrequencyCounter {
         val charProbGenerator = createCharProbGenerator(probsString, language)
         val fitness = Fitness.calc(trieDir, charProbGenerator, language)
 
-        println("#")
-        println("# These numbers represent the frequency of each character in the dictionary.")
-        println("#")
-        println("# When a letter is found in a word:")
-        println("#  - If once, the 1st probability is incremented by 1.")
-        println("#  - If twice, the 1st probability is incremented by 2, and the 2nd probability by 1, etc.")
-        println("#")
-        println("# When generating ${GeneticAlgorithm.FITNESS_CALC_BOARDS_TO_GENERATE} 4x4 boards, the following number of words were observed:")
-        println("#   $fitness")
-        println("#")
-        println("")
-        println(probsString)
-        println("")
+        val output = """
+#
+# These numbers represent the frequency of each character in the dictionary.
+#
+# When a letter is found in a word:
+#  - If once, the 1st probability is incremented by 1.
+#  - If twice, the 1st probability is incremented by 2, and the 2nd probability by 1, etc.
+#
+# When generating ${GeneticAlgorithm.FITNESS_CALC_BOARDS_TO_GENERATE} 4x4 boards, the following number of words were observed:
+#   $fitness
+#
+
+$probsString
+        """.trimIndent()
+
+        println(output)
+
+        val outputFile = File(trieDir, language.letterDistributionFileName)
+        val outputTestFile = File(trieDir.parentFile.parentFile.parentFile, "test${File.separator}resources${File.separator}${language.letterDistributionFileName}")
+
+        println("The above output is written to:")
+        println(" * ${outputFile.absolutePath}")
+        println(" * ${outputTestFile.absolutePath}")
+
+        outputFile.writeText(output, Charsets.UTF_8)
+        outputTestFile.writeText(output, Charsets.UTF_8)
     }
 
     fun countCharsInDict(words: List<String>): Map<Char, List<Int>> {

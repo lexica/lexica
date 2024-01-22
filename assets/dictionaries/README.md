@@ -12,10 +12,7 @@ This is not meant to be comprehensive, but it should at least touch on the main 
 * [ ] **Generate a trie representation of the dictionary** - `./gradlew buildDictionary_de`
 * [ ] **Subclass `Language`** - Add it to the `libraries/trie` library
 * [ ] **Tell Lexica about your `Language` class** - Add an entry to `Language#getAllLanguages()`
-* [ ] **Generate random letter distributions** - `./gradlew analyseLanguage_de` (saves distributions to `/tmp`)
-* [ ] **Choose "best" distribution** - Typically the highest "score", but boards with low min or median scores are generally poor)
-* [ ] **Rename the distribution file** - `letters_LANG.txt`, e.g. `letters_de_DE.txt`
-* [ ] **Copy to project** - The renamed file should exist in `app/src/test/resources/` and `app/src/main/res/raw/`
+* [ ] **Generate random letter distributions** - `./gradlew analyseLanguage_de`
 * [ ] **Add language name (in English)** - Edit `app/src/main/res/values/strings.xml`, adding `pref_dict_LANG` and optionally `pref_dict_LANG_description`
 * [ ] **Add scrabble scores** - Edit your `Language` subclass, adding letter scores from [Wikipedia - Scrabble letter distributions](https://en.wikipedia.org/wiki/Scrabble_letter_distributions)
 * [ ] **Run tests** - `./gradlew check && ./gradlew connectedCheck`
