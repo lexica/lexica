@@ -1,1 +1,1 @@
-Find as many words as possible on a grid of random letters within a time limit
+Belirli bir süre içinde rastgele harflerden oluşan bir ızgarada mümkün olduğunca çok kelime bulun
