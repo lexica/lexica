@@ -2,6 +2,7 @@ package com.serwylo.lexica.trie.tests;
 
 import com.serwylo.lexica.lang.EnglishGB;
 import com.serwylo.lexica.lang.EnglishUS;
+import com.serwylo.lexica.lang.FrenchNoDiacritics;
 import com.serwylo.lexica.lang.Persian;
 import com.serwylo.lexica.trie.util.LetterFrequency;
 
@@ -36,6 +37,29 @@ public class CustomTrieTest extends TrieTest {
         addWords(gbTrie, BOTH_DIALECTS);
 
         assertEverythingAboutTrie(usTrie, gbTrie, new StringTrie.Deserializer());
+    }
+
+    @Test
+    public void testSuffixes() {
+        String[] englishWords = {
+                "without", // No "q" or "qu" to deal with.
+                "queen", // "qu" present, but only at the beginning.
+        };
+
+        String[] frenchWords = {
+                "bonjour", // No "q" or "qu" to deal with.
+                "que", // As with English and others, "qu" only at the beginning.
+                "jusqu", // Unlike English, this ends with "qu" which caused some issues with the trie handling initially.
+        };
+
+        StringTrie englishTrie = new StringTrie(new EnglishGB());
+        StringTrie frenchTrie = new StringTrie(new FrenchNoDiacritics());
+
+        addWords(englishTrie, englishWords);
+        addWords(frenchTrie, frenchWords);
+
+        assertTrieMatches("English qu sufix works as expected", englishTrie, englishWords, new EnglishGB());
+        assertTrieMatches("French qu sufix works as expected, including at end of word", frenchTrie, frenchWords, new FrenchNoDiacritics());
     }
 
     @Test
