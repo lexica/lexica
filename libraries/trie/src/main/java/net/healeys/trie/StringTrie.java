@@ -290,7 +290,7 @@ public class StringTrie extends Trie {
         public TrieNode addSuffix(String word, int currentPosition) {
             Node child = ensureChildAt(word, currentPosition);
 
-            if (currentPosition == word.length() - 1) {
+            if (currentPosition + getCharAt(word, currentPosition).length() == word.length()) {
                 child.isWord = true;
                 return child;
             } else {

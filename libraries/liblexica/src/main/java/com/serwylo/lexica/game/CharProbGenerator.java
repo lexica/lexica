@@ -62,6 +62,13 @@ public class CharProbGenerator {
 
     }
 
+    public CharProbGenerator(CharProbGenerator charProbGenerator) {
+        charProbs = new ArrayList<>(charProbGenerator.charProbs.size());
+        for (ProbabilityQueue q : charProbGenerator.charProbs) {
+            charProbs.add(new ProbabilityQueue(q));
+        }
+    }
+
     public Map<String, List<Integer>> getDistribution() {
         Map<String, List<Integer>> dist = new HashMap<>();
         for (ProbabilityQueue p : charProbs) {
@@ -137,6 +144,14 @@ public class CharProbGenerator {
         ProbabilityQueue(String l) {
             letter = l;
             probQueue = new LinkedList<>();
+        }
+
+        ProbabilityQueue(ProbabilityQueue queue) {
+            letter = queue.getLetter();
+            probQueue = new LinkedList<>();
+            for (var p : queue.probQueue) {
+                probQueue.add(p);
+            }
         }
 
         /**

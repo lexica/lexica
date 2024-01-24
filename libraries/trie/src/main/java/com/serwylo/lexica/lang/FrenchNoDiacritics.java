@@ -33,13 +33,16 @@ public class FrenchNoDiacritics extends Language {
         letterPoints.put("v", 4);
 
         letterPoints.put("j", 8);
-        letterPoints.put("q", 8);
 
         letterPoints.put("k", 10);
         letterPoints.put("w", 10);
         letterPoints.put("x", 10);
         letterPoints.put("y", 10);
         letterPoints.put("z", 10);
+
+        // "q" is normally 8, but we always have a "u" next to the "q", so it isn't as difficult
+        // to incorporate into words when present.
+        letterPoints.put("qu", 4);
     }
 
     @Override
@@ -59,6 +62,10 @@ public class FrenchNoDiacritics extends Language {
 
     @Override
     public String toDisplay(String value) {
+        if (value.equals("qu")) {
+            return "Qu";
+        }
+
         return value.toUpperCase(getLocale());
     }
 
@@ -69,6 +76,10 @@ public class FrenchNoDiacritics extends Language {
 
     @Override
     public String applyMandatorySuffix(String value) {
+        if (value.equals("q")) {
+            return "qu";
+        }
+
         return value;
     }
 

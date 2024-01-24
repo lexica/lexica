@@ -51,7 +51,7 @@ public class LanguageAnalysisApp {
             return;
         }
 
-        new GeneticAlgorithm().run(trieDir, dictDir, outputDir, language);
+        FrequencyCounter.INSTANCE.run(trieDir, dictDir, outputDir, language);
     }
 
     private static void printUsage() {

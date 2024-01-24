@@ -31,8 +31,12 @@ public class TrieBuilder {
     private static void readCorpus(Language language, File dictFile, Trie trie) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(dictFile), Charset.forName("UTF-8")));
         String line;
+        String ignoreRegex = "^(|\\s+|#.*)$";
         while ((line = br.readLine()) != null) {
             String word = line.toLowerCase(language.getLocale());
+            if (word.matches(ignoreRegex)) {
+                continue;
+            }
             trie.addWord(word);
         }
     }
