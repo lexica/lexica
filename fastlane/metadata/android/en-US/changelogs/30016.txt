@@ -1,0 +1,6 @@
+French dictionary improvements (thanks to input from @mccoys):
+ * Improved board selection: Probabilities now calculated from the frequency with which letters occur in the dictionary.
+ * Removed letters à, ö, ü, ë: Each occur in less than 50 words, typically in loanwords.
+ * Q is always followed by u.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
