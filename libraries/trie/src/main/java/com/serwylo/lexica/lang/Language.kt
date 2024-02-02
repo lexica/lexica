@@ -122,6 +122,7 @@ abstract class Language {
                 "fr_FR" to French(),
                 "fr_FR_no_diacritics" to FrenchNoDiacritics(),
                 "hu" to Hungarian(),
+                "hr_HR" to Croatian(),
                 "it" to Italian(),
                 "ja" to Japanese(),
                 "nl" to Dutch(),
