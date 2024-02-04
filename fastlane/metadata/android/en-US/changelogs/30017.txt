@@ -1,0 +1,4 @@
+Dictionaries:
+ * Added Croatian dictionary (thanks to help from @milotype).
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
