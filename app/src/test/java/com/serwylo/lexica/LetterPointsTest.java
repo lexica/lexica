@@ -4,6 +4,7 @@ package com.serwylo.lexica;
 import com.serwylo.lexica.game.CharProbGenerator;
 import com.serwylo.lexica.lang.Language;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -43,6 +44,8 @@ public class LetterPointsTest {
     @Test
     public void ensureLetterScoresExistForEntireAlphabet() {
         InputStream stream = getClass().getClassLoader().getResourceAsStream(language.getLetterDistributionFileName());
+        Assert.assertNotNull("Letter probabilities exist for " + language.getName(), stream);
+
         CharProbGenerator charProbs = new CharProbGenerator(stream, language);
 
         for (String letter : charProbs.getAlphabet()) {

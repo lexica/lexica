@@ -59,6 +59,7 @@ def languages = [
   "fr_FR",
   "fr_FR_no_diacritics",
   "hu",
+  "hr_HR",
   "it",
   "ja",
   "nl",
