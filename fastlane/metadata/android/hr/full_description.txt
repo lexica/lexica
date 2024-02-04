@@ -1,14 +1,14 @@
-Igra riječi u kojoj igrači moraju pronači što više riječi u mreži nasumičnih slova u određenom vremenu.
+Igra riječi u kojoj igrači moraju pronači što više riječi u mreži slučajno odabranih slova u određenom vremenu.
 
- Odaberi između nekoliko međunarodnih rječnika, s ukupnim brojem od milijuna riječi.
+Odaberi između nekoliko međunarodnih rječnika s ukupno milijun riječi.
 
- Igraj protiv prijatelja u modusu za više igrača, šaljući im izazove putem SMS-a/e-maila/QR koda/itd.
+Igraj protiv prijatelja u modusu za više igrača, šaljući im izazove putem SMS-a/e-maila/QR koda/itd.
 
- Izgradi vlastita pravila pomoću prilagodljivih modusa igre:
- * Daske veličine 4 × 4, 5 × 5 i 6 × 6
+Izgradi vlastita pravila pomoću prilagodljivih modusa igre:
+ * Ploče veličina 4 × 4, 5 × 5 i 6 × 6
  * Različita trajanja
  * Razni modusi bodovanja i savjeta
 
- Potpuno otvoreni kod. Bez reklama. Bez kupnje putem aplikacije. Bez praćenja. Ikada.
+Potpuno otvoreni kod. Bez reklama. Bez kupnje putem aplikacije. Bez praćenja. Ikada.
 
- Podrži daljnji razvoj putem GitHub sponzora ili Liberapaya.
+Podrži daljnji razvoj putem GitHub sponzora ili Liberapaya.
