@@ -180,4 +180,5 @@
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Breton</string>
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Finština</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turečtina</string>
+    <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">Chorvatština</string>
 </resources>
