@@ -185,4 +185,5 @@
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">bretooni</string>
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">soome</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">türgi</string>
+    <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">horvaadi</string>
 </resources>
