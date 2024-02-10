@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="sort">מיין</string>
     <string name="theme_high_contrast">ניגודיות גבוה</string>
     <string name="theme_dark">כהה</string>
@@ -53,24 +53,33 @@
     <string name="pref_timeLimit">מגבלת זמן</string>
     <string name="pref_boardSize">גודל הלוח</string>
     <string name="lexicon_is_in_beta">בטא</string>
-    <string name="pref_dict_en_US">אנגלית (ארה\"ב)</string>
+    <string name="pref_dict_en_US">אנגלית אמריקאית</string>
     <string name="pref_dict_uk">אוקראינית</string>
-    <string name="pref_dict_en_GB">אנגלית (בריטניה)</string>
+    <string name="pref_dict_en_GB">אנגלית בריטית</string>
     <string name="pref_dict_ru">רוסית</string>
-    <string name="pref_dict_pt_BR_no_diacritics">פורטוגזית (ברזיל)</string>
+    <string name="pref_dict_pt_BR_no_diacritics">פורטוגלית ברזילאית</string>
     <string name="pref_dict_pl">פולנית</string>
     <string name="pref_dict_nl">הולנדית</string>
     <string name="pref_dict_ja">יפנית</string>
     <string name="pref_dict_it">איטלקית</string>
     <string name="pref_dict_hu">הונגרית</string>
-    <string name="pref_dict_fr_FR">צרפתית</string>
+    <string name="pref_dict_fr_FR">צרפתית ( מורחבת)</string>
     <string name="pref_dict_fa">פרסית</string>
     <string name="pref_dict_es">ספרדית</string>
-    <string name="pref_dict_de_DE">גרמנית</string>
+    <string name="pref_dict_de_DE">גרמנית (מורחבת)</string>
     <string name="pref_dict_ca">קטלאנית</string>
     <string name="pref_dict">אוצר מלים</string>
     <string name="prefs">העדפות</string>
-    <string name="restore_game">שחזר משחק</string>
+    <string name="restore_game">שחזור משחק</string>
     <string name="new_game">משחק חדש</string>
     <string name="app_name">Lexica</string>
+    <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">קרואטית</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">פורטוגלית ברזילאית (מורחבת)</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">רוסית (מורחבת)</string>
+    <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">טורקית</string>
+    <string name="pref_minWordLength">אורך מילה מזערי</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">ברטונית</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">גרמנית</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">צרפתית</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">פינית</string>
 </resources>
