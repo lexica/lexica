@@ -1,0 +1,14 @@
+Slovná hra, v ktorej hráči v časovom limite hľadajú čo najviac slov v mriežke s náhodnými písmenami.
+
+Vyberte si z niekoľkých medzinárodných slovníkov s celkovým počtom miliónov slov.
+
+Hrajte proti priateľom v režime pre viac hráčov tak, že im pošlete offline výzvy prostredníctvom SMS/mailu/kódu QR atď.
+
+Vytvorte si vlastné pravidlá s prispôsobiteľnými hernými režimami:
+ * Hracie plochy s rozmermi 4x4, 5x5 a 6x6
+ * Rôzne dĺžky trvania
+ * Rôzne spôsoby bodovania a nápovedy
+
+Plne otvorený zdrojový kód. Žiadne reklamy. Žiadne nákupy v hre. Žiadne sledovanie. Nikdy.
+
+Podporte ďalší vývoj na GitHub alebo Liberapay.
