@@ -3,8 +3,10 @@ package com.serwylo.lexica
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.serwylo.lexica.databinding.NewGameModeBinding
 import com.serwylo.lexica.db.Database
@@ -44,8 +46,26 @@ class NewGameModeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun TextInputEditText.isValid() = with(this.text) {
-        isNullOrBlank().not() && Integer.parseInt(toString()) > 0
+    private fun TextInputEditText.isValid() : Boolean = with(this.text.toString()) {
+        return@with when {
+            isBlank() -> {
+                binding.root.showSnackbar(context.getString(R.string.time_limit_must_be_set))
+                false
+            }
+            toLong() * 60 > MAX_TIME_LIMIT_IN_MINUTES -> {
+                binding.root.showSnackbar(context.getString(R.string.max_time_limit))
+                false
+            }
+            Integer.parseInt(this) <= 0 -> {
+                binding.root.showSnackbar(context.getString(R.string.time_limit_too_short))
+                false
+            }
+            else -> true
+        }
+    }
+
+    private fun View.showSnackbar(text: String) {
+        Snackbar.make(this, text, Snackbar.LENGTH_LONG).show()
     }
 
     private fun createNewGameMode() {
@@ -147,5 +167,9 @@ class NewGameModeActivity : AppCompatActivity() {
 
         return "hint_none"
 
+    }
+
+    private companion object {
+        const val MAX_TIME_LIMIT_IN_MINUTES = 2592000
     }
 }

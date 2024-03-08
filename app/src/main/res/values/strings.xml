@@ -150,6 +150,9 @@
     <string name="invite__dont_have_lexica_installed_web">Or try out Lexica in the Browser (beta):</string>
     <string name="send_challenge_invite_to">Send challenge to…</string>
     <string name="send_multiplayer_invite_to">Send invite to…</string>
+    <string name="time_limit_must_be_set">Time limit must be set</string>
+    <string name="max_time_limit">Max time limit is 30 days (43200 minutes)</string>
+    <string name="time_limit_too_short">Time limit too short</string>
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d word (tap to refresh)</item>
         <item quantity="other">%1$d words (tap to refresh)</item>
