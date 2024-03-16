@@ -185,4 +185,5 @@
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretons</string>
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Fins</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turks</string>
+    <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">Kroatisch</string>
 </resources>
