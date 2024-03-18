@@ -186,4 +186,7 @@
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">soome</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">türgi</string>
     <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">horvaadi</string>
+    <string name="max_time_limit">Pikim võimalik aeg on 30 päeva (43200 minutit)</string>
+    <string name="time_limit_must_be_set">Palun seadista ajapiirang</string>
+    <string name="time_limit_too_short">Ajapiirang on liiga väike</string>
 </resources>
