@@ -191,4 +191,7 @@
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Finski</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turski</string>
     <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">Hrvatski</string>
+    <string name="time_limit_must_be_set">Vremensko ograničenje se mora postaviti</string>
+    <string name="max_time_limit">Maksimalno vremensko ograničenje je 30 dana (43.200 minuta)</string>
+    <string name="time_limit_too_short">Vremensko ograničenje je prekratko</string>
 </resources>
