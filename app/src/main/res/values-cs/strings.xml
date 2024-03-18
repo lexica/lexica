@@ -181,4 +181,7 @@
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Finština</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turečtina</string>
     <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">Chorvatština</string>
+    <string name="max_time_limit">Maximální časový limit je 30 dní (43200 minut)</string>
+    <string name="time_limit_must_be_set">Musí být nastaven časový limit</string>
+    <string name="time_limit_too_short">Časový limit je příliš krátký</string>
 </resources>
