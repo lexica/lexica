@@ -1,0 +1,14 @@
+Un juego de palabras en el que los jugadores encuentran el mayor número posible de palabras en una cuadrícula de letras aleatorias con un límite de tiempo.
+
+Elige entre varios diccionarios internacionales, con un total combinado de millones de palabras.
+
+Juega contra tus amigos en modo multijugador, enviándoles desafíos offline por SMS/correo electrónico/código QR/etc.
+
+Crea tus propias reglas con los modos de juego personalizables:
+ * Tableros de 4x4, 5x5 y 6x6.
+ * Diferentes duraciones
+ * Varios modos de puntuación y pistas
+
+Código totalmente abierto. Sin publicidad. Sin compras en la aplicación. Sin seguimiento.
+
+Por favor, apoye el desarrollo en GitHub o Liberapay.

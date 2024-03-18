@@ -1,0 +1,1 @@
+Encuentra tantas palabras como sea posible en la cuadrícula dentro del tiempo
