@@ -191,4 +191,7 @@
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">En finés</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turco</string>
     <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">Croata</string>
+    <string name="time_limit_must_be_set">Debe fijarse un límite de tiempo</string>
+    <string name="time_limit_too_short">El plazo es demasiado corto</string>
+    <string name="max_time_limit">El límite de tiempo máximo es de 30 días (43200 minutos)</string>
 </resources>
