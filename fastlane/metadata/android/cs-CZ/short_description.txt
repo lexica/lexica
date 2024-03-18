@@ -1,0 +1,1 @@
+Najděte co nejvíce slov na mřížce z náhodných písmen v určitém časovém limitu
