@@ -181,4 +181,7 @@
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretónčina</string>
     <string name="pref_minWordLength">Minimálna dĺžka slova</string>
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Fínština</string>
+    <string name="time_limit_must_be_set">Musí byť nastavený časový limit</string>
+    <string name="max_time_limit">Maximálny časový limit je 30 dní (43200 minút)</string>
+    <string name="time_limit_too_short">Časový limit je príliš krátky</string>
 </resources>
