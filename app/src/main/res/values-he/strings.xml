@@ -8,11 +8,11 @@
     <string name="pref_theme">ערכת נושא</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">באינטרנט</string>
     <string name="pref_definitionProvider_dialog">בחר ספק הגדרה</string>
-    <string name="pref_definitionProvider_summary">נא לבחור בספק הגדרה לשימוש. אם הספק הנבחר לא מותקן ייעשה שימוש במקור כגון ויקימילון.</string>
+    <string name="pref_definitionProvider_summary">אם הספק הנבחר לא מותקן ייעשה שימוש במקור כגון ויקימילון.</string>
     <string name="pref_definitionProvider">ספק הגדרה</string>
     <string name="pref_breakdown_summary">בין אם ספירת המילים מציגה ספירות לפי אורך המילה ובין אם לא</string>
     <string name="pref_breakdown">הצג פירוט אורך מילים</string>
-    <string name="reset_scores_prompt">האם אתה בטוח שברצונך לאפס את כל הנקודים הגבוהים עבור כל מצבי המשחק לאפס\?</string>
+    <string name="reset_scores_prompt">לאפס את כל שיאני הניקוד בכל מצבי המשחק לאפס? זאת פעולה בלתי הפיכה.</string>
     <string name="high_scores_reset">ניקודים אופסו.</string>
     <string name="pref_resetScores">אפס ניקודים</string>
     <string name="high_score">ניקוד גבוה</string>
@@ -42,7 +42,7 @@
 \n
 \n</string>
     <string name="dialog_about_title">על Lexica</string>
-    <string name="pref_sounds">צלילים מופעלים</string>
+    <string name="pref_sounds">אפקטים צליליים</string>
     <string name="hint_colour">צבע אריח</string>
     <string name="tile_count">מספר מילים</string>
     <string name="pref_hintMode_summary">מראה את מספר המילים שבהן ניתן להשתמש בכל אות</string>
@@ -82,4 +82,97 @@
     <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">גרמנית</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">צרפתית</string>
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">פינית</string>
+    <string name="game_mode_sprint_description">משחק קצר לאיתור כמה שיותר מילים שניתן.</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">כולל סימנים דיאקריטיים: çáéíóúâêôãõà והאותיות: kwy</string>
+    <string name="dialog_refresh_confirmation_message">הלוח התחדש</string>
+    <string name="high_scores">שיאני הניקוד</string>
+    <string name="input_game_mode_name_hint">שם</string>
+    <string name="input_game_mode_minutes_description">הגבלת זמן בדקות</string>
+    <string name="delete_custom_game_mode">למחוק את מצב המשחק המותאם „%1$s”? תוצאות השיא המתאימות תימחקנה.</string>
+    <string name="game_mode_marathon">מרתון</string>
+    <string name="game_mode_marathon_description">לנסות למצוא את כל המילים, בלי לחץ של זמן</string>
+    <string name="game_mode_legacy_description">היה בשימוש בגרסה ישנה יותר של לקסיקה</string>
+    <string name="error_restoring_game">לא ניתן לשחזר את המשחק שלך</string>
+    <string name="whats_new_web_lexica">מהיום לקסיקה גם דרך הדפדפן!</string>
+    <string name="whats_new_support">תמיכה בלקסיקה</string>
+    <string name="menu_view_found_words">הצגת מילים שנמצאו</string>
+    <string name="multiplayer_lobby__join_when_ready">כשכל השחקנים מוכנים, להצטרף למשחק.</string>
+    <string name="multiplayer__toggle_qr_web">הצגת קוד
+\nQR לאתר</string>
+    <string name="multiplayer__qr_code__accessible_description">קוד QR: אחרים יכולים לסרוק כדי להצטרף למשחק הזה</string>
+    <string name="multiplayer__start_game">התחלת משחק</string>
+    <string name="game_mode">מצב משחק</string>
+    <string name="new_game_mode">מצב משחק חדש</string>
+    <string name="share">שיתוף</string>
+    <string name="back">חזרה</string>
+    <string name="multiplayer__start_when_ready">כשכל השחקנים מוכנים, כולכם אמורים להתחיל את המשחק באותו הזמן.</string>
+    <string name="invite__challenge__description">מצאתי %1$d מילים וצברתי %2$d נקודות בלוח הלקסיקה הזה, אפשר לאתגר אותך לנצח אותי?</string>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / מילה %d</item>
+        <item quantity="two">%d / %d מילים</item>
+        <item quantity="other">%d / %d מילים</item>
+    </plurals>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">מילה (נגיעה לרענון)</item>
+        <item quantity="two">שתי מילים (נגיעה לרענון)</item>
+        <item quantity="other">%1$d מילים (נגיעה לרענון)</item>
+    </plurals>
+    <string name="invite__multiplayer__description">הוזמנת למשחק לקסיקה רב־משתתפים:</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">מילה</item>
+        <item quantity="two">שתי מילים</item>
+        <item quantity="other">%1$d מילים</item>
+    </plurals>
+    <string name="invite__dont_have_lexica_installed">לא מותקן אצלך המשחק לקסיקה? אפשר להתקין אותו דרך https://play.google.com/store/apps/details?id=com.serwylo.lexica</string>
+    <string name="invite__dont_have_lexica_installed_web">או לנסות לשחק בלקסיקה דרך הדפדפן (ניסיוני):</string>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ נקודה</item>
+        <item quantity="two">/ שתי נקודות</item>
+        <item quantity="other">/ %d נקודות</item>
+    </plurals>
+    <string name="dialog_refresh_button">רענון</string>
+    <string name="dialog_refresh_title">רענון הלוח</string>
+    <string name="button_cancel">ביטול</string>
+    <string name="multiplayer">ריבוי שחקנים</string>
+    <string name="multiplayer__share_invites">שיתוף הזמנות</string>
+    <plurals name="num_minutes">
+        <item quantity="one">דקה</item>
+        <item quantity="two">שתי דקות</item>
+        <item quantity="other">%d דקות</item>
+    </plurals>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">כולל נקודות דיאקריטיות: äöü</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">כולל סימנים דיאקריטיים: áéíóúüñ</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">Ñ בספרדית בלבד</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">כולל ñ אבל לא הטעמות</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">כולל סימנים דיאקריטיים: àâçéèêëîïôöûü</string>
+    <string name="menu_new_game_mode">חדש</string>
+    <string name="menu_save_game_mode">שמירה</string>
+    <string name="game_mode_letter_points">נקודות לפי אותיות</string>
+    <string name="whats_new_title">מה חדש</string>
+    <string name="whats_new_continue">המשך</string>
+    <string name="dialog_end_game_confirm_message">לסיים את המשחק הזה?</string>
+    <string name="send_multiplayer_invite_to">שליחת הזמנה אל…</string>
+    <string name="send_challenge_invite_to">שליחת האתגר אל…</string>
+    <string name="whats_new_sharing">שיתוף אתגר!</string>
+    <string name="time_limit_must_be_set">חובה להגדיר מגבלת זמן</string>
+    <string name="time_limit_too_short">מגבלת הזמן קצרה מדי</string>
+    <string name="button_delete">מחיקה</string>
+    <string name="game_mode_legacy">מיושן</string>
+    <string name="multiplayer_lobby__join_game">הצטרפות למשחק</string>
+    <string name="multiplayer__toggle_qr_app">הצגת קוד
+\nQR ל־Android</string>
+    <string name="game_mode_beginner">מתחילים</string>
+    <string name="game_mode_beginner_description">שימוש ברמזים לאיתור מילים</string>
+    <string name="game_mode_letter_points_description">יותר נקודות בגין שימוש באותיות פחות נפוצות</string>
+    <string name="input_game_mode_name_description">לבחירת מצב משחק / תיעוד שיאני הניקוד</string>
+    <string name="game_mode_sprint">מירוץ</string>
+    <string name="game_mode_custom_description">מצב משחק מותאם אישית</string>
+    <string name="max_time_limit">מגבלת הזמן המרבית היא 30 יום (43200 דקות)</string>
+    <string name="dialog_refresh_content">כדי לוודא שזה אותו הלוח כמו אצל היריבים, היו לוודא לשלוח מחדש הזמנות כלשהן לאחר רענון.</string>
+    <string name="whats_new_web_lexica_description">תודה מיוחדת ל־‎@MattRCole על המאמצים הכבירים להרים את המיזם הזה! 
+\n
+\nהזמנות למשחקים רבי־משתתפים כוללים קישורים לגרסת הדפדפן (הניסיונית) החדשה לאלו שאין להם Android. קוד ה־QR מופיע עם התחלת המשחק רב־המשתתפים ואפשר להציג קישור גם לגרסה לדפדפן.</string>
+    <string name="dialog_end_game_confirm_title">סיום המשחק</string>
+    <string name="invite__multiplayer__game_offline">מעניין אותך לשחק בלי אינטרנט? אפשר לנסות לשחק עם עט ודף:</string>
+    <string name="invalid_multiplayer_link">התקבל קישור רב־משתתפים/שיתוף שגוי, אי אפשר להצטרף למשחק. נא לוודא שלשניכם יש את הגרסה העדכנית ביותר של לקסיקה.</string>
 </resources>
