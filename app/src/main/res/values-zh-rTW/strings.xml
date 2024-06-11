@@ -1,76 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources><string name="app_name">Lexica</string>
-
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Lexica</string>
     <string name="new_game">新遊戲</string>
     <string name="restore_game">返回遊戲</string>
-	<string name="prefs">設定</string>
-
-	<string name="pref_dict">字典</string>
-	<string name="pref_dict_en_US">美式英文</string>
-	<string name="pref_dict_en_GB">英式英文</string>
-
-	<string name="pref_boardSize">圖版大小</string>
-
-	<string name="pref_timeLimit">時限</string>
-
-	<string name="pref_sounds">音效</string>
-
-    <string name="dialog_about_title">關於Lexica</string>
-	<string name="menu_rotate_board">旋轉圖版</string>
-	<string name="menu_save_game">儲存遊戲</string>
-	<string name="menu_end_game">結束遊戲</string>
-	<string name="button_ok">確定</string>
-
-	<string name="about">關於遊戲</string>
-
-	<string name="view_word"><u>查看</u></string>
-	<string name="define_word"><u>定義</u> </string>
-
-	<string name="found_words">找到的單詞</string>
-	<string name="missed_words">遺漏的單詞</string>
-	<string name="total_words">總詞數：</string>
-	<string name="total_score">總分數：</string>
-	<string name="words">單詞</string>
-	<string name="show_missed">顯示您遺漏的單詞</string>
-	<string name="hide_missed">隱藏您遺漏的單詞</string>
-
-	<string name="hide_unique">隱藏獨特的單詞</string>
-
-	<string name="show_unique">顯示獨特的單詞</string>
-	<string name="dialog_about_content">您要在3分鐘之內拼出圖版上所有單詞。要拼出單詞，請先觸碰螢幕後移動至相鄰的方格。 
+    <string name="prefs">偏好設定</string>
+    <string name="pref_dict">詞庫</string>
+    <string name="pref_dict_en_US">英語（美國）</string>
+    <string name="pref_dict_en_GB">英語（英國）</string>
+    <string name="pref_boardSize">圖版大小</string>
+    <string name="pref_timeLimit">時間限制</string>
+    <string name="pref_sounds">聲音效果</string>
+    <string name="dialog_about_title">關於 Lexica</string>
+    <string name="menu_rotate_board">旋轉圖版</string>
+    <string name="menu_save_game">儲存遊戲</string>
+    <string name="menu_end_game">結束遊戲</string>
+    <string name="button_ok">確定</string>
+    <string name="about">關於</string>
+    <string name="view_word"><u>查看</u></string>
+    <string name="define_word"><u>定義</u> </string>
+    <string name="found_words">找到的單詞</string>
+    <string name="missed_words">遺漏的單詞</string>
+    <string name="total_words">總詞數：</string>
+    <string name="total_score">總分數：</string>
+    <string name="words">單詞</string>
+    <string name="show_missed">顯示遺漏的單詞</string>
+    <string name="hide_missed">隱藏遺漏的單詞</string>
+    <string name="hide_unique">隱藏獨特的單詞</string>
+    <string name="show_unique">顯示獨特的單詞</string>
+    <string name="dialog_about_content">您要在3分鐘之內拼出圖版上所有單詞。要拼出單詞，請先觸碰螢幕後移動至相鄰的方格。 
 \n 
 \n計分方式： 
 \n在4×4的圖版上，單詞必須由至少3個字母組成；在5×5的圖版上，單詞必須由至少4個字母組成。由3個或4個字母組成的單詞記 1 分，找出更長的單詞將獲更高分。專名詞不計任何分數。 
 \n 
 \n</string>
-
-	<string name="value_max_percentage">%1$d/%2$d（%3$d%%）</string>
-<string name="pref_scoreType">計分方式</string>
-	<string name="word_length">單詞長度</string>
-	<string name="letter_points">字母分數</string>
-
-	<string name="score">分數</string>
-	<string name="high_score">高分紀錄</string>
-    <string name="pref_resetScores">重設高分紀錄</string>
-    <string name="high_scores_reset">您已重設高分紀錄。</string>
-	<string name="reset_scores_prompt">您確定要重設所有分數至零分？</string>
-
+    <string name="value_max_percentage">%1$d／%2$d（%3$d%%）</string>
+    <string name="pref_scoreType">計分方式</string>
+    <string name="word_length">單詞長度</string>
+    <string name="letter_points">字母分數</string>
+    <string name="score">分數</string>
+    <string name="high_score">高分紀錄</string>
+    <string name="pref_resetScores">重置高分紀錄</string>
+    <string name="high_scores_reset">高分紀錄已重置。</string>
+    <string name="reset_scores_prompt">你確定你要重置所有遊戲模式的所有高分紀錄至零分嗎？這不能被還原。</string>
     <string name="pref_breakdown">顯示單詞長度分析</string>
-	<string name="pref_breakdown_summary">選擇是否顯示圖版上各單詞的長度</string>
-
-	<string name="pref_definitionProvider">定義來源</string>
-	<string name="pref_definitionProvider_summary">選擇定義來源。如果您沒有安裝所選的定義來源，遊戲將使用DuckDuckGo的字典服務。</string>
-	<string name="pref_definitionProvider_dialog">選擇定義來源</string>
-<string name="pref_dict_de_DE">德文</string>
-	<string name="pref_dict_nl">荷蘭文</string>
-	<string name="pref_dict_fa">波斯文</string>
-	<string name="pref_dict_fr_FR">法文</string>
-	<string name="pref_dict_it">義大利文</string>
-	<string name="pref_dict_ca">加泰隆尼亞文</string>
-	<string name="pref_dict_es">西班牙文</string>
-	<string name="lexicon_is_in_beta">測試中</string>
-
-	<string name="pref_dict_ja">日文</string>
-	<string name="pref_dict_ru">俄文</string>
-    <string name="pref_dict_hu">匈牙利文</string>
+    <string name="pref_breakdown_summary">選擇是否顯示圖版上各單詞的長度</string>
+    <string name="pref_definitionProvider">定義提供者</string>
+    <string name="pref_definitionProvider_summary">如果已選取的提供者並未安裝，將會使用線上來源，例如維基詞典。</string>
+    <string name="pref_definitionProvider_dialog">選擇定義提供者</string>
+    <string name="pref_dict_de_DE">德語（擴展）</string>
+    <string name="pref_dict_nl">荷蘭語</string>
+    <string name="pref_dict_fa">波斯語</string>
+    <string name="pref_dict_fr_FR">法語（擴展）</string>
+    <string name="pref_dict_it">意大利語</string>
+    <string name="pref_dict_ca">加泰隆尼亞語</string>
+    <string name="pref_dict_es">西班牙語</string>
+    <string name="lexicon_is_in_beta">測試版</string>
+    <string name="pref_dict_ja">日語</string>
+    <string name="pref_dict_ru">俄語</string>
+    <string name="pref_dict_hu">匈牙利語</string>
+    <string name="whats_new_title">有甚麼新的</string>
+    <string name="button_cancel">取消</string>
+    <string name="game_mode_beginner_description">使用提示來幫助尋找單詞</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">波蘭語</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">葡萄牙語（巴西）（擴展）</string>
+    <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">克羅埃西亞語</string>
+    <string name="pref_dict_pt_BR_no_diacritics" tools:keep="@string/pref_dict_pt_BR_no_diacritics">葡萄牙語（巴西）</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">包括語法事例和縮寫</string>
+    <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">土耳其語</string>
+    <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">烏克蘭語</string>
+    <string name="pref_minWordLength">最短單詞長度</string>
+    <string name="dialog_refresh_content">為確保你與對手正在遊玩相同的圖版，請務必在重新整理後重新發送邀請。</string>
+    <string name="pref_hintMode">提示模式</string>
+    <string name="pref_hintMode_summary">顯示每個字母可以用於的單詞數</string>
+    <string name="hint_colour">磁磚顏色</string>
+    <string name="button_delete">刪除</string>
+    <string name="high_scores">高分紀錄</string>
+    <string name="game_mode_sprint">衝刺</string>
+    <string name="menu_save_game_mode">儲存</string>
+    <string name="game_mode_marathon_description">嘗試找到所有單詞，沒有任何時間壓力</string>
+    <string name="game_mode_sprint_description">簡短的遊戲，找到盡可能多的單詞</string>
+    <string name="game_mode_marathon">馬拉松</string>
+    <string name="game_mode_letter_points">字母分數</string>
+    <string name="game_mode_letter_points_description">使用不常見的字母可以獲得更多分數</string>
+    <string name="error_restoring_game">無法恢復你的遊戲</string>
+    <string name="whats_new_continue">繼續</string>
+    <string name="whats_new_web_lexica">隆重介紹網路 Lexica！</string>
+    <string name="whats_new_support">支持 Lexica</string>
+    <string name="whats_new_web_lexica_description">特別感謝 @MattRCole 為實現這個功能付出的巨大努力！
+\n
+\n多人遊戲邀請現在包括對沒有 Android 裝置的玩家提供新（測試版）網路版本的連結。開始一個新的多人遊戲時顯示的 QR 圖碼還可以顯示網路版本的網址。</string>
+    <string name="multiplayer__share_invites">分享邀請</string>
+    <string name="multiplayer__start_when_ready">當所有玩家都準備就緒時，你們應該同時開始遊戲。</string>
+    <string name="multiplayer__start_game">開始遊戲</string>
+    <string name="multiplayer">多人遊戲</string>
+    <string name="game_mode">遊戲模式</string>
+    <string name="multiplayer__qr_code__accessible_description">QR 圖碼：其他人掃描即可加入這個遊戲</string>
+    <string name="dialog_end_game_confirm_title">結束遊戲</string>
+    <string name="dialog_end_game_confirm_message">你確定你要結束這個遊戲嗎？</string>
+    <string name="share">分享</string>
+    <string name="invite__multiplayer__description">你已被邀請參加一個多人 Lexica 遊戲：</string>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="other">%1$d 個單詞（點擊以重新整理）</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="other">%d／%d 個單詞</item>
+    </plurals>
+    <string name="send_challenge_invite_to">傳送挑戰至…</string>
+    <string name="time">時間</string>
+    <string name="dialog_refresh_title">重新整理圖版</string>
+    <string name="dialog_refresh_confirmation_message">圖版已重新整理</string>
+    <string name="theme_high_contrast">高對比度</string>
+    <string name="menu_new_game_mode">新</string>
+    <string name="multiplayer__toggle_qr_app">顯示 Android
+\nQR 圖碼</string>
+    <string name="invite__challenge__description">我在 Lexica 圖版上找到了 %1$d 個單詞並獲得了 %2$d 分，你能打敗我嗎？</string>
+    <plurals name="num_minutes">
+        <item quantity="other">%d 分鐘</item>
+    </plurals>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">布列塔尼語</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">包括變音符號：äöü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">德語</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">包括變音符號：áéíóúüñ</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">僅西班牙語 Ñ</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">包括 ñ 但沒有重音符號</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">俄語（擴展）</string>
+    <string name="dialog_refresh_button">重新整理</string>
+    <string name="input_game_mode_name_hint">名稱</string>
+    <string name="back">返回</string>
+    <string name="whats_new_sharing">分享一個挑戰！</string>
+    <string name="multiplayer__toggle_qr_web">顯示網路
+\nQR 圖碼</string>
+    <string name="menu_view_found_words">查看找到的單詞</string>
+    <string name="multiplayer_lobby__join_when_ready">當所有玩家都準備就緒時加入遊戲。</string>
+    <string name="multiplayer_lobby__join_game">加入遊戲</string>
+    <plurals name="num_available_words_in_game">
+        <item quantity="other">%1$d 個單詞</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="other">／%d 分</item>
+    </plurals>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">包括變音符號：çáéíóúâêôãõà 和字母：kwy</string>
+    <string name="tile_count">單詞數</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">芬蘭語</string>
+    <string name="pref_theme">主題</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">包括變音符號：àâçéèêëîïôöûü</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">法語</string>
+    <string name="game_mode_beginner">初學者</string>
+    <string name="pref_theme_dialog">選擇主題</string>
+    <string name="theme_light">淺色</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">線上</string>
+    <string name="theme_dark">深色</string>
+    <string name="input_game_mode_name_description">用於選擇遊戲模式／記錄高分</string>
+    <string name="input_game_mode_minutes_description">時間限制以分鐘為單位</string>
+    <string name="game_mode_custom_description">自訂遊戲模式</string>
+    <string name="sort">排序</string>
+    <string name="delete_custom_game_mode">刪除自訂遊戲模式「%1$s」嗎？任何高分紀錄都將會丟失。</string>
+    <string name="game_mode_legacy">舊式</string>
+    <string name="game_mode_legacy_description">用於早期版本的 Lexica</string>
+    <string name="new_game_mode">新遊戲模式</string>
+    <string name="invalid_multiplayer_link">收到不正確的多人遊戲／分享連結，無法加入遊戲。確保你們都正在使用最新版本的 Lexica。</string>
+    <string name="invite__dont_have_lexica_installed">還沒有安裝 Lexica？從 https://play.google.com/store/apps/details?id=com.serwylo.lexica 取得</string>
+    <string name="invite__dont_have_lexica_installed_web">或者在瀏覽器中嘗試 Lexica（測試版）：</string>
+    <string name="send_multiplayer_invite_to">傳送邀請至…</string>
+    <string name="invite__multiplayer__game_offline">想要離線遊玩嗎？嘗試使用筆和紙遊玩：</string>
+    <string name="whats_new_support_description">Lexica 總是免費並且開源的。
+\n
+\n你可以透過 <a href="https://liberapay.com/Lexica">Liberapay</a> 或 <a href="https://github.com/sponsors/pserwylo">GitHub 贊助者</a> 捐款來表達你的支持並為其進一步發展作出貢獻。</string>
+    <string name="whats_new_sharing_description">完成一個遊戲後，你現在可以與朋友分享該圖版並挑戰他們打破你的分數。
+\n
+\n與多人遊戲類似，你可以分享你認為特別有趣或具有挑戰性的圖版佈局給喜歡的好友。
+\n
+\n像往常一樣，<a href="https://github.com/lexica/lexica/issues">歡迎意見反映</a>有關如何改進這個功能。</string>
+    <string name="time_limit_must_be_set">必須設定時間限制</string>
+    <string name="max_time_limit">最長時間限制為 30 天（43200 分鐘）</string>
+    <string name="time_limit_too_short">時間限制太短</string>
 </resources>
