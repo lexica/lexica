@@ -85,10 +85,10 @@
     <string name="whats_new_web_lexica">Predstavujeme webovú verziu hry Lexica!</string>
     <string name="back">Späť</string>
     <string name="invite__multiplayer__description">Boli ste pozvaní do hry Lexica pre viac hráčov:</string>
-    <string name="whats_new_sharing_description">Po dokončení hry môžete zdieľať túto hraciu plochu s priateľmi a vyzvať ich, aby prekonali vaše skóre. 
-\n 
-\nPodobne ako pri hre pre viac hráčov, alebo pre prípad, že ste práve hrali obzvlášť zaujímavú alebo náročnú hru, o ktorej si myslíte, že sa vašim priateľom bude páčiť. 
-\n 
+    <string name="whats_new_sharing_description">Po dokončení hry môžete zdieľať túto hraciu plochu s priateľmi a vyzvať ich, aby prekonali vaše skóre.
+\n
+\nPodobne ako pri hre pre viac hráčov, alebo pre prípad, že ste práve hrali obzvlášť zaujímavú alebo náročnú hru, o ktorej si myslíte, že sa vašim priateľom bude páčiť.
+\n
 \nAko vždy, <a href="https://github.com/lexica/lexica/issues">uvítame spätnú väzbu</a> o tom, ako možno túto funkciu vylepšiť.</string>
     <string name="whats_new_web_lexica_description">Špeciálne poďakovanie patrí @MattRCole za takú obrovskú námahu pri uvádzaní tohto projektu do života!
 \n
