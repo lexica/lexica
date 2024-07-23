@@ -1,0 +1,10 @@
+Fixed:
+ * Fixed crash when creating game modes with very high time limits (thanks @adam-poteralowicz).
+
+Translations:
+ * Updated various translations.
+
+Misc:
+ * Bump target SDK to 34.
+
+Please provide feedback/report issues at https://github.com/lexica/lexica/issues.
