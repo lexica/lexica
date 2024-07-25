@@ -33,11 +33,11 @@
     <string name="pref_dict_it">italia</string>
     <string name="pref_definitionProvider_dictionaryProvider_online">Internet</string>
     <string name="pref_definitionProvider_dialog">Valitse määritelmien tarjoaja</string>
-    <string name="pref_definitionProvider_summary">Valitse käytettävä määritelmien tarjoaja. Jos valittua tarjoajaa ei ole asennettu, internet-lähdettä kuten Wiktionarya käytetään.</string>
+    <string name="pref_definitionProvider_summary">Jos valittua tarjoajaa ei ole asennettu, internet-lähdettä kuten Wiktionary käytetään.</string>
     <string name="pref_definitionProvider">Määritelmien tarjoaja</string>
     <string name="pref_breakdown_summary">Näytetäänkö sanojen määrä eripituisille sanoille erikseen</string>
     <string name="pref_breakdown">Näytä sanojen pituuksien erittely</string>
-    <string name="reset_scores_prompt">Oletko varma, että halueat nollata kaikkien pelitilojen ennätykset\?</string>
+    <string name="reset_scores_prompt">Oletko varma, että haluat nollata kaikkien pelitilojen ennätykset? Tätä ei voi peruuttaa.</string>
     <string name="high_scores_reset">Ennätykset on nollattu.</string>
     <string name="pref_resetScores">Nollaa ennätykset</string>
     <string name="high_score">Ennätys</string>
@@ -57,11 +57,11 @@
 \n4x4-laudalla sanojen pitää olla vähintään kolmikirjaimisia. 5x5-laudalla sanojen pitää olla vähintään nelikirjaimisia. Kolmi- ja nelikirjaimet sanat ovat yhden pisteen arvoisia. Pidemmät sanat ovat useamman pisteen arvoisia. Erisnimiä ei lasketa.
 \n
 \n</string>
-    <string name="pref_sounds">Äänet käytössä</string>
+    <string name="pref_sounds">Ääniefektit</string>
     <string name="hint_colour">Laatan väri</string>
     <string name="tile_count">Sanojen määrä</string>
     <string name="pref_hintMode_summary">Näyttää, kuinka monessa sanassa kutakin kirjainta voi käyttää</string>
-    <string name="pref_hintMode">Vihjeiden tyyppi</string>
+    <string name="pref_hintMode">Vihje­tila</string>
     <string name="letter_points">Kirjainpisteet</string>
     <string name="pref_scoreType">Pisteytystapa</string>
     <string name="pref_dict_pt_BR_no_diacritics">portugali (Brasilia)</string>
@@ -170,4 +170,12 @@
 \nQR-koodi</string>
     <string name="multiplayer__toggle_qr_web">Näytä web-version
 \nQR-koodi</string>
+    <string name="pref_minWordLength">Sanojen vähimmäispituus</string>
+    <string name="time_limit_must_be_set">Aikaraja täytyy olla asetettu</string>
+    <string name="max_time_limit">Enimmäisaikaraja on 30 päivää (43200 minuuttia)</string>
+    <string name="time_limit_too_short">Liian lyhyt aikaraja</string>
+    <string name="whats_new_web_lexica_description">Erityiskiitokset @MattRCole:lle suuresta työstään tämän toteuttamiseksi!
+\n
+\nMoninpelikutsut sisältävät nyt linkkejä uuteen (beta) web-versioon niitä varten, joilla ei ole Android laitteita. QR-koodi, joka näytetään uutta moninpeliä aloittaessa, voi myös sisältää osoitteen web-versioon.</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Suomi</string>
 </resources>
