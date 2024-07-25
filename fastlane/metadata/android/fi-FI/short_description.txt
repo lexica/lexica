@@ -1,1 +1,1 @@
-Find as many words as possible on a grid of random letters within a time limit
+Etsi mahdollisimman monta sanaa satunnaisten kirjaimien ruudukosta aikarajan sisällä
