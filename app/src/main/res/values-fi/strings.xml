@@ -4,7 +4,7 @@
     <string name="new_game">Uusi peli</string>
     <string name="restore_game">Palauta peli</string>
     <string name="prefs">Asetukset</string>
-    <string name="pref_dict">Leksikko</string>
+    <string name="pref_dict">Sanasto</string>
     <string name="pref_dict_ca">katalaani</string>
     <string name="pref_dict_de_DE">saksa (laajennettu)</string>
     <string name="pref_dict_es">espanja</string>
