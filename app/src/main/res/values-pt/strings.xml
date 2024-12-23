@@ -177,4 +177,8 @@
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Finlandês</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turco</string>
     <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Bretão</string>
+    <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">Croata</string>
+    <string name="time_limit_must_be_set">O limite de tempo deve ser definido</string>
+    <string name="max_time_limit">O prazo máximo é de 30 dias (43.200 minutos)</string>
+    <string name="time_limit_too_short">Prazo muito curto</string>
 </resources>
