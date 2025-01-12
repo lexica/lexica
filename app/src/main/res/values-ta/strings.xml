@@ -1,2 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">லெக்சிகா</string>
+    <string name="pref_dict_pt_BR_description" tools:keep="@string/pref_dict_br_BR_description">டயாக்ரிடிக்ச் அடங்கும்: çáéííóúàààôà மற்றும் கடிதங்கள்: KWY</string>
+    <string name="lexicon_is_in_beta">பீட்டா</string>
+    <string name="pref_boardSize">போர்டு அளவு</string>
+    <string name="dialog_refresh_button">புதுப்பிப்பு</string>
+    <string name="menu_new_game_mode">புதிய</string>
+    <string name="menu_save_game_mode">சேமி</string>
+    <string name="game_mode_sprint">ச்பிரிண்ட்</string>
+    <string name="error_restoring_game">உங்கள் விளையாட்டை மீட்டெடுக்க முடியவில்லை</string>
+    <string name="whats_new_title">புதியது என்ன</string>
+    <string name="new_game">புதிய விளையாட்டு</string>
+    <string name="restore_game">விளையாட்டை மீட்டெடுங்கள்</string>
+    <string name="prefs">விருப்பத்தேர்வுகள்</string>
+    <string name="pref_dict">அகராதி</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">பிரெட்டன்</string>
+    <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">கற்றலான்</string>
+    <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">செர்மன் (நீட்டிக்கப்பட்டது)</string>
+    <string name="pref_dict_de_DE_description" tools:keep="@string/pref_dict_de_DE_description">டயக்ரைட்டிக்ச் அடங்கும்: äöü</string>
+    <string name="pref_dict_de_DE_no_diacritics" tools:keep="@string/pref_dict_de_DE_no_diacritics">செர்மன்</string>
+    <string name="pref_dict_es" tools:keep="@string/pref_dict_es">ச்பானிச்</string>
+    <string name="pref_dict_es_description" tools:keep="@string/pref_dict_es_description">டையிபிரிப்டிக்ச் அடங்கும்: áéííóáüñ</string>
+    <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es_solo_enne">ச்பானிச் மட்டும்</string>
+    <string name="pref_dict_es_solo_enne_description" tools:keep="@string/pref_dict_es_solo_ennedescription">அடங்கும் ñ ஆனால் உச்சரிப்புகள் இல்லை</string>
+    <string name="pref_dict_fa" tools:keep="@string/pref_dict_fa">பெர்சியன்</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">பின்னிச்</string>
+    <string name="pref_dict_fr_FR" tools:keep="@string/pref_dict_fr_FR">பிரஞ்சு (நீட்டிக்கப்பட்டது)</string>
+    <string name="pref_dict_fr_FR_description" tools:keep="@string/pref_dict_fr_FR_description">நம்பமுடியாத அளவிற்கு டயக்டிக்ச்: மூடு</string>
+    <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">பிரஞ்சு</string>
+    <string name="pref_dict_hu" tools:keep="@string/pref_dict_hu">அங்கேரியன்</string>
+    <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">குரோசியன்</string>
+    <string name="pref_dict_it" tools:keep="@string/pref_dict_it">இத்தாலிய</string>
+    <string name="pref_dict_ja" tools:keep="@string/pref_dict_ja">சப்பானியர்கள்</string>
+    <string name="pref_dict_nl" tools:keep="@string/pref_dict_nl">டச்சு</string>
+    <string name="pref_dict_pl" tools:keep="@string/pref_dict_pl">போலீச்</string>
+    <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">போர்த்துகீசியம் (பிரேசில்) (நீட்டிக்கப்பட்டது)</string>
+    <string name="pref_dict_pt_BR_no_diacritics" tools:keep="@string/pref_dict_pt_BR_no_diacritics">போர்த்துகீசியம் (பிரேசில்)</string>
+    <string name="pref_dict_ru" tools:keep="@string/pref_dict_ru">ரச்ய</string>
+    <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">ரச்ய (நீட்டிக்கப்பட்டது)</string>
+    <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">இலக்கண வழக்குகள் மற்றும் சுருக்கங்கள் அடங்கும்</string>
+    <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">துருக்கிய</string>
+    <string name="pref_dict_en_GB" tools:keep="@string/pref_dict_en_GB">ஆங்கிலம் (யுகே)</string>
+    <string name="pref_dict_uk" tools:keep="@string/pref_dict_uk">உக்ரேனிய</string>
+    <string name="pref_dict_en_US" tools:keep="@string/pref_dict_en_US">ஆங்கிலம் (எங்களுக்கு)</string>
+    <string name="pref_timeLimit">நேர வரம்பு</string>
+    <string name="pref_scoreType">மதிப்பெண் வகை</string>
+    <string name="pref_minWordLength">மணித்துளி சொல் நீளம்</string>
+    <string name="word_length">சொல் நீளம்</string>
+    <string name="letter_points">கடிதம் புள்ளிகள்</string>
+    <string name="pref_hintMode">குறிப்பு பயன்முறை</string>
+    <string name="pref_hintMode_summary">ஒவ்வொரு கடிதமும் பயன்படுத்தக்கூடிய சொற்களின் எண்ணிக்கையைக் காட்டுகிறது</string>
+    <string name="tile_count">சொற்களின் எண்ணிக்கை</string>
+    <string name="hint_colour">ஓடு நிறம்</string>
+    <string name="pref_sounds">ஒலி விளைவுகள்</string>
+    <string name="dialog_refresh_title">பலகை புதுப்பிக்கவும்</string>
+    <string name="dialog_refresh_content">உங்கள் எதிரிகளின் அதே பலகையை நீங்கள் விளையாடுவதை உறுதிசெய்ய, புத்துணர்ச்சிக்குப் பிறகு எந்தவொரு அழைப்பையும் மறுபரிசீலனை செய்வதை உறுதிப்படுத்திக் கொள்ளுங்கள்.</string>
+    <string name="dialog_refresh_confirmation_message">போர்டு புத்துணர்ச்சி</string>
+    <string name="dialog_about_title">லெக்சிகா பற்றி</string>
+    <string name="dialog_about_content">திரையைத் தொட்டு, உங்கள் விரலை அருகிலுள்ள சதுரங்களுக்கு நகர்த்தவும். முடிந்தவரை பல சொற்களைக் கண்டுபிடிக்க உங்களுக்கு மூன்று நிமிடங்கள் உள்ளன.\n\n மதிப்பெண்:\n 4x4 பலகைகளில், வார்த்தைகள் குறைந்தது மூன்று எழுத்துக்கள் நீளமாக இருக்க வேண்டும். 5x5 பலகைகளில், வார்த்தைகள் குறைந்தது நான்கு எழுத்துக்களாக இருக்க வேண்டும். மூன்று அல்லது நான்கு எழுத்துக்களைக் கொண்ட சொற்கள் ஒரு புள்ளிக்கு மதிப்புள்ளவை. நீண்ட சொற்கள் அதிக புள்ளிகள். சரியான பெயர்ச்சொற்கள் கணக்கிடப்படவில்லை.</string>
+    <string name="menu_rotate_board">போர்டு போர்டு</string>
+    <string name="menu_save_game">விளையாட்டைச் சேமிக்கவும்</string>
+    <string name="menu_end_game">இறுதி விளையாட்டு</string>
+    <string name="button_ok">சரி</string>
+    <string name="button_delete">நீக்கு</string>
+    <string name="button_cancel">ரத்துசெய்</string>
+    <string name="about">பற்றி</string>
+    <string name="show_missed">தவறவிட்ட சொற்களைக் காட்டு</string>
+    <string name="hide_missed">தவறவிட்ட சொற்களை மறைக்கவும்</string>
+    <string name="show_unique">தனித்துவமான சொற்களைக் காட்டு</string>
+    <string name="hide_unique">தனித்துவமான சொற்களை மறைக்கவும்</string>
+    <string name="view_word"><u> காண்க </u></string>
+    <string name="define_word"><u> வரையறுக்க </u></string>
+    <string name="words">சொற்கள்</string>
+    <string name="score">கெலிப்பெண்</string>
+    <string name="time">நேரம்</string>
+    <string name="found_words">சொற்கள் கிடைத்தன</string>
+    <string name="missed_words">தவறவிட்ட வார்த்தைகள்</string>
+    <string name="total_words">மொத்த சொற்கள்:</string>
+    <string name="total_score">மொத்த மதிப்பெண்:</string>
+    <string name="value_max_percentage">%1$d/%2$d (%3$d %%)</string>
+    <string name="high_score">அதிக மதிப்பெண்</string>
+    <string name="high_scores">அதிக மதிப்பெண்கள்</string>
+    <string name="pref_resetScores">அதிக மதிப்பெண்களை மீட்டமைக்கவும்</string>
+    <string name="high_scores_reset">அதிக மதிப்பெண்கள் மீட்டமைக்கப்பட்டுள்ளன.</string>
+    <string name="reset_scores_prompt">எல்லா விளையாட்டு முறைகளுக்கும் அனைத்து அதிக மதிப்பெண்களையும் பூச்சியமாக மீட்டமைக்க விரும்புகிறீர்களா? இதை செயல்தவிர்க்க முடியாது.</string>
+    <string name="pref_breakdown">சொல் நீள முறிவைக் காட்டு</string>
+    <string name="pref_definitionProvider">வரையறை வழங்குநர்</string>
+    <string name="pref_breakdown_summary">சொல் எண்ணிக்கை சொல் நீளத்தால் கணக்கைக் காட்டுகிறதா இல்லையா என்பதை</string>
+    <string name="pref_definitionProvider_summary">தேர்ந்தெடுக்கப்பட்ட வழங்குநர் நிறுவப்படவில்லை என்றால், விக்க்டெரி போன்ற நிகழ்நிலை சான்று பயன்படுத்தப்படும்.</string>
+    <string name="pref_definitionProvider_dialog">வரையறை வழங்குநரைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="pref_definitionProvider_dictionaryProvider_online">ஆன்லைனில்</string>
+    <string name="pref_theme">கருப்பொருள்</string>
+    <string name="pref_theme_dialog">கருப்பொருள் தேர்ந்தெடுக்கவும்</string>
+    <string name="theme_light">ஒளி</string>
+    <string name="theme_dark">இருண்ட</string>
+    <string name="theme_high_contrast">உயர் வேறுபாடு</string>
+    <string name="sort">வரிசைப்படுத்து</string>
+    <string name="delete_custom_game_mode">தனிப்பயன் விளையாட்டு பயன்முறையை நீக்கவா? அதிக மதிப்பெண்கள் இழக்கப்படும்.</string>
+    <string name="input_game_mode_name_hint">பெயர்</string>
+    <string name="input_game_mode_name_description">விளையாட்டு பயன்முறையைத் தேர்ந்தெடுப்பதற்கும் அதிக மதிப்பெண்களைப் பதிவு செய்வதற்கும்</string>
+    <string name="input_game_mode_minutes_description">நிமிடங்களில் கால காலநீடிப்பு</string>
+    <string name="game_mode_sprint_description">முடிந்தவரை பல சொற்களைக் கண்டுபிடிக்க குறுகிய விளையாட்டு</string>
+    <string name="game_mode_marathon">மராத்தான்</string>
+    <string name="game_mode_marathon_description">எந்த நேர அழுத்தமும் இல்லாமல், எல்லா சொற்களையும் கண்டுபிடிக்க முயற்சிக்கவும்</string>
+    <string name="game_mode_beginner">தொடக்க</string>
+    <string name="game_mode_beginner_description">சொற்களைக் கண்டுபிடிக்க உதவ குறிப்புகளைப் பயன்படுத்தவும்</string>
+    <string name="game_mode_letter_points">கடிதம் புள்ளிகள்</string>
+    <string name="game_mode_letter_points_description">குறைவான பொதுவான எழுத்துக்களைப் பயன்படுத்துவதற்கு அதிக புள்ளிகளை மதிப்பெண் செய்யுங்கள்</string>
+    <string name="game_mode_custom_description">தனிப்பயன் விளையாட்டு முறை</string>
+    <string name="game_mode_legacy">மரபு</string>
+    <string name="game_mode_legacy_description">லெக்சிகாவின் முந்தைய பதிப்பில் பயன்படுத்தப்படுகிறது</string>
+    <string name="whats_new_continue">தொடரவும்</string>
+    <string name="whats_new_sharing">ஒரு சவாலைப் பகிர்ந்து கொள்ளுங்கள்!</string>
+    <string name="whats_new_sharing_description">ஒரு விளையாட்டை முடித்த பிறகு, நீங்கள் இப்போது அந்த பலகையை உங்கள் நண்பர்களுடன் பகிர்ந்து கொள்ளலாம் மற்றும் உங்கள் மதிப்பெண்ணை வெல்ல அவர்களுக்கு அறைகூவல் விடலாம்.\n\n மல்டிபிளேயரைப் போலவே, ஆனால் அந்த நேரத்தில் நீங்கள் குறிப்பாக சுவையான அல்லது சவாலான பலகை தளவமைப்பை விளையாடியபோது, உங்கள் நண்பர்கள் அனுபவிப்பார்கள் என்று நீங்கள் நினைக்கிறீர்கள்.\n\n எப்போதும்போல, <a href="https://github.com/lexica/lexica/issues"> பின்னூட்டம் வரவேற்கத்தக்கது </a> இந்த அம்சத்தை எவ்வாறு மேம்படுத்தலாம் என்பது பற்றி.</string>
+    <string name="whats_new_web_lexica">வலை லெக்சிகாவை அறிமுகப்படுத்துகிறது!</string>
+    <string name="whats_new_web_lexica_description">இதை உயிர்ப்பிக்கும் ஒரு பெரிய முயற்சிக்கு @Mattrcole க்கு சிறப்பு நன்றி!\n\n மல்டிபிளேயர் அழைப்புகள் இப்போது ஆண்ட்ராய்டு சாதனங்கள் இல்லாதவர்களுக்கான புதிய (பீட்டா) வலை பதிப்பிற்கான இணைப்புகளை உள்ளடக்கியது. புதிய மல்டிபிளேயர் விளையாட்டைத் தொடங்கும்போது காட்டப்படும் QR குறியீடு வலை பதிப்பில் ஒரு முகவரி ஐக் காட்டலாம்.</string>
+    <string name="whats_new_support">லிக்சிகாவை ஆதரிக்கவும்</string>
+    <string name="whats_new_support_description">லெக்சிகா என்பது எப்போதும் இலவசமாகவும் திறந்த மூலமாகவும் இருக்கும்.\n\n &lt;A href = \"https://liberapay.com/lexica\"&gt; லைபர்பே &lt;/a&gt; அல்லது &lt;a href = \"https://github.com/sponsors /pserwylo \"&gt; அறிவிலிமையம் ஒப்புரவாளர்கள் &lt;/a&gt;.</string>
+    <string name="menu_view_found_words">காணப்பட்ட சொற்களைக் காண்க</string>
+    <string name="multiplayer_lobby__join_when_ready">அனைத்து வீரர்களும் தயாராக இருக்கும்போது, விளையாட்டில் சேரவும்.</string>
+    <string name="multiplayer_lobby__join_game">விளையாட்டில் சேரவும்</string>
+    <string name="multiplayer__share_invites">பங்கு அழைப்புகள்</string>
+    <string name="multiplayer__toggle_qr_app">ஆண்ட்ராய்டு காட்டு\n QR குறியீடு</string>
+    <string name="multiplayer__toggle_qr_web">வலை காட்டு\n QR குறியீடு</string>
+    <string name="multiplayer__start_when_ready">எல்லா வீரர்களும் தயாராக இருக்கும்போது, நீங்கள் அனைவரும் ஒரே நேரத்தில் விளையாட்டைத் தொடங்க வேண்டும்.</string>
+    <string name="multiplayer__qr_code__accessible_description">QR குறியீடு: மற்றவர்கள் இந்த விளையாட்டில் சேர ச்கேன் செய்யலாம்</string>
+    <string name="multiplayer__start_game">விளையாட்டைத் தொடங்கவும்</string>
+    <string name="multiplayer">மல்டிபிளேயர்</string>
+    <string name="game_mode">விளையாட்டு முறை</string>
+    <string name="new_game_mode">புதிய விளையாட்டு முறை</string>
+    <string name="invalid_multiplayer_link">தவறான மல்டிபிளேயர்/பகிர்வு இணைப்பைப் பெற்றது, விளையாட்டில் சேர முடியாது. நீங்கள் இருவரும் லெக்சிகாவின் அண்மைக் கால பதிப்பைப் பயன்படுத்துகிறீர்கள் என்பதை உறுதிப்படுத்திக் கொள்ளுங்கள்.</string>
+    <string name="dialog_end_game_confirm_title">இறுதி விளையாட்டு</string>
+    <string name="dialog_end_game_confirm_message">இந்த விளையாட்டை முடிக்க விரும்புகிறீர்களா?</string>
+    <string name="share">பங்கு</string>
+    <string name="back">பின்</string>
+    <string name="invite__multiplayer__description">மல்டிபிளேயர் லெக்சிகா விளையாட்டுக்கு நீங்கள் அழைக்கப்பட்டுள்ளீர்கள்:</string>
+    <string name="invite__multiplayer__game_offline">ஆஃப்லைனில் விளையாட வேண்டுமா? பேனா மற்றும் காகிதம் வழியாக விளையாட முயற்சிக்கவும்:</string>
+    <string name="invite__challenge__description">நான் %1$d சொற்களைக் கண்டேன், இந்த லெக்சிகா போர்டில் %2$d புள்ளிகளைப் பெற்றேன், நீங்கள் என்னை வெல்ல முடியுமா?</string>
+    <string name="invite__dont_have_lexica_installed">லெக்சிகா நிறுவப்படவில்லை? Https://play.google.com/store/apps/details?id=com.serwylo.lexicica இலிருந்து அதைப் பெறுங்கள்</string>
+    <string name="invite__dont_have_lexica_installed_web">அல்லது உலாவியில் (பீட்டா) லெக்சிகாவை முயற்சிக்கவும்:</string>
+    <string name="send_challenge_invite_to">சவாலை அனுப்புங்கள்…</string>
+    <string name="send_multiplayer_invite_to">அழைப்பை அனுப்புங்கள்…</string>
+    <string name="time_limit_must_be_set">கால காலநீடிப்பு அமைக்கப்பட வேண்டும்</string>
+    <string name="max_time_limit">அதிகபட்ச நேர வரம்பு 30 நாட்கள் (43200 நிமிடங்கள்)</string>
+    <string name="time_limit_too_short">கால காலநீடிப்பு மிகக் குறைவு</string>
+    <plurals name="num_available_words_in_game__tap_to_refresh">
+        <item quantity="one">%1$d சொல் (புதுப்பிக்க தட்டவும்)</item>
+        <item quantity="other">%1$d சொற்கள் (புதுப்பிக்க தட்டவும்)</item>
+    </plurals>
+    <plurals name="num_available_words_in_game">
+        <item quantity="one">%1$d சொல்</item>
+        <item quantity="other">%1$d சொற்கள்</item>
+    </plurals>
+    <plurals name="num_found_words_out_of_total">
+        <item quantity="one">%d / %d சொல்</item>
+        <item quantity="other">%d / %d சொற்கள்</item>
+    </plurals>
+    <plurals name="max_score_points_suffix">
+        <item quantity="one">/ %d புள்ளி</item>
+        <item quantity="other">/ %d புள்ளிகள்</item>
+    </plurals>
+    <plurals name="num_minutes">
+        <item quantity="one">%d மணித்துளி</item>
+        <item quantity="other">%d நிமிடங்கள்</item>
+    </plurals>
+</resources>
