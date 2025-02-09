@@ -1,1 +1,1 @@
-Find as many words as possible on a grid of random letters within a time limit
+Trouvez autant de mots que possible sur une grille de lettres tirées aléatoirement, ceci en un temps limité
