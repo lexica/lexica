@@ -117,12 +117,10 @@
     <string name="pref_dict_pt_BR" tools:keep="@string/pref_dict_pt_BR">Português (Brasil) (Estendido)</string>
     <string name="pref_dict_ru_extended" tools:keep="@string/pref_dict_ru_extended">Russo (Estendido)</string>
     <string name="pref_dict_ru_extended_description" tools:keep="@string/pref_dict_ru_extended_description">Inclui casos de gramática e abreviações</string>
-    <string name="whats_new_web_lexica">Apresentando web Lexica!</string>
-    <string name="whats_new_web_lexica_description">Agradecimentos especiais a @MattRCole por um esforço tão grande para dar vida a isso!
-\n
-\nOs convites multijogador agora incluem ligações para a nova versão web (beta) para aqueles sem aparelhos Android. O QR code mostrado ao iniciar um novo jogo multijogador também pode mostrar um URL para a versão da web.</string>
+    <string name="whats_new_web_lexica">Apresentar web Lexica!</string>
+    <string name="whats_new_web_lexica_description">Agradecimentos especiais a @MattRCole por um esforço tão grande para dar vida a isto!\n\nOs convites multijogador agora incluem ligações para a nova versão web (beta) para aqueles sem aparelhos Android. O QR code mostrado ao iniciar um novo jogo multijogador também pode mostrar um URL para a versão da web.</string>
     <string name="whats_new_support">Apoie Lexica</string>
-    <string name="multiplayer__share_invites">Compartilhar convites</string>
+    <string name="multiplayer__share_invites">Partilhar convites</string>
     <string name="multiplayer__toggle_qr_app">Mostrar QR Code
 \ndo Android</string>
     <string name="multiplayer__toggle_qr_web">Mostrar QR Code
@@ -135,18 +133,14 @@
     <string name="new_game_mode">Novo modo de jogo</string>
     <string name="invalid_multiplayer_link">Ligação multijogador/de compartilhamento recebido incorreto, não foi possível entrar no jogo. Certifique-se de que ambos estejam usando a versão mais recente do Lexica.</string>
     <string name="dialog_end_game_confirm_title">Finalizar Jogo</string>
-    <string name="whats_new_sharing">Compartilhe um desafio!</string>
+    <string name="whats_new_sharing">Partilhe um desafio!</string>
     <string name="send_multiplayer_invite_to">Enviar convite para…</string>
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d palavra (toque para atualizar)</item>
         <item quantity="many">%1$d palavras (toque para atualizar)</item>
         <item quantity="other"/>
     </plurals>
-    <string name="whats_new_sharing_description">Depois de terminar um jogo, agora pode compartilhar esse tabuleiro com os seus amigos e desafiá-los a bater a sua pontuação.
-\n
-\nSimilar ao multiplayer, mas para aquele momento em que acabou de jogar um layout de tabuleiro particularmente interessante ou desafiador que acha que os seus amigos vão gostar.
-\n
-\nComo sempre, o seu <a href="https://github.com/lexica/lexica/issues">feedback é bem-vindo</a> sobre como esse recurso pode ser melhorado.</string>
+    <string name="whats_new_sharing_description">Depois de terminar um jogo, agora pode partilhar este tabuleiro com os seus amigos e desafiá-los a bater a sua pontuação. \n \nSimilar ao multiplayer, mas para aquele momento em que acabou de jogar um layout de tabuleiro particularmente interessante ou desafiador que acha que os seus amigos vão gostar. \n \nComo sempre, o seu <a href="https://github.com/lexica/lexica/issues">feedback é bem-vindo</a> sobre como este recurso pode ser melhorado.</string>
     <string name="whats_new_support_description">Lexica é e sempre será livre e de código aberto.
 \n
 \nPode mostrar o seu apoio e contribuir para o desenvolvimento dele, a doar via <a href="https://liberapay.com/Lexica">Liberapay</a> ou <a href="https://github.com/sponsors/pserwylo">GitHub Sponsors</a>.</string>
@@ -159,8 +153,8 @@
     <string name="dialog_refresh_button">Atualizar</string>
     <string name="dialog_refresh_confirmation_message">Tabuleiro atualizado</string>
     <string name="multiplayer_lobby__join_game">Entrar no jogo</string>
-    <string name="dialog_end_game_confirm_message">Tem certeza que quer finalizar esse jogo\?</string>
-    <string name="share">Compartilhar</string>
+    <string name="dialog_end_game_confirm_message">Tem certeza que quer finalizar este jogo?</string>
+    <string name="share">Partilhar</string>
     <string name="back">Voltar</string>
     <string name="invite__multiplayer__description">Foi convidado para um jogo multijogador Lexica:</string>
     <string name="invite__multiplayer__game_offline">Quer jogar offline\? Tente jogar com papel e caneta:</string>
