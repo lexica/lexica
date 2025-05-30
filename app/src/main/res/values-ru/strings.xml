@@ -20,7 +20,7 @@
     <string name="pref_scoreType">Начисление очков</string>
     <string name="word_length">По длине слов</string>
     <string name="letter_points">По очкам букв</string>
-    <string name="pref_sounds">Звуки</string>
+    <string name="pref_sounds">Звуковые эффекты</string>
     <string name="dialog_about_title">О Lexica</string>
     <string name="dialog_about_content">
 	Коснитесь экрана и водите пальцем по примыкающим друг к другу квадратам для составления слов. 
@@ -51,11 +51,11 @@
     <string name="high_score">Лучший результат</string>
     <string name="pref_resetScores">Сбросить рекорды</string>
     <string name="high_scores_reset">Рекорды были удалены.</string>
-    <string name="reset_scores_prompt">Вы уверены в том, что хотите удалить рекорды для всех режимов игры?</string>
+    <string name="reset_scores_prompt">Вы уверены, что хотите сбросить все рекорды во всех игровых режимах на ноль? Это действие нельзя отменить.</string>
     <string name="pref_breakdown">Показывать количество слов одной длины</string>
     <string name="pref_breakdown_summary">Показывать количество слов каждой длины во время игры</string>
     <string name="pref_definitionProvider">Провайдер значений слов</string>
-    <string name="pref_definitionProvider_summary">Выберите провайдера значений слов. Если выбранный провайдер не установлен, будет использован интернет-источник типа Викисловаря.</string>
+    <string name="pref_definitionProvider_summary">Если выбранный провайдер не установлен, будет использоваться онлайн-источник, такой как Викисловарь.</string>
     <string name="pref_definitionProvider_dialog">Выберите провайдер значений слов</string>
     <string name="hint_colour">Цвет плитки</string>
     <string name="pref_hintMode_summary">Показывает количество слов, в которых можно использовать каждую букву</string>
@@ -106,7 +106,7 @@
     </plurals>
     <string name="dialog_end_game_confirm_message">Вы уверены, что хотите закончить эту игру\?</string>
     <string name="dialog_end_game_confirm_title">Закончить игру</string>
-    <string name="invalid_multiplayer_link">Получена неверная ссылка на мультиплеер, не удается присоединиться к игре. Убедитесь, что вы оба используете последнюю версию Lexica.</string>
+    <string name="invalid_multiplayer_link">Получена неверная ссылка на мультиплеер/обмен данными, не удается присоединиться к игре. Убедитесь, что вы оба используете последнюю версию Lexica.</string>
     <string name="new_game_mode">Новый игровой режим</string>
     <string name="game_mode">Игровой режим</string>
     <string name="multiplayer">Мультиплеер</string>
@@ -180,4 +180,13 @@
     <string name="send_challenge_invite_to">Сохранить игру в…</string>
     <string name="send_multiplayer_invite_to">Отправить приглашение…</string>
     <string name="whats_new_sharing">Поделись челленджом!</string>
+    <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">Хорватская</string>
+    <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Турецкая</string>
+    <string name="pref_minWordLength">Минимальная длина слова</string>
+    <string name="pref_dict_br_no_diacritics" tools:keep="@string/pref_dict_br">Бретонская</string>
+    <string name="max_time_limit">Максимальный лимит времени составляет 30 дней (43200 минут).</string>
+    <string name="time_limit_must_be_set">Необходимо указать лимит по времени</string>
+    <string name="time_limit_too_short">Слишком короткий лимит времени</string>
+    <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Финская</string>
+    <string name="whats_new_web_lexica_description">Отдельное спасибо @MattRCole за огромные усилия по воплощению этой идеи в жизнь!\n\nПриглашения в мультиплеер теперь содержат ссылки на новую (бета) веб-версию для тех, у кого нет Android-устройств. QR-код, показываемый при начале новой многопользовательской игры, также может показывать URL-адрес веб-версии.</string>
 </resources>
