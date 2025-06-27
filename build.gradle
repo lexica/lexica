@@ -28,22 +28,22 @@ allprojects {
 // depends on. However, I couldn't figure out how to have a gradle plugin in the same project
 // as another gradle build which depended on that plugin.
 
-task buildLanguageAnalysis(type: GradleBuild) {
-    buildFile = file('libraries/language-analysis/build.gradle')
+tasks.register('buildLanguageAnalysis', GradleBuild) {
+    dir = file('libraries/language-analysis')
     tasks = ['shadowJar']
 }
 
-task buildTrieBuilder(type: GradleBuild) {
-    buildFile = file('libraries/trie-builder/build.gradle')
+tasks.register('buildTrieBuilder', GradleBuild) {
+    dir = file('libraries/trie-builder')
     tasks = ['shadowJar']
 }
 
-task buildTrieLib(type: GradleBuild) {
-    buildFile = file('libraries/trie/build.gradle')
+tasks.register('buildTrieLib', GradleBuild) {
+    dir = file('libraries/trie')
     tasks = ['build']
 }
 
-task buildDictionaries
+tasks.register('buildDictionaries')
 
 def languages = [
   "br_no_diacritics",

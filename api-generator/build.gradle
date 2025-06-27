@@ -10,12 +10,13 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2'
 }
 
-task generateApi(dependsOn: ":api-generator:classes", type: JavaExec) {
-    main = "com.serwylo.lexica.api.ApiGeneratorKt"
+tasks.register('generateApi', JavaExec) {
+    dependsOn ":api-generator:classes"
+    mainClass = "com.serwylo.lexica.api.ApiGeneratorKt"
     classpath = sourceSets.main.runtimeClasspath
     args = [
-        "../assets/dictionaries/",
-        "../app/src/main/res/raw/",
-        "../build/api-generator/",
+            "../assets/dictionaries/",
+            "../app/src/main/res/raw/",
+            "../build/api-generator/",
     ]
 }

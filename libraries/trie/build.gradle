@@ -7,14 +7,14 @@ dependencies {
 }
 
 // See https://code.google.com/p/android/issues/detail?id=64887 for why we copy files in this manner for tests.
-task copyTestResources(type: Copy) {
+tasks.register('copyTestResources', Copy) {
     from "${projectDir}/src/test/resources"
     into "${buildDir}/classes/test"
 }
 
 processTestResources.dependsOn copyTestResources
 
-task copyMainResources(type: Copy) {
+tasks.register('copyMainResources', Copy) {
     from "${projectDir}/src/main/resources"
     into "${buildDir}/classes/main"
 }

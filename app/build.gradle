@@ -19,7 +19,7 @@ android {
 
 
     buildTypes {
-        all {
+        configureEach {
             minifyEnabled false
             shrinkResources false
         }
