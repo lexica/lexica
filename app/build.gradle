@@ -5,14 +5,14 @@ apply plugin: 'kotlin-parcelize'
 apply plugin: 'de.mobilej.unmock'
 
 android {
-    compileSdk 35
+    compileSdk = 35
 
     defaultConfig {
-        applicationId "com.serwylo.lexica"
+        applicationId = "com.serwylo.lexica"
         minSdkVersion 21
         targetSdkVersion 35
-        versionCode 30018
-        versionName "3.13.1"
+        versionCode = 30018
+        versionName = "3.13.1"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
@@ -20,13 +20,14 @@ android {
 
     buildTypes {
         configureEach {
-            minifyEnabled false
-            shrinkResources false
+            minifyEnabled = false
+            shrinkResources = false
         }
     }
 
     buildFeatures {
-        viewBinding true
+        viewBinding = true
+        buildConfig = true
     }
 
     testOptions {
@@ -35,7 +36,7 @@ android {
     }
 
     compileOptions {
-        encoding "UTF-8"
+        encoding = "UTF-8"
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
@@ -48,19 +49,19 @@ android {
         }
     }
 
-    namespace 'com.serwylo.lexica'
+    namespace = 'com.serwylo.lexica'
 
     lint {
         // Due to getting the following error with Travis CI:
         //   /home/travis/build/lexica/lexica/app: Error: The SDK platform-tools version ((21)) is too old  to check APIs compiled with API 23; please update [NewApi]
         // Until the newer version of platform-tools is installed on their CI server, lets not consider it a failure.
-        abortOnError false
+        abortOnError = false
 
         // The translations are crowd-sourced, and so will likely never be 100% complete for all locales.
         disable 'MissingTranslation', 'GoogleAppIndexingWarning'
 
         // Ouptuts report during build, so that it can be seen in the CI log.
-        textReport true
+        textReport = true
     }
 }
 

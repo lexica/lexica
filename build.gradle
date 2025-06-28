@@ -3,7 +3,7 @@ apply plugin: 'java'
 apply plugin: 'kotlin'
 
 buildscript {
-    ext.kotlin_version = '2.1.0'
+    ext.kotlin_version = '2.1.10'
     repositories {
         mavenCentral()
         google()
@@ -74,7 +74,7 @@ def languages = [
 languages.each { lang ->
 
     def langTask = task "buildDictionary_${lang}"(dependsOn: buildTrieBuilder, type: JavaExec) {
-        main = 'com.serwylo.lexica.trie.TrieBuilderApp'
+        mainClass = 'com.serwylo.lexica.trie.TrieBuilderApp'
         classpath 'libraries/trie-builder/build/libs/trie-builder-all.jar'
         args = [
                 lang,
@@ -92,7 +92,7 @@ languages.each { lang ->
     buildDictionaries.dependsOn << langTask
 
     task "analyseLanguage_${lang}"(dependsOn: [buildLanguageAnalysis, langTask], type: JavaExec) {
-        main = 'com.serwylo.lexica.language.LanguageAnalysisApp'
+        mainClass = 'com.serwylo.lexica.language.LanguageAnalysisApp'
         classpath 'libraries/language-analysis/build/libs/language-analysis-all.jar'
         args = [
                 lang,
