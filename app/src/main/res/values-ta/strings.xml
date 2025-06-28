@@ -58,7 +58,7 @@
     <string name="dialog_refresh_confirmation_message">போர்டு புத்துணர்ச்சி</string>
     <string name="dialog_about_title">லெக்சிகா பற்றி</string>
     <string name="dialog_about_content">திரையைத் தொட்டு, உங்கள் விரலை அருகிலுள்ள சதுரங்களுக்கு நகர்த்தவும். முடிந்தவரை பல சொற்களைக் கண்டுபிடிக்க உங்களுக்கு மூன்று நிமிடங்கள் உள்ளன.\n\n மதிப்பெண்:\n 4x4 பலகைகளில், வார்த்தைகள் குறைந்தது மூன்று எழுத்துக்கள் நீளமாக இருக்க வேண்டும். 5x5 பலகைகளில், வார்த்தைகள் குறைந்தது நான்கு எழுத்துக்களாக இருக்க வேண்டும். மூன்று அல்லது நான்கு எழுத்துக்களைக் கொண்ட சொற்கள் ஒரு புள்ளிக்கு மதிப்புள்ளவை. நீண்ட சொற்கள் அதிக புள்ளிகள். சரியான பெயர்ச்சொற்கள் கணக்கிடப்படவில்லை.</string>
-    <string name="menu_rotate_board">போர்டு போர்டு</string>
+    <string name="menu_rotate_board">அட்டை சுற்று</string>
     <string name="menu_save_game">விளையாட்டைச் சேமிக்கவும்</string>
     <string name="menu_end_game">இறுதி விளையாட்டு</string>
     <string name="button_ok">சரி</string>
@@ -96,7 +96,7 @@
     <string name="theme_dark">இருண்ட</string>
     <string name="theme_high_contrast">உயர் வேறுபாடு</string>
     <string name="sort">வரிசைப்படுத்து</string>
-    <string name="delete_custom_game_mode">தனிப்பயன் விளையாட்டு பயன்முறையை நீக்கவா? அதிக மதிப்பெண்கள் இழக்கப்படும்.</string>
+    <string name="delete_custom_game_mode">\"%1$s\" தனிப்பயன் விளையாட்டு பயன்முறையை நீக்கவா? அதிக மதிப்பெண்கள் இழக்கப்படும்.</string>
     <string name="input_game_mode_name_hint">பெயர்</string>
     <string name="input_game_mode_name_description">விளையாட்டு பயன்முறையைத் தேர்ந்தெடுப்பதற்கும் அதிக மதிப்பெண்களைப் பதிவு செய்வதற்கும்</string>
     <string name="input_game_mode_minutes_description">நிமிடங்களில் கால காலநீடிப்பு</string>
@@ -116,7 +116,7 @@
     <string name="whats_new_web_lexica">வலை லெக்சிகாவை அறிமுகப்படுத்துகிறது!</string>
     <string name="whats_new_web_lexica_description">இதை உயிர்ப்பிக்கும் ஒரு பெரிய முயற்சிக்கு @Mattrcole க்கு சிறப்பு நன்றி!\n\n மல்டிபிளேயர் அழைப்புகள் இப்போது ஆண்ட்ராய்டு சாதனங்கள் இல்லாதவர்களுக்கான புதிய (பீட்டா) வலை பதிப்பிற்கான இணைப்புகளை உள்ளடக்கியது. புதிய மல்டிபிளேயர் விளையாட்டைத் தொடங்கும்போது காட்டப்படும் QR குறியீடு வலை பதிப்பில் ஒரு முகவரி ஐக் காட்டலாம்.</string>
     <string name="whats_new_support">லிக்சிகாவை ஆதரிக்கவும்</string>
-    <string name="whats_new_support_description">லெக்சிகா என்பது எப்போதும் இலவசமாகவும் திறந்த மூலமாகவும் இருக்கும்.\n\n &lt;A href = \"https://liberapay.com/lexica\"&gt; லைபர்பே &lt;/a&gt; அல்லது &lt;a href = \"https://github.com/sponsors /pserwylo \"&gt; அறிவிலிமையம் ஒப்புரவாளர்கள் &lt;/a&gt;.</string>
+    <string name="whats_new_support_description">லெக்சிகா என்பது எப்போதும் இலவசமாகவும் திறந்த மூலமாகவும் இருக்கும்.\n\n <a href="https://liberapay.com/Lexica">லைபர்பே </a> அல்லது <a href="https://github.com/sponsors/pserwylo">அறிவிலிமையம் ஒப்புரவாளர்கள் </a>.</string>
     <string name="menu_view_found_words">காணப்பட்ட சொற்களைக் காண்க</string>
     <string name="multiplayer_lobby__join_when_ready">அனைத்து வீரர்களும் தயாராக இருக்கும்போது, விளையாட்டில் சேரவும்.</string>
     <string name="multiplayer_lobby__join_game">விளையாட்டில் சேரவும்</string>
