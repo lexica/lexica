@@ -108,12 +108,24 @@ dependencies {
     unmock 'org.robolectric:android-all:4.3_r2-robolectric-0'
 }
 
+/*
+ * This is all a bit of a hack. Apparently afterEvaluate and explicit dependsOn is a bit of a code
+ * smell. Instead, we should tell the `buildDictionaries` task that it is something which
+ * produces code, and then add the output of that task to the srcSet. This should set up appropriate
+ * dependencies.
+ */
 afterEvaluate {
     generateDebugResources.dependsOn rootProject.buildDictionaries
     generateDebugResources.shouldRunAfter rootProject.buildDictionaries
+    mapDebugSourceSetPaths.dependsOn rootProject.buildDictionaries
+    mapDebugSourceSetPaths.shouldRunAfter rootProject.buildDictionaries
     if (tasks.findByPath('generateReleaseResources')) {
         generateReleaseResources.dependsOn rootProject.buildDictionaries
         generateReleaseResources.shouldRunAfter rootProject.buildDictionaries
+    }
+    if (tasks.findByPath('mapReleaseSourceSetPaths')) {
+        mapReleaseSourceSetPaths.dependsOn rootProject.buildDictionaries
+        mapReleaseSourceSetPaths.shouldRunAfter rootProject.buildDictionaries
     }
 }
 repositories {
