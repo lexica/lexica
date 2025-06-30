@@ -73,21 +73,11 @@
     <string name="pref_dict_pt_BR_no_diacritics">Portugalski (Brazil)</string>
     <string name="sort">Razvrstaj</string>
     <string name="theme_high_contrast">Visoki kontrast</string>
-    <string name="whats_new_game_modes_why">Zahvaljujući doprinosima zajednice, način igranja Leksica raste. Zbog toga je teško objasniti način bilježenja najviših rezultata, a sa svakom novom funkcijom raste složenost.
-\n
-\nOve promjene olakšavaju razumijevanje koja kombinacija postavki rezultira određenim najvišem rezultatom.
-\n
-\nKao dodatni bonus, interni podaci Lexica su aktualizirani kako bi se u budućnosti lakše poboljšali, dodavanjem lokalne baze podataka za zapisivanje svake pronađene riječi i svakog najvišeg rezultata.</string>
-    <string name="whats_new_why">Zašto\?</string>
-    <string name="whats_new_game_modes_description">Sljedeće postavke zamijenjene su s načinima igre: Trajanje, veličina ploče, minimalna duljina riječi, vrsta bodovanja i savjeti.
-\n
-\nNačin igre možeš promijeniti u glavnog ekranu ili stvori vlastiti. Najviši rezultati temelje se na načinu igre i leksikonu.</string>
     <plurals name="num_minutes">
         <item quantity="one">%d min</item>
         <item quantity="few">%d min</item>
         <item quantity="other">%d min</item>
     </plurals>
-    <string name="whats_new_game_modes">Načini igre</string>
     <string name="whats_new_continue">Nastavi</string>
     <string name="whats_new_title">Što je novo</string>
     <string name="error_restoring_game">Neuspjelo obnavljanje igre</string>

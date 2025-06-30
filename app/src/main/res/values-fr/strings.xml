@@ -78,16 +78,6 @@
         <item quantity="many">%d min</item>
         <item quantity="other">%d min</item>
     </plurals>
-    <string name="whats_new_game_modes_why">Grâce aux contributions de la communauté, les manières dont vous pouvez jouer à Lexica se sont élargies. Ceci rend plus difficile d\'expliquer comment les scores élevés sont enregistrés, et chaque nouvelle fonctionnalité ajoute de la complexité.
-\n
-\nCes modifications permettent de comprendre plus facilement quelle combinaison de préférences aboutit à un score élevé particulier.
-\n
-\nEn prime, les composants internes de Lexica ont été mis à jour pour faciliter son amélioration à l\'avenir en ajoutant une base de données locale pour enregistrer chaque mot trouvé et chaque score élevé.</string>
-    <string name="whats_new_why">Pourquoi \?</string>
-    <string name="whats_new_game_modes_description">Les préférences suivantes ont été remplacées par les modes de jeu : durée, taille du plateau, longueur minimale des mots, type de score et modes d\'indication.
-\n
-\nVous pouvez changer de mode de jeu depuis l\'écran principal ou créer le vôtre. Les scores élevés sont basés sur le mode de jeu et le lexique.</string>
-    <string name="whats_new_game_modes">Modes de jeu</string>
     <string name="whats_new_continue">Continuer</string>
     <string name="whats_new_title">Quoi de neuf</string>
     <string name="error_restoring_game">Impossible de restaurer votre partie</string>

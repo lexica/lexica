@@ -58,7 +58,9 @@ android {
         abortOnError = false
 
         // The translations are crowd-sourced, and so will likely never be 100% complete for all locales.
-        disable 'MissingTranslation', 'GoogleAppIndexingWarning'
+        // UnusedResources are because we compile .bin files from the trie-builder which are dynamically
+        // loaded, so the compiler thinks they are unused.
+        disable 'MissingTranslation', 'GoogleAppIndexingWarning', 'MissingQuantity', 'UnusedResources'
 
         // Ouptuts report during build, so that it can be seen in the CI log.
         textReport = true

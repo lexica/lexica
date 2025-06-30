@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="whats_new_game_modes_why">Takket være bidrag fra gemenskaben er de måder du kan spille Lexica udvidet. Dette gør det sværere at forklare, hvordan de højeste scorer registreres, og hver ny funktion tilføjer kompleksitet.
-\n
-\nDisse ændringer gør det nemmere at forstå hvilken kombination af præferencer der resulterer i en bestemt høj score.
-\n
-\nSom ekstra bonus er Lexica opdateret for at gøre det lettere at forbedre i fremtiden, ved at tilføje en lokal database til at registrere hvert eneste ord fundet og hver højeste score.</string>
-    <string name="whats_new_game_modes_description">Følgende indstillinger er erstattet med spilmodi: Varighed, brettstørrelse, mindste ordlængde, pointtype og hintmodi.
-\n
-\nDu kan ændre spiltilstand fra hovedskærmen, eller oprette din egen. Højeste scorer baseres på spiltilstand og leksikon.</string>
     <string name="dialog_about_content">Tryk på skærmen og flyt fingeren til tilstødende firkanter for at stave ord. Du har tre minutter på å finde så mange ord som muligt.
 \n
 \nScoring:
@@ -16,7 +8,6 @@
 \n</string>
     <string name="pref_hintMode_summary">Vis antallet ord hver bogstav kan bruges i</string>
     <string name="letter_points">Bogstavpoints</string>
-    <string name="whats_new_game_modes">Spilmodus</string>
     <string name="error_restoring_game">Kunde ikke genoprette dit spil</string>
     <string name="game_mode_custom_description">Brugerdefineret spilmodus</string>
     <string name="game_mode_letter_points_description">Score flere points for brug af mindre vanlige bogstaver</string>
@@ -54,7 +45,6 @@
         <item quantity="one">%d min</item>
         <item quantity="other">%d min</item>
     </plurals>
-    <string name="whats_new_why">Hvorfor\?</string>
     <string name="whats_new_continue">Fortsæt</string>
     <string name="whats_new_title">Hvad ær nydt\?</string>
     <string name="game_mode_legacy_description">Brugt i tidligere version af Lexica</string>

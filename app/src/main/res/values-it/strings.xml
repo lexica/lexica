@@ -73,21 +73,11 @@
     <string name="pref_theme_dialog">Seleziona un tema</string>
     <string name="pref_theme">Tema</string>
     <string name="time">Tempo</string>
-    <string name="whats_new_game_modes_why">Grazie ai contributi della comunità, i modi in cui puoi giocare a Lexica si sono ampliati. Ciò rende più difficile spiegare come vengono registrati i punteggi più alti e ogni nuova funzionalità aggiunge complessità.
-\n
-\nQuesta modifica semplifica la comprensione di quale combinazione di preferenze determina un particolare punteggio elevato.
-\n
-\nCome bonus aggiuntivo, gli interni di Lexica sono stati aggiornati per renderlo più facile da migliorare in futuro aggiungendo una base di dati locale per registrare ogni singola parola trovata e ogni punteggio più alto.</string>
-    <string name="whats_new_game_modes_description">Le seguenti preferenze sono state sostituite con le modalità di gioco: durata, dimensione del tabellone, lunghezza minima della parola, tipo di punteggio e modalità suggerimento.
-\n
-\nPuoi cambiare la modalità di gioco dalla schermata principale o crearne una tua. I punteggi più alti si basano sulla modalità di gioco e sul lessico.</string>
     <plurals name="num_minutes">
         <item quantity="one">%d min</item>
         <item quantity="many">%d min</item>
         <item quantity="other">%d min</item>
     </plurals>
-    <string name="whats_new_why">Perché\?</string>
-    <string name="whats_new_game_modes">Modalità di gioco</string>
     <string name="whats_new_continue">Continua</string>
     <string name="whats_new_title">Cosa c\'è di nuovo</string>
     <string name="error_restoring_game">Impossibile ripristinare il gioco</string>

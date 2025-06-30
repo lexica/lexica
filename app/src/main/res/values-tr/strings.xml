@@ -74,20 +74,10 @@
     <string name="sort">Sırala</string>
     <string name="theme_high_contrast">Yüksek Karşıtlık</string>
     <string name="game_mode_beginner_description">Sözcükleri bulmaya yardımcı olması için ipuçlarını kullanın</string>
-    <string name="whats_new_game_modes_why">Topluluğun katkıları sayesinde Lexica\'yı oynamanın yolları arttırıldı. Bu, yüksek puanların nasıl kaydedildiğini açıklamayı zorlaştırmakta ve her yeni özellik karmaşıklık eklemektedir.
-\n
-\nBu değişiklikler, hangi tercih birleşiminin belirli bir yüksek puanla sonuçlandığını anlamayı kolaylaştırır.
-\n
-\nEk bir özellik olarak, bulunan her bir sözcüğü ve her yüksek puanı kaydetmek için yerel bir veri tabanı ekleyerek, Lexica\'nın iç bileşenleri gelecekte geliştirmeyi kolaylaştıracak şekilde güncellendi.</string>
-    <string name="whats_new_game_modes_description">Aşağıdaki tercihler Oyun Modları ile değiştirildi: Süre, tahta boyutu, en düşük sözcük uzunluğu, puanlama türü ve ipucu modları.
-\n
-\nOyun modunu ana ekrandan değiştirebilir veya kendi modunuzu oluşturabilirsiniz. Yüksek puanlar oyun moduna ve sözlüğe bağlıdır.</string>
     <plurals name="num_minutes">
         <item quantity="one">%d dak</item>
         <item quantity="other">%d dak</item>
     </plurals>
-    <string name="whats_new_why">Neden\?</string>
-    <string name="whats_new_game_modes">Oyun Modları</string>
     <string name="whats_new_continue">Devam et</string>
     <string name="whats_new_title">Yenilikler</string>
     <string name="error_restoring_game">Oyununuz geri yüklenemedi</string>

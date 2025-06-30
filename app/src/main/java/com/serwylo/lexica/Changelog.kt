@@ -1,11 +1,13 @@
 package com.serwylo.lexica
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import io.github.tonnyl.whatsnew.WhatsNew
 import io.github.tonnyl.whatsnew.item.WhatsNewItem
 import io.github.tonnyl.whatsnew.util.PresentationOption
+import androidx.core.content.edit
 
 object Changelog {
 
@@ -58,9 +60,9 @@ object Changelog {
 
     private fun rememberLexicaHasRun(context: Context) {
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit()
-            .putBoolean(HAS_RUN, true)
-            .apply()
+            .edit {
+                putBoolean(HAS_RUN, true)
+            }
     }
 
     private const val HAS_RUN = "lexica-has-run-before"

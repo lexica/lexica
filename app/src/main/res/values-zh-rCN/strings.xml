@@ -77,16 +77,6 @@
     <plurals name="num_minutes">
         <item quantity="other">%d 分钟</item>
     </plurals>
-    <string name="whats_new_game_modes_why">多亏社区的贡献，你可以使用Lexica的方式已经扩展。这使得解释高分是如何被记录的变得更加困难，而且每一个新特性都增加了复杂性。
-\n
-\n这一变化使我们更容易理解哪个首选项组合会产生一个尤其高的得分。
-\n
-\n此外，Lexica的内部已经进行了更新，通过添加一个本地数据库来记录找到的每一个单词和每一个高分，使在未来更容易增强。</string>
-    <string name="whats_new_why">原因何在？</string>
-    <string name="whats_new_game_modes_description">下面的首选项已经被游戏模式取代：持续时间、板尺寸、最小单词长、得分类型和提示模式。
-\n
-\n你可以从主屏幕改变游戏模式，或创建自己的模式。高分基于游戏模式和词汇。</string>
-    <string name="whats_new_game_modes">游戏模式</string>
     <string name="whats_new_continue">继续</string>
     <string name="whats_new_title">变更日志</string>
     <string name="error_restoring_game">无法恢复你的游戏</string>

@@ -65,7 +65,6 @@
         <item quantity="one">%d λεπ</item>
         <item quantity="other">%d λεπ</item>
     </plurals>
-    <string name="whats_new_why">Γιατί;</string>
     <string name="whats_new_continue">Συνέχεια</string>
     <string name="game_mode_letter_points">Σημεία γραμμάτων</string>
     <string name="menu_save_game_mode">Αποθήκευση</string>
