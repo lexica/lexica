@@ -1,9 +1,14 @@
-A word game where you have to find as many words as possible on a grid of random letters, in a limited time.
+En ordlek där spelare hittar så många ord som möjligt på ett rutnät av slumpmässiga bokstäver med en tidsgräns.
 
-This is a fork of the unmaintained <a href="https://play.google.com/store/apps/details?id=net.healeys.lexic">Lexic</a> which:
+Välj bland flera internationella ordböcker med sammanlagt miljontals ord.
 
- * Supports multiple different languages
- * Adds newer scoring options
- * Adds minor improvements to the UI
- * Has better support for high resolution screens
- * Removes the unsupported multiplayer options
+Spela mot vänner i flerspelar-läge genom att skicka dem offline-utmaningar via SMS/Email/QR-kod/etc.
+
+Bygg dina egna regler med anpassningsbara spellägen:
+* 4x4, 5x5 och 6x6 storlekar på brädet
+* Olika tidsbegränsningar
+* Olika poäng- och tipslägen
+
+Fullt öppen källkod. Inga annonser. Inga köp i appen. Ingen spårning. Någonsin.
+
+Stöd ytterligare utveckling på GitHub-sponsorer eller Liberapay.
