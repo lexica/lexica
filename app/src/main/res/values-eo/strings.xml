@@ -82,7 +82,7 @@
     <string name="hint_colour">Koloro de kaheloj</string>
     <string name="tile_count">Nombro de vortoj</string>
     <string name="found_words">Trovitaj Vortoj</string>
-    <string name="define_word">"&lt;u&gt;Difini&lt;/u&gt; "</string>
+    <string name="define_word"><u>Difini</u> </string>
     <string name="view_word">&lt;u&gt;Vidi&lt;/u&gt;</string>
     <string name="hide_unique">Kaŝi Unikajn Vortojn</string>
     <string name="show_unique">Montri Unikajn Vortojn</string>
