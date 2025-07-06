@@ -38,7 +38,7 @@
     <string name="show_unique">Показати унікальні слова</string>
     <string name="hide_unique">Сховати унікальні слова</string>
     <string name="view_word"><u>Переглянути</u></string>
-    <string name="define_word">"<u>Значення</u> "</string>
+    <string name="define_word"><u>Значення</u> </string>
     <string name="words">Слова</string>
     <string name="score">Бали</string>
     <string name="found_words">Знайдені слова</string>
