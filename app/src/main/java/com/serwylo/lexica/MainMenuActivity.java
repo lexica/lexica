@@ -88,7 +88,7 @@ public class MainMenuActivity extends AppCompatActivity {
             startActivity(new Intent(this, NewMultiplayerActivity.class));
         });
 
-        binding.preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE").setClassName("com.serwylo.lexica", "SettingsActivity")));
+        binding.preferences.setOnClickListener(v -> startActivity(new Intent("com.serwylo.lexica.action.CONFIGURE").setClassName(getPackageName(), "com.serwylo.lexica.SettingsActivity")));
 
         long score = highScore == null ? 0 : highScore.getScore();
         binding.highScore.setText(String.format(Locale.getDefault(), "%d", score));

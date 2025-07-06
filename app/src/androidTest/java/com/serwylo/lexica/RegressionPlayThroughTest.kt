@@ -1,13 +1,10 @@
 package com.serwylo.lexica
 
 
-import androidx.test.espresso.Espresso.*
-import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import com.serwylo.lexica.db.GameMode
 import com.serwylo.lexica.lang.Language
-import org.hamcrest.Matchers.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
