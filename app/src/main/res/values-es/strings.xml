@@ -37,11 +37,6 @@
     <string name="game_mode_beginner_description">Partida asistida para encontrar palabras más fácilmente</string>
     <string name="input_game_mode_name_description">Para escoger una modalidad de partida / guardar los puntajes más altos</string>
     <string name="reset_scores_prompt">¿Estás seguro de que quieres restablecer a cero todas las puntuaciones máximas de todos los modos de juego\? Esto no se puede deshacer.</string>
-    <string name="whats_new_game_modes_why">Gracias a los contribuidores de la comunidad, las maneras en las que puedes jugar Léxica se han expandido. Esto dificulta explicar cómo se guardan los puntajes más altos y cada nueva característica añade una mayor complejidad.
-\n
-\nEstos cambios facilitan entender cuáles combinaciones de preferencias resultan en un puntaje más alto en particular.
-\n
-\nComo un bono, las partes internas de Léxica se han actualizado para facilitar la futura adición de base de datos locales para guardar cada palabra encontrada y cada puntaje alto.</string>
     <string name="high_scores_reset">Los puntajes más altos han sido reseteados.</string>
     <string name="pref_resetScores">Resetea los puntajes más altos</string>
     <string name="high_score">Puntaje más alto</string>
@@ -52,11 +47,6 @@
         <item quantity="many">%d minutos</item>
         <item quantity="other">%d minutos</item>
     </plurals>
-    <string name="whats_new_why">¿Por qué\?</string>
-    <string name="whats_new_game_modes_description">Las siguientes preferencias han sido reemplazadas con modalidades de partida: duración, tamaño del tablero, longitud mínima de palabras, tipo de puntaje y modalidades asistidas.
-\n
-\nPuedes cambiar la modalidad de la partida desde la pantalla principal o puedes crear una propia. Los puntajes más altos son según su modalidad de partida y léxico.</string>
-    <string name="whats_new_game_modes">Modalidades de partida</string>
     <string name="whats_new_continue">Continuar</string>
     <string name="whats_new_title">Novedades</string>
     <string name="error_restoring_game">No se ha podido restaurar tu partida</string>

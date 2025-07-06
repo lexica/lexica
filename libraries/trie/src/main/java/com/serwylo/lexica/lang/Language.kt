@@ -50,7 +50,7 @@ abstract class Language {
      * for each language.
      */
     fun getPointsForLetter(letterWithMandatorySuffix: String): Int {
-        val lowerCaseLetter = letterWithMandatorySuffix.toLowerCase()
+        val lowerCaseLetter = letterWithMandatorySuffix.lowercase()
         return letterPoints[lowerCaseLetter]
                 ?: throw IllegalArgumentException("Language $name doesn't have a point value for the $lowerCaseLetter tile")
     }
@@ -68,7 +68,7 @@ abstract class Language {
      */
     val trieFileName: String
         get() {
-            val suffix = name.replace('-', '_').toLowerCase(Locale.ENGLISH)
+            val suffix = name.replace('-', '_').lowercase(Locale.ENGLISH)
             return "words_$suffix.bin"
         }
 
@@ -78,7 +78,7 @@ abstract class Language {
      */
     val letterDistributionFileName: String
         get() {
-            val suffix = name.replace('-', '_').toLowerCase(Locale.ENGLISH)
+            val suffix = name.replace('-', '_').lowercase(Locale.ENGLISH)
             return "letters_$suffix.txt"
         }
 

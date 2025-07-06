@@ -1,6 +1,6 @@
 plugins {
     // Used to create a fat jar with all dependencies, so that it can be executed without having to assemble the relevant dependencies on the classpath.
-    id 'com.github.johnrengelman.shadow' version '6.0.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 
     id 'java'
     id 'kotlin'

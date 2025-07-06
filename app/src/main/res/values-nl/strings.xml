@@ -73,22 +73,12 @@
     <string name="time">Tijd</string>
     <string name="sort">Sorteren</string>
     <string name="theme_high_contrast">Hoog contrast</string>
-    <string name="whats_new_game_modes_description">De volgende instellingen zijn vervangen door spelmodi: duur, bordgrootte, minimale woordlengte, scorenotatie en tipmodi.
-\n
-\nJe kunt de spelmodus aanpassen vanop het hoofdscherm of je eigen modus samenstellen. Topscores zijn gebaseerd op spelmodi en woordenlijsten.</string>
     <string name="error_restoring_game">Het spel kan niet worden voortgezet</string>
     <string name="game_mode_marathon">Rondje om de kerk</string>
     <plurals name="num_minutes">
         <item quantity="one">%d min.</item>
         <item quantity="other">%d min.</item>
     </plurals>
-    <string name="whats_new_game_modes_why">Door bijdragen vanuit de gemeenschap is het aantal spelmodi uitgebreid. Hierdoor is het moeilijker uit te leggen hoe topscores tot stand komen - elke nieuwe functie voegt immers complexiteit toe.
-\n
-\nIn het wijzigingslog het makkelijker te zien wat er veranderd is en welke instelling tot een bepaalde topscore leidt.
-\n
-\nDaarbovenop is de kern van Lexica bijgewerkt waardoor de code makkelijker is geworden. In de toekomst volgt nog een lokale databank die elk gevonden woord en elke topscore bijhoudt.</string>
-    <string name="whats_new_why">Waarom\?</string>
-    <string name="whats_new_game_modes">Spelmodi</string>
     <string name="whats_new_continue">Doorgaan</string>
     <string name="whats_new_title">Wijzigingslog</string>
     <string name="game_mode_legacy_description">De modus uit oudere Lexica-versies</string>

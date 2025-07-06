@@ -122,33 +122,43 @@ fun fromScoreSelectMissedWords() {
 }
 
 fun fromGameEndGame() {
+    val targetContext = InstrumentationRegistry.getTargetContext()
+
     val overflowMenuButton = onView(
         allOf(
+            withContentDescription("More options"),
             childAtPosition(
                 childAtPosition(
                     withId(R.id.toolbar),
-                    2),
-                1),
-            isDisplayed()));
-    overflowMenuButton.perform(click());
+                    2
+                ),
+                1
+            ),
+            isDisplayed()
+        )
+    )
+    overflowMenuButton.perform(click())
 
-    val targetContext = InstrumentationRegistry.getTargetContext()
-
-    val endGameMenuItem = onView(
-        allOf(withId(androidx.transition.R.id.title), withText(targetContext.getString(R.string.menu_end_game)),
+    val endGameMenuButton = onView(
+        allOf(
+            withId(androidx.drawerlayout.R.id.title), withText(targetContext.getString(R.string.menu_end_game)),
             childAtPosition(
                 childAtPosition(
-                    withId(androidx.preference.R.id.content),
-                    0),
-                0),
-            isDisplayed()));
-    endGameMenuItem.perform(click());
+                    withId(com.google.android.material.R.id.content),
+                    0
+                ),
+                0
+            ),
+            isDisplayed()
+        )
+    )
+    endGameMenuButton.perform(click())
 
     val dialogConfirmButton = onView(
         allOf(withId(android.R.id.button1), withText(targetContext.getString(R.string.menu_end_game)),
             childAtPosition(
                 childAtPosition(
-                    withId(androidx.preference.R.id.buttonPanel),
+                    withId(com.google.android.material.R.id.buttonPanel),
                     0),
                 3)));
     dialogConfirmButton.perform(scrollTo(), click());
@@ -287,5 +297,6 @@ private fun fromSettingsOpenThemeChooser() {
             childAtPosition(
                 withId(android.R.id.list_container),
                 0)))
-    recyclerView4.perform(actionOnItemAtPosition<ViewHolder>(1, click()))
+
+    recyclerView4.perform(actionOnItemAtPosition<ViewHolder>(0, click()))
 }

@@ -1,6 +1,6 @@
 plugins {
     // Used to create a fat jar with all dependencies, so that it can be executed without having to assemble the relevant dependencies on the classpath.
-    id 'com.github.johnrengelman.shadow' version '6.0.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 
     id 'java'
     id 'kotlin'
@@ -11,7 +11,7 @@ dependencies {
     implementation project(':libraries:trie')
     implementation "org.apache.commons:commons-math3:3.6.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    testImplementation "junit:junit:4.13"
+    testImplementation "junit:junit:4.13.2"
 }
 
 shadowJar {

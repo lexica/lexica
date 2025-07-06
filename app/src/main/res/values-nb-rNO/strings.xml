@@ -74,14 +74,6 @@
     <string name="time">Tid</string>
     <string name="theme_high_contrast">Høykontrast</string>
     <string name="error_restoring_game">Klarte ikke å gjenopprette spillet ditt</string>
-    <string name="whats_new_game_modes_why">Takket være bidragsytere fra gemenskapen er det nå flere måter å spille Lexica. Dette gjør det vanskeligere å forklare hvordan topp-poengsummer scores, og hver nye funksjon betyr mer kompleksitet.
-\n
-\nDette gjør det enklere å forstå hvilke kombinasjoner av innstillinger som fører til en gitt topp-poengsum.
-\n
-\nSom en bonus, har kodebasen blitt oppdatert slik at det er enklere å legge til en lokal database for opptak av alle ord og enhver topp-poengsum som scores.</string>
-    <string name="whats_new_game_modes_description">Følgende innstillinger har blitt erstattet med forskjellige spillmodus: Varighet, brettstørrelse, minimumsordlengde, scoringstype, og hint-modus.
-\n
-\nDu kan endre spillmodus fra hovedskjermen, eller opprette ditt eget. Topp-poengsummer er basert på spillmodus og leksikon.</string>
     <string name="game_mode_legacy_description">Brukt i en tidligere versjon av Lexica</string>
     <string name="game_mode_legacy">Gammeldags</string>
     <string name="game_mode_custom_description">Egendefinert spillmodus</string>
@@ -95,8 +87,6 @@
         <item quantity="one">ett min.</item>
         <item quantity="other">%d min.</item>
     </plurals>
-    <string name="whats_new_why">Hvorfor\?</string>
-    <string name="whats_new_game_modes">Spillmodi</string>
     <string name="whats_new_continue">Fortsett</string>
     <string name="whats_new_title">Hva er nytt</string>
     <string name="game_mode_letter_points">Bokstavpoeng</string>

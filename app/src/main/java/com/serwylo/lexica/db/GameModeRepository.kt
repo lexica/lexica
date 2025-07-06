@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.preference.PreferenceManager
 import com.serwylo.lexica.share.SharedGameData
+import androidx.core.content.edit
 
 class GameModeRepository(
         private val gameModeDao: GameModeDao,
@@ -26,7 +27,7 @@ class GameModeRepository(
     )
 
     fun saveCurrentGameMode(gameMode: GameMode) {
-        preferences.edit().putLong(PREF_CURRENT_GAME_MODE_ID, gameMode.gameModeId).apply()
+        preferences.edit { putLong(PREF_CURRENT_GAME_MODE_ID, gameMode.gameModeId) }
     }
 
     fun hasGameModes(): Boolean {

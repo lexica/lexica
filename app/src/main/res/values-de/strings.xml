@@ -73,22 +73,12 @@
     <string name="time">Zeit</string>
     <string name="sort">Sortieren</string>
     <string name="theme_high_contrast">Hoher Kontrast</string>
-    <string name="whats_new_game_modes_why">Dank der Beiträge der Gemeinschaft haben sich die Möglichkeiten, Lexica zu spielen, erweitert. Dies macht es schwieriger zu erklären, wie hohe Punktzahlen aufgezeichnet werden, und jede neue Funktion erhöht die Komplexität.
-\n
-\nDiese Änderungen erleichtern das Verständnis, welche Kombination von Einstellungen zu einer bestimmten hohen Punktzahl führt.
-\n
-\nAls zusätzlichen Bonus wurden die Interna von Lexica aktualisiert, um die zukünftige Verbesserung zu vereinfachen, indem eine lokale Datenbank hinzugefügt wird, in der jedes einzelne gefundene Wort und jede hohe Punktzahl aufgezeichnet wird.</string>
-    <string name="whats_new_game_modes_description">Die folgenden Einstellungen wurden durch Spielmodi ersetzt: Dauer, Brettgröße, minimale Wortlänge, Wertungstyp und Hinweismodi.
-\n
-\nSie können den Spielmodus über den Hauptbildschirm ändern oder Ihren eigenen erstellen. Höchste Punktzahlen basieren auf dem Spielmodus und dem Lexikon.</string>
     <string name="input_game_mode_name_description">Zur Auswahl des Spielmodus / Aufzeichnung von Höchsten Punktzahlen</string>
     <string name="game_mode_sprint">Sprint</string>
     <plurals name="num_minutes">
         <item quantity="one">%d min</item>
         <item quantity="other">%d min</item>
     </plurals>
-    <string name="whats_new_why">Warum\?</string>
-    <string name="whats_new_game_modes">Spielmodi</string>
     <string name="whats_new_continue">Fortfahren</string>
     <string name="whats_new_title">Was gibt\'s Neues</string>
     <string name="error_restoring_game">Konnte das Spiel nicht wiederherstellen</string>
