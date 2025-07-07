@@ -11,7 +11,7 @@
     <string name="pref_timeLimit">时限</string>
     <string name="pref_sounds">音效</string>
     <string name="dialog_about_title">关于Lexica</string>
-    <string name="dialog_about_content">您需要在3分钟内拼出尽可能多的单词。要拼写单词，请触碰屏幕，将手指滑动至相邻的方块。\n\n计分方式：\n在4×4的版面上，单词必须由至少3个字母组成；在5×5的版面上，单词必须由至少4个字母组成。由3个或4个字母组成的单词记1分，找出更长的单词将获更多分数。\n专有名词不计任何分数。</string>
+    <string name="dialog_about_content">您需要在3分钟内拼出尽可能多的单词。要拼写单词，请触碰屏幕，将手指滑动至相邻的方块。\n\n计分方式：\n在4×4的版面上，单词必须由至少3个字母组成；在5×5的版面上，单词必须由至少4个字母组成。由3个或4个字母组成的单词记1分，找出更长的单词将获更多分数。专有名词不计任何分数。</string>
     <string name="menu_rotate_board">旋转版面</string>
     <string name="menu_save_game">保存游戏</string>
     <string name="menu_end_game">结束游戏</string>
