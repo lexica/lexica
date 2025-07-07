@@ -85,21 +85,42 @@ public class CharProbGenerator {
         return Collections.unmodifiableList(letters);
     }
 
-    public FiveByFiveBoard generateFiveByFiveBoard() {
-        return new FiveByFiveBoard(generateBoard(25));
+    public FourByFourBoard generateFourByFourBoard(Seed boardSeed) {
+        if (boardSeed == null) return generateFourByFourBoard(new Random().nextLong());
+        else if (boardSeed.letters != null) return new FourByFourBoard(boardSeed.letters);
+        else if (boardSeed.seed != null) return generateFourByFourBoard(boardSeed.seed);
+        else return generateFourByFourBoard(new Random().nextLong());
     }
 
-    public FourByFourBoard generateFourByFourBoard() {
-        return new FourByFourBoard(generateBoard(16));
+    public FourByFourBoard generateFourByFourBoard(long seed) {
+        return new FourByFourBoard(generateBoard(16, seed));
     }
 
-    public SixBySixBoard generateSixBySixBoard() {
-        return new SixBySixBoard(generateBoard(36));
+    public FiveByFiveBoard generateFiveByFiveBoard(Seed boardSeed) {
+        if (boardSeed == null) return generateFiveByFiveBoard(new Random().nextLong());
+        else if (boardSeed.letters != null) return new FiveByFiveBoard(boardSeed.letters);
+        else if (boardSeed.seed != null) return generateFiveByFiveBoard(boardSeed.seed);
+        else return generateFiveByFiveBoard(new Random().nextLong());
     }
 
-    private String[] generateBoard(int size) {
+    public FiveByFiveBoard generateFiveByFiveBoard(long seed) {
+        return new FiveByFiveBoard(generateBoard(25, seed));
+    }
+
+    public SixBySixBoard generateSixBySixBoard(Seed boardSeed) {
+        if (boardSeed == null) return generateSixBySixBoard(new Random().nextLong());
+        else if (boardSeed.letters != null) return new SixBySixBoard(boardSeed.letters);
+        else if (boardSeed.seed != null) return generateSixBySixBoard(boardSeed.seed);
+        else return generateSixBySixBoard(new Random().nextLong());
+    }
+
+    public SixBySixBoard generateSixBySixBoard(long seed) {
+        return new SixBySixBoard(generateBoard(36, seed));
+    }
+
+    private String[] generateBoard(int size, long seed) {
         int total = 0;
-        Random rng = new Random();
+        Random rng = new Random(seed);
 
         String[] board = new String[size];
 
@@ -134,6 +155,44 @@ public class CharProbGenerator {
         }
 
         return board;
+    }
+
+
+    /**
+     * Used with {@link CharProbGenerator} to  deterministically generate boards based on either
+     * a given set of letters or a numerical seed for the random generator.
+     *
+     * This class manages both cases. If both letters and seed are null, it generates a random board.
+     */
+    public static class Seed {
+        public String[] letters;
+        public Long seed;
+
+        private Seed(String[] letters) {
+            this.letters = letters;
+            this.seed = null;
+        }
+
+        private Seed(Long seed) {
+            this.seed = seed;
+            this.letters = null;
+        }
+
+        public static Seed createLetters(String[] letters) {
+            return new Seed(letters);
+        }
+
+        public static Seed createRandom() {
+            return new Seed(new Random().nextLong());
+        }
+
+        public static Seed createRandomFromSeed(Long seed) {
+            return seed == null ? createRandom() : new Seed(seed);
+        }
+
+        public static Seed createRandomFromPreviousBoard(Board prevBoard) {
+            return new Seed(prevBoard.getRotationInvariantHash());
+        }
     }
 
     public static class ProbabilityQueue {
