@@ -40,7 +40,7 @@ class NextBoardTest {
         val language = EnglishGB()
 
         val board1 = getGeneratorForLang(language).generateFourByFourBoard(3500)
-        val board2 = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.Seed.createSeedFromPreviousBoard(board1))
+        val board2 = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.Seed.createRandomFromPreviousBoard(board1))
 
         // TODO: This changes if the word probabilities change, maybe have a some test probabilities
         assertEquals("r,i,c,o,n,a,qu,a,l,t,d,s,e,e,i,r", board1.toString())
@@ -55,7 +55,7 @@ class NextBoardTest {
         assertEquals("r,i,c,o,n,a,qu,a,l,t,d,s,e,e,i,r", board.toString())
 
         for (i in 0..500) {
-            board = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.Seed.createSeedFromPreviousBoard(board))
+            board = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.Seed.createRandomFromPreviousBoard(board))
         }
 
         assertEquals("v,t,s,p,d,p,a,n,s,o,i,i,l,r,a,o", board.toString())
@@ -67,19 +67,31 @@ class NextBoardTest {
         val language = EnglishGB()
 
         // the generators are altered after using them. might not be the most intuitive thing
-        val board1 = getGeneratorForLang(language).generateFourByFourBoard(3500)
-        val board2 = getGeneratorForLang(language).generateFourByFourBoard(3500)
+        val board1Seed3500 = getGeneratorForLang(language).generateFourByFourBoard(3500)
+        val board1Seed3500Again = getGeneratorForLang(language).generateFourByFourBoard(3500)
+        val board1Seed3500Wrapper = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.Seed.createRandomFromSeed(3500))
+        val board1NotRandom = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.Seed.createLetters(board1Seed3500.letters))
 
-        assertEquals(board1.toString(), board2.toString())
+        assertEquals(board1Seed3500.toString(), board1Seed3500Again.toString())
+        assertEquals(board1Seed3500.toString(), board1Seed3500Wrapper.toString())
+        assertEquals(board1Seed3500.toString(), board1NotRandom.toString())
 
-        val board3 = getGeneratorForLang(language).generateFiveByFiveBoard(3500)
-        val board4 = getGeneratorForLang(language).generateFiveByFiveBoard(3500)
+        val board2Seed3500 = getGeneratorForLang(language).generateFiveByFiveBoard(3500)
+        val board2Seed3500Again = getGeneratorForLang(language).generateFiveByFiveBoard(3500)
+        val board2Seed3500Wrapper = getGeneratorForLang(language).generateFiveByFiveBoard(CharProbGenerator.Seed.createRandomFromSeed(3500))
+        val board2NotRandom = getGeneratorForLang(language).generateFiveByFiveBoard(CharProbGenerator.Seed.createLetters(board2Seed3500.letters))
 
-        assertEquals(board3.toString(), board4.toString())
+        assertEquals(board2Seed3500.toString(), board2Seed3500Again.toString())
+        assertEquals(board2Seed3500.toString(), board2Seed3500Wrapper.toString())
+        assertEquals(board2Seed3500.toString(), board2NotRandom.toString())
 
-        val board5 = getGeneratorForLang(language).generateSixBySixBoard(3500)
-        val board6 = getGeneratorForLang(language).generateSixBySixBoard(3500)
+        val board3Seed3500 = getGeneratorForLang(language).generateSixBySixBoard(3500)
+        val board3Seed3500Again = getGeneratorForLang(language).generateSixBySixBoard(3500)
+        val board3Seed3500Wrapper = getGeneratorForLang(language).generateSixBySixBoard(CharProbGenerator.Seed.createRandomFromSeed(3500))
+        val board3NotRandom = getGeneratorForLang(language).generateSixBySixBoard(CharProbGenerator.Seed.createLetters(board3Seed3500.letters))
 
-        assertEquals(board5.toString(), board6.toString())
+        assertEquals(board3Seed3500.toString(), board3Seed3500Again.toString())
+        assertEquals(board3Seed3500.toString(), board3Seed3500Wrapper.toString())
+        assertEquals(board3Seed3500.toString(), board3NotRandom.toString())
     }
 }
