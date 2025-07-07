@@ -47,7 +47,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
-import java.util.Random;
 
 public class Game implements Synchronizer.Counter {
 
@@ -164,7 +163,7 @@ public class Game implements Synchronizer.Counter {
 
 
 
-    public Game(Context context, GameMode gameMode, Language language, CharProbGenerator.BoardSeed boardSeed) {
+    public Game(Context context, GameMode gameMode, Language language, CharProbGenerator.Seed boardSeed) {
         this.language = language;
         this.gameMode = gameMode;
         status = GameStatus.GAME_STARTING;
@@ -206,27 +205,26 @@ public class Game implements Synchronizer.Counter {
     private CharProbGenerator getCharProbGenerator(Context context) {
         String lettersFileName = language.getLetterDistributionFileName();
         int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
-        CharProbGenerator charProbs = new CharProbGenerator(context.getResources().openRawResource(id), getLanguage());
-        return charProbs;
+        return new CharProbGenerator(context.getResources().openRawResource(id), getLanguage());
+    }
+
+    public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language) {
+        return generateGame(context, gameMode, language, CharProbGenerator.Seed.createRandom());
     }
 
     /**
      * TODO: This is not a very pure function. The Game constructor loads preferences, reads sounds from disk, and probably does
      *       many other things. This should be refactored so that it is more predictable what happens.
      */
-    public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language) {
-        return generateGame(context, gameMode, language, null);
-    }
-
-    public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language, Long seed) {
-        Game bestGame = new Game(context, gameMode, language, new CharProbGenerator.BoardSeed(seed));
+    public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language, CharProbGenerator.Seed seed) {
+        Game bestGame = new Game(context, gameMode, language, seed);
         Board lastBoard = bestGame.board; // needed so we still receive deterministic boards, even when skipping tries
 
         int numAttempts = 0;
         while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
             Log.d(TAG, "Generating another board, because the previous one only had " + bestGame.getMaxWordCount() + " words, but we want at least 45. Will give up after 5 tries.");
 
-            Game nextAttempt = new Game(context, gameMode, language, CharProbGenerator.BoardSeed.fromPreviousBoard(lastBoard));
+            Game nextAttempt = new Game(context, gameMode, language, CharProbGenerator.Seed.createRandomFromPreviousBoard(lastBoard));
             lastBoard = nextAttempt.getBoard();
 
             if (nextAttempt.getMaxWordCount() > bestGame.getMaxWordCount()) {

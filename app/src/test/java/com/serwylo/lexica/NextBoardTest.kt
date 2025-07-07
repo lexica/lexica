@@ -40,7 +40,7 @@ class NextBoardTest {
         val language = EnglishGB()
 
         val board1 = getGeneratorForLang(language).generateFourByFourBoard(3500)
-        val board2 = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.BoardSeed.fromPreviousBoard(board1))
+        val board2 = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.Seed.createSeedFromPreviousBoard(board1))
 
         // TODO: This changes if the word probabilities change, maybe have a some test probabilities
         assertEquals("r,i,c,o,n,a,qu,a,l,t,d,s,e,e,i,r", board1.toString())
@@ -55,7 +55,7 @@ class NextBoardTest {
         assertEquals("r,i,c,o,n,a,qu,a,l,t,d,s,e,e,i,r", board.toString())
 
         for (i in 0..500) {
-            board = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.BoardSeed.fromPreviousBoard(board))
+            board = getGeneratorForLang(language).generateFourByFourBoard(CharProbGenerator.Seed.createSeedFromPreviousBoard(board))
         }
 
         assertEquals("v,t,s,p,d,p,a,n,s,o,i,i,l,r,a,o", board.toString())

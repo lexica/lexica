@@ -85,7 +85,7 @@ public class CharProbGenerator {
         return Collections.unmodifiableList(letters);
     }
 
-    public FourByFourBoard generateFourByFourBoard(BoardSeed boardSeed) {
+    public FourByFourBoard generateFourByFourBoard(Seed boardSeed) {
         if (boardSeed == null) return generateFourByFourBoard(new Random().nextLong());
         else if (boardSeed.letters != null) return new FourByFourBoard(boardSeed.letters);
         else if (boardSeed.seed != null) return generateFourByFourBoard(boardSeed.seed);
@@ -96,7 +96,7 @@ public class CharProbGenerator {
         return new FourByFourBoard(generateBoard(16, seed));
     }
 
-    public FiveByFiveBoard generateFiveByFiveBoard(BoardSeed boardSeed) {
+    public FiveByFiveBoard generateFiveByFiveBoard(Seed boardSeed) {
         if (boardSeed == null) return generateFiveByFiveBoard(new Random().nextLong());
         else if (boardSeed.letters != null) return new FiveByFiveBoard(boardSeed.letters);
         else if (boardSeed.seed != null) return generateFiveByFiveBoard(boardSeed.seed);
@@ -107,7 +107,7 @@ public class CharProbGenerator {
         return new FiveByFiveBoard(generateBoard(25, seed));
     }
 
-    public SixBySixBoard generateSixBySixBoard(BoardSeed boardSeed) {
+    public SixBySixBoard generateSixBySixBoard(Seed boardSeed) {
         if (boardSeed == null) return generateSixBySixBoard(new Random().nextLong());
         else if (boardSeed.letters != null) return new SixBySixBoard(boardSeed.letters);
         else if (boardSeed.seed != null) return generateSixBySixBoard(boardSeed.seed);
@@ -158,27 +158,40 @@ public class CharProbGenerator {
     }
 
 
-    // TODO: think of a more intuitive name
-    public static class BoardSeed {
-        /* Idea: We can deterministically generate boards based on either a given set of letters
-            or a numerical seed for the random generator. This class tries to manage both cases,
-            If both letters and seed are null, it generates a random board.
-        */
+    /**
+     * Used with {@link CharProbGenerator} to  deterministically generate boards based on either
+     * a given set of letters or a numerical seed for the random generator.
+     *
+     * This class manages both cases. If both letters and seed are null, it generates a random board.
+     */
+    public static class Seed {
         public String[] letters;
         public Long seed;
 
-        public BoardSeed(String[] letters) {
+        private Seed(String[] letters) {
             this.letters = letters;
             this.seed = null;
         }
 
-        public BoardSeed(Long seed) {
+        private Seed(Long seed) {
             this.seed = seed;
             this.letters = null;
         }
 
-        public static BoardSeed fromPreviousBoard(Board prevBoard) {
-            return new BoardSeed(prevBoard.getRotationInvariantHash());
+        public static Seed createLetters(String[] letters) {
+            return new Seed(letters);
+        }
+
+        public static Seed createRandom() {
+            return new Seed(new Random().nextLong());
+        }
+
+        public static Seed createRandomFromSeed(Long seed) {
+            return seed == null ? createRandom() : new Seed(seed);
+        }
+
+        public static Seed createRandomFromPreviousBoard(Board prevBoard) {
+            return new Seed(prevBoard.getRotationInvariantHash());
         }
     }
 

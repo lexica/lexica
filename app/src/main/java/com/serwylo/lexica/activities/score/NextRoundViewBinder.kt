@@ -8,7 +8,7 @@ import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
 import com.serwylo.lexica.R
-import com.serwylo.lexica.game.CharProbGenerator.BoardSeed
+import com.serwylo.lexica.game.CharProbGenerator
 import com.serwylo.lexica.game.Game
 import com.serwylo.lexica.view.QrCodeBinder
 
@@ -20,7 +20,7 @@ class NextRoundViewBinder(activity: ScoreActivity, parent: FrameLayout, game: Ga
         val qr = nextRoundView.findViewById<ImageView>(R.id.qr)
         val toggleQr = nextRoundView.findViewById<SwitchCompat>(R.id.toggle_qr)
 
-        val nextGame = Game.generateGame(parent.context, game.gameMode, game.language, BoardSeed.fromPreviousBoard(game.board).seed)
+        val nextGame = Game.generateGame(parent.context, game.gameMode, game.language, CharProbGenerator.Seed.createRandomFromPreviousBoard(game.board))
 
         val qrCodeBinder = QrCodeBinder(parent.context, parent.resources, nextGame)
         qrCodeBinder.bindUI(qr, toggleQr)

@@ -101,7 +101,7 @@ public class GameActivity extends AppCompatActivity implements Synchronizer.Fina
                     Language language = Language.from(langName);
 
                     game = board != null
-                        ? new Game(this, gameMode, language, new CharProbGenerator.BoardSeed(board))
+                        ? new Game(this, gameMode, language, CharProbGenerator.Seed.createLetters(board))
                         : Game.generateGame(this, gameMode, language);
 
                     setupGameView(game);

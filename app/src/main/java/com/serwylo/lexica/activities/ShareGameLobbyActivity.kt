@@ -81,7 +81,7 @@ class ShareGameLobbyActivity : AppCompatActivity() {
                 binding.gameModeDetails.setGameMode(gameMode)
                 binding.startGame.isEnabled = true
 
-                val game = Game(this, gameMode, data.language, CharProbGenerator.BoardSeed(data.board.toTypedArray()))
+                val game = Game(this, gameMode, data.language, CharProbGenerator.Seed.createLetters(data.board.toTypedArray()))
                 binding.multiplayerGameNumAvailableWords.text = resources.getQuantityString(R.plurals.num_available_words_in_game, game.maxWordCount, game.maxWordCount)
 
                 binding.startGame.setOnClickListener { startGame(data.language, gameMode, data.board) }
