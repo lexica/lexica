@@ -117,7 +117,7 @@
 		app:layout_constraintBottom_toTopOf="@id/start_next_round"
 		tools:layout_editor_absoluteY="558dp" />
 
-	<mehdi.sakout.fancybuttons.FancyButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/start_next_round"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
@@ -126,15 +126,21 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		android:paddingTop="?attr/home__button_padding"
 		android:paddingBottom="?attr/home__button_padding"
-		fancy:fb_defaultColor="?attr/home__secondary_button_background"
-		fancy:fb_borderWidth="2dp"
-		fancy:fb_borderColor="?attr/home__secondary_button_border"
-		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"
-		fancy:fb_fontIconResource="&#xf144;"
-		fancy:fb_fontIconSize="28sp"
-		fancy:fb_iconPosition="left"
-		fancy:fb_text="@string/multiplayer__start_next_round"
-		fancy:fb_textSize="28sp" >
-	</mehdi.sakout.fancybuttons.FancyButton>
+
+		android:stateListAnimator="@null"
+		app:strokeWidth="2dp"
+		app:backgroundTint="?attr/home__main_button_background"
+		app:strokeColor="?attr/home__main_button_border"
+		app:icon="@drawable/circle_play_solid"
+		app:iconSize="28dp"
+		app:iconTint="@color/white"
+		android:textAllCaps="false"
+		app:cornerRadius="0dp"
+		android:insetTop="0dp"
+		android:insetBottom="0dp"
+		app:iconGravity="textStart"
+		android:text="@string/multiplayer__start_next_round"
+		android:textColor="@color/white"
+		android:textSize="16sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

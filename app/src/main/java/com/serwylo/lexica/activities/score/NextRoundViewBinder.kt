@@ -6,11 +6,11 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
+import com.google.android.material.button.MaterialButton
 import com.serwylo.lexica.R
 import com.serwylo.lexica.game.CharProbGenerator.BoardSeed
 import com.serwylo.lexica.game.Game
 import com.serwylo.lexica.view.QrCodeBinder
-import mehdi.sakout.fancybuttons.FancyButton
 
 class NextRoundViewBinder(activity: ScoreActivity, parent: FrameLayout, game: Game) {
 
@@ -25,7 +25,7 @@ class NextRoundViewBinder(activity: ScoreActivity, parent: FrameLayout, game: Ga
         val qrCodeBinder = QrCodeBinder(parent.context, parent.resources, nextGame)
         qrCodeBinder.bindUI(qr, toggleQr)
 
-        val startNextRoundBtn = nextRoundView.findViewById<FancyButton>(R.id.start_next_round)
+        val startNextRoundBtn = nextRoundView.findViewById<MaterialButton>(R.id.start_next_round)
         startNextRoundBtn.setOnClickListener {
             Log.d("DB", "bindNextRound: Start Next Round clicked")
 
