@@ -104,13 +104,13 @@ class NewMultiplayerActivity : AppCompatActivity() {
                 val text = """
 ${getString(R.string.invite__multiplayer__description)}
 
-$qrCodeBinder.uri
+${qrCodeBinder.uri}
 
 ${getString(R.string.invite__dont_have_lexica_installed)}
 
 ${getString(R.string.invite__dont_have_lexica_installed_web)}
 
-$qrCodeBinder.webUri
+${qrCodeBinder.webUri}
 
 ${getString(R.string.invite__multiplayer__game_offline)}
 

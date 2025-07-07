@@ -33,11 +33,6 @@ class NextRoundViewBinder(activity: ScoreActivity, parent: FrameLayout, game: Ga
                 putExtra("gameMode", nextGame.gameMode)
                 putExtra("lang", nextGame.language.name)
                 putExtra("board", nextGame.board.letters)
-
-                // todo: find out why these tags are set in the first place normally
-                //  and why setting them in this case (with the main difference probably being the absence
-                //  of a home activity) on some devices leads to the closing of the app.
-//                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_TASK_ON_HOME
             }
 
             ContextCompat.startActivity(parent.context, intent, null)

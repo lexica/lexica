@@ -21,44 +21,6 @@
 		android:elevation="4dp"
 		app:title="@string/multiplayer__next_round" />
 
-<!--	-->
-<!--	<TextView-->
-<!--		android:id="@+id/multiplayer_game_num_available_words"-->
-<!--		android:layout_width="0dp"-->
-<!--		android:layout_height="wrap_content"-->
-<!--		tools:text="265 words (tap to refresh)"-->
-<!--		android:textAlignment="center"-->
-<!--		android:textColor="?attr/game__score__heading_text_colour"-->
-<!--		android:padding="?attr/game__score__padding"-->
-<!--		app:layout_constraintTop_toBottomOf="@id/game_mode_details"-->
-<!--		app:layout_constraintStart_toStartOf="parent"-->
-<!--		app:layout_constraintEnd_toEndOf="parent" />-->
-
-
-<!--	<mehdi.sakout.fancybuttons.FancyButton-->
-<!--		android:id="@+id/send_invite"-->
-<!--		android:layout_width="0dp"-->
-<!--		android:layout_height="wrap_content"-->
-<!--		app:layout_constraintTop_toBottomOf="@id/multiplayer_game_num_available_words"-->
-<!--		app:layout_constraintStart_toStartOf="parent"-->
-<!--		app:layout_constraintEnd_toEndOf="parent"-->
-<!--		fancy:fb_fontIconResource="&#xf1e0;"-->
-<!--		fancy:fb_fontIconSize="?attr/game__score__heading_text_size"-->
-<!--		fancy:fb_radius="12dp"-->
-<!--		fancy:fb_iconPaddingLeft="8dp"-->
-<!--		fancy:fb_iconPaddingRight="8dp"-->
-<!--		fancy:fb_iconPaddingTop="8dp"-->
-<!--		fancy:fb_iconPaddingBottom="8dp"-->
-<!--		android:paddingEnd="8dp"-->
-<!--		android:paddingStart="8dp"-->
-<!--		fancy:fb_text="@string/multiplayer__share_invites"-->
-<!--		fancy:fb_defaultColor="?attr/home__secondary_button_background"-->
-<!--		fancy:fb_focusColor="?attr/home__secondary_button_background_focused"-->
-<!--		fancy:fb_textColor="?attr/home__secondary_button_text_colour"-->
-<!--		android:layout_marginTop="?attr/game__score__padding"-->
-<!--		android:layout_marginEnd="?attr/game__score__padding"-->
-<!--		android:layout_marginStart="?attr/game__score__padding" />-->
-
 	<TextView
 		android:id="@+id/android_app_tag"
 		android:layout_width="wrap_content"

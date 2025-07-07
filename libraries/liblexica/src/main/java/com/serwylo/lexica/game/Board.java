@@ -114,12 +114,11 @@ public abstract class Board implements TransitionMap {
         return board;
     }
 
+    /**
+     * This function calculates an rotation invariant hash by XOR-ring the hashes of getString()
+     * output of all four rotations. Since the order of XOR-ing bits doesn't matter, this is invariant.
+     */
     private long calcRotationInvariantHash() {
-        /*
-           This function calculates an rotation invariant hash by XOR-ring the hashes of getString()
-           output of all four rotations. Since the order of XOR-ing bits doesn't matter, this is invariant.
-         */
-
         long res = 0;
         for (int i = 0; i < 4; i++) {
             res = res ^ this.toString().hashCode(); // ^ is the XOR operation
