@@ -1,1 +1,1 @@
-Find as many words as possible on a grid of random letters within a time limit
+Hitta så många ord som möjligt på ett rutnät av slumpmässiga bokstäver inom en tidsgräns
