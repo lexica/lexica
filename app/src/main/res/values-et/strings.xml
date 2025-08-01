@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="dialog_about_content">Liiguta sõnaruute ekraanil nii, et neist moodustuksid sõnad. Otsi nii palju, kui jõuad ning aega on selleks kolm minutit.
-\n
-\nTulemuste arvutamine:
-\n4x4 mängulaual peavad sõnad olema vähemalt kolme tähe pikkused. 5x5 mängulaual peavad sõnad olema vähemalt nelja tähe pikkused. Kolme- ja neljatähelised sõnad annavad ühe punkti. Pikemate sõnade eest saab rohkem punkte. Nimed ei lähe sõnadena arvesse.
-\n
-\n</string>
+    <string name="dialog_about_content">Liiguta sõnaruute ekraanil nii, et neist moodustuksid sõnad. Otsi nii palju, kui jõuad ning aega on selleks kolm minutit. \n \nTulemuste arvutamine: \n4x4 mängulaual peavad sõnad olema vähemalt kolme tähe pikkused. 5x5 mängulaual peavad sõnad olema vähemalt nelja tähe pikkused. Kolme- ja neljatähelised sõnad annavad ühe punkti. Pikemate sõnade eest saab rohkem punkte. Nimed ei lähe sõnadena arvesse.</string>
     <string name="pref_breakdown_summary">Kas sõnade loendur kuvab erineva pikkusega sõnad eraldi</string>
     <string name="theme_dark">Tume</string>
     <string name="theme_light">Hele</string>
