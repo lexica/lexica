@@ -11,12 +11,7 @@
     <string name="pref_timeLimit">Tijdslimiet</string>
     <string name="pref_sounds">Geluidseffecten</string>
     <string name="dialog_about_title">Over Lexica</string>
-    <string name="dialog_about_content">Raak het scherm aan en veeg met je vinger over aangrenzende vakjes om woorden samen te stellen. Je hebt 3 minuten de tijd om zo veel mogelijk woorden te vinden.
-\n
-\nScore:
-\nOp borden ter grootte van 4x4 moeten woorden minimaal drie letters lang zijn. Op borden ter grootte van 5x5 moeten woorden minimaal vier letters lang zijn. Drie- of vierletterwoorden zijn 1 punt waard; langere woorden zijn meer punten waard. Zelfstandige naamwoorden tellen niet mee.
-\n
-\n</string>
+    <string name="dialog_about_content">Raak het scherm aan en veeg met je vinger over aangrenzende vakjes om woorden samen te stellen. Je hebt 3 minuten de tijd om zo veel mogelijk woorden te vinden. \n \nScore: \nOp borden ter grootte van 4x4 moeten woorden minimaal drie letters lang zijn. Op borden ter grootte van 5x5 moeten woorden minimaal vier letters lang zijn. Drie- of vierletterwoorden zijn 1 punt waard; langere woorden zijn meer punten waard. Zelfstandige naamwoorden tellen niet mee.</string>
     <string name="menu_rotate_board">Bord draaien</string>
     <string name="menu_save_game">Spel opslaan</string>
     <string name="menu_end_game">Spel beëindigen</string>
@@ -176,4 +171,7 @@
     <string name="pref_dict_fi" tools:keep="@string/pref_dict_fi">Fins</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turks</string>
     <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">Kroatisch</string>
+    <string name="time_limit_must_be_set">Stel een tijdslimiet in</string>
+    <string name="max_time_limit">De maximale limiet is 30 dagen (43.200 minuten)</string>
+    <string name="time_limit_too_short">Het tijdslimiet is te kort</string>
 </resources>
