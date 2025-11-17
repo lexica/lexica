@@ -11,12 +11,7 @@
     <string name="pref_timeLimit">Límite de tiempo</string>
     <string name="pref_sounds">Efectos de sonido</string>
     <string name="dialog_about_title">Sobre Léxica</string>
-    <string name="dialog_about_content">Toca la pantalla y nueve tu dedo hacia las casillas adyacentes para deletrear la palabra. Tiene tres minutos para encontrar todas las palabras que puedas.
-\n
-\nPuntaje:
-\nEn los tableros 4x4, las palabras al menos son de tres letras. En los tableros 5x5, de cuatro letras. Las palabras con tres o cuatro letras valen un punto. Cuanto más larga es una palabra, más puntos vale. Los nombres propios no cuentan.
-\n
-\n</string>
+    <string name="dialog_about_content">Toca la pantalla y nueve tu dedo hacia las casillas adyacentes para deletrear la palabra. Tiene tres minutos para encontrar todas las palabras que puedas. \n \nPuntuación: \nEn los tableros 4×4, las palabras al menos son de tres letras. En los tableros 5×5, de cuatro letras. Las palabras con tres o cuatro letras valen un punto. Cuanto más larga es una palabra, más puntos vale. Los nombres propios no cuentan.</string>
     <string name="menu_rotate_board">Rotar tablero</string>
     <string name="menu_save_game">Guardar partida</string>
     <string name="menu_end_game">Finalizar partida</string>
@@ -98,7 +93,7 @@
     <string name="pref_dict_es_solo_enne" tools:keep="@string/pref_dict_es">Español sin acentos</string>
     <string name="pref_dict_de_DE" tools:keep="@string/pref_dict_de_DE">Alemán (Extendido)</string>
     <string name="pref_dict_ca" tools:keep="@string/pref_dict_ca">Catalán</string>
-    <string name="delete_custom_game_mode">¿Borrar el modo de juego personalizado \"%1$s\"\? Se perderán las puntuaciones más altas.</string>
+    <string name="delete_custom_game_mode">¿Borrar el modo de juego personalizado «%1$s»? Las puntuaciones altas se perderán.</string>
     <string name="button_cancel">Cancelar</string>
     <string name="button_delete">Eliminar</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francés</string>
