@@ -1,9 +1,14 @@
-A word game where you have to find as many words as possible on a grid of random letters, in a limited time.
+Gra słowna w której zadaniem gracza jest znalezienie jak największej ilości słów na siatce losowych liter w określonym czasie
 
-This is a fork of the unmaintained <a href="https://play.google.com/store/apps/details?id=net.healeys.lexic">Lexic</a> which:
+Wybieraj spośród kilku międzynarodowych słowników, które łącznie zawierają miliony słów.
 
- * Supports multiple different languages
- * Adds newer scoring options
- * Adds minor improvements to the UI
- * Has better support for high resolution screens
- * Removes the unsupported multiplayer options
+Graj przeciwko znajomym w trybie  wielu graczy, poprzez wysłanie im wyzwania przez SMS/Email/QR code/etc.
+
+Stwórz swoje własne zasady dzięki konfigurowalnym trybom gry:
+ * wielkości planszy 4x4, 5x5 i 6x6
+ * różny limit czasu
+ * różne tryby punktowania i podpowiedzi
+
+W pełni open source. Bez reklam. Bez zakupów w aplikacji. Bez śledzenia. Nigdy.
+
+Proszę wesprzyj dalszy rozwój poprzez sponsorowanie na Github lub Liberapay.

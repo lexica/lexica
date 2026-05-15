@@ -1,1 +1,1 @@
-Find as many words as possible on a grid of random letters within a time limit
+Znajdź jak najwięcej słów na siatce losowych liter w określonym czasie
