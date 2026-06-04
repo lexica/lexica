@@ -77,14 +77,17 @@
     <string name="delete_custom_game_mode">Apagar o modo de jogo personalizado “%1$s”? Todos os recordes serão perdidos.</string>
     <plurals name="num_minutes">
         <item quantity="one">%d min</item>
+        <item quantity="many">%d mins</item>
         <item quantity="other">%d mins</item>
     </plurals>
     <plurals name="max_score_points_suffix">
         <item quantity="one">/ %d ponto</item>
+        <item quantity="many">/ %d pontos</item>
         <item quantity="other">/ %d pontos</item>
     </plurals>
     <plurals name="num_found_words_out_of_total">
         <item quantity="one">%d / %d palavra</item>
+        <item quantity="many">%d / %d palavras</item>
         <item quantity="other">%d / %d palavras</item>
     </plurals>
     <string name="menu_view_found_words">Exibir palavras encontradas</string>
@@ -106,7 +109,7 @@
     <string name="menu_new_game_mode">Novo</string>
     <string name="input_game_mode_minutes_description">Limite de tempo em minutos</string>
     <string name="input_game_mode_name_description">Para escolher o modo de jogo / registar recordes</string>
-    <string name="high_scores">Recorde</string>
+    <string name="high_scores">Recordes</string>
     <string name="button_cancel">Cancelar</string>
     <string name="button_delete">Apagar</string>
     <string name="pref_dict_fr_FR_no_diacritics" tools:keep="@string/pref_dict_fr_FR_no_diacritics">Francês</string>
@@ -160,12 +163,12 @@
     <plurals name="num_available_words_in_game__tap_to_refresh">
         <item quantity="one">%1$d palavra (toque para atualizar)</item>
         <item quantity="many">%1$d palavras (toque para atualizar)</item>
-        <item quantity="other"/>
+        <item quantity="other">%1$d palavras (toque para atualizar)</item>
     </plurals>
     <plurals name="num_available_words_in_game">
         <item quantity="one">%1$d palavra</item>
         <item quantity="many">%1$d palavras</item>
-        <item quantity="other"/>
+        <item quantity="other">%1$d palavras</item>
     </plurals>
     <string name="pref_dict_hr_HR" tools:keep="@string/pref_dict_hr">Croata</string>
     <string name="pref_dict_tr" tools:keep="@string/pref_dict_tr">Turco</string>
