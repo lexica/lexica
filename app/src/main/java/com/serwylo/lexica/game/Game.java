@@ -161,7 +161,9 @@ public class Game implements Synchronizer.Counter {
         }
     }
 
-    public Game(Context context, GameMode gameMode, Language language, String[] boardLetters) {
+
+
+    public Game(Context context, GameMode gameMode, Language language, CharProbGenerator.Seed boardSeed) {
         this.language = language;
         this.gameMode = gameMode;
         status = GameStatus.GAME_STARTING;
@@ -170,22 +172,20 @@ public class Game implements Synchronizer.Counter {
 
         loadSounds(context);
 
-        String lettersFileName = language.getLetterDistributionFileName();
-        int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
-        CharProbGenerator charProbs = new CharProbGenerator(context.getResources().openRawResource(id), getLanguage());
+        CharProbGenerator charProbs = getCharProbGenerator(context);
         Board board;
 
         switch (gameMode.getBoardSize()) {
             case 16:
-                board = boardLetters == null ? charProbs.generateFourByFourBoard() : new FourByFourBoard(boardLetters);
+                board = charProbs.generateFourByFourBoard(boardSeed);
                 break;
 
             case 25:
-                board = boardLetters == null ? charProbs.generateFiveByFiveBoard() : new FiveByFiveBoard(boardLetters);
+                board = charProbs.generateFiveByFiveBoard(boardSeed);
                 break;
 
             case 36:
-                board = boardLetters == null ? charProbs.generateSixBySixBoard() : new SixBySixBoard(boardLetters);
+                board = charProbs.generateSixBySixBoard(boardSeed);
                 break;
 
             default:
@@ -201,16 +201,32 @@ public class Game implements Synchronizer.Counter {
         initializeWeights();
     }
 
+    @NonNull
+    private CharProbGenerator getCharProbGenerator(Context context) {
+        String lettersFileName = language.getLetterDistributionFileName();
+        int id = context.getResources().getIdentifier("raw/" + lettersFileName.substring(0, lettersFileName.lastIndexOf('.')), null, context.getPackageName());
+        return new CharProbGenerator(context.getResources().openRawResource(id), getLanguage());
+    }
+
+    public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language) {
+        return generateGame(context, gameMode, language, CharProbGenerator.Seed.createRandom());
+    }
+
     /**
      * TODO: This is not a very pure function. The Game constructor loads preferences, reads sounds from disk, and probably does
      *       many other things. This should be refactored so that it is more predictable what happens.
      */
-    public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language) {
-        Game bestGame = new Game(context, gameMode, language, null);
+    public static Game generateGame(@NonNull Context context, @NonNull GameMode gameMode, @NonNull Language language, CharProbGenerator.Seed seed) {
+        Game bestGame = new Game(context, gameMode, language, seed);
+        Board lastBoard = bestGame.board; // needed so we still receive deterministic boards, even when skipping tries
+
         int numAttempts = 0;
         while (bestGame.getMaxWordCount() < 45 && numAttempts < 5) {
             Log.d(TAG, "Generating another board, because the previous one only had " + bestGame.getMaxWordCount() + " words, but we want at least 45. Will give up after 5 tries.");
-            Game nextAttempt = new Game(context, gameMode, language, null);
+
+            Game nextAttempt = new Game(context, gameMode, language, CharProbGenerator.Seed.createRandomFromPreviousBoard(lastBoard));
+            lastBoard = nextAttempt.getBoard();
+
             if (nextAttempt.getMaxWordCount() > bestGame.getMaxWordCount()) {
                 bestGame = nextAttempt;
             }

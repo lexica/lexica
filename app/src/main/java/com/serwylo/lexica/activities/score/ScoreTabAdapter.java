@@ -12,6 +12,7 @@ class ScoreTabAdapter extends RecyclerView.Adapter<ScoreTabViewHolder> {
 
     private static final int VIEW_TYPE_FOUND_WORDS = 1;
     private static final int VIEW_TYPE_MISSED_WORDS = 2;
+    private static final int VIEW_TYPE_NEXT_ROUND = 3;
 
     private final ScoreActivity scoreActivity;
     private final Game game;
@@ -31,8 +32,10 @@ class ScoreTabAdapter extends RecyclerView.Adapter<ScoreTabViewHolder> {
             viewHolder.bindFoundWords(game, sorter);
         } else if (viewType == VIEW_TYPE_MISSED_WORDS) {
             viewHolder.bindMissedWords(game, sorter);
+        } else if (viewType == VIEW_TYPE_NEXT_ROUND) {
+            viewHolder.bindNextRound(game);
         } else {
-            throw new IllegalArgumentException("The viewType should be either VIEW_TYPE_FOUND_WORDS or VIEW_TYPE_MISSED_WORDS, but got " + viewType);
+            throw new IllegalArgumentException("The viewType should be either VIEW_TYPE_FOUND_WORDS, VIEW_TYPE_MISSED_WORDS, or VIEW_TYPE_NEXT_ROUND, but got " + viewType);
         }
         return viewHolder;
     }
@@ -45,7 +48,7 @@ class ScoreTabAdapter extends RecyclerView.Adapter<ScoreTabViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 
     @Override
@@ -54,6 +57,8 @@ class ScoreTabAdapter extends RecyclerView.Adapter<ScoreTabViewHolder> {
             return VIEW_TYPE_FOUND_WORDS;
         } else if (position == 1) {
             return VIEW_TYPE_MISSED_WORDS;
+        } else if (position == 2) {
+            return VIEW_TYPE_NEXT_ROUND;
         }
 
         throw new IllegalArgumentException("Score activity adapter only support two items, but was asked for item at position " + position);
