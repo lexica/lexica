@@ -4,7 +4,7 @@ where $path:uniq.exe
 if errorlevel 1 goto :error
 chcp 65001
 sed -f spanish-translit-utf8.sed assets\dictionaries\dictionary.es.txt >assets\dictionaries\dictionary.es-enne.tmp
-sort /L C assets\dictionaries\dictionary.es-enne.tmp /O assets\dictionaries\dictionary.es-enne-2.tmp
+sort assets\dictionaries\dictionary.es-enne.tmp /O assets\dictionaries\dictionary.es-enne-2.tmp
 uniq assets\dictionaries\dictionary.es-enne-2.tmp assets\dictionaries\dictionary.es_solo_enne.txt
 
 REM the KEEP parameter allows to keep the files previous to SORT and UNIQ,
